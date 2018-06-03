@@ -57,7 +57,7 @@ be able to make requests.
 
 After doing a rollback under https://data.heroku.com/
 
-`heroku pg:info --app=unumondo`
+`heroku pg:info --app=<appname>`
 
 Change DATABASE URL (e.g after a rollback)
 
@@ -65,6 +65,6 @@ Change DATABASE URL (e.g after a rollback)
 
 ## Backup
 
-`heroku pg:backups:capture --app unumondo`
+`heroku pg:backups:capture --app <appname>`
 
-`heroku pg:backups:url b001 --app unumondo`
+`heroku pg:backups:url b001 --app <appname>`
