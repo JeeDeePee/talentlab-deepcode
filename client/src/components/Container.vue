@@ -1,7 +1,7 @@
 <template>
   <div>
 
-    <v-card v-for="container in containers">
+    <v-card v-for="container in containers" v-bind:key="container.id">
       <v-card-title primary-title>
         <div>
           <h3 class="headline mb-0">{{container.title}}</h3>
