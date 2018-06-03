@@ -1,0 +1,8 @@
+query ContainersQuery {
+  containers {
+    id
+    title
+    intro
+    content
+  }
+}

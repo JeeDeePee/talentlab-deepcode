@@ -1,0 +1,11 @@
+{
+  "name": "cariot",
+  "version": "1.0.1",
+  "description": "\"Heroku client build\"",
+  "scripts": {
+    "postinstall": "npm install --prefix cariot_frontend && npm run build --prefix cariot_frontend"
+  },
+  "engines": {
+    "node": "8.x"
+  }
+}
