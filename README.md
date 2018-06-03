@@ -2,10 +2,11 @@
 
 Sources
 
-* [Django](https://www.djangoproject.com/)
-* [Wagtial](https://wagtail.io/)
+* [Django](https://docs.djangoproject.com/en/2.0/)
+* [Wagtial](http://docs.wagtail.io/)
 * [Graphene](https://github.com/graphql-python/graphene-django)
 * [Vue-Apollo](https://github.com/Akryum/vue-apollo)
+* [Vuetifyjs](https://vuetifyjs.com/en/getting-started/quick-start)
 
 ## Development
 
