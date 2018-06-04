@@ -21,6 +21,6 @@ urlpatterns = [
 urlpatterns += staticfiles_urlpatterns()
 #urlpatterns += [url(r'^.*$', views.home, name='home')]
 
-urlpatterns += [url(r'', include(wagtail_urls)),]
+urlpatterns += [url(r'', include(wagtail_urls)), ]
 
-admin.site.site_header = 'Talent Admin'
+admin.site.site_header = 'Talentlab Admin'

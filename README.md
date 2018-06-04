@@ -3,7 +3,7 @@
 Sources
 
 * [Django](https://docs.djangoproject.com/en/2.0/)
-* [Wagtial](http://docs.wagtail.io/)
+* [Wagtail](http://docs.wagtail.io/)
 * [Graphene](https://github.com/graphql-python/graphene-django)
 * [Vue-Apollo](https://github.com/Akryum/vue-apollo)
 * [Vuetifyjs](https://vuetifyjs.com/en/getting-started/quick-start)
@@ -21,6 +21,11 @@ Sources
 * Create super user: `pipenv run python manage.py createsuperuser`
 * Run: `pipenv run python manage.py runserver`
 
+#### Local setup
+
+username = talentlab
+email = talentlab@talentlab.ch
+password = test
 
 ### Client
 
@@ -46,7 +51,7 @@ be able to make requests.
 (trailing slashes are required)
 
 * Admin interface: http://127.0.0.1:8000/guru/
-* Cms interface: http://127.0.0.1:8000/guru/
+* Cms interface: http://127.0.0.1:8000/cms/
 * GraphQL Interface: http://localhost:8000/api/graphiql/
 
 # Heroku

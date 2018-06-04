@@ -9,7 +9,6 @@ class RichTextBlock(blocks.StructBlock):
     text = blocks.RichTextBlock(features=DEFAULT_RICH_TEXT_FEATURES)
 
 
-
 class ImageBlock(blocks.StructBlock):
     image = ImageChooserBlock()
     label = blocks.TextBlock(required=False)

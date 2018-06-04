@@ -4,7 +4,6 @@ from containers.models import Container
 
 
 class ContainerNode(DjangoObjectType):
-
     content = graphene.JSONString()
 
     class Meta:
