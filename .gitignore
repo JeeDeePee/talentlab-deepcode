@@ -5,6 +5,7 @@ __pycache__/
 *.py[cod]
 *$py.class
 dist/
+server/static/
 
 # C extensions
 *.so
@@ -31,3 +32,4 @@ t.*
 server/documents
 server/images
 server/original_images
+
