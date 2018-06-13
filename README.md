@@ -21,11 +21,6 @@ Sources
 * Create super user: `pipenv run python manage.py createsuperuser`
 * Run: `pipenv run python manage.py runserver`
 
-#### Local setup
-
-username = talentlab
-email = talentlab@talentlab.ch
-password = test
 
 ### Client
 
