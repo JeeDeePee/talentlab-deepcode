@@ -50,7 +50,7 @@ be able to make requests.
 
 Production Build
 
-# Urls
+## Urls
 
 (trailing slashes are required)
 
@@ -58,11 +58,11 @@ Production Build
 * Cms interface: http://127.0.0.1:8000/cms/
 * GraphQL Interface: http://localhost:8000/api/graphiql/
 
-# Heroku
+## Heroku
 
 `heroku run python server/manage.py <command> --app <appname>`
 
-## Rollabck
+### Rollabck
 
 After doing a rollback under https://data.heroku.com/
 
@@ -72,15 +72,15 @@ Change DATABASE URL (e.g after a rollback)
 
 `heroku pg:promote HEROKU_POSTGRESQL_PINK`
 
-## Backup
+### Backup
 
 `heroku pg:backups:capture --app <appname>`
 
 `heroku pg:backups:url b001 --app <appname>`
 
-# AWS
+## AWS
 
-1. Create user with API Access and add `access key id` and `access key` to `.env`
+1. Create user with API Access and add `access key id` and `access key` to `.env` and set `USE_AWS=True`
 2. Create S3 Bucket in location EU Ireland
 
 Change bucket `Permissions` / `Bucket Policy`
