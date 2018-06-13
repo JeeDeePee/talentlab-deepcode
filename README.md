@@ -77,3 +77,40 @@ Change DATABASE URL (e.g after a rollback)
 `heroku pg:backups:capture --app <appname>`
 
 `heroku pg:backups:url b001 --app <appname>`
+
+# AWS
+
+1. Create user with API Access and add `access key id` and `access key` to `.env`
+2. Create S3 Bucket in location EU Ireland
+
+Change bucket `Permissions` / `Bucket Policy`
+
+```
+{
+    "Version": "2008-10-17",
+    "Statement": [
+        {
+            "Sid": "PublicReadForGetBucketObjects",
+            "Effect": "Allow",
+            "Principal": {
+                "AWS": "*"
+            },
+            "Action": "s3:GetObject",
+            "Resource": "arn:aws:s3:::<bucket-name>/*"
+        },
+        {
+            "Sid": "",
+            "Effect": "Allow",
+            "Principal": {
+                "AWS": "<user arn>"
+            },
+            "Action": "s3:*",
+            "Resource": [
+                "arn:aws:s3:::<bucket-name>/*",
+                "arn:aws:s3:::<bucket-name>"
+            ]
+        }
+    ]
+}
+
+```
