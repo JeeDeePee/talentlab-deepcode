@@ -36,8 +36,11 @@ npm install
 # serve with hot reload at localhost:8080
 npm run dev
 
-# build for production with minification
+# build
 npm run build
+
+# build for production with minification
+export NODE_ENV=production && npm install --prefix client && npm run build --prefix client
 ```
 
 After running `npm run dev` login to the Django admin view on the same domain as the webpack dev server is running.
@@ -45,6 +48,7 @@ Example: The client runs on localhost:8080 and Django on localhost:8000.
 This way you will have a session and a csrf cookie set and the apollo client will 
 be able to make requests.
 
+Production Build
 
 # Urls
 
