@@ -1,2 +1,2 @@
-web: daphne server.core.asgi:channel_layer --port $PORT --bind 0.0.0.0 -v2
+web: gunicorn --log-file=- --pythonpath server core.wsgi
 channels: python manage.py runworker -v2
