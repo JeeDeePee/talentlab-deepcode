@@ -18,6 +18,8 @@ from django.utils.translation import ugettext_lazy as _
 from dotenv import load_dotenv, find_dotenv
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
+from core.env_utils import bool_value
+
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 load_dotenv(find_dotenv())
@@ -30,7 +32,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 SIGNING_SECRET = os.environ.get('SIGNING_SECRET')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.environ.get('DEBUG')
+DEBUG = bool_value(os.environ.get('DEBUG', ''))
 
 ALLOWED_HOSTS = ['*']
 

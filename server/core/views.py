@@ -12,7 +12,5 @@ class PrivateGraphQLView(LoginRequiredMixin, GraphQLView):
 @login_required
 @ensure_csrf_cookie
 def home(request):
-
     # @todo load from dev server if running and DEBUG = True
-
     return render(request, 'index.html', {})
