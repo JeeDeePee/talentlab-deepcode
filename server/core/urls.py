@@ -19,8 +19,10 @@ urlpatterns = [
 ]
 
 urlpatterns += staticfiles_urlpatterns()
-#urlpatterns += [url(r'^.*$', views.home, name='home')]
 
-urlpatterns += [url(r'', include(wagtail_urls)), ]
+urlpatterns += [url(r'^.*$', views.home, name='home')]
+
+# actually we use the cms in headless mode
+#urlpatterns += [url(r'', include(wagtail_urls)), ]
 
 admin.site.site_header = 'Talentlab Admin'
