@@ -31,13 +31,13 @@ password = test
 
 ``` bash
 # install dependencies
-npm install
+npm install --prefix client
 
 # serve with hot reload at localhost:8080
-npm run dev
+npm run dev --prefix client
 
 # build
-npm run build
+npm run build --prefix client
 
 # build for production with minification
 export NODE_ENV=production && npm install --prefix client && npm run build --prefix client
