@@ -5,7 +5,12 @@
       <v-card-title primary-title>
         <div>
           <h3 class="headline mb-0">{{container.title}}</h3>
-          {{container.content}}
+          <div class="mt-2" v-for="(item, index) in container.content" v-bind:key="index">
+            <div v-if="item.type=='text'" v-html="item.value.text"></div>
+            <div v-else>
+              {{item.type}}: {{item.value}}
+            </div>
+          </div>
         </div>
       </v-card-title>
       <v-card-actions>
@@ -31,7 +36,20 @@
     },
     apollo: {
       containers: {
-        query: CONTAINERS_QUERY
+        query: CONTAINERS_QUERY,
+        manual: true,
+        result({data: {containers: {edges}}, loading, networkStatus}) {
+          if (!loading) {
+            let _items = []
+            let self = this
+            edges.forEach(function (item) {
+              let node = self.$lodash.clone(item.node)
+              node.content = JSON.parse(node.content)
+              _items.push(node)
+            })
+            this.containers = _items
+          }
+        }
       }
     }
   }

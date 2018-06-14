@@ -7,8 +7,11 @@ import 'vuetify/dist/vuetify.min.css'
 import apolloClient from './graphql/client'
 import axios from 'axios'
 import VueAxios from 'vue-axios'
+import lodash from 'lodash'
 
 Vue.config.productionTip = false
+
+Object.defineProperty(Vue.prototype, '$lodash', {value: lodash})
 
 const apolloProvider = new VueApollo({
   defaultClient: apolloClient

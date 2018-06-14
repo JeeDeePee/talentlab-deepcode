@@ -1,8 +1,11 @@
 query ContainersQuery {
   containers {
-    id
-    title
-    intro
-    content
+    edges{
+      node {
+        pk
+        title
+        content
+      }
+    }
   }
 }
