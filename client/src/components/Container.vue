@@ -1,10 +1,10 @@
 <template>
   <div>
 
-    <v-card v-for="container in containers" v-bind:key="container.id">
+    <v-card v-for="container in containers" v-bind:key="container.id" class="mb-1">
       <v-card-title primary-title>
         <div>
-          <h3 class="headline mb-0">{{container.title}}</h3>
+          <h2 class="headline mb-1">{{container.title}}</h2>
           <div class="mt-2" v-for="(item, index) in container.content" v-bind:key="index">
             <div v-if="item.type=='text'" v-html="item.value.text"></div>
             <div v-else>
