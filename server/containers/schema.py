@@ -31,11 +31,12 @@ class ContainerNode(DjangoObjectType):
     tools = graphene.JSONString()
     resources = graphene.JSONString()
     units = DjangoFilterConnectionField(UnitNode)
+    hero_image = graphene.String()
 
     class Meta:
         model = Container
         only_fields = [
-            'title', 'slug', 'skill', 'description', 'hero_image', 'teaser', 'video_id', 'video_description'
+            'title', 'slug', 'skill', 'description', 'teaser', 'video_id', 'video_description'
         ]
         filter_fields = {
             'slug': ['exact', 'icontains', 'in'],
@@ -53,6 +54,10 @@ class ContainerNode(DjangoObjectType):
     def resolve_pk(self, *args, **kwargs):
         return self.id
 
+    def resolve_hero_image(self, *args, **kwargs):
+        if self.hero_image:
+            return self.icon.hero_image.url
+
     def resolve_units(self, *args, **kwargs):
         # What an ugly hack to avoid error 'Cannot combine queries on two different base models.'
         # otherweise return self.get_children().specific().live() would be the thing
@@ -62,6 +67,7 @@ class ContainerNode(DjangoObjectType):
 class CategoryNode(DjangoObjectType):
     pk = graphene.Int()
     containers = DjangoFilterConnectionField(ContainerNode)
+    icon = graphene.String()
 
     def resolve_pk(self, *args, **kwargs):
         return self.id
@@ -77,6 +83,10 @@ class CategoryNode(DjangoObjectType):
         }
 
         interfaces = (relay.Node,)
+
+    def resolve_icon(self, *args, **kwargs):
+        if self.icon:
+            return self.icon.file.url
 
     def resolve_container(self, *args, **kwargs):
         # What an ugly hack to avoid the 'Cannot combine queries on two different base models.' error

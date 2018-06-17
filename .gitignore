@@ -6,6 +6,7 @@ __pycache__/
 *$py.class
 dist/
 server/static/
+t.*
 
 # C extensions
 *.so
@@ -25,13 +26,11 @@ server/static/
 
 # Backend
 staticfiles
-
-t.*
+schema.json
 
 # Wagtail assets
 server/documents
 server/images
 server/original_images
-
-
-schema.json
+images/
+original_images/
