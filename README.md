@@ -22,6 +22,11 @@ Sources
 * Run: `pipenv run python manage.py runserver`
 
 
+#### Notes
+
+* `DEBUG=True` enables the debug middleware http://docs.graphene-python.org/projects/django/en/latest/debug/
+
+
 ### Client
 
 ``` bash

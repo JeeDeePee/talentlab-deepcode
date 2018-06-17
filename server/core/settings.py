@@ -77,6 +77,9 @@ INSTALLED_APPS = [
 
 ]
 
+if DEBUG:
+    INSTALLED_APPS += ['wagtail.contrib.styleguide']
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
@@ -205,11 +208,11 @@ AWS_STORAGE_BUCKET_NAME = os.environ.get('AWS_STORAGE_BUCKET_NAME')
 AWS_S3_FILE_OVERWRITE = False
 
 # use with cloudfront
-#AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
+# AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
 if bool_value(os.environ.get('USE_AWS')):
     DEFAULT_FILE_STORAGE = "storages.backends.s3boto3.S3Boto3Storage"
     # use with cloudfront
-    #MEDIA_URL = "https://%s/" % AWS_S3_CUSTOM_DOMAIN
+    # MEDIA_URL = "https://%s/" % AWS_S3_CUSTOM_DOMAIN
 
 AWS_S3_OBJECT_PARAMETERS = {
     'CacheControl': 'max-age=86400',
@@ -284,8 +287,13 @@ RAVEN_DSN_JS = os.environ.get('RAVEN_DSN_JS', '')
 GOOGLE_TAG_MANAGER_CONTAINER_ID = os.environ.get('GOOGLE_TAG_MANAGER_CONTAINER_ID')
 
 GRAPHENE = {
-    'SCHEMA': 'api.schema.schema',
+    'SCHEMA': 'api.schema.schema'
 }
+
+if DEBUG:
+    GRAPHENE['MIDDLEWARE'] = [
+        'graphene_django.debug.DjangoDebugMiddleware',
+    ]
 
 # http://docs.wagtail.io/en/v2.1/advanced_topics/settings.html?highlight=urls
 WAGTAIL_SITE_NAME = 'Talentlab'
