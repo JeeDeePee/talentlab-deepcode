@@ -1,0 +1,19 @@
+query ContainerQuery {
+  containers(slug: "partnering-success") {
+    edges {
+      node {
+        title
+        slug
+        units {
+          edges {
+            node {
+              title
+              teaser
+              type
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -2,7 +2,8 @@ import Vue from 'vue'
 import Router from 'vue-router'
 
 const routerOptions = [
-  {path: '/', component: 'Container', name: 'container'},
+  {path: '/', component: 'Categories', name: 'categories'},
+  {path: '/containers', component: 'Containers', name: 'containers'},
   {path: '/about', component: 'About', name: 'about'},
   {path: '*', component: 'NotFound'}
 ]

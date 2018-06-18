@@ -1,0 +1,18 @@
+query CategoriesQuery {
+  categories {
+    edges {
+      node {
+        title
+        slug
+        containers {
+          edges {
+            node {
+              title
+              slug
+            }
+          }
+        }
+      }
+    }
+  }
+}

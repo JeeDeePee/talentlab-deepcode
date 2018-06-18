@@ -1,12 +1,11 @@
 <template>
   <v-app dark>
     <div>
-      <v-tabs
-        v-model="active"
-        dark
-        slider-color="yellow"
-      >
-        <v-tab ripple :to="{ name: 'container'}" exact router>
+      <v-tabs v-model="active" dark slider-color="yellow">
+        <v-tab ripple :to="{ name: 'categories'}" exact router>
+          Categories
+        </v-tab>
+        <v-tab ripple :to="{ name: 'containers'}" exact router>
           Containers
         </v-tab>
         <v-tab ripple :to="{ name: 'about'}" exact router>
