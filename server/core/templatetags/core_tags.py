@@ -11,7 +11,7 @@ def json_dumps(obj):
     class Serializer(serializers.ModelSerializer):
         class Meta:
             model = obj.__class__
-            exclude = []
+            exclude = ['path', 'depth', 'numchild', 'draft_title', 'content_type']
 
     return json.dumps(Serializer(obj).data, indent=4)
 
