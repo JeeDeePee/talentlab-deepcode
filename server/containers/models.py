@@ -1,25 +1,11 @@
 from django.db import models
-from wagtail.core import blocks
-from wagtail.core.blocks.field_block import URLBlock, CharBlock
 from wagtail.core.models import Page
 from wagtail.core.fields import StreamField, RichTextField
 from wagtail.admin.edit_handlers import FieldPanel, StreamFieldPanel, MultiFieldPanel, FieldRowPanel, TabbedInterface, \
     ObjectList
 from wagtail.images.edit_handlers import ImageChooserPanel
 
-from containers.blocks import DocumentBlock
-
-DEFAULT_RICH_TEXT_FEATURES = ['bold', 'italic', 'ol', 'ul']
-
-
-class LinkBlock(blocks.StructBlock):
-    description = CharBlock()
-    url = URLBlock()
-
-
-class DocumentBlock(blocks.StructBlock):
-    description = CharBlock()
-    url = DocumentBlock()
+from containers.blocks import LinkBlock, DocumentBlock, DEFAULT_RICH_TEXT_FEATURES
 
 
 class Category(Page):
@@ -49,16 +35,16 @@ class Category(Page):
 
 
 class Container(Page):
-    skill = models.CharField(
-        max_length=255,
-        help_text='e.g. \'Leadership\''
-    )
     hero_image = models.ForeignKey(
         'wagtailimages.Image',
         null=True,
         blank=True,
         on_delete=models.SET_NULL,
         related_name='+'
+    )
+    skill = models.CharField(
+        max_length=255,
+        help_text='e.g. \'Leadership\''
     )
     teaser = models.TextField()
     description = RichTextField(features=DEFAULT_RICH_TEXT_FEATURES)

@@ -31,6 +31,7 @@ class Command(BaseCommand):
 
             self.ensure_clean_dir('images')
             self.ensure_clean_dir('original_images')
+            self.ensure_clean_dir('documents')
 
             site = wagtail_factories.SiteFactory.create(is_default_site=True)
 

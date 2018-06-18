@@ -56,7 +56,7 @@ class ContainerNode(DjangoObjectType):
 
     def resolve_hero_image(self, *args, **kwargs):
         if self.hero_image:
-            return self.icon.hero_image.url
+            return self.hero_image.file.url
 
     def resolve_units(self, *args, **kwargs):
         # Hack to avoid error 'Cannot combine queries on two different base models.'
