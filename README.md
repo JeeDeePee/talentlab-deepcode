@@ -23,7 +23,6 @@ Sources
 * Dummy data: `pipenv run python manage.py dummy_data` (restart the development server afterwards)
 
 
-
 #### Notes
 
 * `DEBUG=True` enables the debug middleware http://docs.graphene-python.org/projects/django/en/latest/debug/
