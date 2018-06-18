@@ -10,6 +10,8 @@ name = "pypi"
 awscli = "*"
 django-cors-headers = "*"
 ipdb = "*"
+wagtail-factories = "*"
+factory-boy = "*"
 
 
 [packages]

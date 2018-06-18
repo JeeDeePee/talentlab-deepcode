@@ -105,6 +105,8 @@ MIDDLEWARE += [
     'wagtail.core.middleware.SiteMiddleware',
     'wagtail.contrib.redirects.middleware.RedirectMiddleware',
 
+    'core.middleware.ThreadLocalMiddleware',
+    'core.middleware.CommonRedirectMiddleware',
 ]
 
 ROOT_URLCONF = 'core.urls'
@@ -213,10 +215,17 @@ if bool_value(os.environ.get('USE_AWS')):
     DEFAULT_FILE_STORAGE = "storages.backends.s3boto3.S3Boto3Storage"
     # use with cloudfront
     # MEDIA_URL = "https://%s/" % AWS_S3_CUSTOM_DOMAIN
+else:
+    MEDIA_URL = '/media/'
+    MEDIA_ROOT = os.environ.get('DJANGO_MEDIAFILES', os.path.join(BASE_DIR, 'media'))
 
 AWS_S3_OBJECT_PARAMETERS = {
     'CacheControl': 'max-age=86400',
 }
+
+# Media Files
+USE_404_FALLBACK_IMAGE = bool_value(os.environ.get('USE_404_FALLBACK_IMAGE', 'True'))
+
 
 # Logging Conf
 
