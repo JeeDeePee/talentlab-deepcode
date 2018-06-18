@@ -1,4 +1,7 @@
+from django.contrib.postgres.fields import JSONField
 from django.db import models
+from django.db.models.signals import pre_save
+from django.dispatch import receiver
 from wagtail.core.models import Page
 from wagtail.core.fields import StreamField, RichTextField
 from wagtail.admin.edit_handlers import FieldPanel, StreamFieldPanel, MultiFieldPanel, FieldRowPanel, TabbedInterface, \
@@ -66,6 +69,7 @@ class Container(Page):
         null=True,
         blank=True
     )
+    resources_normalized = JSONField(blank=True, null=True, help_text='helper field for graphql api')
 
     tools = StreamField([
         ('link', LinkBlock(icon='link')),
@@ -74,6 +78,7 @@ class Container(Page):
         null=True,
         blank=True
     )
+    tools_normalized = JSONField(blank=True, null=True, help_text='helper field for graphql api')
 
     parent_page_types = ['containers.Category']
     subpage_types = ['containers.Unit']
@@ -104,6 +109,27 @@ class Container(Page):
     ])
 
     template = 'generic_page.html'
+
+
+@receiver(pre_save, sender=Container)
+def pre_save_container(sender, instance, **kwargs):
+    def nomralize_data(field):
+        data = []
+        for d in field.stream_data:
+            value = dict(d[1])
+            if 'document' in value:
+                value['document'] = value['document'].file.url
+            if 'image' in value:
+                value['image'] = value['image'].file.url
+
+            data.append({
+                'type': d[0],
+                'value': value
+            })
+        return data
+
+    instance.tools_normalized = nomralize_data(instance.tools)
+    instance.resources_normalized = nomralize_data(instance.resources)
 
 
 class Unit(Page):

@@ -46,10 +46,10 @@ class ContainerNode(DjangoObjectType):
         interfaces = (relay.Node,)
 
     def resolve_tools(self, *args, **kwargs):
-        return self.tools.stream_data
+        return self.tools_normalized
 
     def resolve_resources(self, *args, **kwargs):
-        return self.resources.stream_data
+        return self.resources_normalized
 
     def resolve_pk(self, *args, **kwargs):
         return self.id
