@@ -23,10 +23,10 @@ urlpatterns = [
     settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) + static(settings.STATIC_URL,
                                                                     document_root=settings.STATIC_ROOT)
 
-urlpatterns += [re_path(r'^.*$', views.home, name='home')]
-
 # actually we use the cms in headless mode but need the url pattern to get the wagtail_serve function
-urlpatterns += [url(r'cms-pages/', include(wagtail_urls)), ]
+urlpatterns += [url(r'pages/', include(wagtail_urls)), ]
+
+urlpatterns += [re_path(r'^.*$', views.home, name='home')]
 
 admin.site.site_header = 'Talentlab Admin'
 

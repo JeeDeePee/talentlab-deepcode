@@ -33,6 +33,8 @@ class Category(Page):
         ObjectList(settings_panels, heading='Settings'),
     ])
 
+    template = 'generic_page.html'
+
 
 class Container(Page):
     # category = models.ForeignKey('containers.Category', on_delete=models.CASCADE, related_name='+')
@@ -117,6 +119,8 @@ class Container(Page):
         ObjectList(settings_panels, heading='Settings'),
     ])
 
+    template = 'generic_page.html'
+
 
 class Unit(Page):
     # container = models.ForeignKey('containers.Container', on_delete=models.CASCADE, related_name='+')
@@ -125,9 +129,9 @@ class Unit(Page):
     type = models.CharField(
         max_length=100,
         choices=(
-            ('Webinar', 'Webinar'),
-            ('Kurs', 'Kurs'),
-            ('Coaching', 'Coaching')
+            ('webinar', 'Webinar'),
+            ('kurs', 'Kurs'),
+            ('coaching', 'Coaching')
         )
     )
     count = models.CharField(
@@ -160,3 +164,5 @@ class Unit(Page):
         ObjectList(content_panels, heading='Content'),
         ObjectList(settings_panels, heading='Settings'),
     ])
+
+    template = 'generic_page.html'

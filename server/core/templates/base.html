@@ -1,51 +1,20 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+
+<html lang="en">
 <head>
-    <!--Import Google Icon Font-->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <!--Import materialize.css-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Cabin" rel="stylesheet">
-    <!--Let browser know website is optimized for mobile-->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta charset="utf-8">
 
+    <title>{% block title %}TalentLab{% endblock %}</title>
+    <meta name="description" content="">
+    <meta name="author" content="talentlab.ch">
 
-    <style>
-        body {
-            font-family: 'Cabin', sans-serif;
-            background-color: #e6e6e6
-        }
-
-        .alert {
-            background-color: #eb5023;
-            padding: 20px;
-            color: #fff;
-        }
-
-        .yellow {
-            background-color: #ffd200 !important;
-        }
-
-    </style>
+    <!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+  <![endif]-->
 </head>
 
 <body>
-<nav class="yellow nav-extended" role="navigation">
-    <div class="nav-wrapper container">
-        <img class="brand-logo" width="120" style="margin-top: 15px; max-height: 34px;"
-             src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2aWV3Qm94PSIwIDAgMTQ5LjMgNDEiPjxkZWZzPjxzdHlsZT4uY2xzLTF7ZmlsbDpub25lO30uY2xzLTJ7Y2xpcC1wYXRoOnVybCgjY2xpcC1wYXRoKTt9LmNscy0ze2ZpbGw6IzFkMWQxYjt9PC9zdHlsZT48Y2xpcFBhdGggaWQ9ImNsaXAtcGF0aCI+PHJlY3QgY2xhc3M9ImNscy0xIiB3aWR0aD0iMTQ5LjMiIGhlaWdodD0iNDEiLz48L2NsaXBQYXRoPjwvZGVmcz48dGl0bGU+RWxlbWVudCAxMzwvdGl0bGU+PGcgaWQ9IkViZW5lXzIiIGRhdGEtbmFtZT0iRWJlbmUgMiI+PGcgaWQ9IkViZW5lXzEtMiIgZGF0YS1uYW1lPSJFYmVuZSAxIj48ZyBjbGFzcz0iY2xzLTIiPjxwYXRoIGNsYXNzPSJjbHMtMyIgZD0iTTM2LjI0LDIwLjU3QzM2LjI0LDcuNDksNDQuNTYsMCw1NC45MywwLDYxLjM4LDAsNjUuOCwyLjQ4LDY4LjI2LDYuNzNoLjE3VjFoOS4yM1Y0MC4ySDY4LjRWMzQuNDJoLS4xN0M2NS43NywzOC42Nyw2MS4zOCw0MSw1NC45Myw0MWMtMTAuMzcsMC0xOC42OS03LjMyLTE4LjY5LTIwLjQxbTMyLjQsMGMwLTcuNDctNC44OC0xMS45Mi0xMS41Ny0xMS45Mi01LjIsMC0xMS4yMywzLTExLjIzLDExLjkyLDAsOC4yNyw1LjQsMTEuODEsMTEuMjMsMTEuODEsNi43NCwwLDExLjU3LTQuMzMsMTEuNTctMTEuODEiLz48cGF0aCBjbGFzcz0iY2xzLTMiIGQ9Ik0wLDIwLjU3QzAsOC4wOSw4LjkyLDAsMjEuNTgsMEEyMy41NSwyMy41NSwwLDAsMSwzNSw0TDMwLjkxLDExLjdhMTcuODcsMTcuODcsMCwwLDAtOS41OS0yLjhBMTEuMjksMTEuMjksMCwwLDAsOS43NiwyMC41N2MwLDcuNCw1LjM0LDExLjQ5LDExLjU2LDExLjQ5QTE4LjExLDE4LjExLDAsMCwwLDMxLDI5LjE5TDM1LDM3YTIzLjQ4LDIzLjQ4LDAsMCwxLTEzLjQyLDRDOC45Miw0MSwwLDMzLjA2LDAsMjAuNTciLz48cGF0aCBjbGFzcz0iY2xzLTMiIGQ9Ik0xMDguNDksMTEuNjdoLTEuMTZjLTguMTUsMC0xMi40OSwzLjE4LTEyLjQ5LDEyLjUzdjE2SDg1LjVWMWg5LjI1djkuNzdoLjE3Qzk2Ljc5LDQuODYsMTAxLjM5LDEsMTA4LDFoLjQ4WiIvPjxwYXRoIGNsYXNzPSJjbHMtMyIgZD0iTTExMy4zMywyNC4yNlYxaDkuNTFWMjMuNDJjMCw1LjczLDMuNDUsOC43OSw4LjI0LDguNzksNS41OCwwLDguODQtMy40NSw4Ljg0LTEzVjFoOS4zOFY0MC4yaC05LjM4di02aC0uMTdjLTIsMy45MS01LjY5LDYuNzUtMTIuMDYsNi43NS03LjczLDAtMTQuMzYtNC42Ny0xNC4zNi0xNi43NCIvPjwvZz48L2c+PC9nPjwvc3ZnPg=="
-             alt="talentlab">
-
-    </div>
-</nav>
-<div class="section no-pad-bot" id="index-banner">
-    <div class="container">
-        <br><br>
-        {% block content %}
-        {% endblock %}
-    </div>
-</div>
-<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+{% block body %}
+{% endblock %}
 </body>
 </html>
