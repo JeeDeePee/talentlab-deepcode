@@ -59,9 +59,9 @@ class ContainerNode(DjangoObjectType):
             return self.icon.hero_image.url
 
     def resolve_units(self, *args, **kwargs):
-        # What an ugly hack to avoid error 'Cannot combine queries on two different base models.'
+        # Hack to avoid error 'Cannot combine queries on two different base models.'
         # otherweise return self.get_children().specific().live() would be the thing
-        return Unit.objects.filter(id__in=[c.id for c in self.get_children()]).live()
+        return Unit.objects.filter(id__in=self.get_children().values_list('id', flat=True)).live()
 
 
 class CategoryNode(DjangoObjectType):
@@ -89,9 +89,9 @@ class CategoryNode(DjangoObjectType):
             return self.icon.file.url
 
     def resolve_container(self, *args, **kwargs):
-        # What an ugly hack to avoid the 'Cannot combine queries on two different base models.' error
+        # Hack to avoid the 'Cannot combine queries on two different base models.' error
         # otherweise return self.get_children().specific().live() would be the right thing
-        return Container.objects.filter(id__in=[c.id for c in self.get_children()]).live()
+        return Container.objects.filter(id__in=self.get_children().values_list('id', flat=True)).live()
 
 
 class ContainerQuery(object):
