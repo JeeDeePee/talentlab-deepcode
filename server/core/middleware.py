@@ -72,5 +72,5 @@ class CommonRedirectMiddleware(MiddlewareMixin):
             if m:
                 return 'https://picsum.photos/{}'.format(m.group('dimensions').replace('x', '/'))
                 # or dummy image: return 'http://via.placeholder.com/{}'.format(m.group('dimensions'))
-            if '.png' in path or '.jpg' in path or '.svg' in path:
+            if '.png' in path or '.jpg' in path or '.svg' in path or 'not-found' in path:
                 return 'https://picsum.photos/400/400'

@@ -88,7 +88,7 @@ class CategoryNode(DjangoObjectType):
         if self.icon:
             return self.icon.file.url
 
-    def resolve_container(self, *args, **kwargs):
+    def resolve_containers(self, *args, **kwargs):
         # Hack to avoid the 'Cannot combine queries on two different base models.' error
         # otherweise return self.get_children().specific().live() would be the right thing
         return Container.objects.filter(id__in=self.get_children().values_list('id', flat=True)).live()

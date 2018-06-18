@@ -10,8 +10,8 @@ name = "pypi"
 awscli = "*"
 django-cors-headers = "*"
 ipdb = "*"
-wagtail-factories = "*"
 factory-boy = "*"
+wagtail_factories = {git = "https://github.com/mvantellingen/wagtail-factories.git", ref = "master"}
 
 
 [packages]

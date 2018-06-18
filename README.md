@@ -20,6 +20,7 @@ Sources
 * Migrate databases: `pipenv run python manage.py migrate`
 * Create super user: `pipenv run python manage.py createsuperuser`
 * Run: `pipenv run python manage.py runserver`
+* Dummy data: `pipenv run python manage.py dummy_data` (restart the development server afterwards)
 
 
 #### Notes

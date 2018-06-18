@@ -1,13 +1,25 @@
 from django.db import models
+from wagtail.core import blocks
 from wagtail.core.blocks.field_block import URLBlock, CharBlock
-from wagtail.core.blocks.struct_block import StructBlock
 from wagtail.core.models import Page
 from wagtail.core.fields import StreamField, RichTextField
 from wagtail.admin.edit_handlers import FieldPanel, StreamFieldPanel, MultiFieldPanel, FieldRowPanel, TabbedInterface, \
     ObjectList
 from wagtail.images.edit_handlers import ImageChooserPanel
 
-from containers.blocks import RichTextBlock, ImageBlock, DocumentBlock
+from containers.blocks import DocumentBlock
+
+DEFAULT_RICH_TEXT_FEATURES = ['bold', 'italic', 'ol', 'ul']
+
+
+class LinkBlock(blocks.StructBlock):
+    description = CharBlock()
+    url = URLBlock()
+
+
+class DocumentBlock(blocks.StructBlock):
+    description = CharBlock()
+    url = DocumentBlock()
 
 
 class Category(Page):
@@ -33,10 +45,10 @@ class Category(Page):
         ObjectList(settings_panels, heading='Settings'),
     ])
 
+    template = 'generic_page.html'
+
 
 class Container(Page):
-    # category = models.ForeignKey('containers.Category', on_delete=models.CASCADE, related_name='+')
-
     skill = models.CharField(
         max_length=255,
         help_text='e.g. \'Leadership\''
@@ -49,7 +61,7 @@ class Container(Page):
         related_name='+'
     )
     teaser = models.TextField()
-    description = RichTextField()
+    description = RichTextField(features=DEFAULT_RICH_TEXT_FEATURES)
 
     video_id = models.PositiveIntegerField(
         null=True,
@@ -62,28 +74,16 @@ class Container(Page):
     )
 
     resources = StreamField([
-        ('link', StructBlock([
-            ('description', CharBlock()),
-            ('url', URLBlock())
-        ], icon='link')),
-        ('document', StructBlock([
-            ('description', CharBlock()),
-            ('file', DocumentBlock()),
-        ], icon='doc-empty'))
+        ('link', LinkBlock(icon='link')),
+        ('document', DocumentBlock(icon='doc-empty'))
     ],
         null=True,
         blank=True
     )
 
     tools = StreamField([
-        ('link', StructBlock([
-            ('description', CharBlock()),
-            ('url', URLBlock())
-        ], icon='link')),
-        ('document', StructBlock([
-            ('description', CharBlock()),
-            ('file', DocumentBlock())
-        ], icon='doc-empty'))
+        ('link', LinkBlock(icon='link')),
+        ('document', DocumentBlock(icon='doc-empty'))
     ],
         null=True,
         blank=True
@@ -117,17 +117,17 @@ class Container(Page):
         ObjectList(settings_panels, heading='Settings'),
     ])
 
+    template = 'generic_page.html'
+
 
 class Unit(Page):
-    # container = models.ForeignKey('containers.Container', on_delete=models.CASCADE, related_name='+')
-
     teaser = models.TextField()
     type = models.CharField(
         max_length=100,
         choices=(
-            ('Webinar', 'Webinar'),
-            ('Kurs', 'Kurs'),
-            ('Coaching', 'Coaching')
+            ('webinar', 'Webinar'),
+            ('kurs', 'Kurs'),
+            ('coaching', 'Coaching')
         )
     )
     count = models.CharField(
@@ -160,3 +160,5 @@ class Unit(Page):
         ObjectList(content_panels, heading='Content'),
         ObjectList(settings_panels, heading='Settings'),
     ])
+
+    template = 'generic_page.html'

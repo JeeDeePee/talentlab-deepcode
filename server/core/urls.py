@@ -12,21 +12,24 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
-                  url(r'^guru/', admin.site.urls),
+    url(r'^guru/', admin.site.urls),
 
-                  url(r'^cms/', include(wagtailadmin_urls)),
-                  url(r'^search/', include(wagtailsearch_urls)),
-                  url(r'^documents/', include(wagtaildocs_urls)),
+    url(r'^cms/', include(wagtailadmin_urls)),
+    url(r'^search/', include(wagtailsearch_urls)),
+    url(r'^documents/', include(wagtaildocs_urls)),
 
-                  url(r'^api/', include('api.urls', namespace="api")),
-              ] + static(
-    settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) + static(settings.STATIC_URL,
-                                                                    document_root=settings.STATIC_ROOT)
+    url(r'^api/', include('api.urls', namespace="api")),
+]
 
-urlpatterns += [re_path(r'^.*$', views.home, name='home')]
+if settings.DEBUG:
+    urlpatterns += static(
+        settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) + static(settings.STATIC_URL,
+                                                                        document_root=settings.STATIC_ROOT)
 
 # actually we use the cms in headless mode but need the url pattern to get the wagtail_serve function
-urlpatterns += [url(r'cms-pages/', include(wagtail_urls)), ]
+urlpatterns += [url(r'pages/', include(wagtail_urls)), ]
+
+urlpatterns += [re_path(r'^.*$', views.home, name='home')]
 
 admin.site.site_header = 'Talentlab Admin'
 

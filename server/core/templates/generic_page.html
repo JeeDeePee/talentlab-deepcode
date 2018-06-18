@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% load core_tags %}
+
+{% block title %}{{ page.title }}{% endblock %}
+
+{% block body %}
+    <h1>{{ page|class_name }}: {{ page.title }}</h1>
+
+    {% if page.get_ancestors.count > 1  %}
+        <h2>Ancestors</h2>
+        <ol>
+            {% for a in page.get_ancestors%}
+                {% if a.is_root == False %}
+                    <li>
+                        <a href="{{ a.url }}">
+                            {{ a.specific|class_name }}: {{ a.title }}
+                        </a>
+                    </li>
+                {% endif %}
+            {% endfor %}
+        </ol>
+    {% endif %}
+
+    <h2>Attributes</h2>
+    <pre>{{ page|json_dumps }}</pre>
+
+    {% if page.get_descendants.count %}
+        <h2>Descendants</h2>
+        <ul>
+            {% for a in page.get_children %}
+                <li>
+                    <a href="{{ a.url }}">
+                        {{ a.specific|class_name }}: {{ a.title }}
+                    </a>
+                </li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+
+
+{% endblock %}
