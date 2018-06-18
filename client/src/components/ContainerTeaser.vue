@@ -4,9 +4,9 @@
       <div>
         <h2 class="headline mb-1">{{container.title}}</h2>
 
-        <!-- <router-link :to="{name: 'Category', params: {id: category['.key']}}">
-          {{ category.name }}
-        </router-link> -->
+        <router-link :to="{name: 'container', params: {id: container.id}}">
+          {{ container.title }}
+        </router-link>
 
         <!-- <div class="mt-2" v-for="(item, index) in container.units.edges" v-bind:key="index">
           {{item.node.type}}: {{item.node.title}}

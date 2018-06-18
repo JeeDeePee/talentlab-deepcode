@@ -48,7 +48,7 @@
               _categories.push(category.node)
             })
             this.categories = _categories
-            debugger
+            // debugger
           }
         }
       }
