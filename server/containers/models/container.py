@@ -11,32 +11,6 @@ from wagtail.images.edit_handlers import ImageChooserPanel
 from containers.blocks import LinkBlock, DocumentBlock, DEFAULT_RICH_TEXT_FEATURES
 
 
-class Category(Page):
-    icon = models.ForeignKey(
-        'wagtailimages.Image',
-        null=True,
-        blank=True,
-        on_delete=models.SET_NULL,
-        related_name='+'
-    )
-
-    subpage_types = ['containers.Container']
-
-    content_panels = [
-        FieldPanel('title', classname="full title"),
-        ImageChooserPanel('icon')
-    ]
-    settings_panels = [
-        FieldPanel('slug')
-    ]
-    edit_handler = TabbedInterface([
-        ObjectList(content_panels, heading='Content'),
-        ObjectList(settings_panels, heading='Settings'),
-    ])
-
-    template = 'generic_page.html'
-
-
 class Container(Page):
     hero_image = models.ForeignKey(
         'wagtailimages.Image',
@@ -130,47 +104,3 @@ def pre_save_container(sender, instance, **kwargs):
 
     instance.tools_normalized = nomralize_data(instance.tools)
     instance.resources_normalized = nomralize_data(instance.resources)
-
-
-class Unit(Page):
-    teaser = models.TextField()
-    type = models.CharField(
-        max_length=100,
-        choices=(
-            ('webinar', 'Webinar'),
-            ('kurs', 'Kurs'),
-            ('coaching', 'Coaching')
-        )
-    )
-    count = models.CharField(
-        max_length=255,
-        help_text='e.g. \'3 Veranstaltungen\''
-    )
-    duration = models.CharField(
-        max_length=255,
-        help_text='e.g. \'je 2 Tage\''
-    )
-
-    parent_page_types = ['containers.Container']
-    subpage_types = []
-
-    content_panels = [
-        FieldPanel('title', classname="full title"),
-        FieldPanel('teaser'),
-        FieldPanel('type'),
-        MultiFieldPanel([
-            FieldRowPanel([
-                FieldPanel('count'),
-                FieldPanel('duration'),
-            ], classname="label-above"),
-        ], 'Kadenz')
-    ]
-    settings_panels = [
-        FieldPanel('slug')
-    ]
-    edit_handler = TabbedInterface([
-        ObjectList(content_panels, heading='Content'),
-        ObjectList(settings_panels, heading='Settings'),
-    ])
-
-    template = 'generic_page.html'
