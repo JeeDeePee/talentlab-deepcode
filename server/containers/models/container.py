@@ -6,7 +6,9 @@ from wagtail.core.models import Page
 from wagtail.core.fields import StreamField, RichTextField
 from wagtail.admin.edit_handlers import FieldPanel, StreamFieldPanel, MultiFieldPanel, FieldRowPanel, TabbedInterface, \
     ObjectList
+from wagtail.documents.models import Document
 from wagtail.images.edit_handlers import ImageChooserPanel
+from wagtail.images.models import Image
 
 from containers.blocks import LinkBlock, DocumentBlock, DEFAULT_RICH_TEXT_FEATURES
 
@@ -90,14 +92,24 @@ def pre_save_container(sender, instance, **kwargs):
     def nomralize_data(field):
         data = []
         for d in field.stream_data:
-            value = dict(d[1])
-            if 'document' in value:
-                value['document'] = value['document'].file.url
-            if 'image' in value:
-                value['image'] = value['image'].file.url
+
+            if isinstance(d, dict):
+                _type = d['type']
+                value = dict(d['value'])
+                if 'document' in value:
+                    value['document'] = Document.objects.get(id=value['document']).file.url
+                if 'image' in value:
+                    value['image'] = Image.objects.get(id=value['image']).file.url
+            else:
+                _type = d[0]
+                value = dict(d[1])
+                if 'document' in value:
+                    value['document'] = value['document'].file.url
+                if 'image' in value:
+                    value['image'] = value['image'].file.url
 
             data.append({
-                'type': d[0],
+                'type': _type,
                 'value': value
             })
         return data
