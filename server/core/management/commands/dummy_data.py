@@ -12,6 +12,64 @@ from wagtail.images.models import Image
 import shutil
 from containers.factories import CategoryFactory, ContainerFactory, UnitFactory
 
+data = [
+    {
+        'title': 'Mastering Complexity', 'containers': [
+        {
+            'title': 'Partnering for Success',
+            'skill': 'Vernetztes Denken',
+            'teaser': 'Erfolgreiche Führung von Partnerschaften',
+            'description': 'Im Zuge der digitalen Disruption brechen angestammte Wertschöpfungslogiken auf.  Dabei gewinnt die Zusammenarbeit mit  externen Partnern bei der Leistungserstellung  an Bedeutung. In diesem Lernmodul werden die Grundlagen zur erfolgreichen Führung von Partnerschaften vermittelt.',
+            'video_description': '<b>Tim Kellenberger</b>Unser Fach-Experte erklärt, warum die professionelle Führung von Partnerschaften heute von entscheidender Bedeutung ist.',
+            'units': [
+                {
+                    'title': 'Partnering Modelle',
+                    'teaser': 'Unternehmensübergreifende Zusammenarbeit kann entlang von …',
+                    'type': 'webinar',
+                    'count': '8 Lektionen',
+                    'duration': '4 Stunden'
+                },
+                {
+                    'title': 'Supply Chain Design',
+                    'teaser': 'Wertschöpfungsketten unternehmensübergreifend gestalten und … ',
+                    'type': 'webinar',
+                    'count': '5 Lektionen',
+                    'duration': '3 Stunden'
+                },
+                {
+                    'title': 'Erfolgreich verhandeln',
+                    'teaser': 'Partnerschaften basieren auf guten Verträgen, welche die Rollen … ',
+                    'type': 'webinar',
+                    'count': '1 Veranstaltung',
+                    'duration': '1 Tag'
+                },
+            ]
+
+        },
+        {
+            'title': 'Effizient kommunizieren',
+            'skill': 'Verhandlungsfähigkeit / Kooperationsfähigkeit',
+            'teaser': 'Gezieltes Training für Führungsalltag und Verhandlung',
+        },
+    ]},
+    {
+        'title': 'Growing as a Leader', 'containers': [
+        {
+            'title': 'Leading through Disruption',
+            'skill': 'Leadership',
+            'teaser': 'Gezieltes Training für erfahrene Führungskräfte',
+        },
+        {
+            'title': 'First-time Leader',
+            'skill': 'Leadership',
+            'teaser': 'Grundlagen und Basis-Training für junge Führungskräfte',
+        },
+    ]},
+    {
+        'title': 'Mastering Relations'
+    }
+]
+
 
 class Command(BaseCommand):
 
@@ -35,11 +93,18 @@ class Command(BaseCommand):
 
             site = wagtail_factories.SiteFactory.create(is_default_site=True)
 
-            for i in range(0, 3):
-                category = CategoryFactory.create(parent=site.root_page)
+            for category_data in data:
+                category = CategoryFactory.create(parent=site.root_page, title=category_data['title'])
+
+                containers_data = category_data.get('containers', [])
 
                 for i in range(0, random.randint(5, 11)):
-                    container = ContainerFactory.create(parent=category)
+
+                    container_data = containers_data[i] if len(containers_data) > i else {}
+                    container = ContainerFactory.create(parent=category,
+                                                        **{k: v for (k, v) in container_data.items() if k != 'units'})
+                    units_data = container_data.get('units', [])
 
                     for i in range(0, random.randint(4, 7)):
-                        UnitFactory.create(parent=container)
+                        unit_data = units_data[i] if len(units_data) > i else {}
+                        UnitFactory.create(parent=container, **unit_data)

@@ -33,7 +33,8 @@ class Container(Page):
         blank=True,
         help_text='Vimeo video id (https://vimeo.com/<this-id>)'
     )
-    video_description = models.TextField(
+    video_description = RichTextField(
+        features=DEFAULT_RICH_TEXT_FEATURES,
         null=True,
         blank=True
     )
