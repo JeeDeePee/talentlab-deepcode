@@ -4,8 +4,6 @@ import os
 import wagtail_factories
 from django.conf import settings
 from django.core.management import BaseCommand
-from django.db.models.signals import pre_init, pre_save, post_save, pre_delete, post_delete, post_init
-from factory.django import mute_signals
 from wagtail.core.models import Page
 from wagtail.documents.models import Document
 from wagtail.images.models import Image
@@ -82,29 +80,28 @@ class Command(BaseCommand):
 
     def handle(self, *args, **options):
 
-        with mute_signals(pre_delete, post_delete):
-            Page.objects.all().delete()
-            Image.objects.all().delete()
-            Document.objects.all().delete()
+        Page.objects.all().delete()
+        Image.objects.all().delete()
+        Document.objects.all().delete()
 
-            self.ensure_clean_dir('images')
-            self.ensure_clean_dir('original_images')
-            self.ensure_clean_dir('documents')
+        self.ensure_clean_dir('images')
+        self.ensure_clean_dir('original_images')
+        self.ensure_clean_dir('documents')
 
-            site = wagtail_factories.SiteFactory.create(is_default_site=True)
+        site = wagtail_factories.SiteFactory.create(is_default_site=True)
 
-            for category_data in data:
-                category = CategoryFactory.create(parent=site.root_page, title=category_data['title'])
+        for category_data in data:
+            category = CategoryFactory.create(parent=site.root_page, title=category_data['title'])
 
-                containers_data = category_data.get('containers', [])
+            containers_data = category_data.get('containers', [])
 
-                for i in range(0, random.randint(5, 11)):
+            for i in range(0, random.randint(5, 11)):
 
-                    container_data = containers_data[i] if len(containers_data) > i else {}
-                    container = ContainerFactory.create(parent=category,
-                                                        **{k: v for (k, v) in container_data.items() if k != 'units'})
-                    units_data = container_data.get('units', [])
+                container_data = containers_data[i] if len(containers_data) > i else {}
+                container = ContainerFactory.create(parent=category,
+                                                    **{k: v for (k, v) in container_data.items() if k != 'units'})
+                units_data = container_data.get('units', [])
 
-                    for i in range(0, random.randint(4, 7)):
-                        unit_data = units_data[i] if len(units_data) > i else {}
-                        UnitFactory.create(parent=container, **unit_data)
+                for i in range(0, random.randint(4, 7)):
+                    unit_data = units_data[i] if len(units_data) > i else {}
+                    UnitFactory.create(parent=container, **unit_data)
