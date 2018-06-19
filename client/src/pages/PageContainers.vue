@@ -42,7 +42,6 @@
             let _containers = []
             // let self = this
             edges.forEach(function (container) {
-              console.log(container)
               // let node = self.$lodash.clone(item.node)
               // node.content = JSON.parse(node.content)
               _containers.push(container.node)
