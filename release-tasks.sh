@@ -5,6 +5,9 @@
 # Run migration
 python server/manage.py migrate --no-input
 
+# create dummy data
+python server/manage.py dummy_data
+
 # clear cache
 python server/manage.py clear_cache
 
