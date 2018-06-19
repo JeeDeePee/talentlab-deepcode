@@ -3,8 +3,9 @@
     <v-card-title primary-title>
       <div>
         <h2 class="headline mb-1">{{container.title}}</h2>
+        <div>{{container.slug}}</div>
 
-        <router-link :to="{name: 'container', params: {id: container.id}}">
+        <router-link :to="{name: 'container', params: {id: container.slug}}">
           {{ container.title }}
         </router-link>
 
@@ -34,5 +35,4 @@
 </script>
 
 <style scoped>
-
 </style>

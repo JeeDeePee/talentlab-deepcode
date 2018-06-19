@@ -9,7 +9,7 @@ import NotFound from '@/pages/PageNotFound'
 const routerOptions = [
   { path: '/', name: 'categories', component: Categories },
   { path: '/containers', name: 'containers', component: Containers },
-  { path: '/container', name: 'container', component: Container },
+  { path: '/container/:id', name: 'container', component: Container, props: true },
   { path: '/about', name: 'about', component: About },
   { path: '*', component: NotFound }
 ]
