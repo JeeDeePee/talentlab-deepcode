@@ -37,7 +37,7 @@ data = [
                 {
                     'title': 'Erfolgreich verhandeln',
                     'teaser': 'Partnerschaften basieren auf guten Verträgen, welche die Rollen … ',
-                    'type': 'webinar',
+                    'type': 'kurs',
                     'count': '1 Veranstaltung',
                     'duration': '1 Tag'
                 },
