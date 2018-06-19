@@ -46,17 +46,17 @@ class ContainerNode(DjangoObjectType):
         interfaces = (relay.Node,)
 
     def resolve_tools(self, *args, **kwargs):
-        return self.tools.stream_data
+        return self.tools_normalized
 
     def resolve_resources(self, *args, **kwargs):
-        return self.resources.stream_data
+        return self.resources_normalized
 
     def resolve_pk(self, *args, **kwargs):
         return self.id
 
     def resolve_hero_image(self, *args, **kwargs):
         if self.hero_image:
-            return self.icon.hero_image.url
+            return self.hero_image.file.url
 
     def resolve_units(self, *args, **kwargs):
         # Hack to avoid error 'Cannot combine queries on two different base models.'

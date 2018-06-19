@@ -32,5 +32,3 @@ urlpatterns += [url(r'pages/', include(wagtail_urls)), ]
 urlpatterns += [re_path(r'^.*$', views.home, name='home')]
 
 admin.site.site_header = 'Talentlab Admin'
-
-# /media/

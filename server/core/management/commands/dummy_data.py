@@ -24,13 +24,14 @@ class Command(BaseCommand):
 
     def handle(self, *args, **options):
 
-        with mute_signals(pre_init, post_init, pre_save, post_save, pre_delete, post_delete):
+        with mute_signals(pre_delete, post_delete):
             Page.objects.all().delete()
             Image.objects.all().delete()
             Document.objects.all().delete()
 
             self.ensure_clean_dir('images')
             self.ensure_clean_dir('original_images')
+            self.ensure_clean_dir('documents')
 
             site = wagtail_factories.SiteFactory.create(is_default_site=True)
 
