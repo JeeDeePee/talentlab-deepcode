@@ -4,6 +4,10 @@
 {% block extra_css %}
     <style>
 
+        body {
+            color: #3F3F3F;
+        }
+
         .logo {
             text-align: left;
             font-size: 20px;
@@ -37,6 +41,10 @@
             color: #6f2801;
         }
 
+        .nav-main .menu-active > a {
+            border-left-color: #FD6E22;
+        }
+
         .tab-nav a {
             background-color: #FD6E22;
             border-top: .3em solid #c54602;
@@ -59,7 +67,7 @@
         }
 
         .breadcrumb li a:after, .breadcrumb li span:after {
-            color: #FD6E22;
+            color: #c54602;
         }
 
         .dropdown .dropdown-toggle {
@@ -91,13 +99,24 @@
             border: 1px solid #FD6E22;
         }
 
+        .button {
+            border-radius: 2px !important;
+        }
+
         .button:hover, header .button:hover {
             background-color: #c54602;
         }
 
-        .button-secondary {
-            color: #FD6E22;
+        .button-secondary, .listing .button-secondary, .t-default .u-btn-current {
+            border-color: #FD6E22;
             background-color: transparent;
+            color: #3F3F3F;
+        }
+
+        .button-secondary:hover, .t-default .u-btn-current:hover, .listing .button-secondary:hover {
+            background: #FD6E22;
+            border-color: #FD6E22;
+            color: #fff;
         }
 
         .t-inverted .u-btn-current:hover {
@@ -109,22 +128,8 @@
             background-color: #c54602;
         }
 
-        .listing .button-secondary:hover {
-            border-color: #FD6E22;
-            background-color: #FD6E22;
-        }
-
         .listing.chooser tbody tr:hover {
             background-color: #FD6E22;
-        }
-
-        .t-default .u-btn-current {
-            color: #FD6E22;
-        }
-
-        .t-default .u-btn-current:hover {
-            background: #FD6E22;
-            border-color: #FD6E22;
         }
 
         .page-explorer .listing .index .button.bicolor {
@@ -132,12 +137,40 @@
         }
 
         .page-explorer .listing .index .button {
-            border-color: rgba(0, 0, 0, .25);;
+            border-color: #c54602;
         }
 
         .teal, .icon.teal {
             color: #FD6E22;
         }
+
+        .object > h2 {
+            background: #EDF7FA !important;
+        }
+
+        li.sequence-member:hover {
+            background: #EDF7FA !important;
+            border-color: #B6CCD4 !important;
+        }
+
+        .sequence-controls {
+            background-color: #EDF7FA !important;
+            border-color: #B6CCD4 !important;
+        }
+
+        .sequence-controls h3 label {
+            color: rgba(0, 0, 0, .55) !important;
+        }
+
+        .object > h2 label:before, .object > h2:before {
+            background-color: #B6CCD4 !important;
+        }
+
+        .halloeditor:focus, .tagit:focus, input:focus, select:focus, textarea:focus {
+            background-color: #EBF6EA;
+            border-color: #C6D9C4;
+        }
+
 
     </style>
 {% endblock %}
