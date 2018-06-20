@@ -8,6 +8,7 @@ import apolloClient from './graphql/client'
 import axios from 'axios'
 import VueAxios from 'vue-axios'
 import lodash from 'lodash'
+import VueVimeoPlayer from 'vue-vimeo-player'
 
 Vue.config.productionTip = false
 
@@ -20,6 +21,7 @@ const apolloProvider = new VueApollo({
 Vue.use(VueApollo)
 Vue.use(VueAxios, axios)
 Vue.use(Vuetify)
+Vue.use(VueVimeoPlayer)
 
 /* eslint-disable no-new */
 new Vue({

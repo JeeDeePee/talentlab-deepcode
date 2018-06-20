@@ -5,7 +5,10 @@
 
     <v-layout row wrap>
       <v-flex xs12 sm6 md6 lg6 xl6>
-        <div v-html="container.description"></div>
+        <div v-html="container.description" class="mb-2"></div>
+        <vimeo-player :video-id='container.videoId' :player-height="'100px'"></vimeo-player>
+        <div v-html="container.videoDescription"></div>
+
       </v-flex>
       <v-flex xs12 sm6 md6 lg6 xl6>
         <img v-bind:src="container.heroImage"/>
