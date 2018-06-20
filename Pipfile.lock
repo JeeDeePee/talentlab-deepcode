@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "362406b8a8d9aed2f305c41a6f7c643b63ed1b5b399cc9b74c11edca77128601"
+            "sha256": "6e5384197e8701306ccf79ea37958ed0a8f5708c46e5bf64dba60a4b1382b7f4"
         },
         "pipfile-spec": 6,
         "requires": {},
@@ -151,6 +151,21 @@
                 "sha256:d2ceeef98185ba02355496851aee17d25951f5d8c72c12f8af6c186e312e9598"
             ],
             "version": "==2.1.2"
+        },
+        "factory-boy": {
+            "hashes": [
+                "sha256:6f25cc4761ac109efd503f096e2ad99421b1159f01a29dbb917359dcd68e08ca",
+                "sha256:d552cb872b310ae78bd7429bf318e42e1e903b1a109e899a523293dfa762ea4f"
+            ],
+            "index": "pypi",
+            "version": "==2.11.1"
+        },
+        "faker": {
+            "hashes": [
+                "sha256:04645d946256b835c675c1cef7c03817a164b0c4e452018fd50b212ddff08c22",
+                "sha256:fe48f35aa3443bc5655b0782d3a2f594bf4882d0e2a947b80207a60494d32907"
+            ],
+            "version": "==0.8.16"
         },
         "graphene": {
             "hashes": [
@@ -380,6 +395,13 @@
             ],
             "version": "==1.11.0"
         },
+        "text-unidecode": {
+            "hashes": [
+                "sha256:5a1375bb2ba7968740508ae38d92e1f889a0832913cb1c447d5e2046061a396d",
+                "sha256:801e38bd550b943563660a91de8d4b6fa5df60a542be9093f7abf819f86050cc"
+            ],
+            "version": "==1.2"
+        },
         "typing": {
             "hashes": [
                 "sha256:3a887b021a77b292e151afb75323dea88a7bc1b3dfa92176cff8e44c8b68bddf",
@@ -409,6 +431,10 @@
             ],
             "index": "pypi",
             "version": "==2.1"
+        },
+        "wagtail-factories": {
+            "git": "https://github.com/mvantellingen/wagtail-factories.git",
+            "ref": "master"
         },
         "webencodings": {
             "hashes": [
@@ -478,14 +504,6 @@
             ],
             "version": "==4.3.0"
         },
-        "django-cors-headers": {
-            "hashes": [
-                "sha256:0e9532628b3aa8806442d4d0b15e56112e6cfbef3735e13401935c98b842a2b4",
-                "sha256:c7ec4816ec49416517b84f317499d1519db62125471922ab78d670474ed9b987"
-            ],
-            "index": "pypi",
-            "version": "==2.2.0"
-        },
         "docutils": {
             "hashes": [
                 "sha256:02aec4bd92ab067f6ff27a38a38a41173bf01bed8f89157768c1573f53e474a6",
@@ -493,21 +511,6 @@
                 "sha256:7a4bd47eaf6596e1295ecb11361139febe29b084a87bf005bf899f9a42edc3c6"
             ],
             "version": "==0.14"
-        },
-        "factory-boy": {
-            "hashes": [
-                "sha256:6f25cc4761ac109efd503f096e2ad99421b1159f01a29dbb917359dcd68e08ca",
-                "sha256:d552cb872b310ae78bd7429bf318e42e1e903b1a109e899a523293dfa762ea4f"
-            ],
-            "index": "pypi",
-            "version": "==2.11.1"
-        },
-        "faker": {
-            "hashes": [
-                "sha256:04645d946256b835c675c1cef7c03817a164b0c4e452018fd50b212ddff08c22",
-                "sha256:fe48f35aa3443bc5655b0782d3a2f594bf4882d0e2a947b80207a60494d32907"
-            ],
-            "version": "==0.8.16"
         },
         "ipdb": {
             "hashes": [
@@ -659,23 +662,12 @@
             ],
             "version": "==1.11.0"
         },
-        "text-unidecode": {
-            "hashes": [
-                "sha256:5a1375bb2ba7968740508ae38d92e1f889a0832913cb1c447d5e2046061a396d",
-                "sha256:801e38bd550b943563660a91de8d4b6fa5df60a542be9093f7abf819f86050cc"
-            ],
-            "version": "==1.2"
-        },
         "traitlets": {
             "hashes": [
                 "sha256:9c4bd2d267b7153df9152698efb1050a5d84982d3384a37b2c1f7723ba3e7835",
                 "sha256:c6cb5e6f57c5a9bdaa40fa71ce7b4af30298fbab9ece9815b5d995ab6217c7d9"
             ],
             "version": "==4.3.2"
-        },
-        "wagtail-factories": {
-            "git": "https://github.com/mvantellingen/wagtail-factories.git",
-            "ref": "master"
         },
         "wcwidth": {
             "hashes": [
