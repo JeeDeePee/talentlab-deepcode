@@ -4,16 +4,21 @@ query CategoriesQuery {
       node {
         title
         slug
-        containers {
-          edges {
-            node {
-              id
-              title
-              slug
-            }
-          }
-        }
       }
     }
   }
+
+  containers {
+    edges {
+      node {
+        id
+        title
+        slug
+        heroImage
+        skill
+        teaser
+      }
+    }
+  }
+
 }

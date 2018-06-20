@@ -1,15 +1,25 @@
-query ContainerQuery {
-  containers(slug: "accusamus-quam-eos-enim") {
+query ContainerQuery($slug: String!) {
+  containers(slug: $slug) {
     edges {
       node {
         title
         slug
+        tools
+        resources
+        description
+        heroImage
+        videoId
+        skill
+        videoDescription
+        category
         units {
           edges {
             node {
               title
               teaser
               type
+              count
+              duration
             }
           }
         }

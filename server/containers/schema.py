@@ -32,6 +32,8 @@ class ContainerNode(DjangoObjectType):
     resources = graphene.JSONString()
     units = DjangoFilterConnectionField(UnitNode)
     hero_image = graphene.String()
+    # hack to acoid circular dependency
+    category = graphene.JSONString()
 
     class Meta:
         model = Container
@@ -62,6 +64,10 @@ class ContainerNode(DjangoObjectType):
         # Hack to avoid error 'Cannot combine queries on two different base models.'
         # otherweise return self.get_children().specific().live() would be the thing
         return Unit.objects.filter(id__in=self.get_children().values_list('id', flat=True)).live()
+
+    def resolve_category(self, *args, **kwargs):
+        p = self.get_parent()
+        return {'title': p.title, 'slug': p.slug}
 
 
 class CategoryNode(DjangoObjectType):

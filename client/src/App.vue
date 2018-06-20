@@ -1,16 +1,18 @@
 <template>
-  <v-app dark>
+  <v-app>
     <div>
       <v-tabs v-model="active" dark slider-color="yellow">
-        <v-tab ripple :to="{ name: 'categories'}" exact router>
-          Categories
-        </v-tab>
-        <v-tab ripple :to="{ name: 'containers'}" exact router>
-          Containers
-        </v-tab>
-        <v-tab ripple :to="{ name: 'about'}" exact router>
-          About
-        </v-tab>
+        <v-container grid-list-md>
+          <v-tab ripple :to="{ name: 'development'}" exact router>
+            Mein Entwicklung
+          </v-tab>
+          <v-tab ripple :to="{ name: 'categories'}" exact router>
+            Lernmodule
+          </v-tab>
+          <v-tab ripple :to="{ name: 'dashboard'}" exact router>
+            Dashboard
+          </v-tab>
+        </v-container>
       </v-tabs>
       <v-content class="pa-3">
         <v-slide-x-transition mode="out-in">
@@ -32,13 +34,13 @@
   }
 </script>
 
-<style>
-  #app {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    color: #2c3e50;
+<style lang="scss">
+  @import "styles/var";
+
+  body {
+    font-family: $font-family;
   }
+
   ul {
     margin-left: 16px;
   }

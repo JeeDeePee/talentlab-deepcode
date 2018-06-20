@@ -1,30 +1,24 @@
 <template>
-  <div>
-    <v-card-title primary-title>
-      <div>
-        <h2 class="headline mb-1">{{container.title}}</h2>
-        <div>{{container.slug}}</div>
+  <router-link :to="{name: 'container', params: {slug: container.slug}}">
+    <v-card>
+      <v-card-title primary-title>
+        <div>
+          <span class="grey--text">{{container.skill}}</span><br>
+          <h2>{{container.title}}</h2>
+        </div>
+      </v-card-title>
 
-        <router-link :to="{name: 'container', params: {id: container.slug}}">
-          {{ container.title }}
-        </router-link>
-
-        <!-- <div class="mt-2" v-for="(item, index) in container.units.edges" v-bind:key="index">
-          {{item.node.type}}: {{item.node.title}}
-          {{item.node.teaser}}
-        </div> -->
-      </div>
-    </v-card-title>
-  </div>
+      <v-card-text>
+        {{container.teaser}}
+      </v-card-text>
+      <v-card-media v-bind:src="container.heroImage" height="200px"></v-card-media>
+    </v-card>
+  </router-link>
 </template>
 
 <script>
-  // import store from '@/store/core'
-  // import CONTAINERS_QUERY from '@/graphql/gql/containers'
-
   export default {
     name: 'container-teaser',
-
     props: {
       container: {
         required: true,
@@ -35,4 +29,7 @@
 </script>
 
 <style scoped>
+  a {
+    text-decoration: none;
+  }
 </style>
