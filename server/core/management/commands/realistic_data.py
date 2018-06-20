@@ -37,10 +37,13 @@ class Command(BaseCommand):
             site = wagtail_factories.SiteFactory.create(is_default_site=True)
 
             for i in range(0, 3):
-                category = CategoryFactory.create(parent=site.root_page)
 
-                for i in range(0, random.randint(5, 11)):
-                    container = ContainerFactory.create(parent=category)
+                CategoryFactory.create(parent=site.root_page)
 
-                    for i in range(0, random.randint(4, 7)):
-                        UnitFactory.create(parent=container)
+                # category = CategoryFactory.create(parent=site.root_page)
+                #
+                # for i in range(0, random.randint(5, 11)):
+                #     container = ContainerFactory.create(parent=category)
+                #
+                #     for i in range(0, random.randint(4, 7)):
+                #         UnitFactory.create(parent=container)
