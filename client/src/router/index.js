@@ -20,6 +20,7 @@ const routes = routerOptions.map(route => {
     // component: () => import(`@/components/${route.component}.vue`)
   }
 })
+
 Vue.use(Router)
 export default new Router({
   routes,

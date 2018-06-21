@@ -66,8 +66,8 @@ class ContainerFactory(BasePageFactory):
 
 class UnitFactory(BasePageFactory):
     teaser = factory.LazyAttribute(lambda x: fake.sentence(nb_words=random.randint(8, 12)))
-    count = factory.LazyAttribute(fake_title)
-    duration = factory.LazyAttribute(fake_title)
+    count = factory.LazyAttribute(lambda x: '{} {}'.format(random.randint(8, 12), fake.word().title()))
+    duration = factory.LazyAttribute(lambda x: '{} {}'.format(random.randint(8, 12), fake.word().title()))
     type = factory.LazyAttribute(lambda x: random.choice(['webinar', 'kurs', 'coaching']))
 
     class Meta:

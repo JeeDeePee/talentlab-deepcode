@@ -1,10 +1,9 @@
 <template>
   <div class="pa-2">
-      <h3>{{title}}</h3>
-
-      <div v-for="(item, index) in tools" v-bind:key="index" class="mb-1">
-        <a target="_blank" v-bind:href="item.value.url ? item.value.url: item.value.document">{{item.value.description}}</a>
-        <hr>
+      <div v-for="(item, index) in tools" v-bind:key="index" class="pb-3 pt-3 tool-item">
+        <v-icon v-if="item.type=='link'">link</v-icon>
+        <v-icon v-else>insert_drive_file</v-icon>
+        <a class="link" target="_blank" v-bind:href="item.value.url ? item.value.url: item.value.document">{{item.value.description}}</a>
       </div>
   </div>
 </template>
@@ -16,11 +15,20 @@
       tools: {
         required: true,
         type: Array
-      },
-      title: {
-        required: true,
-        type: String
       }
     }
   }
 </script>
+
+<style scoped lang="scss">
+  @import "../styles/var";
+
+  a.link {
+    color: $text-color;
+  }
+
+  .tool-item {
+    border-top: 1px solid $grey-4;
+  }
+
+</style>

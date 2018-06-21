@@ -65,19 +65,19 @@
     margin-left: 16px;
   }
 
+  a {
+    text-decoration: none;
+  }
+
   .application .theme--dark.toolbar {
     background-color: $grey-9;
     .btn--active {
       border-bottom: 5px solid $orange;
       font-weight: bold;
-      font-size: 15px;
-
       &:before {
         background-color: transparent;
       }
-
     }
-
   }
 
   .btn--active .btn__content:before, .btn:focus .btn__content:before, .btn:hover .btn__content:before {
@@ -92,4 +92,7 @@
     text-align: center;
   }
 
+  .capitalize {
+    text-transform: capitalize;
+  }
 </style>
