@@ -7,8 +7,14 @@
     scrollable
   >
     <v-card tile>
-      <vimeo-player :video-id=videoId :autoplay="true"></vimeo-player>
-      <v-btn color="primary" flat @click.stop="show=false">Close</v-btn>
+      <v-container grid-list-xl text-xs-center>
+        <v-layout row wrap>
+          <v-flex xs10 offset-xs1>
+            <v-btn color="primary" flat @click.stop="show=false">Close</v-btn>
+            <vimeo-player :video-id=videoId :autoplay="true"></vimeo-player>
+          </v-flex>
+        </v-layout>
+      </v-container>
     </v-card>
   </v-dialog>
 </template>
