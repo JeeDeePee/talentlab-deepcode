@@ -35,7 +35,7 @@ class ContainerFactory(BasePageFactory):
     hero_image = factory.SubFactory(DummyImageFactory)
     teaser = factory.LazyAttribute(lambda x: fake.sentence(nb_words=random.randint(8, 12)))
     skill = factory.LazyAttribute(fake_title)
-    description = factory.LazyAttribute(lambda x: fake.text(max_nb_chars=400))
+    description = factory.LazyAttribute(lambda x: fake.text(max_nb_chars=200))
 
     video_id = random.choice([274620659, 275716804, 269374180, 273656672, 275692750, 267406224])
     video_description = factory.LazyAttribute(lambda x: fake.text(max_nb_chars=200))
