@@ -33,6 +33,10 @@
       }
     },
 
+    created() {
+      document.title = 'Lernmodule'
+    },
+
     apollo: {
       categories: {
         query: CATEGORIES_QUERY,

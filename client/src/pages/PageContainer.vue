@@ -86,6 +86,7 @@
             _container.videoThumbnailData = JSON.parse(_container.videoThumbnailData)
 
             this.container = _container
+            document.title = _container.title
           }
         }
       })

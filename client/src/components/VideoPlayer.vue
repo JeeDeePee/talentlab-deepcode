@@ -7,10 +7,12 @@
     scrollable
   >
     <v-card tile>
+      <v-btn class="close" large flat icon @click.stop="show=false">
+        <v-icon>close</v-icon>
+      </v-btn>
       <v-container grid-list-xl text-xs-center>
         <v-layout row wrap>
           <v-flex xs10 offset-xs1>
-            <v-btn color="primary" flat @click.stop="show=false">Close</v-btn>
             <vimeo-player :video-id=videoId :autoplay="true"></vimeo-player>
           </v-flex>
         </v-layout>
@@ -36,3 +38,22 @@
     }
   }
 </script>
+
+<style lang="scss" scoped>
+  @import "../styles/var";
+
+  .card {
+    background-color: $grey-9;
+  }
+
+  .close {
+    color: #fff;
+    position: absolute;
+    right: 0;
+
+    .icon {
+      font-size: 50px;
+    }
+  }
+
+</style>
