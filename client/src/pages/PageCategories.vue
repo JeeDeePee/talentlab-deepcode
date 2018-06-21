@@ -1,8 +1,11 @@
 <template>
-  <v-container grid-list-md>
-    <v-btn v-for="category in categories" v-bind:key="category.id" >{{category.node.title}}</v-btn>
-    <v-container fluid grid-list-sm>
+  <v-container grid-list-lg>
+    <v-container fluid grid-list-md>
       <v-layout row wrap>
+        <v-flex v-for="category in categories" v-bind:key="category.id" xs4 class="text-center">
+          <img v-bind:src="category.node.icon"><br>
+          {{category.node.title}}
+        </v-flex>
         <v-flex xs12 sm6 v-for="container in containers" :key="container.node.id" class="mb-1">
           <ContainerTeaser :container="container.node"/>
         </v-flex>

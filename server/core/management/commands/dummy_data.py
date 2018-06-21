@@ -123,6 +123,6 @@ class Command(BaseCommand):
                 )
                 units_data = container_data.get('units', [])
 
-                for i in range(0, random.randint(3, 6)):
+                for i in range(0, random.randint(3, 5)):
                     unit_data = units_data[i] if len(units_data) > i else {}
                     UnitFactory.create(parent=container, **unit_data)

@@ -28,8 +28,26 @@
   }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+  @import "../styles/var";
+
   a {
     text-decoration: none;
+  }
+
+  h2 {
+    padding-top: 16px;
+  }
+
+  .card {
+    border-radius: 11px;
+  }
+
+  .card__title {
+    padding: 16px 16px 0px 16px
+  }
+
+  .card__text {
+    padding: 0px 16px 16px 16px
   }
 </style>

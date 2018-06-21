@@ -1,26 +1,45 @@
 <template>
-  <v-app>
-    <div>
-      <v-tabs v-model="active" dark slider-color="yellow">
-        <v-container grid-list-md>
-          <v-tab ripple :to="{ name: 'development'}" exact router>
-            Meine Entwicklung
-          </v-tab>
-          <v-tab ripple :to="{ name: 'categories'}" exact router>
-            Lernmodule
-          </v-tab>
-          <v-tab ripple :to="{ name: 'dashboard'}" exact router>
-            Dashboard
-          </v-tab>
-        </v-container>
-      </v-tabs>
-      <v-content class="pa-3">
-        <v-slide-x-transition mode="out-in">
-          <router-view></router-view>
-        </v-slide-x-transition>
-      </v-content>
-    </div>
+  <v-app id="inspire">
+    <v-navigation-drawer
+      v-model="drawer"
+      fixed
+      class="hidden-md-and-up"
+    >
+      <v-list dense>
+        <v-list-tile :to="{ name: 'development'}" exact router>
+          <v-list-tile-content>
+            <v-list-tile-title>Meine Entwicklung</v-list-tile-title>
+          </v-list-tile-content>
+        </v-list-tile>
+        <v-list-tile :to="{ name: 'categories'}" exact router>
+          <v-list-tile-content>
+            <v-list-tile-title>Lernmodule</v-list-tile-title>
+          </v-list-tile-content>
+        </v-list-tile>
+        <v-list-tile :to="{ name: 'dashboard'}" exact router>
+          <v-list-tile-content>
+            <v-list-tile-title>Dashboard</v-list-tile-title>
+          </v-list-tile-content>
+        </v-list-tile>
+      </v-list>
+    </v-navigation-drawer>
+    <v-toolbar fixed app dark class="elevation-0">
+      <v-toolbar-side-icon @click.stop="drawer = !drawer" class="hidden-md-and-up"></v-toolbar-side-icon>
+      <v-toolbar-title>talent<b>lab</b></v-toolbar-title>
+      <v-spacer></v-spacer>
+      <v-toolbar-items class="hidden-sm-and-down">
+        <v-btn flat :to="{ name: 'development'}" exact router>Meine Entwicklung</v-btn>
+        <v-btn flat :to="{ name: 'categories'}" exact router>Lernmodule</v-btn>
+        <v-btn flat :to="{ name: 'dashboard'}" exact router>Dashboard</v-btn>
+      </v-toolbar-items>
+    </v-toolbar>
+    <v-content fluid fill-height>
+      <v-slide-x-transition mode="out-in">
+        <router-view></router-view>
+      </v-slide-x-transition>
+    </v-content>
   </v-app>
+
 </template>
 
 <script>
@@ -28,7 +47,8 @@
     name: 'App',
     data() {
       return {
-        active: null
+        active: null,
+        drawer: null
       }
     }
   }
@@ -44,4 +64,32 @@
   ul {
     margin-left: 16px;
   }
+
+  .application .theme--dark.toolbar {
+    background-color: $grey-9;
+    .btn--active {
+      border-bottom: 5px solid $orange;
+      font-weight: bold;
+      font-size: 15px;
+
+      &:before {
+        background-color: transparent;
+      }
+
+    }
+
+  }
+
+  .btn--active .btn__content:before, .btn:focus .btn__content:before, .btn:hover .btn__content:before {
+    background-color: transparent;
+  }
+
+  .btn {
+    text-transform: initial;
+  }
+
+  .text-center {
+    text-align: center;
+  }
+
 </style>

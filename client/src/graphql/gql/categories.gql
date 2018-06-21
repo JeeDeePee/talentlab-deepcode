@@ -4,6 +4,7 @@ query CategoriesQuery {
       node {
         title
         slug
+        icon
       }
     }
   }
