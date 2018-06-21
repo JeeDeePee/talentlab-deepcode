@@ -38,7 +38,7 @@ class ContainerNode(DjangoObjectType):
     class Meta:
         model = Container
         only_fields = [
-            'title', 'slug', 'skill', 'description', 'teaser', 'video_id', 'video_description'
+            'title', 'slug', 'skill', 'description', 'teaser', 'video_id', 'video_description', 'video_thumbnail_data'
         ]
         filter_fields = {
             'slug': ['exact', 'icontains', 'in'],

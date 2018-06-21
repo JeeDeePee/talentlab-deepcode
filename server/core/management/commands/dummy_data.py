@@ -18,7 +18,7 @@ data = [
             'skill': 'Vernetztes Denken',
             'teaser': 'Erfolgreiche Führung von Partnerschaften',
             'description': 'Im Zuge der digitalen Disruption brechen angestammte Wertschöpfungslogiken auf.  Dabei gewinnt die Zusammenarbeit mit  externen Partnern bei der Leistungserstellung  an Bedeutung. In diesem Lernmodul werden die Grundlagen zur erfolgreichen Führung von Partnerschaften vermittelt.',
-            'video_description': '<b>Tim Kellenberger</b>Unser Fach-Experte erklärt, warum die professionelle Führung von Partnerschaften heute von entscheidender Bedeutung ist.',
+            'video_description': '<b>Tim Kellenberger</b><br>Unser Fach-Experte erklärt, warum die professionelle Führung von Partnerschaften heute von entscheidender Bedeutung ist.',
             'units': [
                 {
                     'title': 'Partnering Modelle',
@@ -95,13 +95,13 @@ class Command(BaseCommand):
 
             containers_data = category_data.get('containers', [])
 
-            for i in range(0, random.randint(5, 11)):
+            for i in range(0, random.randint(4, 7)):
 
                 container_data = containers_data[i] if len(containers_data) > i else {}
                 container = ContainerFactory.create(parent=category,
                                                     **{k: v for (k, v) in container_data.items() if k != 'units'})
                 units_data = container_data.get('units', [])
 
-                for i in range(0, random.randint(4, 7)):
+                for i in range(0, random.randint(3, 6)):
                     unit_data = units_data[i] if len(units_data) > i else {}
                     UnitFactory.create(parent=container, **unit_data)

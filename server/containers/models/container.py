@@ -1,3 +1,4 @@
+import requests
 from django.contrib.postgres.fields import JSONField
 from django.db import models
 from django.db.models.signals import pre_save
@@ -11,6 +12,9 @@ from wagtail.images.edit_handlers import ImageChooserPanel
 from wagtail.images.models import Image
 
 from containers.blocks import LinkBlock, DocumentBlock, DEFAULT_RICH_TEXT_FEATURES
+import logging
+
+logger = logging.getLogger(__name__)
 
 
 class Container(Page):
@@ -38,6 +42,7 @@ class Container(Page):
         null=True,
         blank=True
     )
+    video_thumbnail_data = JSONField(null=True, blank=True)
 
     resources = StreamField([
         ('link', LinkBlock(icon='link')),
@@ -88,6 +93,9 @@ class Container(Page):
     template = 'generic_page.html'
 
 
+VIMEO_META_URL = 'https://vimeo.com/api/oembed.json?url=https%3A//vimeo.com/{video_id}'
+
+
 @receiver(pre_save, sender=Container)
 def pre_save_container(sender, instance, **kwargs):
     def nomralize_data(field):
@@ -117,3 +125,13 @@ def pre_save_container(sender, instance, **kwargs):
 
     instance.tools_normalized = nomralize_data(instance.tools)
     instance.resources_normalized = nomralize_data(instance.resources)
+
+    try:
+        if instance.video_id:
+            res = requests.get(url=VIMEO_META_URL.format(video_id=instance.video_id)).json()
+            instance.video_thumbnail_data = {k: v for (k, v) in res.items() if k.startswith('thumbnail')}
+        else:
+            instance.video_thumbnail_data = {}
+    except:
+        logger.exception('Could not get vimeo video data')
+        instance.video_thumbnail_data = {}

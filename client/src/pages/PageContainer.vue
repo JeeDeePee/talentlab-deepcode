@@ -6,9 +6,13 @@
     <v-layout row wrap>
       <v-flex xs12 sm6 md6 lg6 xl6>
         <div v-html="container.description" class="mb-2"></div>
-        <vimeo-player :video-id='container.videoId' :player-height="'100px'"></vimeo-player>
-        <div v-html="container.videoDescription"></div>
-
+        <div v-if="container.videoId">
+          <a href="#" @click.stop="showVideoPlayer=true">
+            <img class="video-thumbnail" v-bind:src="container.videoThumbnailData.thumbnail_url_with_play_button"/>
+          </a>
+          <div v-html="container.videoDescription"></div>
+          <VideoPlayer :visible="showVideoPlayer" :videoId="container.videoId"  @close="showVideoPlayer=false" />
+        </div>
       </v-flex>
       <v-flex xs12 sm6 md6 lg6 xl6>
         <img v-bind:src="container.heroImage"/>
@@ -39,6 +43,7 @@
   // import store from '@/store/core'
   import CONTAINER_QUERY from '@/graphql/gql/container'
   import Tools from '@/components/Tools'
+  import VideoPlayer from '@/components/VideoPlayer'
 
   export default {
     name: 'page-container',
@@ -49,11 +54,13 @@
       }
     },
     components: {
-      Tools
+      Tools,
+      VideoPlayer
     },
     data() {
       return {
-        container: null
+        container: null,
+        showVideoPlayer: false
       }
     },
     created() {
@@ -70,6 +77,7 @@
             _container.tools = JSON.parse(_container.tools)
             _container.resources = JSON.parse(_container.resources)
             _container.category = JSON.parse(_container.category)
+            _container.videoThumbnailData = JSON.parse(_container.videoThumbnailData)
 
             this.container = _container
           }
@@ -79,9 +87,14 @@
   }
 </script>
 
-<style scoped lang="scss">
+<style lang="scss" scoped>
+
   img {
     max-width: 100%;
+  }
+
+  .video-thumbnail {
+    max-width: 150px;
   }
 
 </style>

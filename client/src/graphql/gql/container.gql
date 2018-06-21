@@ -8,9 +8,10 @@ query ContainerQuery($slug: String!) {
         resources
         description
         heroImage
-        videoId
         skill
+        videoId
         videoDescription
+        videoThumbnailData
         category
         units {
           edges {
