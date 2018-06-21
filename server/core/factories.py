@@ -14,7 +14,7 @@ fake = Faker('de_DE')
 
 
 def fake_title(x):
-    return fake.sentence(nb_words=random.randint(3, 6)).replace('.', '')
+    return fake.sentence(nb_words=random.randint(2, 4)).replace('.', '')
 
 
 class BasePageFactory(wagtail_factories.PageFactory):
