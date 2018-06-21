@@ -35,7 +35,7 @@ module.exports = {
     extensions: ['.js', '.vue', '.json', '.gql', '.graphql'],
     alias: {
       '@': resolve('src'),
-      styles: path.resolve(__dirname, '../src/styles')
+      styles: resolve('styles')
     }
   },
   module: {

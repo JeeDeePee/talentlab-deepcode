@@ -40,7 +40,6 @@
 </template>
 
 <script>
-  // import store from '@/store/core'
   import CONTAINER_QUERY from '@/graphql/gql/container'
   import Tools from '@/components/Tools'
   import VideoPlayer from '@/components/VideoPlayer'
@@ -88,6 +87,7 @@
 </script>
 
 <style lang="scss" scoped>
+  @import "../styles/var";
 
   img {
     max-width: 100%;

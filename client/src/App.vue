@@ -4,7 +4,7 @@
       <v-tabs v-model="active" dark slider-color="yellow">
         <v-container grid-list-md>
           <v-tab ripple :to="{ name: 'development'}" exact router>
-            Mein Entwicklung
+            Meine Entwicklung
           </v-tab>
           <v-tab ripple :to="{ name: 'categories'}" exact router>
             Lernmodule

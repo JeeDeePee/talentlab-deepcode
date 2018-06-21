@@ -4,6 +4,7 @@ import os
 import wagtail_factories
 from django.conf import settings
 from django.core.management import BaseCommand
+from factory.django import ImageField
 from wagtail.core.models import Page
 from wagtail.documents.models import Document
 from wagtail.images.models import Image
@@ -90,16 +91,36 @@ class Command(BaseCommand):
 
         site = wagtail_factories.SiteFactory.create(is_default_site=True)
 
-        for category_data in data:
-            category = CategoryFactory.create(parent=site.root_page, title=category_data['title'])
+        category_images = [
+            ImageField(from_path=os.path.join(settings.BASE_DIR, 'core/static/img/dummy/category0.png')),
+            ImageField(from_path=os.path.join(settings.BASE_DIR, 'core/static/img/dummy/category1.png')),
+            ImageField(from_path=os.path.join(settings.BASE_DIR, 'core/static/img/dummy/category2.png')),
+        ]
+
+        conatainer_images = [
+            ImageField(from_path=os.path.join(settings.BASE_DIR, 'core/static/img/dummy/container0.png')),
+            ImageField(from_path=os.path.join(settings.BASE_DIR, 'core/static/img/dummy/container1.png')),
+            ImageField(from_path=os.path.join(settings.BASE_DIR, 'core/static/img/dummy/container2.png')),
+            ImageField(from_path=os.path.join(settings.BASE_DIR, 'core/static/img/dummy/container3.png')),
+        ]
+
+        for idx, category_data in enumerate(data):
+            category = CategoryFactory.create(
+                parent=site.root_page,
+                title=category_data['title'],
+                icon__file=category_images[idx % len(category_images)]
+            )
 
             containers_data = category_data.get('containers', [])
 
             for i in range(0, random.randint(4, 7)):
 
                 container_data = containers_data[i] if len(containers_data) > i else {}
-                container = ContainerFactory.create(parent=category,
-                                                    **{k: v for (k, v) in container_data.items() if k != 'units'})
+                container = ContainerFactory.create(
+                    parent=category,
+                    hero_image__file=conatainer_images[i % len(conatainer_images)],
+                    **{k: v for (k, v) in container_data.items() if k != 'units'}
+                )
                 units_data = container_data.get('units', [])
 
                 for i in range(0, random.randint(3, 6)):

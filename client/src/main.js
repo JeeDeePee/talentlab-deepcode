@@ -18,8 +18,6 @@ const apolloProvider = new VueApollo({
   defaultClient: apolloClient
 })
 
-export const bus = new Vue()
-
 Vue.use(VueApollo)
 Vue.use(VueAxios, axios)
 Vue.use(Vuetify)
