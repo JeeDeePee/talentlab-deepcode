@@ -8,7 +8,6 @@
         </v-flex>
         <v-flex xs12 sm6 v-for="container in containers" :key="container.node.id" class="mb-1">
           <ContainerTeaser :container="container.node"/>
-          hallo daniel!
         </v-flex>
       </v-layout>
     </v-container>
