@@ -48,8 +48,19 @@
     data() {
       return {
         active: null,
-        drawer: null
+        drawer: null,
+        userId: 1,
+        name: 'Max Muster',
+        email: 'talenlab@orbit7.ch'
       }
+    },
+    mounted() {
+      this.$intercom.boot({
+        user_id: this.userId,
+        name: this.name,
+        email: this.email
+      })
+      this.$intercom.show()
     }
   }
 </script>
