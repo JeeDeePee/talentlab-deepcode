@@ -9,6 +9,7 @@ import axios from 'axios'
 import VueAxios from 'vue-axios'
 import lodash from 'lodash'
 import VueVimeoPlayer from 'vue-vimeo-player'
+import VueIntercom from 'vue-intercom';
 
 Vue.config.productionTip = false
 
@@ -22,6 +23,7 @@ Vue.use(VueApollo)
 Vue.use(VueAxios, axios)
 Vue.use(Vuetify)
 Vue.use(VueVimeoPlayer)
+Vue.use(VueIntercom, { appId: 'aec9le28' });
 
 /* eslint-disable no-new */
 new Vue({
