@@ -8,9 +8,9 @@
       <v-container grid-list-md>
         <v-layout row wrap>
           <v-flex xs12 sm6 md6 lg6 xl6>
-            <div v-html="container.description" class="mb-2 description"></div>
+            <div v-html="container.description" class="mb-2 mt-1 description"></div>
 
-            <div v-if="container.videoId" class="mt-5">
+            <div v-if="container.videoId" class="mt-5 mb-1">
               <a href="#" @click.stop="showVideoPlayer=true">
                 <img class="video-thumbnail"
                      v-bind:src="container.videoThumbnailData.thumbnail_url_with_play_button"/>
