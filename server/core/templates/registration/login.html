@@ -1,37 +1,37 @@
 {% extends "base.html" %}
 
-{% block content %}
-    {% if form.errors %}
-        <p class="alert">Benutername und Passwort stimmen nicht überein.</p>
-    {% endif %}
+{% block body_class %}dark-bg{% endblock %}
+
+{% block body %}
+
+    <h1>talent<b>lab</b></h1>
 
     {% if next %}
-        {% if user.is_authenticated %}
-            <p>Your account doesn't have access to this page. To proceed,
-                please login with an account that has access.</p>
-        {% else %}
-            <p>Bitte anmelden</p>
-        {% endif %}
+        <div class="h4">Melde dich jetzt an.</div>
     {% endif %}
 
-    <div class="row">
-        <form method="post" action="{% url 'login' %}" class="col s12">
-            {% csrf_token %}
-            <div class="row">
-                <div class="input-field col s12">
-                    {{ form.username }}
-                    {{ form.username.label_tag }}
-                </div>
-            </div>
-            <div class="row">
-                <div class="input-field col s12">
-                    {{ form.password }}
-                    {{ form.password.label_tag }}
-                </div>
-            </div>
-            <button class="btn waves-effect waves-light grey-text text-darken-3 white lighten-2" type="submit" name="action">Anmelden
-            </button>
-            <input type="hidden" name="next" value="{{ next }}"/>
-        </form>
-    </div>
+
+    {% if form.errors %}
+        <p class="alert alert-error">Benutername und Passwort stimmen nicht überein.</p>
+    {% endif %}
+
+
+    <form method="post" action="{% url 'login' %}">
+        {% csrf_token %}
+
+        <div class="input-field">
+            {{ form.username }}
+            {{ form.username.label_tag }}
+        </div>
+        <div class="input-field">
+            {{ form.password }}
+            {{ form.password.label_tag }}
+        </div>
+
+        <button class="btn btn-orange" type="submit"
+                name="action">Anmelden
+        </button>
+        <input type="hidden" name="next" value="{{ next }}"/>
+    </form>
+
 {% endblock %}

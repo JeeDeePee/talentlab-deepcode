@@ -33,6 +33,7 @@ SIGNING_SECRET = os.environ.get('SIGNING_SECRET')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = bool_value(os.environ.get('DEBUG', ''))
+TEST = 'test' in sys.argv
 
 ALLOWED_HOSTS = ['*']
 
@@ -74,6 +75,7 @@ INSTALLED_APPS = [
     'django_filters',
     'graphene_django',
     'django_extensions',
+    'compressor',
 
 ]
 
@@ -198,7 +200,29 @@ STATICFILES_DIRS = (
     os.path.join(BASE_DIR, '..', 'client/dist/static'),
 )
 
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+if not TEST:
+    STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+COMPRESS_CSS_FILTERS = [
+    # 'django_compressor_autoprefixer.AutoprefixerFilter',
+    'compressor.filters.cssmin.CSSMinFilter',
+]
+
+STATICFILES_FINDERS = (
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+    'compressor.finders.CompressorFinder',
+)
+
+COMPRESS_PRECOMPILERS = (
+    ('text/x-scss', 'django_libsass.SassCompiler'),
+)
+
+COMPRESS_ENABLED = True
+
+if not DEBUG:
+    COMPRESS_STORAGE = 'compressor.storage.GzipCompressorFileStorage'
+    COMPRESS_OFFLINE = True
 
 # AWS S3
 # http://django-storages.readthedocs.io/en/latest/backends/amazon-S3.html
@@ -225,7 +249,6 @@ AWS_S3_OBJECT_PARAMETERS = {
 
 # Media Files
 USE_404_FALLBACK_IMAGE = bool_value(os.environ.get('USE_404_FALLBACK_IMAGE', 'True'))
-
 
 # Logging Conf
 

@@ -70,6 +70,7 @@
 
   body {
     font-family: $font-family;
+    font-size: $base-font-size;
   }
 
   ul {

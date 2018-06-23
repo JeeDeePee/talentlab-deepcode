@@ -1,18 +1,13 @@
 [[source]]
-
 url = "https://pypi.python.org/simple"
 verify_ssl = true
 name = "pypi"
 
-
 [dev-packages]
-
 awscli = "*"
 ipdb = "*"
 
-
 [packages]
-
 factory-boy = "*"
 wagtail_factories = {git = "https://github.com/mvantellingen/wagtail-factories.git", ref = "master"}
 django = "==2.0.6"
@@ -30,3 +25,5 @@ wagtail = "==2.1"
 django-cors-headers = "==2.2.0"
 django-storages = "*"
 "boto3" = "*"
+django-compressor = "*"
+django-libsass = "*"

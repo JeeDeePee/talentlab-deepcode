@@ -13,7 +13,7 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     url(r'^guru/', admin.site.urls),
-
+    url(r'^accounts/', include('django.contrib.auth.urls')),
     url(r'^cms/', include(wagtailadmin_urls)),
     url(r'^search/', include(wagtailsearch_urls)),
     url(r'^documents/', include(wagtaildocs_urls)),

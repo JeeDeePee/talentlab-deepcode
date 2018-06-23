@@ -1,20 +1,71 @@
+{% load static from staticfiles %}
+{% load compress %}
 <!doctype html>
 
 <html lang="en">
 <head>
     <meta charset="utf-8">
 
-    <title>{% block title %}TalentLab{% endblock %}</title>
+    <title>{% block title %}talentLab{% endblock %}</title>
     <meta name="description" content="">
     <meta name="author" content="talentlab.ch">
+
+    <link href='https://fonts.googleapis.com/css?family=Material+Icons' rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Arimo" rel="stylesheet">
+
+    {% compress css %}
+        <link href="{% static "styles/main.scss" %}" rel="stylesheet" type="text/x-scss"
+              media="all"/>
+    {% endcompress %}
+
 
     <!--[if lt IE 9]>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
   <![endif]-->
 </head>
 
-<body>
-{% block body %}
-{% endblock %}
+<body class="{% block body_class %}{% endblock %}">
+<div class="container">
+    {% block body %}
+    {% endblock %}
+</div>
+<script>
+    window.intercomSettings = {
+        app_id: "aec9le28"
+    };
+</script>
+<script>(function () {
+    var w = window;
+    var ic = w.Intercom;
+    if (typeof ic === "function") {
+        ic('reattach_activator');
+        ic('update', intercomSettings);
+    } else {
+        var d = document;
+        var i = function () {
+            i.c(arguments)
+        };
+        i.q = [];
+        i.c = function (args) {
+            i.q.push(args)
+        };
+        w.Intercom = i;
+
+        function l() {
+            var s = d.createElement('script');
+            s.type = 'text/javascript';
+            s.async = true;
+            s.src = 'https://widget.intercom.io/widget/aec9le28';
+            var x = d.getElementsByTagName('script')[0];
+            x.parentNode.insertBefore(s, x);
+        }
+
+        if (w.attachEvent) {
+            w.attachEvent('onload', l);
+        } else {
+            w.addEventListener('load', l, false);
+        }
+    }
+})()</script>
 </body>
 </html>

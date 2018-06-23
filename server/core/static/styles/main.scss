@@ -1,0 +1,91 @@
+@import "materialize/materialize";
+
+$white: #fff;
+
+$grey-1: #F7F7F7;
+$grey-3: #F3F3F3;
+$grey-2: #D8D8D8;
+$grey-4: #AFB1B1;
+$grey-9: #3F3F3F;
+
+$orange: #FD6E22;
+$orange-shadow: #c54602;
+
+$red: #cd3238;
+$red-shadow: darken($red, 20%);
+
+$blue: #EDF7FA;
+$blue-shadow: #B6CCD4;
+
+$text-color: $grey-9;
+$font-family: 'Arimo', Arial, sans-serif;
+$base-font-size: 15px;
+
+body {
+  font-family: $font-family;
+  font-size: $base-font-size;
+  color: $text-color;
+}
+
+h2, .h2 {
+
+}
+
+h3, .h3 {
+
+}
+
+h4, .h4 {
+  font-size: 18px;
+}
+
+.alert {
+  padding: 20px;
+}
+
+.alert-error {
+  border: 1px solid $red-shadow;
+  background-color: #cd3238;
+}
+
+.alert-info {
+  border: 1px solid $blue-shadow;
+  background-color: $blue;
+  color: $text-color;
+}
+
+a {
+  text-decoration: none;
+}
+
+.orange-bg {
+  background-color: $orange;
+}
+
+.dark-bg {
+  background-color: $grey-9;
+  color: $white;
+}
+
+.btn-orange {
+  border: 1px solid $orange !important;
+  background-color: transparent;
+  border-radius: 2px;
+  color: $white;
+
+  &:hover, &:focus {
+    background-color: $orange-shadow;
+  }
+}
+
+.input-field {
+  input:focus {
+    border-bottom: 1px solid $orange !important;
+    box-shadow: 0 1px 0 0 $orange !important;
+
+    & + label {
+      color: $white !important;
+    }
+
+  }
+}
