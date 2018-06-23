@@ -76,6 +76,8 @@ a {
   &:hover, &:focus {
     background-color: $orange-shadow;
   }
+
+  box-shadow: none;
 }
 
 .input-field {
