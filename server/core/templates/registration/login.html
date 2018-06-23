@@ -16,21 +16,19 @@
     {% endif %}
 
 
-    <form method="post" action="{% url 'login' %}">
+    <form method="post" class="mt-1" action="{% url 'login' %}">
         {% csrf_token %}
 
-        <div class="input-field">
-            {{ form.username }}
+        <div>
             {{ form.username.label_tag }}
+            {{ form.username }}
         </div>
-        <div class="input-field">
-            {{ form.password }}
+        <div>
             {{ form.password.label_tag }}
+            {{ form.password }}
         </div>
 
-        <button class="btn btn-orange" type="submit"
-                name="action">Anmelden
-        </button>
+        <button class="btn btn-orange mt-1" type="submit" name="action">Anmelden</button>
         <input type="hidden" name="next" value="{{ next }}"/>
     </form>
 
