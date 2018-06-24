@@ -1,0 +1,41 @@
+@import "var";
+
+body {
+  font-family: $font-family;
+  font-size: $base-font-size;
+}
+
+ul {
+  margin-left: 16px;
+}
+
+a {
+  text-decoration: none;
+}
+
+.application .theme--dark.toolbar {
+  background-color: $grey-9;
+  .btn--active {
+    border-bottom: 5px solid $orange;
+    font-weight: bold;
+    &:before {
+      background-color: transparent;
+    }
+  }
+}
+
+.btn--active .btn__content:before, .btn:focus .btn__content:before, .btn:hover .btn__content:before {
+  background-color: transparent;
+}
+
+.btn {
+  text-transform: initial;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.capitalize {
+  text-transform: capitalize;
+}

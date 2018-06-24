@@ -16,11 +16,13 @@
             <v-list-tile-title>Lernmodule</v-list-tile-title>
           </v-list-tile-content>
         </v-list-tile>
+        <!--
         <v-list-tile :to="{ name: 'dashboard'}" exact router>
           <v-list-tile-content>
             <v-list-tile-title>Dashboard</v-list-tile-title>
           </v-list-tile-content>
         </v-list-tile>
+        -->
       </v-list>
     </v-navigation-drawer>
     <v-toolbar fixed app dark class="elevation-0">
@@ -30,7 +32,9 @@
       <v-toolbar-items class="hidden-sm-and-down">
         <v-btn flat :to="{ name: 'development'}" exact router>Meine Entwicklung</v-btn>
         <v-btn flat :to="{ name: 'categories'}" exact router>Lernmodule</v-btn>
+        <!--
         <v-btn flat :to="{ name: 'dashboard'}" exact router>Dashboard</v-btn>
+        -->
       </v-toolbar-items>
     </v-toolbar>
     <v-content fluid fill-height>
@@ -65,46 +69,6 @@
   }
 </script>
 
-<style lang="scss">
-  @import "styles/var";
-
-  body {
-    font-family: $font-family;
-    font-size: $base-font-size;
-  }
-
-  ul {
-    margin-left: 16px;
-  }
-
-  a {
-    text-decoration: none;
-  }
-
-  .application .theme--dark.toolbar {
-    background-color: $grey-9;
-    .btn--active {
-      border-bottom: 5px solid $orange;
-      font-weight: bold;
-      &:before {
-        background-color: transparent;
-      }
-    }
-  }
-
-  .btn--active .btn__content:before, .btn:focus .btn__content:before, .btn:hover .btn__content:before {
-    background-color: transparent;
-  }
-
-  .btn {
-    text-transform: initial;
-  }
-
-  .text-center {
-    text-align: center;
-  }
-
-  .capitalize {
-    text-transform: capitalize;
-  }
+<style lang="scss" >
+  @import "styles/main";
 </style>
