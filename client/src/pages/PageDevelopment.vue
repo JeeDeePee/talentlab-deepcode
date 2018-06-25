@@ -4,18 +4,18 @@
     <Goal class="mb-4"/>
 
     <h2 class="grey--text">Meine Lernmodule</h2>
-    <v-btn><v-icon>star</v-icon> Lernmodule auswählen</v-btn>
+    <v-btn>
+      <v-icon>star</v-icon>
+      Lernmodule auswählen
+    </v-btn>
 
-    <Module class="mb-4"/>
+    <Module v-for="(item, index) in modules" v-bind:key="index" class="mb-4"/>
 
     <h3 class="grey--text">Vorgeschlagene Lernmodule</h3>
     <v-container fluid grid-list-md>
       <v-layout row wrap>
         <v-flex xs12 sm6 class="mb-1">
-          <Recomendation/>
-        </v-flex>
-        <v-flex xs12 sm6 class="mb-1">
-          <Recomendation/>
+          <Recomendation v-for="(item, index) in recomendations" v-bind:key="index"/>
         </v-flex>
       </v-layout>
     </v-container>
@@ -37,6 +37,8 @@
     },
     data() {
       return {
+        modules: [1, 2],
+        recomendations: [1, 2]
       }
     }
   }
