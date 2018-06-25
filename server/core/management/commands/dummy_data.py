@@ -111,14 +111,11 @@ class Command(BaseCommand):
             ImageField(from_path=os.path.join(settings.BASE_DIR, 'core/static/img/dummy/module_3.png')),
         ]
 
-        # create super user
         u = UserFactory(
             username='test',
             is_staff=True,
             is_superuser=True
         )
-
-
 
         for idx, category_data in enumerate(data):
             category = CategoryFactory.create(
@@ -142,3 +139,6 @@ class Command(BaseCommand):
                 for i in range(0, random.randint(3, 5)):
                     unit_data = units_data[i] if len(units_data) > i else {}
                     UnitFactory.create(parent=module, **unit_data)
+
+        for i in range(0, 4):
+            UserFactory(username='user{}'.format(i))

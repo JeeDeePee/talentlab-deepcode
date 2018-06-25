@@ -48,6 +48,8 @@ class UserFactory(factory.django.DjangoModelFactory):
 
     first_name = factory.LazyAttribute(lambda x: fake.first_name())
     last_name = factory.LazyAttribute(lambda x: fake.last_name())
+    email = factory.LazyAttribute(lambda x: fake.ascii_safe_email())
+
 
     @factory.post_generation
     def post(self, create, extracted, **kwargs):
