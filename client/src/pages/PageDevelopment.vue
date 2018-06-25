@@ -29,7 +29,7 @@
   import Recomendation from '@/components/development/Recomendation'
 
   export default {
-    name: 'page-container',
+    name: 'page-development',
     components: {
       Goal,
       Module,
