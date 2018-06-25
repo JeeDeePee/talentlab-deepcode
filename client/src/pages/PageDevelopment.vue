@@ -14,8 +14,8 @@
     <h3 class="grey--text">Vorgeschlagene Lernmodule</h3>
     <v-container fluid grid-list-md>
       <v-layout row wrap>
-        <v-flex xs12 sm6 class="mb-1">
-          <Recomendation v-for="(item, index) in recomendations" v-bind:key="index"/>
+        <v-flex v-for="(item, index) in recomendations" v-bind:key="index" xs12 sm6 class="mb-1">
+          <Recomendation/>
         </v-flex>
       </v-layout>
     </v-container>
