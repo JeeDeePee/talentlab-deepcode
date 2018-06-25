@@ -50,7 +50,6 @@ class UserFactory(factory.django.DjangoModelFactory):
     last_name = factory.LazyAttribute(lambda x: fake.last_name())
     email = factory.LazyAttribute(lambda x: fake.ascii_safe_email())
 
-
     @factory.post_generation
     def post(self, create, extracted, **kwargs):
         self.set_password('test')

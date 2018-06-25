@@ -4,7 +4,6 @@ from wagtail.admin.edit_handlers import FieldPanel, MultiFieldPanel, FieldRowPan
 
 
 class Unit(Page):
-
     class Meta:
         verbose_name = 'Lernangebot'
         verbose_name_plural = 'Lernangebote'

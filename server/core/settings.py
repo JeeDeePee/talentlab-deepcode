@@ -9,7 +9,6 @@ https://docs.djangoproject.com/en/1.11/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/1.11/ref/settings/
 """
-
 import os
 import sys
 
@@ -47,6 +46,7 @@ INSTALLED_APPS = [
     'core',
     'api',
     'modules',
+    'progress',
 
     'wagtail.contrib.forms',
     'wagtail.contrib.redirects',
@@ -312,7 +312,7 @@ if not DEBUG and os.environ.get('RAVEN_DSN'):
     for k, v in LOGGING['loggers'].items():
         LOGGING['loggers'][k]['handlers'] = ['sentry', 'console']
 else:
-    RAVEN_CONFIG = ''
+    RAVEN_CONFIG = {}
 
 RAVEN_DSN_JS = os.environ.get('RAVEN_DSN_JS', '')
 
