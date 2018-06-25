@@ -13,23 +13,37 @@ a {
   text-decoration: none;
 }
 
-.application .theme--dark.toolbar {
-  background-color: $grey-9;
-  .btn--active {
-    border-bottom: 5px solid $orange;
-    font-weight: bold;
-    &:before {
-      background-color: transparent;
+.application {
+    font-family: $font-family;
+
+    .theme--dark.toolbar {
+    background-color: $grey-9;
+      .btn--active {
+        border-bottom: 5px solid $orange;
+        font-weight: bold;
+        &:before {
+          background-color: transparent;
+      }
     }
   }
 }
 
-.btn--active .btn__content:before, .btn:focus .btn__content:before, .btn:hover .btn__content:before {
+.btn--active .btn__content:before, .btn:focus .btn__content:before, .btn:hover .btn__content:before .btn:not(.btn--depressed){
   background-color: transparent;
+  box-shadow: none;
 }
+
+
 
 .btn {
   text-transform: initial;
+  border: 2px solid #FD6E22;
+  padding-bottom: 36px;
+  font-size: 15px;
+}
+
+.theme--light .btn:not(.btn--icon):not(.btn--flat) {
+  background-color: transparent;
 }
 
 .text-center {

@@ -11,7 +11,7 @@
 
     <Module v-for="(item, index) in modules" v-bind:key="index" class="mb-4"/>
 
-    <h3 class="grey--text">Vorgeschlagene Lernmodule</h3>
+    <h3 class="title-recomendations">Vorgeschlagene Lernmodule</h3>
     <v-container fluid grid-list-md>
       <v-layout row wrap>
         <v-flex v-for="(item, index) in recomendations" v-bind:key="index" xs12 sm6 class="mb-1">
@@ -52,12 +52,20 @@
   }
 
   h2 {
-    font-size: 44px;
+    font-size: 24px;
+    font-weight: 400;
+    margin-bottom: 16px;
   }
 
   h3 {
     font-size: 24px;
     margin-bottom: 12px;
+  }
+
+  .title-recomendations {
+    font-size: 15px;
+    font-weight: 400;
+    text-transform: uppercase;
   }
 
   .video-thumbnail {
