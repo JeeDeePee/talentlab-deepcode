@@ -4,6 +4,11 @@ from wagtail.admin.edit_handlers import FieldPanel, MultiFieldPanel, FieldRowPan
 
 
 class Unit(Page):
+
+    class Meta:
+        verbose_name = 'Lernangebot'
+        verbose_name_plural = 'Lernangebote'
+
     teaser = models.TextField()
     type = models.CharField(
         max_length=100,
@@ -21,9 +26,6 @@ class Unit(Page):
         max_length=255,
         help_text='e.g. \'je 2 Tage\''
     )
-
-    parent_page_types = ['containers.Container']
-    subpage_types = []
 
     content_panels = [
         FieldPanel('title', classname="full title"),
@@ -45,3 +47,6 @@ class Unit(Page):
     ])
 
     template = 'generic_page.html'
+
+    parent_page_types = ['modules.Module']
+    subpage_types = []

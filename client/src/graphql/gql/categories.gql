@@ -9,7 +9,7 @@ query CategoriesQuery {
     }
   }
 
-  containers {
+  modules {
     edges {
       node {
         id

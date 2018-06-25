@@ -1,26 +1,26 @@
 <template>
-  <router-link :to="{name: 'container', params: {slug: container.slug}}">
+  <router-link :to="{name: 'module', params: {slug: module.slug}}">
     <v-card>
       <v-card-title primary-title>
         <div>
-          <span class="grey--text">{{container.skill}}</span><br>
-          <h2>{{container.title}}</h2>
+          <span class="grey--text">{{module.skill}}</span><br>
+          <h2>{{module.title}}</h2>
         </div>
       </v-card-title>
 
       <v-card-text>
-        {{container.teaser}}
+        {{module.teaser}}
       </v-card-text>
-      <v-card-media v-bind:src="container.heroImage" height="200px"></v-card-media>
+      <v-card-media v-bind:src="module.heroImage" height="200px"></v-card-media>
     </v-card>
   </router-link>
 </template>
 
 <script>
   export default {
-    name: 'container-teaser',
+    name: 'module-teaser',
     props: {
-      container: {
+      module: {
         required: true,
         type: Object
       }

@@ -5,6 +5,10 @@ from wagtail.images.edit_handlers import ImageChooserPanel
 
 
 class Category(Page):
+    class Meta:
+        verbose_name = 'Kategorie'
+        verbose_name_plural = 'Kategorien'
+
     icon = models.ForeignKey(
         'wagtailimages.Image',
         null=True,
@@ -13,7 +17,7 @@ class Category(Page):
         related_name='+'
     )
 
-    subpage_types = ['containers.Container']
+    subpage_types = ['modules.Module']
 
     content_panels = [
         FieldPanel('title', classname="full title"),

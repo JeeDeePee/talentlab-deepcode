@@ -1,10 +1,10 @@
 import graphene
 from graphene_django.debug import DjangoDebug
-from containers.schema import ContainerQuery
+from modules.schema import ModulesQuery
 from django.conf import settings
 
 
-class Query(ContainerQuery, graphene.ObjectType):
+class Query(ModulesQuery, graphene.ObjectType):
     # This class will inherit from multiple Queries
 
     if settings.DEBUG:

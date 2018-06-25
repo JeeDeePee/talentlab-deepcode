@@ -11,13 +11,17 @@ from wagtail.documents.models import Document
 from wagtail.images.edit_handlers import ImageChooserPanel
 from wagtail.images.models import Image
 
-from containers.blocks import LinkBlock, DocumentBlock, DEFAULT_RICH_TEXT_FEATURES
+from modules.blocks import LinkBlock, DocumentBlock, DEFAULT_RICH_TEXT_FEATURES
 import logging
 
 logger = logging.getLogger(__name__)
 
 
-class Container(Page):
+class Module(Page):
+    class Meta:
+        verbose_name = 'Lernmodul'
+        verbose_name_plural = 'Lernmodule'
+
     hero_image = models.ForeignKey(
         'wagtailimages.Image',
         null=True,
@@ -62,9 +66,6 @@ class Container(Page):
     )
     tools_normalized = JSONField(blank=True, null=True, help_text='helper field for graphql api')
 
-    parent_page_types = ['containers.Category']
-    subpage_types = ['containers.Unit']
-
     content_panels = [
         FieldPanel('title', classname="full title"),
         FieldPanel('skill'),
@@ -92,12 +93,14 @@ class Container(Page):
 
     template = 'generic_page.html'
 
+    parent_page_types = ['modules.Category']
+    subpage_types = ['modules.Unit']
 
 VIMEO_META_URL = 'https://vimeo.com/api/oembed.json?url=https%3A//vimeo.com/{video_id}'
 
 
-@receiver(pre_save, sender=Container)
-def pre_save_container(sender, instance, **kwargs):
+@receiver(pre_save, sender=Module)
+def pre_save_module(sender, instance, **kwargs):
     def nomralize_data(field):
         data = []
         for d in field.stream_data:

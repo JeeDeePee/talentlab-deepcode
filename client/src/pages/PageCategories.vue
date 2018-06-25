@@ -5,8 +5,8 @@
         <img v-bind:src="category.node.icon"><br>
         {{category.node.title}}
       </v-flex>
-      <v-flex xs12 sm6 v-for="container in containers" :key="container.node.id" class="mb-1">
-        <ContainerTeaser :container="container.node"/>
+      <v-flex xs12 sm6 v-for="module in modules" :key="module.node.id" class="mb-1">
+        <ModuleTeaser :module="module.node"/>
       </v-flex>
     </v-layout>
   </v-container>
@@ -14,20 +14,20 @@
 
 <script>
   import CATEGORIES_QUERY from '@/graphql/gql/categories'
-  import ContainerTeaser from '@/components/ContainerTeaser'
+  import ModuleTeaser from '@/components/ModuleTeaser'
 
   export default {
     name: 'page-categories',
 
     components: {
-      ContainerTeaser
+      ModuleTeaser
     },
 
     data() {
       return {
         initialQuery: CATEGORIES_QUERY,
         categories: [],
-        containers: []
+        modules: []
       }
     },
 
@@ -42,7 +42,7 @@
         result(data, loading, networkStatus) {
           if (!loading) {
             this.categories = data.data.categories.edges
-            this.containers = data.data.containers.edges
+            this.modules = data.data.modules.edges
           }
         }
       }

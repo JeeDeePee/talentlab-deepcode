@@ -1,5 +1,5 @@
-query ContainerQuery($slug: String!) {
-  containers(slug: $slug) {
+query ModuleQuery($slug: String!) {
+  modules(slug: $slug) {
     edges {
       node {
         title

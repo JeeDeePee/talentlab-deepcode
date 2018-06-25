@@ -4,11 +4,11 @@ import os
 import wagtail_factories
 import factory
 from django.conf import settings
+from django.contrib.auth import get_user_model
 from factory.django import ImageField, FileField
 from faker import Faker
 from wagtail.documents.models import get_document_model
 from wagtail.images import get_image_model
-from wagtail_factories.factories import CollectionMemberFactory
 
 fake = Faker('de_DE')
 
@@ -39,3 +39,18 @@ class DummyImageFactory(factory.DjangoModelFactory):
     file = ImageField(
         from_path=os.path.join(settings.BASE_DIR, 'core', 'static', 'img', 'dummy.jpg')
     )
+
+
+# factories.py
+class UserFactory(factory.django.DjangoModelFactory):
+    class Meta:
+        model = get_user_model()
+
+    first_name = factory.LazyAttribute(lambda x: fake.first_name())
+    last_name = factory.LazyAttribute(lambda x: fake.last_name())
+
+    @factory.post_generation
+    def post(self, create, extracted, **kwargs):
+        self.set_password('test')
+        self.save()
+

@@ -3,8 +3,8 @@ import wagtail_factories
 import factory
 from factory import CREATE_STRATEGY
 
-from containers.blocks import LinkBlock, DocumentBlock
-from containers.models import Category, Container, Unit
+from modules.blocks import LinkBlock, DocumentBlock
+from modules.models import Category, Module, Unit
 from core.factories import BasePageFactory, fake_title, fake, DummyImageFactory, DummyDocumentFactory
 
 
@@ -31,7 +31,7 @@ class DocumentBlockFactory(wagtail_factories.StructBlockFactory):
         model = DocumentBlock
 
 
-class ContainerFactory(BasePageFactory):
+class ModuleFactory(BasePageFactory):
     hero_image = factory.SubFactory(DummyImageFactory)
     teaser = factory.LazyAttribute(lambda x: fake.sentence(nb_words=random.randint(8, 12)))
     skill = factory.LazyAttribute(fake_title)
@@ -51,7 +51,7 @@ class ContainerFactory(BasePageFactory):
     })
 
     class Meta:
-        model = Container
+        model = Module
 
     @classmethod
     def create(cls, **kwargs):

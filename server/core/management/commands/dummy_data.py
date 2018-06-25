@@ -5,15 +5,18 @@ import wagtail_factories
 from django.conf import settings
 from django.core.management import BaseCommand
 from factory.django import ImageField
-from wagtail.core.models import Page
-from wagtail.documents.models import Document
-from wagtail.images.models import Image
+from django.core import management
 import shutil
-from containers.factories import CategoryFactory, ContainerFactory, UnitFactory
+
+from wagtail.core.models import Page
+
+from core.factories import UserFactory
+from modules.factories import CategoryFactory, ModuleFactory, UnitFactory
+from django.db import connection
 
 data = [
     {
-        'title': 'Mastering Complexity', 'containers': [
+        'title': 'Mastering Complexity', 'modules': [
         {
             'title': 'Partnering for Success',
             'skill': 'Vernetztes Denken',
@@ -52,7 +55,7 @@ data = [
         },
     ]},
     {
-        'title': 'Growing as a Leader', 'containers': [
+        'title': 'Growing as a Leader', 'modules': [
         {
             'title': 'Leading through Disruption',
             'skill': 'Leadership',
@@ -81,15 +84,19 @@ class Command(BaseCommand):
 
     def handle(self, *args, **options):
 
-        Page.objects.all().delete()
-        Image.objects.all().delete()
-        Document.objects.all().delete()
+        with connection.cursor() as cursor:
+            cursor.execute("DROP SCHEMA IF EXISTS public CASCADE;")
+            cursor.execute(
+                "CREATE SCHEMA IF NOT EXISTS public AUTHORIZATION {};".format(settings.DATABASES['default']['USER']))
+            cursor.execute("GRANT ALL ON SCHEMA public TO postgres;")
+        management.call_command('migrate', verbosity=0, interactive=False)
 
         self.ensure_clean_dir('images')
         self.ensure_clean_dir('original_images')
         self.ensure_clean_dir('documents')
 
         site = wagtail_factories.SiteFactory.create(is_default_site=True)
+        Page.objects.filter(title='Root').delete()
 
         category_images = [
             ImageField(from_path=os.path.join(settings.BASE_DIR, 'core/static/img/dummy/category0.png')),
@@ -97,12 +104,21 @@ class Command(BaseCommand):
             ImageField(from_path=os.path.join(settings.BASE_DIR, 'core/static/img/dummy/category2.png')),
         ]
 
-        conatainer_images = [
-            ImageField(from_path=os.path.join(settings.BASE_DIR, 'core/static/img/dummy/container0.png')),
-            ImageField(from_path=os.path.join(settings.BASE_DIR, 'core/static/img/dummy/container1.png')),
-            ImageField(from_path=os.path.join(settings.BASE_DIR, 'core/static/img/dummy/container2.png')),
-            ImageField(from_path=os.path.join(settings.BASE_DIR, 'core/static/img/dummy/container3.png')),
+        module_images = [
+            ImageField(from_path=os.path.join(settings.BASE_DIR, 'core/static/img/dummy/module_0.png')),
+            ImageField(from_path=os.path.join(settings.BASE_DIR, 'core/static/img/dummy/module_1.png')),
+            ImageField(from_path=os.path.join(settings.BASE_DIR, 'core/static/img/dummy/module_2.png')),
+            ImageField(from_path=os.path.join(settings.BASE_DIR, 'core/static/img/dummy/module_3.png')),
         ]
+
+        # create super user
+        u = UserFactory(
+            username='test',
+            is_staff=True,
+            is_superuser=True
+        )
+
+
 
         for idx, category_data in enumerate(data):
             category = CategoryFactory.create(
@@ -111,18 +127,18 @@ class Command(BaseCommand):
                 icon__file=category_images[idx % len(category_images)]
             )
 
-            containers_data = category_data.get('containers', [])
+            modules_data = category_data.get('modules', [])
 
             for i in range(0, random.randint(4, 7)):
 
-                container_data = containers_data[i] if len(containers_data) > i else {}
-                container = ContainerFactory.create(
+                module_data = modules_data[i] if len(modules_data) > i else {}
+                module = ModuleFactory.create(
                     parent=category,
-                    hero_image__file=conatainer_images[i % len(conatainer_images)],
-                    **{k: v for (k, v) in container_data.items() if k != 'units'}
+                    hero_image__file=module_images[i % len(module_images)],
+                    **{k: v for (k, v) in module_data.items() if k != 'units'}
                 )
-                units_data = container_data.get('units', [])
+                units_data = module_data.get('units', [])
 
                 for i in range(0, random.randint(3, 5)):
                     unit_data = units_data[i] if len(units_data) > i else {}
-                    UnitFactory.create(parent=container, **unit_data)
+                    UnitFactory.create(parent=module, **unit_data)

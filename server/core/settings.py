@@ -46,7 +46,7 @@ if not DEBUG:
 INSTALLED_APPS = [
     'core',
     'api',
-    'containers',
+    'modules',
 
     'wagtail.contrib.forms',
     'wagtail.contrib.redirects',
