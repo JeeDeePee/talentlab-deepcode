@@ -38,9 +38,15 @@
   }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+  @import "../../styles/var";
+
   img {
     max-width: 100%;
+  }
+
+  .card {
+    border-radius: 11px;
   }
 
 </style>

@@ -13,7 +13,9 @@
   }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+  @import "../../styles/var";
+
   img {
     max-width: 100%;
   }
