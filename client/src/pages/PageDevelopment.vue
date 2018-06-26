@@ -3,11 +3,14 @@
     <h2 class="grey--text">Meine Ziele</h2>
     <Goal class="mb-4"/>
 
-    <h2 class="grey--text">Meine Lernmodule</h2>
-    <v-btn>
-      <v-icon>star</v-icon>
-      Lernmodule auswählen
-    </v-btn>
+    <div class="clearfix">
+      <h2 class="grey--text float-l">Meine Lernmodule</h2>
+        <v-btn class="float-r">
+        <v-icon>add</v-icon>
+        Lernmodule auswählen
+      </v-btn>
+    </div>
+
 
     <Module v-for="(item, index) in modules" v-bind:key="index" class="mb-4"/>
 
@@ -80,5 +83,20 @@
     font-size: 18px;
     font-weight: bold;
   }
+
+ .clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.float-l {
+  float: left;
+}
+
+.float-r {
+  float: right;
+  margin-top: -5px;
+}
 
 </style>

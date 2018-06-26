@@ -1,8 +1,8 @@
 <template>
   <v-card>
     <v-card-text>
-      <div class="grey--text">Mastering Complexity – Vernetztes Denken</div>
-      <div class="grey--text">22.11.2017 – 1.7.2018</div>
+      <span class="grey--text">Mastering Complexity – Vernetztes Denken</span>
+      <span class="grey--text">22.11.2017 – 1.7.2018</span>
 
       <h3>Ziel 1: Unternehmensübergreifende Projekte zum Erfolg führen</h3>
 
@@ -44,5 +44,9 @@
 </script>
 
 <style scoped>
+
+h3 {
+  font-size: 20px;
+}
 
 </style>

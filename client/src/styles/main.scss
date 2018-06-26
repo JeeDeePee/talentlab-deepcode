@@ -30,7 +30,6 @@ a {
 
 .btn--active .btn__content:before, .btn:focus .btn__content:before, .btn:hover .btn__content:before .btn:not(.btn--depressed){
   background-color: transparent;
-  box-shadow: none;
 }
 
 
@@ -40,6 +39,7 @@ a {
   border: 2px solid #FD6E22;
   padding-bottom: 36px;
   font-size: 15px;
+  box-shadow: none !important;
 }
 
 .theme--light .btn:not(.btn--icon):not(.btn--flat) {

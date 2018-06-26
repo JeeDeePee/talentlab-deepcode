@@ -20,16 +20,22 @@
     max-width: 100%;
   }
   
+  h4 {
+    padding-bottom: 60px;
+  }
+
   h5 {
-    border-top: 0.25pt solid grey;
+    border-top: 1px solid $grey-2;
     font-size: 15px;
     font-weight: 400;
+    padding-top: 5px;
+    max-width: 320px;
   }
 
   h6 {
     font-size: 15px;
     font-weight: bold;
-    padding-bottom: 20px;
+    padding-bottom: 10px;
   }
   
 
