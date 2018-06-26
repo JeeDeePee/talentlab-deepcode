@@ -12,38 +12,25 @@ from django.db import models
 from django_extensions.db.models import TimeStampedModel
 
 
-# User progress in modules
-
-
-class UserProgress(TimeStampedModel):
-    class Meta:
-        verbose_name = 'Fortschritt'
-        verbose_name_plural = 'A Fortschritte'
-
-    user = models.ForeignKey(get_user_model(), on_delete=models.CASCADE)
-
-    proposed_modules = models.ManyToManyField('modules.Module', blank=True)
-
-    def __str__(self):
-        return '{}'.format(self.user)
+# User progress in learning modules
 
 
 class UserModule(TimeStampedModel):
     class Meta:
-        verbose_name = 'Lernmodul-Fortschritt'
-        verbose_name_plural = 'B Lernmodul-Fortschritte'
+        verbose_name = 'UserModule'
+        verbose_name_plural = 'UserModules'
 
-    user_progress = models.ForeignKey('progress.UserProgress', null=True, on_delete=models.CASCADE)
+    user = models.ForeignKey('user.User', null=True, on_delete=models.CASCADE)
     module = models.ForeignKey('modules.Module', null=True, on_delete=models.SET_NULL)
 
     def __str__(self):
-        return '{} - {}'.format(self.user_progress, self.module)
+        return '{} - {}'.format(self.user, self.module)
 
 
 class UserUnit(TimeStampedModel):
     class Meta:
-        verbose_name = 'Lernangebot-Fortschritt'
-        verbose_name_plural = 'C Lernangebote-Fortschritte'
+        verbose_name = 'UserUnit'
+        verbose_name_plural = 'UserUnits'
 
     user_module = models.ForeignKey('progress.UserModule', null=True, on_delete=models.CASCADE)
     unit = models.ForeignKey('modules.Unit', null=True, on_delete=models.SET_NULL)
@@ -58,16 +45,16 @@ class UserUnit(TimeStampedModel):
 class Target(TimeStampedModel):
     class Meta:
         verbose_name = 'Ziel'
-        verbose_name_plural = 'D Ziele'
+        verbose_name_plural = 'Ziele'
 
-    user_progress = models.ForeignKey('progress.UserProgress', null=True, on_delete=models.CASCADE)
+    user = models.ForeignKey('user.User', null=True, on_delete=models.CASCADE)
     module = models.ForeignKey('progress.UserModule', null=True, on_delete=models.SET_NULL)
 
 
 class Evaluation(TimeStampedModel):
     class Meta:
         verbose_name = 'Evaluation'
-        verbose_name_plural = 'E Evaluationen'
+        verbose_name_plural = 'Evaluationen'
 
     target = models.ForeignKey('progress.Target', blank=True, null=True, on_delete=models.CASCADE)
 
@@ -78,7 +65,7 @@ class Evaluation(TimeStampedModel):
 class ActionPlan(TimeStampedModel):
     class Meta:
         verbose_name = 'Action Plan'
-        verbose_name_plural = 'F Action Pläne'
+        verbose_name_plural = 'Action Pläne'
 
     target = models.ForeignKey('progress.Target', blank=True, null=True, on_delete=models.CASCADE)
 

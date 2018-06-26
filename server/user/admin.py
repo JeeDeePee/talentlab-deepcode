@@ -7,8 +7,9 @@
 #
 # Created on 26/06/18
 # @author: Pawel Kowalski <pawel.kowalski@orbit7.ch>
-from django.apps import AppConfig
+from django.contrib import admin
+from django.contrib.auth.admin import UserAdmin
+from .models import User
 
 
-class ProgressConfig(AppConfig):
-    name = 'progress'
+admin.site.register(User, UserAdmin)

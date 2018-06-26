@@ -96,12 +96,13 @@ class Module(Page):
     parent_page_types = ['modules.Category']
     subpage_types = ['modules.Unit']
 
+
 VIMEO_META_URL = 'https://vimeo.com/api/oembed.json?url=https%3A//vimeo.com/{video_id}'
 
 
 @receiver(pre_save, sender=Module)
 def pre_save_module(sender, instance, **kwargs):
-    def nomralize_data(field):
+    def normalize_data(field):
         data = []
         for d in field.stream_data:
 
@@ -126,8 +127,8 @@ def pre_save_module(sender, instance, **kwargs):
             })
         return data
 
-    instance.tools_normalized = nomralize_data(instance.tools)
-    instance.resources_normalized = nomralize_data(instance.resources)
+    instance.tools_normalized = normalize_data(instance.tools)
+    instance.resources_normalized = normalize_data(instance.resources)
 
     try:
         if instance.video_id:

@@ -1,0 +1,8 @@
+query UserQuery {
+  user(id:"VXNlck5vZGU6MQ==") {
+    id,
+    username,
+    firstName,
+    lastName
+  }
+}

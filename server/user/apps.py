@@ -10,5 +10,5 @@
 from django.apps import AppConfig
 
 
-class ProgressConfig(AppConfig):
-    name = 'progress'
+class UserConfig(AppConfig):
+    name = 'user'

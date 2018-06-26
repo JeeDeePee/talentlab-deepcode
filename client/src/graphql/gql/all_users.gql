@@ -1,0 +1,25 @@
+query AllUsersQuery {
+  allUsers(username:"test") {
+    edges {
+      node {
+        id,
+        username,
+        firstName,
+        lastName
+      }
+    }
+  }
+}
+
+query AllUsersQuery {
+  allUsers {
+    edges {
+      node {
+        id,
+        username,
+        firstName,
+        lastName
+      }
+    }
+  }
+}

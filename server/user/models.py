@@ -7,8 +7,8 @@
 #
 # Created on 26/06/18
 # @author: Pawel Kowalski <pawel.kowalski@orbit7.ch>
-from django.apps import AppConfig
+from django.contrib.auth.models import AbstractUser
 
 
-class ProgressConfig(AppConfig):
-    name = 'progress'
+class User(AbstractUser):
+    pass

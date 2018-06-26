@@ -45,6 +45,7 @@ if not DEBUG:
 INSTALLED_APPS = [
     'core',
     'api',
+    'user',
     'modules',
     'progress',
 
@@ -139,6 +140,9 @@ WSGI_APPLICATION = 'core.wsgi.application'
 DATABASES = {
     'default': dj_database_url.config()
 }
+
+# Django custom user
+AUTH_USER_MODEL = 'user.User'
 
 # Password validation
 # https://docs.djangoproject.com/en/1.11/ref/settings/#auth-password-validators

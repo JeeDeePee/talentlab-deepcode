@@ -9,17 +9,12 @@
 # @author: Pawel Kowalski <pawel.kowalski@orbit7.ch>
 from django.contrib import admin
 
-from progress.models import ActionPlan, Evaluation, Target, UserUnit, UserModule, UserProgress
-
-
-@admin.register(UserProgress)
-class UserProgressAdmin(admin.ModelAdmin):
-    list_display = ('user', )
+from progress.models import ActionPlan, Evaluation, Target, UserUnit, UserModule
 
 
 @admin.register(UserModule)
 class UserModuleAdmin(admin.ModelAdmin):
-    list_display = ('user_progress', 'module')
+    list_display = ('user', 'module')
 
 
 @admin.register(UserUnit)
