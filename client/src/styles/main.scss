@@ -28,6 +28,13 @@ a {
   }
 }
 
+.toolbar__content {
+  .btn {
+    border: none;
+  }
+
+}
+
 .btn--active .btn__content:before, .btn:focus .btn__content:before, .btn:hover .btn__content:before .btn:not(.btn--depressed){
   background-color: transparent;
 }
@@ -52,4 +59,11 @@ a {
 
 .capitalize {
   text-transform: capitalize;
+}
+
+
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
 }
