@@ -26,43 +26,36 @@ class UserNode(DjangoObjectType):
         interfaces = (relay.Node, )
 
 
+class UserUnitNode(DjangoObjectType):
+    pk = graphene.Int()
+    unit = DjangoFilterConnectionField(UnitNode)
+
+    # synthetic attribute: started
+    # has this unit been started by the user?
+    # filter on this attribute
+
+    class Meta:
+        model = UserUnit
+        filter_fields = []
+        interfaces = (relay.Node, )
+
+    def resolve_pk(self, info, *args):
+        return self.id
+
+
 class UserModuleNode(DjangoObjectType):
     pk = graphene.Int()
-    user = relay.Node.Field(UserNode)
-    module = DjangoFilterConnectionField(ModuleNode)
+    user = UserNode
+    module = ModuleNode
+    user_units = DjangoFilterConnectionField(UserUnitNode)
 
     class Meta:
         model = UserModule
         filter_fields = ['user__username']
         interfaces = (relay.Node, )
 
-    def resolve_pk(self, *args, **kwargs):
+    def resolve_pk(self, info, *args):
         return self.id
-
-    def resolve_module(self, *args, **kwargs):
-        return [self.module]
-
-
-# class UserModuleFilter(django_filters.FilterSet):
-#     name = django_filters.CharFilter(lookup_type='iexact')
-#
-#     class Meta:
-#         model = UserModule
-#         fields = ['name']
-#
-#     @property
-#     def qs(self):
-#         # The query context can be found in self.request.
-#         return super(UserModuleFilter, self).qs.filter(owner=self.request.user)
-
-
-# class UserUnitNode(DjangoObjectType):
-#     unit = DjangoFilterConnectionField(UnitNode)
-#
-#     class Meta:
-#         model = UserUnit
-#         # filter_fields = ['user_module', 'unit']
-#         interfaces = (relay.Node, )
 
 
 class ProgressQuery(object):

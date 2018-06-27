@@ -22,16 +22,16 @@ class UserUnitAdmin(admin.ModelAdmin):
     list_display = ('user_module', 'unit')
 
 
-@admin.register(Target)
-class TargetAdmin(admin.ModelAdmin):
-    pass
-
-
-@admin.register(ActionPlan)
-class ActionPlanAdmin(admin.ModelAdmin):
-    pass
-
-
-@admin.register(Evaluation)
-class EvaluationAdmin(admin.ModelAdmin):
-    pass
+# @admin.register(Target)
+# class TargetAdmin(admin.ModelAdmin):
+#     pass
+#
+#
+# @admin.register(ActionPlan)
+# class ActionPlanAdmin(admin.ModelAdmin):
+#     pass
+#
+#
+# @admin.register(Evaluation)
+# class EvaluationAdmin(admin.ModelAdmin):
+#     pass

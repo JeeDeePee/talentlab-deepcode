@@ -1,0 +1,18 @@
+query UserModuleQuery {
+  userModule(id:"VXNlck1vZHVsZU5vZGU6MQ==") {
+    id,
+    pk,
+    foo,
+    bar,
+    mymodule,
+    module {
+      edges {
+        node {
+		      pk,
+
+
+        }
+      }
+    }
+  }
+}
