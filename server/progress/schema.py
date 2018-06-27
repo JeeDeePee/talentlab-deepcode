@@ -1,19 +1,8 @@
-# -*- coding: utf-8 -*-
-#
-# orbit7 gmbh
-# http://orbit7.ch/
-#
-# Copyright (c) 2018 orbit7 gmbh. All rights reserved.
-#
-# Created on 25/06/18
-# @author: Pawel Kowalski <pawel.kowalski@orbit7.ch>
-import django_filters
 import graphene
 from graphene import relay
 from graphene_django import DjangoObjectType
 from graphene_django.filter import DjangoFilterConnectionField
 
-from modules.models import Module
 from modules.schema import ModuleNode, UnitNode
 from progress.models import UserUnit, UserModule
 from user.models import User
@@ -64,6 +53,3 @@ class ProgressQuery(object):
 
     user_module = relay.Node.Field(UserModuleNode)
     all_user_modules = DjangoFilterConnectionField(UserModuleNode)
-
-    # user_unit = relay.Node.Field(UserUnitNode)
-    # all_user_units = DjangoFilterConnectionField(UserUnitNode)

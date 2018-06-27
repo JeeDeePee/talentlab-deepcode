@@ -14,6 +14,8 @@ from core.factories import UserFactory
 from modules.factories import CategoryFactory, ModuleFactory, UnitFactory
 from django.db import connection
 
+from progress.factories import UserModuleFactory, UserUnitFactory
+
 data = [
     {
         'title': 'Mastering Complexity', 'modules': [
@@ -46,7 +48,6 @@ data = [
                     'duration': '1 Tag'
                 },
             ]
-
         },
         {
             'title': 'Effizient kommunizieren',
@@ -60,6 +61,31 @@ data = [
             'title': 'Leading through Disruption',
             'skill': 'Leadership',
             'teaser': 'Gezieltes Training für erfahrene Führungskräfte',
+            'description': 'Unternehmen agieren getrieben durch die Digitalisierung in einem hyperdynamischen und stetig komplexeren Umfeld unter hohem Leistungs-, Anpassungs- und Innovationsdruck. Hinzu kommen neue Arbeitsformen und veränderte Ansprüche der Millenial-Mitarbeiter. Das Lernmodul «Leading through Disruption» trainiert erfahrene Führungskräfte.',
+            'video_description': '<b>Samuel Ryser</b><br>Unser Fach-Experte erläutert die Heraus-forderungen von Leadership in Zeiten von disruptiven Veränderungen.',
+            'units': [
+                {
+                    'title': 'Führungsschulung für Kader',
+                    'teaser': 'Meistern Sie die steigenden Ansprüche an Führungskräfte',
+                    'type': 'kurs',
+                    'count': '3 Veranstaltungen',
+                    'duration': 'je 2 Tage'
+                },
+                {
+                    'title': 'Führungszirkel',
+                    'teaser': 'In einem organisationsübergreifenden Führungszirkel Führungsfragen in …',
+                    'type': 'kurs',
+                    'count': '3 Veranstaltungen',
+                    'duration': 'je 4 Stunden'
+                },
+                {
+                    'title': 'Coaching-Abo',
+                    'teaser': 'Online & Offline Sessions',
+                    'type': 'coaching',
+                    'count': '8 Sessions',
+                    'duration': 'je 45 Minuten'
+                },
+            ]
         },
         {
             'title': 'First-time Leader',
@@ -117,6 +143,9 @@ class Command(BaseCommand):
             is_superuser=True
         )
 
+        for i in range(0, 4):
+            UserFactory(username='user{}'.format(i))
+
         for idx, category_data in enumerate(data):
             category = CategoryFactory.create(
                 parent=site.root_page,
@@ -136,9 +165,11 @@ class Command(BaseCommand):
                 )
                 units_data = module_data.get('units', [])
 
-                for i in range(0, random.randint(3, 5)):
-                    unit_data = units_data[i] if len(units_data) > i else {}
+                for j in range(0, random.randint(3, 5)):
+                    unit_data = units_data[j] if len(units_data) > j else {}
                     UnitFactory.create(parent=module, **unit_data)
 
-        for i in range(0, 4):
-            UserFactory(username='user{}'.format(i))
+        # create user progress
+        UserModuleFactory.create_batch(size=20)
+        UserUnitFactory.create_batch(size=100)
+

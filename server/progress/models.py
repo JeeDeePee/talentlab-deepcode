@@ -1,29 +1,8 @@
-# -*- coding: utf-8 -*-
-#
-# orbit7 gmbh
-# http://orbit7.ch/
-#
-# Copyright (c) 2018 orbit7 gmbh. All rights reserved.
-#
-# Created on 25/06/18
-# @author: Pawel Kowalski <pawel.kowalski@orbit7.ch>
 from django.db import models
 from django_extensions.db.models import TimeStampedModel
 
 
 # User progress in learning modules
-
-
-class UserUnit(TimeStampedModel):
-    class Meta:
-        verbose_name = 'UserUnit'
-        verbose_name_plural = 'UserUnits'
-
-    user_module = models.ForeignKey('progress.UserModule', null=True, on_delete=models.CASCADE)
-    unit = models.ForeignKey('modules.Unit', null=True, on_delete=models.SET_NULL)
-
-    def __str__(self):
-        return '{} - {}'.format(self.user_module, self.unit)
 
 
 class UserModule(TimeStampedModel):
@@ -36,6 +15,18 @@ class UserModule(TimeStampedModel):
 
     def __str__(self):
         return '{} - {}'.format(self.user, self.module)
+
+
+class UserUnit(TimeStampedModel):
+    class Meta:
+        verbose_name = 'UserUnit'
+        verbose_name_plural = 'UserUnits'
+
+    user_module = models.ForeignKey('progress.UserModule', null=True, on_delete=models.CASCADE)
+    unit = models.ForeignKey('modules.Unit', null=True, on_delete=models.SET_NULL)
+
+    def __str__(self):
+        return '{} - {}'.format(self.user_module, self.unit)
 
 
 # Individual targets
