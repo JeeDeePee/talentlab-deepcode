@@ -2,17 +2,23 @@ query UserModuleQuery {
   userModule(id:"VXNlck1vZHVsZU5vZGU6MQ==") {
     id,
     pk,
-    foo,
-    bar,
-    mymodule,
     module {
+      id,
+      teaser
+    },
+    userUnits {
       edges {
         node {
-		      pk,
-
-
+          id
         }
       }
+    },
+    user {
+      id,
+      username,
+      firstName,
+      lastName,
+      email
     }
   }
 }
