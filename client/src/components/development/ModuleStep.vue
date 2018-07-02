@@ -19,10 +19,6 @@
   img {
     max-width: 100%;
   }
-  
-  h4 {
-    padding-bottom: 60px;
-  }
 
   h5 {
     border-top: 1px solid $grey-2;

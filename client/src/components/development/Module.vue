@@ -1,17 +1,17 @@
 <template>
   <v-card>
-    <v-card-text>
-      <div class="grey--text">Mastering Complexity – Vernetztes Denken</div>
-      <v-btn>Details anzeigen</v-btn>
-      <h3 class="heading">Partnering for Success</h3>
-      <div>Erfolgreiche Führung von Partnerschaften</div>
-      
-
-      
+    <v-card-text class="text">
+      <div class="grey--text mb-2">Mastering Complexity – Vernetztes Denken</div>
+         <div class="grid-container">
+          <h3 class="heading item1">Partnering for Success</h3>
+          <v-btn class="button item2 hidden-sm-and-down">Details anzeigen</v-btn>
+         </div> 
+      <div class="pb-3 mt-3">Erfolgreiche Führung von Partnerschaften</div>  
+      <v-btn class="button_xs mb-3 hidden-md-and-up btn-left">Details anzeigen</v-btn>    
     </v-card-text>
       <v-container fluid grid-list-xl class="pt-0 test">
         <v-layout row wrap>
-          <v-flex xs12 sm6 class="pa-1">
+          <v-flex xs12 sm6 class="pa-3">
             <h4 class="mb-1 mt-2">Nächste Schritte</h4>
             <ModuleStep v-for="(item, index) in steps" v-bind:key="index" class="mb-1"/>
           </v-flex>
@@ -43,6 +43,31 @@
 <style lang="scss" scoped>
   @import "../../styles/var";
 
+  .grid-container {
+    display: grid;
+  }
+
+  .item1 {
+    grid-column: 1 / span 9;
+  }
+
+  .item2 {
+    grid-column: 10 / span 12;
+  }
+
+  .button {
+    float: right;
+    margin-top: 14px;
+  }
+
+  .button-xs {
+    margin-left: 0px !important;
+  }
+
+  .btn-left {
+    margin-left: 0;
+  }
+
   img {
     max-width: 100%;
   }
@@ -58,6 +83,10 @@
   .heading {
     font-size: 44px;
     font-weight: bold;
+  }
+
+  h3 {
+    line-height: 1.15;
   }
 
   h4 {

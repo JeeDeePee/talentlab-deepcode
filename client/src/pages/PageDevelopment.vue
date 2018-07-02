@@ -1,20 +1,27 @@
 <template>
   <v-container class="mt-3">
-    <h2 class="grey--text">Meine Ziele</h2>
+    <h2 class="grey--text mb-3">Meine Ziele</h2>
     <Goal class="mb-4"/>
 
     <div class="clearfix">
-      <h2 class="grey--text float-l">Meine Lernmodule</h2>
-        <v-btn class="float-r">
-        <v-icon>add</v-icon>
-        Lernmodule auswählen
-      </v-btn>
+        <v-btn class="hidden-sm-and-down float-r">
+          <v-icon>add</v-icon>
+          Lernmodule auswählen
+        </v-btn>
+
+      <h2 class="grey--text mb-3">Meine Lernmodule</h2>
+
+          <v-btn class="mb-4 ml-0 mt-0 hidden-md-and-up">
+            <v-icon>add</v-icon>
+            Lernmodule auswählen
+          </v-btn>
+  
     </div>
 
 
     <Module v-for="(item, index) in modules" v-bind:key="index" class="mb-4"/>
 
-    <h3 class="title-recomendations">Vorgeschlagene Lernmodule</h3>
+    <h3 class="title-recomendations pt-3">Vorgeschlagene Lernmodule</h3>
     <v-container fluid grid-list-md>
       <v-layout row wrap>
         <v-flex v-for="(item, index) in recomendations" v-bind:key="index" xs12 sm6 class="mb-1">
@@ -57,7 +64,6 @@
   h2 {
     font-size: 24px;
     font-weight: 400;
-    margin-bottom: 16px;
   }
 
   h3 {
@@ -98,5 +104,6 @@
   float: right;
   margin-top: -5px;
 }
+
 
 </style>

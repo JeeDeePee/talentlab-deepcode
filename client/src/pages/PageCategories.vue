@@ -1,5 +1,5 @@
 <template>
-  <v-container fluid grid-list-md>
+  <v-container fluid grid-list-xl>
     <v-layout row wrap>
       <v-flex v-for="category in categories" v-bind:key="category.id" xs4 class="text-center">
         <img v-bind:src="category.node.icon"><br>

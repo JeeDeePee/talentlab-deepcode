@@ -20,7 +20,8 @@
   .card {
     background: rgba(253, 110, 34, 0.15);
     border: 1px solid #F7C3A8;
-    border-radius: 10px
+    border-radius: 11px;
+    padding: 0;
   }
 
   .heading {
