@@ -13,7 +13,7 @@
             <div v-if="module.videoId" class="mt-5 mb-1">
               <a href="#" @click.stop="showVideoPlayer=true">
                 <img class="video-thumbnail"
-                     v-bind:src="module.videoThumbnailData.thumbnail_url_with_play_button"/>
+                     :src="module.videoThumbnailData.thumbnail_url_with_play_button"/>
               </a>
               <div v-html="module.videoDescription"></div>
               <VideoPlayer :visible="showVideoPlayer" :videoId="module.videoId" @close="showVideoPlayer=false"/>
@@ -21,7 +21,7 @@
 
           </v-flex>
           <v-flex xs12 sm6 md6 lg6 xl6>
-            <img v-bind:src="module.heroImage"/>
+            <img :src="module.heroImage"/>
           </v-flex>
         </v-layout>
       </v-container>
@@ -31,7 +31,7 @@
       <v-layout row wrap>
         <v-flex xs12 sm8 md8 lg8 xl8>
           <h3>Lernangebote</h3>
-          <Unit v-for="(item, index) in module.units.edges" v-bind:key="index" :unit="item.node"  class="mb-4"></Unit>
+          <Unit v-for="(item, index) in module.units.edges" :key="index" :unit="item.node"  class="mb-4"></Unit>
         </v-flex>
         <v-flex xs12 sm4 md4 lg4 xl4>
           <h3>Ressourcen</h3>

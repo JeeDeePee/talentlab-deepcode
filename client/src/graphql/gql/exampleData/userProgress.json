@@ -1,0 +1,100 @@
+{
+  "data": {
+    "user": {
+      "firstName": "Theodor",
+      "id": "VXNlck5vZGU6MQ==",
+      "lastName": "Biggen",
+      "usermoduleSet": {
+        "edges": [
+          {
+            "node": {
+              "id": "TW9kdWxlUHJvZ3Jlc3NOb2RlOjE=",
+              "module": {
+                "category": "{\"title\": \"Mastering Complexity\", \"slug\": \"mastering-complexity\"}",
+                "id": "TW9kdWxlTm9kZTo1",
+                "teaser": "Erfolgreiche Führung von Partnerschaften",
+                "title": "Partnering for Success",
+                "units": {
+                  "edges": [
+                    {
+                      "node": {
+                        "id": "VW5pdE5vZGU6Ng==",
+                        "title": "Partnering Modelle",
+                        "type": "WEBINAR"
+                      }
+                    },
+                    {
+                      "node": {
+                        "id": "VW5pdE5vZGU6Nw==",
+                        "title": "Supply Chain Design",
+                        "type": "WEBINAR"
+                      }
+                    },
+                    {
+                      "node": {
+                        "id": "VW5pdE5vZGU6OA==",
+                        "title": "Erfolgreich verhandeln",
+                        "type": "KURS"
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          {
+            "node": {
+              "id": "TW9kdWxlUHJvZ3Jlc3NOb2RlOjY=",
+              "module": {
+                "category": "{\"title\": \"Growing as a Leader\", \"slug\": \"growing-as-a-leader\"}",
+                "id": "TW9kdWxlTm9kZToyNw==",
+                "teaser": "Grundlagen und Basis-Training für junge Führungskräfte",
+                "title": "First-time Leader",
+                "units": {
+                  "edges": [
+                    {
+                      "node": {
+                        "id": "VW5pdE5vZGU6Mjg=",
+                        "title": "Autem labore magni",
+                        "type": "WEBINAR"
+                      }
+                    },
+                    {
+                      "node": {
+                        "id": "VW5pdE5vZGU6Mjk=",
+                        "title": "Modi nulla",
+                        "type": "WEBINAR"
+                      }
+                    },
+                    {
+                      "node": {
+                        "id": "VW5pdE5vZGU6MzA=",
+                        "title": "Officiis nulla omnis",
+                        "type": "COACHING"
+                      }
+                    },
+                    {
+                      "node": {
+                        "id": "VW5pdE5vZGU6MzE=",
+                        "title": "At esse",
+                        "type": "KURS"
+                      }
+                    },
+                    {
+                      "node": {
+                        "id": "VW5pdE5vZGU6MzI=",
+                        "title": "Nisi magni in",
+                        "type": "WEBINAR"
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        ]
+      },
+      "username": "test"
+    }
+  }
+}

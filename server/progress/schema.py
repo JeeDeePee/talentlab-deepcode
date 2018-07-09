@@ -91,6 +91,8 @@ class ProgressMutations(graphene.ObjectType):
 
 class ProgressQuery(object):
     user = relay.Node.Field(UserNode)
+    user_progress = relay.Node.Field(UserNode)
+
     all_users = DjangoFilterConnectionField(UserNode)
 
     module_progress = relay.Node.Field(ModuleProgressNode)

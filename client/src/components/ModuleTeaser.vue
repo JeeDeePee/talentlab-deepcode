@@ -11,7 +11,7 @@
       <v-card-text>
         {{module.teaser}}
       </v-card-text>
-      <v-card-media v-bind:src="module.heroImage" height="200px"></v-card-media>
+      <v-card-media :src="module.heroImage" height="200px"></v-card-media>
     </v-card>
   </router-link>
 </template>

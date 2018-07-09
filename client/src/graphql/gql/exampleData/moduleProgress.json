@@ -1,0 +1,55 @@
+{
+  "data": {
+    "moduleProgress": {
+      "id": "TW9kdWxlUHJvZ3Jlc3NOb2RlOjE=",
+      "module": {
+        "id": "TW9kdWxlTm9kZTo1",
+        "slug": "partnering-for-success",
+        "teaser": "Erfolgreiche Führung von Partnerschaften",
+        "title": "Partnering for Success"
+      },
+      "pk": 1,
+      "unitProgress": {
+        "edges": [
+          {
+            "node": {
+              "created": "2018-06-28T09:33:39.492699+00:00",
+              "id": "VW5pdFByb2dyZXNzTm9kZTox",
+              "userModule": {
+                "id": "TW9kdWxlUHJvZ3Jlc3NOb2RlOjE=",
+                "module": {
+                  "category": "{\"title\": \"Mastering Complexity\", \"slug\": \"mastering-complexity\"}",
+                  "skill": "Vernetztes Denken",
+                  "teaser": "Erfolgreiche Führung von Partnerschaften",
+                  "title": "Partnering for Success"
+                }
+              }
+            }
+          },
+          {
+            "node": {
+              "created": "2018-06-28T09:33:39.494955+00:00",
+              "id": "VW5pdFByb2dyZXNzTm9kZToy",
+              "userModule": {
+                "id": "TW9kdWxlUHJvZ3Jlc3NOb2RlOjI=",
+                "module": {
+                  "category": "{\"title\": \"Mastering Complexity\", \"slug\": \"mastering-complexity\"}",
+                  "skill": "Verhandlungsfähigkeit / Kooperationsfähigkeit",
+                  "teaser": "Gezieltes Training für Führungsalltag und Verhandlung",
+                  "title": "Effizient kommunizieren"
+                }
+              }
+            }
+          }
+        ]
+      },
+      "user": {
+        "email": "jbaerer@example.com",
+        "firstName": "Theodor",
+        "id": "VXNlck5vZGU6MQ==",
+        "lastName": "Biggen",
+        "username": "test"
+      }
+    }
+  }
+}

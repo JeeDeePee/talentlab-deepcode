@@ -1,12 +1,12 @@
 <template>
   <v-card>
     <v-card-text class="text">
-      <div class="grey--text mb-2">Mastering Complexity – Vernetztes Denken</div>
+      <div class="grey--text mb-2">{{ category }} – {{ moduleProgress.skill }}</div>
          <div class="grid-container">
-          <h3 class="heading item1">Partnering for Success</h3>
+          <h3 class="heading item1">{{ moduleProgress.title }}</h3>
           <v-btn class="button item2 hidden-sm-and-down">Details anzeigen</v-btn>
          </div>
-      <div class="pb-3 mt-3">Erfolgreiche Führung von Partnerschaften</div>
+      <div class="pb-3 mt-3">{{ moduleProgress.teaser }}</div>
       <v-btn class="button_xs mb-3 hidden-md-and-up btn-left">Details anzeigen</v-btn>
     </v-card-text>
 
@@ -14,10 +14,10 @@
       <v-layout row wrap>
         <v-flex xs12 sm6 class="pa-3">
           <h4 class="mb-1 mt-2">Nächste Schritte</h4>
-          <ModuleStep v-for="(item, index) in steps" v-bind:key="index" class="mb-1"/>
+          <ModuleStep v-for="(unitProgress, index) in nextSteps" :unitProgress="unitProgress" :key="index" class="mb-1"/>
         </v-flex>
         <v-flex xs12 sm6 class="pa-0">
-          <img v-bind:src="'http://mountain.org/wp-content/uploads/Miraflores-Peru_TMI.jpg'">
+          <img :src="'http://mountain.org/wp-content/uploads/Miraflores-Peru_TMI.jpg'">
         </v-flex>
       </v-layout>
     </v-container>
@@ -25,13 +25,33 @@
 </template>
 
 <script>
-  import ModuleStep from '@/components/development/ModuleStep'
+  import ModuleStep from '@/components/development/ModuleNextStep'
 
   export default {
-    name: 'ModuleSteps',
+    name: 'module-progress-list-item',
+
+    props: {
+      moduleProgress: {
+        required: true,
+        type: Object
+      }
+    },
+
     components: {
       ModuleStep
     },
+
+    computed: {
+      category: function () {
+        return JSON.parse(this.moduleProgress.category).title
+      },
+
+      nextSteps: function () {
+        const unitProgress = this.moduleProgress.units.edges.map(entry => entry.node)
+        return unitProgress
+      }
+    },
+
     data() {
       return {
         steps: [1, 2]

@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="mb-1">
-      <h5>Webinar: Supply Chain Design</h5>
+      <h5>{{ unitProgress.type }}: {{ unitProgress.title }}</h5>
       <h6>> Nächste Lektion starten</h6>
     </div>
   </div>
@@ -9,7 +9,14 @@
 
 <script>
   export default {
-    name: 'module-steps'
+    name: 'module-next-step',
+
+    props: {
+      unitProgress: {
+        required: true,
+        type: Object
+      }
+    }
   }
 </script>
 

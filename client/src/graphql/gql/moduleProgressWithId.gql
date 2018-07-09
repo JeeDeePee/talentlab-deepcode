@@ -15,7 +15,7 @@ query ModuleProgressQuery {
       firstName
       lastName
     }
-    unitProgress(first: 3) {
+    unitProgress(first: 4) {
       edges {
         node {
           id

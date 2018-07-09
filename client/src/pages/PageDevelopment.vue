@@ -17,12 +17,12 @@
       </v-btn>
     </div>
 
-    <Module v-for="(item, index) in moduleProgress" v-bind:key="index" class="mb-4"/>
+    <Module v-for="(moduleProgress, index) in userModules" :moduleProgress="moduleProgress" :key="index" class="mb-4"/>
 
     <h3 class="title-recomendations pt-3">Vorgeschlagene Lernmodule</h3>
     <v-container fluid grid-list-md>
       <v-layout row wrap>
-        <v-flex v-for="(item, index) in recomendations" v-bind:key="index" xs12 sm6 class="mb-1">
+        <v-flex v-for="(item, index) in recomendations" :key="index" xs12 sm6 class="mb-1">
           <Recomendation/>
         </v-flex>
       </v-layout>
@@ -38,7 +38,8 @@
   import Module from '@/components/development/Module'
   import Recomendation from '@/components/development/Recomendation'
 
-  import MODULE_PROGRESS_QUERY from '@/graphql/gql/moduleProgress.gql'
+  import USER_PROGRESS_QUERY from '@/graphql/gql/userProgress.gql'
+  // import MODULE_PROGRESS_QUERY from '@/graphql/gql/moduleProgress.gql'
   // import START_MODULE_PROGRESS_QUERY from '@/graphql/gql/startModuleProgress.gql'
 
   export default {
@@ -53,17 +54,20 @@
     data() {
       return {
         loading: true,
-        moduleProgress: {},
-        modules: [1, 2],
+        userProgress: {
+          usermoduleSet: {
+            edges: []
+          }
+        },
         recomendations: [1, 2]
       }
     },
 
     apollo: {
-      moduleProgress: {
-        query: MODULE_PROGRESS_QUERY,
+      userProgress: {
+        query: USER_PROGRESS_QUERY,
         variables: {
-          id: 'TW9kdWxlUHJvZ3Jlc3NOb2RlOjE='
+          id: 'VXNlck5vZGU6MQ=='
         }
       }
 
@@ -80,6 +84,11 @@
     },
 
     computed: {
+      userModules: function () {
+        const moduleProgress = this.userProgress.usermoduleSet.edges.map(entry => entry.node.module)
+        return moduleProgress
+      },
+
       ...mapGetters({
         // productIsInStock: 'productIsInStock'
       }),
