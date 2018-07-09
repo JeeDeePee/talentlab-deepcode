@@ -1,0 +1,14 @@
+query ModulesQuery {
+  modules {
+    edges {
+      node {
+        id,
+        slug,
+        title,
+        category,
+        teaser,
+        description
+      }
+    }
+  }
+}

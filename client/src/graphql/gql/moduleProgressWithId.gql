@@ -1,0 +1,27 @@
+query ModuleProgressQuery {
+  moduleProgress(id: "TW9kdWxlUHJvZ3Jlc3NOb2RlOjE=") {
+    id
+    pk
+    module {
+      id
+      teaser
+      title
+      slug
+    }
+    user {
+      id
+      username
+      email
+      firstName
+      lastName
+    }
+    unitProgress(first: 3) {
+      edges {
+        node {
+          id
+          created
+        }
+      }
+    }
+  }
+}

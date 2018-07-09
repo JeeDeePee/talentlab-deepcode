@@ -13,7 +13,7 @@
 </template>
 
 <script>
-  import CATEGORIES_QUERY from '@/graphql/gql/categories'
+  import CATEGORIES_QUERY from '@/graphql/gql/categories.gql'
   import ModuleTeaser from '@/components/ModuleTeaser'
 
   export default {
@@ -54,5 +54,4 @@
   .category-wrapper {
     width: 100%;
   }
-
 </style>

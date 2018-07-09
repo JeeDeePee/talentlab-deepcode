@@ -1,0 +1,27 @@
+query ModuleProgressQuery($id: ID!) {
+  moduleProgress(id: $id) {
+    id
+    pk
+    module {
+      id
+      teaser
+      title
+      slug
+    }
+    user {
+      id
+      username
+      email
+      firstName
+      lastName
+    }
+    unitProgress(first: 3) {
+      edges {
+        node {
+          id
+          created
+        }
+      }
+    }
+  }
+}

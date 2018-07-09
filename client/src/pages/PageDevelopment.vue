@@ -4,22 +4,20 @@
     <Goal class="mb-4"/>
 
     <div class="clearfix">
-        <v-btn class="hidden-sm-and-down float-r">
-          <v-icon>add</v-icon>
-          Lernmodule auswählen
-        </v-btn>
+      <v-btn class="hidden-sm-and-down float-r" @click="startModuleProgress('theFooBar123')">
+        <v-icon>add</v-icon>
+        Lernmodule auswählen
+      </v-btn>
 
       <h2 class="grey--text mb-3">Meine Lernmodule</h2>
 
-          <v-btn class="mb-4 ml-0 mt-0 hidden-md-and-up">
-            <v-icon>add</v-icon>
-            Lernmodule auswählen
-          </v-btn>
-  
+      <v-btn class="mb-4 ml-0 mt-0 hidden-md-and-up">
+        <v-icon>add</v-icon>
+        Lernmodule auswählen
+      </v-btn>
     </div>
 
-
-    <Module v-for="(item, index) in modules" v-bind:key="index" class="mb-4"/>
+    <Module v-for="(item, index) in moduleProgress" v-bind:key="index" class="mb-4"/>
 
     <h3 class="title-recomendations pt-3">Vorgeschlagene Lernmodule</h3>
     <v-container fluid grid-list-md>
@@ -34,23 +32,77 @@
 </template>
 
 <script>
+  import { mapGetters, mapState, mapActions } from 'vuex'
+
   import Goal from '@/components/development/Goal'
   import Module from '@/components/development/Module'
   import Recomendation from '@/components/development/Recomendation'
 
+  import MODULE_PROGRESS_QUERY from '@/graphql/gql/moduleProgress.gql'
+  // import START_MODULE_PROGRESS_QUERY from '@/graphql/gql/startModuleProgress.gql'
+
   export default {
     name: 'page-development',
+
     components: {
       Goal,
       Module,
       Recomendation
     },
+
     data() {
       return {
+        loading: true,
+        moduleProgress: {},
         modules: [1, 2],
         recomendations: [1, 2]
       }
+    },
+
+    apollo: {
+      moduleProgress: {
+        query: MODULE_PROGRESS_QUERY,
+        variables: {
+          id: 'TW9kdWxlUHJvZ3Jlc3NOb2RlOjE='
+        }
+      }
+
+      // categories: {
+      //   query: CREATE_USER_MODULE_QUERY,
+      //   manual: true
+      //   // result(data, loading, networkStatus) {
+      //   //   if (!loading) {
+      //   //     this.categories = data.data.categories.edges
+      //   //     this.modules = data.data.modules.edges
+      //   //   }
+      //   // }
+      // }
+    },
+
+    computed: {
+      ...mapGetters({
+        // productIsInStock: 'productIsInStock'
+      }),
+
+      ...mapState({
+        // allProducts: state => state.products,
+        // firstProduct: state => state.products[0]
+      })
+    },
+
+    methods: {
+      // startModuleProgress(progress) {
+      //   debugger
+      // }
+
+      ...mapActions({
+        startModuleProgress: 'startModuleProgress'
+      })
     }
+    // created() {
+    //   this.loading = true
+    //   this.$store.dispatch('fetchUserProgress').then(() => { this.loading = false })
+    // }
   }
 </script>
 
@@ -91,19 +143,17 @@
   }
 
  .clearfix::after {
-  content: "";
-  clear: both;
-  display: table;
-}
+    content: "";
+    clear: both;
+    display: table;
+  }
 
-.float-l {
-  float: left;
-}
+  .float-l {
+    float: left;
+  }
 
-.float-r {
-  float: right;
-  margin-top: -5px;
-}
-
-
+  .float-r {
+    float: right;
+    margin-top: -5px;
+  }
 </style>

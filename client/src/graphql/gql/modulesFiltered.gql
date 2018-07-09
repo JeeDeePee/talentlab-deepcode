@@ -1,0 +1,14 @@
+query ModulesQuery {
+  modules(slug:"effizient-kommunizieren") {
+    edges {
+      node {
+        id,
+        slug,
+        title,
+        category,
+        teaser,
+        description
+      }
+    }
+  }
+}

@@ -1,0 +1,6 @@
+mutation startModuleProgressMutation {
+  startModuleProgress(moduleId: "anotherFooBar123") {
+    ok
+    moduleId
+  }
+}

@@ -5,22 +5,22 @@
          <div class="grid-container">
           <h3 class="heading item1">Partnering for Success</h3>
           <v-btn class="button item2 hidden-sm-and-down">Details anzeigen</v-btn>
-         </div> 
-      <div class="pb-3 mt-3">Erfolgreiche Führung von Partnerschaften</div>  
-      <v-btn class="button_xs mb-3 hidden-md-and-up btn-left">Details anzeigen</v-btn>    
+         </div>
+      <div class="pb-3 mt-3">Erfolgreiche Führung von Partnerschaften</div>
+      <v-btn class="button_xs mb-3 hidden-md-and-up btn-left">Details anzeigen</v-btn>
     </v-card-text>
-      <v-container fluid grid-list-xl class="pt-0 test">
-        <v-layout row wrap>
-          <v-flex xs12 sm6 class="pa-3">
-            <h4 class="mb-1 mt-2">Nächste Schritte</h4>
-            <ModuleStep v-for="(item, index) in steps" v-bind:key="index" class="mb-1"/>
-          </v-flex>
-          <v-flex xs12 sm6 class="pa-0">
-            <img v-bind:src="'http://mountain.org/wp-content/uploads/Miraflores-Peru_TMI.jpg'">
-          </v-flex>
-        </v-layout>
-      </v-container>
 
+    <v-container fluid grid-list-xl class="pt-0 test">
+      <v-layout row wrap>
+        <v-flex xs12 sm6 class="pa-3">
+          <h4 class="mb-1 mt-2">Nächste Schritte</h4>
+          <ModuleStep v-for="(item, index) in steps" v-bind:key="index" class="mb-1"/>
+        </v-flex>
+        <v-flex xs12 sm6 class="pa-0">
+          <img v-bind:src="'http://mountain.org/wp-content/uploads/Miraflores-Peru_TMI.jpg'">
+        </v-flex>
+      </v-layout>
+    </v-container>
   </v-card>
 </template>
 
@@ -77,7 +77,7 @@
   }
 
   .container {
-  background: #EBF6EA;
+    background: #EBF6EA;
   }
 
   .heading {
@@ -98,5 +98,4 @@
   .test {
     padding: 0 12px;
   }
-
 </style>

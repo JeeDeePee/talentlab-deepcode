@@ -1,0 +1,28 @@
+query ModulesProgressQuery {
+  allModulesProgress {
+    edges {
+      node {
+        id
+        pk
+        module {
+          id
+          teaser
+        }
+        moduleUnits(first:2) {
+          edges {
+            node {
+              id
+            }
+          }
+        }
+        user {
+          id
+          username
+          firstName
+          lastName
+          email
+        }
+      }
+    }
+  }
+}

@@ -10,6 +10,7 @@ import VueAxios from 'vue-axios'
 import lodash from 'lodash'
 import VueVimeoPlayer from 'vue-vimeo-player'
 import VueIntercom from 'vue-intercom'
+import store from '@/store/index'
 
 Vue.config.productionTip = false
 
@@ -28,6 +29,7 @@ Vue.use(VueIntercom, { appId: 'aec9le28' })
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
+  store,
   router,
   provide: apolloProvider.provide(),
   render: h => h(App)
