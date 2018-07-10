@@ -2,24 +2,24 @@
   <v-card>
     <v-card-text class="text">
       <div class="grey--text mb-2">{{ moduleProgress.category.title }} – {{ moduleProgress.skill }}</div>
-         <div class="grid-container">
-          <h3 class="heading item1">{{ moduleProgress.title }}</h3>
-          <v-btn class="button item2 hidden-sm-and-down">Details anzeigen</v-btn>
-         </div>
+      <div class="grid-container">
+        <h3 class="heading item1">{{ moduleProgress.title }}</h3>
+        <v-btn :to="{name: 'module', params: {slug: moduleProgress.slug}}" class="button item2 hidden-sm-and-down">
+          Details anzeigen
+        </v-btn>
+      </div>
       <div class="pb-3 mt-3">{{ moduleProgress.teaser }}</div>
-      <v-btn class="button_xs mb-3 hidden-md-and-up btn-left">Details anzeigen</v-btn>
-
-      <!--<router-link :to="{name: 'module', params: {slug: module.slug}}">-->
-        <!--<v-btn class="button_xs mb-3 hidden-md-and-up btn-left">Details anzeigen</v-btn>-->
-      <!--</router-link>-->
-
+      <v-btn :to="{name: 'module', params: {slug: moduleProgress.slug}}"
+             class="button_xs mb-3 hidden-md-and-up btn-left">Details anzeigen
+      </v-btn>
     </v-card-text>
 
     <v-container fluid grid-list-xl class="pt-0 test">
       <v-layout row wrap>
         <v-flex xs12 sm6 class="pa-3">
           <h4 class="mb-1 mt-2">Nächste Schritte</h4>
-          <ModuleNextStep v-for="(unitProgress, index) in nextSteps" :unitProgress="unitProgress" :key="index" class="mb-1"/>
+          <ModuleNextStep v-for="(unitProgress, index) in nextSteps" :unitProgress="unitProgress" :key="index"
+                          class="mb-1"/>
         </v-flex>
         <v-flex xs12 sm6 class="pa-0">
           <img :src="'http://mountain.org/wp-content/uploads/Miraflores-Peru_TMI.jpg'">
