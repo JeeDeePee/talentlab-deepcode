@@ -20,7 +20,7 @@
   }
 </script>
 
-<style scoped lang="scss">
+<style lang="scss" scoped>
   @import "../../styles/var";
 
   a.link {
@@ -30,5 +30,4 @@
   .tool-item {
     border-top: 1px solid $grey-4;
   }
-
 </style>

@@ -50,7 +50,9 @@
   }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+  @import "../styles/var";
+
   .category-wrapper {
     width: 100%;
   }

@@ -40,10 +40,10 @@
   }
 
   .card__title {
-    padding: 16px 16px 0px 16px
+    padding: 16px 16px 0 16px
   }
 
   .card__text {
-    padding: 0px 16px 16px 16px
+    padding: 0 16px 16px 16px
   }
 </style>
