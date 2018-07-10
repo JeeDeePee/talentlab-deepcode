@@ -75,6 +75,19 @@ export default new Vuex.Store({
       //     moduleId
       //   }
       // }
+    },
+
+    deleteModuleProgress({ state, commit }, moduleId) {
+      // debugger
+
+      // call graphql createUserModuleMutation
+
+      // mutation createUserModuleMutation {
+      //   createUserModule(moduleId:"anotherFooBar123") {
+      //     ok
+      //     moduleId
+      //   }
+      // }
     }
 
     // fetchProducts({ commit }) {

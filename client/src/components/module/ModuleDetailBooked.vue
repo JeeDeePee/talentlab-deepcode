@@ -3,7 +3,7 @@
     <v-container class="mt-3">
       <span class="grey--text">{{module.category.title}} - {{module.skill}}</span><br>
       <h2 class="mb-1 mt-1">{{module.title}}</h2>
-      <v-btn class="button item2 hidden-sm-and-down">
+      <v-btn class="button item2 hidden-sm-and-down" @click="deleteModuleProgress(module.slug)">
         Buchung löschen
       </v-btn>
 
@@ -48,6 +48,8 @@
 </template>
 
 <script>
+  import DELETE_MODULE_PROGRESS from '@/graphql/gql/mutations/deleteModuleProgress.gql'
+
   import Tools from '@/components/Tools'
   import VideoPlayer from '@/components/VideoPlayer'
   import Unit from '@/components/Unit'
@@ -72,6 +74,37 @@
       return {
         showVideoPlayer: false
       }
+    },
+
+    methods: {
+      deleteModuleProgress(moduleSlug) {
+        console.log(`deleteModuleProgress(${moduleSlug})`)
+        // debugger
+
+        this.$apollo.mutate({
+          mutation: DELETE_MODULE_PROGRESS,
+          variables: {
+            userId: 'test',
+            moduleSlug: moduleSlug
+          },
+          update: (store, { data: { newTag } }) => {
+          },
+          optimisticResponse: {
+          }
+        }).then((data) => {
+          // Result
+          console.log(data)
+        }).catch((error) => {
+          // Error
+          console.error(error)
+          // We restore the initial user input
+          // this.newTag = newTag
+        })
+      }
+
+      // ...mapActions({
+      //   deleteModuleProgress: 'deleteModuleProgress'
+      // })
     }
   }
 </script>

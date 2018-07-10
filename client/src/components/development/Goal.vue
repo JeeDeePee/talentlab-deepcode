@@ -35,7 +35,8 @@
 <script>
   export default {
     name: 'goal',
-    data () {
+
+    data() {
       return {
         valueDeterminate: 10
       }
@@ -44,13 +45,11 @@
 </script>
 
 <style scoped>
-
-.card {
+  .card {
     border-radius: 11px;
-}
+  }
 
-h3 {
-  font-size: 20px;
-}
-
+  h3 {
+    font-size: 20px;
+  }
 </style>

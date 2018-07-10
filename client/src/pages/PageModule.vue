@@ -1,7 +1,7 @@
 <template>
   <div v-if="module">
-    <ModuleDetail v-if="moduleBooked" :module="module"></ModuleDetail>
-    <ModuleDetailBooked v-if="!moduleBooked" :module="module"></ModuleDetailBooked>
+    <ModuleDetailBooked v-if="moduleBooked" :module="module"></ModuleDetailBooked>
+    <ModuleDetail v-if="!moduleBooked" :module="module"></ModuleDetail>
   </div>
 </template>
 
@@ -57,6 +57,7 @@
             // TODO: code review
             let bookedEntries = data.data.allModulesProgress.edges
             this.moduleBooked = bookedEntries && bookedEntries.length > 0
+            console.log(`Module Booked: ${this.moduleBooked}`)
           }
         }
       })

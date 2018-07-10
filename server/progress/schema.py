@@ -3,6 +3,7 @@ from graphene import relay, InputObjectType
 from graphene_django import DjangoObjectType
 from graphene_django.filter import DjangoFilterConnectionField
 
+from modules.models import Module
 from modules.schema import ModuleNode, UnitNode
 from progress.models import UserUnit, UserModule
 from user.models import User
@@ -75,18 +76,43 @@ class ModuleProgressNode(DjangoObjectType):
 class StartModuleProgress(graphene.Mutation):
     class Arguments:
         user_id = graphene.String()
-        module_id = graphene.String()
+        module_slug = graphene.String()
 
     ok = graphene.Boolean()
-    module_id = graphene.String()
+    module_slug = graphene.String()
 
-    def mutate(self, info, module_id):
-        print('creating a user module {}'.format(module_id))
-        return StartModuleProgress(ok=True, module_id=module_id)
+    def mutate(self, info, user_id, module_slug):
+        user = User.objects.get(username=user_id)
+        module = Module.objects.get(slug=module_slug)
+
+        UserModule(user=user, module=module).save()
+
+        print('creating a user module {} for user {}'.format(module_slug, user_id))
+        return StartModuleProgress(ok=True, module_slug=module_slug)
+
+
+class DeleteModuleProgress(graphene.Mutation):
+    class Arguments:
+        user_id = graphene.String()
+        module_slug = graphene.String()
+
+    ok = graphene.Boolean()
+    module_slug = graphene.String()
+
+    def mutate(self, info, user_id, module_slug):
+        user = User.objects.get(username=user_id)
+        module = Module.objects.get(slug=module_slug)
+
+        found_user_modules = UserModule.objects.filter(user=user, module=module)
+        found_user_modules.delete()
+
+        print('deleting a user module {} for user {}'.format(module_slug, user_id))
+        return DeleteModuleProgress(ok=True, module_slug=module_slug)
 
 
 class ProgressMutations(graphene.ObjectType):
-    create_user_module = StartModuleProgress.Field()
+    start_module_progress = StartModuleProgress.Field()
+    delete_module_progress = DeleteModuleProgress.Field()
 
 
 class ProgressQuery(object):
