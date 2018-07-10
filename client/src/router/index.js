@@ -13,6 +13,7 @@ const routerOptions = [
   { path: '/development', name: 'development', component: Development },
   { path: '*', component: NotFound }
 ]
+
 const routes = routerOptions.map(route => {
   return {
     ...route

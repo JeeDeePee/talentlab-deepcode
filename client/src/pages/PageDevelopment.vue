@@ -17,7 +17,10 @@
       </v-btn>
     </div>
 
-    <Module v-for="(moduleProgress, index) in userModules" :moduleProgress="moduleProgress" :key="index" class="mb-4"/>
+    <ModuleProgressListItem v-for="(moduleProgress, index) in userModules"
+                            :moduleProgress="moduleProgress"
+                            :key="index"
+                            class="mb-4"/>
 
     <h3 class="title-recomendations pt-3">Vorgeschlagene Lernmodule</h3>
     <v-container fluid grid-list-md>
@@ -35,7 +38,7 @@
   import { mapGetters, mapState, mapActions } from 'vuex'
 
   import Goal from '@/components/development/Goal'
-  import Module from '@/components/development/Module'
+  import ModuleProgressListItem from '@/components/development/ModuleProgressListItem'
   import Recomendation from '@/components/development/Recomendation'
 
   import USER_PROGRESS_QUERY from '@/graphql/gql/userProgress.gql'
@@ -47,7 +50,7 @@
 
     components: {
       Goal,
-      Module,
+      ModuleProgressListItem,
       Recomendation
     },
 
@@ -85,7 +88,12 @@
 
     computed: {
       userModules: function () {
-        const moduleProgress = this.userProgress.usermoduleSet.edges.map(entry => entry.node.module)
+        let moduleProgress = this.userProgress.usermoduleSet.edges.map(entry => entry.node.module)
+        moduleProgress = moduleProgress.map(function(entry) {
+          const parsedCategory = JSON.parse(entry.category)
+          return {...entry, category: {title: parsedCategory.title, slug: parsedCategory.slug}}
+        });
+
         return moduleProgress
       },
 

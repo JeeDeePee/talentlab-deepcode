@@ -12,8 +12,7 @@
 
             <div v-if="module.videoId" class="mt-5 mb-1">
               <a href="#" @click.stop="showVideoPlayer=true">
-                <img class="video-thumbnail"
-                     :src="module.videoThumbnailData.thumbnail_url_with_play_button"/>
+                <img class="video-thumbnail" :src="module.videoThumbnailData.thumbnail_url_with_play_button"/>
               </a>
               <div v-html="module.videoDescription"></div>
               <VideoPlayer :visible="showVideoPlayer" :videoId="module.videoId" @close="showVideoPlayer=false"/>
@@ -45,30 +44,35 @@
 </template>
 
 <script>
-  import MODULE_QUERY from '@/graphql/gql/module'
+  import MODULE_QUERY from '@/graphql/gql/module.gql'
+
   import Tools from '@/components/Tools'
   import VideoPlayer from '@/components/VideoPlayer'
   import Unit from '@/components/Unit'
 
   export default {
     name: 'page-module',
+
     props: {
       slug: {
         required: true,
         type: String
       }
     },
+
     components: {
       Tools,
       VideoPlayer,
       Unit
     },
+
     data() {
       return {
         module: null,
         showVideoPlayer: false
       }
     },
+
     created() {
       this.$apollo.addSmartQuery('container', {
         query: MODULE_QUERY,
@@ -122,5 +126,4 @@
     font-size: 18px;
     font-weight: bold;
   }
-
 </style>

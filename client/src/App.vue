@@ -1,10 +1,6 @@
 <template>
   <v-app id="inspire">
-    <v-navigation-drawer
-      v-model="drawer"
-      fixed
-      class="hidden-md-and-up"
-    >
+    <v-navigation-drawer v-model="drawer" fixed class="hidden-md-and-up">
       <v-list dense>
         <v-list-tile :to="{ name: 'development'}" exact router>
           <v-list-tile-content>
@@ -49,6 +45,7 @@
 <script>
   export default {
     name: 'App',
+
     data() {
       return {
         active: null,
@@ -58,6 +55,7 @@
         email: 'talenlab@orbit7.ch'
       }
     },
+
     mounted() {
       this.$intercom.boot({
         user_id: this.userId,
