@@ -42,6 +42,7 @@
   import Recomendation from '@/components/development/Recomendation'
 
   import USER_PROGRESS_QUERY from '@/graphql/gql/userProgress.gql'
+
   // import MODULE_PROGRESS_QUERY from '@/graphql/gql/moduleProgress.gql'
   // import START_MODULE_PROGRESS_QUERY from '@/graphql/gql/startModuleProgress.gql'
 
@@ -89,12 +90,10 @@
     computed: {
       userModules: function () {
         let moduleProgress = this.userProgress.usermoduleSet.edges.map(entry => entry.node.module)
-        moduleProgress = moduleProgress.map(function(entry) {
+        return moduleProgress.map(function(entry) {
           const parsedCategory = JSON.parse(entry.category)
           return {...entry, category: {title: parsedCategory.title, slug: parsedCategory.slug}}
-        });
-
-        return moduleProgress
+        })
       },
 
       ...mapGetters({
