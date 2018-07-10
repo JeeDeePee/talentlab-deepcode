@@ -45,7 +45,7 @@
 </script>
 
 <style lang="scss" scoped>
-  @import "../styles/var";
+  @import "../../styles/var";
 
   .card {
     border-radius: 11px;
