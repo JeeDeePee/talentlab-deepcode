@@ -29,7 +29,7 @@
 </script>
 
 <style lang="scss" scoped>
-  @import "../styles/var";
+  @import "../../styles/var";
 
   h4 {
     font-size: 18px;

@@ -21,7 +21,7 @@
 </script>
 
 <style scoped lang="scss">
-  @import "../styles/var";
+  @import "../../styles/var";
 
   a.link {
     color: $text-color;

@@ -14,7 +14,7 @@
 
 <script>
   import CATEGORIES_QUERY from '@/graphql/gql/categories.gql'
-  import ModuleTeaser from '@/components/ModuleTeaser'
+  import ModuleTeaser from '@/components/categories/ModuleTeaser'
 
   export default {
     name: 'page-categories',

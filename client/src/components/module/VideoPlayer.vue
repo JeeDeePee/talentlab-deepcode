@@ -40,7 +40,7 @@
 </script>
 
 <style lang="scss" scoped>
-  @import "../styles/var";
+  @import "../../styles/var";
 
   .card {
     background-color: $grey-9;

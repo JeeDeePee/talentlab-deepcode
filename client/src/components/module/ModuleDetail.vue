@@ -48,9 +48,9 @@
 </template>
 
 <script>
-  import Tools from '@/components/Tools'
-  import VideoPlayer from '@/components/VideoPlayer'
-  import Unit from '@/components/Unit'
+  import Tools from '@/components/module/Tools'
+  import VideoPlayer from '@/components/module/VideoPlayer'
+  import Unit from '@/components/module/Unit'
 
   export default {
     name: 'module-detail',
