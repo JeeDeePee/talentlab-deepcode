@@ -1,7 +1,7 @@
 <template>
   <div v-if="module">
     <v-container class="mt-3">
-      <span class="grey--text">{{module.category.title}} - {{module.skill}}</span><br>
+      <span v-if="moduleBooked" class="grey--text">BOOKED&nbsp;</span><span class="grey--text">{{module.category.title}} - {{module.skill}}</span><br>
       <h2 class="mb-1 mt-1">{{module.title}}</h2>
     </v-container>
     <div class="hero-bg mb-4">
@@ -44,7 +44,8 @@
 </template>
 
 <script>
-  import MODULE_QUERY from '@/graphql/gql/module.gql'
+  // import MODULE_QUERY from '@/graphql/gql/module.gql'
+  import MODULE_QUERY from '@/graphql/gql/moduleAndModuleProgress.gql'
 
   import Tools from '@/components/Tools'
   import VideoPlayer from '@/components/VideoPlayer'
@@ -69,6 +70,7 @@
     data() {
       return {
         module: null,
+        moduleBooked: false,
         showVideoPlayer: false
       }
     },
@@ -77,7 +79,8 @@
       this.$apollo.addSmartQuery('container', {
         query: MODULE_QUERY,
         variables: {
-          slug: this.slug
+          slug: this.slug,
+          userName: 'test'
         },
         manual: true,
         result(data, loading, networkStatus) {
@@ -91,6 +94,10 @@
 
             this.module = _module
             document.title = _module.title
+
+            // TODO: code review
+            let bookedEntries = data.data.allModulesProgress.edges
+            this.moduleBooked = bookedEntries && bookedEntries.length > 0
           }
         }
       })

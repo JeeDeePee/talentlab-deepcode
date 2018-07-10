@@ -1,0 +1,38 @@
+query ModuleQuery($slug: String!, $userName: String!) {
+  modules(slug: $slug) {
+    edges {
+      node {
+        title
+        slug
+        tools
+        resources
+        description
+        heroImage
+        skill
+        videoId
+        videoDescription
+        videoThumbnailData
+        category
+        units {
+          edges {
+            node {
+              title
+              teaser
+              type
+              count
+              duration
+            }
+          }
+        }
+      }
+    }
+  }
+
+  allModulesProgress(user_Username: $userName, module_Slug: $slug) {
+    edges {
+      node {
+        id
+      }
+    }
+  }
+}

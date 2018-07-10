@@ -65,7 +65,7 @@ class ModuleProgressNode(DjangoObjectType):
 
     class Meta:
         model = UserModule
-        filter_fields = ['user__username']
+        filter_fields = ['user__username', 'module__slug']
         interfaces = (relay.Node, )
 
     def resolve_pk(self, info, *args):
