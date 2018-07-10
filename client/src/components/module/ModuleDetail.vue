@@ -3,7 +3,7 @@
     <v-container class="mt-3">
       <span class="grey--text">{{module.category.title}} - {{module.skill}}</span><br>
       <h2 class="mb-1 mt-1">{{module.title}}</h2>
-      <v-btn class="button item2 hidden-sm-and-down" @click="startModuleProgress(module.slug)">
+      <v-btn class="button item2 hidden-sm-and-down" @click="$emit('start-module-progress', module.slug)">
         Container buchen
       </v-btn>
 
@@ -48,8 +48,6 @@
 </template>
 
 <script>
-  import START_MODULE_PROGRESS from '@/graphql/gql/mutations/startModuleProgress.gql'
-
   import Tools from '@/components/Tools'
   import VideoPlayer from '@/components/VideoPlayer'
   import Unit from '@/components/Unit'
@@ -77,31 +75,6 @@
     },
 
     methods: {
-      startModuleProgress(moduleSlug) {
-        console.log(`startModuleProgress(${moduleSlug})`)
-        // debugger
-
-        this.$apollo.mutate({
-          mutation: START_MODULE_PROGRESS,
-          variables: {
-            userId: 'test',
-            moduleSlug: moduleSlug
-          },
-          update: (store, { data: { newTag } }) => {
-          },
-          optimisticResponse: {
-          }
-        }).then((data) => {
-          // Result
-          console.log(data)
-        }).catch((error) => {
-          // Error
-          console.error(error)
-          // We restore the initial user input
-          // this.newTag = newTag
-        })
-      }
-
       // ...mapActions({
       //   startModuleProgress: 'startModuleProgress'
       // })

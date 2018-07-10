@@ -1,6 +1,6 @@
 mutation deleteModuleProgressMutation($userId: String!, $moduleSlug: String!) {
   deleteModuleProgress(userId: $userId, moduleSlug: $moduleSlug) {
-    ok
+    deleted
     moduleSlug
   }
 }

@@ -1,13 +1,16 @@
 <template>
   <div v-if="module">
-    <ModuleDetailBooked v-if="moduleBooked" :module="module"></ModuleDetailBooked>
-    <ModuleDetail v-if="!moduleBooked" :module="module"></ModuleDetail>
+    <ModuleDetailBooked v-if="moduleBooked" :module="module" v-on:delete-module-progress="deleteModuleProgress($event)"></ModuleDetailBooked>
+    <ModuleDetail v-if="!moduleBooked" :module="module" v-on:start-module-progress="startModuleProgress($event)"></ModuleDetail>
   </div>
 </template>
 
 <script>
   // import MODULE_QUERY from '@/graphql/gql/module.gql'
   import MODULE_QUERY from '@/graphql/gql/moduleAndModuleProgress.gql'
+
+  import START_MODULE_PROGRESS from '@/graphql/gql/mutations/startModuleProgress.gql'
+  import DELETE_MODULE_PROGRESS from '@/graphql/gql/mutations/deleteModuleProgress.gql'
 
   import ModuleDetail from '@/components/module/ModuleDetail'
   import ModuleDetailBooked from '@/components/module/ModuleDetailBooked'
@@ -31,6 +34,54 @@
       return {
         module: null,
         moduleBooked: false
+      }
+    },
+
+    methods: {
+      startModuleProgress(moduleSlug) {
+        console.log(`startModuleProgress(${moduleSlug})`)
+
+        this.$apollo.mutate({
+          mutation: START_MODULE_PROGRESS,
+          variables: {
+            userId: 'test',
+            moduleSlug: moduleSlug
+          },
+          update: (store, { data }) => {
+            this.moduleBooked = data.startModuleProgress.created
+          }
+        }).then((data) => {
+          // Result
+          console.log(data)
+        }).catch((error) => {
+          // Error
+          console.error(error)
+          // We restore the initial user input
+          // this.newTag = newTag
+        })
+      },
+
+      deleteModuleProgress(moduleSlug) {
+        console.log(`deleteModuleProgress(${moduleSlug})`)
+
+        this.$apollo.mutate({
+          mutation: DELETE_MODULE_PROGRESS,
+          variables: {
+            userId: 'test',
+            moduleSlug: moduleSlug
+          },
+          update: (store, { data }) => {
+            this.moduleBooked = !data.deleteModuleProgress.deleted
+          }
+        }).then((data) => {
+          // Result
+          console.log(data)
+        }).catch((error) => {
+          // Error
+          console.error(error)
+          // We restore the initial user input
+          // this.newTag = newTag
+        })
       }
     },
 
