@@ -6,7 +6,6 @@
 </template>
 
 <script>
-  // import MODULE_QUERY from '@/graphql/gql/module.gql'
   import MODULE_QUERY from '@/graphql/gql/moduleAndModuleProgress.gql'
 
   import START_MODULE_PROGRESS from '@/graphql/gql/mutations/startModuleProgress.gql'

@@ -2,7 +2,6 @@ query ModuleQuery($slug: String!, $userName: String!) {
   modules(slug: $slug) {
     edges {
       node {
-        id
         title
         slug
         tools

@@ -35,16 +35,13 @@
 </template>
 
 <script>
-  import { mapGetters, mapState, mapActions } from 'vuex'
+  import USER_PROGRESS_QUERY from '@/graphql/gql/userProgress.gql'
+
+  import {mapActions, mapGetters, mapState} from 'vuex'
 
   import Goal from '@/components/development/Goal'
   import ModuleProgressListItem from '@/components/development/ModuleProgressListItem'
   import Recomendation from '@/components/development/Recomendation'
-
-  import USER_PROGRESS_QUERY from '@/graphql/gql/userProgress.gql'
-
-  // import MODULE_PROGRESS_QUERY from '@/graphql/gql/moduleProgress.gql'
-  // import START_MODULE_PROGRESS_QUERY from '@/graphql/gql/startModuleProgress.gql'
 
   export default {
     name: 'page-development',
@@ -72,25 +69,15 @@
         query: USER_PROGRESS_QUERY,
         variables: {
           id: 'VXNlck5vZGU6MQ=='
-        }
+        },
+        fetchPolicy: 'network-only'
       }
-
-      // categories: {
-      //   query: CREATE_USER_MODULE_QUERY,
-      //   manual: true
-      //   // result(data, loading, networkStatus) {
-      //   //   if (!loading) {
-      //   //     this.categories = data.data.categories.edges
-      //   //     this.modules = data.data.modules.edges
-      //   //   }
-      //   // }
-      // }
     },
 
     computed: {
       userModules: function () {
         let moduleProgress = this.userProgress.usermoduleSet.edges.map(entry => entry.node.module)
-        return moduleProgress.map(function(entry) {
+        return moduleProgress.map(function (entry) {
           const parsedCategory = JSON.parse(entry.category)
           return {...entry, category: {title: parsedCategory.title, slug: parsedCategory.slug}}
         })
@@ -158,7 +145,7 @@
     font-weight: bold;
   }
 
- .clearfix::after {
+  .clearfix::after {
     content: "";
     clear: both;
     display: table;
