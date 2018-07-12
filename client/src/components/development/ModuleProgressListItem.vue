@@ -82,7 +82,7 @@
   }
 
   .button-xs {
-    margin-left: 0px !important;
+    margin-left: 0 !important;
   }
 
   .btn-left {

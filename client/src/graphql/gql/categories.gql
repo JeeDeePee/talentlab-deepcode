@@ -1,4 +1,4 @@
-query CategoriesQuery {
+query CategoriesQuery($userId: String!) {
   categories {
     edges {
       node {
@@ -22,4 +22,14 @@ query CategoriesQuery {
     }
   }
 
+  allModulesProgress(user_Username: $userId) {
+    edges {
+      node {
+        id
+        module {
+          id
+        }
+      }
+    }
+  }
 }

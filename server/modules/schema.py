@@ -1,8 +1,9 @@
-import graphene
+import random
+
 from graphene import relay
 from graphene_django import DjangoObjectType
 from graphene_django.filter import DjangoFilterConnectionField
-
+import graphene
 from .models import Module, Unit, Category
 
 

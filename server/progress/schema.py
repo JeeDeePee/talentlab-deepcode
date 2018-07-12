@@ -131,3 +131,6 @@ class ProgressQuery(object):
 
     module_progress = relay.Node.Field(ModuleProgressNode)
     all_modules_progress = DjangoFilterConnectionField(ModuleProgressNode)
+
+    # module = relay.Node.Field(FancyModuleNode)
+    # all_fancy = DjangoFilterConnectionField(FancyModuleNode)

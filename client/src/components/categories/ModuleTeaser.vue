@@ -10,7 +10,9 @@
 
       <v-card-text>
         {{module.teaser}}
+        <v-chip v-if="module.inprogress">Gebucht</v-chip>
       </v-card-text>
+
       <v-card-media :src="module.heroImage" height="200px"></v-card-media>
     </v-card>
   </router-link>
@@ -50,5 +52,10 @@
 
   .card__text {
     padding: 0 16px 16px 16px
+  }
+
+  .chip {
+    float: right;
+    margin-top: -5px;
   }
 </style>
