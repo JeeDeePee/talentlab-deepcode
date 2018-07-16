@@ -11,6 +11,8 @@ t.*
 # C extensions
 *.so
 
+# client
+node_modules
 
 # Envs
 .env
