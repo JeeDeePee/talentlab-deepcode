@@ -13,7 +13,7 @@
       <v-container grid-list-xl text-xs-center>
         <v-layout row wrap>
           <v-flex xs10 offset-xs1>
-            <vimeo-player :video-id=videoId :autoplay="true" class="mt-5"></vimeo-player>
+            <vimeo-player ref="player" :video-id=videoId :autoplay="true" class="mt-5"></vimeo-player>
           </v-flex>
         </v-layout>
       </v-container>
@@ -32,6 +32,7 @@
         set(value) {
           if (!value) {
             this.$emit('close')
+            this.$refs.player.pause()
           }
         }
       }
