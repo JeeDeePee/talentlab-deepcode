@@ -38,9 +38,23 @@
         </v-flex>
         <v-flex xs12 sm4 md4 lg4 xl4>
           <h3>Ressourcen</h3>
-          <div>Book to see resources - lamp</div>
+              <v-card class="bg mb-5">                
+                <v-card-text>
+                  <div class="mt-1 mb-3">
+                    <i class="material-icons icon-color">library_books</i>
+                  </div>  
+                  Hier werden bei Buchung weiterführende Inhalte ergänzt.
+                </v-card-text>
+              </v-card>
           <h3>Tools & Templates</h3>
-          <div>Book to see tools - lamp</div>
+              <v-card class="bg mb-5">                
+                <v-card-text>
+                  <div class="mt-1 mb-3">
+                    <i class="material-icons icon-color">library_books</i>
+                  </div>  
+                  Hier werden bei Buchung nützliche Dokumente ergänzt.
+                </v-card-text>
+              </v-card>
         </v-flex>
       </v-layout>
     </v-container>
@@ -109,5 +123,13 @@
   .description {
     font-size: 18px;
     font-weight: bold;
+  }
+
+  .bg {
+    background-color: $grey-3;
+  }
+
+  .icon-color {
+    color: $orange;
   }
 </style>
