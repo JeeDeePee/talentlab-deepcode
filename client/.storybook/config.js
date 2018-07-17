@@ -1,17 +1,17 @@
-import { configure } from '@storybook/vue';
+import "vuetify/dist/vuetify.css"
 
-import Vue from 'vue';
-import Vuex from 'vuex'; // Vue plugins
-import 'vuetify/dist/vuetify.min.css'
+import {configure} from '@storybook/vue'
+import Vue from 'vue'
+import Vuex from 'vuex'
 import Vuetify from 'vuetify'
 
 // Install Vue plugins.
-Vue.use(Vuex);
+Vue.use(Vuex)
 Vue.use(Vuetify)
 
 function loadStories() {
   // You can require as many stories as you need.
-  require('../src/stories');
+  require('../src/stories')
 }
 
 configure(loadStories, module);

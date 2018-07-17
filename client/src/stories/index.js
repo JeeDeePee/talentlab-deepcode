@@ -2,8 +2,9 @@ import {storiesOf} from '@storybook/vue';
 // import custom components
 import Tools from '../components/module/Tools.vue';
 import Unit from '../components/module/Unit.vue';
+import MyButton from './Button.vue';
 
-storiesOf('TestUnit', module)
+storiesOf('Module', module)
   .add('tools', () => ({
     components: {Tools},
     template: '<Tools :tools="tools"></Tools>',
@@ -36,7 +37,26 @@ storiesOf('TestUnit', module)
     data() {
       return {
         booked: true,
-        unit: {title: 'Title', teaser: 'Teaser', type: 'Type', count: '3 Durchführungen', duration: '1 1/2 Stunden'}
+        unit: {
+          title: 'Partnering Modelle',
+          teaser: 'Unternehmensübergreifende Zusammenarbeit kann entlang von …',
+          type: 'Webinar',
+          count: '8 Lektionen',
+          duration: '4 Stunden'
+        }
       }
     }
+  }));
+
+storiesOf('Button', module)
+  .add('button template', () => ({
+    template: '<my-button :rounded="true">round</my-button>'
+  }))
+  .add('rounded button', () => ({
+    components: {MyButton},
+    template: '<my-button :rounded="true">rounded</my-button>'
+  }))
+  .add('normal button', () => ({
+    components: {MyButton},
+    template: '<my-button :rounded="false">normal</my-button>'
   }));
