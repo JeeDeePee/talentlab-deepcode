@@ -8,7 +8,7 @@
         {{unit.teaser}}
       </div>
       <div class="grey--text">
-        <v-btn round="true">Starten</v-btn>
+        <v-btn>Starten</v-btn>
         <v-chip>{{unit.type}}</v-chip>
         <v-icon class="ml-3">filter_none</v-icon> {{unit.count}}
         <v-icon class="ml-3"> schedule</v-icon> {{unit.duration}}
