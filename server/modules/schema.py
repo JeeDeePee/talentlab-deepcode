@@ -1,5 +1,3 @@
-import random
-
 from graphene import relay
 from graphene_django import DjangoObjectType
 from graphene_django.filter import DjangoFilterConnectionField
@@ -34,6 +32,8 @@ class ModuleNode(DjangoObjectType):
     hero_image = graphene.String()
     # hack to acoid circular dependency
     category = graphene.JSONString()
+    category_slug = graphene.String()
+    category_name = graphene.String()
 
     class Meta:
         model = Module
@@ -68,6 +68,14 @@ class ModuleNode(DjangoObjectType):
     def resolve_category(self, *args, **kwargs):
         p = self.get_parent()
         return {'title': p.title, 'slug': p.slug}
+
+    def resolve_category_slug(self, *args, **kwargs):
+        p = self.get_parent()
+        return p.slug
+
+    def resolve_category_name(self, *args, **kwargs):
+        p = self.get_parent()
+        return p.title
 
 
 class CategoryNode(DjangoObjectType):

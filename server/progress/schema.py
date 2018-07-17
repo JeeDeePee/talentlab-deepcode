@@ -1,5 +1,7 @@
+import random
+
 import graphene
-from graphene import relay, InputObjectType
+from graphene import relay, InputObjectType, Node
 from graphene_django import DjangoObjectType
 from graphene_django.filter import DjangoFilterConnectionField
 
@@ -13,7 +15,7 @@ class UserNode(DjangoObjectType):
     class Meta:
         model = User
         filter_fields = ['username', 'email', 'first_name', 'last_name']
-        interfaces = (relay.Node, )
+        interfaces = (relay.Node,)
 
 
 class UnitProgressNode(DjangoObjectType):
@@ -27,7 +29,7 @@ class UnitProgressNode(DjangoObjectType):
     class Meta:
         model = UserUnit
         filter_fields = []
-        interfaces = (relay.Node, )
+        interfaces = (relay.Node,)
 
     def resolve_pk(self, info, *args):
         return self.id
@@ -48,7 +50,7 @@ class ModuleUnitsNode(DjangoObjectType):
     class Meta:
         model = UserUnit
         filter_fields = []
-        interfaces = (relay.Node, )
+        interfaces = (relay.Node,)
 
     def resolve_pk(self, info, *args):
         return self.id
@@ -67,7 +69,7 @@ class ModuleProgressNode(DjangoObjectType):
     class Meta:
         model = UserModule
         filter_fields = ['user__username', 'module__slug']
-        interfaces = (relay.Node, )
+        interfaces = (relay.Node,)
 
     def resolve_pk(self, info, *args):
         return self.id
@@ -118,12 +120,49 @@ class DeleteModuleProgress(graphene.Mutation):
             return DeleteModuleProgress(deleted=False, module_slug=module_slug)
 
 
+class InprogressModuleNode(graphene.ObjectType):
+    module_pk = graphene.Int()
+    status = graphene.Boolean()
+    module = DjangoFilterConnectionField(ModuleNode)
+
+    class Meta:
+        interfaces = (Node, )
+
+    def resolve_module(self, info, *args):
+        return Module.objects.filter(id=self.module_pk)
+
+
+class InprogressConnection(graphene.Connection):
+    class Meta:
+        node = InprogressModuleNode
+
+
+class InprogressQuery(graphene.ObjectType):
+    inprogress = relay.ConnectionField(InprogressConnection, userid=graphene.String())
+
+    def resolve_inprogress(self, info, **args):
+        userid = args['userid']
+        inprogress_modules = []
+
+        # TODO: definitely not performant, but shows what we can do directly in graphene
+        # implement using a direct django join. Now doing definitely too many calls to db through the orm
+
+        all_modules = Module.objects.all()
+        user = User.objects.get(username=userid)
+        for module in all_modules:
+            user_module = UserModule.objects.filter(user=user, module=module).first()
+            inprogress_modules.append(InprogressModuleNode(module_pk=module.pk, status=user_module is not None))
+
+        field = relay.ConnectionField.resolve_connection(InprogressConnection, args, inprogress_modules)
+        return field
+
+
 class ProgressMutations(graphene.ObjectType):
     start_module_progress = StartModuleProgress.Field()
     delete_module_progress = DeleteModuleProgress.Field()
 
 
-class ProgressQuery(object):
+class ProgressQuery(graphene.ObjectType):
     user = relay.Node.Field(UserNode)
     user_progress = relay.Node.Field(UserNode)
 
