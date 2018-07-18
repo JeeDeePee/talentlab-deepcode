@@ -6,7 +6,7 @@
     <div class="clearfix">
       <v-btn class="hidden-sm-and-down float-r" :to="{ name: 'fokus'}" exact router>
         <v-icon>add</v-icon>
-        Lernmodule auswählen
+        Mein Fokus
       </v-btn>
       <v-btn class="hidden-sm-and-down float-r">
         <v-icon>add</v-icon>
