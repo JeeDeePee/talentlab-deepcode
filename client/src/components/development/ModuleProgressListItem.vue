@@ -22,7 +22,7 @@
                           class="mb-1"/>
         </v-flex>
         <v-flex xs12 sm6 class="pa-0">
-          <img :src="'http://mountain.org/wp-content/uploads/Miraflores-Peru_TMI.jpg'">
+          <img :src="'https://mountain.org/wp-content/uploads/Miraflores-Peru_TMI.jpg'">
         </v-flex>
       </v-layout>
     </v-container>
