@@ -1,3 +1,18 @@
 from django.contrib import admin
 
-# Register your models here.
+from focus.models import Competence, CompetenceEntry, Focus
+
+
+@admin.register(Competence)
+class CompetenceAdmin(admin.ModelAdmin):
+    list_display = ('title', 'slug', 'category')
+
+
+@admin.register(CompetenceEntry)
+class CompetenceEntryAdmin(admin.ModelAdmin):
+    list_display = ('competence', 'current_level', 'next_evaluation')
+
+
+@admin.register(Focus)
+class FocusAdmin(admin.ModelAdmin):
+    list_display = ('user',)

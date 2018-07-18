@@ -1,100 +1,104 @@
-import random
-
 import os
-import wagtail_factories
-from django.conf import settings
-from django.core.management import BaseCommand
-from factory.django import ImageField
-from django.core import management
+import random
 import shutil
 
+import wagtail_factories
+from django.conf import settings
+from django.core import management
+from django.core.management import BaseCommand
+from django.db import connection
+from factory.django import ImageField
 from wagtail.core.models import Page
 
 from core.factories import UserFactory
+from focus.factories import CompetenceFactory
 from modules.factories import CategoryFactory, ModuleFactory, UnitFactory
-from django.db import connection
-
 from progress.factories import UserModuleFactory, UserUnitFactory
 
 data = [
     {
-        'title': 'Mastering Complexity', 'modules': [
-        {
-            'title': 'Partnering for Success',
-            'skill': 'Vernetztes Denken',
-            'teaser': 'Erfolgreiche Führung von Partnerschaften',
-            'description': 'Im Zuge der digitalen Disruption brechen angestammte Wertschöpfungslogiken auf.  Dabei gewinnt die Zusammenarbeit mit  externen Partnern bei der Leistungserstellung  an Bedeutung. In diesem Lernmodul werden die Grundlagen zur erfolgreichen Führung von Partnerschaften vermittelt.',
-            'video_description': '<b>Tim Kellenberger</b><br>Unser Fach-Experte erklärt, warum die professionelle Führung von Partnerschaften heute von entscheidender Bedeutung ist.',
-            'units': [
-                {
-                    'title': 'Partnering Modelle',
-                    'teaser': 'Unternehmensübergreifende Zusammenarbeit kann entlang von …',
-                    'type': 'webinar',
-                    'count': '8 Lektionen',
-                    'duration': '4 Stunden'
-                },
-                {
-                    'title': 'Supply Chain Design',
-                    'teaser': 'Wertschöpfungsketten unternehmensübergreifend gestalten und … ',
-                    'type': 'webinar',
-                    'count': '5 Lektionen',
-                    'duration': '3 Stunden'
-                },
-                {
-                    'title': 'Erfolgreich verhandeln',
-                    'teaser': 'Partnerschaften basieren auf guten Verträgen, welche die Rollen … ',
-                    'type': 'kurs',
-                    'count': '1 Veranstaltung',
-                    'duration': '1 Tag'
-                },
-            ]
-        },
-        {
-            'title': 'Effizient kommunizieren',
-            'skill': 'Verhandlungsfähigkeit / Kooperationsfähigkeit',
-            'teaser': 'Gezieltes Training für Führungsalltag und Verhandlung',
-        },
-    ]},
+        'title': 'Mastering Complexity',
+        'competences': ['Vernetzes Denken', 'Agilität', 'Innovationsfähigkeit', 'Entscheidungsfähigkeit'],
+        'modules': [
+            {
+                'title': 'Partnering for Success',
+                'skill': 'Vernetztes Denken',
+                'teaser': 'Erfolgreiche Führung von Partnerschaften',
+                'description': 'Im Zuge der digitalen Disruption brechen angestammte Wertschöpfungslogiken auf.  Dabei gewinnt die Zusammenarbeit mit  externen Partnern bei der Leistungserstellung  an Bedeutung. In diesem Lernmodul werden die Grundlagen zur erfolgreichen Führung von Partnerschaften vermittelt.',
+                'video_description': '<b>Tim Kellenberger</b><br>Unser Fach-Experte erklärt, warum die professionelle Führung von Partnerschaften heute von entscheidender Bedeutung ist.',
+                'units': [
+                    {
+                        'title': 'Partnering Modelle',
+                        'teaser': 'Unternehmensübergreifende Zusammenarbeit kann entlang von …',
+                        'type': 'webinar',
+                        'count': '8 Lektionen',
+                        'duration': '4 Stunden'
+                    },
+                    {
+                        'title': 'Supply Chain Design',
+                        'teaser': 'Wertschöpfungsketten unternehmensübergreifend gestalten und … ',
+                        'type': 'webinar',
+                        'count': '5 Lektionen',
+                        'duration': '3 Stunden'
+                    },
+                    {
+                        'title': 'Erfolgreich verhandeln',
+                        'teaser': 'Partnerschaften basieren auf guten Verträgen, welche die Rollen … ',
+                        'type': 'kurs',
+                        'count': '1 Veranstaltung',
+                        'duration': '1 Tag'
+                    },
+                ]
+            },
+            {
+                'title': 'Effizient kommunizieren',
+                'skill': 'Verhandlungsfähigkeit / Kooperationsfähigkeit',
+                'teaser': 'Gezieltes Training für Führungsalltag und Verhandlung',
+            },
+        ]},
     {
-        'title': 'Growing as a Leader', 'modules': [
-        {
-            'title': 'Leading through Disruption',
-            'skill': 'Leadership',
-            'teaser': 'Gezieltes Training für erfahrene Führungskräfte',
-            'description': 'Unternehmen agieren getrieben durch die Digitalisierung in einem hyperdynamischen und stetig komplexeren Umfeld unter hohem Leistungs-, Anpassungs- und Innovationsdruck. Hinzu kommen neue Arbeitsformen und veränderte Ansprüche der Millenial-Mitarbeiter. Das Lernmodul «Leading through Disruption» trainiert erfahrene Führungskräfte.',
-            'video_description': '<b>Samuel Ryser</b><br>Unser Fach-Experte erläutert die Heraus-forderungen von Leadership in Zeiten von disruptiven Veränderungen.',
-            'units': [
-                {
-                    'title': 'Führungsschulung für Kader',
-                    'teaser': 'Meistern Sie die steigenden Ansprüche an Führungskräfte',
-                    'type': 'kurs',
-                    'count': '3 Veranstaltungen',
-                    'duration': 'je 2 Tage'
-                },
-                {
-                    'title': 'Führungszirkel',
-                    'teaser': 'In einem organisationsübergreifenden Führungszirkel Führungsfragen in …',
-                    'type': 'kurs',
-                    'count': '3 Veranstaltungen',
-                    'duration': 'je 4 Stunden'
-                },
-                {
-                    'title': 'Coaching-Abo',
-                    'teaser': 'Online & Offline Sessions',
-                    'type': 'coaching',
-                    'count': '8 Sessions',
-                    'duration': 'je 45 Minuten'
-                },
-            ]
-        },
-        {
-            'title': 'First-time Leader',
-            'skill': 'Leadership',
-            'teaser': 'Grundlagen und Basis-Training für junge Führungskräfte',
-        },
-    ]},
+        'title': 'Growing as a Leader',
+        'competences': ['Leadership', 'Management', 'Unternehmerisches Handeln'],
+        'modules': [
+            {
+                'title': 'Leading through Disruption',
+                'skill': 'Leadership',
+                'teaser': 'Gezieltes Training für erfahrene Führungskräfte',
+                'description': 'Unternehmen agieren getrieben durch die Digitalisierung in einem hyperdynamischen und stetig komplexeren Umfeld unter hohem Leistungs-, Anpassungs- und Innovationsdruck. Hinzu kommen neue Arbeitsformen und veränderte Ansprüche der Millenial-Mitarbeiter. Das Lernmodul «Leading through Disruption» trainiert erfahrene Führungskräfte.',
+                'video_description': '<b>Samuel Ryser</b><br>Unser Fach-Experte erläutert die Heraus-forderungen von Leadership in Zeiten von disruptiven Veränderungen.',
+                'units': [
+                    {
+                        'title': 'Führungsschulung für Kader',
+                        'teaser': 'Meistern Sie die steigenden Ansprüche an Führungskräfte',
+                        'type': 'kurs',
+                        'count': '3 Veranstaltungen',
+                        'duration': 'je 2 Tage'
+                    },
+                    {
+                        'title': 'Führungszirkel',
+                        'teaser': 'In einem organisationsübergreifenden Führungszirkel Führungsfragen in …',
+                        'type': 'kurs',
+                        'count': '3 Veranstaltungen',
+                        'duration': 'je 4 Stunden'
+                    },
+                    {
+                        'title': 'Coaching-Abo',
+                        'teaser': 'Online & Offline Sessions',
+                        'type': 'coaching',
+                        'count': '8 Sessions',
+                        'duration': 'je 45 Minuten'
+                    },
+                ]
+            },
+            {
+                'title': 'First-time Leader',
+                'skill': 'Leadership',
+                'teaser': 'Grundlagen und Basis-Training für junge Führungskräfte',
+            },
+        ]},
     {
-        'title': 'Mastering Relations'
+        'title': 'Mastering Relations',
+        'competences': ['Kooperationsfähigkeit', 'Networking', 'Konfliktfähigkeit', 'Verhandlungsfähigkeit']
     }
 ]
 
@@ -153,6 +157,13 @@ class Command(BaseCommand):
                 icon__file=category_images[idx % len(category_images)]
             )
 
+            competence_titles = category_data['competences']
+            for competence_title in competence_titles:
+                CompetenceFactory.create(
+                    title=competence_title,
+                    category=category
+                ).save()
+
             modules_data = category_data.get('modules', [])
 
             for i in range(0, random.randint(4, 7)):
@@ -172,4 +183,3 @@ class Command(BaseCommand):
         # create user progress
         UserModuleFactory.create_batch(size=20)
         UserUnitFactory.create_batch(size=100)
-

@@ -1,12 +1,3 @@
-# -*- coding: utf-8 -*-
-#
-# orbit7 gmbh
-# http://orbit7.ch/
-#
-# Copyright (c) 2018 orbit7 gmbh. All rights reserved.
-#
-# Created on 25/06/18
-# @author: Pawel Kowalski <pawel.kowalski@orbit7.ch>
 from django.contrib import admin
 
 from modules.models import Unit, Module, Category
