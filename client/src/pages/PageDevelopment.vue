@@ -79,15 +79,9 @@
         let moduleProgress = this.userProgress.usermoduleSet.edges.map(entry => entry.node.module)
         return moduleProgress.map(function (entry) {
           const parsedCategory = JSON.parse(entry.category)
-          return {...entry, category: {title: parsedCategory.title, slug: parsedCategory.slug}}
+          return { ...entry, category: { title: parsedCategory.title, slug: parsedCategory.slug } }
         })
-      },
-
-      ...mapGetters({
-      }),
-
-      ...mapState({
-      })
+      }
     },
 
     methods: {

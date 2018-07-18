@@ -16,7 +16,7 @@ import store from '@/store/index'
 
 Vue.config.productionTip = false
 
-Object.defineProperty(Vue.prototype, '$lodash', {value: lodash})
+Object.defineProperty(Vue.prototype, '$lodash', { value: lodash })
 
 const apolloProvider = new VueApollo({
   defaultClient: apolloClient
@@ -26,7 +26,7 @@ Vue.use(VueApollo)
 Vue.use(VueAxios, axios)
 Vue.use(Vuetify)
 Vue.use(VueVimeoPlayer)
-Vue.use(VueIntercom, {appId: 'aec9le28'})
+Vue.use(VueIntercom, { appId: 'aec9le28' })
 
 /* eslint-disable no-new */
 new Vue({

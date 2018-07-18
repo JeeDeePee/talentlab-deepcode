@@ -53,7 +53,7 @@
             const moduleProgressDict = new Map(allModuleProgress.map(entry => [entry.module.id, entry]));
 
             // set the 'inprogress' param for all modules based on what the user has booked
-            this.modules = this.modules.map(entry => ({'inprogress': moduleProgressDict.has(entry.id), ...entry}))
+            this.modules = this.modules.map(entry => ({ 'inprogress': moduleProgressDict.has(entry.id), ...entry }))
           }
         }
       }

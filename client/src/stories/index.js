@@ -6,7 +6,7 @@ import MyButton from './Button.vue';
 
 storiesOf('Module', module)
   .add('tools', () => ({
-    components: {Tools},
+    components: { Tools },
     template: '<Tools :tools="tools"></Tools>',
     data() {
       return {
@@ -32,7 +32,7 @@ storiesOf('Module', module)
     }
   }))
   .add('unit', () => ({
-    components: {Unit},
+    components: { Unit },
     template: '<Unit :unit="unit" :booked="booked"></Unit>',
     data() {
       return {
@@ -53,10 +53,10 @@ storiesOf('Button', module)
     template: '<my-button :rounded="true">round</my-button>'
   }))
   .add('rounded button', () => ({
-    components: {MyButton},
+    components: { MyButton },
     template: '<my-button :rounded="true">rounded</my-button>'
   }))
   .add('normal button', () => ({
-    components: {MyButton},
+    components: { MyButton },
     template: '<my-button :rounded="false">normal</my-button>'
   }));

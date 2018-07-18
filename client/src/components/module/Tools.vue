@@ -1,10 +1,10 @@
 <template>
   <div class="pa-2">
-      <div v-for="(item, index) in tools" :key="index" class="pb-3 pt-3 tool-item">
-        <v-icon v-if="item.type=='link'">link</v-icon>
-        <v-icon v-else>insert_drive_file</v-icon>
-        <a class="link" target="_blank" :href="item.value.url ? item.value.url: item.value.document">{{item.value.description}}</a>
-      </div>
+    <div v-for="(item, index) in tools" :key="index" class="pb-3 pt-3 tool-item">
+      <v-icon v-if="item.type=='link'">link</v-icon>
+      <v-icon v-else>insert_drive_file</v-icon>
+      <a class="link" target="_blank" :href="item.value.url ? item.value.url: item.value.document">{{item.value.description}}</a>
+    </div>
   </div>
 </template>
 

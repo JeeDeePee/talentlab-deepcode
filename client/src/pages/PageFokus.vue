@@ -38,9 +38,6 @@
         isFokusStart: 'isFokusStart',
         isFokusDetail: 'isFokusDetail',
         isFokusFinish: 'isFokusFinish'
-      }),
-
-      ...mapState({
       })
     },
 
