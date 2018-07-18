@@ -1,5 +1,3 @@
-import random
-
 import graphene
 from graphene import relay, InputObjectType, Node
 from graphene_django import DjangoObjectType
@@ -88,7 +86,7 @@ class StartModuleProgress(graphene.Mutation):
         module = Module.objects.get(slug=module_slug)
 
         try:
-            UserModule(user=user, module=module).save()
+            module, created = UserModule.objects.get_or_create(user=user, module=module)
 
             print('creating a user module {} for user {}'.format(module_slug, user_id))
             return StartModuleProgress(created=True, module_slug=module_slug)

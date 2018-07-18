@@ -37,6 +37,9 @@ npm install --prefix client
 # serve with hot reload at localhost:8080
 npm run dev --prefix client
 
+# run storybook
+npm run storybook --prefix client
+
 # build
 npm run build --prefix client
 

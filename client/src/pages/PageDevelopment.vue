@@ -4,14 +4,14 @@
     <Goal class="mb-4"/>
 
     <div class="clearfix">
-      <v-btn class="hidden-sm-and-down float-r" @click="startModuleProgress('theFooBar123')">
+      <v-btn class="hidden-sm-and-down float-r" :to="{ name: 'fokus'}" exact router>
         <v-icon>add</v-icon>
         Lernmodule auswählen
       </v-btn>
 
       <h2 class="grey--text mb-3">Meine Lernmodule</h2>
 
-      <v-btn class="mb-4 ml-0 mt-0 hidden-md-and-up">
+      <v-btn class="mb-4 ml-0 mt-0 hidden-md-and-up" :to="{ name: 'fokus'}" exact router>
         <v-icon>add</v-icon>
         Lernmodule auswählen
       </v-btn>
@@ -84,28 +84,17 @@
       },
 
       ...mapGetters({
-        // productIsInStock: 'productIsInStock'
       }),
 
       ...mapState({
-        // allProducts: state => state.products,
-        // firstProduct: state => state.products[0]
       })
     },
 
     methods: {
-      // startModuleProgress(progress) {
-      //   debugger
-      // }
-
       ...mapActions({
         startModuleProgress: 'startModuleProgress'
       })
     }
-    // created() {
-    //   this.loading = true
-    //   this.$store.dispatch('fetchUserProgress').then(() => { this.loading = false })
-    // }
   }
 </script>
 

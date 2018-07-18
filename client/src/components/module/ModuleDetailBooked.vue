@@ -72,12 +72,6 @@
       return {
         showVideoPlayer: false
       }
-    },
-
-    methods: {
-      // ...mapActions({
-      //   deleteModuleProgress: 'deleteModuleProgress'
-      // })
     }
   }
 </script>

@@ -91,6 +91,7 @@
           slug: this.slug,
           userName: 'test'
         },
+        fetchPolicy: 'network-only',
         manual: true,
         result(data, loading, networkStatus) {
           if (!loading) {

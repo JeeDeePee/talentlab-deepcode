@@ -1,6 +1,5 @@
 import Vuex from 'vuex'
 import Vue from 'vue'
-// import shop from '@/api/shop'
 
 Vue.use(Vuex)
 
@@ -9,47 +8,28 @@ export default new Vuex.Store({
     userId: null,
     moduleId: null,
     userState: {
-      userUnits: {
-        edges: []
+      fokus: {
+        state: 'start'
       }
     }
   },
 
   getters: { // = computed properties
-    // userState(state, getters) {
-    //   return null
-    // },
+    userFokusState(state, getters) {
+      return state.userState.fokus.state
+    },
 
-    userModules(state, getters) {
-      return state.userState.userUnits.edges
+    isFokusStart(state, getters) {
+      return state.userState.fokus.state === 'start'
+    },
+
+    isFokusDetail(state, getters) {
+      return state.userState.fokus.state === 'detail'
+    },
+
+    isFokusFinish(state, getters) {
+      return state.userState.fokus.state === 'finish'
     }
-
-    // products(state, getters) {
-    //   return state.products;
-    // },
-    //
-    // availableProducts(state, getters) {
-    //   return state.products.filter(product => product.inventory >= 1);
-    // },
-    //
-    // cartProducts(state) {
-    //   return state.cart.map(cartItem => {
-    //     const product = state.products.find(prod => prod.id === cartItem.id);
-    //     return {
-    //       title: product.title,
-    //       price: product.price,
-    //       quantity: cartItem.quantity
-    //     }
-    //   })
-    // },
-    //
-    // cartTotal(state, getters) {
-    //   return getters.cartProducts.reduce((acc, curr) => acc + (curr.price * curr.quantity), 0);
-    // },
-    //
-    // productIsInStock() {
-    //   return (product) => product.inventory > 0
-    // }
   },
 
   actions: { // = methods
@@ -88,6 +68,10 @@ export default new Vuex.Store({
       //     moduleId
       //   }
       // }
+    },
+
+    newFokusWizardState({ state, commit }, newState) {
+      commit('setFokusWizardState', newState)
     }
 
     // fetchProducts({ commit }) {
@@ -126,6 +110,10 @@ export default new Vuex.Store({
   mutations: {
     setUserState(state, userState) {
       state.userState = userState
+    },
+
+    setFokusWizardState(state, fokusState) {
+      state.userState.fokus.state = fokusState
     }
 
     // setProducts(state, products) {

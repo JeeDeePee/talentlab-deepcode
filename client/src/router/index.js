@@ -4,6 +4,7 @@ import Categories from '@/pages/PageCategories'
 import Module from '@/pages/PageModule'
 import Development from '@/pages/PageDevelopment'
 import Dashboard from '@/pages/PageDashboard'
+import Fokus from '@/pages/PageFokus'
 import NotFound from '@/pages/PageNotFound'
 
 const routerOptions = [
@@ -11,13 +12,14 @@ const routerOptions = [
   { path: '/module/:slug', name: 'module', component: Module, props: true },
   { path: '/dashboard', name: 'dashboard', component: Dashboard },
   { path: '/development', name: 'development', component: Development },
+  { path: '/fokus', name: 'fokus', component: Fokus },
   { path: '*', component: NotFound }
 ]
 
 const routes = routerOptions.map(route => {
   return {
     ...route
-    // TODO: nice..
+    // TODO: maersu nice..
     // component: () => import(`@/components/${route.component}.vue`)
   }
 })
