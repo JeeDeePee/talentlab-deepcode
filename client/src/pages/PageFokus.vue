@@ -55,6 +55,7 @@
       },
 
       proceedAfterFinish() {
+        this.newFokusWizardState('start')
         this.$router.push('development')
       }
     }
