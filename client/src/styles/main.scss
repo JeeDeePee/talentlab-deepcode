@@ -40,10 +40,23 @@ a {
   background-color: transparent;
 }
 
-.btn {
+// das hier ist der fix für den verschobenen button
+
+button.btn {
   text-transform: initial;
   border: 2px solid #FD6E22;
-  padding-bottom: 36px;
+  padding-bottom: 32px;
+  font-size: 15px;
+  box-shadow: none !important;
+
+  .btn__content {
+    padding-bottom: 4px;
+  }
+}
+
+a.btn {
+  text-transform: initial;
+  border: 2px solid #FD6E22;
   font-size: 15px;
   box-shadow: none !important;
 }
