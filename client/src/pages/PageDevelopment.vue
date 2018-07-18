@@ -8,6 +8,10 @@
         <v-icon>add</v-icon>
         Lernmodule auswählen
       </v-btn>
+      <v-btn class="hidden-sm-and-down float-r">
+        <v-icon>add</v-icon>
+        Lernmodule auswählen
+      </v-btn>
 
       <h2 class="grey--text mb-3">Meine Lernmodule</h2>
 
@@ -37,7 +41,7 @@
 <script>
   import USER_PROGRESS_QUERY from '@/graphql/gql/userProgress.gql'
 
-  import {mapActions, mapGetters, mapState} from 'vuex'
+  import {mapActions} from 'vuex'
 
   import Goal from '@/components/development/Goal'
   import ModuleProgressListItem from '@/components/development/ModuleProgressListItem'

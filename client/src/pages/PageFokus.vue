@@ -10,7 +10,7 @@
 </template>
 
 <script>
-  import {mapActions, mapGetters, mapState} from 'vuex'
+  import {mapActions, mapGetters} from 'vuex'
 
   import FokusStart from '@/components/fokus/FokusStart'
   import FokusDetail from '@/components/fokus/FokusDetail'
