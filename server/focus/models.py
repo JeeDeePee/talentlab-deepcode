@@ -1,7 +1,4 @@
 from django.db import models
-
-
-# Wohin die reise
 from django_extensions.db.models import TimeStampedModel, TitleSlugDescriptionModel
 
 from modules.models import Category
@@ -47,7 +44,6 @@ class Focus(models.Model):
 
     # based on the focus we can propose modules
     def proposed_modules(self):
-
         # something like a cosine similarity
         # where the focus and the competences covered by a module are the vectors
         return None
