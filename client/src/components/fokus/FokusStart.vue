@@ -4,6 +4,7 @@
       <div class="grey--text">Fokus Start
         <v-btn @click="$emit('proceed')">Proceed</v-btn>
       </div>
+      <div v-for=""></div>
     </v-card-text>
   </v-card>
 </template>

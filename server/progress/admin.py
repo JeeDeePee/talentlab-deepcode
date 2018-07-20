@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from progress.models import ActionPlan, Evaluation, Target, UserUnit, UserModule
+from progress.models import UserUnit, UserModule
 
 
 @admin.register(UserModule)
@@ -11,18 +11,3 @@ class UserModuleAdmin(admin.ModelAdmin):
 @admin.register(UserUnit)
 class UserUnitAdmin(admin.ModelAdmin):
     list_display = ('user_module', 'unit')
-
-
-# @admin.register(Target)
-# class TargetAdmin(admin.ModelAdmin):
-#     pass
-#
-#
-# @admin.register(ActionPlan)
-# class ActionPlanAdmin(admin.ModelAdmin):
-#     pass
-#
-#
-# @admin.register(Evaluation)
-# class EvaluationAdmin(admin.ModelAdmin):
-#     pass

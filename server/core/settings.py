@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'api',
     'user',
     'modules',
+    'focus',
     'progress',
 
     'wagtail.contrib.forms',
