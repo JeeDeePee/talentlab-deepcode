@@ -118,16 +118,30 @@ class DeleteModuleProgress(graphene.Mutation):
             return DeleteModuleProgress(deleted=False, module_slug=module_slug)
 
 
+# class ModuleNodeCpy(graphene.ObjectType):
+#     pk = graphene.Int()
+#     module = graphene.Field(ModuleNode)
+    # module = ModuleNode
+    # module =
+
+    # class Meta:
+    #     interfaces = (Node, )
+
+
 class InprogressModuleNode(graphene.ObjectType):
-    module_pk = graphene.Int()
+    # module_pk = graphene.Int()
     status = graphene.Boolean()
-    module = DjangoFilterConnectionField(ModuleNode)
+    module = graphene.Field(ModuleNode)
+    # module = graphene.Field(ModuleNodeCpy)
 
-    class Meta:
-        interfaces = (Node, )
+    # class Meta:
+    #     interfaces = (Node, )
 
-    def resolve_module(self, info, *args):
-        return Module.objects.filter(id=self.module_pk)
+    # def resolve_modulen(self, info, *args):
+    #     return Module.objects.filter(id=self.module_pk)
+
+    # def resolve_modulen(self, info, *args):
+    #     return ModuleNodeCpy(pk=123)
 
 
 class InprogressConnection(graphene.Connection):
@@ -149,7 +163,9 @@ class InprogressQuery(graphene.ObjectType):
         user = User.objects.get(username=userid)
         for module in all_modules:
             user_module = UserModule.objects.filter(user=user, module=module).first()
-            inprogress_modules.append(InprogressModuleNode(module_pk=module.pk, status=user_module is not None))
+            # inprogress_modules.append(InprogressModuleNode(module_pk=module.pk, status=user_module is not None))
+            # mod_node_cpy = ModuleNodeCpy(pk=module.pk, module=module)
+            inprogress_modules.append(InprogressModuleNode(module=module, status=user_module is not None))
 
         field = relay.ConnectionField.resolve_connection(InprogressConnection, args, inprogress_modules)
         return field
