@@ -10,7 +10,7 @@
 
       <v-card-text>
         {{module.teaser}}
-        <v-chip v-if="module.inprogress">Gebucht</v-chip>
+        <v-chip v-if="module.status">Gebucht</v-chip>
       </v-card-text>
 
       <v-card-media :src="module.heroImage" height="200px"></v-card-media>

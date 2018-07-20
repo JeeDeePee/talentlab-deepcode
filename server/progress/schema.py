@@ -123,7 +123,7 @@ class InprogressModuleNode(graphene.ObjectType):
     module = graphene.Field(ModuleNode)
 
     class Meta:
-        interfaces = (Node, )
+        interfaces = (Node,)
 
 
 class InprogressConnection(graphene.Connection):
@@ -164,6 +164,3 @@ class ProgressQuery(graphene.ObjectType):
 
     module_progress = relay.Node.Field(ModuleProgressNode)
     all_modules_progress = DjangoFilterConnectionField(ModuleProgressNode)
-
-    # module = relay.Node.Field(FancyModuleNode)
-    # all_fancy = DjangoFilterConnectionField(FancyModuleNode)

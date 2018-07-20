@@ -27,7 +27,8 @@
       return {
         initialQuery: CATEGORIES_QUERY,
         categories: [],
-        modules: []
+        modules: [],
+        inprogress: []
       }
     },
 
@@ -46,14 +47,7 @@
         result(data, loading, networkStatus) {
           if (!loading) {
             this.categories = data.data.categories.edges.map(entry => entry.node)
-            this.modules = data.data.modules.edges.map(entry => entry.node)
-
-            // TODO: code review: is there a nicer way to join/merge within the graphql query?
-            const allModuleProgress = data.data.allModulesProgress.edges.map(entry => entry.node)
-            const moduleProgressDict = new Map(allModuleProgress.map(entry => [entry.module.id, entry]));
-
-            // set the 'inprogress' param for all modules based on what the user has booked
-            this.modules = this.modules.map(entry => ({ 'inprogress': moduleProgressDict.has(entry.id), ...entry }))
+            this.modules = data.data.inprogress.edges.map(entry => ({'status': entry.node.status, ...entry.node.module}))
           }
         }
       }

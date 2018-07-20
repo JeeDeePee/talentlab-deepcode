@@ -9,27 +9,20 @@ query CategoriesQuery($userId: String!) {
     }
   }
 
-  modules {
+  inprogress(userid: $userId) {
     edges {
       node {
-        id
-        title
-        slug
-        heroImage
-        skill
-        teaser
-      }
-    }
-  }
-
-  allModulesProgress(user_Username: $userId) {
-    edges {
-      node {
-        id
+        status
         module {
           id
+          title
+          slug
+          heroImage
+          skill
+          teaser
         }
       }
     }
   }
+
 }
