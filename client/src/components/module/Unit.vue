@@ -8,7 +8,8 @@
         {{unit.teaser}}
       </div>
       <div class="grey--text">
-        <v-btn v-if="booked">Starten</v-btn>
+        <v-btn v-if="booked && !unit.status">Starten</v-btn>
+        <v-btn v-if="booked && unit.status">Bewerten</v-btn>
         <v-chip>{{unit.type}}</v-chip>
         <v-icon class="ml-3">filter_none</v-icon> {{unit.count}}
         <v-icon class="ml-3"> schedule</v-icon> {{unit.duration}}
@@ -20,6 +21,7 @@
 <script>
   export default {
     name: 'unit',
+
     props: {
       unit: {
         required: true,
@@ -29,6 +31,11 @@
         required: true,
         type: Boolean
       }
+    },
+
+    created() {
+      // debugger
+      // console.log(this.unit)
     }
   }
 </script>

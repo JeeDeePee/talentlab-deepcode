@@ -1,6 +1,6 @@
 <template>
   <div v-if="module">
-    <ModuleDetailBooked v-if="moduleBooked" :module="module" v-on:delete-module-progress="deleteModuleProgress($event)"></ModuleDetailBooked>
+    <ModuleDetailBooked v-if="moduleBooked" :module="module" :units="units" v-on:delete-module-progress="deleteModuleProgress($event)"></ModuleDetailBooked>
     <ModuleDetail v-if="!moduleBooked" :module="module" v-on:start-module-progress="startModuleProgress($event)"></ModuleDetail>
   </div>
 </template>
@@ -31,7 +31,8 @@
     data() {
       return {
         module: null,
-        moduleBooked: false
+        moduleBooked: false,
+        units: null
       }
     },
 
@@ -109,6 +110,10 @@
             let bookedEntries = data.data.allModulesProgress.edges
             this.moduleBooked = bookedEntries && bookedEntries.length > 0
             console.log(`Module Booked: ${this.moduleBooked}`)
+
+            // this.modules = data.data.userModules.edges.map(entry => ({'status': entry.node.status, ...entry.node.module}))
+            this.units = data.data.userModuleUnits.edges.map(entry => ({'status': entry.node.status, ...entry.node.unit}))
+            // debugger
           }
         }
       })
