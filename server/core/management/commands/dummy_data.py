@@ -13,7 +13,7 @@ from wagtail.core.models import Page
 from core.factories import UserFactory
 from focus.factories import CompetenceFactory
 from modules.factories import CategoryFactory, ModuleFactory, UnitFactory
-from progress.factories import UserModuleFactory, UserUnitFactory
+from progress.factories import UserModuleProgressFactory, UserUnitProgressFactory
 
 data = [
     {
@@ -133,6 +133,11 @@ class Command(BaseCommand):
             ImageField(from_path=os.path.join(settings.BASE_DIR, 'core/static/img/dummy/category1.png')),
             ImageField(from_path=os.path.join(settings.BASE_DIR, 'core/static/img/dummy/category2.png')),
         ]
+        # category_images = [
+        #     ImageField(from_path=os.path.join(settings.BASE_DIR, 'core/static/img/Mastering-Complexity.svg'), width=60, height=60),
+        #     ImageField(from_path=os.path.join(settings.BASE_DIR, 'core/static/img/Growing-as-a-Leader.svg'), width=60, height=60),
+        #     ImageField(from_path=os.path.join(settings.BASE_DIR, 'core/static/img/Mastering-Relations.svg'), width=60, height=60),
+        # ]
 
         module_images = [
             ImageField(from_path=os.path.join(settings.BASE_DIR, 'core/static/img/dummy/module_0.png')),
@@ -181,5 +186,5 @@ class Command(BaseCommand):
                     UnitFactory.create(parent=module, **unit_data)
 
         # create user progress
-        UserModuleFactory.create_batch(size=20)
-        UserUnitFactory.create_batch(size=100)
+        UserModuleProgressFactory.create_batch(size=20)
+        UserUnitProgressFactory.create_batch(size=100)

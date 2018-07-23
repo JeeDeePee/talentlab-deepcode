@@ -27,8 +27,7 @@
       return {
         initialQuery: CATEGORIES_QUERY,
         categories: [],
-        modules: [],
-        inprogress: []
+        modules: []
       }
     },
 
@@ -47,7 +46,7 @@
         result(data, loading, networkStatus) {
           if (!loading) {
             this.categories = data.data.categories.edges.map(entry => entry.node)
-            this.modules = data.data.inprogress.edges.map(entry => ({'status': entry.node.status, ...entry.node.module}))
+            this.modules = data.data.userModules.edges.map(entry => ({'status': entry.node.status, ...entry.node.module}))
           }
         }
       }

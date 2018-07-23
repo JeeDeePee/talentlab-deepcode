@@ -5,9 +5,9 @@ from django_extensions.db.models import TimeStampedModel
 # User progress in learning modules
 
 
-class UserModule(TimeStampedModel):
+class UserModuleProgress(TimeStampedModel):
     class Meta:
-        verbose_name = 'UserModule'
+        verbose_name = 'UserModuleProgress'
         verbose_name_plural = 'UserModules'
 
     user = models.ForeignKey('user.User', null=True, on_delete=models.CASCADE)
@@ -17,12 +17,12 @@ class UserModule(TimeStampedModel):
         return '{} - {}'.format(self.user, self.module)
 
 
-class UserUnit(TimeStampedModel):
+class UserUnitProgress(TimeStampedModel):
     class Meta:
-        verbose_name = 'UserUnit'
+        verbose_name = 'UserUnitProgress'
         verbose_name_plural = 'UserUnits'
 
-    user_module = models.ForeignKey('progress.UserModule', null=True, on_delete=models.CASCADE)
+    user_module = models.ForeignKey('progress.UserModuleProgress', null=True, on_delete=models.CASCADE)
     unit = models.ForeignKey('modules.Unit', null=True, on_delete=models.SET_NULL)
 
     def __str__(self):

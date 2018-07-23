@@ -1,25 +1,30 @@
 query ModuleProgressQuery($id: ID!) {
   moduleProgress(id: $id) {
     id
-    pk
-    module {
-      id
-      teaser
-      title
-      slug
-    }
-    user {
-      id
-      username
-      email
-      firstName
-      lastName
-    }
-    unitProgress(first: 4) {
+    username
+    firstName
+    lastName
+    usermoduleSet {
       edges {
         node {
           id
-          created
+          module {
+            id
+            category
+            title
+            teaser
+            skill
+            slug
+            units {
+              edges {
+                node {
+                  id
+                  title
+                  type
+                }
+              }
+            }
+          }
         }
       }
     }

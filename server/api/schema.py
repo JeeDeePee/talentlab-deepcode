@@ -3,10 +3,12 @@ from django.conf import settings
 from graphene_django.debug import DjangoDebug
 
 from modules.schema import ModulesQuery
-from progress.schema import ProgressQuery, ProgressMutations, InprogressQuery, InprogressQuery
+from progress.schema.module import ModuleProgressQuery
+from progress.schema.module_mutations import ProgressMutations
+from progress.schema.user import UserQuery
 
 
-class Query(InprogressQuery, ModulesQuery, ProgressQuery, graphene.ObjectType):
+class Query(ModuleProgressQuery, ModulesQuery, UserQuery, graphene.ObjectType):
     # This class will inherit from multiple Queries
 
     if settings.DEBUG:

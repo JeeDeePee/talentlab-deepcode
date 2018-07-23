@@ -9,7 +9,7 @@ query CategoriesQuery($userId: String!) {
     }
   }
 
-  inprogress(userid: $userId) {
+  userModules(userid: $userId) {
     edges {
       node {
         status
@@ -24,5 +24,4 @@ query CategoriesQuery($userId: String!) {
       }
     }
   }
-
 }

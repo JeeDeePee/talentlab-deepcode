@@ -1,13 +1,13 @@
 import factory
 
 from modules.models import Module, Unit
-from progress.models import UserUnit, UserModule
+from progress.models import UserUnitProgress, UserModuleProgress
 from user.models import User
 
 
-class UserModuleFactory(factory.django.DjangoModelFactory):
+class UserModuleProgressFactory(factory.django.DjangoModelFactory):
     class Meta:
-        model = UserModule
+        model = UserModuleProgress
 
     # retrieve existing objects using factory.Iterator
     user = factory.Iterator(User.objects.all())
@@ -18,14 +18,14 @@ class UserModuleFactory(factory.django.DjangoModelFactory):
     # module = factory.SubFactory(ModuleFactory)
 
 
-class UserUnitFactory(factory.django.DjangoModelFactory):
+class UserUnitProgressFactory(factory.django.DjangoModelFactory):
     class Meta:
-        model = UserUnit
+        model = UserUnitProgress
 
     # retrieve existing objects using factory.Iterator
-    user_module = factory.Iterator(UserModule.objects.all())
+    user_module = factory.Iterator(UserModuleProgress.objects.all())
     unit = factory.Iterator(Unit.objects.all())
 
     # create new objects
-    # user_module = factory.SubFactory(UserModuleFactory)
+    # user_module = factory.SubFactory(UserModuleProgressFactory)
     # unit = factory.SubFactory(UnitFactory)

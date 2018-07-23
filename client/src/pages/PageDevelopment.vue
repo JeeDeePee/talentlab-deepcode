@@ -39,7 +39,7 @@
 </template>
 
 <script>
-  import USER_PROGRESS_QUERY from '@/graphql/gql/userProgress.gql'
+  import USER_PROGRESS_QUERY from '@/graphql/gql/moduleProgress.gql'
 
   import {mapActions} from 'vuex'
 
