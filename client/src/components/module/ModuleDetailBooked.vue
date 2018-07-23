@@ -3,7 +3,7 @@
     <v-container class="mt-3">
       <span class="grey--text">{{module.category.title}} - {{module.skill}}</span><br>
       <h2 class="mb-1 mt-1">{{module.title}}</h2>
-      <v-btn class="button item2 hidden-sm-and-down" @click="$emit('delete-module-progress', module.slug)">
+      <v-btn class="button item2" @click="$emit('delete-module-progress', module.slug)">
         Buchung löschen
       </v-btn>
 

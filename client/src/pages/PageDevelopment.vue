@@ -17,6 +17,10 @@
 
       <v-btn class="mb-4 ml-0 mt-0 hidden-md-and-up" :to="{ name: 'fokus'}" exact router>
         <v-icon>add</v-icon>
+        Mein Fokus
+      </v-btn>
+      <v-btn class="mb-4 ml-0 mt-0 hidden-md-and-up" :to="{ name: 'fokus'}" exact router>
+        <v-icon>add</v-icon>
         Lernmodule auswählen
       </v-btn>
     </div>
