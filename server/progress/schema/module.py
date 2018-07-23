@@ -6,7 +6,6 @@ from graphene_django.filter import DjangoFilterConnectionField
 from modules.models import Module
 from modules.schema import ModuleNode
 from progress.models import UserModuleProgress
-from progress.schema.unit import UnitProgressNode, ModuleUnitsNode
 from progress.schema.user import UserNode
 from user.models import User
 
@@ -15,8 +14,6 @@ class ModuleProgressNode(DjangoObjectType):
     pk = graphene.Int()
     user = UserNode
     module = ModuleNode
-    unit_progress = DjangoFilterConnectionField(UnitProgressNode)
-    module_units = DjangoFilterConnectionField(ModuleUnitsNode)
 
     class Meta:
         model = UserModuleProgress

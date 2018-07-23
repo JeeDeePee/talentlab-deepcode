@@ -1,0 +1,32 @@
+query UserProgressQuery($id: ID!) {
+  userProgress(id: $id) {
+    id
+    username
+    firstName
+    lastName
+    usermoduleprogressSet {
+      edges {
+        node {
+          id
+          module {
+            id
+            category
+            title
+            teaser
+            skill
+            slug
+            units {
+              edges {
+                node {
+                  id
+                  title
+                  type
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
