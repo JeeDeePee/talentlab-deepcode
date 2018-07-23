@@ -1,4 +1,4 @@
-query CategoriesQuery($userId: String!) {
+query CategoriesQuery($username: String!) {
   categories {
     edges {
       node {
@@ -9,7 +9,7 @@ query CategoriesQuery($userId: String!) {
     }
   }
 
-  userModules(userid: $userId) {
+  userModules(username: $username) {
     edges {
       node {
         status

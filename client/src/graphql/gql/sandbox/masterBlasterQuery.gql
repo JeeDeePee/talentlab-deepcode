@@ -1,4 +1,4 @@
-query UserModuleProgress($slug: String!, $userId: ID!, $userName: String!, $unitProgressId: ID!) {
+query UserModuleProgress($slug: String!, $userid: ID!, $username: String!, $unitProgressId: ID!) {
 	xAllUsers: allUsers {
     edges {
       node {
@@ -6,7 +6,7 @@ query UserModuleProgress($slug: String!, $userId: ID!, $userName: String!, $unit
       }
     }
   }
-  userProgress(id: $userId) {
+  userProgress(id: $userid) {
     id
     usermoduleprogressSet {
       edges {
@@ -25,7 +25,7 @@ query UserModuleProgress($slug: String!, $userId: ID!, $userName: String!, $unit
       id
     }
   }
-  xAllUnitProgress: allUnitProgress(userModule_User_Username: $userName, userModule_Module_Slug: $slug) {
+  xAllUnitProgress: allUnitProgress(userModule_User_Username: $username, userModule_Module_Slug: $slug) {
     edges {
       node {
         id
@@ -37,8 +37,8 @@ query UserModuleProgress($slug: String!, $userId: ID!, $userName: String!, $unit
 
 Variables:
 {
+  "userid": "VXNlck5vZGU6Mg==",
+  "username": "test",
   "slug": "partnering-for-success",
-  "userName": "test",
-  "unitProgressId": "VW5pdFByb2dyZXNzTm9kZTo4MQ==",
-  "userId": "VXNlck5vZGU6Mg=="
+  "unitProgressId": "VW5pdFByb2dyZXNzTm9kZTo4MQ=="
 }

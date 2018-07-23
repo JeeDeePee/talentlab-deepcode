@@ -1,5 +1,5 @@
-query UserModuleUnits($userId: String!, $moduleSlug: String!) {
-  userModuleUnits(userid: $userId, moduleSlug: $moduleSlug) {
+query UserModuleUnits($username: String!, $moduleSlug: String!) {
+  userModuleUnits(username: $username, moduleSlug: $moduleSlug) {
     edges {
       node {
         status

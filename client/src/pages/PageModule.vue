@@ -43,7 +43,7 @@
         this.$apollo.mutate({
           mutation: START_MODULE_PROGRESS,
           variables: {
-            userId: 'test',
+            username: 'test',
             moduleSlug: moduleSlug
           },
           update: (store, { data }) => {
@@ -66,7 +66,7 @@
         this.$apollo.mutate({
           mutation: DELETE_MODULE_PROGRESS,
           variables: {
-            userId: 'test',
+            username: 'test',
             moduleSlug: moduleSlug
           },
           update: (store, { data }) => {
@@ -89,7 +89,7 @@
         query: MODULE_QUERY,
         variables: {
           slug: this.slug,
-          userName: 'test'
+          username: 'test'
         },
         fetchPolicy: 'network-only',
         manual: true,

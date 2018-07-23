@@ -1,4 +1,4 @@
-query ModuleQuery($slug: String!, $userName: String!) {
+query ModuleQuery($slug: String!, $username: String!) {
   modules(slug: $slug) {
     edges {
       node {
@@ -28,11 +28,12 @@ query ModuleQuery($slug: String!, $userName: String!) {
     }
   }
 
-  allModulesProgress(user_Username: $userName, module_Slug: $slug) {
+  allModulesProgress(user_Username: $username, module_Slug: $slug) {
     edges {
       node {
         id
       }
     }
   }
+
 }

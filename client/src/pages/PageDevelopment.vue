@@ -43,7 +43,7 @@
 </template>
 
 <script>
-  import USER_PROGRESS_QUERY from '@/graphql/gql/userProgress.gql'
+  import USER_DEVELOPMENT_QUERY from '@/graphql/gql/userDevelopment.gql'
 
   import {mapActions} from 'vuex'
 
@@ -74,7 +74,7 @@
 
     apollo: {
       userProgress: {
-        query: USER_PROGRESS_QUERY,
+        query: USER_DEVELOPMENT_QUERY,
         variables: {
           id: 'VXNlck5vZGU6MQ=='
         },

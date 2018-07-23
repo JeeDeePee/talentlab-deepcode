@@ -50,7 +50,7 @@
       return {
         active: null,
         drawer: null,
-        userId: 1,
+        userid: 1,
         name: 'Max Muster',
         email: 'talenlab@orbit7.ch'
       }
@@ -58,7 +58,7 @@
 
     mounted() {
       this.$intercom.boot({
-        user_id: this.userId,
+        user_id: this.userid,
         name: this.name,
         email: this.email
       })

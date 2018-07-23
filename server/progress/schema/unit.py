@@ -42,15 +42,15 @@ class UserUnitsQuery(graphene.ObjectType):
     all_unit_progress = DjangoFilterConnectionField(UnitProgressNode)
 
     user_module_units = relay.ConnectionField(UserUnitConnection,
-                                              userid=graphene.String(),
+                                              username=graphene.String(),
                                               module_slug=graphene.String())
 
     def resolve_user_module_units(self, info, **args):
-        userid = args['userid']
+        username = args['username']
         module_slug = args['module_slug']
 
         # master data
-        user = User.objects.get(username=userid)
+        user = User.objects.get(username=username)
         module = Module.objects.get(slug=module_slug)
 
         # progress data

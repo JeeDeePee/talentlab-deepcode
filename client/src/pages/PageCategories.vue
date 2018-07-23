@@ -39,7 +39,7 @@
       categories: {
         query: CATEGORIES_QUERY,
         variables: {
-          userId: 'test'
+          username: 'test'
         },
         fetchPolicy: 'network-only',
         manual: true,
