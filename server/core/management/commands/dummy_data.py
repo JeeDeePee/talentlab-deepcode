@@ -14,6 +14,7 @@ from core.factories import UserFactory
 from focus.factories import CompetenceFactory
 from modules.factories import CategoryFactory, ModuleFactory, UnitFactory
 from progress.factories import UserModuleProgressFactory, UserUnitProgressFactory
+from progress.models import UserModuleProgress
 
 data = [
     {
@@ -187,4 +188,6 @@ class Command(BaseCommand):
 
         # create user progress
         UserModuleProgressFactory.create_batch(size=20)
-        UserUnitProgressFactory.create_batch(size=100)
+        all_user_modules = UserModuleProgress.objects.all()
+        for user_module in all_user_modules:
+            UserUnitProgressFactory.create_batch(size=3, user_module=user_module)

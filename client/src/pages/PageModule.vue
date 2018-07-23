@@ -7,7 +7,6 @@
 
 <script>
   import MODULE_QUERY from '@/graphql/gql/moduleAndModuleProgress.gql'
-
   import START_MODULE_PROGRESS from '@/graphql/gql/mutations/startModuleProgress.gql'
   import DELETE_MODULE_PROGRESS from '@/graphql/gql/mutations/deleteModuleProgress.gql'
 
@@ -95,6 +94,7 @@
         manual: true,
         result(data, loading, networkStatus) {
           if (!loading) {
+            // debugger
             let _module = this.$lodash.clone(data.data.modules.edges[0].node)
 
             _module.tools = JSON.parse(_module.tools)

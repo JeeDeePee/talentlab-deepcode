@@ -54,7 +54,10 @@ class UserUnitsQuery(graphene.ObjectType):
         module = Module.objects.get(slug=module_slug)
 
         # progress data
-        user_module = UserModuleProgress.objects.get(user=user, module=module)
+        # TODO: change back after fix in test data generation
+        # user_module = UserModuleProgress.objects.get(user=user, module=module)
+        #
+        user_module = UserModuleProgress.objects.filter(user=user, module=module).first()
 
         # all module units
         module_units = Unit.objects.filter(id__in=module.get_child_ids()).live()

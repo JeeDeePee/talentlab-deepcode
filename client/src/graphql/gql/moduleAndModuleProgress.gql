@@ -36,4 +36,19 @@ query ModuleQuery($slug: String!, $username: String!) {
     }
   }
 
+  userModuleUnits(username: $username, moduleSlug: $slug) {
+    edges {
+      node {
+        status
+        unit {
+          id
+          title
+          teaser
+          type
+          count
+          duration
+        }
+      }
+    }
+  }
 }
