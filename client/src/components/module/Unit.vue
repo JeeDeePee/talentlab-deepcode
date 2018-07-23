@@ -34,7 +34,6 @@
     },
 
     created() {
-      // debugger
       // console.log(this.unit)
     }
   }

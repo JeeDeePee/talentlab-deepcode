@@ -50,6 +50,6 @@ class DeleteModuleProgress(graphene.Mutation):
             return DeleteModuleProgress(deleted=False, module_slug=module_slug)
 
 
-class ProgressMutations(graphene.ObjectType):
+class ModuleProgressMutations(graphene.ObjectType):
     start_module_progress = StartModuleProgress.Field()
     delete_module_progress = DeleteModuleProgress.Field()
