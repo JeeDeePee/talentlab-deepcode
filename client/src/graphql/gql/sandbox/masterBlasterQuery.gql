@@ -1,0 +1,44 @@
+query UserModuleProgress($slug: String!, $userId: ID!, $userName: String!, $unitProgressId: ID!) {
+	xAllUsers: allUsers {
+    edges {
+      node {
+        id
+      }
+    }
+  }
+  userProgress(id: $userId) {
+    id
+    usermoduleprogressSet {
+      edges {
+        node {
+          id
+        }
+      }
+    }
+  }
+  xUnitProgress: unitProgress(id: $unitProgressId) {
+    id
+    userModule {
+      id
+    }
+    unit {
+      id
+    }
+  }
+  xAllUnitProgress: allUnitProgress(userModule_User_Username: $userName, userModule_Module_Slug: $slug) {
+    edges {
+      node {
+        id
+      }
+    }
+  }
+}
+
+
+Variables:
+{
+  "slug": "partnering-for-success",
+  "userName": "test",
+  "unitProgressId": "VW5pdFByb2dyZXNzTm9kZTo4MQ==",
+  "userId": "VXNlck5vZGU6Mg=="
+}

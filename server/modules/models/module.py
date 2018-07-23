@@ -14,6 +14,7 @@ from wagtail.images.models import Image
 from modules.blocks import LinkBlock, DocumentBlock, DEFAULT_RICH_TEXT_FEATURES
 import logging
 
+
 logger = logging.getLogger(__name__)
 
 
@@ -95,6 +96,9 @@ class Module(Page):
 
     parent_page_types = ['modules.Category']
     subpage_types = ['modules.Unit']
+
+    def get_child_ids(self):
+        return self.get_children().values_list('id', flat=True)
 
 
 VIMEO_META_URL = 'https://vimeo.com/api/oembed.json?url=https%3A//vimeo.com/{video_id}'

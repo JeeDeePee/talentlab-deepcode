@@ -63,7 +63,7 @@ class ModuleNode(DjangoObjectType):
     def resolve_units(self, *args, **kwargs):
         # Hack to avoid error 'Cannot combine queries on two different base models.'
         # otherweise return self.get_children().specific().live() would be the thing
-        return Unit.objects.filter(id__in=self.get_children().values_list('id', flat=True)).live()
+        return Unit.objects.filter(id__in=self.get_child_ids()).live()
 
     def resolve_category(self, *args, **kwargs):
         p = self.get_parent()
@@ -105,7 +105,7 @@ class CategoryNode(DjangoObjectType):
     def resolve_modules(self, *args, **kwargs):
         # Hack to avoid the 'Cannot combine queries on two different base models.' error
         # otherweise return self.get_children().specific().live() would be the right thing
-        return Module.objects.filter(id__in=self.get_children().values_list('id', flat=True)).live()
+        return Module.objects.filter(id__in=self.get_child_ids()).live()
 
 
 class ModulesQuery(object):

@@ -1,0 +1,17 @@
+query UserModuleUnits($userId: String!, $moduleSlug: String!) {
+  userModuleUnits(userid: $userId, moduleSlug: $moduleSlug) {
+    edges {
+      node {
+        status
+        unit {
+          id
+          title
+          teaser
+          type
+          count
+          duration
+        }
+      }
+    }
+  }
+}

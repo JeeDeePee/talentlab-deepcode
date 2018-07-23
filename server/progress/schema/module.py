@@ -26,6 +26,7 @@ class ModuleProgressNode(DjangoObjectType):
 
 class UserModuleNode(graphene.ObjectType):
     status = graphene.Boolean()
+    module_progress = graphene.Field(ModuleProgressNode)
     module = graphene.Field(ModuleNode)
 
     class Meta:
@@ -50,11 +51,16 @@ class UserModulesQuery(graphene.ObjectType):
         # TODO: definitely not performant, but shows what we can do directly in graphene
         # implement using a direct django join. Now doing definitely too many calls to db through the orm
 
-        all_modules = Module.objects.all()
+        # master data
         user = User.objects.get(username=userid)
+        all_modules = Module.objects.all()
+
+        # now calc module status
         for module in all_modules:
             user_module = UserModuleProgress.objects.filter(user=user, module=module).first()
-            user_modules.append(UserModuleNode(module=module, status=user_module is not None))
+            user_modules.append(UserModuleNode(module_progress=user_module,
+                                               module=module,
+                                               status=user_module is not None))
 
         field = relay.ConnectionField.resolve_connection(UserModuleConnection, args, user_modules)
         return field
