@@ -1,10 +1,10 @@
-query ModuleProgressQuery($id: ID!) {
-  moduleProgress(id: $id) {
+query UserProgressQuery($id: ID!) {
+  userProgress(id: $id) {
     id
     username
     firstName
     lastName
-    usermoduleSet {
+    usermoduleprogressSet {
       edges {
         node {
           id

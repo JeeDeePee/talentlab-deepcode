@@ -13,5 +13,5 @@ class UserNode(DjangoObjectType):
 
 
 class UserQuery(ObjectType):
-    user = relay.Node.Field(UserNode)
+    user_progress = relay.Node.Field(UserNode)
     all_users = DjangoFilterConnectionField(UserNode)

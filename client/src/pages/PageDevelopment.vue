@@ -39,7 +39,7 @@
 </template>
 
 <script>
-  import USER_PROGRESS_QUERY from '@/graphql/gql/moduleProgress.gql'
+  import USER_PROGRESS_QUERY from '@/graphql/gql/userProgress.gql'
 
   import {mapActions} from 'vuex'
 
@@ -60,7 +60,7 @@
       return {
         loading: true,
         userProgress: {
-          usermoduleSet: {
+          usermoduleprogressSet: {
             edges: []
           }
         },
@@ -80,7 +80,7 @@
 
     computed: {
       userModules: function () {
-        let moduleProgress = this.userProgress.usermoduleSet.edges.map(entry => entry.node.module)
+        let moduleProgress = this.userProgress.usermoduleprogressSet.edges.map(entry => entry.node.module)
         return moduleProgress.map(function (entry) {
           const parsedCategory = JSON.parse(entry.category)
           return { ...entry, category: { title: parsedCategory.title, slug: parsedCategory.slug } }
