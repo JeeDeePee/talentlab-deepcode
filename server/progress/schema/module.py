@@ -40,7 +40,7 @@ class UserModuleConnection(graphene.Connection):
         node = UserModuleNode
 
 
-class ModuleProgressQuery(graphene.ObjectType):
+class UserModulesQuery(graphene.ObjectType):
     module_progress = relay.Node.Field(ModuleProgressNode)
     all_modules_progress = DjangoFilterConnectionField(ModuleProgressNode)
 
