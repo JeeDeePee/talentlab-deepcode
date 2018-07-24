@@ -38,7 +38,7 @@
 
     methods: {
       startModuleProgress(moduleSlug) {
-        console.log(`startModuleProgress(${moduleSlug})`)
+        // console.log(`startModuleProgress(${moduleSlug})`)
 
         this.$apollo.mutate({
           mutation: START_MODULE_PROGRESS,
@@ -51,7 +51,7 @@
           }
         }).then((data) => {
           // Result
-          console.log(data)
+          // console.log(data)
         }).catch((error) => {
           // Error
           console.error(error)
@@ -61,7 +61,7 @@
       },
 
       deleteModuleProgress(moduleSlug) {
-        console.log(`deleteModuleProgress(${moduleSlug})`)
+        // console.log(`deleteModuleProgress(${moduleSlug})`)
 
         this.$apollo.mutate({
           mutation: DELETE_MODULE_PROGRESS,
@@ -74,7 +74,7 @@
           }
         }).then((data) => {
           // Result
-          console.log(data)
+          // console.log(data)
         }).catch((error) => {
           // Error
           console.error(error)
@@ -111,9 +111,7 @@
             this.moduleBooked = bookedEntries && bookedEntries.length > 0
             console.log(`Module Booked: ${this.moduleBooked}`)
 
-            // this.modules = data.data.userModules.edges.map(entry => ({'status': entry.node.status, ...entry.node.module}))
             this.units = data.data.userModuleUnits.edges.map(entry => ({'status': entry.node.status, ...entry.node.unit}))
-            // debugger
           }
         }
       })

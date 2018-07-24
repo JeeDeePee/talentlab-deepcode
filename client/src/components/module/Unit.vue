@@ -52,7 +52,7 @@
 
     methods: {
       startUnitProgress(unitSlug, moduleSlug) {
-        console.log(`startUnitProgress(${unitSlug}-(${moduleSlug}))`)
+        // console.log(`startUnitProgress(${unitSlug}-(${moduleSlug}))`)
 
         this.$apollo.mutate({
           mutation: START_UNIT_PROGRESS,
@@ -66,7 +66,7 @@
           }
         }).then((data) => {
           // Result
-          console.log(data)
+          // console.log(data)
         }).catch((error) => {
           // Error
           console.error(error)
