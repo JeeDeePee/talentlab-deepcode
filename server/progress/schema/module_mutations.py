@@ -12,6 +12,8 @@ class StartModuleProgress(graphene.Mutation):
 
     created = graphene.Boolean()
     module_slug = graphene.String()
+    failed = graphene.Boolean()
+    exception = graphene.String()
 
     def mutate(self, info, username, module_slug):
         user = User.objects.get(username=username)
@@ -24,7 +26,7 @@ class StartModuleProgress(graphene.Mutation):
             return StartModuleProgress(created=True, module_slug=module_slug)
 
         except Exception as ex:
-            return StartModuleProgress(created=False, module_slug=module_slug)
+            return StartModuleProgress(created=False, module_slug=module_slug, failed=True, exception=ex)
 
 
 class DeleteModuleProgress(graphene.Mutation):
@@ -34,6 +36,8 @@ class DeleteModuleProgress(graphene.Mutation):
 
     deleted = graphene.Boolean()
     module_slug = graphene.String()
+    failed = graphene.Boolean()
+    exception = graphene.String()
 
     def mutate(self, info, username, module_slug):
         user = User.objects.get(username=username)
@@ -47,7 +51,7 @@ class DeleteModuleProgress(graphene.Mutation):
             return DeleteModuleProgress(deleted=True, module_slug=module_slug)
 
         except Exception as ex:
-            return DeleteModuleProgress(deleted=False, module_slug=module_slug)
+            return DeleteModuleProgress(deleted=False, module_slug=module_slug, failed=True, exception=ex)
 
 
 class ModuleProgressMutations(graphene.ObjectType):

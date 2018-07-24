@@ -14,7 +14,7 @@ class StartUnitProgress(graphene.Mutation):
     created = graphene.Boolean()
     unit_slug = graphene.String()
     failed = graphene.Boolean()
-    exception_message = graphene.String()
+    exception = graphene.String()
 
     def mutate(self, info, username, unit_slug, module_slug):
         user = User.objects.get(username=username)
@@ -29,8 +29,7 @@ class StartUnitProgress(graphene.Mutation):
             return StartUnitProgress(created=True, unit_slug=unit_slug)
 
         except Exception as ex:
-            print(ex)
-            return StartUnitProgress(created=False, unit_slug=unit_slug, failed=True, exception_message=ex.message)
+            return StartUnitProgress(created=False, unit_slug=unit_slug, failed=True, exception=ex)
 
 
 class UnitProgressMutations(graphene.ObjectType):

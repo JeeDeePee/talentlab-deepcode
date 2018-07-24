@@ -2,5 +2,7 @@ mutation startModuleProgressMutation($username: String!, $moduleSlug: String!) {
   startModuleProgress(username: $username, moduleSlug: $moduleSlug) {
     created
     moduleSlug
+    failed
+    exception
   }
 }

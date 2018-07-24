@@ -2,5 +2,7 @@ mutation deleteModuleProgressMutation($username: String!, $moduleSlug: String!) 
   deleteModuleProgress(username: $username, moduleSlug: $moduleSlug) {
     deleted
     moduleSlug
+    failed
+    exception
   }
 }

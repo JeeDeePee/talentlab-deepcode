@@ -2,5 +2,7 @@ mutation startUnitProgressMutation($username: String!, $unitSlug: String!, $modu
   startUnitProgress(username: $username, unitSlug: $unitSlug, moduleSlug: $moduleSlug) {
     created
     unitSlug
+    failed
+    exception
   }
 }
