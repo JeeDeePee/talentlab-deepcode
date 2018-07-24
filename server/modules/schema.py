@@ -8,9 +8,6 @@ from .models import Module, Unit, Category
 class UnitNode(DjangoObjectType):
     pk = graphene.Int()
 
-    def resolve_pk(self, *args, **kwargs):
-        return self.id
-
     class Meta:
         model = Unit
         only_fields = [
@@ -20,8 +17,10 @@ class UnitNode(DjangoObjectType):
             'slug': ['exact', 'icontains', 'in'],
             'title': ['exact', 'icontains', 'in'],
         }
-
         interfaces = (relay.Node,)
+
+    def resolve_pk(self, *args, **kwargs):
+        return self.id
 
 
 class ModuleNode(DjangoObjectType):
@@ -44,7 +43,6 @@ class ModuleNode(DjangoObjectType):
             'slug': ['exact', 'icontains', 'in'],
             'title': ['exact', 'icontains', 'in'],
         }
-
         interfaces = (relay.Node,)
 
     def resolve_tools(self, *args, **kwargs):
@@ -83,9 +81,6 @@ class CategoryNode(DjangoObjectType):
     modules = DjangoFilterConnectionField(ModuleNode)
     icon = graphene.String()
 
-    def resolve_pk(self, *args, **kwargs):
-        return self.id
-
     class Meta:
         model = Category
         only_fields = [
@@ -95,8 +90,10 @@ class CategoryNode(DjangoObjectType):
             'slug': ['exact', 'icontains', 'in'],
             'title': ['exact', 'icontains', 'in'],
         }
-
         interfaces = (relay.Node,)
+
+    def resolve_pk(self, *args, **kwargs):
+        return self.id
 
     def resolve_icon(self, *args, **kwargs):
         if self.icon:

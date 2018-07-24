@@ -38,6 +38,7 @@ class Focus(models.Model):
         verbose_name_plural = 'Fokus'
 
     user = models.ForeignKey('user.User', null=True, on_delete=models.CASCADE)
+    active = models.BooleanField(default=False)
 
     def __str__(self):
         return 'Focus {}'.format(self.user)
