@@ -1,0 +1,23 @@
+query FocusCompetencesQuery {
+  categories {
+    edges {
+      node {
+        id
+        slug
+        title
+      }
+    }
+  }
+  competences {
+    edges {
+      node {
+        id
+        slug
+        title
+        category {
+          slug
+        }
+      }
+    }
+  }
+}

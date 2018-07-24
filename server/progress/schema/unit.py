@@ -37,7 +37,7 @@ class UserUnitConnection(graphene.Connection):
         node = UserUnitNode
 
 
-class UserUnitsQuery(graphene.ObjectType):
+class UserUnitsQuery(object):
     unit_progress = relay.Node.Field(UnitProgressNode)
     all_unit_progress = DjangoFilterConnectionField(UnitProgressNode)
 

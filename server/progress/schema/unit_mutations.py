@@ -32,5 +32,5 @@ class StartUnitProgress(graphene.Mutation):
             return StartUnitProgress(created=False, unit_slug=unit_slug, failed=True, exception=ex)
 
 
-class UnitProgressMutations(graphene.ObjectType):
+class UnitProgressMutations(object):
     start_unit_progress = StartUnitProgress.Field()
