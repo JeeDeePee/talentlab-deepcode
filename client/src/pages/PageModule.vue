@@ -7,8 +7,8 @@
 
 <script>
   import MODULE_QUERY from '@/graphql/gql/moduleAndModuleProgress.gql'
-  import START_MODULE_PROGRESS from '@/graphql/gql/mutations/startModuleProgress.gql'
-  import DELETE_MODULE_PROGRESS from '@/graphql/gql/mutations/deleteModuleProgress.gql'
+  import START_MODULE_PROGRESS from '@/graphql/gql/progress/startModuleProgress.gql'
+  import DELETE_MODULE_PROGRESS from '@/graphql/gql/progress/deleteModuleProgress.gql'
 
   import ModuleDetail from '@/components/module/ModuleDetail'
   import ModuleDetailBooked from '@/components/module/ModuleDetailBooked'

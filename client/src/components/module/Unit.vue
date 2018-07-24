@@ -24,7 +24,7 @@
 </template>
 
 <script>
-  import START_UNIT_PROGRESS from '@/graphql/gql/mutations/startUnitProgress.gql'
+  import START_UNIT_PROGRESS from '@/graphql/gql/progress/startUnitProgress.gql'
 
   export default {
     name: 'unit',

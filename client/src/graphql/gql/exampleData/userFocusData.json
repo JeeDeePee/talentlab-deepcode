@@ -1,0 +1,192 @@
+{
+  "data": {
+    "allFocus": {
+      "edges": [
+        {
+          "node": {
+            "active": false,
+            "competenceentrySet": {
+              "edges": [
+                {
+                  "node": {
+                    "competence": {
+                      "category": {
+                        "id": "Q2F0ZWdvcnlOb2RlOjU5",
+                        "slug": "mastering-relations",
+                        "title": "Mastering Relations"
+                      },
+                      "id": "Q29tcGV0ZW5jZU5vZGU6OA==",
+                      "slug": "kooperationsfahigkeit",
+                      "title": "Kooperationsfähigkeit"
+                    },
+                    "currentLevel": 6,
+                    "id": "Q29tcGV0ZW5jZUVudHJ5Tm9kZTo1Mg==",
+                    "nextEvaluation": "2018-08-06"
+                  }
+                },
+                {
+                  "node": {
+                    "competence": {
+                      "category": {
+                        "id": "Q2F0ZWdvcnlOb2RlOjU5",
+                        "slug": "mastering-relations",
+                        "title": "Mastering Relations"
+                      },
+                      "id": "Q29tcGV0ZW5jZU5vZGU6OQ==",
+                      "slug": "networking",
+                      "title": "Networking"
+                    },
+                    "currentLevel": 10,
+                    "id": "Q29tcGV0ZW5jZUVudHJ5Tm9kZTo1Mw==",
+                    "nextEvaluation": "2018-08-17"
+                  }
+                },
+                {
+                  "node": {
+                    "competence": {
+                      "category": {
+                        "id": "Q2F0ZWdvcnlOb2RlOjU5",
+                        "slug": "mastering-relations",
+                        "title": "Mastering Relations"
+                      },
+                      "id": "Q29tcGV0ZW5jZU5vZGU6MTA=",
+                      "slug": "konfliktfahigkeit",
+                      "title": "Konfliktfähigkeit"
+                    },
+                    "currentLevel": 4,
+                    "id": "Q29tcGV0ZW5jZUVudHJ5Tm9kZTo1NA==",
+                    "nextEvaluation": "2018-08-04"
+                  }
+                },
+                {
+                  "node": {
+                    "competence": {
+                      "category": {
+                        "id": "Q2F0ZWdvcnlOb2RlOjU5",
+                        "slug": "mastering-relations",
+                        "title": "Mastering Relations"
+                      },
+                      "id": "Q29tcGV0ZW5jZU5vZGU6MTE=",
+                      "slug": "verhandlungsfahigkeit",
+                      "title": "Verhandlungsfähigkeit"
+                    },
+                    "currentLevel": 4,
+                    "id": "Q29tcGV0ZW5jZUVudHJ5Tm9kZTo1NQ==",
+                    "nextEvaluation": "2018-08-16"
+                  }
+                },
+                {
+                  "node": {
+                    "competence": {
+                      "category": {
+                        "id": "Q2F0ZWdvcnlOb2RlOjQ=",
+                        "slug": "mastering-complexity",
+                        "title": "Mastering Complexity"
+                      },
+                      "id": "Q29tcGV0ZW5jZU5vZGU6MQ==",
+                      "slug": "vernetzes-denken",
+                      "title": "Vernetzes Denken"
+                    },
+                    "currentLevel": 10,
+                    "id": "Q29tcGV0ZW5jZUVudHJ5Tm9kZTo1Ng==",
+                    "nextEvaluation": "2018-08-06"
+                  }
+                },
+                {
+                  "node": {
+                    "competence": {
+                      "category": {
+                        "id": "Q2F0ZWdvcnlOb2RlOjQ=",
+                        "slug": "mastering-complexity",
+                        "title": "Mastering Complexity"
+                      },
+                      "id": "Q29tcGV0ZW5jZU5vZGU6Mg==",
+                      "slug": "agilitat",
+                      "title": "Agilität"
+                    },
+                    "currentLevel": 2,
+                    "id": "Q29tcGV0ZW5jZUVudHJ5Tm9kZTo1Nw==",
+                    "nextEvaluation": "2018-07-30"
+                  }
+                },
+                {
+                  "node": {
+                    "competence": {
+                      "category": {
+                        "id": "Q2F0ZWdvcnlOb2RlOjQ=",
+                        "slug": "mastering-complexity",
+                        "title": "Mastering Complexity"
+                      },
+                      "id": "Q29tcGV0ZW5jZU5vZGU6Mw==",
+                      "slug": "innovationsfahigkeit",
+                      "title": "Innovationsfähigkeit"
+                    },
+                    "currentLevel": 2,
+                    "id": "Q29tcGV0ZW5jZUVudHJ5Tm9kZTo1OA==",
+                    "nextEvaluation": "2018-07-28"
+                  }
+                },
+                {
+                  "node": {
+                    "competence": {
+                      "category": {
+                        "id": "Q2F0ZWdvcnlOb2RlOjQ=",
+                        "slug": "mastering-complexity",
+                        "title": "Mastering Complexity"
+                      },
+                      "id": "Q29tcGV0ZW5jZU5vZGU6NA==",
+                      "slug": "entscheidungsfahigkeit",
+                      "title": "Entscheidungsfähigkeit"
+                    },
+                    "currentLevel": 3,
+                    "id": "Q29tcGV0ZW5jZUVudHJ5Tm9kZTo1OQ==",
+                    "nextEvaluation": "2018-08-10"
+                  }
+                },
+                {
+                  "node": {
+                    "competence": {
+                      "category": {
+                        "id": "Q2F0ZWdvcnlOb2RlOjMy",
+                        "slug": "growing-as-a-leader",
+                        "title": "Growing as a Leader"
+                      },
+                      "id": "Q29tcGV0ZW5jZU5vZGU6NQ==",
+                      "slug": "leadership",
+                      "title": "Leadership"
+                    },
+                    "currentLevel": 0,
+                    "id": "Q29tcGV0ZW5jZUVudHJ5Tm9kZTo2MA==",
+                    "nextEvaluation": "2018-07-28"
+                  }
+                },
+                {
+                  "node": {
+                    "competence": {
+                      "category": {
+                        "id": "Q2F0ZWdvcnlOb2RlOjMy",
+                        "slug": "growing-as-a-leader",
+                        "title": "Growing as a Leader"
+                      },
+                      "id": "Q29tcGV0ZW5jZU5vZGU6Ng==",
+                      "slug": "management",
+                      "title": "Management"
+                    },
+                    "currentLevel": 3,
+                    "id": "Q29tcGV0ZW5jZUVudHJ5Tm9kZTo2MQ==",
+                    "nextEvaluation": "2018-08-01"
+                  }
+                }
+              ]
+            },
+            "id": "Rm9jdXNOb2RlOjE1",
+            "user": {
+              "id": "VXNlck5vZGU6MQ==",
+              "username": "test"
+            }
+          }
+        }
+      ]
+    }
+  }
+}
