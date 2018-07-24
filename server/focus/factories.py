@@ -1,7 +1,28 @@
 import factory
+from factory import SubFactory
+from factory.fuzzy import FuzzyInteger
 
 from focus.models import Competence, CompetenceEntry, Focus
 from modules.factories import CategoryFactory
+from user.models import User
+
+
+class FocusFactory(factory.django.DjangoModelFactory):
+    class Meta:
+        model = Focus
+
+    user = factory.Iterator(User.objects.all())
+
+
+class CompetenceEntryFactory(factory.django.DjangoModelFactory):
+    class Meta:
+        model = CompetenceEntry
+
+    focus = SubFactory(FocusFactory)
+
+    competence = factory.Iterator(Competence.objects.all())
+    current_level = FuzzyInteger(0, 10)
+    next_evaluation = factory.Faker('future_date', end_date="+30d", tzinfo=None)
 
 
 class CompetenceFactory(factory.django.DjangoModelFactory):
@@ -9,22 +30,3 @@ class CompetenceFactory(factory.django.DjangoModelFactory):
         model = Competence
 
     category = factory.SubFactory(CategoryFactory)
-
-
-class CompetenceEntryFactory(factory.django.DjangoModelFactory):
-    class Meta:
-        model = CompetenceEntry
-
-    # # several competence entries are grouped in current fokus
-    # focus = models.ForeignKey('focus.Focus', blank=False, null=False, on_delete=models.CASCADE)
-    #
-    # competence = models.ForeignKey(Competence, blank=False, null=False, on_delete=models.CASCADE)
-    # current_level = models.PositiveIntegerField('Kompetenzlevel', default=0)
-    # next_evaluation = models.DateField('Nächste Bewertung', null=True, blank=True)
-
-
-class FocusFactory(factory.django.DjangoModelFactory):
-    class Meta:
-        model = Focus
-
-    # user = models.ForeignKey('user.User', null=True, on_delete=models.CASCADE)

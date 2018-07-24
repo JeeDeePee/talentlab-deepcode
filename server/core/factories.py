@@ -55,4 +55,3 @@ class UserFactory(factory.django.DjangoModelFactory):
     def post(self, create, extracted, **kwargs):
         self.set_password('test')
         self.save()
-

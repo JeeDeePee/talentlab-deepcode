@@ -10,7 +10,7 @@ class CompetenceAdmin(admin.ModelAdmin):
 
 @admin.register(CompetenceEntry)
 class CompetenceEntryAdmin(admin.ModelAdmin):
-    list_display = ('competence', 'current_level', 'next_evaluation')
+    list_display = ('competence', 'current_level', 'next_evaluation', 'focus')
 
 
 @admin.register(Focus)

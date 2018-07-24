@@ -4,6 +4,7 @@ import shutil
 
 import wagtail_factories
 from django.conf import settings
+from django.contrib.auth import get_user_model
 from django.core import management
 from django.core.management import BaseCommand
 from django.db import connection
@@ -11,7 +12,7 @@ from factory.django import ImageField
 from wagtail.core.models import Page
 
 from core.factories import UserFactory
-from focus.factories import CompetenceFactory
+from focus.factories import CompetenceFactory, CompetenceEntryFactory, FocusFactory
 from modules.factories import CategoryFactory, ModuleFactory, UnitFactory
 from progress.factories import UserModuleProgressFactory, UserUnitProgressFactory
 from progress.models import UserModuleProgress
@@ -191,3 +192,9 @@ class Command(BaseCommand):
         all_module_progress = UserModuleProgress.objects.all()
         for module_progress in all_module_progress:
             UserUnitProgressFactory.create_batch(size=3, module_progress=module_progress)
+
+        # create user focus
+        all_users = get_user_model().objects.all()
+        for user in all_users:
+            focus = FocusFactory.create(user=user)
+            CompetenceEntryFactory.create_batch(size=10, focus=focus)
