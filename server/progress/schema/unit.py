@@ -12,12 +12,12 @@ from user.models import User
 
 class UnitProgressNode(DjangoObjectType):
     pk = graphene.Int()
-    user_module = ModuleProgressNode
+    module_progress = ModuleProgressNode
     unit = UnitNode
 
     class Meta:
         model = UserUnitProgress
-        filter_fields = ['user_module__user__username', 'user_module__module__slug']
+        filter_fields = ['module_progress__user__username', 'module_progress__module__slug']
         interfaces = (relay.Node,)
 
     def resolve_pk(self, info, *args):
@@ -55,16 +55,16 @@ class UserUnitsQuery(graphene.ObjectType):
 
         # progress data
         # TODO: change back after fix in test data generation
-        # user_module = UserModuleProgress.objects.get(user=user, module=module)
+        # module_progress = UserModuleProgress.objects.get(user=user, module=module)
         #
-        user_module = UserModuleProgress.objects.filter(user=user, module=module).first()
+        module_progress = UserModuleProgress.objects.filter(user=user, module=module).first()
 
         # all module units
         module_units = Unit.objects.filter(id__in=module.get_child_ids()).live()
 
         user_module_units = []
         for module_unit in module_units:
-            user_unit_progress = UserUnitProgress.objects.filter(user_module=user_module, unit=module_unit).first()
+            user_unit_progress = UserUnitProgress.objects.filter(module_progress=module_progress, unit=module_unit).first()
             user_module_units.append(UserUnitNode(unit=module_unit, status=user_unit_progress is not None))
 
         field = relay.ConnectionField.resolve_connection(UserUnitConnection, args, user_module_units)

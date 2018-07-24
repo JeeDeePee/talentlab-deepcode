@@ -39,9 +39,9 @@ class DeleteModuleProgress(graphene.Mutation):
         user = User.objects.get(username=username)
         module = Module.objects.get(slug=module_slug)
 
-        found_user_modules = UserModuleProgress.objects.filter(user=user, module=module)
+        found_module_progress = UserModuleProgress.objects.filter(user=user, module=module)
         try:
-            found_user_modules.delete()
+            found_module_progress.delete()
 
             print('deleting a user module {} for user {}'.format(module_slug, username))
             return DeleteModuleProgress(deleted=True, module_slug=module_slug)

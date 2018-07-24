@@ -34,7 +34,7 @@
       <v-layout row wrap>
         <v-flex xs12 sm8 md8 lg8 xl8>
           <h3>Lernangebote</h3>
-          <Unit v-for="(unit, index) in units" :key="index" :unit="unit" class="mb-4" :booked="true"></Unit>
+          <Unit v-for="(unit, index) in units" :key="index" :unit="unit" :module="module" class="mb-4" :booked="true"></Unit>
         </v-flex>
         <v-flex xs12 sm4 md4 lg4 xl4>
           <h3>Ressourcen</h3>

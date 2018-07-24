@@ -42,6 +42,7 @@ query ModuleQuery($slug: String!, $username: String!) {
         status
         unit {
           id
+          slug
           title
           teaser
           type

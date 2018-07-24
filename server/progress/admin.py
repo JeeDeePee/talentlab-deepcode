@@ -11,5 +11,5 @@ class UserModuleProgressAdmin(admin.ModelAdmin):
 
 @admin.register(UserUnitProgress)
 class UserUnitProgressAdmin(admin.ModelAdmin):
-    list_display = ('user_module', 'unit')
-    list_filter = ('user_module__user', 'user_module__module')
+    list_display = ('module_progress', 'unit')
+    list_filter = ('module_progress__user', 'module_progress__module')

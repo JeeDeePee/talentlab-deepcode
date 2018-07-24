@@ -53,14 +53,14 @@ class UserModulesQuery(graphene.ObjectType):
 
         # master data
         user = User.objects.get(username=username)
-        all_modules = Module.objects.all()
+        all_modules = list(Module.objects.all())
 
         # now calc module status
         for module in all_modules:
-            user_module = UserModuleProgress.objects.filter(user=user, module=module).first()
-            user_modules.append(UserModuleNode(module_progress=user_module,
+            module_progress = UserModuleProgress.objects.filter(user=user, module=module).first()
+            user_modules.append(UserModuleNode(module_progress=module_progress,
                                                module=module,
-                                               status=user_module is not None))
+                                               status=module_progress is not None))
 
         field = relay.ConnectionField.resolve_connection(UserModuleConnection, args, user_modules)
         return field

@@ -188,6 +188,6 @@ class Command(BaseCommand):
 
         # create user progress
         UserModuleProgressFactory.create_batch(size=20)
-        all_user_modules = UserModuleProgress.objects.all()
-        for user_module in all_user_modules:
-            UserUnitProgressFactory.create_batch(size=3, user_module=user_module)
+        all_module_progress = UserModuleProgress.objects.all()
+        for module_progress in all_module_progress:
+            UserUnitProgressFactory.create_batch(size=3, module_progress=module_progress)

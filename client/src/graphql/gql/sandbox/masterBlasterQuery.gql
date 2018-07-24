@@ -1,4 +1,4 @@
-query UserModuleProgress($slug: String!, $userid: ID!, $username: String!, $unitProgressId: ID!) {
+query MasterBlasterQuery($slug: String!, $userid: ID!, $username: String!, $unitProgressId: ID!) {
 	xAllUsers: allUsers {
     edges {
       node {
@@ -18,14 +18,14 @@ query UserModuleProgress($slug: String!, $userid: ID!, $username: String!, $unit
   }
   xUnitProgress: unitProgress(id: $unitProgressId) {
     id
-    userModule {
+    moduleProgress {
       id
     }
     unit {
       id
     }
   }
-  xAllUnitProgress: allUnitProgress(userModule_User_Username: $username, userModule_Module_Slug: $slug) {
+  xAllUnitProgress: allUnitProgress(moduleProgress_User_Username: $username, moduleProgress_Module_Slug: $slug) {
     edges {
       node {
         id
