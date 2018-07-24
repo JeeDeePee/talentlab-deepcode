@@ -4,18 +4,21 @@
     <Goal class="mb-4"/>
 
     <div class="clearfix">
-      <v-btn class="hidden-sm-and-down float-r" :to="{ name: 'fokus'}" exact router>
+      <v-btn class="hidden-sm-and-down float-r" @click.stop="showFocusDialog=true">
         <v-icon>add</v-icon>
         Mein Fokus
       </v-btn>
-      <v-btn class="hidden-sm-and-down float-r">
+
+      <FocusDialog :visible="showFocusDialog" @close="showFocusDialog=false"/>
+
+      <v-btn class="hidden-sm-and-down float-r" :to="{ name: 'categories'}" exact router>
         <v-icon>add</v-icon>
         Lernmodule auswählen
       </v-btn>
 
       <h2 class="grey--text mb-3">Meine Lernmodule</h2>
 
-      <v-btn class="mb-4 ml-0 mt-0 hidden-md-and-up" :to="{ name: 'fokus'}" exact router>
+      <v-btn class="mb-4 ml-0 mt-0 hidden-md-and-up" :to="{ name: 'categories'}" exact router>
         <v-icon>add</v-icon>
         Lernmodule auswählen
       </v-btn>
@@ -46,6 +49,7 @@
   import Goal from '@/components/development/Goal'
   import ModuleProgressListItem from '@/components/development/ModuleProgressListItem'
   import Recomendation from '@/components/development/Recomendation'
+  import FocusDialog from '@/components/focus/FocusDialog'
 
   export default {
     name: 'page-development',
@@ -53,12 +57,14 @@
     components: {
       Goal,
       ModuleProgressListItem,
-      Recomendation
+      Recomendation,
+      FocusDialog
     },
 
     data() {
       return {
         loading: true,
+        showFocusDialog: false,
         userProgress: {
           usermoduleprogressSet: {
             edges: []
@@ -83,7 +89,7 @@
         let moduleProgress = this.userProgress.usermoduleprogressSet.edges.map(entry => entry.node.module)
         return moduleProgress.map(function (entry) {
           const parsedCategory = JSON.parse(entry.category)
-          return { ...entry, category: { title: parsedCategory.title, slug: parsedCategory.slug } }
+          return {...entry, category: {title: parsedCategory.title, slug: parsedCategory.slug}}
         })
       }
     },

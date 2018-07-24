@@ -8,27 +8,27 @@ export default new Vuex.Store({
     userId: null,
     moduleId: null,
     userState: {
-      fokus: {
+      focus: {
         state: 'start'
       }
     }
   },
 
   getters: { // = computed properties
-    userFokusState(state, getters) {
-      return state.userState.fokus.state
+    userFocusState(state, getters) {
+      return state.userState.focus.state
     },
 
-    isFokusStart(state, getters) {
-      return state.userState.fokus.state === 'start'
+    isFocusStart(state, getters) {
+      return state.userState.focus.state === 'start'
     },
 
-    isFokusDetail(state, getters) {
-      return state.userState.fokus.state === 'detail'
+    isFocusDetail(state, getters) {
+      return state.userState.focus.state === 'detail'
     },
 
-    isFokusFinish(state, getters) {
-      return state.userState.fokus.state === 'finish'
+    isFocusFinish(state, getters) {
+      return state.userState.focus.state === 'finish'
     }
   },
 
@@ -70,8 +70,8 @@ export default new Vuex.Store({
       // }
     },
 
-    newFokusWizardState({ state, commit }, newState) {
-      commit('setFokusWizardState', newState)
+    newFocusWizardState({ state, commit }, newState) {
+      commit('setFocusWizardState', newState)
     }
 
     // fetchProducts({ commit }) {
@@ -112,8 +112,8 @@ export default new Vuex.Store({
       state.userState = userState
     },
 
-    setFokusWizardState(state, fokusState) {
-      state.userState.fokus.state = fokusState
+    setFocusWizardState(state, focusState) {
+      state.userState.focus.state = focusState
     }
 
     // setProducts(state, products) {
