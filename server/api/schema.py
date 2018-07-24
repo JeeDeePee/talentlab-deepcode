@@ -2,7 +2,8 @@ import graphene
 from django.conf import settings
 from graphene_django.debug import DjangoDebug
 
-from focus.schema import FocusQuery
+from focus.schema.mutations import FocusMutation
+from focus.schema.schema import FocusQuery
 from modules.schema import ModulesQuery
 from progress.schema.module import UserModulesQuery
 from progress.schema.module_mutations import ModuleProgressMutations
@@ -18,7 +19,7 @@ class Query(FocusQuery, UserUnitsQuery, UserModulesQuery, ModulesQuery, UserQuer
         debug = graphene.Field(DjangoDebug, name='__debug')
 
 
-class Mutation(UnitProgressMutations, ModuleProgressMutations, graphene.ObjectType):
+class Mutation(FocusMutation, UnitProgressMutations, ModuleProgressMutations, graphene.ObjectType):
     # This class will inherit from multiple Queries
 
     if settings.DEBUG:
