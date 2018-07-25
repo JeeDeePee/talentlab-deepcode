@@ -29,7 +29,7 @@ class ModuleNode(DjangoObjectType):
     resources = graphene.JSONString()
     units = DjangoFilterConnectionField(UnitNode)
     hero_image = graphene.String()
-    # hack to acoid circular dependency
+    # hack to avoid circular dependency
     category = graphene.JSONString()
     category_slug = graphene.String()
     category_name = graphene.String()
