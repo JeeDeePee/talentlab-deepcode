@@ -1,4 +1,6 @@
 @import "var";
+@import "button";
+@import "dialog";
 
 body {
   font-family: $font-family;
@@ -34,35 +36,6 @@ a {
   .btn {
     border: none;
   }
-}
-
-.btn--active .btn__content:before, .btn:focus .btn__content:before, .btn:hover .btn__content:before .btn:not(.btn--depressed) {
-  background-color: transparent;
-}
-
-// das hier ist der fix für den verschobenen button
-
-button.btn {
-  text-transform: initial;
-  border: 2px solid #FD6E22;
-  padding-bottom: 32px;
-  font-size: 15px;
-  box-shadow: none !important;
-
-  .btn__content {
-    padding-bottom: 4px;
-  }
-}
-
-a.btn {
-  text-transform: initial;
-  border: 2px solid #FD6E22;
-  font-size: 15px;
-  box-shadow: none !important;
-}
-
-.theme--light .btn:not(.btn--icon):not(.btn--flat) {
-  background-color: transparent;
 }
 
 .text-center {

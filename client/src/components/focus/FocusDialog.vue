@@ -7,13 +7,16 @@
     scrollable
   >
     <v-card tile>
-      <v-btn class="close" large flat icon @click.stop="show=false">
-        <v-icon>close</v-icon>
-      </v-btn>
+      <div class="pa-2">
+        <v-btn class="dialog__close" large flat icon @click.stop="show=false">
+          <v-icon>close</v-icon>
+        </v-btn>
 
-      <FocusStart v-on:proceed="proceedAfterStart($event)" v-if="isFocusStart"></FocusStart>
-      <FocusDetail v-on:proceed="proceedAfterDetail($event)" v-if="isFocusDetail"></FocusDetail>
-      <FocusFinish v-on:proceed="proceedAfterFinish($event)" v-if="isFocusFinish"></FocusFinish>
+        <FocusStart v-on:proceed="proceedAfterStart($event)" v-if="isFocusStart"></FocusStart>
+        <FocusDetail v-on:proceed="proceedAfterDetail($event)" v-if="isFocusDetail"></FocusDetail>
+        <FocusFinish v-on:proceed="proceedAfterFinish($event)" v-if="isFocusFinish"></FocusFinish>
+
+      </div>
     </v-card>
   </v-dialog>
 </template>
@@ -87,15 +90,5 @@
 
   .card {
     background-color: $grey-9;
-  }
-
-  .close {
-    color: #fff;
-    position: absolute;
-    right: 0;
-
-    .icon {
-      font-size: 50px;
-    }
   }
 </style>
