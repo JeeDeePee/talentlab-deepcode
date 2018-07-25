@@ -7,38 +7,23 @@ from focus.models import Competence, CompetenceEntry, Focus
 
 
 class CompetenceNode(DjangoObjectType):
-    pk = graphene.Int()
-
     class Meta:
         model = Competence
         filter_fields = ['title', 'slug', 'category__slug', 'category__title']
         interfaces = (relay.Node,)
 
-    def resolve_pk(self, *args, **kwargs):
-        return self.id
-
 
 class CompetenceEntryNode(DjangoObjectType):
-    pk = graphene.Int()
-
     class Meta:
         model = CompetenceEntry
         interfaces = (relay.Node,)
 
-    def resolve_pk(self, *args, **kwargs):
-        return self.id
-
 
 class FocusNode(DjangoObjectType):
-    pk = graphene.Int()
-
     class Meta:
         model = Focus
         filter_fields = ['user__username', 'active']
         interfaces = (relay.Node,)
-
-    def resolve_pk(self, *args, **kwargs):
-        return self.id
 
 
 class FocusQuery(object):

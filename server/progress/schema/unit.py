@@ -11,7 +11,6 @@ from user.models import User
 
 
 class UnitProgressNode(DjangoObjectType):
-    pk = graphene.Int()
     module_progress = ModuleProgressNode
     unit = UnitNode
 
@@ -19,9 +18,6 @@ class UnitProgressNode(DjangoObjectType):
         model = UserUnitProgress
         filter_fields = ['module_progress__user__username', 'module_progress__module__slug']
         interfaces = (relay.Node,)
-
-    def resolve_pk(self, info, *args):
-        return self.id
 
 
 class UserUnitNode(graphene.ObjectType):
