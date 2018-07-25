@@ -32,3 +32,6 @@ class Category(Page):
     ])
 
     template = 'generic_page.html'
+
+    def get_child_ids(self):
+        return self.get_children().values_list('id', flat=True)

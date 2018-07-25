@@ -22,8 +22,8 @@ class UserUnitProgress(TimeStampedModel):
         verbose_name = 'UserUnitProgress'
         verbose_name_plural = 'UserUnits'
 
-    user_module = models.ForeignKey('progress.UserModuleProgress', null=True, on_delete=models.CASCADE)
+    module_progress = models.ForeignKey('progress.UserModuleProgress', null=True, on_delete=models.CASCADE)
     unit = models.ForeignKey('modules.Unit', null=True, on_delete=models.SET_NULL)
 
     def __str__(self):
-        return '{} - {}'.format(self.user_module, self.unit)
+        return '{} - {}'.format(self.module_progress, self.unit)

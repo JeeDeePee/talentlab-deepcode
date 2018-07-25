@@ -1,0 +1,21 @@
+mutation CreateFocus($input: CreateFocusInput!) {
+  createFocus(input: $input) {
+      newFocusNode {
+        id
+      }
+  }
+}
+
+
+// {"input":
+//   {"input":
+//     {"entries":
+//       [
+//         {"slug": "verhandlungsfahigkeit", "currentLevel": 1, "nextEvaluation": "2018-09-25"},
+//         {"slug": "konfliktfahigkeit", "currentLevel": 3, "nextEvaluation": "2018-09-25"},
+//         {"slug": "networking", "currentLevel": 7, "nextEvaluation": "2018-09-25"},
+//         {"slug": "agilitat", "currentLevel": 10, "nextEvaluation": "2018-09-25"}
+//       ]
+//     }
+//   }
+// }

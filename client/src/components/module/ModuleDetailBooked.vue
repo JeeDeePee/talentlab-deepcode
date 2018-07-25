@@ -3,7 +3,7 @@
     <v-container class="mt-3">
       <span class="grey--text">{{module.category.title}} - {{module.skill}}</span><br>
       <h2 class="mb-1 mt-1">{{module.title}}</h2>
-      <v-btn class="button item2 hidden-sm-and-down" @click="$emit('delete-module-progress', module.slug)">
+      <v-btn class="button item2" @click="$emit('delete-module-progress', module.slug)">
         Buchung löschen
       </v-btn>
 
@@ -34,7 +34,7 @@
       <v-layout row wrap>
         <v-flex xs12 sm8 md8 lg8 xl8>
           <h3>Lernangebote</h3>
-          <Unit v-for="(item, index) in module.units.edges" :key="index" :unit="item.node" class="mb-4" :booked="true"></Unit>
+          <Unit v-for="(unit, index) in units" :key="index" :unit="unit" :module="module" class="mb-4" :booked="true"></Unit>
         </v-flex>
         <v-flex xs12 sm4 md4 lg4 xl4>
           <h3>Ressourcen</h3>
@@ -59,6 +59,10 @@
       module: {
         required: true,
         type: Object
+      },
+      units: {
+        required: true,
+        type: Array
       }
     },
 
@@ -72,6 +76,10 @@
       return {
         showVideoPlayer: false
       }
+    },
+
+    created() {
+      // console.log(this.units)
     }
   }
 </script>

@@ -1,0 +1,33 @@
+query FocusQuery($username: String!) {
+  allFocus(user_Username: $username, active: true) {
+    edges {
+      node {
+        id
+        user {
+          id
+          username
+        }
+        active
+        competenceentrySet {
+          edges {
+            node {
+              id
+              competence {
+                id
+                slug
+                title
+                category {
+                  id
+                  slug
+                  title
+                }
+              }
+              currentLevel
+              nextEvaluation
+            }
+          }
+        }
+      }
+    }
+  }
+}

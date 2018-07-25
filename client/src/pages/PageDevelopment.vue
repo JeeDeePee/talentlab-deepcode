@@ -20,6 +20,10 @@
 
       <v-btn class="mb-4 ml-0 mt-0 hidden-md-and-up" :to="{ name: 'categories'}" exact router>
         <v-icon>add</v-icon>
+        Mein Fokus
+      </v-btn>
+      <v-btn class="mb-4 ml-0 mt-0 hidden-md-and-up" :to="{ name: 'fokus'}" exact router>
+        <v-icon>add</v-icon>
         Lernmodule auswählen
       </v-btn>
     </div>
@@ -42,7 +46,7 @@
 </template>
 
 <script>
-  import USER_PROGRESS_QUERY from '@/graphql/gql/userProgress.gql'
+  import USER_DEVELOPMENT_QUERY from '@/graphql/gql/userDevelopment.gql'
 
   import {mapActions} from 'vuex'
 
@@ -76,7 +80,7 @@
 
     apollo: {
       userProgress: {
-        query: USER_PROGRESS_QUERY,
+        query: USER_DEVELOPMENT_QUERY,
         variables: {
           id: 'VXNlck5vZGU6MQ=='
         },

@@ -1,6 +1,0 @@
-mutation startModuleProgressMutation($userId: String!, $moduleSlug: String!) {
-  startModuleProgress(userId: $userId, moduleSlug: $moduleSlug) {
-    created
-    moduleSlug
-  }
-}

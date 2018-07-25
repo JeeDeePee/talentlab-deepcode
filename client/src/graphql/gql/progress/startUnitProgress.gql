@@ -1,0 +1,8 @@
+mutation startUnitProgressMutation($username: String!, $unitSlug: String!, $moduleSlug: String!) {
+  startUnitProgress(username: $username, unitSlug: $unitSlug, moduleSlug: $moduleSlug) {
+    created
+    unitSlug
+    failed
+    exception
+  }
+}

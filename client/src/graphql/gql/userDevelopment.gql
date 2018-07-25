@@ -1,4 +1,4 @@
-query UserProgressQuery($id: ID!) {
+query UserDevelopmentQuery($id: ID!) {
   userProgress(id: $id) {
     id
     username

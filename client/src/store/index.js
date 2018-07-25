@@ -5,7 +5,8 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: { // = data
-    userId: null,
+    userid: null,
+    username: null,
     moduleId: null,
     userState: {
       focus: {

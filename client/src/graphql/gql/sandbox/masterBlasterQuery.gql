@@ -1,0 +1,44 @@
+query MasterBlasterQuery($slug: String!, $userid: ID!, $username: String!, $unitProgressId: ID!) {
+	xAllUsers: allUsers {
+    edges {
+      node {
+        id
+      }
+    }
+  }
+  userProgress(id: $userid) {
+    id
+    usermoduleprogressSet {
+      edges {
+        node {
+          id
+        }
+      }
+    }
+  }
+  xUnitProgress: unitProgress(id: $unitProgressId) {
+    id
+    moduleProgress {
+      id
+    }
+    unit {
+      id
+    }
+  }
+  xAllUnitProgress: allUnitProgress(moduleProgress_User_Username: $username, moduleProgress_Module_Slug: $slug) {
+    edges {
+      node {
+        id
+      }
+    }
+  }
+}
+
+
+Variables:
+{
+  "userid": "VXNlck5vZGU6Mg==",
+  "username": "test",
+  "slug": "partnering-for-success",
+  "unitProgressId": "VW5pdFByb2dyZXNzTm9kZTo4MQ=="
+}

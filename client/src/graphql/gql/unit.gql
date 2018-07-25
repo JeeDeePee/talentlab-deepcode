@@ -1,0 +1,13 @@
+query UnitQuery($slug: String!) {
+  unit: units(slug: $slug) {
+    edges {
+      node {
+        title
+        teaser
+        type
+        count
+        duration
+      }
+    }
+  }
+}

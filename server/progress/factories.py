@@ -23,9 +23,11 @@ class UserUnitProgressFactory(factory.django.DjangoModelFactory):
         model = UserUnitProgress
 
     # retrieve existing objects using factory.Iterator
-    user_module = factory.Iterator(UserModuleProgress.objects.all())
+    module_progress = factory.Iterator(UserModuleProgress.objects.all())
     unit = factory.Iterator(Unit.objects.all())
 
+    # TODO: maersu how to select units based on used module?
+
     # create new objects
-    # user_module = factory.SubFactory(UserModuleProgressFactory)
+    # module_progress = factory.SubFactory(UserModuleProgressFactory)
     # unit = factory.SubFactory(UnitFactory)

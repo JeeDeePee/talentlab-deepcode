@@ -6,29 +6,23 @@ from graphene_django.filter import DjangoFilterConnectionField
 from modules.models import Module
 from modules.schema import ModuleNode
 from progress.models import UserModuleProgress
-from progress.schema.unit import UnitProgressNode, ModuleUnitsNode
 from progress.schema.user import UserNode
 from user.models import User
 
 
 class ModuleProgressNode(DjangoObjectType):
-    pk = graphene.Int()
     user = UserNode
     module = ModuleNode
-    unit_progress = DjangoFilterConnectionField(UnitProgressNode)
-    module_units = DjangoFilterConnectionField(ModuleUnitsNode)
 
     class Meta:
         model = UserModuleProgress
         filter_fields = ['user__username', 'module__slug']
         interfaces = (relay.Node,)
 
-    def resolve_pk(self, info, *args):
-        return self.id
-
 
 class UserModuleNode(graphene.ObjectType):
     status = graphene.Boolean()
+    module_progress = graphene.Field(ModuleProgressNode)
     module = graphene.Field(ModuleNode)
 
     class Meta:
@@ -40,24 +34,29 @@ class UserModuleConnection(graphene.Connection):
         node = UserModuleNode
 
 
-class UserModulesQuery(graphene.ObjectType):
+class UserModulesQuery(object):
     module_progress = relay.Node.Field(ModuleProgressNode)
     all_modules_progress = DjangoFilterConnectionField(ModuleProgressNode)
 
-    user_modules = relay.ConnectionField(UserModuleConnection, userid=graphene.String())
+    user_modules = relay.ConnectionField(UserModuleConnection, username=graphene.String())
 
     def resolve_user_modules(self, info, **args):
-        userid = args['userid']
+        username = args['username']
         user_modules = []
 
         # TODO: definitely not performant, but shows what we can do directly in graphene
         # implement using a direct django join. Now doing definitely too many calls to db through the orm
 
-        all_modules = Module.objects.all()
-        user = User.objects.get(username=userid)
+        # master data
+        user = User.objects.get(username=username)
+        all_modules = list(Module.objects.all())
+
+        # now calc module status
         for module in all_modules:
-            user_module = UserModuleProgress.objects.filter(user=user, module=module).first()
-            user_modules.append(UserModuleNode(module=module, status=user_module is not None))
+            module_progress = UserModuleProgress.objects.filter(user=user, module=module).first()
+            user_modules.append(UserModuleNode(module_progress=module_progress,
+                                               module=module,
+                                               status=module_progress is not None))
 
         field = relay.ConnectionField.resolve_connection(UserModuleConnection, args, user_modules)
         return field

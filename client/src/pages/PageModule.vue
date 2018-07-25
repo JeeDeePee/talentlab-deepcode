@@ -1,15 +1,14 @@
 <template>
   <div v-if="module">
-    <ModuleDetailBooked v-if="moduleBooked" :module="module" v-on:delete-module-progress="deleteModuleProgress($event)"></ModuleDetailBooked>
+    <ModuleDetailBooked v-if="moduleBooked" :module="module" :units="units" v-on:delete-module-progress="deleteModuleProgress($event)"></ModuleDetailBooked>
     <ModuleDetail v-if="!moduleBooked" :module="module" v-on:start-module-progress="startModuleProgress($event)"></ModuleDetail>
   </div>
 </template>
 
 <script>
   import MODULE_QUERY from '@/graphql/gql/moduleAndModuleProgress.gql'
-
-  import START_MODULE_PROGRESS from '@/graphql/gql/mutations/startModuleProgress.gql'
-  import DELETE_MODULE_PROGRESS from '@/graphql/gql/mutations/deleteModuleProgress.gql'
+  import START_MODULE_PROGRESS from '@/graphql/gql/progress/startModuleProgress.gql'
+  import DELETE_MODULE_PROGRESS from '@/graphql/gql/progress/deleteModuleProgress.gql'
 
   import ModuleDetail from '@/components/module/ModuleDetail'
   import ModuleDetailBooked from '@/components/module/ModuleDetailBooked'
@@ -32,18 +31,19 @@
     data() {
       return {
         module: null,
-        moduleBooked: false
+        moduleBooked: false,
+        units: null
       }
     },
 
     methods: {
       startModuleProgress(moduleSlug) {
-        console.log(`startModuleProgress(${moduleSlug})`)
+        // console.log(`startModuleProgress(${moduleSlug})`)
 
         this.$apollo.mutate({
           mutation: START_MODULE_PROGRESS,
           variables: {
-            userId: 'test',
+            username: 'test',
             moduleSlug: moduleSlug
           },
           update: (store, { data }) => {
@@ -51,7 +51,7 @@
           }
         }).then((data) => {
           // Result
-          console.log(data)
+          // console.log(data)
         }).catch((error) => {
           // Error
           console.error(error)
@@ -61,12 +61,12 @@
       },
 
       deleteModuleProgress(moduleSlug) {
-        console.log(`deleteModuleProgress(${moduleSlug})`)
+        // console.log(`deleteModuleProgress(${moduleSlug})`)
 
         this.$apollo.mutate({
           mutation: DELETE_MODULE_PROGRESS,
           variables: {
-            userId: 'test',
+            username: 'test',
             moduleSlug: moduleSlug
           },
           update: (store, { data }) => {
@@ -74,7 +74,7 @@
           }
         }).then((data) => {
           // Result
-          console.log(data)
+          // console.log(data)
         }).catch((error) => {
           // Error
           console.error(error)
@@ -89,12 +89,13 @@
         query: MODULE_QUERY,
         variables: {
           slug: this.slug,
-          userName: 'test'
+          username: 'test'
         },
         fetchPolicy: 'network-only',
         manual: true,
         result(data, loading, networkStatus) {
           if (!loading) {
+            // debugger
             let _module = this.$lodash.clone(data.data.modules.edges[0].node)
 
             _module.tools = JSON.parse(_module.tools)
@@ -109,6 +110,8 @@
             let bookedEntries = data.data.allModulesProgress.edges
             this.moduleBooked = bookedEntries && bookedEntries.length > 0
             console.log(`Module Booked: ${this.moduleBooked}`)
+
+            this.units = data.data.userModuleUnits.edges.map(entry => ({'status': entry.node.status, ...entry.node.unit}))
           }
         }
       })
