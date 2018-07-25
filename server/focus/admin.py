@@ -11,10 +11,10 @@ class CompetenceAdmin(admin.ModelAdmin):
 @admin.register(CompetenceEntry)
 class CompetenceEntryAdmin(admin.ModelAdmin):
     list_display = ('competence', 'current_level', 'next_evaluation', 'focus')
-    list_filter = ('focus__user',)
+    list_filter = ('focus__user', 'focus__id', 'focus__active')
 
 
 @admin.register(Focus)
 class FocusAdmin(admin.ModelAdmin):
-    list_display = ('user', 'active')
+    list_display = ('pk', 'user', 'active')
     list_filter = ('user', 'active')

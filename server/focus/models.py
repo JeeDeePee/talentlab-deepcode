@@ -41,7 +41,7 @@ class Focus(models.Model):
     active = models.BooleanField(default=False)
 
     def __str__(self):
-        return 'Focus {}'.format(self.user)
+        return 'Focus {} - {}'.format(self.id, self.user)
 
     # based on the focus we can propose modules
     def proposed_modules(self):
