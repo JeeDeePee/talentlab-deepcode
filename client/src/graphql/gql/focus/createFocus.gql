@@ -1,0 +1,20 @@
+mutation CreateFocus($input: CreateFocusInput!) {
+  createFocus(input: $input) {
+      newFocusNode {
+        id
+      }
+  }
+}
+
+
+// {"input":
+//   {"input":
+//     {"entries":
+//       [
+//         {"slug": "verhandlungsfahigkeit", "currentLevel": 1},
+//         {"slug": "konfliktfahigkeit", "currentLevel": 1},
+//         {"slug": "networking", "currentLevel": 1}
+//       ]
+//     }
+//   }
+// }
