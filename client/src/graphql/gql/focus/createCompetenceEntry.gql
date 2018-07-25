@@ -1,0 +1,9 @@
+mutation CreateFocus($input: CreateCompetenceEntryInput!) {
+  createCompetenceEntry(input: $input) {
+    newCompetenceNode {
+      id
+    }
+  }
+}
+
+// {"input": {"input": {"focusId": 12, "slug": "verhandlungsfahigkeit", "currentLevel": 12}}}

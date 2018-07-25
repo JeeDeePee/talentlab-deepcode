@@ -3,7 +3,6 @@ query ModulesProgressFilteredQuery {
     edges {
       node {
         id
-        pk
         module {
           id
           teaser

@@ -1,7 +1,6 @@
 query ModuleProgressQuery($id: ID!) {
   moduleProgress(id: $id) {
     id
-    pk
     module {
       id
       teaser

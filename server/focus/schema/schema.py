@@ -20,10 +20,15 @@ class CompetenceEntryNode(DjangoObjectType):
 
 
 class FocusNode(DjangoObjectType):
+    pk = graphene.Int()
+
     class Meta:
         model = Focus
         filter_fields = ['user__username', 'active']
         interfaces = (relay.Node,)
+
+    def resolve_pk(self, *args, **kwargs):
+        return self.id
 
 
 class FocusQuery(object):

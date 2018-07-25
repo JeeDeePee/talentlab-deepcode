@@ -1,7 +1,6 @@
 query ModuleProgressQuery {
   moduleProgress(id: "TW9kdWxlUHJvZ3Jlc3NOb2RlOjE=") {
     id
-    pk
     module {
       id
       teaser
