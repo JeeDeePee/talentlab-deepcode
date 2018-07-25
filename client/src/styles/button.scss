@@ -3,25 +3,25 @@
 }
 
 
-.theme--light .btn:not(.btn--icon):not(.btn--flat) {
+.theme--light .v-btn:not(.btn--icon):not(.btn--flat) {
   background-color: transparent;
 }
 
 // fix for the misaligned buttons, however still the case in IE1X
 
-button.btn {
+button.v-btn {
   text-transform: initial;
   border: 2px solid #FD6E22;
   padding-bottom: 32px;
   font-size: 15px;
   box-shadow: none !important;
 
-  .btn__content {
+  .v-btn__content {
     padding-bottom: 4px;
   }
 }
 
-a.btn {
+a.v-btn {
   text-transform: initial;
   border: 2px solid #FD6E22;
   font-size: 15px;

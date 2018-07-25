@@ -18,10 +18,10 @@ a {
 .application {
   font-family: $font-family;
 
-  .theme--dark.toolbar {
+  .theme--dark.v-toolbar {
     background-color: $grey-9;
 
-    .btn--active {
+    .v-btn--active {
       border-bottom: 5px solid $orange;
       font-weight: bold;
 
@@ -32,8 +32,8 @@ a {
   }
 }
 
-.toolbar__content {
-  .btn {
+.v-toolbar__content {
+  .v-btn {
     border: none;
   }
 }

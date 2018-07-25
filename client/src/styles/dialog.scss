@@ -1,11 +1,16 @@
-.dialog__content {
+.v-dialog {
+
+  .v-card {
+    background-color: $grey-9;
+  }
+
   .btn--close {
     color: #fff;
     position: absolute;
     right: 0;
     border: none;
 
-    .icon {
+    .v-icon {
       font-size: 50px;
     }
   }

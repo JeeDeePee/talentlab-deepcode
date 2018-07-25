@@ -111,7 +111,4 @@
 <style lang="scss" scoped>
   @import "../../styles/var";
 
-  .card {
-    background-color: $grey-9;
-  }
 </style>

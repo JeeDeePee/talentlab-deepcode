@@ -42,19 +42,19 @@
     padding-top: 16px;
   }
 
-  .card {
+  .v-card {
     border-radius: 11px;
   }
 
-  .card__title {
+  .v-card__title {
     padding: 16px 16px 0 16px
   }
 
-  .card__text {
+  .v-card__text {
     padding: 0 16px 16px 16px
   }
 
-  .chip {
+  .v-chip {
     float: right;
     margin-top: -5px;
   }
