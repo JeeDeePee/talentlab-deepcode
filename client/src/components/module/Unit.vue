@@ -1,18 +1,16 @@
 <template>
   <v-card>
-    <v-card-title primary-title>
-      <h4>{{unit.title}}</h4>
-    </v-card-title>
+    <router-link class="link" :to="{name: 'unit', params: {slug: unit.slug}}" exact router>
+      <v-card-title primary-title>
+        <h4>{{unit.title}}</h4>
+      </v-card-title>
+    </router-link>
     <v-card-text>
       <div>
         {{unit.teaser}}
       </div>
       <div class="grey--text">
-        <!--<v-btn class="button item2" @click="$emit('delete-module-progress', module.slug)">-->
-          <!--Buchung löschen-->
-        <!--</v-btn>-->
-
-        <v-btn v-if="booked && !unitBooked" @click="startUnitProgress(unit.slug, module.slug)">Starten</v-btn>
+        <v-btn v-if="booked && !unitBooked" @click="startUnitProgress(unit.slug, module.slug)">Buchen</v-btn>
         <v-btn v-if="booked && unitBooked">Bewerten</v-btn>
 
         <v-chip>{{unit.type}}</v-chip>
@@ -77,7 +75,6 @@
     },
 
     created() {
-      // console.log(this.unit)
     }
   }
 </script>
@@ -99,5 +96,9 @@
 
   .card__text {
     padding: 0 16px 16px 16px
+  }
+
+  .link {
+    color: $text-color;
   }
 </style>
