@@ -9,7 +9,7 @@
         Mein Fokus
       </v-btn>
 
-      <FocusDialog :visible="showFocusDialog" @close="showFocusDialog=false"/>
+      <FocusWizard :visible="showFocusDialog" @close="showFocusDialog=false"/>
 
       <v-btn class="hidden-sm-and-down float-r" :to="{ name: 'categories'}" exact router>
         <v-icon>add</v-icon>
@@ -49,7 +49,7 @@
   import Goal from '@/components/development/Goal'
   import ModuleProgressListItem from '@/components/development/ModuleProgressListItem'
   import Recomendation from '@/components/development/Recomendation'
-  import FocusDialog from '@/components/focus/FocusDialog'
+  import FocusWizard from '@/components/focus/FocusWizard'
 
   export default {
     name: 'page-development',
@@ -58,7 +58,7 @@
       Goal,
       ModuleProgressListItem,
       Recomendation,
-      FocusDialog
+      FocusWizard
     },
 
     data() {

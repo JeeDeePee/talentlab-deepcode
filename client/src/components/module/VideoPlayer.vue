@@ -7,7 +7,7 @@
     scrollable
   >
     <v-card tile>
-      <v-btn class="close" large flat icon @click.stop="show=false">
+      <v-btn class="btn--close" large flat icon @click.stop="show=false">
         <v-icon>close</v-icon>
       </v-btn>
       <v-container grid-list-xl text-xs-center>
@@ -45,15 +45,5 @@
 
   .card {
     background-color: $grey-9;
-  }
-
-  .close {
-    color: #fff;
-    position: absolute;
-    right: 0;
-
-    .icon {
-      font-size: 50px;
-    }
   }
 </style>

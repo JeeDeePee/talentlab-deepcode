@@ -9,7 +9,7 @@ export default new Vuex.Store({
     moduleId: null,
     userState: {
       focus: {
-        state: 'start'
+        state: 'determine'
       }
     }
   },
@@ -19,16 +19,12 @@ export default new Vuex.Store({
       return state.userState.focus.state
     },
 
-    isFocusStart(state, getters) {
-      return state.userState.focus.state === 'start'
+    isMyFocus(state, getters) {
+      return state.userState.focus.state === 'my-focus'
     },
 
-    isFocusDetail(state, getters) {
-      return state.userState.focus.state === 'detail'
-    },
-
-    isFocusFinish(state, getters) {
-      return state.userState.focus.state === 'finish'
+    isDetermineFocus(state, getters) {
+      return state.userState.focus.state === 'determine'
     }
   },
 
