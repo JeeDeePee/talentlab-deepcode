@@ -3,12 +3,12 @@
     <v-container class="mt-3">
       <span class="grey--text">{{module.category.title}} - {{module.skill}}</span><br>
       <h2 class="mb-1 mt-1">{{module.title}}</h2>
-      <v-btn class="button item2" @click="$emit('delete-module-progress', module.slug)">
+      <v-btn @click="$emit('delete-module-progress', module.slug)">
         Buchung löschen
       </v-btn>
-
     </v-container>
-    <div class="hero-bg mb-4">
+
+    <div class="hero-bg">
       <v-container grid-list-md>
         <v-layout row wrap>
           <v-flex xs12 sm6 md6 lg6 xl6>
@@ -27,6 +27,18 @@
             <img :src="module.heroImage"/>
           </v-flex>
         </v-layout>
+      </v-container>
+    </div>
+
+    <!--hidden-sm-and-down-->
+    <!--hidden-md-and-up-->
+    <!--btn-left-->
+
+    <div class="container-process-bg">
+      <v-container grid-list-md>
+        <v-btn class="button item2">Resultate</v-btn>
+        <v-btn class="button item2">Action Plan</v-btn>
+        <v-btn class="button item2">Bewertung</v-btn>
       </v-container>
     </div>
 
@@ -100,12 +112,20 @@
     margin-bottom: 12px;
   }
 
+  .button {
+    color: $grey-1;
+  }
+
   .video-thumbnail {
     max-width: 200px;
   }
 
   .hero-bg {
     background-color: $blue;
+  }
+
+  .container-process-bg {
+    background-color: $grey-9;
   }
 
   .description {
