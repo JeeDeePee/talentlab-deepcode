@@ -1,9 +1,15 @@
 import Vuex from 'vuex'
 import Vue from 'vue'
 
+import moduleGoalWizard from '@/store/module/goal/ModuleGoalWizard'
+
 Vue.use(Vuex)
 
 export default new Vuex.Store({
+  modules: {
+    moduleGoalWizard: moduleGoalWizard
+  },
+
   state: { // = data
     userid: null,
     username: null,

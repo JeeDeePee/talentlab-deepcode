@@ -37,9 +37,12 @@
     <div class="container-process-bg">
       <v-container grid-list-md>
         <v-btn class="button item2">Resultate</v-btn>
-        <v-btn class="button item2">Action Plan</v-btn>
+        <v-btn class="button item2" @click.stop="showModuleGoalDialog=true">Zieldefinition</v-btn>
         <v-btn class="button item2">Bewertung</v-btn>
       </v-container>
+
+      <ModuleGoalWizard :visible="showModuleGoalDialog" @close="showModuleGoalDialog=false"/>
+
     </div>
 
     <v-container grid-list-xl>
@@ -63,6 +66,7 @@
   import Tools from '@/components/module/Tools'
   import VideoPlayer from '@/components/module/VideoPlayer'
   import Unit from '@/components/module/Unit'
+  import ModuleGoalWizard from '@/components/module/goal/ModuleGoalWizard'
 
   export default {
     name: 'module-detail-booked',
@@ -81,12 +85,14 @@
     components: {
       Tools,
       VideoPlayer,
-      Unit
+      Unit,
+      ModuleGoalWizard
     },
 
     data() {
       return {
-        showVideoPlayer: false
+        showVideoPlayer: false,
+        showModuleGoalDialog: false
       }
     },
 
