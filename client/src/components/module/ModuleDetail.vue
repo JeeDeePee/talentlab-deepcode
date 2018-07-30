@@ -34,7 +34,7 @@
       <v-layout row wrap>
         <v-flex xs12 sm8 md8 lg8 xl8>
           <h3>Lernangebote</h3>
-          <Unit v-for="(item, index) in module.units.edges" :key="index" :unit="item.node" class="mb-4" :booked="false"></Unit>
+          <Unit v-for="(item, index) in module.units.edges" :key="index" :booked="false" :unit="item.node" :module="module" class="mb-4"></Unit>
         </v-flex>
         <v-flex xs12 sm4 md4 lg4 xl4>
           <h3>Ressourcen</h3>
@@ -89,9 +89,9 @@
     },
 
     methods: {
-      // ...mapActions({
-      //   startModuleProgress: 'startModuleProgress'
-      // })
+    },
+
+    created() {
     }
   }
 </script>

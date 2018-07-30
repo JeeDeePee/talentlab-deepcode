@@ -21,6 +21,7 @@ query ModuleQuery($slug: String!, $username: String!) {
               type
               count
               duration
+              slug
             }
           }
         }

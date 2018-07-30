@@ -1,11 +1,9 @@
 <template>
   <div>
     <v-card>
-      <router-link class="link" :to="{name: 'unit', params: {slug: unit.slug}}" exact router>
-        <v-card-title primary-title>
-          <h4>{{unit.title}}</h4>
-        </v-card-title>
-      </router-link>
+      <v-card-title primary-title>
+        <h4>{{unit.title}}</h4>
+      </v-card-title>
       <v-card-text>
         <div>
           {{unit.teaser}}
