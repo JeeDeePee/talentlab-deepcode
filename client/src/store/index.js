@@ -3,9 +3,15 @@ import Vue from 'vue'
 import apolloClient from '../graphql/client'
 import FOCUS_COMPETENCE_QUERY from '@/graphql/gql/focus/focusCompetences.gql'
 
+import moduleGoalWizard from '@/store/module/goal/ModuleGoalWizard'
+
 Vue.use(Vuex)
 
 export default new Vuex.Store({
+  modules: {
+    moduleGoalWizard: moduleGoalWizard
+  },
+
   state: { // = data
     userid: null,
     username: null,

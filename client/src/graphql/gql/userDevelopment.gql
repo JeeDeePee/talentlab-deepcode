@@ -21,6 +21,7 @@ query UserDevelopmentQuery($id: ID!) {
                   id
                   title
                   type
+                  slug
                 }
               }
             }
