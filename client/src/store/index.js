@@ -1,5 +1,7 @@
 import Vuex from 'vuex'
 import Vue from 'vue'
+import apolloClient from '../graphql/client'
+import FOCUS_COMPETENCE_QUERY from '@/graphql/gql/focus/focusCompetences.gql'
 
 Vue.use(Vuex)
 
@@ -8,6 +10,7 @@ export default new Vuex.Store({
     userid: null,
     username: null,
     moduleId: null,
+    focus: [],
     userState: {
       focus: {
         state: 'determine'
@@ -26,11 +29,36 @@ export default new Vuex.Store({
 
     isDetermineFocus(state, getters) {
       return state.userState.focus.state === 'determine'
+    },
+
+    getFocus(state, getters) {
+      return state.focus
     }
   },
 
   actions: { // = methods
-    fetchUserProgress({ commit }) {
+
+    async fetchFocusCompetences({commit}) {
+      const response = await apolloClient.query({
+        query: FOCUS_COMPETENCE_QUERY
+      });
+
+      let items = response.data.categories.edges.map(category => ({
+          title: category.node.title,
+          teaser: 'Gewinne Leichtigkeit im Umgang mit Veränderungen',
+          competences: category.node.competenceSet.edges.map(compentence => ({
+                title: compentence.node.title,
+                slug: compentence.node.slug
+              }
+            )
+          )
+        })
+      );
+
+      console.info(items);
+    },
+
+    fetchUserProgress({commit}) {
       return new Promise((resolve, reject) => {
         // debugger
 
@@ -41,7 +69,7 @@ export default new Vuex.Store({
       })
     },
 
-    startModuleProgress({ state, commit }, moduleId) {
+    startModuleProgress({state, commit}, moduleId) {
       // debugger
 
       // call graphql createUserModuleMutation
@@ -54,7 +82,7 @@ export default new Vuex.Store({
       // }
     },
 
-    deleteModuleProgress({ state, commit }, moduleId) {
+    deleteModuleProgress({state, commit}, moduleId) {
       // debugger
 
       // call graphql createUserModuleMutation
@@ -67,8 +95,12 @@ export default new Vuex.Store({
       // }
     },
 
-    newFocusWizardState({ state, commit }, newState) {
+    newFocusWizardState({state, commit}, newState) {
       commit('setFocusWizardState', newState)
+    },
+
+    setFocus({state, commit}, focus) {
+      commit('mutateFocus', focus)
     }
 
     // fetchProducts({ commit }) {
@@ -111,6 +143,10 @@ export default new Vuex.Store({
 
     setFocusWizardState(state, focusState) {
       state.userState.focus.state = focusState
+    },
+
+    mutateFocus(state, focus) {
+      state.focus = focus
     }
 
     // setProducts(state, products) {

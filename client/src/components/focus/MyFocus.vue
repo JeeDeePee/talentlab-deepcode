@@ -24,26 +24,23 @@
     </v-container>
 
     <v-container fluid grid-list-xl>
-      <v-layout row wrap v-for="(item, index) in items" :key="index">
+      <v-layout row wrap v-for="(item, index) in selectedFocus" :key="index">
         <v-flex xs4>
-          Verneztes Denken
-
+          {{item.title}}
         </v-flex>
 
         <v-flex xs4>
           <v-slider
-            v-model="slider"
+            v-model="selectedFocus[index].currentLevel"
             thumb-label="always"
           ></v-slider>
         </v-flex>
 
         <v-flex xs4>
           <v-menu
-            ref="datepickers"
             :close-on-content-click="false"
-            v-model="datepickers"
+            v-model="selectedFocus[index].nextEvaluation"
             :nudge-right="40"
-            :return-value.sync="date"
             lazy
             transition="scale-transition"
             offset-y
@@ -52,12 +49,11 @@
           >
             <v-text-field
               slot="activator"
-              v-model="date"
-              label="Picker without buttons"
+              v-model="selectedFocus[index].nextEvaluation"
               prepend-icon="event"
               readonly
             ></v-text-field>
-            <v-date-picker v-model="date" @input="$refs.datepickers[index].save(date)"></v-date-picker>
+            <v-date-picker v-model="selectedFocus[index].nextEvaluation"></v-date-picker>
 
           </v-menu>
         </v-flex>
@@ -73,17 +69,20 @@
 <script>
   export default {
     name: 'my-focus',
-
+    props: ['items'],
     // https://github.com/vuetifyjs/vuetify/issues/3466
     // https://stackoverflow.com/questions/50218773/typeerror-vm-refs-dialog-save-is-not-a-function-in-vuetifyjs
 
     methods: {},
     data() {
       return {
-        items: [1, 2, 3],
-        slider: 1,
-        date: null,
-        datepickers: false
+
+        // date: [],
+      }
+    },
+    computed: {
+      selectedFocus: function () {
+        return this.$store.getters.getFocus
       }
     }
   }

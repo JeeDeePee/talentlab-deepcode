@@ -56,13 +56,6 @@
       MyFocus,
       DetermineFocus
     },
-
-    data() {
-      return {
-        module: null
-      }
-    },
-
     computed: {
       ...mapGetters({
         userFocusState: 'userFocusState',
