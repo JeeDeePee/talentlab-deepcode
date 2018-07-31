@@ -21,13 +21,8 @@ const moduleGoalWizard = {
   },
 
   getters: {
-    isMyMotivation(state, getters) {
-      return state.moduleGoalWizard === 'my-motivation'
-    },
-
-    isMyGoal(state, getters) {
-      return state.moduleGoalWizard === 'my-goal'
-    }
+    isMyMotivation: state => state.moduleGoalWizard === 'my-motivation',
+    isMyGoal: state => state.moduleGoalWizard === 'my-goal'
   }
 }
 
