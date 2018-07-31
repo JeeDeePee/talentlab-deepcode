@@ -1,21 +1,44 @@
 <template>
-  <div>
-    <v-card>
-      <v-card-title primary-title>
-        <h4>{{unit.title}}</h4>
-      </v-card-title>
-      <v-card-text>
-        <div>
-          {{unit.teaser}}
-        </div>
-        <div class="grey--text">
+  <div class="learn-unit">
+    <div class="wrapper">
+      <v-breadcrumbs>
+        <v-icon slot="divider">chevron_right</v-icon>
 
-          <v-chip>{{unit.type}}</v-chip>
-          <v-icon class="ml-3">filter_none</v-icon> {{unit.count}}
+        <v-breadcrumbs-item
+          v-for="item in items"
+          :disabled="item.disabled"
+          :key="item.text"
+        >
+          {{ item.text }}
+        </v-breadcrumbs-item>
+      </v-breadcrumbs>
+   
+      <router-link class="link" :to="{name: 'unit', params: {slug: unit.slug}}" exact router>
+
+      </router-link>
+        <h1 class="mt-4">Erfolgreich verhandeln</h1>
+        <h2 class="pb-4 mt-3">Dieses Programm stattet Sie mit den erforderlichen Fähigkeiten aus, um Verhandlungen auch unter schwierigsten Bedingungen erfolgreich zu führen. Es bietet eine Vielzahl von Strategien und Instrumenten, um die unterschiedlichsten Verhandlungssituationen mit externen wie internen Geschäftspartnern erfolgreich zu meistern.</h2>
+        
+        <v-btn class="mb-4 ml-0 mt-0" :to="{ name: 'fokus'}" exact router>
+        Lernmodul buchen
+        </v-btn>
+
+        <h2>Dieser Kurs gehört zum Lernmodul «Partnering for Success».</h2>
+              
+        <v-btn class="mb-4 ml-0 mt-0" :to="{ name: 'fokus'}" exact router>
+          <v-icon>school</v-icon>
+          Kurs
+        </v-btn>
+        <div class="grey--text">
+          <v-icon class="ml-3">event_note</v-icon> {{unit.count}}
           <v-icon class="ml-3"> schedule</v-icon> {{unit.duration}}
+               
+          <v-btn class="mb-4 ml-0 mt-0 " :to="{ name: 'fokus'}" exact router>
+            <v-icon>share</v-icon>
+            Share
+          </v-btn> 
         </div>
-      </v-card-text>
-    </v-card>
+      </div>
   </div>
 </template>
 
@@ -38,7 +61,21 @@
     data() {
       return {
         unit: {
-        }
+        },
+        items: [
+          {
+            text: 'Breadcrumb 1 Bern',
+            disabled: false
+          },
+          {
+            text: 'Breadcrumb 2 Züri',
+            disabled: false
+          },
+          {
+            text: 'Breadcrumb 3 Thun',
+            disabled: true
+          }
+        ]
       }
     },
 
@@ -72,5 +109,36 @@
 
   .link {
     color: $text-color;
+  }
+
+  .learn-unit {
+    background-color: $learn-unit-bg-color;
+  }
+
+  .wrapper {
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+  content: "";
+  clear: both;
+  display: table;
+  }
+
+  .wrapper:after, {
+  content: "";
+  clear: both;
+  display: table;
+  }
+
+  h1 {
+    font-size: 44px
+  }
+
+  h2 {
+    font-size: 18px;  
+  }
+
+  h3 {
+    font-size: 15px;
   }
 </style>
