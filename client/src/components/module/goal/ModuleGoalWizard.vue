@@ -6,7 +6,8 @@
           <v-icon>close</v-icon>
         </v-btn>
 
-        <v-breadcrumbs divider=">">
+        <v-breadcrumbs>
+          <v-icon slot="divider">chevron_right</v-icon>
           <v-breadcrumbs-item :disabled="isMyMotivation">
             Meine Motivation
           </v-breadcrumbs-item>
@@ -71,8 +72,8 @@
 
     methods: {
       ...mapActions({
-        newModuleGoalWizardState_MyGoal: 'newModuleGoalWizardState_MyGoal',
-        newModuleGoalWizardState_MyMotivation: 'newModuleGoalWizardState_MyMotivation'
+        newModuleGoalWizardState_MyMotivation: 'newModuleGoalWizardState_MyMotivation',
+        newModuleGoalWizardState_MyGoal: 'newModuleGoalWizardState_MyGoal'
       }),
 
       myMotivationProceed() {
@@ -90,7 +91,7 @@
       },
 
       myGoalBack() {
-        this.newModuleGoalWizardState_MyGoal()
+        this.newModuleGoalWizardState_MyMotivation()
       }
     }
   }
