@@ -100,7 +100,48 @@ data = [
         ]},
     {
         'title': 'Mastering Relations',
-        'competences': ['Kooperationsfähigkeit', 'Networking', 'Konfliktfähigkeit', 'Verhandlungsfähigkeit']
+        'competences': ['Kooperationsfähigkeit', 'Networking', 'Konfliktfähigkeit', 'Verhandlungsfähigkeit'],
+        'modules': [
+            {
+                {
+                    'title': 'Digital Communication & Virtual Collaboration',
+                    'skill': 'Kooperationsfähigkeit',
+                    'teaser': '',
+                    'description': 'Digitalisierung verändert unser Kommunikationsverhalten und die Art unserer Zusammenarbeit: Emails, Chats, Videokonferenzen ... eine Vielzahl von tollen Tools erleichtern den Alltag. Doch: Wer die Wahl hat, hat die Qual! Um Kommunikation und Koordination effizient zu gestalten, müssen die Tools bewusst eingesetzt werden. Zudem heisst digital kommunizieren auf Distanz kommunizieren und schafft ganz eigene Herausforderung. Der Container “Digital Communication & Virtual Collaboration” hilft Dir durch den Dschungel der Tools und befähigt Dich zum effizienten und effektiven Einsatz in Deinem Führungsalltag.',
+                    'video_description': '<b>Clea Bauch</b><br>Unsere Fach-Experting erläutert die Herausforderungen der Kommunikation im digitalen Zeitalter.',
+                    'units': [
+                        {
+                            'title': 'Im Dschungel der digitalen Kommunikation: Ein Überblick',
+                            'teaser': '',
+                            'type': 'webinar',
+                            'count': '',
+                            'duration': ''
+                        },
+                        {
+                            'title': 'Führungszirkel',
+                            'teaser': 'Kommunikation auf Distanz: Was zu berücksichtigen ist',
+                            'type': 'lernfilm',
+                            'count': '',
+                            'duration': ''
+                        },
+                        {
+                            'title': 'Tools für virtuelle Teams: Effektive Zusammenarbeit',
+                            'teaser': '',
+                            'type': 'webinar',
+                            'count': '',
+                            'duration': ''
+                        },
+                        {
+                            'title': 'Führung auf Distanz: Eine besondere Herausforderung',
+                            'teaser': '',
+                            'type': 'webex',
+                            'count': '',
+                            'duration': ''
+                        }
+                    ]
+                }
+            }
+        ]
     }
 ]
 
