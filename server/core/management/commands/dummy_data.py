@@ -106,38 +106,75 @@ data = [
                 {
                     'title': 'Digital Communication & Virtual Collaboration',
                     'skill': 'Kooperationsfähigkeit',
-                    'teaser': '',
+                    'teaser': 'Die richtigen Tools richtig einsetzen',
                     'description': 'Digitalisierung verändert unser Kommunikationsverhalten und die Art unserer Zusammenarbeit: Emails, Chats, Videokonferenzen ... eine Vielzahl von tollen Tools erleichtern den Alltag. Doch: Wer die Wahl hat, hat die Qual! Um Kommunikation und Koordination effizient zu gestalten, müssen die Tools bewusst eingesetzt werden. Zudem heisst digital kommunizieren auf Distanz kommunizieren und schafft ganz eigene Herausforderung. Der Container “Digital Communication & Virtual Collaboration” hilft Dir durch den Dschungel der Tools und befähigt Dich zum effizienten und effektiven Einsatz in Deinem Führungsalltag.',
-                    'video_description': '<b>Clea Bauch</b><br>Unsere Fach-Experting erläutert die Herausforderungen der Kommunikation im digitalen Zeitalter.',
+                    'video_description': '<b>Dr. Clea Bauch</b><br>Unsere Fach-Experten erläutert die Herausforderungen in Zusammenhang mit Führung und Kommunikation auf Distanz',
+                    'goals': [
+                        {'level': 1, 'text': 'Digitale Tools im Alltag professionell einsetzen, um Kommunikation und Zusammenarbeit zu verbessern'},
+                        {'level': 2, 'text': 'Die Herausforderungen von Kommunikation und Führung auf Distanz beherrschen'},
+                        {'level': 3, 'text': 'Die Organisation zur digitalen Kommunikation und virtuellen Zusammenarbeit befähigen'}
+                    ],
                     'units': [
                         {
                             'title': 'Im Dschungel der digitalen Kommunikation: Ein Überblick',
                             'teaser': '',
                             'type': 'webinar',
                             'count': '',
-                            'duration': ''
+                            'duration': '',
+                            'competences': ['Agilität', 'Kommunikation']
                         },
                         {
-                            'title': 'Führungszirkel',
-                            'teaser': 'Kommunikation auf Distanz: Was zu berücksichtigen ist',
+                            'title': 'Kommunikation auf Distanz',
+                            'teaser': '',
                             'type': 'lernfilm',
                             'count': '',
-                            'duration': ''
+                            'duration': '',
+                            'competences': ['Agilität', 'Kommunikation']
                         },
                         {
-                            'title': 'Tools für virtuelle Teams: Effektive Zusammenarbeit',
+                            'title': 'Professionell kommunizieren',
+                            'teaser': '',
+                            'type': 'kurs',
+                            'count': '',
+                            'duration': '',
+                            'competences': ['Kommunikation']
+                        },
+                        {
+                            'title': 'Tools für virtuelle Teams',
                             'teaser': '',
                             'type': 'webinar',
                             'count': '',
-                            'duration': ''
+                            'duration': '',
+                            'competences': ['Agilität', 'Kooperationsfähigkeit']
                         },
                         {
-                            'title': 'Führung auf Distanz: Eine besondere Herausforderung',
+                            'title': 'Führung auf Distanz',
                             'teaser': '',
                             'type': 'webex',
                             'count': '',
-                            'duration': ''
+                            'duration': '',
+                            'competences': ['Agilität', 'Leadership']
                         }
+                    ],
+                    'resources': [
+                        {
+                            'description': 'K. Vollus: Welches Tool ist das Richtige?',
+                            'url': 'https://ordnungsmentor.de/aufgabenverwaltung-tools/'
+                        },
+                        {
+                            'description': 'Trello: Task-Management',
+                            'url': 'https://www.trello.com'
+                        },
+                        {
+                            'description': 'Meistertask: Task-Management',
+                            'url': 'https://www.meistertask.com'
+                        },
+                        {
+                            'description': 'Slack: Team-Chat',
+                            'url': 'https://www.slack.com'
+                        },
+                    ],
+                    'tools': [
                     ]
                 }
             }
