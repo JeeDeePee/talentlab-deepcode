@@ -50,9 +50,9 @@
         </v-flex>
         <v-flex xs12 sm4 md4 lg4 xl4>
           <h3>Ressourcen</h3>
-          <Tools :tools="module.tools"/>
-          <h3>Tools & Templates</h3>
           <Tools :tools="module.resources"/>
+          <h3>Tools & Templates</h3>
+          <Tools :tools="module.tools"/>
         </v-flex>
       </v-layout>
     </v-container>

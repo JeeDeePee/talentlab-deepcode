@@ -54,14 +54,41 @@ class ModuleFactory(BasePageFactory):
         model = Module
 
     @classmethod
-    def create(cls, **kwargs):
-        for i in range(0, random.randint(3, 7)):
-            kwargs['tools__{}__{}__b'.format(i, random.choice(['link', 'document']))] = None
+    def stream_field_magic(cls, kwargs, stream_field_name):
+        if stream_field_name in kwargs:
+            for idx, resource in enumerate(kwargs[stream_field_name]):
+                value = resource['value']
+                for jdx, field in enumerate(value):
+                    kwargs['{}__{}__{}__{}'.format(stream_field_name, idx, resource['type'], field)] = value[field]
+            del kwargs[stream_field_name]
+        else:
+            for i in range(0, random.randint(3, 7)):
+                kwargs['{}__{}__{}__b'.format(stream_field_name, i, random.choice(['link', 'document']))] = None
 
-        for i in range(0, random.randint(3, 7)):
-            kwargs['resources__{}__{}__b'.format(i, random.choice(['link', 'document']))] = None
+    @classmethod
+    def create(cls, **kwargs):
+        # if 'tools' in kwargs:
+        #     for idx, resource in enumerate(kwargs['tools']):
+        #         kwargs['resources__{}__{}__b'.format(idx, 'link')] = None
+        # else:
+        # for i in range(0, random.randint(3, 7)):
+        #     kwargs['tools__{}__{}__b'.format(i, random.choice(['link', 'document']))] = None
+
+        cls.stream_field_magic(kwargs, 'resources')
+        cls.stream_field_magic(kwargs, 'tools')
+
+        # if 'resources' in kwargs:
+        #     for idx, resource in enumerate(kwargs['resources']):
+        #         value = resource['value']
+        #         for jdx, field in enumerate(value):
+        #             kwargs['resources__{}__{}__{}'.format(idx, resource['type'], field)] = value[field]
+        #     del kwargs['resources']
+        # else:
+        #     for i in range(0, random.randint(3, 7)):
+        #         kwargs['resources__{}__{}__b'.format(i, random.choice(['link', 'document']))] = None
 
         return cls._generate(CREATE_STRATEGY, kwargs)
+
 
 
 class UnitFactory(BasePageFactory):

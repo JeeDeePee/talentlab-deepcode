@@ -14,7 +14,7 @@ from wagtail.core.models import Page
 from core.factories import UserFactory
 from focus.factories import CompetenceFactory, CompetenceEntryFactory, FocusFactory
 from modules.blocks import LinkBlock
-from modules.factories import CategoryFactory, ModuleFactory, UnitFactory
+from modules.factories import CategoryFactory, ModuleFactory, UnitFactory, LinkBlockFactory
 from progress.factories import UserModuleProgressFactory, UserUnitProgressFactory
 from progress.models import UserModuleProgress
 
@@ -117,62 +117,63 @@ data = [
                 'units': [
                     {
                         'title': 'Im Dschungel der digitalen Kommunikation: Ein Überblick',
-                        'teaser': '',
+                        'teaser': '<empty>',
                         'type': 'webinar',
-                        'count': '',
-                        'duration': '',
-                        'competences': ['Agilität', 'Kommunikation']
+                        'count': '<empty>',
+                        'duration': '<empty>',
+                        # 'competences': ['Agilität', 'Kommunikation']
                     },
                     {
                         'title': 'Kommunikation auf Distanz',
-                        'teaser': '',
+                        'teaser': '<empty>',
                         'type': 'lernfilm',
-                        'count': '',
-                        'duration': '',
-                        'competences': ['Agilität', 'Kommunikation']
+                        'count': '<empty>',
+                        'duration': '<empty>',
+                        # 'competences': ['Agilität', 'Kommunikation']
                     },
                     {
                         'title': 'Professionell kommunizieren',
-                        'teaser': '',
+                        'teaser': '<empty>',
                         'type': 'kurs',
-                        'count': '',
-                        'duration': '',
-                        'competences': ['Kommunikation']
+                        'count': '<empty>',
+                        'duration': '<empty>',
+                        # 'competences': ['Kommunikation']
                     },
                     {
                         'title': 'Tools für virtuelle Teams',
-                        'teaser': '',
+                        'teaser': '<empty>',
                         'type': 'webinar',
-                        'count': '',
-                        'duration': '',
-                        'competences': ['Agilität', 'Kooperationsfähigkeit']
+                        'count': '<empty>',
+                        'duration': '<empty>',
+                        # 'competences': ['Agilität', 'Kooperationsfähigkeit']
                     },
                     {
                         'title': 'Führung auf Distanz',
-                        'teaser': '',
+                        'teaser': '<empty>',
                         'type': 'webex',
-                        'count': '',
-                        'duration': '',
-                        'competences': ['Agilität', 'Leadership']
+                        'count': '<empty>',
+                        'duration': '<empty>',
+                        # 'competences': ['Agilität', 'Leadership']
                     }
                 ],
                 'resources': [
-                    {
-                        'description': 'K. Vollus: Welches Tool ist das Richtige?',
-                        'url': 'https://ordnungsmentor.de/aufgabenverwaltung-tools/'
-                    },
-                    {
-                        'description': 'Trello: Task-Management',
-                        'url': 'https://www.trello.com'
-                    },
-                    {
-                        'description': 'Meistertask: Task-Management',
-                        'url': 'https://www.meistertask.com'
-                    },
-                    {
-                        'description': 'Slack: Team-Chat',
-                        'url': 'https://www.slack.com'
-                    }
+                    {'type': 'link',
+                     'value': {
+                         'description': 'K. Vollus: Welches Tool ist das Richtige?',
+                         'url': 'https://ordnungsmentor.de/aufgabenverwaltung-tools/'}},
+                    {'type': 'link',
+                     'value': {
+                         'description': 'Trello: Task-Management',
+                         'url': 'https://www.trello.com'}},
+                    {'type': 'link',
+                     'value': {
+                         'description': 'Meistertask: Task-Management',
+                         'url': 'https://www.meistertask.com'}},
+                    {'type': 'link',
+                     'value': {
+                         'description': 'Slack: Team-Chat',
+                         'url': 'https://www.slack.com'
+                     }}
                 ],
                 'tools': []
             }
@@ -191,7 +192,6 @@ class Command(BaseCommand):
             os.makedirs(path)
 
     def handle(self, *args, **options):
-
         with connection.cursor() as cursor:
             cursor.execute("DROP SCHEMA IF EXISTS public CASCADE;")
             cursor.execute(
@@ -248,28 +248,19 @@ class Command(BaseCommand):
                 ).save()
 
             modules_data = category_data.get('modules', [])
-            for i in range(0, random.randint(4, 7)):
+            for i in range(0, random.randint(2, 2)):
 
                 module_data = modules_data[i] if len(modules_data) > i else {}
                 module = ModuleFactory.create(
                     parent=category,
                     hero_image__file=module_images[i % len(module_images)],
-                    **{k: v for (k, v) in module_data.items() if k != 'units'}
+                    **{k: v for (k, v) in module_data.items() if not (k == 'units' or k == 'goals')}
                 )
 
                 units_data = module_data.get('units', [])
                 for j in range(0, random.randint(3, 5)):
                     unit_data = units_data[j] if len(units_data) > j else {}
                     UnitFactory.create(parent=module, **unit_data)
-
-                # resources_data = module_data.get('resources', [])
-                # if resources_data:
-                #     resources = []
-                #     for resource in resources_data:
-                #         resources.append(('link', {'url':'https://orbit7.ch', 'description': 'He description'}))
-                #     module.resources = resources
-                #     # module.resources =
-                #     # resource_data = resources_data[j] if len(resources_data) > j else {}
 
         # create user progress
         UserModuleProgressFactory.create_batch(size=20)

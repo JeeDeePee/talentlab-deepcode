@@ -14,7 +14,9 @@ class Unit(Page):
         choices=(
             ('webinar', 'Webinar'),
             ('kurs', 'Kurs'),
-            ('coaching', 'Coaching')
+            ('coaching', 'Coaching'),
+            ('lernfilm', 'Lernfilm'),
+            ('webex', 'Webex')
         )
     )
     count = models.CharField(
