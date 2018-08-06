@@ -12,19 +12,16 @@
           {{ item.text }}
         </v-breadcrumbs-item>
       </v-breadcrumbs>
-   
       <router-link class="link" :to="{name: 'unit', params: {slug: unit.slug}}" exact router>
 
       </router-link>
         <h1 class="mt-4">Erfolgreich verhandeln</h1>
         <h2 class="pb-4 mt-3">Dieses Programm stattet Sie mit den erforderlichen Fähigkeiten aus, um Verhandlungen auch unter schwierigsten Bedingungen erfolgreich zu führen. Es bietet eine Vielzahl von Strategien und Instrumenten, um die unterschiedlichsten Verhandlungssituationen mit externen wie internen Geschäftspartnern erfolgreich zu meistern.</h2>
-        
         <v-btn class="mb-5 ml-0 mt-0" :to="{ name: 'fokus'}" exact router>
         Lernmodul buchen
         </v-btn>
 
         <h3>Dieser Kurs gehört zum Lernmodul «Partnering for Success».</h3>
-              
         <v-btn class="mb-4 ml-0 mr-3 mt-4 floating" :to="{ name: 'fokus'}" exact router>
           <v-icon class="pr-2">school</v-icon>
           Kurs
@@ -32,11 +29,10 @@
         <div class="grey--text floating position-top">
           <v-icon class="ml-3">event_note</v-icon> {{unit.count}}
           <v-icon class="ml-3"> schedule</v-icon> {{unit.duration}}
-               
           <v-btn class="mb-4 mt-0 " :to="{ name: 'fokus'}" exact router>
             <v-icon class="pr-2">share</v-icon>
             Share
-          </v-btn> 
+          </v-btn>
         </div>
       </div>
   </div>
@@ -135,7 +131,7 @@
   }
 
   h2 {
-    font-size: 18px;  
+    font-size: 18px;
   }
 
   h3 {
