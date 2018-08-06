@@ -11,9 +11,9 @@ from django.db import connection
 from factory.django import ImageField
 from wagtail.core.models import Page
 
-from core.factories import UserFactory
+from core.factories import UserFactory, fake_title
 from focus.factories import CompetenceFactory, CompetenceEntryFactory, FocusFactory
-from modules.factories import CategoryFactory, ModuleFactory, UnitFactory
+from modules.factories import CategoryFactory, ModuleFactory, UnitFactory, GoalFactory
 from progress.factories import UserModuleProgressFactory, UserUnitProgressFactory
 from progress.models import UserModuleProgress
 
@@ -108,11 +108,23 @@ data = [
                 'teaser': 'Die richtigen Tools richtig einsetzen',
                 'description': 'Digitalisierung verändert unser Kommunikationsverhalten und die Art unserer Zusammenarbeit: Emails, Chats, Videokonferenzen ... eine Vielzahl von tollen Tools erleichtern den Alltag. Doch: Wer die Wahl hat, hat die Qual! Um Kommunikation und Koordination effizient zu gestalten, müssen die Tools bewusst eingesetzt werden. Zudem heisst digital kommunizieren auf Distanz kommunizieren und schafft ganz eigene Herausforderung. Der Container “Digital Communication & Virtual Collaboration” hilft Dir durch den Dschungel der Tools und befähigt Dich zum effizienten und effektiven Einsatz in Deinem Führungsalltag.',
                 'video_description': '<b>Dr. Clea Bauch</b><br>Unsere Fach-Experten erläutert die Herausforderungen in Zusammenhang mit Führung und Kommunikation auf Distanz',
-                # 'goals': [
-                #     {'level': 1, 'text': 'Digitale Tools im Alltag professionell einsetzen, um Kommunikation und Zusammenarbeit zu verbessern'},
-                #     {'level': 2, 'text': 'Die Herausforderungen von Kommunikation und Führung auf Distanz beherrschen'},
-                #     {'level': 3, 'text': 'Die Organisation zur digitalen Kommunikation und virtuellen Zusammenarbeit befähigen'}
-                # ],
+                'goals': [
+                    {
+                        'level': 1,
+                        'title': 'Digitale Tools im Berufsalltag',
+                        'goal_text': 'Digitale Tools im Alltag professionell einsetzen, um Kommunikation und Zusammenarbeit zu verbessern'
+                    },
+                    {
+                        'level': 2,
+                        'title': 'Kommunikation und Führung auf Distanz',
+                        'goal_text': 'Die Herausforderungen von Kommunikation und Führung auf Distanz beherrschen'
+                    },
+                    {
+                        'level': 3,
+                        'title': 'Digitale Kommunikation und virtuelle Zusammenarbeit',
+                        'goal_text': 'Die Organisation zur digitalen Kommunikation und virtuellen Zusammenarbeit befähigen'
+                    }
+                ],
                 'units': [
                     {
                         'title': 'Im Dschungel der digitalen Kommunikation: Ein Überblick',
@@ -260,6 +272,13 @@ class Command(BaseCommand):
                 for j in range(0, random.randint(3, 5)):
                     unit_data = units_data[j] if len(units_data) > j else {}
                     UnitFactory.create(parent=module, **unit_data)
+
+                default_goals = [{'level': lvl,
+                                  'title': '{}_{}'.format(module.title, lvl),
+                                  'goal_text': fake_title('')} for lvl in range(0, 3)]
+                goals_data = module_data.get('goals', default_goals)
+                for goal_data in goals_data:
+                    GoalFactory.create(parent=module, **goal_data)
 
         # create user progress
         UserModuleProgressFactory.create_batch(size=20)

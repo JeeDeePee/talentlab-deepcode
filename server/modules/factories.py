@@ -6,6 +6,7 @@ from factory import CREATE_STRATEGY
 from modules.blocks import LinkBlock, DocumentBlock
 from modules.models import Category, Module, Unit
 from core.factories import BasePageFactory, fake_title, fake, DummyImageFactory, DummyDocumentFactory
+from modules.models.goal import Goal
 
 
 class CategoryFactory(BasePageFactory):
@@ -70,6 +71,14 @@ class ModuleFactory(BasePageFactory):
         cls.stream_field_magic(kwargs, 'resources')
         cls.stream_field_magic(kwargs, 'tools')
         return cls._generate(CREATE_STRATEGY, kwargs)
+
+
+class GoalFactory(BasePageFactory):
+    level = factory.LazyAttribute(lambda x: fake.int())
+    goal_text = factory.LazyAttribute(lambda x: fake.sentence(nb_words=random.randint(8, 12)))
+
+    class Meta:
+        model = Goal
 
 
 class UnitFactory(BasePageFactory):
