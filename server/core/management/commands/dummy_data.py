@@ -111,18 +111,15 @@ data = [
                 'goals': [
                     {
                         'level': 1,
-                        'title': 'Digitale Tools im Berufsalltag',
-                        'goal_text': 'Digitale Tools im Alltag professionell einsetzen, um Kommunikation und Zusammenarbeit zu verbessern'
+                        'text': 'Digitale Tools im Alltag professionell einsetzen, um Kommunikation und Zusammenarbeit zu verbessern'
                     },
                     {
                         'level': 2,
-                        'title': 'Kommunikation und Führung auf Distanz',
-                        'goal_text': 'Die Herausforderungen von Kommunikation und Führung auf Distanz beherrschen'
+                        'text': 'Die Herausforderungen von Kommunikation und Führung auf Distanz beherrschen'
                     },
                     {
                         'level': 3,
-                        'title': 'Digitale Kommunikation und virtuelle Zusammenarbeit',
-                        'goal_text': 'Die Organisation zur digitalen Kommunikation und virtuellen Zusammenarbeit befähigen'
+                        'text': 'Die Organisation zur digitalen Kommunikation und virtuellen Zusammenarbeit befähigen'
                     }
                 ],
                 'units': [
@@ -273,12 +270,11 @@ class Command(BaseCommand):
                     unit_data = units_data[j] if len(units_data) > j else {}
                     UnitFactory.create(parent=module, **unit_data)
 
-                default_goals = [{'level': lvl,
-                                  'title': '{}_{}'.format(module.title, lvl),
-                                  'goal_text': fake_title('')} for lvl in range(0, 3)]
-                goals_data = module_data.get('goals', default_goals)
-                for goal_data in goals_data:
-                    GoalFactory.create(parent=module, **goal_data)
+                # default_goals = [{'level': lvl,
+                #                   'text': 'whaat'} for lvl in range(0, 3)]
+                # goals_data = module_data.get('goals', default_goals)
+                # for goal_data in goals_data:
+                #     GoalFactory.create(**goal_data)
 
         # create user progress
         UserModuleProgressFactory.create_batch(size=20)

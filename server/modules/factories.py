@@ -1,7 +1,7 @@
 import random
 import wagtail_factories
 import factory
-from factory import CREATE_STRATEGY
+from factory import CREATE_STRATEGY, SubFactory
 
 from modules.blocks import LinkBlock, DocumentBlock
 from modules.models import Category, Module, Unit
@@ -74,11 +74,13 @@ class ModuleFactory(BasePageFactory):
 
 
 class GoalFactory(BasePageFactory):
-    level = factory.LazyAttribute(lambda x: fake.int())
-    goal_text = factory.LazyAttribute(lambda x: fake.sentence(nb_words=random.randint(8, 12)))
-
     class Meta:
         model = Goal
+
+    module = SubFactory(ModuleFactory)
+
+    level = factory.LazyAttribute(lambda x: fake.int())
+    text = factory.LazyAttribute(lambda x: fake.sentence(nb_words=random.randint(8, 12)))
 
 
 class UnitFactory(BasePageFactory):

@@ -2,6 +2,8 @@ from graphene import relay
 from graphene_django import DjangoObjectType
 from graphene_django.filter import DjangoFilterConnectionField
 import graphene
+
+from modules.models.goal import Goal
 from .models import Module, Unit, Category
 
 
@@ -16,6 +18,21 @@ class UnitNode(DjangoObjectType):
         filter_fields = {
             'slug': ['exact', 'icontains', 'in'],
             'title': ['exact', 'icontains', 'in'],
+        }
+        interfaces = (relay.Node,)
+
+    def resolve_pk(self, *args, **kwargs):
+        return self.id
+
+
+class GoalNode(DjangoObjectType):
+    pk = graphene.Int()
+
+    class Meta:
+        model = Goal
+        filter_fields = {
+            'text': ['exact', 'icontains', 'in'],
+            'level': ['exact'],
         }
         interfaces = (relay.Node,)
 
