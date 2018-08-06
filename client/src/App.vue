@@ -52,7 +52,7 @@
         drawer: null,
         userid: 1,
         name: 'Max Muster',
-        email: 'talenlab@orbit7.ch'
+        email: 'talentlab@orbit7.ch'
       }
     },
 
