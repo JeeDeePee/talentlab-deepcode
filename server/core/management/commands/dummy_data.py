@@ -270,11 +270,11 @@ class Command(BaseCommand):
                     unit_data = units_data[j] if len(units_data) > j else {}
                     UnitFactory.create(parent=module, **unit_data)
 
-                # default_goals = [{'level': lvl,
-                #                   'text': 'whaat'} for lvl in range(0, 3)]
-                # goals_data = module_data.get('goals', default_goals)
-                # for goal_data in goals_data:
-                #     GoalFactory.create(**goal_data)
+                default_goals = [{'level': lvl,
+                                  'text': 'whaat'} for lvl in range(0, 3)]
+                goals_data = module_data.get('goals', default_goals)
+                for goal_data in goals_data:
+                    GoalFactory.create(module=module, **goal_data)
 
         # create user progress
         UserModuleProgressFactory.create_batch(size=20)

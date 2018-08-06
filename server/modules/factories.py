@@ -73,7 +73,7 @@ class ModuleFactory(BasePageFactory):
         return cls._generate(CREATE_STRATEGY, kwargs)
 
 
-class GoalFactory(BasePageFactory):
+class GoalFactory(factory.django.DjangoModelFactory):
     class Meta:
         model = Goal
 
