@@ -45,8 +45,8 @@
 <script>
   import {mapActions, mapGetters} from 'vuex'
 
-  import DetermineFocus from '@/components/focus/DetermineFocus'
-  import MyFocus from '@/components/focus/MyFocus'
+  import DetermineFocus from '@/components/focus/steps/DetermineFocus'
+  import MyFocus from '@/components/focus/steps/MyFocus'
 
   export default {
     name: 'focus-wizard',
@@ -55,6 +55,9 @@
     components: {
       MyFocus,
       DetermineFocus
+    },
+    created() {
+      this.$store.dispatch('fetchFocusCompetences')
     },
     computed: {
       ...mapGetters({
@@ -78,25 +81,21 @@
       ...mapActions({
         newFocusWizardState: 'newFocusWizardState'
       }),
-
       determineFocusBack() {
         this.newFocusWizardState('determine')
         this.$emit('close')
       },
-
       determineFocusProceed() {
         this.newFocusWizardState('my-focus')
       },
-
       myFocusProceed() {
+        this.$store.dispatch('storeFocusCompetences')
         this.newFocusWizardState('determine')
         this.$emit('close')
       },
-
       myFocusBack() {
         this.newFocusWizardState('determine')
       }
-
     }
   }
 </script>

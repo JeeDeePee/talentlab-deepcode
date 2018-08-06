@@ -5,7 +5,7 @@
 
     <v-container fluid grid-list-xl>
       <v-layout row wrap>
-        <v-flex xs4 v-for="(category, categoryKey) in items" :key="categoryKey">
+        <v-flex xs4 v-for="(category, categoryKey) in focusCompetences" :key="categoryKey">
           <img :src="'https://talentlab-web.s3.amazonaws.com/original_images/category2_Al9ARbs.png'"><br>
           <h3 class="text-center">{{category.title}}</h3>
 
@@ -28,53 +28,30 @@
 </template>
 
 <script>
-  import {mapActions} from 'vuex'
-  import FOCUS_COMPETENCE_QUERY from '@/graphql/gql/focus/focusCompetences.gql'
+  import {mapActions, mapGetters} from 'vuex'
 
   export default {
     name: 'determine-focus',
     methods: {
       ...mapActions({
-        setFocus: 'setFocus'
+        newUserFocusBySlugs: 'newUserFocusBySlugs'
       }),
       proceed: function (event) {
         this.$emit('proceed')
       }
     },
-
-    created () {
-      this.$store.dispatch('fetchFocusCompetences')
-    },
-
-    apollo: {
-      categories: {
-        query: FOCUS_COMPETENCE_QUERY,
-        fetchPolicy: 'network-only'
-      }
-    },
     computed: {
-      items: function () {
-        if (this.categories) {
-          return this.categories.edges.map(category => ({
-              title: category.node.title,
-              teaser: 'Gewinne Leichtigkeit im Umgang mit Veränderungen',
-              competences: category.node.competenceSet.edges.map(compentence => ({
-                    title: compentence.node.title,
-                    slug: compentence.node.slug
-                  }
-                )
-              )
-            })
-          )
+      ...mapGetters({
+          'userFocusSlugs': 'getUserFocusSlugs',
+          'focusCompetences': 'getFocusCompetences'
         }
-        return []
-      },
+      ),
       selectedFocus: {
         set(focus) {
-          this.setFocus(focus)
+          this.newUserFocusBySlugs(focus)
         },
         get() {
-          return this.$store.getters.getFocus
+          return this.userFocusSlugs
         }
       }
     }
@@ -82,5 +59,5 @@
 </script>
 
 <style lang="scss" scoped>
-  @import "../../styles/var";
+  @import "../../../styles/var";
 </style>

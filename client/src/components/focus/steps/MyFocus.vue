@@ -31,15 +31,15 @@
 
         <v-flex xs4>
           <v-slider
-            v-model="selectedFocus[index].currentLevel"
+            v-model="item.currentLevel"
             thumb-label="always"
+            max="10"
+            min="1"
           ></v-slider>
         </v-flex>
 
         <v-flex xs4>
           <v-menu
-            :close-on-content-click="false"
-            v-model="selectedFocus[index].nextEvaluation"
             :nudge-right="40"
             lazy
             transition="scale-transition"
@@ -49,12 +49,13 @@
           >
             <v-text-field
               slot="activator"
-              v-model="selectedFocus[index].nextEvaluation"
+              v-model="item.nextEvaluation"
               prepend-icon="event"
               readonly
             ></v-text-field>
-            <v-date-picker v-model="selectedFocus[index].nextEvaluation"></v-date-picker>
-
+            <v-date-picker
+              v-model="item.nextEvaluation"
+            ></v-date-picker>
           </v-menu>
         </v-flex>
 
@@ -62,32 +63,34 @@
     </v-container>
 
     <v-btn @click="$emit('back')">Zurück</v-btn>
-    <v-btn @click="$emit('proceed')">Selbstbeurteilung speichern</v-btn>
+    <v-btn v-on:click="proceed">Selbstbeurteilung speichern</v-btn>
   </div>
 </template>
 
 <script>
+  import {mapActions, mapGetters} from 'vuex'
+
   export default {
     name: 'my-focus',
     props: ['items'],
-    // https://github.com/vuetifyjs/vuetify/issues/3466
-    // https://stackoverflow.com/questions/50218773/typeerror-vm-refs-dialog-save-is-not-a-function-in-vuetifyjs
-
-    methods: {},
-    data() {
-      return {
-
-        // date: [],
+    methods: {
+      ...mapActions({
+        newUserFocus: 'newUserFocus'
+      }),
+      proceed: function (event) {
+        this.newUserFocus(this.selectedFocus)
+        this.$emit('proceed')
       }
     },
     computed: {
-      selectedFocus: function () {
-        return this.$store.getters.getFocus
-      }
+      ...mapGetters({
+          'selectedFocus': 'getUserFocus'
+        }
+      )
     }
   }
 </script>
 
 <style lang="scss" scoped>
-  @import "../../styles/var";
+  @import "../../../styles/var";
 </style>

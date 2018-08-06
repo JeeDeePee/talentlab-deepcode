@@ -18,7 +18,6 @@ Vue.config.productionTip = false
 Object.defineProperty(Vue.prototype, '$lodash', { value: lodash })
 
 Vue.use(VueApollo)
-
 Vue.use(VueAxios, axios)
 Vue.use(Vuetify)
 Vue.use(VueVimeoPlayer)
