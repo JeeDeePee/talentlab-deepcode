@@ -12,8 +12,8 @@ from factory.django import ImageField
 from wagtail.core.models import Page
 
 from core.factories import UserFactory, fake_title
-from focus.factories import CompetenceFactory, CompetenceEntryFactory, FocusFactory
-from modules.factories import CategoryFactory, ModuleFactory, UnitFactory, GoalFactory
+from focus.factories import CompetenceEntryFactory, FocusFactory
+from modules.factories import CategoryFactory, ModuleFactory, UnitFactory, GoalFactory, CompetenceFactory
 from progress.factories import UserModuleProgressFactory, UserUnitProgressFactory
 from progress.models import UserModuleProgress
 
@@ -100,7 +100,7 @@ data = [
         ]},
     {
         'title': 'Mastering Relations',
-        'competences': ['Kooperationsfähigkeit', 'Networking', 'Konfliktfähigkeit', 'Verhandlungsfähigkeit'],
+        'competences': ['Kooperationsfähigkeit', 'Networking', 'Konfliktfähigkeit', 'Verhandlungsfähigkeit', 'Kommunikation'],
         'modules': [
             {
                 'title': 'Digital Communication & Virtual Collaboration',
@@ -129,7 +129,7 @@ data = [
                         'type': 'webinar',
                         'count': '<empty>',
                         'duration': '<empty>',
-                        # 'competences': ['Agilität', 'Kommunikation']
+                        'competences': ['Agilität', 'Kommunikation']
                     },
                     {
                         'title': 'Kommunikation auf Distanz',
@@ -137,7 +137,7 @@ data = [
                         'type': 'lernfilm',
                         'count': '<empty>',
                         'duration': '<empty>',
-                        # 'competences': ['Agilität', 'Kommunikation']
+                        'competences': ['Agilität', 'Kommunikation']
                     },
                     {
                         'title': 'Professionell kommunizieren',
@@ -145,7 +145,7 @@ data = [
                         'type': 'kurs',
                         'count': '<empty>',
                         'duration': '<empty>',
-                        # 'competences': ['Kommunikation']
+                        'competences': ['Kommunikation']
                     },
                     {
                         'title': 'Tools für virtuelle Teams',
@@ -153,7 +153,7 @@ data = [
                         'type': 'webinar',
                         'count': '<empty>',
                         'duration': '<empty>',
-                        # 'competences': ['Agilität', 'Kooperationsfähigkeit']
+                        'competences': ['Agilität', 'Kooperationsfähigkeit']
                     },
                     {
                         'title': 'Führung auf Distanz',
@@ -161,7 +161,7 @@ data = [
                         'type': 'webex',
                         'count': '<empty>',
                         'duration': '<empty>',
-                        # 'competences': ['Agilität', 'Leadership']
+                        'competences': ['Agilität', 'Leadership']
                     }
                 ],
                 'resources': [

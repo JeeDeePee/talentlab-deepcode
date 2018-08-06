@@ -23,10 +23,3 @@ class CompetenceEntryFactory(factory.django.DjangoModelFactory):
     competence = factory.Iterator(Competence.objects.all())
     current_level = FuzzyInteger(0, 10)
     next_evaluation = factory.Faker('future_date', end_date="+30d", tzinfo=None)
-
-
-class CompetenceFactory(factory.django.DjangoModelFactory):
-    class Meta:
-        model = Competence
-
-    category = factory.SubFactory(CategoryFactory)
