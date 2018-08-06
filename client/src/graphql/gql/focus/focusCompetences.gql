@@ -2,14 +2,14 @@ query FocusCompetencesQuery {
   categories {
     edges {
       node {
-        id
         slug
+        title
         competenceSet {
           edges {
             node {
-              id
-              slug
               title
+              description
+              slug
             }
           }
         }

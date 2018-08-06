@@ -1,0 +1,29 @@
+.btn--active .btn__content:before, .btn:focus .btn__content:before, .btn:hover .btn__content:before .btn:not(.btn--depressed) {
+  background-color: transparent;
+}
+
+
+.theme--light .v-btn:not(.btn--icon):not(.btn--flat) {
+  background-color: transparent;
+}
+
+// fix for the misaligned buttons, however still the case in IE1X
+
+button.v-btn {
+  text-transform: initial;
+  border: 2px solid #FD6E22;
+  padding-bottom: 32px;
+  font-size: 15px;
+  box-shadow: none !important;
+
+  .v-btn__content {
+    padding-bottom: 4px;
+  }
+}
+
+a.v-btn {
+  text-transform: initial;
+  border: 2px solid #FD6E22;
+  font-size: 15px;
+  box-shadow: none !important;
+}
