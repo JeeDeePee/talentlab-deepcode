@@ -54,7 +54,7 @@ class ModuleNode(DjangoObjectType):
     class Meta:
         model = Module
         only_fields = [
-            'title', 'slug', 'skill', 'description', 'teaser', 'video_id', 'video_description', 'video_thumbnail_data'
+            'title', 'slug', 'skill', 'description', 'teaser', 'video_id', 'video_description', 'video_thumbnail_data', 'goal_set'
         ]
         filter_fields = {
             'slug': ['exact', 'icontains', 'in'],

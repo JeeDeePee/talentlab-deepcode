@@ -13,6 +13,14 @@ query ModuleQuery($slug: String!, $username: String!) {
         videoDescription
         videoThumbnailData
         category
+        goalSet {
+          edges {
+            node {
+              text
+              level
+            }
+          }
+        }
         units {
           edges {
             node {

@@ -271,7 +271,7 @@ class Command(BaseCommand):
                     UnitFactory.create(parent=module, **unit_data)
 
                 default_goals = [{'level': lvl,
-                                  'text': 'whaat'} for lvl in range(0, 3)]
+                                  'text': fake_title('')} for lvl in range(0, 3)]
                 goals_data = module_data.get('goals', default_goals)
                 for goal_data in goals_data:
                     GoalFactory.create(module=module, **goal_data)
