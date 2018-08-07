@@ -265,13 +265,12 @@ class Command(BaseCommand):
                     **{k: v for (k, v) in module_data.items() if not (k == 'units' or k == 'goals')}
                 )
 
-                units_data = module_data.get('units', [])
-                for j in range(0, random.randint(3, 5)):
-                    unit_data = units_data[j] if len(units_data) > j else {}
+                default_units = [{} for i in range(0, random.randint(3, 5))]
+                units_data = module_data.get('units', default_units)
+                for unit_data in units_data:
                     UnitFactory.create(parent=module, **unit_data)
 
-                default_goals = [{'level': lvl,
-                                  'text': fake_title('')} for lvl in range(0, 3)]
+                default_goals = [{'level': lvl, 'text': fake_title('')} for lvl in range(0, 3)]
                 goals_data = module_data.get('goals', default_goals)
                 for goal_data in goals_data:
                     GoalFactory.create(module=module, **goal_data)
