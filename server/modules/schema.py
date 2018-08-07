@@ -9,11 +9,18 @@ from .models import Module, Unit, Category
 
 class UnitNode(DjangoObjectType):
     pk = graphene.Int()
+    module_slug = graphene.String()
+    module_title = graphene.String()
+    category_slug = graphene.String()
+    category_title = graphene.String()
 
     class Meta:
         model = Unit
         only_fields = [
-            'slug', 'title', 'teaser', 'type', 'count', 'duration', 'competences'
+            'slug', 'title', 'type', 'teaser',
+            'description', 'count', 'duration', 'price',
+            'competences', 'module_slug', 'module_title',
+            'category_slug', 'category_title'
         ]
         filter_fields = {
             'slug': ['exact', 'icontains', 'in'],
@@ -23,6 +30,22 @@ class UnitNode(DjangoObjectType):
 
     def resolve_pk(self, *args, **kwargs):
         return self.id
+
+    def resolve_module_slug(self, *args, **kwargs):
+        p = self.get_parent()
+        return p.slug
+
+    def resolve_module_title(self, *args, **kwargs):
+        p = self.get_parent()
+        return p.title
+
+    def resolve_category_slug(self, *args, **kwargs):
+        p = self.get_parent().get_parent()
+        return p.slug
+
+    def resolve_category_title(self, *args, **kwargs):
+        p = self.get_parent().get_parent()
+        return p.title
 
 
 class GoalNode(DjangoObjectType):

@@ -24,12 +24,12 @@ query ModuleQuery($slug: String!, $username: String!) {
         units {
           edges {
             node {
+              slug
               title
               teaser
               type
               count
               duration
-              slug
             }
           }
         }

@@ -2,11 +2,18 @@ query UnitQuery($slug: String!) {
   unit: units(slug: $slug) {
     edges {
       node {
+        slug
         title
+        moduleSlug
+        moduleTitle
+        categorySlug
+        categoryTitle
         teaser
+        description
         type
         count
         duration
+        price
       }
     }
   }

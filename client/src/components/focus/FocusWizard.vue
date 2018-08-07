@@ -1,11 +1,5 @@
 <template>
-  <v-dialog
-    v-model="show"
-    fullscreen
-    hide-overlay
-    transition="dialog-bottom-transition"
-    scrollable
-  >
+  <v-dialog v-model="show" fullscreen hide-overlay transition="dialog-bottom-transition" scrollable>
     <v-card tile>
       <div class="pa-2">
         <v-btn class="btn--close" large flat icon @click.stop="show=false">
@@ -13,14 +7,10 @@
         </v-btn>
 
         <v-breadcrumbs divider="/">
-          <v-breadcrumbs-item
-            :disabled="isDetermineFocus"
-          >
+          <v-breadcrumbs-item :disabled="isDetermineFocus">
             Fokus erfasssen
           </v-breadcrumbs-item>
-          <v-breadcrumbs-item
-            :disabled="isMyFocus"
-          >
+          <v-breadcrumbs-item :disabled="isMyFocus">
             Mein Foukus
           </v-breadcrumbs-item>
 
