@@ -22,6 +22,7 @@ class Unit(Page):
             ('webinar', 'Webinar'),
             ('kurs', 'Kurs'),
             ('coaching', 'Coaching'),
+            ('tinder', 'Tinder'),
             ('lernfilm', 'Lernfilm'),
             ('webex', 'Webex')
         )

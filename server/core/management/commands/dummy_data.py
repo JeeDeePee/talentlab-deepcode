@@ -187,7 +187,7 @@ data = [
                         'title': 'Sparring mit Peers',
                         'teaser': 'Greife bei spezifischen Problemen diskret auf den Rat erfahrener Führungspersönlichkeiten aus dem Peer-Netzwerk zu!',
                         'description': 'Wir finden im Pool den besten Kontakt – diskret, schnell und unkompliziert.<br>Profitiere von Erfahrung!<br>Lass Dir helfen!<br>Finde Lösungen!',
-                        'type': 'coaching',
+                        'type': 'tinder',
                         'count': '1 Session',
                         'duration': '45 Minuten',
                         'price': 'inbegriffen',
