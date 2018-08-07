@@ -19,11 +19,9 @@ export default {
         selected: false
       })
     },
-
     setFocusCompetences(state, focusCompetences) {
       state.focusCompetences = focusCompetences
     },
-
     setFocusWizardState(state, focuslWizardState) {
       state.focuslWizardState = focuslWizardState
     },
@@ -34,8 +32,11 @@ export default {
       })
     },
     setUserFocus(state, userFocus) {
-      console.info(userFocus)
-      // @todo set focus
+      for (const focus of userFocus) {
+        state.focusCache[state.focusCache.findIndex(x => x.slug === focus.slug)] = {
+          ...state.focusCache[focus.slug], ...focus
+        }
+      }
     }
   },
 
@@ -69,7 +70,7 @@ export default {
             {
               'input':
                 {
-                  'entries': state.focusCache.map(x => ({
+                  'entries': state.focusCache.filter(x => x.selected).map(x => ({
                     slug: x.slug,
                     currentLevel: x.currentLevel,
                     nextEvaluation: x.nextEvaluation
@@ -78,7 +79,6 @@ export default {
             }
         }
       })
-      console.info(state.focusCache)
     },
     newFocusWizardState({state, commit}, newState) {
       commit('setFocusWizardState', newState)
