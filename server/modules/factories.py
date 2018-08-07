@@ -99,9 +99,11 @@ class UnitFactory(BasePageFactory):
         model = Unit
 
     teaser = factory.LazyAttribute(lambda x: fake.sentence(nb_words=random.randint(8, 12)))
+    description = factory.LazyAttribute(lambda x: fake.sentence(nb_words=random.randint(12, 16)))
     count = factory.LazyAttribute(lambda x: '{} {}'.format(random.randint(8, 12), fake.word().title()))
     duration = factory.LazyAttribute(lambda x: '{} {}'.format(random.randint(8, 12), fake.word().title()))
-    type = factory.LazyAttribute(lambda x: random.choice(['webinar', 'kurs', 'coaching']))
+    price = factory.LazyAttribute(lambda x: '{} {}'.format('CHF ', random.randint(50, 200)))
+    type = factory.LazyAttribute(lambda x: random.choice(['webinar', 'kurs', 'coaching', 'lernfilm', 'webex']))
 
     @factory.post_generation
     def competences(self, create, extracted, **kwargs):

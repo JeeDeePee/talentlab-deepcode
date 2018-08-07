@@ -23,3 +23,4 @@ class GoalAdmin(admin.ModelAdmin):
 @admin.register(Unit)
 class UnitAdmin(admin.ModelAdmin):
     list_display = ('title', 'slug', 'type', 'teaser')
+    list_filter = ('type',)

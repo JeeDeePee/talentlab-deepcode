@@ -13,6 +13,9 @@ class Unit(Page):
     competences = models.ManyToManyField(Competence)
 
     teaser = models.TextField()
+    description = models.TextField(
+        default=''
+    )
     type = models.CharField(
         max_length=100,
         choices=(
@@ -31,10 +34,16 @@ class Unit(Page):
         max_length=255,
         help_text='e.g. \'je 2 Tage\''
     )
+    price = models.CharField(
+        default='',
+        max_length=255,
+        help_text='e.g. \'CHF 150\''
+    )
 
     content_panels = [
         FieldPanel('title', classname="full title"),
         FieldPanel('teaser'),
+        FieldPanel('description'),
         FieldPanel('type'),
         FieldPanel('competences'),
         MultiFieldPanel([
@@ -42,7 +51,8 @@ class Unit(Page):
                 FieldPanel('count'),
                 FieldPanel('duration'),
             ], classname="label-above"),
-        ], 'Kadenz')
+        ], 'Kadenz'),
+        FieldPanel('price'),
     ]
     settings_panels = [
         FieldPanel('slug')

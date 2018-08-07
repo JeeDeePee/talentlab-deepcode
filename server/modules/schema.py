@@ -13,7 +13,7 @@ class UnitNode(DjangoObjectType):
     class Meta:
         model = Unit
         only_fields = [
-            'slug', 'title', 'teaser', 'type', 'count', 'duration'
+            'slug', 'title', 'teaser', 'type', 'count', 'duration', 'competences'
         ]
         filter_fields = {
             'slug': ['exact', 'icontains', 'in'],
