@@ -7,7 +7,6 @@
         <v-flex xs4>
           <h3 class="text-center">Fokus Kompetenzen</h3>
           <p>Diese Kompetnezen hast du asugewählt</p>
-
         </v-flex>
 
         <v-flex xs4>
@@ -30,29 +29,12 @@
         </v-flex>
 
         <v-flex xs4>
-          <v-slider
-            v-model="item.currentLevel"
-            thumb-label="always"
-            max="10"
-            min="1"
-          ></v-slider>
+          <v-slider v-model="item.currentLevel" thumb-label="always" max="10" min="1"></v-slider>
         </v-flex>
 
         <v-flex xs4>
-          <v-menu
-            :nudge-right="40"
-            lazy
-            transition="scale-transition"
-            offset-y
-            full-width
-            min-width="290px"
-          >
-            <v-text-field
-              slot="activator"
-              v-model="item.nextEvaluation"
-              prepend-icon="event"
-              readonly
-            ></v-text-field>
+          <v-menu :nudge-right="40" lazy transition="scale-transition" offset-y full-width min-width="290px">
+            <v-text-field slot="activator" v-model="item.nextEvaluation" prepend-icon="event" readonly></v-text-field>
             <v-date-picker
               v-model="item.nextEvaluation"
             ></v-date-picker>
@@ -72,7 +54,9 @@
 
   export default {
     name: 'my-focus',
+
     props: ['items'],
+
     methods: {
       ...mapActions({
         newUserFocus: 'newUserFocus'
@@ -82,6 +66,7 @@
         this.$emit('proceed')
       }
     },
+
     computed: {
       ...mapGetters({
           'selectedFocus': 'getUserFocus'

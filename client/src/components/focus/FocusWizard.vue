@@ -40,15 +40,18 @@
 
   export default {
     name: 'focus-wizard',
+
     props: ['visible'],
 
     components: {
       MyFocus,
       DetermineFocus
     },
+
     created() {
       this.$store.dispatch('fetchFocusCompetences')
     },
+
     computed: {
       ...mapGetters({
         userFocusState: 'userFocusState',

@@ -15,8 +15,8 @@
             v-for="(competence, competenceKey) in category.competences" :key="competenceKey"
             v-model="selectedFocus"
             v-bind:label="competence.title"
-            v-bind:value="competence.slug"
-          ></v-checkbox>
+            v-bind:value="competence.slug">
+          </v-checkbox>
 
         </v-flex>
       </v-layout>
@@ -32,6 +32,7 @@
 
   export default {
     name: 'determine-focus',
+
     methods: {
       ...mapActions({
         newUserFocusBySlugs: 'newUserFocusBySlugs'
@@ -40,6 +41,7 @@
         this.$emit('proceed')
       }
     },
+
     computed: {
       ...mapGetters({
           'userFocusSlugs': 'getUserFocusSlugs',
