@@ -1,12 +1,16 @@
 from django.db import models
-from wagtail.core.models import Page
 from wagtail.admin.edit_handlers import FieldPanel, MultiFieldPanel, FieldRowPanel, TabbedInterface, ObjectList
+from wagtail.core.models import Page
+
+from modules.models.competence import Competence
 
 
 class Unit(Page):
     class Meta:
         verbose_name = 'Lernangebot'
         verbose_name_plural = 'Lernangebote'
+
+    competences = models.ManyToManyField(Competence)
 
     teaser = models.TextField()
     type = models.CharField(
@@ -32,6 +36,7 @@ class Unit(Page):
         FieldPanel('title', classname="full title"),
         FieldPanel('teaser'),
         FieldPanel('type'),
+        FieldPanel('competences'),
         MultiFieldPanel([
             FieldRowPanel([
                 FieldPanel('count'),

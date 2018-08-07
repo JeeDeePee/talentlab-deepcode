@@ -1,19 +1,19 @@
+import logging
+
 import requests
 from django.contrib.postgres.fields import JSONField
 from django.db import models
 from django.db.models.signals import pre_save
 from django.dispatch import receiver
-from wagtail.core.models import Page
-from wagtail.core.fields import StreamField, RichTextField
 from wagtail.admin.edit_handlers import FieldPanel, StreamFieldPanel, MultiFieldPanel, FieldRowPanel, TabbedInterface, \
     ObjectList
+from wagtail.core.fields import StreamField, RichTextField
+from wagtail.core.models import Page
 from wagtail.documents.models import Document
 from wagtail.images.edit_handlers import ImageChooserPanel
 from wagtail.images.models import Image
 
 from modules.blocks import LinkBlock, DocumentBlock, DEFAULT_RICH_TEXT_FEATURES
-import logging
-
 
 logger = logging.getLogger(__name__)
 

@@ -1,10 +1,10 @@
 import random
 import wagtail_factories
 import factory
-from factory import CREATE_STRATEGY
+from factory import CREATE_STRATEGY, SubFactory
 
 from modules.blocks import LinkBlock, DocumentBlock
-from modules.models import Category, Module, Unit
+from modules.models import Category, Module, Unit, Competence
 from core.factories import BasePageFactory, fake_title, fake, DummyImageFactory, DummyDocumentFactory
 from modules.models.goal import Goal
 
@@ -30,6 +30,13 @@ class DocumentBlockFactory(wagtail_factories.StructBlockFactory):
 
     class Meta:
         model = DocumentBlock
+
+
+class CompetenceFactory(factory.django.DjangoModelFactory):
+    class Meta:
+        model = Competence
+
+    category = factory.SubFactory(CategoryFactory)
 
 
 class ModuleFactory(BasePageFactory):
@@ -73,19 +80,37 @@ class ModuleFactory(BasePageFactory):
         return cls._generate(CREATE_STRATEGY, kwargs)
 
 
-class GoalFactory(BasePageFactory):
-    level = factory.LazyAttribute(lambda x: fake.int())
-    goal_text = factory.LazyAttribute(lambda x: fake.sentence(nb_words=random.randint(8, 12)))
-
+class GoalFactory(factory.django.DjangoModelFactory):
     class Meta:
         model = Goal
 
+    module = SubFactory(ModuleFactory)
+
+    level = factory.LazyAttribute(lambda x: fake.int())
+    text = factory.LazyAttribute(lambda x: fake.sentence(nb_words=random.randint(8, 12)))
+
+    @classmethod
+    def create(cls, **kwargs):
+        cls._generate(CREATE_STRATEGY, kwargs)
+
 
 class UnitFactory(BasePageFactory):
+    class Meta:
+        model = Unit
+
     teaser = factory.LazyAttribute(lambda x: fake.sentence(nb_words=random.randint(8, 12)))
     count = factory.LazyAttribute(lambda x: '{} {}'.format(random.randint(8, 12), fake.word().title()))
     duration = factory.LazyAttribute(lambda x: '{} {}'.format(random.randint(8, 12), fake.word().title()))
     type = factory.LazyAttribute(lambda x: random.choice(['webinar', 'kurs', 'coaching']))
 
-    class Meta:
-        model = Unit
+    @factory.post_generation
+    def competences(self, create, extracted, **kwargs):
+        if not create:
+            # Simple build, do nothing.
+            return
+
+        if extracted:
+            # A list of groups were passed in, use them
+            competences = list(Competence.objects.filter(title__in=extracted))
+            for competence in competences:
+                self.competences.add(competence)

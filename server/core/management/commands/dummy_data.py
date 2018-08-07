@@ -12,8 +12,8 @@ from factory.django import ImageField
 from wagtail.core.models import Page
 
 from core.factories import UserFactory, fake_title
-from focus.factories import CompetenceFactory, CompetenceEntryFactory, FocusFactory
-from modules.factories import CategoryFactory, ModuleFactory, UnitFactory, GoalFactory
+from focus.factories import CompetenceEntryFactory, FocusFactory
+from modules.factories import CategoryFactory, ModuleFactory, UnitFactory, GoalFactory, CompetenceFactory
 from progress.factories import UserModuleProgressFactory, UserUnitProgressFactory
 from progress.models import UserModuleProgress
 
@@ -100,7 +100,7 @@ data = [
         ]},
     {
         'title': 'Mastering Relations',
-        'competences': ['Kooperationsfähigkeit', 'Networking', 'Konfliktfähigkeit', 'Verhandlungsfähigkeit'],
+        'competences': ['Kooperationsfähigkeit', 'Networking', 'Konfliktfähigkeit', 'Verhandlungsfähigkeit', 'Kommunikation'],
         'modules': [
             {
                 'title': 'Digital Communication & Virtual Collaboration',
@@ -111,18 +111,15 @@ data = [
                 'goals': [
                     {
                         'level': 1,
-                        'title': 'Digitale Tools im Berufsalltag',
-                        'goal_text': 'Digitale Tools im Alltag professionell einsetzen, um Kommunikation und Zusammenarbeit zu verbessern'
+                        'text': 'Digitale Tools im Alltag professionell einsetzen, um Kommunikation und Zusammenarbeit zu verbessern'
                     },
                     {
                         'level': 2,
-                        'title': 'Kommunikation und Führung auf Distanz',
-                        'goal_text': 'Die Herausforderungen von Kommunikation und Führung auf Distanz beherrschen'
+                        'text': 'Die Herausforderungen von Kommunikation und Führung auf Distanz beherrschen'
                     },
                     {
                         'level': 3,
-                        'title': 'Digitale Kommunikation und virtuelle Zusammenarbeit',
-                        'goal_text': 'Die Organisation zur digitalen Kommunikation und virtuellen Zusammenarbeit befähigen'
+                        'text': 'Die Organisation zur digitalen Kommunikation und virtuellen Zusammenarbeit befähigen'
                     }
                 ],
                 'units': [
@@ -132,7 +129,7 @@ data = [
                         'type': 'webinar',
                         'count': '<empty>',
                         'duration': '<empty>',
-                        # 'competences': ['Agilität', 'Kommunikation']
+                        'competences': ['Agilität', 'Kommunikation']
                     },
                     {
                         'title': 'Kommunikation auf Distanz',
@@ -140,7 +137,7 @@ data = [
                         'type': 'lernfilm',
                         'count': '<empty>',
                         'duration': '<empty>',
-                        # 'competences': ['Agilität', 'Kommunikation']
+                        'competences': ['Agilität', 'Kommunikation']
                     },
                     {
                         'title': 'Professionell kommunizieren',
@@ -148,7 +145,7 @@ data = [
                         'type': 'kurs',
                         'count': '<empty>',
                         'duration': '<empty>',
-                        # 'competences': ['Kommunikation']
+                        'competences': ['Kommunikation']
                     },
                     {
                         'title': 'Tools für virtuelle Teams',
@@ -156,7 +153,7 @@ data = [
                         'type': 'webinar',
                         'count': '<empty>',
                         'duration': '<empty>',
-                        # 'competences': ['Agilität', 'Kooperationsfähigkeit']
+                        'competences': ['Agilität', 'Kooperationsfähigkeit']
                     },
                     {
                         'title': 'Führung auf Distanz',
@@ -164,7 +161,7 @@ data = [
                         'type': 'webex',
                         'count': '<empty>',
                         'duration': '<empty>',
-                        # 'competences': ['Agilität', 'Leadership']
+                        'competences': ['Agilität', 'Leadership']
                     }
                 ],
                 'resources': [
@@ -268,17 +265,15 @@ class Command(BaseCommand):
                     **{k: v for (k, v) in module_data.items() if not (k == 'units' or k == 'goals')}
                 )
 
-                units_data = module_data.get('units', [])
-                for j in range(0, random.randint(3, 5)):
-                    unit_data = units_data[j] if len(units_data) > j else {}
+                default_units = [{} for i in range(0, random.randint(3, 5))]
+                units_data = module_data.get('units', default_units)
+                for unit_data in units_data:
                     UnitFactory.create(parent=module, **unit_data)
 
-                default_goals = [{'level': lvl,
-                                  'title': '{}_{}'.format(module.title, lvl),
-                                  'goal_text': fake_title('')} for lvl in range(0, 3)]
+                default_goals = [{'level': lvl, 'text': fake_title('')} for lvl in range(0, 3)]
                 goals_data = module_data.get('goals', default_goals)
                 for goal_data in goals_data:
-                    GoalFactory.create(parent=module, **goal_data)
+                    GoalFactory.create(module=module, **goal_data)
 
         # create user progress
         UserModuleProgressFactory.create_batch(size=20)
