@@ -5,11 +5,21 @@ import CREATE_FOCUS_COMPETENCE_QUERY from '@/graphql/gql/focus/createFocus.gql'
 export default {
   state: {
     focusCompetences: {},
-    userFocus: [],
-    focuslWizardState: 'determine'
+    focuslWizardState: 'determine',
+    focusCache: []
   },
 
   mutations: {
+    addToFocusCache(state, focus) {
+      state.focusCache.push({
+        title: focus.title,
+        slug: focus.slug,
+        currentLevel: null,
+        nextEvaluation: null,
+        selected: false
+      })
+    },
+
     setFocusCompetences(state, focusCompetences) {
       state.focusCompetences = focusCompetences
     },
@@ -18,18 +28,19 @@ export default {
       state.focuslWizardState = focuslWizardState
     },
     setUserFocusBySlugs(state, userFocus) {
-      // @todo keep existing configs
-      // @todo map title
-      state.userFocus = userFocus.map(x => ({title: x, slug: x, currentLevel: null, nextEvaluation: null}))
+      state.focusCache = state.focusCache.map(x => {
+        x.selected = userFocus.indexOf(x.slug) > -1
+        return x
+      })
     },
     setUserFocus(state, userFocus) {
-      state.userFocus = userFocus
+      console.info(userFocus)
+      // @todo set focus
     }
   },
 
   actions: {
-    async fetchFocusCompetences({commit}) {
-      // @todo error handling
+    async fetchFocusCompetences({state, commit}) {
       const response = await apolloClient.query({
         query: FOCUS_COMPETENCE_QUERY
       });
@@ -37,12 +48,14 @@ export default {
       let items = response.data.categories.edges.map(category => ({
           title: category.node.title,
           teaser: 'Gewinne Leichtigkeit im Umgang mit Veränderungen',
-          competences: category.node.competenceSet.edges.map(compentence => ({
+          competences: category.node.competenceSet.edges.map(
+            function (compentence) {
+              commit('addToFocusCache', compentence.node);
+              return {
                 title: compentence.node.title,
                 slug: compentence.node.slug
               }
-            )
-          )
+            })
         })
       );
       commit('setFocusCompetences', items);
@@ -56,16 +69,16 @@ export default {
             {
               'input':
                 {
-                  'entries': state.userFocus.map(x => ({
+                  'entries': state.focusCache.map(x => ({
                     slug: x.slug,
                     currentLevel: x.currentLevel,
                     nextEvaluation: x.nextEvaluation
                   }))
-
                 }
             }
         }
-      });
+      })
+      console.info(state.focusCache)
     },
     newFocusWizardState({state, commit}, newState) {
       commit('setFocusWizardState', newState)
@@ -80,8 +93,8 @@ export default {
 
   getters: {
     getFocusCompetences: state => state.focusCompetences,
-    getUserFocusSlugs: state => state.userFocus.map(x => x.slug),
-    getUserFocus: state => state.userFocus,
+    getUserFocusSlugs: state => state.focusCache.filter(x => x.selected).map(x => x.slug),
+    getUserFocus: state => state.focusCache.filter(x => x.selected),
     isMyFocus: state => state.focuslWizardState === 'my-focus',
     isDetermineFocus: state => state.focuslWizardState === 'determine'
   }
