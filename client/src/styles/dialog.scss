@@ -4,6 +4,17 @@
     background-color: $grey-9;
   }
 
+  .v-btn, .v-input .v-label, .v-icon {
+    color: #fff;
+  }
+
+  .v-input:not(.v-input--is-disabled) input,
+  .v-input:not(.v-input--is-disabled) textarea,
+  .v-input:not(.v-input--is-disabled) input,
+  .v-input:not(.v-input--is-disabled) textarea {
+    color: #fff;
+  }
+
   .btn--close {
     color: #fff;
     position: absolute;
