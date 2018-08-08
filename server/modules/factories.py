@@ -4,9 +4,8 @@ import factory
 from factory import CREATE_STRATEGY, SubFactory
 
 from modules.blocks import LinkBlock, DocumentBlock
-from modules.models import Category, Module, Unit, Competence
+from modules.models import Category, Module, Unit, Competence, Goal
 from core.factories import BasePageFactory, fake_title, fake, DummyImageFactory, DummyDocumentFactory
-from modules.models.goal import Goal
 
 
 class CategoryFactory(BasePageFactory):

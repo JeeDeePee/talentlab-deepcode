@@ -77,7 +77,7 @@ class ModuleNode(DjangoObjectType):
     class Meta:
         model = Module
         only_fields = [
-            'title', 'slug', 'skill', 'description', 'teaser', 'video_id', 'video_description', 'video_thumbnail_data', 'goal_set'
+            'slug', 'title', 'skill', 'description', 'teaser', 'video_id', 'video_description', 'video_thumbnail_data', 'goal_set'
         ]
         filter_fields = {
             'slug': ['exact', 'icontains', 'in'],
@@ -85,14 +85,14 @@ class ModuleNode(DjangoObjectType):
         }
         interfaces = (relay.Node,)
 
+    def resolve_pk(self, *args, **kwargs):
+        return self.id
+
     def resolve_tools(self, *args, **kwargs):
         return self.tools_normalized
 
     def resolve_resources(self, *args, **kwargs):
         return self.resources_normalized
-
-    def resolve_pk(self, *args, **kwargs):
-        return self.id
 
     def resolve_hero_image(self, *args, **kwargs):
         if self.hero_image:

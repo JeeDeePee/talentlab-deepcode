@@ -1,7 +1,6 @@
 from django.contrib import admin
 
-from modules.models import Unit, Module, Category
-from modules.models.goal import Goal
+from modules.models import Unit, Module, Goal, Category
 
 
 @admin.register(Category)
