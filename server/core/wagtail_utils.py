@@ -2,7 +2,7 @@ from django.contrib import admin
 
 
 def wagtail_parent_filter(parent_cls, child_cls):
-    class ParentValueFilter(admin.SimpleListFilter):
+    class ParentPageFilter(admin.SimpleListFilter):
         title = 'parent'
         parameter_name = 'parent'
 
@@ -15,4 +15,4 @@ def wagtail_parent_filter(parent_cls, child_cls):
             if parent:
                 return child_cls.objects.filter(id__in=parent.get_child_ids()).live()
 
-    return ParentValueFilter
+    return ParentPageFilter
