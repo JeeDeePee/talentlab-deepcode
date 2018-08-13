@@ -20,6 +20,7 @@ from progress.models import UserModuleProgress
 data = [
     {
         'title': 'Mastering Complexity',
+        'description': 'Gewinne Leichtigkeit im Umgang mit Veränderungen',
         'competences': ['Vernetzes Denken', 'Agilität', 'Innovationsfähigkeit', 'Entscheidungsfähigkeit'],
         'modules': [
             {
@@ -60,6 +61,7 @@ data = [
         ]},
     {
         'title': 'Growing as a Leader',
+        'description': 'Entfalte Dein Potenzial als Führungspersönlichkeit',
         'competences': ['Leadership', 'Management', 'Unternehmerisches Handeln'],
         'modules': [
             {
@@ -100,6 +102,7 @@ data = [
         ]},
     {
         'title': 'Mastering Relations',
+        'description': 'Lerne Beziehungen zielgerichtet zu gestalten',
         'competences': ['Teamfähigkeit', 'Networking', 'Konfliktfähigkeit', 'Verhandlungsfähigkeit', 'Kommunikationsfähigkeit'],
         'modules': [
             {
