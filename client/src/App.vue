@@ -9,7 +9,7 @@
         </v-list-tile>
         <v-list-tile :to="{ name: 'categories'}" exact router>
           <v-list-tile-content>
-            <v-list-tile-title>Lernmodule</v-list-tile-title>
+            <v-list-tile-title>Container</v-list-tile-title>
           </v-list-tile-content>
         </v-list-tile>
         <!--
@@ -27,7 +27,7 @@
       <v-spacer></v-spacer>
       <v-toolbar-items class="hidden-sm-and-down">
         <v-btn flat :to="{ name: 'development'}" exact router>Meine Entwicklung</v-btn>
-        <v-btn flat :to="{ name: 'categories'}" exact router>Lernmodule</v-btn>
+        <v-btn flat :to="{ name: 'categories'}" exact router>Container</v-btn>
         <!--
         <v-btn flat :to="{ name: 'dashboard'}" exact router>Dashboard</v-btn>
         -->

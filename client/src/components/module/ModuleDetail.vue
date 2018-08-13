@@ -43,7 +43,7 @@
                   <div class="mt-1 mb-3">
                     <i class="material-icons icon-color">library_books</i>
                   </div>
-                  Hier werden bei Buchung weiterführende Inhalte ergänzt.
+                  Hier findest Du bei Buchung weiterführende Artikel, Links und vieles mehr.
                 </v-card-text>
               </v-card>
           <h3>Tools & Templates</h3>
@@ -52,7 +52,7 @@
                   <div class="mt-1 mb-3">
                     <i class="material-icons icon-color">library_books</i>
                   </div>
-                  Hier werden bei Buchung nützliche Dokumente ergänzt.
+                  Hier findest Du bei Buchung im Arbeitsalltag nützliche Hilfestellungen.
                 </v-card-text>
               </v-card>
         </v-flex>

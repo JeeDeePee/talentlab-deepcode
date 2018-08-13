@@ -6,14 +6,14 @@
     <div class="clearfix">
       <v-btn class="hidden-sm-and-down float-r" :to="{ name: 'categories'}" exact router>
         <v-icon>add</v-icon>
-        Lernmodule auswählen
+        Container auswählen
       </v-btn>
 
-      <h2 class="grey--text mb-3">Meine Lernmodule</h2>
+      <h2 class="grey--text mb-3">Meine Container</h2>
 
       <v-btn class="mb-4 ml-0 mt-0 hidden-md-and-up" @click.stop="showFocusDialog=true">
         <v-icon>add</v-icon>
-        Lernmodule auswählen
+        Container auswählen
       </v-btn>
     </div>
 
@@ -22,7 +22,7 @@
                             :key="index"
                             class="mb-4"/>
 
-    <h3 class="title-recomendations pt-3">Vorgeschlagene Lernmodule</h3>
+    <h3 class="title-recomendations pt-3">Vorgeschlagene Container</h3>
     <v-container fluid grid-list-md>
       <v-layout row wrap>
         <v-flex v-for="(item, index) in recomendations" :key="index" xs12 sm6 class="mb-1">

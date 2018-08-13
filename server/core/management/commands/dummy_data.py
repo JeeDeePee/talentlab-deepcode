@@ -104,7 +104,7 @@ data = [
         'modules': [
             {
                 'title': 'Digital Communication & Virtual Collaboration',
-                'skill': 'Kooperationsfähigkeit',
+                'skill': 'Kommunikationsfähigkeit',
                 'teaser': 'Die richtigen Tools richtig einsetzen',
                 'description': 'Digitalisierung verändert unser Kommunikationsverhalten und die Art unserer Zusammenarbeit: Emails, Chats, Videokonferenzen ... eine Vielzahl von tollen Tools erleichtern den Alltag. Doch: Wer die Wahl hat, hat die Qual! Um Kommunikation und Koordination effizient zu gestalten, müssen die Tools bewusst eingesetzt werden. Zudem heisst digital kommunizieren auf Distanz kommunizieren und schafft ganz eigene Herausforderung. Der Container “Digital Communication & Virtual Collaboration” hilft Dir durch den Dschungel der Tools und befähigt Dich zum effizienten und effektiven Einsatz in Deinem Führungsalltag.',
                 'video_description': '<b>Dr. Clea Bauch</b><br>Unsere Fach-Experten erläutert die Herausforderungen in Zusammenhang mit Führung und Kommunikation auf Distanz',

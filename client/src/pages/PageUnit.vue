@@ -21,9 +21,9 @@
       <h1 class="mt-4">{{unit.title}}</h1>
       <h2 class="pb-4 mt-3">{{unit.teaser}}</h2>
       <h2 class="pb-4 mt-3" v-html="unit.description"></h2>
-      <v-btn class="mb-5 ml-0 mt-0">Lernmodul buchen</v-btn>
+      <v-btn class="mb-5 ml-0 mt-0">Container buchen</v-btn>
 
-      <h3>Dieser Kurs gehört zum Lernmodul «{{unit.moduleTitle}}».</h3>
+      <h3>Dieser Kurs gehört zum Container «{{unit.moduleTitle}}».</h3>
       <div class="grey--text floating position-top">
         <v-btn class="mb-4 ml-0 mr-3 mt-4">
           <v-icon class="pr-2">school</v-icon>Kurs

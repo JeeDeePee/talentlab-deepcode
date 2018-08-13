@@ -32,7 +32,7 @@
     },
 
     created() {
-      document.title = 'Lernmodule'
+      document.title = 'Container'
     },
 
     apollo: {
