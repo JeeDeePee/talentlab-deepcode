@@ -63,6 +63,7 @@ export default {
     },
     storeFocusCompetences({state, commit}) {
       // @todo error handling
+      let self = this;
       apolloClient.mutate({
         mutation: CREATE_FOCUS_COMPETENCE_QUERY,
         variables: {
@@ -78,12 +79,10 @@ export default {
                 }
             }
         }
-      });
-      // @todo what a fucking hack :(
-      let self = this;
-      setTimeout(function () {
-        self.dispatch('fetchUserFocus');
-      }, 1000);
+      }).then(function () {
+          self.dispatch('fetchUserFocus');
+        }
+      );
     },
     newFocusWizardState({state, commit}, newState) {
       commit('setFocusWizardState', newState)

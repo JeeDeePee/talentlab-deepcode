@@ -7,7 +7,7 @@
       <v-layout row wrap>
         <v-flex xs4 v-for="(category, categoryKey) in focusCompetences" :key="categoryKey">
           <img :src="'https://talentlab-web.s3.amazonaws.com/original_images/category2_Al9ARbs.png'"><br>
-          <h3 class="text-center">{{category.title}}</h3>
+          <h3>{{category.title}}</h3>
 
           <p>{{category.teaser}}</p>
 

@@ -5,17 +5,17 @@
     <v-container fluid grid-list-xl>
       <v-layout row wrap>
         <v-flex xs4>
-          <h3 class="text-center">Fokus Kompetenzen</h3>
+          <h3>Fokus Kompetenzen</h3>
           <p>Diese Kompetnezen hast du asugewählt</p>
         </v-flex>
 
         <v-flex xs4>
-          <h3 class="text-center">Wo stehst du heute?</h3>
+          <h3>Wo stehst du heute?</h3>
           <p>Schiebe den Regler zum einstellen deiner Kompetenzstuffe</p>
         </v-flex>
 
         <v-flex xs4>
-          <h3 class="text-center">Nächste Beurteilung</h3>
+          <h3>Nächste Beurteilung</h3>
           <p>Bis wann willst du dein Ziel erreichen</p>
         </v-flex>
 
