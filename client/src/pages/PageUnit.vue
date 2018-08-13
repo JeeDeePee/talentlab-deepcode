@@ -123,9 +123,9 @@ Besonders im Fokus stehen Lösungsansätze für schwierige Verhandlungssituation
     color: $text-color;
   }
 
-  .application.theme--light {
-    background-color: $beige !important;
-  }
+  //.application.theme--light {
+  //  background-color: $beige !important;
+  //}
 
   h1 {
     font-size: 44px
@@ -143,35 +143,35 @@ Besonders im Fokus stehen Lösungsansätze für schwierige Verhandlungssituation
     margin-top: 12px;
   }
 
-  .beige--text {
-    color: $beige !important;
-  }
+  //.beige--text {
+  //  color: $beige !important;
+  //}
 
   .theme--light .v-expansion-panel .v-expansion-panel__container {
     color: $orange;
   }
 
-  .theme--light .v-expansion-panel .v-expansion-panel__container .v-expansion-panel__header .v-expansion-panel__header__icon .v-icon{
-    color: $orange !important;
-  }
+  //.theme--light .v-expansion-panel .v-expansion-panel__container .v-expansion-panel__header .v-expansion-panel__header__icon .v-icon{
+  //  color: $orange !important;
+  //}
 
   .panel-style {
     border-top: $orange 1px solid;
   }
 
-  .v-expansion-panel {
-    box-shadow: none !important;
-    background-color: $beige !important;
-  }
+  //.v-expansion-panel {
+  //  box-shadow: none !important;
+  //  background-color: $beige !important;
+  //}
 
-  .v-expansion-panel__container {
-    box-shadow: none !important;
-    background-color: $beige !important;
-  }
+  //.v-expansion-panel__container {
+  //  box-shadow: none !important;
+  //  background-color: $beige !important;
+  //}
 
-  .theme--light .v-card {
-    background-color: $beige;
-  }
+  //.theme--light .v-card {
+  //  background-color: $beige;
+  //}
 
   .theme--light .v-btn.btn--dark {
     background-color: $grey-9;
