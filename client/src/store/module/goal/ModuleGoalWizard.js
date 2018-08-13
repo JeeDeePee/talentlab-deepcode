@@ -3,12 +3,12 @@ import MODULE_GOALS_QUERY from '@/graphql/gql/moduleGoals/moduleGoalsQuery.gql'
 
 const moduleGoalWizard = {
   state: {
+    moduleGoals: [],
     moduleGoalWizard: 'my-motivation'
   },
 
   mutations: {
     setModuleGoals(state, moduleGoals) {
-      debugger
       state.moduleGoals = moduleGoals
     },
 
@@ -19,7 +19,6 @@ const moduleGoalWizard = {
 
   actions: {
     async fetchModuleGoals({state, commit}, { moduleSlug }) {
-      debugger
       const response = await apolloClient.query({
         query: MODULE_GOALS_QUERY,
         variables: {
@@ -27,33 +26,8 @@ const moduleGoalWizard = {
         }
       });
 
-      // let items = response.data.modules.edges.map(module => ({
-      //     title: category.node.title,
-      //     teaser: 'Gewinne Leichtigkeit im Umgang mit Veränderungen',
-      //     competences: category.node.competenceSet.edges.map(
-      //       function (compentence) {
-      //         commit('addToFocusCache', compentence.node);
-      //         return {
-      //           title: compentence.node.title,
-      //           slug: compentence.node.slug
-      //         }
-      //       })
-      //   })
-      // );
-
-      // for (const moduleNode of response.data.modules.edges) {
-      //   console.log(moduleNode)
-      // }
-
-      debugger
-      let goals = response.data.modules.edges.map(module => (
-        module.goalSet.edges.map(goal => goal.node)
-      ))
-
-      //  module.goalSet.edges.map(goal => return {...goal})
-      // )
-
-      commit('setModuleGoals', goals !== undefined ? goals : {});
+      const goals = response.data.modules.edges[0].node.goalSet.edges.map(goal => ({...goal.node}))
+      commit('setModuleGoals', goals);
     },
 
     newModuleGoalWizardState_MyMotivation({ state, commit }) {
@@ -66,6 +40,7 @@ const moduleGoalWizard = {
   },
 
   getters: {
+    getModuleGoals: state => state.moduleGoals,
     isMyMotivation: state => state.moduleGoalWizard === 'my-motivation',
     isMyGoal: state => state.moduleGoalWizard === 'my-goal'
   }

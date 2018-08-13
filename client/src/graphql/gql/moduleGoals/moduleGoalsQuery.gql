@@ -6,6 +6,7 @@ query ModuleGoalsQuery($slug: String!) {
         goalSet {
           edges {
             node {
+              id
               text
               level
             }

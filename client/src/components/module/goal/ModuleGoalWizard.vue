@@ -64,7 +64,6 @@
 
     computed: {
       ...mapGetters({
-        moduleGoals: 'moduleGoals',
         isMyMotivation: 'isMyMotivation',
         isMyGoal: 'isMyGoal'
       }),
@@ -81,7 +80,6 @@
     },
 
     created() {
-      debugger
       this.$store.dispatch('fetchModuleGoals', { moduleSlug: this.module.slug })
     },
 
