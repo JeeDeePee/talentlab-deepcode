@@ -8,23 +8,12 @@
 
         <v-breadcrumbs>
           <v-icon slot="divider">chevron_right</v-icon>
-          <v-breadcrumbs-item :disabled="isMyMotivation">
-            Meine Motivation
-          </v-breadcrumbs-item>
-          <v-breadcrumbs-item :disabled="isMyGoal">
+          <v-breadcrumbs-item :disabled="true">
             Mein Ziel
           </v-breadcrumbs-item>
         </v-breadcrumbs>
 
-        <MyMotivation
-          v-on:proceed="myMotivationProceed($event)"
-          v-on:back="myMotivationBack($event)"
-          v-if="isMyMotivation">
-        </MyMotivation>
-        <MyGoal
-          v-on:proceed="myGoalProceed($event)"
-          v-on:back="myGoalBack($event)"
-          v-if="isMyGoal">
+        <MyGoal v-on:proceed="myGoalProceed($event)" v-on:back="myGoalBack($event)">
         </MyGoal>
 
       </div>
@@ -33,9 +22,8 @@
 </template>
 
 <script>
-  import {mapActions, mapGetters} from 'vuex'
+  import {mapActions} from 'vuex'
 
-  import MyMotivation from '@/components/module/goal/steps/MyMotivation'
   import MyGoal from '@/components/module/goal/steps/MyGoal'
 
   export default {
@@ -53,7 +41,6 @@
     },
 
     components: {
-      MyMotivation,
       MyGoal
     },
 
@@ -63,10 +50,6 @@
     },
 
     computed: {
-      ...mapGetters({
-        isMyMotivation: 'isMyMotivation',
-        isMyGoal: 'isMyGoal'
-      }),
       show: {
         get() {
           return this.visible
@@ -85,26 +68,16 @@
 
     methods: {
       ...mapActions({
-        newModuleGoalWizardState_MyMotivation: 'newModuleGoalWizardState_MyMotivation',
-        newModuleGoalWizardState_MyGoal: 'newModuleGoalWizardState_MyGoal'
       }),
 
-      myMotivationProceed() {
-        this.newModuleGoalWizardState_MyGoal()
-      },
-
-      myMotivationBack() {
-        this.newModuleGoalWizardState_MyMotivation()
+      myGoalBack() {
         this.$emit('close')
+        // don't save
       },
 
       myGoalProceed() {
-        this.newModuleGoalWizardState_MyMotivation()
         this.$emit('close')
-      },
-
-      myGoalBack() {
-        this.newModuleGoalWizardState_MyMotivation()
+        // save selected goal
       }
     }
   }
