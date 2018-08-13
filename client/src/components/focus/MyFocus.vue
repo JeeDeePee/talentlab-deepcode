@@ -12,7 +12,6 @@
             </v-flex>
           </v-layout>
         </v-container>
-        <FocusWizard :visible="showFocusDialog" @close="showFocusDialog=false"/>
       </v-card-text>
       <v-card-actions>
         <div v-if="userFocusCreated">
@@ -30,6 +29,7 @@
         Mein Fokus
       </v-btn>
     </div>
+    <FocusWizard :visible="showFocusDialog" @close="showFocusDialog=false"/>
   </v-card>
 </template>
 
