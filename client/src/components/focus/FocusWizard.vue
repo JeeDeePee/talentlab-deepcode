@@ -11,7 +11,7 @@
             Fokus erfasssen
           </v-breadcrumbs-item>
           <v-breadcrumbs-item :disabled="isMyFocus">
-            Mein Foukus
+            Mein Fokus
           </v-breadcrumbs-item>
 
         </v-breadcrumbs>
