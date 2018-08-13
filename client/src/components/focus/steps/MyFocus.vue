@@ -54,7 +54,6 @@
 
   export default {
     name: 'my-focus',
-
     props: ['items'],
 
     methods: {
@@ -62,14 +61,14 @@
         newUserFocus: 'newUserFocus'
       }),
       proceed: function (event) {
-        this.newUserFocus(this.selectedFocus)
+        this.newUserFocus(this.selectedFocus);
         this.$emit('proceed')
       }
     },
 
     computed: {
       ...mapGetters({
-          'selectedFocus': 'getUserFocus'
+          'selectedFocus': 'getUserFocusCache'
         }
       )
     }
