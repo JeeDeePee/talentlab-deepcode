@@ -14,7 +14,7 @@ button.v-btn:not(.v-btn--icon):not(.v-btn--flat) {
   padding-bottom: 32px;
   font-size: 15px;
   box-shadow: none !important;
-  background-color: transparent !important;
+  background-color: transparent;
   .v-btn__content {
     padding-bottom: 4px;
   }
