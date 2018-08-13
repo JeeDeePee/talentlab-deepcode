@@ -2,7 +2,7 @@
   <v-container class="learn-unit">
   <div>
     <div>
-      <v-breadcrumbs class="pl-0 mt-2">
+      <v-breadcrumbs class="pl-0">
         <v-icon slot="divider">chevron_right</v-icon>
         <v-breadcrumbs-item :key="unit.categorySlug">
           <router-link class="link" :to="{name: 'categories'}" exact router>
@@ -45,8 +45,8 @@
               <div slot="header">Details</div>
               <v-card>
                 <v-card-text class="pl-0">
-                <h2>Lernziele & Kompetenzen</h2>
-                <ul>
+                <h2 class="mb-1">Lernziele & Kompetenzen</h2>
+                <ul class="ml-0">
                   <li>Die richtige Einstellung und das nötige Handwerkszeug zur effektiven Verhandlungsführung</li>
                   <li>Strategien und Methoden, um optimale Verhandlungsergebnisse zu erzielen</li>
                   <li>Die Fähigkeit, auch dann Geschäfte abzuschließen, wenn die Verhandlungspartner weiterhin unterschiedliche Standpunkte vertreten</li>
@@ -55,16 +55,15 @@
                   <li>Gekonnter Umgang mit Kräfteungleichgewichten und schwierigen Persönlichkeiten</li>
                   <li>Verbesserte Fähigkeiten in puncto Einflussnahme, Werteinforderung und Einschätzung des Verhandlungspartners</li>
                   <li>Stärkere Führungsqualitäten durch Schulung des Verhandlungsgeschicks</li>
-                </ul>	
+                </ul>
 
-                <h2>Inhalte</h2>
+                <h2 class="mt-5 mb-1">Inhalte</h2>
                   Das gesamte Programm ist interaktiv gestaltet und legt großen Wert auf sofortige praktische Anwendbarkeit. Anhand interessanter Fallstudien aus dem Geschäftsalltag werden Methoden trainiert und besprochen. Sie erlernen und erproben Taktiken, um auch dann die Oberhand zu behalten, wenn Risiken und Unsicherheiten auftauchen. Darüber hinaus wird Ihnen mithilfe verschiedener Methoden vermittelt, wie Sie die Persönlichkeitstypen ihrer Verhandlungspartner erkennen und Ihre verbale und nonverbale Kommunikation effektiv einsetzen können.
 Besonders im Fokus stehen Lösungsansätze für schwierige Verhandlungssituationen, wenn z. B. Verhandlungspartner ablehnend reagieren, mit harten Bandagen verhandelt wird oder die Lage extrem angespannt ist. Durch Rollenspiele und praktische Übungen können Sie die erlernten Methoden sofort umsetzen und trainieren und gewinnen damit Vertrauen in Ihre Verhandlungsstärke.</v-card-text>
               </v-card>
             </v-expansion-panel-content>
           </v-expansion-panel>
         </div>
-        
       </div>
     </div>
   </v-container>

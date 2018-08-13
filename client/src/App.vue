@@ -39,7 +39,6 @@
       </v-slide-x-transition>
     </v-content>
   </v-app>
-
 </template>
 
 <script>
