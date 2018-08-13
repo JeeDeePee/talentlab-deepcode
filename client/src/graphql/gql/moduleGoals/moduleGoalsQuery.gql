@@ -1,0 +1,17 @@
+query ModuleGoalsQuery($slug: String!) {
+  modules(slug: $slug) {
+    edges {
+      node {
+        slug
+        goalSet {
+          edges {
+            node {
+              text
+              level
+            }
+          }
+        }
+      }
+    }
+  }
+}

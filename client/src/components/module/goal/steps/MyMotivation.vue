@@ -3,7 +3,13 @@
     <h2>Job-Context und Motivation</h2>
 
     <v-container fluid grid-list-xl>
-      Beschreibe deinen Job-Context und deine Motivation
+      <p>
+        Beschreibe deinen Job-Context und deine Motivation
+      </p>
+
+      <p>
+        Schritt 1: Zunächst wird – zuhanden Besprechung mit dem Learning Advisor – eine kurze Beschreibung des Job-Context und der Motivation zur Buchung des Containers beim PARTICIPANT abgeholt.
+      </p>
     </v-container>
 
     <v-btn @click="$emit('back')">Zurück</v-btn>

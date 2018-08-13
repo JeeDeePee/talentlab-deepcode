@@ -1,0 +1,47 @@
+query DiscoverModuleQuery($slug: String!) {
+  xAllModules: modules {
+    edges {
+      node {
+        id
+        slug
+      }
+    }
+  }
+
+  modules(slug: $slug) {
+    edges {
+      node {
+        title
+        slug
+        tools
+        resources
+        description
+        heroImage
+        skill
+        videoId
+        videoDescription
+        videoThumbnailData
+        category
+        goalSet {
+          edges {
+            node {
+              text
+              level
+            }
+          }
+        }
+        units {
+          edges {
+            node {
+              title
+              teaser
+              type
+              count
+              duration
+            }
+          }
+        }
+      }
+    }
+  }
+}
