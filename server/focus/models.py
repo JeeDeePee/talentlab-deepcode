@@ -20,7 +20,7 @@ class CompetenceEntry(TimeStampedModel):
         return 'CompetenceEntry {} - {} - {}'.format(self.competence, self.current_level, self.next_evaluation)
 
 
-class Focus(models.Model):
+class Focus(TimeStampedModel):
     class Meta:
         verbose_name = 'Fokus'
         verbose_name_plural = 'Fokus'

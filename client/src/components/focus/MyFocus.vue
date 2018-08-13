@@ -1,7 +1,7 @@
 <template>
   <v-card>
-    <v-card-text>
-      <div v-if="userFocus.length > 0">
+    <div v-if="userFocus.length > 0">
+      <v-card-text>
         <v-container fluid grid-list-md>
           <v-layout row wrap>
             <v-flex xs12 sm4 pb-3 v-for="(item, index) in userFocus" :key="index">
@@ -12,15 +12,24 @@
             </v-flex>
           </v-layout>
         </v-container>
-      </div>
-
-      <v-btn class="hidden-sm-and-down float-r" @click.stop="showFocusDialog=true">
+        <FocusWizard :visible="showFocusDialog" @close="showFocusDialog=false"/>
+      </v-card-text>
+      <v-card-actions>
+        <div v-if="userFocusCreated">
+          {{userFocusCreated|formatDate}}
+        </div>
+        <v-btn class="float-r" @click.stop="showFocusDialog=true">
+          <v-icon>add</v-icon>
+          Neuen Fokus erstellen
+        </v-btn>
+      </v-card-actions>
+    </div>
+    <div v-else>
+      <v-btn class="float-r" @click.stop="showFocusDialog=true">
         <v-icon>add</v-icon>
         Mein Fokus
       </v-btn>
-
-      <FocusWizard :visible="showFocusDialog" @close="showFocusDialog=false"/>
-    </v-card-text>
+    </div>
   </v-card>
 </template>
 
@@ -40,7 +49,8 @@
     },
     computed: {
       ...mapGetters({
-        userFocus: 'getUserFocus'
+        userFocus: 'getUserFocus',
+        userFocusCreated: 'getUserFocusCreated'
       })
     },
     created() {
@@ -52,11 +62,8 @@
 <style lang="scss" scoped>
   @import "../../styles/var";
 
-  .card {
-    border-radius: 11px;
+  .v-card__text {
+    padding: 0;
   }
 
-  h3 {
-    font-size: 20px;
-  }
 </style>

@@ -1,0 +1,8 @@
+.v-card__actions {
+  padding: 8px 16px;
+  border-top: 1px solid $grey-2;
+
+  .v-btn + .v-btn, div + .v-btn {
+    margin-left: 16px;
+  }
+}

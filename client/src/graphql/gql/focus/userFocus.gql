@@ -2,6 +2,7 @@ query FocusQuery {
   userFocus(active: true) {
     edges {
       node {
+        created
         competenceentrySet {
           edges {
             node {
