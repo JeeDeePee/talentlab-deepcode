@@ -36,9 +36,9 @@
 
     <div class="container-process-bg">
       <v-container grid-list-md>
-        <v-btn class="button item2" @click.stop="showModuleGoalDialog=true">Zieldefinition</v-btn>
+        <v-btn class="button item2" @click.stop="showModuleGoalDialog=true">Ziele</v-btn>
+        <v-btn class="button item2">Learnings</v-btn>
         <v-btn class="button item2">Action Plan</v-btn>
-        <v-btn class="button item2">Bewertung</v-btn>
       </v-container>
 
       <ModuleGoalWizard :visible="showModuleGoalDialog" @close="showModuleGoalDialog=false" :module="module"/>
