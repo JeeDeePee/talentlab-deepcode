@@ -72,7 +72,8 @@
 
     methods: {
       ...mapActions({
-        newFocusWizardState: 'newFocusWizardState'
+        newFocusWizardState: 'newFocusWizardState',
+        storeFocusCompetences: 'storeFocusCompetences'
       }),
       determineFocusBack() {
         this.newFocusWizardState('determine');
@@ -83,7 +84,7 @@
       },
       myFocusProceed() {
         let self = this;
-        this.$store.dispatch('storeFocusCompetences').then(function () {
+        this.storeFocusCompetences().then(function () {
           self.newFocusWizardState('determine');
           self.$emit('close')
         });
