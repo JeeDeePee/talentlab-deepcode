@@ -4,6 +4,7 @@ query FocusCompetencesQuery {
       node {
         slug
         title
+        teaser
         competenceSet {
           edges {
             node {
