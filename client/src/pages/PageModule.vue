@@ -95,23 +95,26 @@
         manual: true,
         result(data, loading, networkStatus) {
           if (!loading) {
-            // debugger
-            let _module = this.$lodash.clone(data.data.modules.edges[0].node)
+            if (data.data.modules) {
+              let _module = this.$lodash.clone(data.data.modules.edges[0].node)
 
-            _module.tools = JSON.parse(_module.tools)
-            _module.resources = JSON.parse(_module.resources)
-            _module.category = JSON.parse(_module.category)
-            _module.videoThumbnailData = JSON.parse(_module.videoThumbnailData)
+              _module.tools = JSON.parse(_module.tools)
+              _module.resources = JSON.parse(_module.resources)
+              _module.category = JSON.parse(_module.category)
+              _module.videoThumbnailData = JSON.parse(_module.videoThumbnailData)
 
-            this.module = _module
-            document.title = _module.title
+              this.module = _module
+              document.title = _module.title
 
-            // TODO: code review
-            let bookedEntries = data.data.allModulesProgress.edges
-            this.moduleBooked = bookedEntries && bookedEntries.length > 0
-            console.log(`Module Booked: ${this.moduleBooked}`)
+              // TODO: code review
+              let bookedEntries = data.data.allModulesProgress.edges
+              this.moduleBooked = bookedEntries && bookedEntries.length > 0
+              console.log(`Module Booked: ${this.moduleBooked}`)
 
-            this.units = data.data.userModuleUnits.edges.map(entry => ({'status': entry.node.status, ...entry.node.unit}))
+              this.units = data.data.userModuleUnits.edges.map(entry => ({'status': entry.node.status, ...entry.node.unit}))
+            } else {
+              console.log('Data: data.data.modules not available..')
+            }
           }
         }
       })
