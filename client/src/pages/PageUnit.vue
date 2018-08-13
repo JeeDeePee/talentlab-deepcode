@@ -28,23 +28,15 @@
         <v-btn class="mb-4 ml-0 mr-3 mt-4">
           <v-icon class="pr-2">school</v-icon>Kurs
         </v-btn>
-<<<<<<< HEAD
-        <v-icon class="ml-3">event_note</v-icon> {{unit.count}}
-        <v-icon class="ml-3">schedule</v-icon> {{unit.duration}}
-        <v-icon class="ml-3">attach_money</v-icon> {{unit.price}}
 
-        <!--<v-btn class="mb-4 mt-0 " :to="{ name: 'fokus'}" exact router>-->
-        <!--<v-icon class="pr-2">share</v-icon>Share-->
-        <!--</v-btn>-->
-=======
         <div class="grey--text floating position-top">
           <v-icon class="ml-3">event_note</v-icon> {{unit.count}}
           <v-icon class="ml-3"> schedule</v-icon> {{unit.duration}}
-               
+
           <v-btn class="mb-4 mt-0 " :to="{ name: 'fokus'}" exact router>
             <v-icon class="pr-2">share</v-icon>
             Share
-          </v-btn> 
+          </v-btn>
         </div>
 
           <v-expansion-panel focusable>
@@ -55,7 +47,7 @@
               <div slot="header">Details anzeigen</div>
               <v-card>
                 <v-card-text class="grey lighten-3">
-                  
+
                   Inhalte
                   Das gesamte Programm ist interaktiv gestaltet und legt großen Wert auf sofortige praktische Anwendbarkeit. Anhand interessanter Fallstudien aus dem Geschäftsalltag werden Methoden trainiert und besprochen. Sie erlernen und erproben Taktiken, um auch dann die Oberhand zu behalten, wenn Risiken und Unsicherheiten auftauchen. Darüber hinaus wird Ihnen mithilfe verschiedener Methoden vermittelt, wie Sie die Persönlichkeitstypen ihrer Verhandlungspartner erkennen und Ihre verbale und nonverbale Kommunikation effektiv einsetzen können.
 Besonders im Fokus stehen Lösungsansätze für schwierige Verhandlungssituationen, wenn z. B. Verhandlungspartner ablehnend reagieren, mit harten Bandagen verhandelt wird oder die Lage extrem angespannt ist. Durch Rollenspiele und praktische Übungen können Sie die erlernten Methoden sofort umsetzen und trainieren und gewinnen damit Vertrauen in Ihre Verhandlungsstärke.</v-card-text>
@@ -63,7 +55,6 @@ Besonders im Fokus stehen Lösungsansätze für schwierige Verhandlungssituation
             </v-expansion-panel-content>
           </v-expansion-panel>
 
->>>>>>> added expansion panel for learnunit detail page
       </div>
     </div>
   </div>
