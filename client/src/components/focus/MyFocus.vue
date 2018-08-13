@@ -19,11 +19,6 @@
         Mein Fokus
       </v-btn>
 
-      <v-btn class="hidden-sm-and-down float-r" @click.stop="load()">
-        <v-icon>add</v-icon>
-        Get Fokus
-      </v-btn>
-
       <FocusWizard :visible="showFocusDialog" @close="showFocusDialog=false"/>
     </v-card-text>
   </v-card>
@@ -40,7 +35,7 @@
     },
     data() {
       return {
-        showFocusDialog: false,
+        showFocusDialog: false
       }
     },
     computed: {
@@ -50,11 +45,6 @@
     },
     created() {
       this.$store.dispatch('fetchUserFocus')
-    },
-    methods: {
-      load: function () {
-        this.$store.dispatch('fetchUserFocus')
-      }
     }
   }
 </script>

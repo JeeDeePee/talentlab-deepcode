@@ -24,7 +24,6 @@ class CreateFocus(relay.ClientIDMutation):
 
     @classmethod
     def mutate_and_get_payload(cls, root, info, **input):
-        print('CreateFocus')
         user = info.context.user
         params = input.get('input')
 

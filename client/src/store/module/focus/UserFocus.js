@@ -22,7 +22,6 @@ export default {
         let result = response.data.userFocus.edges.reduce(
           (a, b) => a.concat(b.node.competenceentrySet.edges.map(x => x.node)), []
         );
-        console.info(result)
         commit('setUserFocus', result);
       }
     }

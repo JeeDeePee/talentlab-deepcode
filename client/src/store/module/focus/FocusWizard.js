@@ -78,8 +78,12 @@ export default {
                 }
             }
         }
-      })
-      this.dispatch('fetchUserFocus');
+      });
+      // @todo what a fucking hack :(
+      let self = this;
+      setTimeout(function () {
+        self.dispatch('fetchUserFocus');
+      }, 1000);
     },
     newFocusWizardState({state, commit}, newState) {
       commit('setFocusWizardState', newState)
