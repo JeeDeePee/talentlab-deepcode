@@ -44,7 +44,7 @@
 
     computed: {
       ...mapGetters({
-          'userFocusSlugs': 'getUserFocusSlugs',
+          'userFocusSlugs': 'getUserFocusCacheSlugs',
           'focusCompetences': 'getFocusCompetences'
         }
       ),
