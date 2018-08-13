@@ -100,7 +100,7 @@ data = [
         ]},
     {
         'title': 'Mastering Relations',
-        'competences': ['Kooperationsfähigkeit', 'Networking', 'Konfliktfähigkeit', 'Verhandlungsfähigkeit', 'Kommunikation'],
+        'competences': ['Teamfähigkeit', 'Networking', 'Konfliktfähigkeit', 'Verhandlungsfähigkeit', 'Kommunikationsfähigkeit'],
         'modules': [
             {
                 'title': 'Digital Communication & Virtual Collaboration',
