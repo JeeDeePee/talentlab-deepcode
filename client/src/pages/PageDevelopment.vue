@@ -1,16 +1,9 @@
 <template>
   <v-container class="mt-3">
     <h2 class="grey--text mb-3">Meine Ziele</h2>
-    <Goal class="mb-4"/>
+    <MyFocus class="mb-4"/>
 
     <div class="clearfix">
-      <v-btn class="hidden-sm-and-down float-r" @click.stop="showFocusDialog=true">
-        <v-icon>add</v-icon>
-        Mein Fokus
-      </v-btn>
-
-      <FocusWizard :visible="showFocusDialog" @close="showFocusDialog=false"/>
-
       <v-btn class="hidden-sm-and-down float-r" :to="{ name: 'categories'}" exact router>
         <v-icon>add</v-icon>
         Lernmodule auswählen
@@ -18,10 +11,6 @@
 
       <h2 class="grey--text mb-3">Meine Lernmodule</h2>
 
-      <v-btn class="mb-4 ml-0 mt-0 hidden-md-and-up" :to="{ name: 'categories'}" exact router>
-        <v-icon>add</v-icon>
-        Mein Fokus
-      </v-btn>
       <v-btn class="mb-4 ml-0 mt-0 hidden-md-and-up" @click.stop="showFocusDialog=true">
         <v-icon>add</v-icon>
         Lernmodule auswählen
@@ -50,25 +39,22 @@
 
   import {mapActions} from 'vuex'
 
-  import Goal from '@/components/development/Goal'
+  import MyFocus from '@/components/focus/MyFocus.vue'
   import ModuleProgressListItem from '@/components/development/ModuleProgressListItem'
   import Recomendation from '@/components/development/Recomendation'
-  import FocusWizard from '@/components/focus/FocusWizard'
 
   export default {
     name: 'page-development',
 
     components: {
-      Goal,
+      MyFocus,
       ModuleProgressListItem,
-      Recomendation,
-      FocusWizard
+      Recomendation
     },
 
     data() {
       return {
         loading: true,
-        showFocusDialog: false,
         userProgress: {
           usermoduleprogressSet: {
             edges: []

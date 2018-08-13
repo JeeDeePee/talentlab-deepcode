@@ -1,13 +1,7 @@
-query FocusQuery($username: String!) {
-  allFocus(user_Username: $username, active: true) {
+query FocusQuery {
+  userFocus(active: true) {
     edges {
       node {
-        id
-        user {
-          id
-          username
-        }
-        active
         competenceentrySet {
           edges {
             node {

@@ -75,16 +75,18 @@
         newFocusWizardState: 'newFocusWizardState'
       }),
       determineFocusBack() {
-        this.newFocusWizardState('determine')
+        this.newFocusWizardState('determine');
         this.$emit('close')
       },
       determineFocusProceed() {
         this.newFocusWizardState('my-focus')
       },
       myFocusProceed() {
-        this.$store.dispatch('storeFocusCompetences')
-        this.newFocusWizardState('determine')
-        this.$emit('close')
+        let self = this;
+        this.$store.dispatch('storeFocusCompetences').then(function () {
+          self.newFocusWizardState('determine');
+          self.$emit('close')
+        });
       },
       myFocusBack() {
         this.newFocusWizardState('determine')

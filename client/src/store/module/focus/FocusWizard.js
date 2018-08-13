@@ -25,13 +25,13 @@ export default {
     setFocusWizardState(state, focuslWizardState) {
       state.focuslWizardState = focuslWizardState
     },
-    setUserFocusBySlugs(state, userFocus) {
+    setUserFocusCacheBySlugs(state, userFocus) {
       state.focusCache = state.focusCache.map(x => {
         x.selected = userFocus.indexOf(x.slug) > -1
         return x
       })
     },
-    setUserFocus(state, userFocus) {
+    setUserFocusCache(state, userFocus) {
       for (const focus of userFocus) {
         state.focusCache[state.focusCache.findIndex(x => x.slug === focus.slug)] = {
           ...state.focusCache[focus.slug], ...focus
@@ -61,9 +61,9 @@ export default {
       );
       commit('setFocusCompetences', items);
     },
-    async storeFocusCompetences({state, commit}) {
+    storeFocusCompetences({state, commit}) {
       // @todo error handling
-      await apolloClient.mutate({
+      apolloClient.mutate({
         mutation: CREATE_FOCUS_COMPETENCE_QUERY,
         variables: {
           'input':
@@ -78,23 +78,28 @@ export default {
                 }
             }
         }
-      })
+      });
+      // @todo what a fucking hack :(
+      let self = this;
+      setTimeout(function () {
+        self.dispatch('fetchUserFocus');
+      }, 1000);
     },
     newFocusWizardState({state, commit}, newState) {
       commit('setFocusWizardState', newState)
     },
     newUserFocusBySlugs({state, commit}, focus) {
-      commit('setUserFocusBySlugs', focus)
+      commit('setUserFocusCacheBySlugs', focus)
     },
     newUserFocus({state, commit}, focus) {
-      commit('setUserFocus', focus)
+      commit('setUserFocusCache', focus)
     }
   },
 
   getters: {
     getFocusCompetences: state => state.focusCompetences,
-    getUserFocusSlugs: state => state.focusCache.filter(x => x.selected).map(x => x.slug),
-    getUserFocus: state => state.focusCache.filter(x => x.selected),
+    getUserFocusCacheSlugs: state => state.focusCache.filter(x => x.selected).map(x => x.slug),
+    getUserFocusCache: state => state.focusCache.filter(x => x.selected),
     isMyFocus: state => state.focuslWizardState === 'my-focus',
     isDetermineFocus: state => state.focuslWizardState === 'determine'
   }

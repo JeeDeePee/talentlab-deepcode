@@ -1,8 +1,10 @@
+import django_filters
 import graphene
 from graphene import relay
 from graphene_django import DjangoObjectType
 from graphene_django.filter import DjangoFilterConnectionField
 
+from core.middleware import get_current_user
 from focus.models import Competence, CompetenceEntry, Focus
 
 
@@ -24,15 +26,24 @@ class FocusNode(DjangoObjectType):
 
     class Meta:
         model = Focus
-        filter_fields = ['user__username', 'active']
         interfaces = (relay.Node,)
 
     def resolve_pk(self, *args, **kwargs):
         return self.id
 
 
-class FocusQuery(object):
-    competences = DjangoFilterConnectionField(CompetenceNode)
+class UserFocusFilter(django_filters.FilterSet):
+    class Meta:
+        model = Focus
+        fields = ['active']
 
-    focus = relay.Node.Field(FocusNode)
-    all_focus = DjangoFilterConnectionField(FocusNode)
+    @property
+    def qs(self):
+        user = get_current_user()
+        if not user:
+            return Focus.objects.none()
+        return super(UserFocusFilter, self).qs.filter(user=user)
+
+
+class UserFocusQuery(object):
+    user_focus = DjangoFilterConnectionField(FocusNode, filterset_class=UserFocusFilter)
