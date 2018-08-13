@@ -20,6 +20,7 @@ from progress.models import UserModuleProgress
 data = [
     {
         'title': 'Mastering Complexity',
+        'teaser': 'Gewinne Leichtigkeit im Umgang mit Veränderungen',
         'competences': ['Vernetzes Denken', 'Agilität', 'Innovationsfähigkeit', 'Entscheidungsfähigkeit'],
         'modules': [
             {
@@ -60,6 +61,7 @@ data = [
         ]},
     {
         'title': 'Growing as a Leader',
+        'teaser': 'Entfalte Dein Potenzial als Führungspersönlichkeit',
         'competences': ['Leadership', 'Management', 'Unternehmerisches Handeln'],
         'modules': [
             {
@@ -100,6 +102,7 @@ data = [
         ]},
     {
         'title': 'Mastering Relations',
+        'teaser': 'Lerne Beziehungen zielgerichtet zu gestalten',
         'competences': ['Teamfähigkeit', 'Networking', 'Konfliktfähigkeit', 'Verhandlungsfähigkeit', 'Kommunikationsfähigkeit'],
         'modules': [
             {
@@ -285,6 +288,7 @@ class Command(BaseCommand):
             category = CategoryFactory.create(
                 parent=site.root_page,
                 title=category_data['title'],
+                teaser=category_data['teaser'],
                 icon__file=category_images[idx % len(category_images)]
             )
 

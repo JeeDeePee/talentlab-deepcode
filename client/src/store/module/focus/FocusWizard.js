@@ -48,7 +48,7 @@ export default {
 
       let items = response.data.categories.edges.map(category => ({
           title: category.node.title,
-          teaser: 'Gewinne Leichtigkeit im Umgang mit Veränderungen',
+          teaser: category.node.teaser,
           competences: category.node.competenceSet.edges.map(
             function (compentence) {
               commit('addToFocusCache', compentence.node);

@@ -9,6 +9,7 @@ class Category(Page):
         verbose_name = 'Kategorie'
         verbose_name_plural = 'Kategorien'
 
+    teaser = models.TextField(default='')
     icon = models.ForeignKey(
         'wagtailimages.Image',
         null=True,
@@ -21,6 +22,7 @@ class Category(Page):
 
     content_panels = [
         FieldPanel('title', classname="full title"),
+        FieldPanel('teaser'),
         ImageChooserPanel('icon')
     ]
     settings_panels = [
