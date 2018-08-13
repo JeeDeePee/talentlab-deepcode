@@ -40,7 +40,17 @@
 
   export default {
     name: 'module-goal-wizard',
-    props: ['visible'],
+
+    props: {
+      visible: {
+        required: true,
+        type: Boolean
+      },
+      module: {
+        required: true,
+        type: Object
+      }
+    },
 
     components: {
       MyMotivation,
@@ -49,7 +59,6 @@
 
     data() {
       return {
-        module: null
       }
     },
 
@@ -68,6 +77,10 @@
           }
         }
       }
+    },
+
+    created() {
+      this.$store.dispatch('fetchModuleGoals', { moduleSlug: this.module.slug })
     },
 
     methods: {

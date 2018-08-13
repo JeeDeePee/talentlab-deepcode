@@ -41,7 +41,7 @@
         <v-btn class="button item2">Bewertung</v-btn>
       </v-container>
 
-      <ModuleGoalWizard :visible="showModuleGoalDialog" @close="showModuleGoalDialog=false"/>
+      <ModuleGoalWizard :visible="showModuleGoalDialog" @close="showModuleGoalDialog=false" :module="module"/>
 
     </div>
 

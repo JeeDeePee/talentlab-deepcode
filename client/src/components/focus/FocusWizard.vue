@@ -48,10 +48,6 @@
       DetermineFocus
     },
 
-    created() {
-      this.$store.dispatch('fetchFocusCompetences')
-    },
-
     computed: {
       ...mapGetters({
         userFocusState: 'userFocusState',
@@ -68,6 +64,10 @@
           }
         }
       }
+    },
+
+    created() {
+      this.$store.dispatch('fetchFocusCompetences')
     },
 
     methods: {
