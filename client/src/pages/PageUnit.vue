@@ -103,9 +103,9 @@ Besonders im Fokus stehen Lösungsansätze für schwierige Verhandlungssituation
           }
         },
         manual: true,
-        result(data, loading, networkStatus) {
+        result({data, loading, networkStatus}) {
           if (!loading) {
-            this.unit = data.data.unit.edges[0].node
+            this.unit = data.unit.edges[0].node
           }
         }
       }

@@ -43,10 +43,10 @@
         },
         fetchPolicy: 'network-only',
         manual: true,
-        result(data, loading, networkStatus) {
+        result({data, loading, networkStatus}) {
           if (!loading) {
-            this.categories = data.data.categories.edges.map(entry => entry.node)
-            this.modules = data.data.userModules.edges.map(entry => ({'status': entry.node.status, ...entry.node.module}))
+            this.categories = data.categories.edges.map(entry => entry.node)
+            this.modules = data.userModules.edges.map(entry => ({'status': entry.node.status, ...entry.node.module}))
           }
         }
       }

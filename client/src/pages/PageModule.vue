@@ -93,10 +93,10 @@
         },
         fetchPolicy: 'network-only',
         manual: true,
-        result(data, loading, networkStatus) {
+        result({data, loading, networkStatus}) {
           if (!loading) {
-            if (data.data.modules) {
-              let _module = this.$lodash.clone(data.data.modules.edges[0].node)
+            if (data.modules) {
+              let _module = this.$lodash.clone(data.modules.edges[0].node)
 
               _module.tools = JSON.parse(_module.tools)
               _module.resources = JSON.parse(_module.resources)
@@ -107,13 +107,13 @@
               document.title = _module.title
 
               // TODO: code review
-              let bookedEntries = data.data.allModulesProgress.edges
+              let bookedEntries = data.allModulesProgress.edges
               this.moduleBooked = bookedEntries && bookedEntries.length > 0
               console.log(`Module Booked: ${this.moduleBooked}`)
 
-              this.units = data.data.userModuleUnits.edges.map(entry => ({'status': entry.node.status, ...entry.node.unit}))
+              this.units = data.userModuleUnits.edges.map(entry => ({'status': entry.node.status, ...entry.node.unit}))
             } else {
-              console.log('Data: data.data.modules not available..')
+              console.log('Data: data.modules not available..')
             }
           }
         }

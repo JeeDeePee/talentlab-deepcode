@@ -3,7 +3,6 @@ from factory import SubFactory
 from factory.fuzzy import FuzzyInteger
 
 from focus.models import Competence, CompetenceEntry, Focus
-from modules.factories import CategoryFactory
 from user.models import User
 
 
