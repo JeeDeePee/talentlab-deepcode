@@ -242,6 +242,10 @@ class Command(BaseCommand):
         if not os.path.exists(path):
             os.makedirs(path)
 
+    def filter_data(self, input_data, filter_keyword):
+        filters = [filter_keyword] if not isinstance(filter_keyword, list) else filter_keyword
+        return {k: v for (k, v) in input_data.items() if not (k in filters)}
+
     def handle(self, *args, **options):
         with connection.cursor() as cursor:
             cursor.execute("DROP SCHEMA IF EXISTS public CASCADE;")
@@ -306,7 +310,7 @@ class Command(BaseCommand):
                 module = ModuleFactory.create(
                     parent=category,
                     hero_image__file=module_images[i % len(module_images)],
-                    **{k: v for (k, v) in module_data.items() if not (k == 'units' or k == 'goals')}
+                    **self.filter_data(module_data, ['units', 'goals'])
                 )
 
                 default_units = [{} for i in range(0, random.randint(3, 5))]
