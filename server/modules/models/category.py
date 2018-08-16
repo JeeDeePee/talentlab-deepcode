@@ -1,10 +1,11 @@
 from django.db import models
 from wagtail.admin.edit_handlers import FieldPanel, TabbedInterface, ObjectList
-from wagtail.core.models import Page
 from wagtail.images.edit_handlers import ImageChooserPanel
 
+from core.wagtail_utils import StrictHierarchyPage
 
-class Category(Page):
+
+class Category(StrictHierarchyPage):
     class Meta:
         verbose_name = 'Kategorie'
         verbose_name_plural = 'Kategorien'
@@ -34,6 +35,3 @@ class Category(Page):
     ])
 
     template = 'generic_page.html'
-
-    def get_child_ids(self):
-        return self.get_children().values_list('id', flat=True)

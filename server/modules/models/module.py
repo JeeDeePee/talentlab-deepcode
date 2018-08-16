@@ -8,17 +8,17 @@ from django.dispatch import receiver
 from wagtail.admin.edit_handlers import FieldPanel, StreamFieldPanel, MultiFieldPanel, FieldRowPanel, TabbedInterface, \
     ObjectList
 from wagtail.core.fields import StreamField, RichTextField
-from wagtail.core.models import Page
 from wagtail.documents.models import Document
 from wagtail.images.edit_handlers import ImageChooserPanel
 from wagtail.images.models import Image
 
+from core.wagtail_utils import StrictHierarchyPage
 from modules.blocks import LinkBlock, DocumentBlock, DEFAULT_RICH_TEXT_FEATURES
 
 logger = logging.getLogger(__name__)
 
 
-class Module(Page):
+class Module(StrictHierarchyPage):
     class Meta:
         verbose_name = 'Lernmodul'
         verbose_name_plural = 'Lernmodule'

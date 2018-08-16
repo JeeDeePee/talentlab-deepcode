@@ -1,4 +1,17 @@
 from django.contrib import admin
+from wagtail.core.models import Page
+
+
+class StrictHierarchyPage(Page):
+    class Meta:
+        abstract = True
+
+    def get_child_ids(self):
+        return self.get_children().values_list('id', flat=True)
+
+    @classmethod
+    def get_by_parent(cls, parent):
+        return cls.objects.filter(id__in=parent.get_child_ids()).live()
 
 
 def wagtail_parent_filter(parent_cls, child_cls):

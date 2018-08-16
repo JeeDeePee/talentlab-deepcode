@@ -1,11 +1,11 @@
 from django.db import models
 from wagtail.admin.edit_handlers import FieldPanel, MultiFieldPanel, FieldRowPanel, TabbedInterface, ObjectList
-from wagtail.core.models import Page
 
+from core.wagtail_utils import StrictHierarchyPage
 from modules.models.competence import Competence
 
 
-class Unit(Page):
+class Unit(StrictHierarchyPage):
     class Meta:
         verbose_name = 'Lernangebot'
         verbose_name_plural = 'Lernangebote'
