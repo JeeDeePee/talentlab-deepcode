@@ -88,10 +88,6 @@ class GoalFactory(factory.django.DjangoModelFactory):
     level = factory.LazyAttribute(lambda x: fake.int())
     text = factory.LazyAttribute(lambda x: fake.sentence(nb_words=random.randint(8, 12)))
 
-    @classmethod
-    def create(cls, **kwargs):
-        cls._generate(CREATE_STRATEGY, kwargs)
-
 
 class UnitFactory(BasePageFactory):
     class Meta:

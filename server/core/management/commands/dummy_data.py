@@ -14,7 +14,7 @@ from wagtail.core.models import Page
 from core.factories import UserFactory, fake_title
 from focus.factories import CompetenceEntryFactory, FocusFactory
 from modules.factories import CategoryFactory, ModuleFactory, UnitFactory, GoalFactory, CompetenceFactory
-from progress.factories import UserModuleProgressFactory, UserUnitProgressFactory
+from progress.factories import UserModuleProgressFactory, UserUnitProgressFactory, UserGoalFactory
 from progress.models import UserModuleProgress
 
 data = [
@@ -334,3 +334,6 @@ class Command(BaseCommand):
         for user in all_users:
             focus = FocusFactory.create(user=user)
             CompetenceEntryFactory.create_batch(size=10, focus=focus)
+
+        # create user goals for users and goals
+        UserGoalFactory.create_batch(size=20)

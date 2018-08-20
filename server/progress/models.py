@@ -14,7 +14,7 @@ class UserModuleProgress(TimeStampedModel):
     module = models.ForeignKey('modules.Module', null=True, on_delete=models.SET_NULL)
 
     def __str__(self):
-        return '{} - {}'.format(self.user, self.module)
+        return 'UserModuleProgress {} - {}'.format(self.user, self.module)
 
 
 class UserUnitProgress(TimeStampedModel):
@@ -26,4 +26,19 @@ class UserUnitProgress(TimeStampedModel):
     unit = models.ForeignKey('modules.Unit', null=True, on_delete=models.SET_NULL)
 
     def __str__(self):
-        return '{} - {}'.format(self.module_progress, self.unit)
+        return 'UserUnitProgress {} - {}'.format(self.module_progress, self.unit)
+
+
+class UserGoal(TimeStampedModel):
+    class Meta:
+        verbose_name = 'UserGoal'
+        verbose_name_plural = 'UserGoals'
+
+    user = models.ForeignKey('user.User', null=True, on_delete=models.CASCADE)
+    goal = models.ForeignKey('modules.Goal', null=False, on_delete=models.CASCADE)
+
+    completed = models.BooleanField(null=False, default=False)
+    custom_text = models.TextField(null=True, blank=True)
+
+    def __str__(self):
+        return 'UserGoal {} - {}'.format(self.user, self.goal)
