@@ -16,6 +16,7 @@ query ModuleQuery($slug: String!, $username: String!) {
         goalSet {
           edges {
             node {
+              id
               text
               level
             }

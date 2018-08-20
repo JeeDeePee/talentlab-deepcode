@@ -33,10 +33,10 @@
             <v-icon class="ml-3">event_note</v-icon> {{unit.count}}
             <v-icon class="ml-3"> schedule</v-icon> {{unit.duration}}
 
-            <v-btn class="mb-4 ml-3 mr-3 mt-4" :to="{ name: 'fokus'}" exact router>
+            <!--<v-btn class="mb-4 ml-3 mr-3 mt-4" :to="{ name: 'fokus'}" exact router>-->
               <v-icon class="pr-2">share</v-icon>
-              Share
-            </v-btn>
+              <!--Share-->
+            <!--</v-btn>-->
         </div>
 
         <div class="panel-style mt-5 mb-5 pl-0">

@@ -21,8 +21,8 @@ function getRidOfEdges(collection) {
   if (typeof collection === 'object') {
     let newObj = {}
     for (const k in collection) {
-      if (k === 'edges' || k === 'node') {
-        newObj = getRidOfEdges(collection[k])
+      if (k === 'edges') {
+        return collection.edges.map(edge => getRidOfEdges(edge.node));
       } else {
         newObj[k] = getRidOfEdges(collection[k])
         delete newObj[k]['__typename']
