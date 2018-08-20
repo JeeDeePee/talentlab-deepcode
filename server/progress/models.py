@@ -38,7 +38,7 @@ class UserGoal(TimeStampedModel):
     goal = models.ForeignKey('modules.Goal', null=False, on_delete=models.CASCADE)
 
     completed = models.BooleanField(null=False, default=False)
-    custom_text = models.TextField(null=True, blank=True)
+    custom_text = models.TextField(null=True, blank=True, default=None)
 
     def __str__(self):
         return 'UserGoal {} - {}'.format(self.user, self.goal)

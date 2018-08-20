@@ -2,6 +2,7 @@ from graphene import relay, ObjectType
 from graphene_django import DjangoObjectType
 from graphene_django.filter import DjangoFilterConnectionField
 
+from progress.schema.goal import UserGoalNode
 from user.models import User
 
 
@@ -15,3 +16,6 @@ class UserNode(DjangoObjectType):
 class UserQuery(object):
     user_progress = relay.Node.Field(UserNode)
     all_users = DjangoFilterConnectionField(UserNode)
+
+    # TODO: remove
+    user_goals = DjangoFilterConnectionField(UserGoalNode)
