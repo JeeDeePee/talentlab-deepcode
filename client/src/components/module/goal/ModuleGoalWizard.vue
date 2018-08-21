@@ -22,9 +22,6 @@
 
 <script>
   import DEFINE_USER_GOAL from '@/graphql/gql/moduleGoals/defineUserGoal.gql'
-
-  import {mapActions} from 'vuex'
-
   import MyGoal from '@/components/module/goal/steps/MyGoal'
 
   export default {
@@ -45,11 +42,6 @@
       MyGoal
     },
 
-    data() {
-      return {
-      }
-    },
-
     computed: {
       show: {
         get() {
@@ -68,11 +60,7 @@
     },
 
     methods: {
-      ...mapActions({
-      }),
-
       myGoalBack() {
-        // don't store goal, only close wizard
         this.$emit('close')
       },
 
@@ -81,7 +69,6 @@
         this.storeMyGoal(this.module.slug, goalLevel)
       },
 
-      // Mutation
       storeMyGoal(moduleSlug, goalLevel) {
         console.log(`storeMyGoal(moduleSlug: ${moduleSlug}, goalLevel: ${goalLevel})`)
 

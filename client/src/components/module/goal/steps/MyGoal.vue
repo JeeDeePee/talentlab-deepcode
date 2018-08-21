@@ -6,15 +6,14 @@
       Wähle das Ziel, das am besten zu dir passt.
     </v-container>
 
-    <v-radio-group v-model="selectedGoal" column>
+    <v-radio-group v-model="selectedGoal.level" column>
       <v-radio v-for="goal in moduleGoals" :key="goal.id" :label="goal.text" :value="goal.level">{{goal.text}}</v-radio>
     </v-radio-group>
 
-    <!--<div v-for="goal in moduleGoals" :key="goal.id">{{goal.text}}</div>-->
     <p></p>
 
     <v-btn @click="$emit('back')">Zurück</v-btn>
-    <v-btn @click="$emit('proceed', selectedGoal)">Ziel speichern</v-btn>
+    <v-btn @click="$emit('proceed', selectedGoal.level)">Ziel speichern</v-btn>
   </div>
 </template>
 
@@ -24,19 +23,11 @@
   export default {
     name: 'my-goal',
 
-    data() {
-      return {
-        selectedGoal: -1
-      }
-    },
-
     computed: {
       ...mapGetters({
-        moduleGoals: 'getModuleGoals'
+        moduleGoals: 'getModuleGoals',
+        selectedGoal: 'getCurrentGoal'
       })
-    },
-
-    created() {
     }
   }
 </script>

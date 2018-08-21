@@ -1,4 +1,20 @@
-query ModuleGoalsQuery($slug: String!) {
+query ModuleGoalsQuery($slug:String!) {
+  allUserGoals(goal_Module_Slug: $slug) {
+    edges {
+      node {
+        user {
+          username
+        }
+        goal {
+          text
+          level
+          module {
+            slug
+          }
+        }
+      }
+    }
+  }
   modules(slug: $slug) {
     edges {
       node {
