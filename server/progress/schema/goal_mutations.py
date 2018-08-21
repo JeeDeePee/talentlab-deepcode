@@ -31,7 +31,7 @@ class DefineUserGoal(graphene.Mutation):
                 user_goal.goal = goal
                 user_goal.save()
 
-                return DefineUserGoal(ok=True, message=DefineUserGoal.UPDATE, Uuser_goal=user_goal)
+                return DefineUserGoal(ok=True, message=DefineUserGoal.UPDATE, user_goal=user_goal)
 
             elif found_goals == 0:
 
@@ -43,10 +43,10 @@ class DefineUserGoal(graphene.Mutation):
                 return DefineUserGoal(ok=True, message=DefineUserGoal.CREATE, user_goal=user_goal)
 
             else:
-                return DefineUserGoal(ok=False, message='more than 1 UserGoal for module: {} and goal: {} found'.format(module_slug, goal_id))
+                return DefineUserGoal(ok=False, message='more than 1 UserGoal for module: {} and goal-level: {} found'.format(module_slug, goal_level))
 
         except Exception as ex:
-            return DefineUserGoal(ok=False, message=ex.message)
+            return DefineUserGoal(ok=False, message=ex)
 
 
 class UserGoalMutations(object):
