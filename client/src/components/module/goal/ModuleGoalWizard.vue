@@ -13,8 +13,7 @@
           </v-breadcrumbs-item>
         </v-breadcrumbs>
 
-        <MyGoal v-on:proceed="myGoalProceed($event)" v-on:back="myGoalBack($event)">
-        </MyGoal>
+        <MyGoal v-on:proceed="myGoalProceed($event)" v-on:back="myGoalBack($event)"></MyGoal>
 
       </div>
     </v-card>
@@ -22,6 +21,8 @@
 </template>
 
 <script>
+  import DEFINE_USER_GOAL from '@/graphql/gql/moduleGoals/defineUserGoal.gql'
+
   import {mapActions} from 'vuex'
 
   import MyGoal from '@/components/module/goal/steps/MyGoal'
@@ -71,13 +72,28 @@
       }),
 
       myGoalBack() {
+        // don't store goal, only close wizard
         this.$emit('close')
-        // don't save
       },
 
-      myGoalProceed() {
+      myGoalProceed(goalLevel) {
         this.$emit('close')
-        // save selected goal
+        this.storeMyGoal(this.module.slug, goalLevel)
+      },
+
+      // Mutation
+      storeMyGoal(moduleSlug, goalLevel) {
+        console.log(`storeMyGoal(moduleSlug: ${moduleSlug}, goalLevel: ${goalLevel})`)
+
+        this.$apollo.mutate({
+          mutation: DEFINE_USER_GOAL,
+          variables: {
+            moduleSlug: moduleSlug,
+            goalLevel: goalLevel
+          }
+        }).then(data => {
+          // console.log('Done storing goal.');
+        });
       }
     }
   }

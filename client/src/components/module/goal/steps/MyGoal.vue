@@ -6,7 +6,7 @@
       Wähle das Ziel, das am besten zu dir passt.
     </v-container>
 
-    <v-radio-group v-model="selected_goal" column>
+    <v-radio-group v-model="selectedGoal" column>
       <v-radio v-for="goal in moduleGoals" :key="goal.id" :label="goal.text" :value="goal.level">{{goal.text}}</v-radio>
     </v-radio-group>
 
@@ -14,7 +14,7 @@
     <p></p>
 
     <v-btn @click="$emit('back')">Zurück</v-btn>
-    <v-btn @click="$emit('proceed')">Ziel speichern</v-btn>
+    <v-btn @click="$emit('proceed', selectedGoal)">Ziel speichern</v-btn>
   </div>
 </template>
 
@@ -26,7 +26,7 @@
 
     data() {
       return {
-        selected_goal: null
+        selectedGoal: -1
       }
     },
 
