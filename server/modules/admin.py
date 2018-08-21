@@ -17,7 +17,7 @@ class ModuleAdmin(admin.ModelAdmin):
 
 @admin.register(Goal)
 class GoalAdmin(admin.ModelAdmin):
-    list_display = ('module', 'level', 'text')
+    list_display = ('id', 'module', 'level', 'text')
     list_filter = ('module', 'level')
 
 

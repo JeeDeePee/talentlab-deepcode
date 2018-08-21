@@ -1,0 +1,13 @@
+mutation DefineUserGoal($moduleSlug: String!, $goalId: String!) {
+  defineUserGoal(moduleSlug: $moduleSlug, goalId: $goalId) {
+    ok
+    message
+    userGoal {
+      goal {
+        id
+        text
+        level
+      }
+    }
+  }
+}

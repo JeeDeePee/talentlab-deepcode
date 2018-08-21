@@ -17,5 +17,5 @@ class UserUnitProgressAdmin(admin.ModelAdmin):
 
 @admin.register(UserGoal)
 class UserGoalAdmin(admin.ModelAdmin):
-    list_display = ('user', 'goal', 'completed', 'custom_text')
+    list_display = ('user', 'id', 'goal', 'completed', 'custom_text')
     list_filter = ('user', 'goal')

@@ -3,35 +3,50 @@ import graphene
 from core.middleware import get_current_user
 from modules.models import Goal
 from progress.models import UserGoal
+from progress.schema.goal import UserGoalNode
 
 
 class DefineUserGoal(graphene.Mutation):
+    CREATE = 'create'
+    UPDATE = 'update'
+
     class Arguments:
         module_slug = graphene.String()
-        goal_id = graphene.String()
+        goal_level = graphene.String()
 
     ok = graphene.Boolean()
-    user_goal = graphene.Field(UserGoal)
+    message = graphene.String()
+    user_goal = graphene.Field(UserGoalNode)
 
-    def mutate(self, module_slug, goal_id):
+    def mutate(self, info, module_slug, goal_level):
         current_user = get_current_user()
-        user_goal = None
         try:
-            user_goal = UserGoal.objects.get(goal__module__slug=module_slug, user=current_user)
+            user_goal = UserGoal.objects.filter(goal__module__slug=module_slug, user__username=current_user.username)
+            found_goals = len(user_goal)
+            if found_goals == 1:
+                user_goal = list(user_goal)[0]
 
-            # we have the user goal, update it
-            goal = Goal.objects.get(id=goal_id)
-            user_goal.goal = goal
-            user_goal.save()
+                # we have the user goal, update it
+                goal = Goal.objects.get(module__slug=module_slug, level=goal_level)
+                user_goal.goal = goal
+                user_goal.save()
+
+                return DefineUserGoal(ok=True, message=DefineUserGoal.UPDATE, Uuser_goal=user_goal)
+
+            elif found_goals == 0:
+
+                # we don't have the user goal, create a new one
+                goal = Goal.objects.get(module__slug=module_slug, level=goal_level)
+                user_goal = UserGoal(user=current_user, goal=goal)
+                user_goal.save()
+
+                return DefineUserGoal(ok=True, message=DefineUserGoal.CREATE, user_goal=user_goal)
+
+            else:
+                return DefineUserGoal(ok=False, message='more than 1 UserGoal for module: {} and goal: {} found'.format(module_slug, goal_id))
 
         except Exception as ex:
-
-            # we don't have the user goal, create a new one
-            goal = Goal.objects.get(id=goal_id)
-            user_goal = UserGoal(user=current_user, goal=goal)
-            user_goal.save()
-
-        return DefineUserGoal(user_goal=user_goal, ok=True)
+            return DefineUserGoal(ok=False, message=ex.message)
 
 
 class UserGoalMutations(object):
