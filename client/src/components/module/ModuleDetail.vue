@@ -34,27 +34,33 @@
       <v-layout row wrap>
         <v-flex xs12 sm8 md8 lg8 xl8>
           <h3>Lernangebote</h3>
-          <Unit v-for="(item, index) in module.units.edges" :key="index" :booked="false" :unit="item.node" :module="module" class="mb-4"></Unit>
+          <Unit v-for="(item, index) in module.units.edges"
+                :module="module"
+                :key="index"
+                :booked="false"
+                :unit="item.node"
+                class="mb-4">
+          </Unit>
         </v-flex>
         <v-flex xs12 sm4 md4 lg4 xl4>
           <h3>Ressourcen</h3>
-              <v-card class="bg mb-5">
-                <v-card-text>
-                  <div class="mt-1 mb-3">
-                    <i class="material-icons icon-color">library_books</i>
-                  </div>
-                  Hier findest Du bei Buchung weiterführende Artikel, Links und vieles mehr.
-                </v-card-text>
-              </v-card>
+          <v-card class="bg mb-5">
+            <v-card-text>
+              <div class="mt-1 mb-3">
+                <i class="material-icons icon-color">library_books</i>
+              </div>
+              Hier findest Du bei Buchung weiterführende Artikel, Links und vieles mehr.
+            </v-card-text>
+          </v-card>
           <h3>Tools & Templates</h3>
-              <v-card class="bg mb-5">
-                <v-card-text>
-                  <div class="mt-1 mb-3">
-                    <i class="material-icons icon-color">library_books</i>
-                  </div>
-                  Hier findest Du bei Buchung im Arbeitsalltag nützliche Hilfestellungen.
-                </v-card-text>
-              </v-card>
+          <v-card class="bg mb-5">
+            <v-card-text>
+              <div class="mt-1 mb-3">
+                <i class="material-icons icon-color">library_books</i>
+              </div>
+              Hier findest Du bei Buchung im Arbeitsalltag nützliche Hilfestellungen.
+            </v-card-text>
+          </v-card>
         </v-flex>
       </v-layout>
     </v-container>
@@ -67,8 +73,6 @@
   import Unit from '@/components/module/Unit'
 
   export default {
-    name: 'module-detail',
-
     props: {
       module: {
         required: true,
@@ -86,12 +90,6 @@
       return {
         showVideoPlayer: false
       }
-    },
-
-    methods: {
-    },
-
-    created() {
     }
   }
 </script>
