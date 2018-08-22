@@ -10,7 +10,7 @@
           </router-link>
         </v-breadcrumbs-item>
         <v-breadcrumbs-item :key="unit.moduleSlug">
-          <router-link class="link" :to="{name: 'module', params: {slug: unit.moduleSlug}}" exact router>
+          <router-link v-if="unit.moduleSlug" class="link" :to="{name: 'module', params: {slug: unit.moduleSlug}}" exact router>
             {{ unit.moduleTitle }}
           </router-link>
         </v-breadcrumbs-item>
@@ -84,9 +84,7 @@ Besonders im Fokus stehen Lösungsansätze für schwierige Verhandlungssituation
 
     data() {
       return {
-        unit: {
-          moduleTitle: ''
-        }
+        unit: {}
       }
     },
 
