@@ -1,11 +1,9 @@
-import django_filters
 import graphene
 from graphene import relay
 from graphene_django import DjangoObjectType
 from graphene_django.filter import DjangoFilterConnectionField
 
 from core.graphql_filter import graphql_user_filter
-from core.middleware import get_current_user
 from focus.models import Competence, CompetenceEntry, Focus
 
 
