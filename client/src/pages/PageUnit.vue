@@ -82,8 +82,6 @@ Besonders im Fokus stehen Lösungsansätze für schwierige Verhandlungssituation
       }
     },
 
-    components: {},
-
     data() {
       return {
         unit: {
@@ -91,8 +89,6 @@ Besonders im Fokus stehen Lösungsansätze für schwierige Verhandlungssituation
         }
       }
     },
-
-    methods: {},
 
     apollo: {
       unit: {
@@ -109,9 +105,6 @@ Besonders im Fokus stehen Lösungsansätze für schwierige Verhandlungssituation
           }
         }
       }
-    },
-
-    created() {
     }
   }
 </script>

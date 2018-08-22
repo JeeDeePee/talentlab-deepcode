@@ -39,20 +39,24 @@
 
   export default {
     name: 'my-focus',
+
     components: {
       FocusWizard
     },
+
     data() {
       return {
         showFocusDialog: false
       }
     },
+
     computed: {
       ...mapGetters({
         userFocus: 'getUserFocus',
         userFocusCreated: 'getUserFocusCreated'
       })
     },
+
     created() {
       this.$store.dispatch('fetchUserFocus')
     }

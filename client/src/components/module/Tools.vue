@@ -11,6 +11,7 @@
 <script>
   export default {
     name: 'tools',
+    
     props: {
       tools: {
         required: true,
