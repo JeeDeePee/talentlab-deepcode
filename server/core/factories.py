@@ -13,7 +13,7 @@ from wagtail.images import get_image_model
 fake = Faker('de_DE')
 
 
-def fake_title(x):
+def fake_title(x=None):
     return fake.sentence(nb_words=random.randint(2, 4)).replace('.', '')
 
 
