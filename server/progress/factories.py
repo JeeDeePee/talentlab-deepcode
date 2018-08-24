@@ -1,9 +1,8 @@
 import random
 
 import factory
-from factory import SubFactory
 
-from core.factories import UserFactory, fake
+from core.factories import fake
 from modules.models import Module, Unit, Goal
 from progress.models import UserUnitProgress, UserModuleProgress, UserGoal
 from user.models import User
@@ -24,8 +23,7 @@ class UserUnitProgressFactory(factory.django.DjangoModelFactory):
     module_progress = factory.Iterator(UserModuleProgress.objects.all())
     unit = factory.Iterator(Unit.objects.all())
 
-    # TODO: maersu how to select units based on used module?
-    # somehow by using factory.SelfAttribute('...')
+    # TODO: how to select units based on used module? => By using factoryboy traits alter!
 
 
 class UserGoalFactory(factory.django.DjangoModelFactory):

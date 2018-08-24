@@ -31,6 +31,8 @@ class FocusNode(DjangoObjectType):
         return self.id
 
 
+# TODO: refactor this as a super class for user filtered data
+#
 # class UserFocusFilter(django_filters.FilterSet):
 #     class Meta:
 #         model = Focus

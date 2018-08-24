@@ -1,5 +1,6 @@
 import graphene
 from django.conf import settings
+from graphene import relay
 from graphene_django.debug import DjangoDebug
 
 from focus.schema.mutations import FocusMutation
@@ -15,14 +16,13 @@ from progress.schema.user import UserQuery
 
 
 class Query(UserGoalQuery, UserFocusQuery, UserUnitsQuery, UserModulesQuery, ModulesQuery, UserQuery, graphene.ObjectType):
-    # This class will inherit from multiple Queries
+    node = relay.Node.Field()
 
     if settings.DEBUG:
         debug = graphene.Field(DjangoDebug, name='__debug')
 
 
 class Mutation(UserGoalMutations, FocusMutation, UnitProgressMutations, ModuleProgressMutations, graphene.ObjectType):
-    # This class will inherit from multiple Queries
 
     if settings.DEBUG:
         debug = graphene.Field(DjangoDebug, name='__debug')
