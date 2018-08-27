@@ -38,10 +38,11 @@
       <v-container grid-list-md>
         <v-btn class="button item2" @click.stop="showModuleGoalDialog=true">Ziele</v-btn>
         <v-btn class="button item2">Learnings</v-btn>
-        <v-btn class="button item2">Action Plan</v-btn>
+        <v-btn class="button item2" @click.stop="showActionPlanDialog=true">Action Plan</v-btn>
       </v-container>
 
       <ModuleGoalWizard :visible="showModuleGoalDialog" @close="showModuleGoalDialog=false" :module="module"/>
+      <ActionPlanWizard :visible="showActionPlanDialog" @close="showActionPlanDialog=false"/>
 
     </div>
 
@@ -67,6 +68,7 @@
   import VideoPlayer from '@/components/module/VideoPlayer'
   import Unit from '@/components/module/Unit'
   import ModuleGoalWizard from '@/components/module/goal/ModuleGoalWizard'
+  import ActionPlanWizard from '@/components/module/actionplan/ActionPlanWizard';
 
   export default {
     props: {
@@ -81,6 +83,7 @@
     },
 
     components: {
+      ActionPlanWizard,
       Tools,
       VideoPlayer,
       Unit,
@@ -90,7 +93,8 @@
     data() {
       return {
         showVideoPlayer: false,
-        showModuleGoalDialog: false
+        showModuleGoalDialog: false,
+        showActionPlanDialog: false
       }
     }
   }

@@ -1,7 +1,7 @@
 import apolloClient from '@/graphql/client'
 import MODULE_GOALS_QUERY from '@/graphql/gql/moduleGoals/moduleGoalsQuery.gql'
 
-const moduleGoalWizard = {
+export default {
   state: {
     moduleGoals: [],
     currentGoal: {
@@ -42,5 +42,3 @@ const moduleGoalWizard = {
     getCurrentGoal: state => state.currentGoal
   }
 }
-
-export default moduleGoalWizard
