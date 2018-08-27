@@ -15,18 +15,14 @@ query ModuleGoalsQuery($slug:String!) {
       }
     }
   }
-  modules(slug: $slug) {
-    edges {
-      node {
-        slug
-        goalSet {
-          edges {
-            node {
-              id
-              text
-              level
-            }
-          }
+  module(slug: $slug) {
+    slug
+    goalSet {
+      edges {
+        node {
+          id
+          text
+          level
         }
       }
     }

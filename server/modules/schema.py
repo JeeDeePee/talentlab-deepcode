@@ -1,7 +1,7 @@
+import graphene
 from graphene import relay
 from graphene_django import DjangoObjectType
 from graphene_django.filter import DjangoFilterConnectionField
-import graphene
 
 from modules.models.goal import Goal
 from .models import Module, Unit, Category
@@ -146,9 +146,32 @@ class CategoryNode(DjangoObjectType):
 
 
 class ModulesQuery(object):
+    module = graphene.Field(ModuleNode, id=graphene.Int(), slug=graphene.String())
+    unit = graphene.Field(UnitNode, id=graphene.Int(), slug=graphene.String())
+
     categories = DjangoFilterConnectionField(CategoryNode)
     modules = DjangoFilterConnectionField(ModuleNode)
     units = DjangoFilterConnectionField(UnitNode)
+
+    def resolve_module(self, info, **kwargs):
+        module_id = kwargs.get('id')
+        module_slug = kwargs.get('slug')
+
+        if module_id is not None:
+            return Module.objects.get(id=module_id)
+        if module_slug is not None:
+            return Module.objects.get(slug=module_slug)
+        return None
+
+    def resolve_unit(self, info, **kwargs):
+        unit_id = kwargs.get('id')
+        unit_slug = kwargs.get('slug')
+
+        if unit_id is not None:
+            return Unit.objects.get(id=unit_id)
+        if unit_slug is not None:
+            return Unit.objects.get(slug=unit_slug)
+        return None
 
     def resolve_categories(self, *args, **kwargs):
         return Category.objects.filter(**kwargs).live()

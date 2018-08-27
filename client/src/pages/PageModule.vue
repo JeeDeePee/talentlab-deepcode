@@ -86,8 +86,8 @@
         manual: true,
         result({data, loading, networkStatus}) {
           if (!loading) {
-            if (data.modules) {
-              let _module = this.$lodash.clone(data.modules.edges[0].node)
+            if (data.module) {
+              let _module = this.$lodash.clone(data.module)
 
               _module.tools = JSON.parse(_module.tools)
               _module.resources = JSON.parse(_module.resources)

@@ -1,38 +1,34 @@
 query ModuleQuery($slug: String!) {
-  modules(slug: $slug) {
-    edges {
-      node {
-        title
-        slug
-        tools
-        resources
-        description
-        heroImage
-        skill
-        videoId
-        videoDescription
-        videoThumbnailData
-        category
-        goalSet {
-          edges {
-            node {
-              id
-              text
-              level
-            }
-          }
+  module(slug: $slug) {
+    title
+    slug
+    tools
+    resources
+    description
+    heroImage
+    skill
+    videoId
+    videoDescription
+    videoThumbnailData
+    category
+    goalSet {
+      edges {
+        node {
+          id
+          text
+          level
         }
-        units {
-          edges {
-            node {
-              slug
-              title
-              teaser
-              type
-              count
-              duration
-            }
-          }
+      }
+    }
+    units {
+      edges {
+        node {
+          slug
+          title
+          teaser
+          type
+          count
+          duration
         }
       }
     }

@@ -118,3 +118,23 @@ Change bucket `Permissions` / `Bucket Policy`
 }
 
 ```
+
+
+
+
+# Graphene notes
+
+## Example of a order_by
+
+    class CategoryFilter(django_filters.FilterSet):
+        class Meta:
+            model = Category
+            fields = {
+                "slug": ["exact", "icontains"],
+                "title": ["gt", "lt", "exact"]
+            }
+
+        order_by = django_filters.OrderingFilter(fields=("title", "slug", "pk"))
+
+    class ModulesQuery(object):
+        categories = DjangoFilterConnectionField(CategoryNode, filterset_class=CategoryFilter)

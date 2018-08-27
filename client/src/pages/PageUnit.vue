@@ -1,6 +1,6 @@
 <template>
   <v-container class="learn-unit">
-  <div>
+  <div v-if="unit">
     <div>
       <v-breadcrumbs class="pl-0">
         <v-icon slot="divider">chevron_right</v-icon>
@@ -84,22 +84,17 @@ Besonders im Fokus stehen Lösungsansätze für schwierige Verhandlungssituation
 
     data() {
       return {
-        unit: {}
       }
     },
 
     apollo: {
-      unit: {
-        query: UNIT_QUERY,
-        variables() {
-          return {
-            slug: this.slug
-          }
-        },
-        manual: true,
-        result({data, loading, networkStatus}) {
-          if (!loading) {
-            this.unit = data.unit.edges[0].node
+      unit() {
+        return {
+          query: UNIT_QUERY,
+          variables() {
+            return {
+              slug: this.slug
+            }
           }
         }
       }

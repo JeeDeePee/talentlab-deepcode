@@ -27,7 +27,7 @@ const moduleGoalWizard = {
         }
       });
 
-      const goals = response.data.modules.edges[0].node.goalSet.edges.map(goal => ({...goal.node}))
+      const goals = response.data.module.goalSet.edges.map(goal => ({...goal.node}))
       commit('setModuleGoals', goals);
 
       if (response.data.allUserGoals.edges.length === 1) {
