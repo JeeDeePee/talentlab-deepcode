@@ -13,10 +13,7 @@ export default new Vuex.Store({
     userFocus: userFocus
   },
 
-  state: {
-    userid: null,
-    username: null
-  },
+  state: {},
 
   getters: {},
 

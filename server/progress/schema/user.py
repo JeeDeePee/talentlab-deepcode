@@ -27,9 +27,13 @@ class UserNode(DjangoObjectType):
 
 
 class UserQuery(object):
+    user = graphene.Field(UserNode)
     user_progress = graphene.Field(UserNode)
 
     all_users = DjangoFilterConnectionField(UserNode, filterset_class=UserFilter)
+
+    def resolve_user(self, *args, **kwargs):
+        return get_current_user()
 
     def resolve_user_progress(self, *args, **kwargs):
         return get_current_user()

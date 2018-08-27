@@ -42,8 +42,19 @@
 </template>
 
 <script>
+  import USER_QUERY from '@/graphql/gql/user.gql'
+
   export default {
     name: 'App',
+
+    apollo: {
+      user() {
+        return {
+          query: USER_QUERY,
+          fetchPolicy: 'network-only'
+        }
+      }
+    },
 
     data() {
       return {

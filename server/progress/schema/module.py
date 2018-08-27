@@ -3,6 +3,7 @@ from graphene import relay, Node
 from graphene_django import DjangoObjectType
 from graphene_django.filter import DjangoFilterConnectionField
 
+from core.graphql_filter import graphql_user_filter
 from core.middleware import get_current_user
 from modules.models import Module
 from modules.schema import ModuleNode
@@ -34,9 +35,12 @@ class UserModuleConnection(graphene.Connection):
         node = UserModuleNode
 
 
+all_modules_progress_filterset_class = graphql_user_filter(UserModuleProgress, ['module__slug'])
+
+
 class UserModulesQuery(object):
     module_progress = relay.Node.Field(ModuleProgressNode)
-    all_modules_progress = DjangoFilterConnectionField(ModuleProgressNode)
+    all_modules_progress = DjangoFilterConnectionField(ModuleProgressNode, filterset_class=all_modules_progress_filterset_class)
 
     user_modules = relay.ConnectionField(UserModuleConnection)
 
