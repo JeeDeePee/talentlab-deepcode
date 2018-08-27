@@ -1,0 +1,17 @@
+query NodeQuery {
+  node(id: "VXNlck5vZGU6MQ==") {
+    ... on UserNode {
+      id
+      password
+      focusSet {
+        edges {
+          node {
+            id
+          }
+        }
+      }
+      isSuperuser
+      isStaff
+    }
+  }
+}

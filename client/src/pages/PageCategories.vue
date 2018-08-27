@@ -38,9 +38,6 @@
     apollo: {
       categories: {
         query: CATEGORIES_QUERY,
-        variables: {
-          username: 'test'
-        },
         fetchPolicy: 'network-only',
         manual: true,
         result({data, loading, networkStatus}) {

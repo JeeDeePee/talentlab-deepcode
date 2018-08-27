@@ -50,12 +50,9 @@
 
     methods: {
       startUnitProgress(unitSlug, moduleSlug) {
-        // console.log(`startUnitProgress(${unitSlug}-(${moduleSlug}))`)
-
         this.$apollo.mutate({
           mutation: START_UNIT_PROGRESS,
           variables: {
-            username: 'test',
             unitSlug: unitSlug,
             moduleSlug: moduleSlug
           },
@@ -64,7 +61,6 @@
           }
         }).then((data) => {
           // Result
-          // console.log(data)
         }).catch((error) => {
           // Error
           console.error(error)
@@ -72,9 +68,6 @@
           // this.newTag = newTag
         })
       }
-    },
-
-    created() {
     }
   }
 </script>

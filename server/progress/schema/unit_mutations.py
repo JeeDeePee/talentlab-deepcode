@@ -1,13 +1,12 @@
 import graphene
 
+from core.middleware import get_current_user
 from modules.models import Unit, Module
 from progress.models import UserUnitProgress, UserModuleProgress
-from user.models import User
 
 
 class StartUnitProgress(graphene.Mutation):
     class Arguments:
-        username = graphene.String()
         unit_slug = graphene.String()
         module_slug = graphene.String()
 
@@ -16,16 +15,15 @@ class StartUnitProgress(graphene.Mutation):
     failed = graphene.Boolean()
     exception = graphene.String()
 
-    def mutate(self, info, username, unit_slug, module_slug):
-        user = User.objects.get(username=username)
+    def mutate(self, info, unit_slug, module_slug):
+        current_user = get_current_user()
         module = Module.objects.get(slug=module_slug)
         unit = Unit.objects.get(slug=unit_slug)
 
         try:
-            module_progress = UserModuleProgress.objects.get(user=user, module=module)
+            module_progress = UserModuleProgress.objects.get(user=current_user, module=module)
             unit, created = UserUnitProgress.objects.get_or_create(module_progress=module_progress, unit=unit)
 
-            print('creating a user module {} for user {}'.format(unit_slug, username))
             return StartUnitProgress(created=True, unit_slug=unit_slug)
 
         except Exception as ex:

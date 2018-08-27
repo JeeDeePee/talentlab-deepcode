@@ -38,12 +38,9 @@
 
     methods: {
       startModuleProgress(moduleSlug) {
-        // console.log(`startModuleProgress(${moduleSlug})`)
-
         this.$apollo.mutate({
           mutation: START_MODULE_PROGRESS,
           variables: {
-            username: 'test',
             moduleSlug: moduleSlug
           },
           update: (store, { data }) => {
@@ -51,7 +48,6 @@
           }
         }).then((data) => {
           // Result
-          // console.log(data)
         }).catch((error) => {
           // Error
           console.error(error)
@@ -61,12 +57,9 @@
       },
 
       deleteModuleProgress(moduleSlug) {
-        // console.log(`deleteModuleProgress(${moduleSlug})`)
-
         this.$apollo.mutate({
           mutation: DELETE_MODULE_PROGRESS,
           variables: {
-            username: 'test',
             moduleSlug: moduleSlug
           },
           update: (store, { data }) => {
@@ -74,7 +67,6 @@
           }
         }).then((data) => {
           // Result
-          // console.log(data)
         }).catch((error) => {
           // Error
           console.error(error)
@@ -88,8 +80,7 @@
       this.$apollo.addSmartQuery('container', {
         query: MODULE_QUERY,
         variables: {
-          slug: this.slug,
-          username: 'test'
+          slug: this.slug
         },
         fetchPolicy: 'network-only',
         manual: true,

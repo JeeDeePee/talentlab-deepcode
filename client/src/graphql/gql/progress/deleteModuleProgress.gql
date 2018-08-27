@@ -1,5 +1,5 @@
-mutation deleteModuleProgressMutation($username: String!, $moduleSlug: String!) {
-  deleteModuleProgress(username: $username, moduleSlug: $moduleSlug) {
+mutation deleteModuleProgressMutation($moduleSlug: String!) {
+  deleteModuleProgress(moduleSlug: $moduleSlug) {
     deleted
     moduleSlug
     failed

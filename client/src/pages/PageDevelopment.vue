@@ -67,9 +67,6 @@
     apollo: {
       userProgress: {
         query: USER_DEVELOPMENT_QUERY,
-        variables: {
-          id: 'VXNlck5vZGU6MQ=='
-        },
         fetchPolicy: 'network-only'
       }
     },

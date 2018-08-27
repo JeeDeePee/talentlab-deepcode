@@ -3,11 +3,11 @@ from graphene import relay, Node
 from graphene_django import DjangoObjectType
 from graphene_django.filter import DjangoFilterConnectionField
 
+from core.middleware import get_current_user
 from modules.models import Unit, Module
 from modules.schema import UnitNode
 from progress.models import UserUnitProgress, UserModuleProgress
 from progress.schema.module import ModuleProgressNode
-from user.models import User
 
 
 class UnitProgressNode(DjangoObjectType):
@@ -16,7 +16,7 @@ class UnitProgressNode(DjangoObjectType):
 
     class Meta:
         model = UserUnitProgress
-        filter_fields = ['module_progress__user__username', 'module_progress__module__slug']
+        filter_fields = ['module_progress__module__slug']
         interfaces = (relay.Node,)
 
 
@@ -37,19 +37,17 @@ class UserUnitsQuery(object):
     unit_progress = relay.Node.Field(UnitProgressNode)
     all_unit_progress = DjangoFilterConnectionField(UnitProgressNode)
 
-    user_module_units = relay.ConnectionField(UserUnitConnection,
-                                              username=graphene.String(),
-                                              module_slug=graphene.String())
+    user_module_units = relay.ConnectionField(UserUnitConnection, module_slug=graphene.String())
 
     def resolve_user_module_units(self, info, **args):
-        username = args['username']
         module_slug = args['module_slug']
 
         # master data
-        user = User.objects.get(username=username)
+        user = get_current_user()
         module = Module.objects.get(slug=module_slug)
 
         # progress data
+        #
         # TODO: change back after fix in test data generation
         # module_progress = UserModuleProgress.objects.get(user=user, module=module)
         #
