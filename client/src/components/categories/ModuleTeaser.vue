@@ -20,8 +20,6 @@
 
 <script>
   export default {
-    name: 'module-teaser',
-
     props: {
       module: {
         required: true,

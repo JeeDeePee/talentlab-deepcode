@@ -9,8 +9,6 @@
 
 <script>
   export default {
-    name: 'module-next-step',
-
     props: {
       unitProgress: {
         required: true,

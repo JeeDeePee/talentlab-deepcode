@@ -44,8 +44,6 @@
   import Recomendation from '@/components/development/Recomendation'
 
   export default {
-    name: 'page-development',
-
     components: {
       MyFocus,
       ModuleProgressListItem,
@@ -76,7 +74,7 @@
         let moduleProgress = this.userProgress.usermoduleprogressSet.edges.map(entry => entry.node.module)
         return moduleProgress.map(function (entry) {
           const parsedCategory = JSON.parse(entry.category)
-          return {...entry, category: {title: parsedCategory.title, slug: parsedCategory.slug}}
+          return { ...entry, category: { title: parsedCategory.title, slug: parsedCategory.slug } }
         })
       }
     },

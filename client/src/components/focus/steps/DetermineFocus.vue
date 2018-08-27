@@ -31,8 +31,6 @@
   import {mapActions, mapGetters} from 'vuex'
 
   export default {
-    name: 'determine-focus',
-
     methods: {
       ...mapActions({
         newUserFocusBySlugs: 'newUserFocusBySlugs'

@@ -39,8 +39,6 @@
   import MyFocus from '@/components/focus/steps/MyFocus'
 
   export default {
-    name: 'focus-wizard',
-
     props: ['visible'],
 
     components: {

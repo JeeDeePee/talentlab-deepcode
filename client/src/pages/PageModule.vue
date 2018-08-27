@@ -14,8 +14,6 @@
   import ModuleDetailBooked from '@/components/module/ModuleDetailBooked'
 
   export default {
-    name: 'page-module',
-
     props: {
       slug: {
         required: true,

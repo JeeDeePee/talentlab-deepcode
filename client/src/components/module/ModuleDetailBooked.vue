@@ -69,8 +69,6 @@
   import ModuleGoalWizard from '@/components/module/goal/ModuleGoalWizard'
 
   export default {
-    name: 'module-detail-booked',
-
     props: {
       module: {
         required: true,
@@ -94,9 +92,6 @@
         showVideoPlayer: false,
         showModuleGoalDialog: false
       }
-    },
-
-    created() {
     }
   }
 </script>

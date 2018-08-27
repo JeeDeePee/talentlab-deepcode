@@ -25,8 +25,6 @@
   import START_UNIT_PROGRESS from '@/graphql/gql/progress/startUnitProgress.gql'
 
   export default {
-    name: 'unit',
-
     props: {
       module: {
         required: true,

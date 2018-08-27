@@ -25,8 +25,6 @@
   import MyGoal from '@/components/module/goal/steps/MyGoal'
 
   export default {
-    name: 'module-goal-wizard',
-
     props: {
       visible: {
         required: true,

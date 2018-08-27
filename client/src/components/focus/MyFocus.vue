@@ -38,8 +38,6 @@
   import {mapGetters} from 'vuex'
 
   export default {
-    name: 'my-focus',
-
     components: {
       FocusWizard
     },

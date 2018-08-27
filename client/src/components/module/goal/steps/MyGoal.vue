@@ -21,8 +21,6 @@
   import {mapGetters} from 'vuex'
 
   export default {
-    name: 'my-goal',
-
     computed: {
       ...mapGetters({
         moduleGoals: 'getModuleGoals',

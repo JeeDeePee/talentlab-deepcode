@@ -33,8 +33,6 @@
   import ModuleNextStep from '@/components/development/ModuleNextStep'
 
   export default {
-    name: 'module-progress-list-item',
-
     props: {
       moduleProgress: {
         required: true,

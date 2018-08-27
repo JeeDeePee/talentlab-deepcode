@@ -53,8 +53,6 @@
   import {mapActions, mapGetters} from 'vuex'
 
   export default {
-    name: 'my-focus',
-
     props: ['items'],
 
     methods: {

@@ -90,8 +90,6 @@
   import UNIT_QUERY from '@/graphql/gql/unit.gql'
 
   export default {
-    name: 'page-unit',
-
     props: {
       slug: {
         required: true,

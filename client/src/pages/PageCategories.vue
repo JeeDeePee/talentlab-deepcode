@@ -17,8 +17,6 @@
   import ModuleTeaser from '@/components/categories/ModuleTeaser'
 
   export default {
-    name: 'page-categories',
-
     components: {
       ModuleTeaser
     },
