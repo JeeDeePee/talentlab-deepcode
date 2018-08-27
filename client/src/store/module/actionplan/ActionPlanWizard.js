@@ -17,7 +17,7 @@ export default {
   },
 
   getters: {
-    getActionPlanWizardState: state => state.actionPlanWizardState
-    // isCurrentWizardState: uiState => state => uiState === state.actionPlanWizardState
+    getActionPlanWizardState: state => state.actionPlanWizardState,
+    isCurrentWizardState: state => uiState => uiState === state.actionPlanWizardState
   }
 }

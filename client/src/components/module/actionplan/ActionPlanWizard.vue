@@ -36,7 +36,6 @@
           v-if="isCurrentWizardState('ActionPlanOverview')">
         </ActionPlanOverview>
 
-        <!--<MyGoal v-on:proceed="myGoalProceed($event)" v-on:back="myGoalBack($event)"></MyGoal>-->
       </div>
     </v-card>
   </v-dialog>
@@ -77,8 +76,8 @@
 
     computed: {
       ...mapGetters({
-        getActionPlanWizardState: 'getActionPlanWizardState'
-        // isCurrentWizardState: 'isCurrentWizardState'
+        getActionPlanWizardState: 'getActionPlanWizardState',
+        isCurrentWizardState: 'isCurrentWizardState'
       }),
       show: {
         get() {
@@ -95,10 +94,7 @@
     methods: {
       ...mapActions({
         newActionPlanWizardState: 'newActionPlanWizardState'
-      }),
-      isCurrentWizardState(wizardStep) {
-        return this.getActionPlanWizardState === wizardStep
-      }
+      })
     },
 
     created() {
