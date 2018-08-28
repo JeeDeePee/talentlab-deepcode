@@ -4,7 +4,6 @@
 
     <div></div>
 
-    <!--<v-btn @click="$emit('back')">Zurück</v-btn>-->
     <v-btn @click="$emit('proceed', 'ReviseGoals')">Start</v-btn>
   </div>
 </template>

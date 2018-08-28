@@ -6,15 +6,10 @@
           <v-icon>close</v-icon>
         </v-btn>
 
-        <!--<StartActionPlan-->
-          <!--v-on:proceed="newActionPlanWizardState($event)"-->
-          <!--v-if="isCurrentWizardState('StartActionPlan')">-->
-        <!--</StartActionPlan>-->
-
         <component
           :is="getActionPlanWizardState"
-          v-on:back="newActionPlanWizardState($event)"
-          v-on:proceed="nextWizardStep($event, finishWizard)">
+          v-on:back="newActionPlanWizardState"
+          v-on:proceed="nextWizardStep">
         </component>
 
       </div>
@@ -76,7 +71,7 @@
       ...mapActions({
         newActionPlanWizardState: 'newActionPlanWizardState'
       }),
-      nextWizardStep({step, finishWizard}) {
+      nextWizardStep(step, finishWizard) {
         if (finishWizard) {
           this.show = false
         }
