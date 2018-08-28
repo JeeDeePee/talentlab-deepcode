@@ -52,8 +52,7 @@
 
     computed: {
       ...mapGetters({
-        getActionPlanWizardState: 'getActionPlanWizardState',
-        isCurrentWizardState: 'isCurrentWizardState'
+        getActionPlanWizardState: 'getActionPlanWizardState'
       }),
       show: {
         get() {
@@ -80,33 +79,7 @@
     },
 
     created() {
-      // this.$store.dispatch('fetchModuleGoals', { moduleSlug: this.module.slug })
     }
-
-    // methods: {
-    //   myGoalBack() {
-    //     this.$emit('close')
-    //   },
-    //
-    //   myGoalProceed(goalLevel) {
-    //     this.$emit('close')
-    //     this.storeMyGoal(this.module.slug, goalLevel)
-    //   },
-    //
-    //   storeMyGoal(moduleSlug, goalLevel) {
-    //     console.log(`storeMyGoal(moduleSlug: ${moduleSlug}, goalLevel: ${goalLevel})`)
-    //
-    //     this.$apollo.mutate({
-    //       mutation: DEFINE_USER_GOAL,
-    //       variables: {
-    //         moduleSlug: moduleSlug,
-    //         goalLevel: goalLevel
-    //       }
-    //     }).then(data => {
-    //       // console.log('Done storing goal.');
-    //     });
-    //   }
-    // }
   }
 </script>
 

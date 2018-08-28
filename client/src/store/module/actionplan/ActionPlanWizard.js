@@ -1,23 +1,27 @@
 
-export default {
-  state: {
-    actionPlanWizardState: 'StartActionPlan'
-  },
+function wizardGenerator(wizardName, defaultWizardStep) {
+  let state = {}
+  state[`${wizardName}WizardState`] = defaultWizardStep
 
-  mutations: {
-    setActionPlanWizardState(state, actionPlanWizardState) {
-      state.actionPlanWizardState = actionPlanWizardState
-    }
-  },
+  let mutations = {}
+  mutations[`set${wizardName}WizardState`] = function(state, wizardState) {
+    state[`${wizardName}WizardState`] = wizardState
+  }
 
-  actions: {
-    newActionPlanWizardState({state, commit}, newState) {
-      commit('setActionPlanWizardState', newState)
-    }
-  },
+  let actions = {}
+  actions[`new${wizardName}WizardState`] = function({state, commit}, newState) {
+    commit(`set${wizardName}WizardState`, newState)
+  }
 
-  getters: {
-    getActionPlanWizardState: state => state.actionPlanWizardState,
-    isCurrentWizardState: state => uiState => uiState === state.actionPlanWizardState
+  let getters = {}
+  getters[`get${wizardName}WizardState`] = state => state[`${wizardName}WizardState`]
+
+  return {
+    state: state,
+    mutations: mutations,
+    actions: actions,
+    getters: getters
   }
 }
+
+export default wizardGenerator('ActionPlan', 'StartActionPlan')
