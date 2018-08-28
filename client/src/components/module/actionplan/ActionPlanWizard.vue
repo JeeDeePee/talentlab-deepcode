@@ -6,41 +6,16 @@
           <v-icon>close</v-icon>
         </v-btn>
 
-        <StartActionPlan
-          v-on:proceed="newActionPlanWizardState($event)"
-          v-if="isCurrentWizardState('StartActionPlan')">
-        </StartActionPlan>
-        <ReviseGoals
-          v-on:back="newActionPlanWizardState($event)"
-          v-on:proceed="newActionPlanWizardState($event)"
-          v-if="isCurrentWizardState('ReviseGoals')">
-        </ReviseGoals>
-        <Learnings
-          v-on:back="newActionPlanWizardState($event)"
-          v-on:proceed="newActionPlanWizardState($event)"
-          v-if="isCurrentWizardState('Learnings')">
-        </Learnings>
-        <ActionPlanBusinessGoal
-          v-on:back="newActionPlanWizardState($event)"
-          v-on:proceed="newActionPlanWizardState($event)"
-          v-if="isCurrentWizardState('ActionPlanBusinessGoal')">
-        </ActionPlanBusinessGoal>
-        <ActionPlanMeasures
-          v-on:back="newActionPlanWizardState($event)"
-          v-on:proceed="newActionPlanWizardState($event)"
-          v-if="isCurrentWizardState('ActionPlanMeasures')">
-        </ActionPlanMeasures>
-        <ActionPlanOverview
-          v-on:back="newActionPlanWizardState($event)"
-          v-on:proceed="newActionPlanWizardState($event)"
-          v-if="isCurrentWizardState('ActionPlanOverview')">
-        </ActionPlanOverview>
+        <!--<StartActionPlan-->
+          <!--v-on:proceed="newActionPlanWizardState($event)"-->
+          <!--v-if="isCurrentWizardState('StartActionPlan')">-->
+        <!--</StartActionPlan>-->
 
-        <!--<ActionPlanOverview-->
-          <!--v-on:back="newActionPlanWizardState($event)"-->
-          <!--v-on:proceed="newActionPlanWizardState($event); show=false"-->
-          <!--v-if="isCurrentWizardState('ActionPlanOverview')">-->
-        <!--</ActionPlanOverview>-->
+        <component
+          :is="getActionPlanWizardState"
+          v-on:back="newActionPlanWizardState($event)"
+          v-on:proceed="nextWizardStep($event, finishWizard)">
+        </component>
 
       </div>
     </v-card>
@@ -100,7 +75,13 @@
     methods: {
       ...mapActions({
         newActionPlanWizardState: 'newActionPlanWizardState'
-      })
+      }),
+      nextWizardStep({step, finishWizard}) {
+        if (finishWizard) {
+          this.show = false
+        }
+        this.newActionPlanWizardState(step)
+      }
     },
 
     created() {
