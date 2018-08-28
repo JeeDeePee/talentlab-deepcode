@@ -4,8 +4,8 @@
 
     <div></div>
 
-    <v-btn @click="$emit('back')">Zurück</v-btn>
-    <v-btn @click="$emit('proceed')">Weiter</v-btn>
+    <v-btn @click="$emit('back', 'ActionPlanMeasures')">Zurück</v-btn>
+    <v-btn @click="$emit('proceed', 'StartActionPlan')">Weiter</v-btn>
   </div>
 </template>
 

@@ -7,34 +7,40 @@
         </v-btn>
 
         <StartActionPlan
-          v-on:proceed="newActionPlanWizardState('ReviseGoals')"
+          v-on:proceed="newActionPlanWizardState($event)"
           v-if="isCurrentWizardState('StartActionPlan')">
         </StartActionPlan>
         <ReviseGoals
-          v-on:back="newActionPlanWizardState('StartActionPlan')"
-          v-on:proceed="newActionPlanWizardState('Learnings')"
+          v-on:back="newActionPlanWizardState($event)"
+          v-on:proceed="newActionPlanWizardState($event)"
           v-if="isCurrentWizardState('ReviseGoals')">
         </ReviseGoals>
         <Learnings
-          v-on:back="newActionPlanWizardState('ReviseGoals')"
-          v-on:proceed="newActionPlanWizardState('ActionPlanBusinessGoal')"
+          v-on:back="newActionPlanWizardState($event)"
+          v-on:proceed="newActionPlanWizardState($event)"
           v-if="isCurrentWizardState('Learnings')">
         </Learnings>
         <ActionPlanBusinessGoal
-          v-on:back="newActionPlanWizardState('Learnings')"
-          v-on:proceed="newActionPlanWizardState('ActionPlanMeasures')"
+          v-on:back="newActionPlanWizardState($event)"
+          v-on:proceed="newActionPlanWizardState($event)"
           v-if="isCurrentWizardState('ActionPlanBusinessGoal')">
         </ActionPlanBusinessGoal>
         <ActionPlanMeasures
-          v-on:back="newActionPlanWizardState('ActionPlanBusinessGoal')"
-          v-on:proceed="newActionPlanWizardState('ActionPlanOverview')"
+          v-on:back="newActionPlanWizardState($event)"
+          v-on:proceed="newActionPlanWizardState($event)"
           v-if="isCurrentWizardState('ActionPlanMeasures')">
         </ActionPlanMeasures>
         <ActionPlanOverview
-          v-on:back="newActionPlanWizardState('ActionPlanMeasures')"
-          v-on:proceed="newActionPlanWizardState('StartActionPlan'); show=false"
+          v-on:back="newActionPlanWizardState($event)"
+          v-on:proceed="newActionPlanWizardState($event)"
           v-if="isCurrentWizardState('ActionPlanOverview')">
         </ActionPlanOverview>
+
+        <!--<ActionPlanOverview-->
+          <!--v-on:back="newActionPlanWizardState($event)"-->
+          <!--v-on:proceed="newActionPlanWizardState($event); show=false"-->
+          <!--v-if="isCurrentWizardState('ActionPlanOverview')">-->
+        <!--</ActionPlanOverview>-->
 
       </div>
     </v-card>
