@@ -43,8 +43,6 @@
 </template>
 
 <script>
-  // import ACTION_PLAN_QUERY from '@/graphql/gql/actionplan/actionPlanQuery.gql'
-
   import {mapActions, mapGetters} from 'vuex'
 
   import StartActionPlan from '@/components/module/actionplan/steps/StartActionPlan'
@@ -56,6 +54,10 @@
 
   export default {
     props: {
+      module: {
+        required: true,
+        type: Object
+      },
       visible: {
         required: true,
         type: Boolean
@@ -112,7 +114,8 @@
 
     methods: {
       ...mapActions({
-        newActionPlanWizardState: 'newActionPlanWizardState'
+        newActionPlanWizardState: 'newActionPlanWizardState',
+        newCurrentModule: 'newCurrentModule'
       }),
       nextWizardStep(step, finishWizard) {
         if (finishWizard) {
@@ -123,6 +126,7 @@
     },
 
     created() {
+      this.newCurrentModule(this.module)
     }
   }
 </script>

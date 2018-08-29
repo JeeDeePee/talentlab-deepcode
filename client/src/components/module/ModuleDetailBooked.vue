@@ -42,7 +42,7 @@
       </v-container>
 
       <ModuleGoalWizard :visible="showModuleGoalDialog" @close="showModuleGoalDialog=false" :module="module"/>
-      <ActionPlanWizard :visible="showActionPlanDialog" @close="showActionPlanDialog=false"/>
+      <ActionPlanWizard :visible="showActionPlanDialog" @close="showActionPlanDialog=false" :module="module"/>
 
     </div>
 

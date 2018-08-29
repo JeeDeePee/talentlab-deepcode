@@ -1,6 +1,7 @@
 <template>
-  <div class="grey--text">
-    <h2>Reflektiere was Du gelernt hast</h2>
+  <div class="text-xs-center">
+    <h1>Reflektiere was Du gelernt hast</h1>
+    <p>Das sind Deine Learnings aus den verschiedenen Units. Passe bei Bedarf noch einmal an.</p>
 
     <div></div>
 

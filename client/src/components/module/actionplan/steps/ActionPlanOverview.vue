@@ -1,6 +1,6 @@
 <template>
-  <div class="grey--text">
-    <h2>Dein Action Plan steht!</h2>
+  <div class="text-xs-center">
+    <h1>Dein Action Plan steht!</h1>
 
     <div></div>
 

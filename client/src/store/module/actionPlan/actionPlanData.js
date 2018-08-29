@@ -3,12 +3,16 @@ import ACTION_PLAN_QUERY from '@/graphql/gql/actionPlan/actionPlanQuery.gql'
 
 export default {
   state: {
-    moduleUserGoal: {}
+    moduleUserGoal: {},
+    currentModule: {}
   },
 
   mutations: {
     setModuleUserGoal(state, moduleUserGoal) {
       state.moduleUserGoal = moduleUserGoal
+    },
+    setCurrentModule(state, currentModule) {
+      state.currentModule = currentModule
     }
   },
 
@@ -18,17 +22,21 @@ export default {
         query: ACTION_PLAN_QUERY,
         fetchPolicy: 'network-only',
         variables: {
-          slug: 'partnering-for-success'
+          slug: state.currentModule.slug
         }
       });
 
       if (moduleUserGoal.goal) {
         commit('setModuleUserGoal', moduleUserGoal.goal);
       }
+    },
+    newCurrentModule({state, commit}, newCurrentModule) {
+      commit('setCurrentModule', newCurrentModule)
     }
   },
 
   getters: {
-    getModuleUserGoal: state => state.moduleUserGoal
+    getModuleUserGoal: state => state.moduleUserGoal,
+    getCurrentModule: state => state.currentModule
   }
 }

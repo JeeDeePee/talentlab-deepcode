@@ -1,6 +1,6 @@
 <template>
-  <div class="grey--text">
-    <h2>Definiere Deinen Action Plan - Business-Ziel</h2>
+  <div class="text-xs-center">
+    <h1>Definiere Deinen Action Plan - Business-Ziel</h1>
 
     <div></div>
 
