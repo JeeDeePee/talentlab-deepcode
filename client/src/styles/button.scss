@@ -10,7 +10,7 @@
     background-color: rgba(255, 255, 255, 0.2);
   }
 
-  background-color: $primary;
+  background-color: $primary !important;
 }
 
 // fix for the misaligned buttons, however still the case in IE1X
