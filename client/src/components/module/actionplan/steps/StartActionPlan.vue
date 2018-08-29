@@ -20,8 +20,16 @@
   import {mapGetters} from 'vuex'
 
   export default {
+    props: ['breadcrumbs'],
+
     computed: {
       ...mapGetters({})
+    },
+
+    created() {
+      // this.breadcrumbs[0].disabled = true
+      // this.breadcrumb[0].hello = this.$options._componentTag
+      console.log(this.$options._componentTag)
     }
   }
 </script>

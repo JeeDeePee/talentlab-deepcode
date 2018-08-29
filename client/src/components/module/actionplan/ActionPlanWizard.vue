@@ -2,15 +2,27 @@
   <v-dialog v-model="show" fullscreen hide-overlay transition="dialog-bottom-transition" scrollable>
     <v-card class="white--text">
 
-      <v-toolbar dark color="primary">
+      <v-toolbar dark color="primary" class="ml-4 mr-4">
         <v-toolbar-title>Action Plan</v-toolbar-title>
+        <div class="toolbar-accent"></div>
         <v-spacer></v-spacer>
         <v-toolbar-items>
-          <v-btn class="btn--close" large flat icon @click.stop="show=false">
+          <v-btn large flat icon @click.stop="show=false">
             <v-icon>close</v-icon>
           </v-btn>
         </v-toolbar-items>
       </v-toolbar>
+
+      <v-breadcrumbs class="ml-4 mr-4">
+        <v-icon slot="divider">chevron_right</v-icon>
+        <v-breadcrumbs-item v-for="breadcrumb in breadcrumbs"
+                            :key="breadcrumb.text"
+                            :disabled="breadcrumb.disabled"
+                            class="breadcrumbs-item"
+                            @click="newActionPlanWizardState = breadcrumb.activeComponent">
+          {{breadcrumb.text}}
+        </v-breadcrumbs-item>
+      </v-breadcrumbs>
 
       <v-container>
         <v-layout align-center justify-center row fill-height>
@@ -19,7 +31,8 @@
             <component
               :is="getActionPlanWizardState"
               v-on:back="newActionPlanWizardState"
-              v-on:proceed="nextWizardStep">
+              v-on:proceed="nextWizardStep"
+              :breadcrumbs="breadcrumbs">
             </component>
 
           </v-flex>
@@ -58,7 +71,24 @@
 
     data() {
       return {
-        actionPlanWizardState: 'StartActionPlan'
+        actionPlanWizardState: 'StartActionPlan',
+        breadcrumbs: [
+          {
+            text: 'Rekapitualtion Ziele',
+            activeComponent: 'ReviseGoals',
+            disabledWhen: []
+          },
+          {
+            text: 'Reflektion Learnings',
+            activeComponent: 'Learnings',
+            disabledWhen: ['ReviseGoals']
+          },
+          {
+            text: 'Definition Action Plan',
+            activeComponent: 'ActionPlanBusinessGoal',
+            disabledWhen: []
+          }
+        ]
       }
     },
 

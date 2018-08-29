@@ -1,9 +1,27 @@
 @import "var";
 
+$toolbar-color: rgba(255, 255, 255, 0.6);
+
 .v-dialog {
 
   .v-card {
     background-color: $secondary;
+  }
+
+  .v-toolbar.primary {
+    background-color: transparent !important;
+    //border-color: transparent !important;
+    box-shadow: none;
+    border-bottom: 1px solid $toolbar-color !important;
+    width: initial;
+  }
+
+  .v-toolbar__title {
+    color: $toolbar-color;
+  }
+
+  .v-toolbar__content {
+    padding: 0;
   }
 
   .v-btn, .v-input .v-label, .v-icon {
@@ -27,4 +45,31 @@
       font-size: 50px;
     }
   }
+
+  .toolbar-accent {
+    height: 4px;
+    width: 110px;
+    background-color: $primary;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
+
+  .breadcrumbs-item--active {
+    color: $primary;
+  }
+
+  .v-breadcrumbs {
+    padding: 18px 0;
+
+    li:last-child a {
+      cursor: pointer;
+      pointer-events: initial;
+    }
+
+    li:last-child .v-breadcrumbs__item {
+      color: $primary;
+    }
+  }
+
 }

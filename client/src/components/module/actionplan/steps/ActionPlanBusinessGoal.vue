@@ -16,6 +16,10 @@
     computed: {
       ...mapGetters({
       })
+    },
+
+    created() {
+      console.log(this.$options._componentTag)
     }
   }
 </script>

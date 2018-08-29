@@ -4,18 +4,13 @@
       <div>
         <v-breadcrumbs class="pl-0">
           <v-icon slot="divider">chevron_right</v-icon>
-          <v-breadcrumbs-item :key="unit.categorySlug">
-            <router-link class="link" :to="{name: 'categories'}" exact router>
+          <v-breadcrumbs-item class="link" :to="{name: 'categories'}" exact router>
               {{ unit.categoryTitle }}
-            </router-link>
           </v-breadcrumbs-item>
-          <v-breadcrumbs-item :key="unit.moduleSlug">
-            <router-link v-if="unit.moduleSlug" class="link" :to="{name: 'module', params: {slug: unit.moduleSlug}}"
-                         exact router>
+          <v-breadcrumbs-item class="link" v-if="unit.moduleSlug" :to="{name: 'module', params: {slug: unit.moduleSlug}}" exact router>
               {{ unit.moduleTitle }}
-            </router-link>
           </v-breadcrumbs-item>
-          <v-breadcrumbs-item :disabled="true" :key="unit.slug">
+          <v-breadcrumbs-item :disabled="true">
             {{ unit.title }}
           </v-breadcrumbs-item>
         </v-breadcrumbs>
