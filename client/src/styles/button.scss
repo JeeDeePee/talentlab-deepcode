@@ -5,6 +5,11 @@
 }
 
 .theme--light .v-btn:not(.v-btn--icon):not(.v-btn--flat) {
+
+  &.btn-secondary {
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+
   background-color: $primary;
 }
 
@@ -23,4 +28,8 @@ a.v-btn {
   text-transform: initial;
   font-size: 15px;
   box-shadow: none !important;
+}
+
+.btn-secondary {
+  background-color: rgba(255, 255, 255, 0.2);
 }
