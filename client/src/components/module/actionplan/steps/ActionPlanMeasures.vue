@@ -19,7 +19,7 @@
     },
 
     created() {
-      console.log(this.$options._componentTag)
+      // console.log(this.$options._componentTag)
     }
   }
 </script>

@@ -63,6 +63,7 @@
       },
 
       myGoalProceed(goalLevel) {
+        // debugger
         this.$emit('close')
         this.storeMyGoal(this.module.slug, goalLevel)
       },
