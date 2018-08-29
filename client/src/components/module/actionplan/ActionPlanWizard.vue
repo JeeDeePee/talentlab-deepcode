@@ -1,18 +1,30 @@
 <template>
   <v-dialog v-model="show" fullscreen hide-overlay transition="dialog-bottom-transition" scrollable>
-    <v-card tile>
-      <div class="pa-2">
-        <v-btn class="btn--close" large flat icon @click.stop="show=false">
-          <v-icon>close</v-icon>
-        </v-btn>
+    <v-card class="white--text">
 
-        <component
-          :is="getActionPlanWizardState"
-          v-on:back="newActionPlanWizardState"
-          v-on:proceed="nextWizardStep">
-        </component>
+      <v-toolbar dark color="primary">
+        <v-toolbar-title>Action Plan</v-toolbar-title>
+        <v-spacer></v-spacer>
+        <v-toolbar-items>
+          <v-btn class="btn--close" large flat icon @click.stop="show=false">
+            <v-icon>close</v-icon>
+          </v-btn>
+        </v-toolbar-items>
+      </v-toolbar>
 
-      </div>
+      <v-container>
+        <v-layout align-center justify-center row fill-height>
+          <v-flex xs12>
+
+            <component
+              :is="getActionPlanWizardState"
+              v-on:back="newActionPlanWizardState"
+              v-on:proceed="nextWizardStep">
+            </component>
+
+          </v-flex>
+        </v-layout>
+      </v-container>
     </v-card>
   </v-dialog>
 </template>

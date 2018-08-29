@@ -1,7 +1,9 @@
+@import "var";
+
 .v-dialog {
 
   .v-card {
-    background-color: $grey-9;
+    background-color: $secondary;
   }
 
   .v-btn, .v-input .v-label, .v-icon {

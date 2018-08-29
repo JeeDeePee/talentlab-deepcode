@@ -1,28 +1,26 @@
+@import "var";
+
 .v-btn--active .v-btn__content:before, .v-btn:focus .v-btn__content:before, .v-btn:hover .v-btn__content:before .v-btn:not(.v-btn--depressed) {
-  background-color: transparent;
+  background-color: $primary;
 }
 
 .theme--light .v-btn:not(.v-btn--icon):not(.v-btn--flat) {
-  background-color: transparent;
+  background-color: $primary;
 }
 
 // fix for the misaligned buttons, however still the case in IE1X
 
 button.v-btn:not(.v-btn--icon):not(.v-btn--flat) {
+  color: #FFFFFF;
   text-transform: initial;
-  border: 2px solid #FD6E22;
   padding-bottom: 32px;
   font-size: 15px;
   box-shadow: none !important;
-  background-color: transparent !important;
-  .v-btn__content {
-    padding-bottom: 4px;
-  }
+  background-color: $primary;
 }
 
 a.v-btn {
   text-transform: initial;
-  border: 2px solid #FD6E22;
   font-size: 15px;
   box-shadow: none !important;
 }

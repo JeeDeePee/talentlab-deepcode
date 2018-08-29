@@ -1,11 +1,19 @@
 <template>
-  <div class="grey--text">
-    <h2>Drei Schritte bis zum Action Plan</h2>
+  <div class="text-center">
+    <h1>Drei Schritte bis zum Action Plan</h1>
 
-    <div></div>
+    <h2 class="text--primary-accent">1</h2>
+    <p>Rekapituliere Deine Ziele</p>
+
+    <h2 class="text--primary-accent">2</h2>
+    <p>Reflektiere was Du gelernt hast</p>
+
+    <h2 class="text--primary-accent">3</h2>
+    <p>Definiere Deinen Action Plan</p>
 
     <v-btn @click="$emit('proceed', 'ReviseGoals')">Start</v-btn>
   </div>
+
 </template>
 
 <script>
@@ -13,8 +21,7 @@
 
   export default {
     computed: {
-      ...mapGetters({
-      })
+      ...mapGetters({})
     }
   }
 </script>

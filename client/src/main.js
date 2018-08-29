@@ -42,7 +42,8 @@ Vue.use(VueAxios, axios)
 
 Vue.use(Vuetify, {
   theme: {
-    primary: '#FD6E22'
+    primary: '#FD6E22',
+    secondary: '#59006F'
   }
 });
 
