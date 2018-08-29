@@ -43,6 +43,8 @@
 </template>
 
 <script>
+  // import ACTION_PLAN_QUERY from '@/graphql/gql/actionplan/actionPlanQuery.gql'
+
   import {mapActions, mapGetters} from 'vuex'
 
   import StartActionPlan from '@/components/module/actionplan/steps/StartActionPlan'
@@ -91,6 +93,13 @@
         ]
       }
     },
+
+    // apollo: {
+    //   moduleGoal: {
+    //     query: ACTION_PLAN_QUERY,
+    //     fetchPolicy: 'network-only'
+    //   }
+    // },
 
     computed: {
       ...mapGetters({

@@ -1,0 +1,11 @@
+query ActionPlanQuery($slug: String!) {
+  moduleUserGoal(moduleSlug: $slug) {
+    goal {
+      text
+      level
+      module {
+        slug
+      }
+    }
+  }
+}

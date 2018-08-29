@@ -1,5 +1,6 @@
 import Vuex from 'vuex'
 import Vue from 'vue'
+import actionPlanData from '@/store/module/actionPlan/actionPlanData'
 import focusWizard from '@/store/module/focus/FocusWizard'
 import userFocus from '@/store/module/focus/UserFocus'
 import moduleGoalWizard from '@/store/module/goal/ModuleGoalWizard'
@@ -12,6 +13,7 @@ export default new Vuex.Store({
     focusWizard: focusWizard,
     userFocus: userFocus,
     moduleGoalWizard: moduleGoalWizard,
+    actionPlanData: actionPlanData,
     actionPlanWizard: wizardGenerator('ActionPlan', 'StartActionPlan')
   },
 

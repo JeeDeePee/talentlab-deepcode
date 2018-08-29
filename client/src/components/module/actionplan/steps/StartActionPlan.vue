@@ -1,5 +1,5 @@
 <template>
-  <div class="text-center">
+  <div class="text-xs-center">
     <h1>Drei Schritte bis zum Action Plan</h1>
 
     <h2 class="text--primary-accent">1</h2>
@@ -29,7 +29,7 @@
     created() {
       // this.breadcrumbs[0].disabled = true
       // this.breadcrumb[0].hello = this.$options._componentTag
-      console.log(this.$options._componentTag)
+      // console.log(this.$options._componentTag)
     }
   }
 </script>
