@@ -13,8 +13,8 @@ export default {
   },
 
   actions: {
-    async fetchModuleUserGoal({state, commit}) {
-      const {data: {moduleUserGoal}} = await apolloClient.query({
+    async fetchModuleUserGoal({ state, commit }) {
+      const { data: { moduleUserGoal } } = await apolloClient.query({
         query: ACTION_PLAN_QUERY,
         fetchPolicy: 'network-only',
         variables: {

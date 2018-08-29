@@ -19,19 +19,19 @@ export default {
   },
 
   actions: {
-    async fetchModuleGoals({state, commit}, {moduleSlug}) {
-      const response = await apolloClient.query({
+    async fetchModuleGoals({ state, commit }, { moduleSlug }) {
+      const { data } = await apolloClient.query({
         query: MODULE_GOALS_QUERY,
         variables: {
           slug: moduleSlug
         }
       });
 
-      const goals = response.data.module.goalSet.edges.map(goal => ({...goal.node}))
+      const goals = data.module.goalSet.edges.map(goal => ({ ...goal.node }))
       commit('setModuleGoals', goals);
 
-      if (response.data.allUserGoals.edges.length === 1) {
-        const currentGoal = response.data.allUserGoals.edges[0].node.goal
+      if (data.allUserGoals.edges.length === 1) {
+        const currentGoal = data.allUserGoals.edges[0].node.goal
         commit('setCurrentGoal', currentGoal);
       }
     }

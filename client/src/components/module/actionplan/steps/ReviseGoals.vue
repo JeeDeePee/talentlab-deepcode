@@ -1,7 +1,7 @@
 <template>
   <div class="text-xs-center">
-    <h1>Rekapituliere Deine Ziele</h1>
-    <p class="mt-3">Dein Ziel zum Container «Digital Communication & Virtual Collaboration». Passe bei Bedarf noch einmal an.</p>
+    <h1>Rekapituliere Deine Ziele {{user.firstName}}</h1>
+    <p class="mt-3">Dein Ziel zum Container «{{moduleTitle}}». Passe bei Bedarf noch einmal an.</p>
 
     <div class="module-user-goal pa-3 mt-5 mb-5">{{moduleUserGoal.text}}</div>
 
@@ -11,19 +11,29 @@
 </template>
 
 <script>
-  import {mapGetters} from 'vuex'
+  import {mapActions, mapGetters} from 'vuex'
 
   export default {
     props: ['breadcrumbs'],
 
     computed: {
       ...mapGetters({
-        moduleUserGoal: 'getModuleUserGoal'
+        moduleUserGoal: 'getModuleUserGoal',
+        user: 'getUser'
+      }),
+      moduleTitle() {
+        return this.moduleUserGoal.module ? this.moduleUserGoal.module.title : ''
+      }
+    },
+
+    methods: {
+      ...mapActions({
+        fetchModuleUserGoal: 'fetchModuleUserGoal'
       })
     },
 
     created() {
-      this.$store.dispatch('fetchModuleUserGoal')
+      this.fetchModuleUserGoal()
       // this.breadcrumbs[1].disabled = true
       // console.log(this.$options._componentTag)
     }

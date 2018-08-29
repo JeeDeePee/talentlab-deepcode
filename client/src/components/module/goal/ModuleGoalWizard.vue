@@ -13,7 +13,7 @@
           </v-breadcrumbs-item>
         </v-breadcrumbs>
 
-        <MyGoal v-on:proceed="myGoalProceed($event)" v-on:back="myGoalBack($event)"></MyGoal>
+        <MyGoal v-on:proceed="myGoalProceed" v-on:back="myGoalBack($event)"></MyGoal>
 
       </div>
     </v-card>
@@ -63,7 +63,6 @@
       },
 
       myGoalProceed(goalLevel) {
-        // debugger
         this.$emit('close')
         this.storeMyGoal(this.module.slug, goalLevel)
       },

@@ -42,21 +42,19 @@
 </template>
 
 <script>
-  import USER_QUERY from '@/graphql/gql/user.gql'
+  import {mapActions} from 'vuex'
 
   export default {
     name: 'App',
 
-    apollo: {
-      user() {
-        return {
-          query: USER_QUERY,
-          fetchPolicy: 'network-only'
-        }
-      }
+    methods: {
+      ...mapActions({
+        fetchUser: 'fetchUser'
+      })
     },
 
     data() {
+      // TODO: ist das hier der eingeloggter user oder der app user?
       return {
         active: null,
         drawer: null,
@@ -64,6 +62,10 @@
         name: 'Max Muster',
         email: 'talentlab@orbit7.ch'
       }
+    },
+
+    created() {
+      this.fetchUser()
     },
 
     mounted() {

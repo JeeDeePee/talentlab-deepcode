@@ -4,7 +4,9 @@ query ActionPlanQuery($slug: String!) {
       text
       level
       module {
+        id
         slug
+        title
       }
     }
   }

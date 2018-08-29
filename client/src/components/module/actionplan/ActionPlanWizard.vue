@@ -94,13 +94,6 @@
       }
     },
 
-    // apollo: {
-    //   moduleGoal: {
-    //     query: ACTION_PLAN_QUERY,
-    //     fetchPolicy: 'network-only'
-    //   }
-    // },
-
     computed: {
       ...mapGetters({
         getActionPlanWizardState: 'getActionPlanWizardState'

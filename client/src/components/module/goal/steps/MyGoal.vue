@@ -6,25 +6,45 @@
       Wähle das Ziel, das am besten zu dir passt.
     </v-container>
 
-    <v-radio-group v-model="selectedGoal.level" column>
+    <v-radio-group v-model="currentGoal" column>
       <v-radio v-for="goal in moduleGoals" :key="goal.id" :label="goal.text" :value="goal.level">{{goal.text}}</v-radio>
     </v-radio-group>
 
     <p></p>
 
     <v-btn @click="$emit('back')">Zurück</v-btn>
-    <v-btn @click="$emit('proceed', selectedGoal.level)">Ziel speichern</v-btn>
+    <v-btn @click="$emit('proceed', newSelectedGoal)">Ziel speichern</v-btn>
   </div>
 </template>
 
 <script>
-  import {mapGetters} from 'vuex'
+  import {mapActions, mapGetters} from 'vuex'
 
   export default {
     computed: {
       ...mapGetters({
         moduleGoals: 'getModuleGoals',
-        selectedGoal: 'getCurrentGoal'
+        getCurrentGoal: 'getCurrentGoal'
+      }),
+      currentGoal: {
+        get() {
+          return this.getCurrentGoal.level
+        },
+        set(value) {
+          this.newSelectedGoal = value
+        }
+      }
+    },
+
+    data() {
+      return {
+        newSelectedGoal: -1
+      }
+    },
+
+    methods: {
+      ...mapActions({
+        setCurrentGoal: 'setCurrentGoal'
       })
     }
   }
