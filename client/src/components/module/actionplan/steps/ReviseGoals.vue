@@ -6,7 +6,7 @@
     <div class="module-user-goal pa-3 mt-5 mb-5">{{moduleUserGoal.text}}</div>
 
     <v-btn class="btn-secondary" @click="$emit('back', 'StartActionPlan')">Zurück</v-btn>
-    <v-btn @click="$emit('proceed', 'Learnings')">Weiter</v-btn>
+    <v-btn class="btn-primary" @click="$emit('proceed', 'Learnings')">Weiter</v-btn>
   </div>
 </template>
 

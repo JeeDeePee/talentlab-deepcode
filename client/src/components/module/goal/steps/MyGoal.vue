@@ -1,6 +1,6 @@
 <template>
-  <div class="grey--text">
-    <h2>Was ist dein Ziel</h2>
+  <div class="text-xs-center">
+    <h1>Was ist dein Ziel</h1>
 
     <v-container fluid grid-list-xl>
       Wähle das Ziel, das am besten zu dir passt.
