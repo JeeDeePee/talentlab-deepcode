@@ -52,4 +52,8 @@
 
 <style lang="scss" scoped>
   @import "../../../../styles/var";
+
+  /*.as-button {*/
+    /*appearance: button;*/
+  /*}*/
 </style>

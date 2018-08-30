@@ -12,13 +12,13 @@
             <v-list-tile-title>Container</v-list-tile-title>
           </v-list-tile-content>
         </v-list-tile>
-        <!--
-        <v-list-tile :to="{ name: 'dashboard'}" exact router>
+        <!--    EXPERIMENTS
+        <v-list-tile :to="{ name: 'experiments'}" exact router>
           <v-list-tile-content>
-            <v-list-tile-title>Dashboard</v-list-tile-title>
+            <v-list-tile-title>Experiments</v-list-tile-title>
           </v-list-tile-content>
-        </v-list-tile>
-        -->
+        </v-list-tile>   -->
+        <!--    EXPERIMENTS    -->
       </v-list>
     </v-navigation-drawer>
     <v-toolbar fixed app dark class="elevation-0">
@@ -28,9 +28,9 @@
       <v-toolbar-items class="hidden-sm-and-down">
         <v-btn flat :to="{ name: 'development'}" exact router>Meine Entwicklung</v-btn>
         <v-btn flat :to="{ name: 'categories'}" exact router>Container</v-btn>
-        <!--
-        <v-btn flat :to="{ name: 'dashboard'}" exact router>Dashboard</v-btn>
-        -->
+        <!--    EXPERIMENTS
+        <v-btn flat :to="{ name: 'experiments'}" exact router>Experiments</v-btn>    -->
+        <!--    EXPERIMENTS    -->
       </v-toolbar-items>
     </v-toolbar>
     <v-content fluid fill-height>

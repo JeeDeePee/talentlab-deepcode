@@ -10,7 +10,13 @@
     background-color: rgba(255, 255, 255, 0.2);
   }
 
-  background-color: $primary !important;
+  // TODO: this is not a solution, because it overwrites the secondary button style
+  &.btn-primary {
+    background-color: $primary;
+  }
+
+  background-color: $primary;
+
 }
 
 // fix for the misaligned buttons, however still the case in IE1X

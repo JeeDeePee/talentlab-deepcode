@@ -4,6 +4,7 @@ import Categories from '@/pages/PageCategories'
 import Module from '@/pages/PageModule'
 import Unit from '@/pages/PageUnit'
 import Development from '@/pages/PageDevelopment'
+import Dashboard from '@/pages/PageExperiments'
 import NotFound from '@/pages/PageNotFound'
 
 const routerOptions = [
@@ -11,6 +12,7 @@ const routerOptions = [
   { path: '/module/:slug', name: 'module', component: Module, props: true },
   { path: '/unit/:slug', name: 'unit', component: Unit, props: true },
   { path: '/development', name: 'development', component: Development },
+  { path: '/experiments', name: 'experiments', component: Dashboard },
   { path: '*', component: NotFound }
 ]
 

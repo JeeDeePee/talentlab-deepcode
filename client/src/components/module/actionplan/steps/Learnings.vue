@@ -3,7 +3,16 @@
     <h1>Reflektiere was Du gelernt hast</h1>
     <p>Das sind Deine Learnings aus den verschiedenen Units. Passe bei Bedarf noch einmal an.</p>
 
-    <div></div>
+    <v-container fluid grid-list-xl>
+      <v-layout row wrap>
+
+        <TextBox :initial="firstLearningText" v-on:save="save"></TextBox>
+        <TextBox :initial="secondLearningText" v-on:save="save"></TextBox>
+
+      </v-layout>
+    </v-container>
+
+    <!--<TextBox :initial="thirdLearningText" v-on:save="save"></TextBox>-->
 
     <v-btn class="btn-secondary" @click="$emit('back', 'ReviseGoals')">Zurück</v-btn>
     <v-btn @click="$emit('proceed', 'ActionPlanBusinessGoal')">Weiter</v-btn>
@@ -12,13 +21,39 @@
 
 <script>
   import {mapGetters} from 'vuex'
+  import TextBox from '@/components/reusable/TextBox'
 
   export default {
     props: ['breadcrumbs'],
 
+    components: {
+      TextBox
+    },
+
     computed: {
-      ...mapGetters({
-      })
+      ...mapGetters({})
+    },
+
+    data() {
+      return {
+        firstLearningText: 'Kommunikation auf Distanz\n' +
+          '\n' +
+          '1. Bewusste Kommunikation ist auf Distanz mindestens genauso wichtig wie in der Face-to-Face Kommunikation\n' +
+          '2. Bei Emails muss auf die Sprache geachtet werden\n' +
+          '3. Video-Konferenzen sollten sorgfältig vorbereitet werden\n',
+        secondLearningText: 'Im Dschungel der digitalen Kommunikation: Ein Überblick\n' +
+          '\n' +
+          '1. Die einzelnen Kommunkationstools sind auf einen gewissen Zweck zugeschnitten und sollten entsprechend genutzt werden\n' +
+          '2. Compliance-Themen (Tracking etc.) müssen gelöst werden\n' +
+          '3. Es braucht eine Policy für die Verwendung',
+        thirdLearningText: ''
+      }
+    },
+
+    methods: {
+      save(text) {
+        console.log(`Saving text: ${text}`)
+      }
     },
 
     created() {
