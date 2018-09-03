@@ -1,0 +1,7 @@
+mutation DefineActionPlan($input: DefineActionPlanInput!) {
+  defineActionPlan(input: $input) {
+    userModuleProgress {
+      id
+    }
+  }
+}
