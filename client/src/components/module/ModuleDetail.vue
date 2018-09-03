@@ -4,7 +4,7 @@
       <span class="grey--text">{{module.category.title}} - {{module.skill}}</span><br>
       <h2 class="mb-1 mt-1">{{module.title}}</h2>
       <v-btn class="button item2" @click="$emit('start-module-progress', module.slug)">
-        Container buchen
+        Modul buchen
       </v-btn>
 
     </v-container>
