@@ -18,7 +18,7 @@
               <v-spacer></v-spacer>
             </v-flex>
             <v-flex>
-              <TextBox :initial="impactText" v-on:save="save"></TextBox>
+              <TextBox :value="actionPlan.impactText" v-on:save="save"></TextBox>
             </v-flex>
           </v-layout>
         </v-flex>
@@ -33,7 +33,7 @@
               <v-spacer></v-spacer>
             </v-flex>
             <v-flex justify-end>
-              <TextBox :initial="measurementText" v-on:save="save"></TextBox>
+              <TextBox :value="actionPlan.measurementText" v-on:save="save"></TextBox>
             </v-flex>
           </v-layout>
         </v-flex>
@@ -56,7 +56,9 @@
     },
 
     computed: {
-      ...mapGetters({})
+      ...mapGetters({
+        actionPlan: 'getActionPlan'
+      })
     },
 
     data() {

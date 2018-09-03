@@ -54,6 +54,7 @@ class DefineActionPlan(graphene.relay.ClientIDMutation):
     class Input:
         module_slug = graphene.String(required=True)
         # text params
+        learnings_text = graphene.String()
         impact_text = graphene.String()
         measurement_text = graphene.String()
         measures_text = graphene.String()

@@ -10,4 +10,20 @@ query ActionPlanQuery($slug: String!) {
       }
     }
   }
+  userProgress {
+    usermoduleprogressSet(module_Slug: $slug) {
+      edges {
+        node {
+          id
+          learnings
+          impactText
+          measurementText
+          measuresText
+          timeFrameText
+          resourcesSkillsText
+          commitmentSupportText
+        }
+      }
+    }
+  }
 }

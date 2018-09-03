@@ -19,14 +19,16 @@ Vue.config.productionTip = false
 // TODO: Move into a separate project
 //
 function getRidOfEdges(collection) {
-  if (typeof collection === 'object') {
+  if (typeof collection === 'object' && collection) {
     let newObj = {}
     for (const k in collection) {
       if (k === 'edges') {
         return collection.edges.map(edge => getRidOfEdges(edge.node));
       } else {
         newObj[k] = getRidOfEdges(collection[k])
-        delete newObj[k]['__typename']
+        if (newObj[k]) {
+          delete newObj[k]['__typename']
+        }
       }
     }
     return newObj
@@ -37,6 +39,8 @@ function getRidOfEdges(collection) {
 
 Object.defineProperty(Vue.prototype, '$getRidOfEdges', {value: getRidOfEdges})
 Object.defineProperty(Vue.prototype, '$lodash', {value: lodash})
+
+Window.$getRidOfEdges = getRidOfEdges
 
 Vue.use(VueApollo)
 Vue.use(VueAxios, axios)

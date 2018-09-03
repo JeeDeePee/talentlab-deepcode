@@ -2,12 +2,12 @@
   <v-card>
     <v-card-text>
       <v-textarea
-        v-model="initial"
+        :value="value"
         :label="message"
         auto-grow
         full-width
         single-line
-        hide-details="true"
+        hide-details
         placeholder="Erfasse deine Learnings">
       </v-textarea>
     </v-card-text>
@@ -24,13 +24,7 @@
 
 <script>
   export default {
-    props: ['message', 'initial'],
-
-    data() {
-      return {
-        text: ''
-      }
-    },
+    props: ['message', 'value'],
 
     methods: {
       edit() {

@@ -12,8 +12,8 @@
         </v-flex>
       </v-layout>
       <v-layout row wrap>
-        <TextBox :initial="measuresText" v-on:save="save"></TextBox>
-        <TextBox :initial="timeFrameText" v-on:save="save"></TextBox>
+        <TextBox :value="actionPlan.measuresText" v-on:save="save"></TextBox>
+        <TextBox :value="actionPlan.timeFrameText" v-on:save="save"></TextBox>
       </v-layout>
 
       <v-layout row wrap>
@@ -25,8 +25,8 @@
         </v-flex>
       </v-layout>
       <v-layout row wrap>
-        <TextBox :initial="resourcesSkillsText" v-on:save="save"></TextBox>
-        <TextBox :initial="committmentSupportText" v-on:save="save"></TextBox>
+        <TextBox :value="actionPlan.resourcesSkillsText" v-on:save="save"></TextBox>
+        <TextBox :value="actionPlan.commitmentSupportText" v-on:save="save"></TextBox>
       </v-layout>
     </v-container>
 
@@ -46,22 +46,12 @@
 
     computed: {
       ...mapGetters({
+        actionPlan: 'getActionPlan'
       })
     },
 
     data() {
       return {
-        measuresText: 'Mustertext – Erforderliche Änderungen:\n' +
-          '- Massnahmen auf der Sachebene\n' +
-          '- eigene Verhaltensänderungen\n' +
-          '- Rahmenbedingungen…',
-        timeFrameText: '… Eintrag\n' +
-          '… Eitnrag\n' +
-          '… Eitnrag',
-        resourcesSkillsText: 'finanzielle Mittel\n' +
-          'Personelle Ressourcen\n' +
-          'Skills',
-        committmentSupportText: 'ZB. Support im eigenen Umfeld (Chef, Kollegen, Partner)'
       }
     },
 
