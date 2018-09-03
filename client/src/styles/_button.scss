@@ -16,20 +16,20 @@
   //  color: red;
   //}
 
-  background-color: $primary;
-  //color: red;
+  background-color: $primary; // $orange; // #FD6E22; //  darken($primary, 10);
+  color: white;
 }
 
 // fix for the misaligned buttons, however still the case in IE1X
 
-button.v-btn:not(.v-btn--icon):not(.v-btn--flat) {
-  color: #FFFFFF;
-  text-transform: initial;
-  padding-bottom: 32px;
-  font-size: 15px;
-  box-shadow: none !important;
-  background-color: $primary;
-}
+//button.v-btn:not(.v-btn--icon):not(.v-btn--flat) {
+//  color: #FFFFFF;
+//  text-transform: initial;
+//  padding-bottom: 32px;
+//  font-size: 15px;
+//  box-shadow: none !important;
+//  background-color: $primary;
+//}
 
 .v-btn {
   border-radius: 0;

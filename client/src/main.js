@@ -1,5 +1,6 @@
 import 'babel-polyfill'
 import 'vuetify/dist/vuetify.min.css'
+import '@/styles/main.scss'
 import Vue from 'vue'
 import Vuetify from 'vuetify'
 import axios from 'axios'
