@@ -3,10 +3,10 @@
     <h1>Reflektiere was Du gelernt hast</h1>
     <p>Das sind Deine Learnings aus den verschiedenen Units. Passe bei Bedarf noch einmal an.</p>
 
-    <TextBox :value="actionPlan.learnings" v-on:save="save"></TextBox>
+    <TextBox v-model="actionPlan.learnings"></TextBox>
 
     <v-btn class="btn-secondary" @click="$emit('back', 'ReviseGoals')">Zurück</v-btn>
-    <v-btn @click="$emit('proceed', 'ActionPlanBusinessGoal')">Weiter</v-btn>
+    <v-btn @click="save">Weiter</v-btn>
   </div>
 </template>
 
@@ -34,10 +34,14 @@
     },
 
     methods: {
-      save(text) {
-        // dispatch over vuex: save text
+      save() {
+        console.log(this.actionPlan.learnings)
+        this.$emit('proceed', 'ActionPlanBusinessGoal')
       }
-
+      // save($event, text) {
+      //   debugger
+      //   // dispatch over vuex: save text
+      // }
     },
 
     created() {

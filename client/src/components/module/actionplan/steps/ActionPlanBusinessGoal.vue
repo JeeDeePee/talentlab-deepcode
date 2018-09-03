@@ -18,7 +18,7 @@
               <v-spacer></v-spacer>
             </v-flex>
             <v-flex>
-              <TextBox :value="actionPlan.impactText" v-on:save="save"></TextBox>
+              <TextBox :value="actionPlan.impactText" :key='impactText' v-on:save="save"></TextBox>
             </v-flex>
           </v-layout>
         </v-flex>
@@ -33,12 +33,11 @@
               <v-spacer></v-spacer>
             </v-flex>
             <v-flex justify-end>
-              <TextBox :value="actionPlan.measurementText" v-on:save="save"></TextBox>
+              <TextBox :value="actionPlan.measurementText" :key='measurementText' v-on:save="save"></TextBox>
             </v-flex>
           </v-layout>
         </v-flex>
       </v-layout>
-
     </v-container>
 
     <v-btn class="btn-secondary" @click="$emit('back', 'Learnings')">Zurück</v-btn>
