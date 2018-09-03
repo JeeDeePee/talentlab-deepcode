@@ -30,6 +30,10 @@ button.v-btn:not(.v-btn--icon):not(.v-btn--flat) {
   background-color: $primary;
 }
 
+.v-btn {
+  border-radius: 0;
+}
+
 a.v-btn {
   text-transform: initial;
   font-size: 15px;
@@ -38,4 +42,8 @@ a.v-btn {
 
 .btn-secondary {
   background-color: rgba(255, 255, 255, 0.2);
+}
+
+.btn-minimal {
+  min-width: auto;
 }

@@ -65,7 +65,11 @@
     apollo: {
       userProgress: {
         query: USER_DEVELOPMENT_QUERY,
-        fetchPolicy: 'network-only'
+        fetchPolicy: 'network-only',
+        watchLoading(isLoading, countModifier) {
+          // debugger
+          console.log(`watchLoading(${isLoading}, ${countModifier})`)
+        }
       }
     },
 

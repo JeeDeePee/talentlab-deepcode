@@ -13,6 +13,18 @@ class UserModuleProgress(TimeStampedModel):
     user = models.ForeignKey('user.User', null=True, on_delete=models.CASCADE)
     module = models.ForeignKey('modules.Module', null=True, on_delete=models.SET_NULL)
 
+    # action plan: maybe refactor into a separate model later
+    # steps:
+    #    ReviseGoals
+    #    Learnings
+    #    ActionPlanBusinessGoal
+    #        impactText
+    #        measurementText
+    #    ActionPlanMeasures
+    #    ActionPlanOverview
+
+    #
+
     def __str__(self):
         return 'UserModuleProgress {} - {}'.format(self.user, self.module)
 
@@ -24,6 +36,9 @@ class UserUnitProgress(TimeStampedModel):
 
     module_progress = models.ForeignKey('progress.UserModuleProgress', null=True, on_delete=models.CASCADE)
     unit = models.ForeignKey('modules.Unit', null=True, on_delete=models.SET_NULL)
+
+    # learning: maybe refactor into a separate model later
+    # learning = models.TextField(null=True, blank=True, default=None)
 
     def __str__(self):
         return 'UserUnitProgress {} - {}'.format(self.module_progress, self.unit)
@@ -42,3 +57,6 @@ class UserGoal(TimeStampedModel):
 
     def __str__(self):
         return 'UserGoal {} - {}'.format(self.user, self.goal)
+
+
+# class ActionPlan()

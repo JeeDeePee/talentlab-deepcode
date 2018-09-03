@@ -1,20 +1,25 @@
 <template>
-  <v-flex xs12 sm6 class="mb-1">
-    <v-card>
-      <v-form>
-        <v-textarea v-model="initial" :label="message" counter maxlength="1200" full-width single-line>
-        </v-textarea>
-      </v-form>
-      <v-toolbar card dark>
-        <v-btn class="button item2" @click="edit">
-          <v-icon>edit</v-icon>
-        </v-btn>
-        <v-btn class="button item2" @click="save">
-          Speichern
-        </v-btn>
-      </v-toolbar>
-    </v-card>
-  </v-flex>
+  <v-card>
+    <v-card-text>
+      <v-textarea
+        v-model="initial"
+        :label="message"
+        auto-grow
+        full-width
+        single-line
+        hide-details="true"
+        placeholder="Erfasse deine Learnings">
+      </v-textarea>
+    </v-card-text>
+    <v-card-actions>
+      <v-btn class="button primary item2 btn-minimal" outline @click="edit">
+        <v-icon color="primary">edit</v-icon>
+      </v-btn>
+      <v-btn class="button item2" @click="save">
+        Speichern
+      </v-btn>
+    </v-card-actions>
+  </v-card>
 </template>
 
 <script>
@@ -39,5 +44,21 @@
   }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+  .v-card {
+    box-shadow: initial;
+  }
+
+  .v-card__actions {
+    border-top: initial;
+  }
+
+  .v-textarea {
+    background-color: rgba(255, 255, 255, 0.2);
+    margin: auto;
+
+    textarea::placeholder {
+      color: red;
+    }
+  }
 </style>

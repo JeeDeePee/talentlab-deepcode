@@ -30,8 +30,8 @@
 
             <component
               :is="getActionPlanWizardState"
-              v-on:back="newActionPlanWizardState"
-              v-on:proceed="nextWizardStep"
+              @back="newActionPlanWizardState"
+              @proceed="nextWizardStep"
               :breadcrumbs="breadcrumbs">
             </component>
 
