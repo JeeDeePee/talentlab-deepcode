@@ -38,10 +38,6 @@
         console.log(this.actionPlan.learnings)
         this.$emit('proceed', 'ActionPlanBusinessGoal')
       }
-      // save($event, text) {
-      //   debugger
-      //   // dispatch over vuex: save text
-      // }
     },
 
     created() {

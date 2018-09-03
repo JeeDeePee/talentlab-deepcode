@@ -9,7 +9,6 @@
         full-width
         single-line
         hide-details
-        v-on:input="save"
         placeholder="Erfasse deine Learnings">
       </v-textarea>
     </v-card-text>
@@ -33,15 +32,7 @@
       }
     },
     methods: {
-      edit() {
-        // console.log(`Edit text: ${this.text}`)
-      },
-      save($event, text) {
-        // console.log(`Save text: ${text}`)
-        // console.log(`Save text: ${this.text}`)
-        this.$emit('save', text)
-      },
-      handleInput (e) {
+      handleInput() {
         this.$emit('input', this.content)
       }
     }
