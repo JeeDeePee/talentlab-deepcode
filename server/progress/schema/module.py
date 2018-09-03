@@ -11,7 +11,7 @@ from progress.models import UserModuleProgress
 from progress.schema.user import UserNode
 
 
-class ModuleProgressNode(DjangoObjectType):
+class UserModuleProgressNode(DjangoObjectType):
     user = UserNode
     module = ModuleNode
 
@@ -23,7 +23,7 @@ class ModuleProgressNode(DjangoObjectType):
 
 class UserModuleNode(graphene.ObjectType):
     status = graphene.Boolean()
-    module_progress = graphene.Field(ModuleProgressNode)
+    module_progress = graphene.Field(UserModuleProgressNode)
     module = graphene.Field(ModuleNode)
 
     class Meta:
@@ -39,8 +39,8 @@ all_modules_progress_filterset_class = graphql_user_filter(UserModuleProgress, [
 
 
 class UserModulesQuery(object):
-    module_progress = relay.Node.Field(ModuleProgressNode)
-    all_modules_progress = DjangoFilterConnectionField(ModuleProgressNode, filterset_class=all_modules_progress_filterset_class)
+    module_progress = relay.Node.Field(UserModuleProgressNode)
+    all_modules_progress = DjangoFilterConnectionField(UserModuleProgressNode, filterset_class=all_modules_progress_filterset_class)
 
     user_modules = relay.ConnectionField(UserModuleConnection)
 

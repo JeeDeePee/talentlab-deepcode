@@ -7,11 +7,11 @@ from core.middleware import get_current_user
 from modules.models import Unit, Module
 from modules.schema import UnitNode
 from progress.models import UserUnitProgress, UserModuleProgress
-from progress.schema.module import ModuleProgressNode
+from progress.schema.module import UserModuleProgressNode
 
 
-class UnitProgressNode(DjangoObjectType):
-    module_progress = ModuleProgressNode
+class UserUnitProgressNode(DjangoObjectType):
+    module_progress = UserModuleProgressNode
     unit = UnitNode
 
     class Meta:
@@ -34,8 +34,8 @@ class UserUnitConnection(graphene.Connection):
 
 
 class UserUnitsQuery(object):
-    unit_progress = relay.Node.Field(UnitProgressNode)
-    all_unit_progress = DjangoFilterConnectionField(UnitProgressNode)
+    unit_progress = relay.Node.Field(UserUnitProgressNode)
+    all_unit_progress = DjangoFilterConnectionField(UserUnitProgressNode)
 
     user_module_units = relay.ConnectionField(UserUnitConnection, module_slug=graphene.String())
 

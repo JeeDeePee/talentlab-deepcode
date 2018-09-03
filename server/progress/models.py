@@ -21,9 +21,21 @@ class UserModuleProgress(TimeStampedModel):
     #        impactText
     #        measurementText
     #    ActionPlanMeasures
+    #        measuresText
+    #        timeFrameText
+    #        resourcesSkillsText
+    #        commitmentSupportText
     #    ActionPlanOverview
 
-    #
+    # ActionPlan - BusinessGoal
+    impact_text = models.TextField(null=True, blank=True)
+    measurement_text = models.TextField(null=True, blank=True)
+
+    # ActionPlan - Measures
+    measures_text = models.TextField(null=True, blank=True)
+    time_frame_text = models.TextField(null=True, blank=True)
+    resources_skills_text = models.TextField(null=True, blank=True)
+    commitment_support_text = models.TextField(null=True, blank=True)
 
     def __str__(self):
         return 'UserModuleProgress {} - {}'.format(self.user, self.module)
