@@ -31,7 +31,7 @@
           '\n' +
           '1. Bewusste Kommunikation ist auf Distanz mindestens genauso wichtig wie in der Face-to-Face Kommunikation\n' +
           '2. Bei Emails muss auf die Sprache geachtet werden\n' +
-          '3. Video-Konferenzen sollten sorgfältig vorbereitet werden\n',
+          '3. Video-Konferenzen sollten sorgfältig vorbereitet werden\n'
       }
     },
 
