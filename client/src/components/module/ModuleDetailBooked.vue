@@ -30,18 +30,15 @@
       </v-container>
     </div>
 
-    <!--hidden-sm-and-down-->
-    <!--hidden-md-and-up-->
-    <!--btn-left-->
-
     <div class="container-process-bg">
       <v-container grid-list-md>
         <v-btn class="button item2" @click.stop="showModuleGoalDialog=true">Ziele</v-btn>
-        <v-btn class="button item2">Learnings</v-btn>
+        <v-btn class="button item2" @click.stop="showLearningsDialog=true">Learnings</v-btn>
         <v-btn class="button item2" @click.stop="showActionPlanDialog=true">Action Plan</v-btn>
       </v-container>
 
       <ModuleGoalWizard :visible="showModuleGoalDialog" @close="showModuleGoalDialog=false" :module="module"/>
+      <LearningsWizard :visible="showLearningsDialog" @close="showLearningsDialog=false" :module="module"/>
       <ActionPlanWizard :visible="showActionPlanDialog" @close="showActionPlanDialog=false" :module="module"/>
 
     </div>
@@ -70,18 +67,13 @@
   import VideoPlayer from '@/components/module/VideoPlayer'
   import Unit from '@/components/module/Unit'
   import ModuleGoalWizard from '@/components/module/goal/ModuleGoalWizard'
-  import ActionPlanWizard from '@/components/module/actionplan/ActionPlanWizard';
+  import LearningsWizard from '@/components/module/learnings/LearningsWizard'
+  import ActionPlanWizard from '@/components/module/actionplan/ActionPlanWizard'
 
   export default {
     props: {
-      module: {
-        required: true,
-        type: Object
-      },
-      units: {
-        required: true,
-        type: Array
-      }
+      module: { required: true, type: Object },
+      units: { required: true, type: Array }
     },
 
     components: {
@@ -89,6 +81,7 @@
       Tools,
       VideoPlayer,
       Unit,
+      LearningsWizard,
       ModuleGoalWizard
     },
 
@@ -96,6 +89,7 @@
       return {
         showVideoPlayer: false,
         showModuleGoalDialog: false,
+        showLearningsDialog: false,
         showActionPlanDialog: false
       }
     },

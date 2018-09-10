@@ -37,7 +37,6 @@
       ...mapActions({
         defineActionPlan: 'defineActionPlan'
       }),
-
       save() {
         this.defineActionPlan([{'learningsText': this.actionPlan.learningsText}])
         this.$emit('proceed', 'ActionPlanBusinessGoal')

@@ -23,7 +23,9 @@
     props: ['breadcrumbs'],
 
     computed: {
-      ...mapGetters({})
+      ...mapGetters({
+        currentModule: 'getCurrentModule'
+      })
     },
 
     methods: {

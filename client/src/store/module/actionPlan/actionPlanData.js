@@ -41,9 +41,10 @@ export default {
 
     newCurrentModule({ state, commit }, newCurrentModule) {
       commit('setCurrentModule', newCurrentModule)
+      // TODO: we should fetch automatically after setting the module
     },
 
-    defineActionPlan({ state, commit }, newKeyValues) {
+    async defineActionPlan({ state, commit }, newKeyValues) {
       let input = Object.assign({'moduleSlug': state.currentModule.slug}, ...newKeyValues)
       apolloClient.mutate({
         mutation: DEFINE_ACTION_PLAN,
@@ -55,6 +56,7 @@ export default {
   },
 
   getters: {
+    getCurrentModule: state => state.currentModule,
     getModuleUserGoal: state => state.moduleUserGoal,
     getActionPlan: state => state.actionPlan
   }
