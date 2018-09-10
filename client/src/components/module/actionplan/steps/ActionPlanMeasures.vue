@@ -12,8 +12,12 @@
         </v-flex>
       </v-layout>
       <v-layout row wrap>
-        <TextBox :value="actionPlan.measuresText" v-on:save="save"></TextBox>
-        <TextBox :value="actionPlan.timeFrameText" v-on:save="save"></TextBox>
+        <v-flex sm6>
+          <TextBox :placeholder="'Umsetzungsmassnahmen'" v-model="actionPlan.measuresText"></TextBox>
+        </v-flex>
+        <v-flex sm6>
+          <TextBox :placeholder="'Zeitrahmen'" v-model="actionPlan.timeFrameText"></TextBox>
+        </v-flex>
       </v-layout>
 
       <v-layout row wrap>
@@ -25,18 +29,22 @@
         </v-flex>
       </v-layout>
       <v-layout row wrap>
-        <TextBox :value="actionPlan.resourcesSkillsText" v-on:save="save"></TextBox>
-        <TextBox :value="actionPlan.commitmentSupportText" v-on:save="save"></TextBox>
+        <v-flex sm6>
+          <TextBox :placeholder="'Benötigte Ressourcen/Skills'" v-model="actionPlan.resourcesSkillsText"></TextBox>
+        </v-flex>
+        <v-flex sm6>
+          <TextBox :placeholder="'Commitment'" v-model="actionPlan.commitmentSupportText"></TextBox>
+        </v-flex>
       </v-layout>
     </v-container>
 
     <v-btn class="btn-secondary" @click="$emit('back', 'ActionPlanBusinessGoal')">Zurück</v-btn>
-    <v-btn @click="$emit('proceed', 'ActionPlanOverview')">Weiter</v-btn>
+    <v-btn @click="save">Weiter</v-btn>
   </div>
 </template>
 
 <script>
-  import {mapGetters} from 'vuex'
+  import {mapActions, mapGetters} from 'vuex'
   import TextBox from '@/components/reusable/TextBox'
 
   export default {
@@ -56,13 +64,25 @@
     },
 
     methods: {
-      save(text) {
-        console.log(`Saving text: ${text}`)
+      ...mapActions({
+        defineActionPlan: 'defineActionPlan'
+      }),
+      save() {
+        this.defineActionPlan([
+          {
+            'measuresText': this.actionPlan.measuresText,
+            'timeFrameText': this.actionPlan.timeFrameText,
+            'resourcesSkillsText': this.actionPlan.resourcesSkillsText,
+            'commitmentSupportText': this.actionPlan.commitmentSupportText
+          }
+        ])
+        this.$emit('proceed', 'ActionPlanOverview')
       }
     },
 
     created() {
       // console.log(this.$options._componentTag)
+      // this.breadcrumbs[2].disabled = true
     }
   }
 </script>

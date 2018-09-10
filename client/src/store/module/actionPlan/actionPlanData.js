@@ -1,6 +1,6 @@
 import apolloClient from '../../../graphql/client';
 import ACTION_PLAN_QUERY from '@/graphql/gql/actionPlan/actionPlanQuery.gql'
-import DEFINE_ACTION_PLAN from '@/graphql/gql/progress/defineActionPlan.gql'
+import DEFINE_ACTION_PLAN from '@/graphql/gql/actionPlan/defineActionPlan.gql'
 
 export default {
   state: {
@@ -36,29 +36,25 @@ export default {
       }
 
       const actionPlan = Window.$getRidOfEdges(userProgress).usermoduleprogressSet[0]
-      // debugger
       commit('setActionPlan', actionPlan)
     },
+
     newCurrentModule({ state, commit }, newCurrentModule) {
       commit('setCurrentModule', newCurrentModule)
+    },
+
+    defineActionPlan({ state, commit }, newKeyValues) {
+      let input = Object.assign({'moduleSlug': state.currentModule.slug}, ...newKeyValues)
+      apolloClient.mutate({
+        mutation: DEFINE_ACTION_PLAN,
+        variables: {
+          'input': input
+        }
+      })
     }
   },
 
-  startModuleProgress({ state, commit }) {
-    apolloClient.mutate({
-      mutation: DEFINE_ACTION_PLAN,
-      variables: {
-        'input':
-          {
-            'moduleSlug': state.currentModule.slug,
-            'measurementText': ''
-          }
-      }
-    })
-  },
-
   getters: {
-    getCurrentModule: state => state.currentModule,
     getModuleUserGoal: state => state.moduleUserGoal,
     getActionPlan: state => state.actionPlan
   }

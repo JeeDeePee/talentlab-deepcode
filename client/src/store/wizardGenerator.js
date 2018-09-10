@@ -9,6 +9,9 @@ export default function wizardGenerator(wizardName, defaultWizardStep) {
   }
 
   let actions = {}
+  actions[`reset${wizardName}WizardState`] = function({state, commit}, newState) {
+    commit(`set${wizardName}WizardState`, defaultWizardStep)
+  }
   actions[`new${wizardName}WizardState`] = function({state, commit}, newState) {
     commit(`set${wizardName}WizardState`, newState)
   }

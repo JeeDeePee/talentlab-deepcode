@@ -18,7 +18,7 @@
               <v-spacer></v-spacer>
             </v-flex>
             <v-flex>
-              <TextBox :value="actionPlan.impactText" :key='impactText' v-on:save="save"></TextBox>
+              <TextBox :placeholder="'Zielzustand/Wirkung'" v-model="actionPlan.impactText"></TextBox>
             </v-flex>
           </v-layout>
         </v-flex>
@@ -33,7 +33,7 @@
               <v-spacer></v-spacer>
             </v-flex>
             <v-flex justify-end>
-              <TextBox :value="actionPlan.measurementText" :key='measurementText' v-on:save="save"></TextBox>
+              <TextBox :placeholder="'Wirkungsmessung'" v-model="actionPlan.measurementText"></TextBox>
             </v-flex>
           </v-layout>
         </v-flex>
@@ -41,12 +41,12 @@
     </v-container>
 
     <v-btn class="btn-secondary" @click="$emit('back', 'Learnings')">Zurück</v-btn>
-    <v-btn @click="$emit('proceed', 'ActionPlanMeasures')">Weiter</v-btn>
+    <v-btn @click="save">Weiter</v-btn>
   </div>
 </template>
 
 <script>
-  import {mapGetters} from 'vuex'
+  import {mapActions, mapGetters} from 'vuex'
   import TextBox from '@/components/reusable/TextBox'
 
   export default {
@@ -62,19 +62,27 @@
 
     data() {
       return {
-        impactText: 'Wir brauchen mehr Klarheit in der Landschaft der eingesetzten digitalen Kommmunikationstools: Welche Tools werden für was eingesetzt.',
-        measurementText: 'Dies wird bewirken, dass wir effizienter und verbindlicher kommunizieren, intern wie auch mit unseren Geschäftspartnern. '
       }
     },
 
     methods: {
-      save(text) {
-        console.log(`Saving text: ${text}`)
+      ...mapActions({
+        defineActionPlan: 'defineActionPlan'
+      }),
+      save() {
+        this.defineActionPlan([
+          {
+            'impactText': this.actionPlan.impactText,
+            'measurementText': this.actionPlan.measurementText
+          }
+        ])
+        this.$emit('proceed', 'ActionPlanMeasures')
       }
     },
 
     created() {
       // console.log(this.$options._componentTag)
+      // this.breadcrumbs[2].disabled = true
     }
   }
 </script>

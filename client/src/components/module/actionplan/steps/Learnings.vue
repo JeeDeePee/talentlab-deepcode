@@ -3,7 +3,7 @@
     <h1>Reflektiere was Du gelernt hast</h1>
     <p>Das sind Deine Learnings aus den verschiedenen Units. Passe bei Bedarf noch einmal an.</p>
 
-    <TextBox v-model="actionPlan.learnings"></TextBox>
+    <TextBox :placeholder="'Deine Learnings'" v-model="actionPlan.learningsText"></TextBox>
 
     <v-btn class="btn-secondary" @click="$emit('back', 'ReviseGoals')">Zurück</v-btn>
     <v-btn @click="save">Weiter</v-btn>
@@ -12,7 +12,7 @@
 
 <script>
 
-  import {mapGetters} from 'vuex'
+  import {mapActions, mapGetters} from 'vuex'
   import TextBox from '@/components/reusable/TextBox'
 
   export default {
@@ -34,8 +34,12 @@
     },
 
     methods: {
+      ...mapActions({
+        defineActionPlan: 'defineActionPlan'
+      }),
+
       save() {
-        console.log(this.actionPlan.learnings)
+        this.defineActionPlan([{'learningsText': this.actionPlan.learningsText}])
         this.$emit('proceed', 'ActionPlanBusinessGoal')
       }
     },

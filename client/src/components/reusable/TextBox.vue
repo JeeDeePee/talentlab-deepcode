@@ -9,7 +9,7 @@
         full-width
         single-line
         hide-details
-        placeholder="Erfasse deine Learnings">
+        :placeholder="placeholder">
       </v-textarea>
     </v-card-text>
     <v-card-actions>
@@ -25,12 +25,14 @@
 
 <script>
   export default {
-    props: ['message', 'value'],
+    props: ['message', 'value', 'placeholder'],
+
     data () {
       return {
         content: this.value
       }
     },
+
     methods: {
       handleInput() {
         this.$emit('input', this.content)

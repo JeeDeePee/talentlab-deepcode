@@ -20,6 +20,7 @@
 
     created() {
       // console.log(this.$options._componentTag)
+      // this.breadcrumbs[2].disabled = true
     }
   }
 </script>

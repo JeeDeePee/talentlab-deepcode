@@ -3,6 +3,9 @@ from django.conf import settings
 from graphene import relay
 from graphene_django.debug import DjangoDebug
 
+# Keep this import exactly here, it's necessary for StreamField conversion
+from api import graphene_wagtail
+
 from focus.schema.mutations import FocusMutation
 from focus.schema.schema import UserFocusQuery
 from modules.schema import ModulesQuery

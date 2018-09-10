@@ -17,7 +17,7 @@
 </template>
 
 <script>
-  import {mapGetters} from 'vuex'
+  import {mapActions, mapGetters} from 'vuex'
 
   export default {
     props: ['breadcrumbs'],
@@ -26,9 +26,15 @@
       ...mapGetters({})
     },
 
+    methods: {
+      ...mapActions({
+        fetchModuleUserGoal: 'fetchModuleUserGoal'
+      })
+    },
+
     created() {
+      this.fetchModuleUserGoal()
       // this.breadcrumbs[0].disabled = true
-      // this.breadcrumb[0].hello = this.$options._componentTag
       // console.log(this.$options._componentTag)
     }
   }

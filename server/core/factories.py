@@ -13,8 +13,8 @@ from wagtail.images import get_image_model
 fake = Faker('de_DE')
 
 
-def fake_title(x=None):
-    return fake.sentence(nb_words=random.randint(2, 4)).replace('.', '')
+def fake_title(x=None, min_words=2, max_words=4):
+    return fake.sentence(nb_words=random.randint(min_words, max_words)).replace('.', '')
 
 
 class BasePageFactory(wagtail_factories.PageFactory):

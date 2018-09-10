@@ -64,6 +64,8 @@
 </template>
 
 <script>
+  import {mapActions} from 'vuex'
+
   import Tools from '@/components/module/Tools'
   import VideoPlayer from '@/components/module/VideoPlayer'
   import Unit from '@/components/module/Unit'
@@ -96,6 +98,16 @@
         showModuleGoalDialog: false,
         showActionPlanDialog: false
       }
+    },
+
+    methods: {
+      ...mapActions({
+        resetActionPlanWizardState: 'resetActionPlanWizardState'
+      })
+    },
+
+    created() {
+      this.resetActionPlanWizardState()
     }
   }
 </script>

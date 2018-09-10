@@ -28,12 +28,10 @@
 
     methods: {
       ...mapActions({
-        fetchModuleUserGoal: 'fetchModuleUserGoal'
       })
     },
 
     created() {
-      this.fetchModuleUserGoal()
       // this.breadcrumbs[1].disabled = true
       // console.log(this.$options._componentTag)
     }

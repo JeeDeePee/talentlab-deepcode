@@ -28,7 +28,7 @@ class UserModuleProgress(TimeStampedModel):
     #    ActionPlanOverview
 
     # Learnings
-    learnings = models.TextField(null=True, blank=True)
+    learnings_text = models.TextField(null=True, blank=True)
 
     # ActionPlan - BusinessGoal
     impact_text = models.TextField(null=True, blank=True)

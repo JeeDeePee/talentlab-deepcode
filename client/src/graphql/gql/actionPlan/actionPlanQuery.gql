@@ -15,7 +15,7 @@ query ActionPlanQuery($slug: String!) {
       edges {
         node {
           id
-          learnings
+          learningsText
           impactText
           measurementText
           measuresText
