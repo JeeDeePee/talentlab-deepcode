@@ -39,18 +39,12 @@
 
 <script>
   export default {
-    props: ['visible', 'wizardName', 'processSteps'],
-
-    // data() {
-    //   return {
-    //     content: this.value
-    //   }
-    // }
+    props: ['value', 'wizardName', 'processSteps'],
 
     computed: {
       show: {
         get() {
-          return this.visible
+          return this.value
         },
         set(value) {
           if (!value) {

@@ -1,5 +1,5 @@
 <template>
-  <Wizard :visible="visible" :wizardName="'Meine Learnings'" :process-steps="processSteps" @close="show=false">
+  <Wizard v-model="show" :visible="visible" :wizardName="'Meine Learnings'" :process-steps="processSteps" @close="show=false">
     <div class="text-xs-center">
       <h1>Was sind Deine Learnings?</h1>
       <p>Hier erfasst Du laufend Deine wichtigsten Learnings aus dem Modul.</p>
@@ -29,6 +29,7 @@
     data() {
       return {
         // newLearningsText: '',
+        value: this.visible,
         actionPlanWizardState: 'StartActionPlan',
         processSteps: [
           { text: 'Meine Motivation', disabled: true },
