@@ -1,49 +1,17 @@
 <template>
-  <v-dialog v-model="show" fullscreen hide-overlay transition="dialog-bottom-transition" scrollable>
-    <v-card class="white--text">
-
-      <v-toolbar dark color="primary" class="ml-4 mr-4">
-        <v-toolbar-title>Action Plan</v-toolbar-title>
-        <div class="toolbar-accent"></div>
-        <v-spacer></v-spacer>
-        <v-toolbar-items>
-          <v-btn large flat icon @click.stop="show=false">
-            <v-icon>close</v-icon>
-          </v-btn>
-        </v-toolbar-items>
-      </v-toolbar>
-
-      <v-breadcrumbs class="ml-4 mr-4">
-        <v-icon slot="divider">chevron_right</v-icon>
-        <v-breadcrumbs-item v-for="breadcrumb in breadcrumbs"
-                            :key="breadcrumb.text"
-                            :disabled="breadcrumb.disabled"
-                            class="breadcrumbs-item"
-                            @click="newActionPlanWizardState = breadcrumb.activeComponent">
-          {{breadcrumb.text}}
-        </v-breadcrumbs-item>
-      </v-breadcrumbs>
-
-      <v-container>
-        <v-layout align-center justify-center row fill-height>
-          <v-flex xs12>
-
-            <component
-              :is="getActionPlanWizardState"
-              @back="newActionPlanWizardState"
-              @proceed="nextWizardStep"
-              :breadcrumbs="breadcrumbs">
-            </component>
-
-          </v-flex>
-        </v-layout>
-      </v-container>
-    </v-card>
-  </v-dialog>
+  <Wizard v-model="show" :visible="visible" :wizardName="'Action Plan'" :process-steps="processSteps" @close="show=false">
+    <component
+      :is="getActionPlanWizardState"
+      @back="newActionPlanWizardState"
+      @proceed="nextWizardStep">
+    </component>
+  </Wizard>
 </template>
 
 <script>
   import {mapActions, mapGetters} from 'vuex'
+
+  import Wizard from '@/components/reusable/Wizard'
 
   import StartActionPlan from '@/components/module/actionplan/steps/StartActionPlan'
   import ReviseGoals from '@/components/module/actionplan/steps/ReviseGoals'
@@ -70,28 +38,17 @@
       Learnings,
       ActionPlanBusinessGoal,
       ActionPlanMeasures,
-      ActionPlanOverview
+      ActionPlanOverview,
+      Wizard
     },
 
     data() {
       return {
         actionPlanWizardState: 'StartActionPlan',
-        breadcrumbs: [
-          {
-            text: 'Rekapitualtion Ziele',
-            activeComponent: 'ReviseGoals',
-            disabledWhen: []
-          },
-          {
-            text: 'Reflektion Learnings',
-            activeComponent: 'Learnings',
-            disabledWhen: ['ReviseGoals']
-          },
-          {
-            text: 'Definition Action Plan',
-            activeComponent: 'ActionPlanBusinessGoal',
-            disabledWhen: []
-          }
+        processSteps: [
+          { text: 'Rekapitualtion Ziele', disabled: true },
+          { text: 'Reflektion Learnings', disabled: true },
+          { text: 'Definition Action Plan', disabled: true }
         ]
       }
     },

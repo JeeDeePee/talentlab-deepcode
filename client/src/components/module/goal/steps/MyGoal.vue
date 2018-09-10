@@ -12,7 +12,7 @@
 
     <p></p>
 
-    <v-btn @click="$emit('back')">Zurück</v-btn>
+    <v-btn class="btn-secondary" @click="$emit('back')">Zurück</v-btn>
     <v-btn @click="$emit('proceed', newSelectedGoal)">Ziel speichern</v-btn>
   </div>
 </template>
@@ -52,8 +52,4 @@
 
 <style lang="scss" scoped>
   @import "../../../../styles/var";
-
-  /*.as-button {*/
-    /*appearance: button;*/
-  /*}*/
 </style>

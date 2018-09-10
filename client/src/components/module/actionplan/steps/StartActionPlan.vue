@@ -20,8 +20,6 @@
   import {mapActions, mapGetters} from 'vuex'
 
   export default {
-    props: ['breadcrumbs'],
-
     computed: {
       ...mapGetters({
         currentModule: 'getCurrentModule'
@@ -36,8 +34,6 @@
 
     created() {
       this.fetchModuleUserGoal()
-      // this.breadcrumbs[0].disabled = true
-      // console.log(this.$options._componentTag)
     }
   }
 </script>

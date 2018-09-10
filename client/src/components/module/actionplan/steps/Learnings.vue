@@ -16,8 +16,6 @@
   import TextBox from '@/components/reusable/TextBox'
 
   export default {
-    props: ['breadcrumbs'],
-
     components: {
       TextBox
     },
@@ -28,11 +26,6 @@
       })
     },
 
-    data() {
-      return {
-      }
-    },
-
     methods: {
       ...mapActions({
         defineActionPlan: 'defineActionPlan'
@@ -41,11 +34,6 @@
         this.defineActionPlan([{'learningsText': this.actionPlan.learningsText}])
         this.$emit('proceed', 'ActionPlanBusinessGoal')
       }
-    },
-
-    created() {
-      // this.breadcrumbs[2].disabled = true
-      // console.log(this.$options._componentTag)
     }
   }
 </script>

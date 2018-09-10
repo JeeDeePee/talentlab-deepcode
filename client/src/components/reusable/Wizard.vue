@@ -53,12 +53,6 @@
         }
       }
     }
-
-    // methods: {
-    //   handleInput() {
-    //     this.$emit('input', this.content)
-    //   }
-    // }
   }
 </script>
 

@@ -11,11 +11,9 @@
 </template>
 
 <script>
-  import {mapActions, mapGetters} from 'vuex'
+  import {mapGetters} from 'vuex'
 
   export default {
-    props: ['breadcrumbs'],
-
     computed: {
       ...mapGetters({
         moduleUserGoal: 'getModuleUserGoal',
@@ -24,16 +22,6 @@
       moduleTitle() {
         return this.moduleUserGoal.module ? this.moduleUserGoal.module.title : ''
       }
-    },
-
-    methods: {
-      ...mapActions({
-      })
-    },
-
-    created() {
-      // this.breadcrumbs[1].disabled = true
-      // console.log(this.$options._componentTag)
     }
   }
 </script>

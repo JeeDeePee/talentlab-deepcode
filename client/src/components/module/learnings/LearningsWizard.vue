@@ -32,10 +32,7 @@
         value: this.visible,
         actionPlanWizardState: 'StartActionPlan',
         processSteps: [
-          { text: 'Meine Motivation', disabled: true },
-          { text: 'Mein Ziel', disabled: true },
-          { text: 'Meine Learnings', disabled: false },
-          { text: 'Mein Action Plan', disabled: true }
+          { text: 'Meine Learnings', disabled: false }
         ]
       }
     },

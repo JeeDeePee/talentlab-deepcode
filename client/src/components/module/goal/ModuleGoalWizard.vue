@@ -1,40 +1,13 @@
 <template>
-  <v-dialog v-model="show" fullscreen hide-overlay transition="dialog-bottom-transition" scrollable>
-    <v-card class="white--text">
-
-      <v-toolbar dark color="primary" class="ml-4 mr-4">
-        <v-toolbar-title>Mein Ziel</v-toolbar-title>
-        <div class="toolbar-accent"></div>
-        <v-spacer></v-spacer>
-        <v-toolbar-items>
-          <v-btn large flat icon @click.stop="show=false">
-            <v-icon>close</v-icon>
-          </v-btn>
-        </v-toolbar-items>
-      </v-toolbar>
-
-      <!--<v-breadcrumbs class="ml-4 mr-4">-->
-        <!--<v-icon slot="divider">chevron_right</v-icon>-->
-        <!--<v-breadcrumbs-item :disabled="true">-->
-          <!--Mein Ziel-->
-        <!--</v-breadcrumbs-item>-->
-      <!--</v-breadcrumbs>-->
-
-      <v-container>
-        <v-layout align-center justify-center row fill-height>
-          <v-flex xs12>
-
-          <MyGoal v-on:proceed="myGoalProceed" v-on:back="myGoalBack($event)"></MyGoal>
-
-          </v-flex>
-        </v-layout>
-      </v-container>
-    </v-card>
-  </v-dialog>
+  <Wizard v-model="show" :visible="visible" :wizardName="'Mein Ziel'" :process-steps="processSteps" @close="show=false">
+    <MyGoal v-on:proceed="myGoalProceed" v-on:back="myGoalBack($event)"></MyGoal>
+  </Wizard>
 </template>
 
 <script>
   import DEFINE_USER_GOAL from '@/graphql/gql/moduleGoals/defineUserGoal.gql'
+
+  import Wizard from '@/components/reusable/Wizard'
   import MyGoal from '@/components/module/goal/steps/MyGoal'
 
   export default {
@@ -49,9 +22,7 @@
       }
     },
 
-    components: {
-      MyGoal
-    },
+    components: { MyGoal, Wizard },
 
     computed: {
       show: {
