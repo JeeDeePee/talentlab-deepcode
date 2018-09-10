@@ -1,6 +1,6 @@
 <template>
-  <div class="grey--text">
-    <h2>Selbstbeurteilung</h2>
+  <div class="text-xs-center">
+    <h1>Selbstbeurteilung</h1>
 
     <v-container fluid grid-list-xl>
       <v-layout row wrap>
@@ -35,16 +35,14 @@
         <v-flex xs4>
           <v-menu :nudge-right="40" lazy transition="scale-transition" offset-y full-width min-width="290px">
             <v-text-field slot="activator" v-model="item.nextEvaluation" prepend-icon="event" readonly></v-text-field>
-            <v-date-picker
-              v-model="item.nextEvaluation"
-            ></v-date-picker>
+            <v-date-picker v-model="item.nextEvaluation"></v-date-picker>
           </v-menu>
         </v-flex>
 
       </v-layout>
     </v-container>
 
-    <v-btn @click="$emit('back')">Zurück</v-btn>
+    <v-btn class="btn-secondary" @click="$emit('back')">Zurück</v-btn>
     <v-btn v-on:click="proceed">Selbstbeurteilung speichern</v-btn>
   </div>
 </template>
@@ -67,7 +65,7 @@
 
     computed: {
       ...mapGetters({
-          'selectedFocus': 'getUserFocusCache'
+          selectedFocus: 'getUserFocusCache'
         }
       )
     }

@@ -1,10 +1,12 @@
 <template>
-  <Wizard v-model="show" :visible="visible" :wizardName="'Action Plan'" :process-steps="processSteps" @close="show=false">
+  <Wizard v-model="show" :wizard-name="'Action Plan'" :process-steps="processSteps" @close="show=false">
+
     <component
       :is="getActionPlanWizardState"
       @back="newActionPlanWizardState"
       @proceed="nextWizardStep">
     </component>
+
   </Wizard>
 </template>
 
@@ -22,13 +24,13 @@
 
   export default {
     props: {
-      module: {
-        required: true,
-        type: Object
-      },
       visible: {
         required: true,
         type: Boolean
+      },
+      module: {
+        required: true,
+        type: Object
       }
     },
 
@@ -57,6 +59,7 @@
       ...mapGetters({
         getActionPlanWizardState: 'getActionPlanWizardState'
       }),
+      // TODO: refactor with a mixin
       show: {
         get() {
           return this.visible

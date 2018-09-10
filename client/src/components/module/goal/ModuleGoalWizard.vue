@@ -1,6 +1,8 @@
 <template>
-  <Wizard v-model="show" :visible="visible" :wizardName="'Mein Ziel'" :process-steps="processSteps" @close="show=false">
+  <Wizard v-model="show" :wizard-name="'Mein Ziel'" :process-steps="processSteps" @close="show=false">
+
     <MyGoal v-on:proceed="myGoalProceed" v-on:back="myGoalBack($event)"></MyGoal>
+
   </Wizard>
 </template>
 
@@ -22,9 +24,21 @@
       }
     },
 
-    components: { MyGoal, Wizard },
+    components: {
+      MyGoal,
+      Wizard
+    },
+
+    data() {
+      return {
+        processSteps: [
+          { text: 'Meine Ziele', disabled: false }
+        ]
+      }
+    },
 
     computed: {
+      // TODO: refactor with a mixin
       show: {
         get() {
           return this.visible

@@ -1,35 +1,18 @@
 <template>
-  <v-dialog v-model="show" fullscreen hide-overlay transition="dialog-bottom-transition" scrollable>
-    <v-card tile>
-      <div class="pa-2">
-        <v-btn class="btn--close" large flat icon @click.stop="show=false">
-          <v-icon>close</v-icon>
-        </v-btn>
+  <Wizard v-model="show" :wizard-name="'Mein Fokus'" :process-steps="processSteps" @close="show=false">
 
-        <v-breadcrumbs divider="/">
-          <v-breadcrumbs-item :disabled="isDetermineFocus">
-            Fokus erfasssen
-          </v-breadcrumbs-item>
-          <v-breadcrumbs-item :disabled="isMyFocus">
-            Mein Fokus
-          </v-breadcrumbs-item>
+    <DetermineFocus
+      v-on:proceed="determineFocusProceed($event)"
+      v-on:back="determineFocusBack($event)"
+      v-if="isDetermineFocus">
+    </DetermineFocus>
+    <MyFocus
+      v-on:proceed="myFocusProceed($event)"
+      v-on:back="myFocusBack($event)"
+      v-if="isMyFocus">
+    </MyFocus>
 
-        </v-breadcrumbs>
-
-        <DetermineFocus
-          v-on:proceed="determineFocusProceed($event)"
-          v-on:back="determineFocusBack($event)"
-          v-if="isDetermineFocus">
-        </DetermineFocus>
-        <MyFocus
-          v-on:proceed="myFocusProceed($event)"
-          v-on:back="myFocusBack($event)"
-          v-if="isMyFocus">
-        </MyFocus>
-
-      </div>
-    </v-card>
-  </v-dialog>
+  </Wizard>
 </template>
 
 <script>
@@ -37,13 +20,29 @@
 
   import DetermineFocus from '@/components/focus/steps/DetermineFocus'
   import MyFocus from '@/components/focus/steps/MyFocus'
+  import Wizard from '@/components/reusable/Wizard';
 
   export default {
-    props: ['visible'],
+    props: {
+      visible: {
+        required: true,
+        type: Boolean
+      }
+    },
 
     components: {
       MyFocus,
-      DetermineFocus
+      DetermineFocus,
+      Wizard
+    },
+
+    data() {
+      return {
+        processSteps: [
+          { text: 'Fokus erfasssen', disabled: false },
+          { text: 'Mein Fokus', disabled: false }
+        ]
+      }
     },
 
     computed: {
@@ -96,5 +95,4 @@
 
 <style lang="scss" scoped>
   @import "../../styles/var";
-
 </style>

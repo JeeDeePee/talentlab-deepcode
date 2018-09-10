@@ -1,6 +1,7 @@
 <template>
-  <Wizard v-model="show" :visible="visible" :wizardName="'Meine Learnings'" :process-steps="processSteps" @close="show=false">
+  <Wizard v-model="show" :wizard-name="'Meine Learnings'" :process-steps="processSteps" @close="show=false">
     <div class="text-xs-center">
+
       <h1>Was sind Deine Learnings?</h1>
       <p>Hier erfasst Du laufend Deine wichtigsten Learnings aus dem Modul.</p>
 
@@ -8,6 +9,7 @@
 
       <v-btn class="btn-secondary" @click="show=false">Zurück</v-btn>
       <v-btn @click="save">Speichern</v-btn>
+
     </div>
   </Wizard>
 </template>
@@ -20,17 +22,24 @@
 
   export default {
     props: {
-      visible: Boolean,
-      module: { required: true, type: Object }
+      visible: {
+        required: true,
+        type: Boolean
+      },
+      module: {
+        required: true,
+        type: Object
+      }
     },
 
-    components: { TextBox, Wizard },
+    components: {
+      TextBox,
+      Wizard
+    },
 
     data() {
       return {
         // newLearningsText: '',
-        value: this.visible,
-        actionPlanWizardState: 'StartActionPlan',
         processSteps: [
           { text: 'Meine Learnings', disabled: false }
         ]
@@ -39,7 +48,6 @@
 
     computed: {
       ...mapGetters({
-        getActionPlanWizardState: 'getActionPlanWizardState',
         actionPlan: 'getActionPlan'
       }),
       // learningsText: {
@@ -52,6 +60,7 @@
       //     this.newLearningsText = value
       //   }
       // },
+      // TODO: refactor with a mixin
       show: {
         get() {
           return this.visible
