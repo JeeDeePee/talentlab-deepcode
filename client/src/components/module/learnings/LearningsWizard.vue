@@ -5,7 +5,6 @@
       <p>Hier erfasst Du laufend Deine wichtigsten Learnings aus dem Modul.</p>
 
       <TextBox :placeholder="'Text erfassen'" v-model="actionPlan.learningsText"></TextBox>
-      <TextBox :placeholder="'Deine Learnings'" v-model="actionPlan.learningsText"></TextBox>
 
       <v-btn class="btn-secondary" @click="show=false">Zurück</v-btn>
       <v-btn @click="save">Speichern</v-btn>
@@ -29,6 +28,7 @@
 
     data() {
       return {
+        // newLearningsText: '',
         actionPlanWizardState: 'StartActionPlan',
         processSteps: [
           { text: 'Meine Motivation', disabled: true },
@@ -44,6 +44,16 @@
         getActionPlanWizardState: 'getActionPlanWizardState',
         actionPlan: 'getActionPlan'
       }),
+      // learningsText: {
+      //   get() {
+      //     console.log(`Learnings ${this.actionPlan.learningsText}`)
+      //     return this.actionPlan.learningsText
+      //   },
+      //   set(value) {
+      //     // do nothing, save at closing time
+      //     this.newLearningsText = value
+      //   }
+      // },
       show: {
         get() {
           return this.visible
@@ -69,9 +79,8 @@
     },
 
     created() {
-      // debugger
-      // this.newCurrentModule(this.module)
-      // this.fetchModuleUserGoal(this.module)
+      this.newCurrentModule(this.module)
+      this.fetchModuleUserGoal()
     }
   }
 </script>

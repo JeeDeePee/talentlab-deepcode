@@ -27,7 +27,7 @@
   export default {
     props: ['message', 'value', 'placeholder'],
 
-    data () {
+    data() {
       return {
         content: this.value
       }

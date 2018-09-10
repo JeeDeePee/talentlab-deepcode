@@ -247,6 +247,12 @@ class Command(BaseCommand):
         return {k: v for (k, v) in input_data.items() if not (k in filters)}
 
     def handle(self, *args, **options):
+
+        # print(settings.DATABASES)
+        # print(settings.DATABASES['default'])
+        # print(settings.DATABASES['default']['USER'])
+        # return
+
         with connection.cursor() as cursor:
             cursor.execute("DROP SCHEMA IF EXISTS public CASCADE;")
             cursor.execute(

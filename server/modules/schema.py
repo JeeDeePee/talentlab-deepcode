@@ -65,8 +65,16 @@ class GoalNode(DjangoObjectType):
 
 class ModuleNode(DjangoObjectType):
     pk = graphene.Int()
+
+    # # #
     tools = graphene.JSONString()
     resources = graphene.JSONString()
+    # # #
+
+    # # #
+    #      next question to ask is how to return category as real json, not string..
+    # # #
+
     units = DjangoFilterConnectionField(UnitNode)
     hero_image = graphene.String()
     # hack to avoid circular dependency
@@ -88,11 +96,13 @@ class ModuleNode(DjangoObjectType):
     def resolve_pk(self, *args, **kwargs):
         return self.id
 
+    # # #
     def resolve_tools(self, *args, **kwargs):
         return self.tools_normalized
 
     def resolve_resources(self, *args, **kwargs):
         return self.resources_normalized
+    # # #
 
     def resolve_hero_image(self, *args, **kwargs):
         if self.hero_image:

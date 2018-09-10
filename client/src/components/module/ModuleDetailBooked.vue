@@ -40,7 +40,6 @@
       <ModuleGoalWizard :visible="showModuleGoalDialog" @close="showModuleGoalDialog=false" :module="module"/>
       <LearningsWizard :visible="showLearningsDialog" @close="showLearningsDialog=false" :module="module"/>
       <ActionPlanWizard :visible="showActionPlanDialog" @close="showActionPlanDialog=false" :module="module"/>
-
     </div>
 
     <v-container grid-list-xl>
