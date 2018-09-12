@@ -33,6 +33,13 @@
       }
     },
 
+    // TODO: review is this really necessary to implement reactivity into custom components with v-model?
+    watch: {
+      value() {
+        this.content = this.value
+      }
+    },
+
     methods: {
       handleInput() {
         this.$emit('input', this.content)

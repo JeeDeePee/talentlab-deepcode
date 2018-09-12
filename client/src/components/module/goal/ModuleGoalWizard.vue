@@ -72,7 +72,7 @@
       },
 
       storeMyGoal(moduleSlug, goalLevel) {
-        console.log(`storeMyGoal(moduleSlug: ${moduleSlug}, goalLevel: ${goalLevel})`)
+        // console.log(`storeMyGoal(moduleSlug: ${moduleSlug}, goalLevel: ${goalLevel})`)
 
         this.$apollo.mutate({
           mutation: DEFINE_USER_GOAL,
@@ -83,7 +83,6 @@
         }).then(data => {
           this.resetActionPlanWizardState()
           this.fetchModuleUserGoal()
-          // console.log('Done storing goal.');
         });
       }
     },

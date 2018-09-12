@@ -6,7 +6,6 @@
       <p>Hier erfasst Du laufend Deine wichtigsten Learnings aus dem Modul.</p>
 
       <TextBox :placeholder="'Text erfassen'" v-model="learningsText"></TextBox>
-      <div>Why is this not displayed? ==> {{learningsText}}</div>
 
       <v-btn class="btn-secondary" @click="show=false">Zurück</v-btn>
       <v-btn @click="save">Speichern</v-btn>
@@ -81,8 +80,6 @@
 
     watch: {
       actionPlan() {
-        // console.log('WATCH actionPlan()')
-        // console.log(this.actionPlan)
         this.learningsText = this.actionPlan.learningsText
       }
     },
