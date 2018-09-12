@@ -1,6 +1,17 @@
 <template>
   <v-container fluid grid-list-xl>
     <v-layout row wrap>
+      <div>Wähle die passenden Module!</div>
+      <img src="/static/modul_way-career.jpg" width="100%" height="auto">
+      <v-btn class="button item2">
+        Modul buchen
+      </v-btn>
+      <v-btn class="button item2 btn-border">
+        Modul buchen
+      </v-btn>
+
+    </v-layout>
+    <v-layout row wrap>
       <v-flex v-for="category in categories" :key="category.id" xs4 class="text-xs-center">
         <img :src="category.icon"><br>
         {{category.title}}

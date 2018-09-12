@@ -1,6 +1,6 @@
 <template>
   <v-container class="mt-3">
-    <h2 class="grey--text mb-3">Meine Fokus</h2>
+    <h2 class="grey--text mb-3">Mein Fokus</h2>
     <MyFocus class="mb-4"/>
 
     <div class="clearfix">

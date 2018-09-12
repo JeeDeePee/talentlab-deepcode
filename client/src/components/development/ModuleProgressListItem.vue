@@ -91,10 +91,6 @@
     max-width: 100%;
   }
 
-  .card {
-    border-radius: 11px;
-  }
-
   .container {
     background: #EBF6EA;
   }
