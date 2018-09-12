@@ -9,7 +9,10 @@
     <p>Reflektiere was Du gelernt hast</p>
 
     <h2 class="text--primary-accent">3</h2>
-    <p>Definiere Deinen Action Plan</p>
+    <p>Definiere Dein Business-Ziel</p>
+
+    <h2 class="text--primary-accent">4</h2>
+    <p>Bestimme Massnahmen</p>
 
     <v-btn @click="$emit('proceed', 'ReviseGoals')">Start</v-btn>
   </div>

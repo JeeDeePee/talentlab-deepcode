@@ -1,31 +1,32 @@
 <template>
   <div class="text-xs-center">
-    <h1>Definiere Deinen Action Plan - Massnahmen</h1>
+    <h1>Was tust Du dazu?</h1>
+    <p>Konkretisiere Massnahmen, Termine, Ressourcen und den benötigten Support.</p>
 
     <v-container fluid grid-list-xl>
       <v-layout row wrap>
         <v-flex sm6>
-          <p>Welche Umsetzungsmassnahmen leitest Du ein?</p>
+          <p>Welche Massnahmen ergreifst Du bis wann?</p>
         </v-flex>
-        <v-flex sm6>
-          <p>Was ist Dein Zeitrahmen?</p>
-        </v-flex>
+        <!--<v-flex sm6>-->
+          <!--<p>Was ist Dein Zeitrahmen?</p>-->
+        <!--</v-flex>-->
       </v-layout>
       <v-layout row wrap>
         <v-flex sm6>
           <TextBox :placeholder="'Umsetzungsmassnahmen'" v-model="actionPlan.measuresText"></TextBox>
         </v-flex>
-        <v-flex sm6>
-          <TextBox :placeholder="'Zeitrahmen'" v-model="actionPlan.timeFrameText"></TextBox>
-        </v-flex>
+        <!--<v-flex sm6>-->
+          <!--<TextBox :placeholder="'Zeitrahmen'" v-model="actionPlan.timeFrameText"></TextBox>-->
+        <!--</v-flex>-->
       </v-layout>
 
       <v-layout row wrap>
         <v-flex sm6>
-          <p>Welche Ressourcen/Skills benötigst Du?</p>
+          <p>Welche Ressourcen und/oder Skills benötigst Du?</p>
         </v-flex>
         <v-flex sm6>
-          <p>Von wem innerhalb oder ausserhalb der Organisation benötigst Du Commitment?</p>
+          <p>Von wem benötigst Du Commitment?</p>
         </v-flex>
       </v-layout>
       <v-layout row wrap>
@@ -66,7 +67,7 @@
         this.defineActionPlan([
           {
             'measuresText': this.actionPlan.measuresText,
-            'timeFrameText': this.actionPlan.timeFrameText,
+            // 'timeFrameText': this.actionPlan.timeFrameText,
             'resourcesSkillsText': this.actionPlan.resourcesSkillsText,
             'commitmentSupportText': this.actionPlan.commitmentSupportText
           }

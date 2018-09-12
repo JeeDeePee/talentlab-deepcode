@@ -1,7 +1,7 @@
 <template>
   <div class="text-xs-center">
-    <h1>Rekapituliere Deine Ziele {{user.firstName}}</h1>
-    <p class="mt-3">Dein Ziel zum Modul «{{moduleTitle}}». Passe bei Bedarf noch einmal an.</p>
+    <h1>Dein Ziel</h1>
+    <p class="mt-3">Zu Beginn des Moduls hast Du folgendes Ziel formuliert. Passe es bei Bedarf noch einmal an.</p>
 
     <div class="module-user-goal pa-3 mt-5 mb-5">{{moduleUserGoal.text}}</div>
 

@@ -1,18 +1,14 @@
 <template>
   <div class="text-xs-center">
-    <h1>Definiere Deinen Action Plan - Business-Ziel</h1>
+    <h1>Was soll sich ändern?</h1>
+    <p>Beschreibe möglichst konkret das Zielbild aus Business-Sicht.</p>
 
     <v-container fluid grid-list-xl>
       <v-layout align-space-between justify-space-between row fill-height>
         <v-flex sm6>
           <v-layout align-space-between justify-space-between column fill-height>
             <v-flex>
-              <p>
-                Was möchtest Du in Deiner Organisation im Bereich „Digital Communication & Virtual Collaboration“
-                bewirken?
-                Beschreibe möglichst konkret den Zielzustand aus Business-Sicht.
-                Welche Vorteile versprichst Du Dir davon?
-              </p>
+              <p>Was möchtest Du in Deiner Organisation bewirken?</p>
             </v-flex>
             <v-flex>
               <v-spacer></v-spacer>
@@ -25,9 +21,7 @@
         <v-flex sm6>
           <v-layout align-space-between justify-space-between column fill-height>
             <v-flex>
-              <p>
-                Woran merkst Du, dass du erfolgreich bist?
-              </p>
+              <p>Woran merkst Du, dass Du erfolgreich bist?</p>
             </v-flex>
             <v-flex>
               <v-spacer></v-spacer>

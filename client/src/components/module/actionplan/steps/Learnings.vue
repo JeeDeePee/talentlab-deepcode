@@ -1,7 +1,7 @@
 <template>
   <div class="text-xs-center">
-    <h1>Reflektiere was Du gelernt hast</h1>
-    <p>Das sind Deine Learnings aus den verschiedenen Units. Passe bei Bedarf noch einmal an.</p>
+    <h1>Deine Learnings</h1>
+    <p>Während der Bearbeitung des Moduls hast Du laufend Deine Learnings erfasst. Ergänze falls nötig.</p>
 
     <TextBox :placeholder="'Deine Learnings'" v-model="actionPlan.learningsText"></TextBox>
 
