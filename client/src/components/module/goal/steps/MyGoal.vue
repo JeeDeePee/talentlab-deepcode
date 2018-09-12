@@ -6,46 +6,45 @@
       Wähle das Ziel, das am besten zu dir passt.
     </v-container>
 
-    <v-radio-group v-model="currentGoal" column>
+    <v-radio-group v-model="currentGoal.level" column>
       <v-radio v-for="goal in moduleGoals" :key="goal.id" :label="goal.text" :value="goal.level">{{goal.text}}</v-radio>
     </v-radio-group>
 
     <p></p>
 
     <v-btn class="btn-secondary" @click="$emit('back')">Zurück</v-btn>
-    <v-btn @click="$emit('proceed', newSelectedGoal)">Ziel speichern</v-btn>
+    <v-btn @click="$emit('proceed', currentGoal.level)">Ziel speichern</v-btn>
   </div>
 </template>
 
 <script>
-  import {mapActions, mapGetters} from 'vuex'
+  import {mapGetters} from 'vuex'
+  import Vue from 'vue'
 
   export default {
-    computed: {
-      ...mapGetters({
-        moduleGoals: 'getModuleGoals',
-        getCurrentGoal: 'getCurrentGoal'
-      }),
-      currentGoal: {
-        get() {
-          return this.getCurrentGoal.level
-        },
-        set(value) {
-          this.newSelectedGoal = value
-        }
+    props: {
+      goal: {
+        required: true,
+        type: Object
       }
     },
 
     data() {
       return {
-        newSelectedGoal: -1
+        currentGoal: this.goal
       }
     },
 
-    methods: {
-      ...mapActions({
-        setCurrentGoal: 'setCurrentGoal'
+    computed: {
+      ...mapGetters({
+        moduleGoals: 'getModuleGoals'
       })
+    },
+
+    watch: {
+      goal() {
+        this.currentGoal = Vue.util.extend({}, this.goal)
+      }
     }
   }
 </script>

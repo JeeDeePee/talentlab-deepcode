@@ -1,13 +1,15 @@
 <template>
   <Wizard v-model="show" :wizard-name="'Mein Ziel'" :process-steps="processSteps" @close="show=false">
 
-    <MyGoal v-on:proceed="myGoalProceed" v-on:back="myGoalBack($event)"></MyGoal>
+    <MyGoal :goal="currentGoal" v-on:proceed="myGoalProceed" v-on:back="myGoalBack"></MyGoal>
 
   </Wizard>
 </template>
 
 <script>
   import DEFINE_USER_GOAL from '@/graphql/gql/moduleGoals/defineUserGoal.gql'
+
+  import {mapActions, mapGetters} from 'vuex'
 
   import Wizard from '@/components/reusable/Wizard'
   import MyGoal from '@/components/module/goal/steps/MyGoal'
@@ -38,6 +40,9 @@
     },
 
     computed: {
+      ...mapGetters({
+        currentGoal: 'getCurrentGoal'
+      }),
       // TODO: refactor with a mixin
       show: {
         get() {
@@ -50,12 +55,11 @@
         }
       }
     },
-
-    created() {
-      this.$store.dispatch('fetchModuleGoals', { moduleSlug: this.module.slug })
-    },
-
     methods: {
+      ...mapActions({
+        fetchModuleGoals: 'fetchModuleGoals'
+      }),
+
       myGoalBack() {
         this.$emit('close')
       },
@@ -78,6 +82,10 @@
           // console.log('Done storing goal.');
         });
       }
+    },
+
+    created() {
+      this.fetchModuleGoals({ moduleSlug: this.module.slug })
     }
   }
 </script>
