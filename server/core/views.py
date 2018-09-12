@@ -16,9 +16,21 @@ class PrivateGraphQLView(LoginRequiredMixin, GraphQLView):
 @ensure_csrf_cookie
 def home(request):
     if settings.DEBUG:
+        import socket
+        def hostname_resolves(hostname):
+            try:
+                socket.gethostbyname(hostname)
+                return True
+            except socket.error:
+                return False
+
         try:
-            return HttpResponse(requests.get('http://localhost:8080/{}'.format(request.get_full_path())).text)
+            url = 'http://{}:8080{}'.format(
+                'host.docker.internal' if hostname_resolves('host.docker.internal') else 'localhost',
+                request.get_full_path())
+            r = requests.get(url)
+            return HttpResponse(r.text)
         except Exception as e:
-            print('Can not connect to dev server at http://localhost:8080:', e)
+            print('Can not connect to dev server at {} ({})'.format(url, e))
 
     return render(request, 'index.html', {})

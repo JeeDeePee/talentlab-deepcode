@@ -96,6 +96,8 @@ if DEBUG:
     MIDDLEWARE += ['corsheaders.middleware.CorsMiddleware']
     CORS_ORIGIN_WHITELIST = (
         'localhost:8080',
+        '127.0.0.1:8080',
+        '0.0.0.0:8080',
     )
     CORS_ALLOW_CREDENTIALS = True
 

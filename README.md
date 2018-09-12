@@ -10,49 +10,76 @@ Sources
 
 ## Development
 
-### Server
+* Install [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
+* Install [Docker](https://docs.docker.com/install/)
+* Install [Docker-Compose](https://docs.docker.com/compose/install/)
+* Clone source `git@github.com:720dreams/talentlab.git` ([How-To](https://help.github.com/articles/cloning-a-repository))
+* Copy `env.exmaple` to `server/.env`
+* Build and start containers (see sections below)
 
-* [Install](https://docs.pipenv.org/#install-pipenv-today) pipenv
-* Create virtualenv in install dependencies `pipenv --python 3.6 install --dev`
-* Create PostgreSQL database & user
-* [Install](https://devcenter.heroku.com/articles/heroku-cli#download-and-install) Heroku cli, run `heroku login` and `heroku git:remote -a caruhome`
-* Create .env in `server` file with `SECRET_KEY` and `DATABASE_URL`
-* Migrate databases: `pipenv run python manage.py migrate`
-* Create super user: `pipenv run python manage.py createsuperuser`
-* Run: `pipenv run python manage.py runserver`
-* Dummy data: `pipenv run python manage.py dummy_data` (restart the development server afterwards)
+### (Re-)build containers
 
+Creates the postgres and web container, restores a data dump and creates a user (email `admin`, password `getinckd`)
 
-#### Notes
-
-* `DEBUG=True` enables the debug middleware http://docs.graphene-python.org/projects/django/en/latest/debug/
-
-
-### Client
-
-``` bash
-# install dependencies
-npm install --prefix client
-
-# serve with hot reload at localhost:8080
-npm run dev --prefix client
-
-# run storybook
-npm run storybook --prefix client
-
-# build
-npm run build --prefix client
-
-# build for production with minification
-export NODE_ENV=production && npm install --prefix client && npm run build --prefix client
+```
+docker-compose build
+docker-compose run foundation
 ```
 
-After running `npm run dev` login to the Django admin view on the same domain as the webpack dev server is running.
-Example: The client runs on localhost:8080 and Django on localhost:8000. 
-This way you will have a session and a csrf cookie set and the apollo client will 
-be able to make requests.
+### Start containers
 
-Production Build
+Start postgres and web container
+
+```
+docker-compose up web
+```
+
+Websites runs under: http://127.0.0.1:8000/
+
+
+### Misc
+
+Create and apply migrations
+
+```
+docker-compose run migrations
+```
+
+Enter django shell
+
+```
+docker-compose run shell
+```
+
+Enter bash
+
+```
+docker-compose run bash
+```
+
+Pip install
+
+```
+docker-compose run pipenv_install
+```
+
+Run a django command
+
+```
+docker-compose run web pipenv run python server/manage.py <command> <args1>
+```
+
+Clean up containers
+```
+docker-compose stop
+docker-compose rm -f
+```
+
+Catch log of a container
+
+```
+ docker logs <container id> -f
+```
 
 ## Urls
 
@@ -64,7 +91,9 @@ Production Build
 
 ## Heroku
 
-`heroku run python server/manage.py <command> --app <appname>`
+**Important:** Add nodejs (top) and python buildpack
+
+Run a command: `heroku run python server/manage.py <command> --app <appname>`
 
 ### Rollabck
 
@@ -118,23 +147,3 @@ Change bucket `Permissions` / `Bucket Policy`
 }
 
 ```
-
-
-
-
-# Graphene notes
-
-## Example of a order_by
-
-    class CategoryFilter(django_filters.FilterSet):
-        class Meta:
-            model = Category
-            fields = {
-                "slug": ["exact", "icontains"],
-                "title": ["gt", "lt", "exact"]
-            }
-
-        order_by = django_filters.OrderingFilter(fields=("title", "slug", "pk"))
-
-    class ModulesQuery(object):
-        categories = DjangoFilterConnectionField(CategoryNode, filterset_class=CategoryFilter)

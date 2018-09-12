@@ -1,0 +1,78 @@
+version: '3'
+
+services:
+  db:
+    image: postgres
+    ports:
+      - "5432:5432"
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: postgres
+
+  foundation:
+    build: .
+    image: talentlab:local
+    command: >
+      bash -c "pipenv install
+      && pipenv run python server/manage.py migrate
+      && pipenv run python server/manage.py dummy_data"
+      && npm install --prefix client
+    volumes:
+      - .:/root/code
+    depends_on:
+      - db
+
+  backend:
+    image: talentlab:local
+    command: bash -c "pipenv run python server/manage.py migrate && pipenv run python server/manage.py runserver 0.0.0.0:8000"
+    restart: always
+    volumes:
+      - .:/root/code
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+
+  web:
+    image: talentlab:local
+    command: bash -c "export HOST=0.0.0.0 && npm install --prefix client && npm run dev --prefix client"
+    volumes:
+      - .:/root/code
+    ports:
+      - "8080:8080"
+    depends_on:
+      - backend
+
+  shell:
+    image: talentlab:local
+    command: pipenv run python server/manage.py shell_plus
+    volumes:
+      - .:/root/code
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+
+  migrations:
+    image: talentlab:local
+    command: bash -c "pipenv run python server/manage.py makemigrations && pipenv run python server/manage.py migrate"
+    volumes:
+      - .:/root/code
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+
+  bash:
+    image: talentlab:local
+    command: bash
+    volumes:
+       - .:/root/code
+    depends_on:
+      - db
+
+  build_client:
+    image: talentlab:local
+    command: bash -c "export NODE_ENV=production && npm install --prefix client && npm run build --prefix client"
+    volumes:
+      - .:/root/code
