@@ -41,7 +41,7 @@ class UserModuleProgress(TimeStampedModel):
     commitment_support_text = models.TextField(null=True, blank=True)
 
     def __str__(self):
-        return 'UserModuleProgress {} - {}'.format(self.user, self.module)
+        return 'UserModuleProgress {}-{}'.format(self.user, self.module)
 
 
 class UserUnitProgress(TimeStampedModel):
@@ -56,7 +56,7 @@ class UserUnitProgress(TimeStampedModel):
     # learning = models.TextField(null=True, blank=True, default=None)
 
     def __str__(self):
-        return 'UserUnitProgress {} - {}'.format(self.module_progress, self.unit)
+        return 'UserUnitProgress {}-{}'.format(self.module_progress, self.unit)
 
 
 class UserGoal(TimeStampedModel):
@@ -71,7 +71,7 @@ class UserGoal(TimeStampedModel):
     custom_text = models.TextField(null=True, blank=True, default=None)
 
     def __str__(self):
-        return 'UserGoal {} - {}'.format(self.user, self.goal)
+        return 'UserGoal {}-{}'.format(self.user, self.goal)
 
 
 # class ActionPlan()

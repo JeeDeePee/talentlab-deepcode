@@ -21,7 +21,24 @@ data = [
     {
         'title': 'Mastering Complexity',
         'teaser': 'Gewinne Leichtigkeit im Umgang mit Veränderungen',
-        'competences': ['Vernetzes Denken', 'Agilität', 'Innovationsfähigkeit', 'Entscheidungsfähigkeit'],
+        'competences': [
+            {
+                'title': 'Vernetzes Denken',
+                'description': 'Komplexität erkennen. Zusammenhänge und Abhängigkeiten erschliessen. Ein System aus übergeordneter Sicht betrachten und unterschiedliche Perspektiven einnehmen.'
+            },
+            {
+                'title': 'Agilität',
+                'description': 'Sich kontinuierlich auf neue Situationen einstellen und effektiv auf Veränderungen reagieren. Möglichkeiten und Chancen erkennen und nutzen. Veränderungen aktiv gestalten.'
+            },
+            {
+                'title': 'Innovationsfähigkeit',
+                'description': 'Über das Bekannte und herkömmliche Vorgehensweisen hinausgehen und ungewohnte, neue Sichtweisen eingehen.'
+            },
+            {
+                'title': 'Entscheidungsfähigkeit',
+                'description': 'Situationsrelevante Informationen generieren und Handlungsoptionen ableiten. Umsichtig, verantwortungsvoll und nachhaltig entscheiden.'
+            }
+        ],
         'modules': [
             {
                 'title': 'Partnering for Success',
@@ -50,7 +67,7 @@ data = [
                         'type': 'kurs',
                         'count': '1 Veranstaltung',
                         'duration': '1 Tag'
-                    },
+                    }
                 ]
             },
             {
@@ -62,7 +79,20 @@ data = [
     {
         'title': 'Growing as a Leader',
         'teaser': 'Entfalte Dein Potenzial als Führungspersönlichkeit',
-        'competences': ['Leadership', 'Management', 'Unternehmerisches Handeln'],
+        'competences': [
+            {
+                'title': 'Leadership',
+                'description': 'Vorbild sein, sinnvoll delegieren, Gestaltungsspielräume schaffen, andere für die Sache gewinnen ihren Beitrag zum gemeinsamen Erfolg fördern und anerkennen.'
+            },
+            {
+                'title': 'Management',
+                'description': 'Prozesse planen und steuern. Aufgaben, Kompetenzen und Verantwortlichkeiten stufengerecht delegieren. Mitarbeitende gewinnen und führen. Zielerreichung und Ressourcen prüfen.'
+            },
+            {
+                'title': 'Unternehmerisches Handeln',
+                'description': 'Betriebswirtschaftliche Überlegungen integrieren. Strategische und ökonomische Potenziale erkennen und Spielräume nutzen. Unternehmerisch nachhaltig agieren.'
+            }
+        ],
         'modules': [
             {
                 'title': 'Leading through Disruption',
@@ -103,7 +133,24 @@ data = [
     {
         'title': 'Mastering Relations',
         'teaser': 'Lerne Beziehungen zielgerichtet zu gestalten',
-        'competences': ['Teamfähigkeit', 'Networking', 'Konfliktfähigkeit', 'Verhandlungsfähigkeit', 'Kommunikationsfähigkeit'],
+        'competences': [
+            {
+                'title': 'Kommunikationsfähigkeit',
+                'description': 'Kommunikationsmittel zielführend einsetzen. Informationsaustausch glaubwürdig aufbauen und aufrechterhalten. Botschaften klar und wirksam gestalten. Zuhören und Botschaften anderer richtig interpretieren.'
+            },
+            {
+                'title': 'Verhandlungsgeschick',
+                'description': 'Zielführend und konstruktiv Einfluss nehmen. Bedürfnissen und Erwartungen des Gegenüber angemessenen begegnen und dabei die eigenen Interessen wahren.'
+            },
+            {
+                'title': 'Networking',
+                'description': 'Authentisch in Kontakt treten. Beziehungen und Netzwerke gezielt aufbauen und pflegen. Netzwerke aktivieren Wissen austauschen. In gesundem Mass Selbstinszenierung zeigen.'
+            },
+            {
+                'title': 'Teamfähigkeit',
+                'description': 'Wege zur Kooperation zeigen, sich in eine Gruppe integrieren, eigene Fähigkeiten und Kompetenzen konstruktiv einbringen. Mit einer positiven Grundhaltung einen Beitrag zur gemeinsamen Zielerreichung leisten.'
+            }
+        ],
         'modules': [
             {
                 'title': 'Digital Communication & Virtual Collaboration',
@@ -302,10 +349,11 @@ class Command(BaseCommand):
                 icon__file=category_images[idx % len(category_images)]
             )
 
-            competence_titles = category_data['competences']
-            for competence_title in competence_titles:
+            competences = category_data['competences']
+            for competence in competences:
                 CompetenceFactory.create(
-                    title=competence_title,
+                    title=competence['title'],
+                    description=competence['description'],
                     category=category
                 ).save()
 

@@ -13,4 +13,4 @@ class Competence(TitleSlugDescriptionModel):
     category = models.ForeignKey(Category, blank=False, null=False, on_delete=models.CASCADE)
 
     def __str__(self):
-        return 'Competence {} - {}'.format(self.title, self.category)
+        return 'Competence {}-{}'.format(self.title, self.category)

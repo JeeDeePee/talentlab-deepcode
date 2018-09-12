@@ -17,7 +17,7 @@ class CompetenceEntry(TimeStampedModel):
     next_evaluation = models.DateField('Nächste Bewertung', null=True, blank=True)
 
     def __str__(self):
-        return 'CompetenceEntry {} - {} - {}'.format(self.competence, self.current_level, self.next_evaluation)
+        return 'CompetenceEntry {}-{}-{}'.format(self.competence, self.current_level, self.next_evaluation)
 
 
 class Focus(TimeStampedModel):
@@ -29,7 +29,7 @@ class Focus(TimeStampedModel):
     active = models.BooleanField(default=False)
 
     def __str__(self):
-        return 'Focus {} - {}'.format(self.id, self.user)
+        return 'Focus {}-{}'.format(self.id, self.user)
 
     # based on the focus we can propose modules
     def proposed_modules(self):

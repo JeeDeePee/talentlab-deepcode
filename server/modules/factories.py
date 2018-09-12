@@ -32,6 +32,9 @@ class DocumentBlockFactory(wagtail_factories.StructBlockFactory):
 
 
 class CompetenceFactory(factory.django.DjangoModelFactory):
+    title = factory.LazyAttribute(fake_title(min_words=1, max_words=1))
+    description = factory.LazyAttribute(fake_title(min_words=10, max_words=14))
+
     class Meta:
         model = Competence
 

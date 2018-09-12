@@ -15,4 +15,4 @@ class Goal(models.Model):
         module_shortcut = ''.join(c for c in str(self.module) if c.isupper())
         text_shortcut = self.text[:30] if self.text else ''
 
-        return 'Goal {} - {} - {}'.format(self.level, module_shortcut, text_shortcut)
+        return 'Goal {}-{}-{}'.format(self.level, module_shortcut, text_shortcut)
