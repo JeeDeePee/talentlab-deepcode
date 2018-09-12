@@ -16,7 +16,6 @@
 
     <v-btn @click="$emit('proceed', 'ReviseGoals')">Start</v-btn>
   </div>
-
 </template>
 
 <script>

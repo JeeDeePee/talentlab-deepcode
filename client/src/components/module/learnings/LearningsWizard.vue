@@ -5,7 +5,8 @@
       <h1>Was sind Deine Learnings?</h1>
       <p>Hier erfasst Du laufend Deine wichtigsten Learnings aus dem Modul.</p>
 
-      <TextBox :placeholder="'Text erfassen'" v-model="actionPlan.learningsText"></TextBox>
+      <TextBox :placeholder="'Text erfassen'" v-model="learningsText"></TextBox>
+      <div>Why is this not displayed? ==> {{learningsText}}</div>
 
       <v-btn class="btn-secondary" @click="show=false">Zurück</v-btn>
       <v-btn @click="save">Speichern</v-btn>
@@ -39,7 +40,7 @@
 
     data() {
       return {
-        // newLearningsText: '',
+        learningsText: '',
         processSteps: [
           { text: 'Meine Learnings', disabled: false }
         ]
@@ -50,16 +51,6 @@
       ...mapGetters({
         actionPlan: 'getActionPlan'
       }),
-      // learningsText: {
-      //   get() {
-      //     console.log(`Learnings ${this.actionPlan.learningsText}`)
-      //     return this.actionPlan.learningsText
-      //   },
-      //   set(value) {
-      //     // do nothing, save at closing time
-      //     this.newLearningsText = value
-      //   }
-      // },
       // TODO: refactor with a mixin
       show: {
         get() {
@@ -77,11 +68,22 @@
       ...mapActions({
         defineActionPlan: 'defineActionPlan',
         fetchModuleUserGoal: 'fetchModuleUserGoal',
-        newCurrentModule: 'newCurrentModule'
+        newCurrentModule: 'newCurrentModule',
+        resetActionPlanWizardState: 'resetActionPlanWizardState'
       }),
       save() {
-        this.defineActionPlan([{ 'learningsText': this.actionPlan.learningsText }])
+        this.defineActionPlan([{ 'learningsText': this.learningsText }])
+        this.resetActionPlanWizardState()
+        this.fetchModuleUserGoal()
         this.show = false
+      }
+    },
+
+    watch: {
+      actionPlan() {
+        // console.log('WATCH actionPlan()')
+        // console.log(this.actionPlan)
+        this.learningsText = this.actionPlan.learningsText
       }
     },
 

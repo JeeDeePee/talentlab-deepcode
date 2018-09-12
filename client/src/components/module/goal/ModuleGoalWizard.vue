@@ -57,7 +57,9 @@
     },
     methods: {
       ...mapActions({
-        fetchModuleGoals: 'fetchModuleGoals'
+        fetchModuleGoals: 'fetchModuleGoals',
+        fetchModuleUserGoal: 'fetchModuleUserGoal',
+        resetActionPlanWizardState: 'resetActionPlanWizardState'
       }),
 
       myGoalBack() {
@@ -79,6 +81,8 @@
             goalLevel: goalLevel
           }
         }).then(data => {
+          this.resetActionPlanWizardState()
+          this.fetchModuleUserGoal()
           // console.log('Done storing goal.');
         });
       }
