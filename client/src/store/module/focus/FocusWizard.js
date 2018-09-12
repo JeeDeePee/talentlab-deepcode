@@ -50,7 +50,7 @@ export default {
           title: category.node.title,
           teaser: category.node.teaser,
           competences: category.node.competenceSet.edges.map(
-            function (compentence) {
+            function(compentence) {
               commit('addToFocusCache', compentence.node);
               return {
                 title: compentence.node.title,
@@ -79,7 +79,7 @@ export default {
                 }
             }
         }
-      }).then(function () {
+      }).then(function() {
           self.dispatch('fetchUserFocus');
         }
       );

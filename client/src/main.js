@@ -59,7 +59,7 @@ const apolloProvider = new VueApollo({
   defaultClient: apolloClient
 })
 
-Vue.filter('formatDate', function (value) {
+Vue.filter('formatDate', function(value) {
   if (!value) return ''
   var m = value.getMonth() + 1;
   var d = value.getDate();

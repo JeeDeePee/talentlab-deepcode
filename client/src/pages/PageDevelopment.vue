@@ -67,16 +67,15 @@
         query: USER_DEVELOPMENT_QUERY,
         fetchPolicy: 'network-only',
         watchLoading(isLoading, countModifier) {
-          // debugger
           console.log(`watchLoading(${isLoading}, ${countModifier})`)
         }
       }
     },
 
     computed: {
-      userModules: function () {
+      userModules() {
         let moduleProgress = this.userProgress.usermoduleprogressSet.edges.map(entry => entry.node.module)
-        return moduleProgress.map(function (entry) {
+        return moduleProgress.map(function(entry) {
           const parsedCategory = JSON.parse(entry.category)
           return { ...entry, category: { title: parsedCategory.title, slug: parsedCategory.slug } }
         })

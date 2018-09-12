@@ -25,7 +25,7 @@ export default {
       var created;
       if (response.data.userFocus && response.data.userFocus.edges.length > 0) {
         let result = response.data.userFocus.edges.reduce(
-          function (a, b) {
+          function(a, b) {
             created = b.node.created;
             return a.concat(b.node.competenceentrySet.edges.map(x => x.node))
           }, []);

@@ -45,7 +45,7 @@
     },
 
     computed: {
-      nextSteps: function () {
+      nextSteps() {
         const unitProgress = this.moduleProgress.units.edges.map(entry => entry.node)
         return unitProgress
       }
