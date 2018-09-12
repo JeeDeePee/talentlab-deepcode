@@ -40,7 +40,7 @@
     },
 
     watch: {
-      show: function() {
+      show() {
         // console.log('watching show')
         if (this.show) {
           // console.log('watch: set video visible')

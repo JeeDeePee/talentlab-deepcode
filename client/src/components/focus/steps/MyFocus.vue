@@ -57,7 +57,7 @@
       ...mapActions({
         newUserFocus: 'newUserFocus'
       }),
-      proceed: function (event) {
+      proceed(event) {
         this.newUserFocus(this.selectedFocus);
         this.$emit('proceed')
       }

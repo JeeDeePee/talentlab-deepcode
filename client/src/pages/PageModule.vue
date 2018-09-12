@@ -98,7 +98,7 @@
               // TODO: code review
               let bookedEntries = data.allModulesProgress.edges
               this.moduleBooked = bookedEntries && bookedEntries.length > 0
-              console.log(`Module Booked: ${this.moduleBooked}`)
+              // console.log(`Module Booked: ${this.moduleBooked}`)
 
               this.units = data.userModuleUnits.edges.map(entry => ({'status': entry.node.status, ...entry.node.unit}))
             } else {

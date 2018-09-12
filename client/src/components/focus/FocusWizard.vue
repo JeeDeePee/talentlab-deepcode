@@ -78,7 +78,7 @@
       },
       myFocusProceed() {
         let self = this;
-        this.storeFocusCompetences().then(function () {
+        this.storeFocusCompetences().then(function() {
           self.newFocusWizardState('determine');
           self.$emit('close')
         });
