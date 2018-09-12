@@ -63,14 +63,11 @@
       }
     },
 
-    created() {
-      this.$store.dispatch('fetchFocusCompetences')
-    },
-
     methods: {
       ...mapActions({
         newFocusWizardState: 'newFocusWizardState',
-        storeFocusCompetences: 'storeFocusCompetences'
+        storeFocusCompetences: 'storeFocusCompetences',
+        fetchFocusCompetences: 'fetchFocusCompetences'
       }),
       determineFocusBack() {
         this.newFocusWizardState('determine');
@@ -89,6 +86,10 @@
       myFocusBack() {
         this.newFocusWizardState('determine')
       }
+    },
+
+    created() {
+      this.fetchFocusCompetences()
     }
   }
 </script>

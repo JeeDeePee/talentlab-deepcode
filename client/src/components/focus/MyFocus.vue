@@ -35,7 +35,7 @@
 
 <script>
   import FocusWizard from '@/components/focus/FocusWizard'
-  import {mapGetters} from 'vuex'
+  import {mapActions, mapGetters} from 'vuex'
 
   export default {
     components: {
@@ -55,8 +55,14 @@
       })
     },
 
+    methods: {
+      ...mapActions({
+        fetchUserFocus: 'fetchUserFocus'
+      })
+    },
+
     created() {
-      this.$store.dispatch('fetchUserFocus')
+      this.fetchUserFocus()
     }
   }
 </script>
