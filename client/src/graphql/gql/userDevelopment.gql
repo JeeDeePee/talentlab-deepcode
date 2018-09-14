@@ -13,9 +13,10 @@ query UserDevelopmentQuery {
             category
             title
             teaser
+            heroImage
             skill
             slug
-            units {
+            units(first:4) {
               edges {
                 node {
                   id

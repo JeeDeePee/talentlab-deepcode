@@ -22,7 +22,7 @@
                           class="mb-1"/>
         </v-flex>
         <v-flex xs12 sm6 class="pa-0">
-          <img :src="'https://mountain.org/wp-content/uploads/Miraflores-Peru_TMI.jpg'">
+          <img :src="moduleProgress.heroImage"><br>
         </v-flex>
       </v-layout>
     </v-container>
@@ -89,6 +89,7 @@
 
   img {
     max-width: 100%;
+    float: left;
   }
 
   .container {
