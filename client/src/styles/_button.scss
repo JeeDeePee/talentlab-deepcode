@@ -10,6 +10,13 @@
     background-color: rgba(255, 255, 255, 0.2);
   }
 
+  &.btn-border {
+    color: $grey-9;
+    background-color: rgba(255, 255, 255, 0.2);
+    border: $orange solid 2px;
+    display: inline-block;
+  }
+
   background-color: $primary;
   // keep this line here or otherwise the above rule will not apply
   color: white;
@@ -42,4 +49,10 @@ a.v-btn {
 
 .btn-minimal {
   min-width: auto;
+}
+
+.btn-border {
+  background-color: white;
+  color: white;
+  border: $orange solid 2px;
 }

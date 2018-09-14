@@ -17,14 +17,19 @@
   @import "../../styles/var";
 
   .card {
-    background: rgba(253, 110, 34, 0.15);
+    background: rgba(255, 160, 109, 0.15);
     border: 1px solid #F7C3A8;
-    border-radius: 11px;
     padding: 0;
   }
 
   .heading {
     font-size: 24px;
     font-weight: bold;
+  }
+
+  .grey--text {
+    text-transform: uppercase;
+    color: $grey-9;
+    opacity: 50%;
   }
 </style>

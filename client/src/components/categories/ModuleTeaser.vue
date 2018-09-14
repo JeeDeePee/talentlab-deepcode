@@ -29,7 +29,7 @@
   }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
   @import "../../styles/var";
 
   a {
@@ -38,10 +38,6 @@
 
   h2 {
     padding-top: 16px;
-  }
-
-  .v-card {
-    border-radius: 11px;
   }
 
   .v-card__title {
