@@ -135,29 +135,29 @@ data = [
                 'title': 'Project Management Basics',
                 'skill': 'Management',
                 'teaser': 'Training für angehende Projektleiter',
-                'description': '',
-                'video_description': '',
+                'description': 'description',
+                'video_description': 'description',
             },
             {
                 'title': '1st, 2nd & 3rd Career',
                 'skill': 'Generationenübergreifendes Management',
                 'teaser': 'Management',
-                'description': '',
-                'video_description': '',
+                'description': 'description',
+                'video_description': 'description',
             },
             {
                 'title': 'Reorganisation &  Transformation',
                 'skill': 'Management',
                 'teaser': 'Erfolgreiche Umsetzung von Änderungsprojekten',
-                'description': '',
-                'video_description': '',
+                'description': 'description',
+                'video_description': 'description',
             },
             {
                 'title': 'Agile Organisation',
                 'skill': 'Management',
                 'teaser': 'Zwischen agil dynamisch und dogmatisch holokratisch',
-                'description': '',
-                'video_description': '',
+                'description': 'description',
+                'video_description': 'description',
             },
             {
                 'title': 'abc',
@@ -405,7 +405,9 @@ class Command(BaseCommand):
                 ).save()
 
             modules_data = category_data.get('modules', [])
-            for i in range(0, random.randint(2, 2)):
+
+            # TODO: get the actual modules without limitation
+            for i in range(0, random.randint(5, 5)):
                 module_counter += 1
 
                 module_data = modules_data[i] if len(modules_data) > i else {}
