@@ -328,11 +328,18 @@ class Command(BaseCommand):
         #     ImageField(from_path=os.path.join(settings.BASE_DIR, 'core/static/img/Mastering-Relations.svg'), width=60, height=60),
         # ]
 
+        # module_images = [
+        #     ImageField(from_path=os.path.join(settings.BASE_DIR, 'core/static/img/dummy/module_0.png')),
+        #     ImageField(from_path=os.path.join(settings.BASE_DIR, 'core/static/img/dummy/module_1.png')),
+        #     ImageField(from_path=os.path.join(settings.BASE_DIR, 'core/static/img/dummy/module_2.png')),
+        #     ImageField(from_path=os.path.join(settings.BASE_DIR, 'core/static/img/dummy/module_3.png')),
+        # ]
         module_images = [
-            ImageField(from_path=os.path.join(settings.BASE_DIR, 'core/static/img/dummy/module_0.png')),
-            ImageField(from_path=os.path.join(settings.BASE_DIR, 'core/static/img/dummy/module_1.png')),
-            ImageField(from_path=os.path.join(settings.BASE_DIR, 'core/static/img/dummy/module_2.png')),
-            ImageField(from_path=os.path.join(settings.BASE_DIR, 'core/static/img/dummy/module_3.png')),
+            ImageField(from_path=os.path.join(settings.BASE_DIR, 'core/static/img/modules/modul_board_viola.jpg')),
+            ImageField(from_path=os.path.join(settings.BASE_DIR, 'core/static/img/modules/modul_frau-computer_viola.png')),
+            ImageField(from_path=os.path.join(settings.BASE_DIR, 'core/static/img/modules/modul_talk-communikation.jpg')),
+            ImageField(from_path=os.path.join(settings.BASE_DIR, 'core/static/img/modules/modul_talk_communication_1man.jpg')),
+            ImageField(from_path=os.path.join(settings.BASE_DIR, 'core/static/img/modules/modul_way-career.jpg')),
         ]
 
         u = UserFactory(
@@ -344,6 +351,7 @@ class Command(BaseCommand):
         for i in range(0, 4):
             UserFactory(username='user{}'.format(i))
 
+        module_counter = 0
         for idx, category_data in enumerate(data):
             category = CategoryFactory.create(
                 parent=site.root_page,
@@ -363,11 +371,12 @@ class Command(BaseCommand):
 
             modules_data = category_data.get('modules', [])
             for i in range(0, random.randint(2, 2)):
+                module_counter += 1
 
                 module_data = modules_data[i] if len(modules_data) > i else {}
                 module = ModuleFactory.create(
                     parent=category,
-                    hero_image__file=module_images[i % len(module_images)],
+                    hero_image__file=module_images[module_counter % len(module_images)],
                     **self.filter_data(module_data, ['units', 'goals'])
                 )
 
