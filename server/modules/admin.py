@@ -6,7 +6,7 @@ from modules.models import Unit, Module, Goal, Category
 
 @admin.register(Category)
 class CategoryAdmin(admin.ModelAdmin):
-    list_display = ('title', 'slug')
+    list_display = ('title', 'slug', 'icon_component')
 
 
 @admin.register(Module)

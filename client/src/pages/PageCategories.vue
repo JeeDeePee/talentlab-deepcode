@@ -1,20 +1,11 @@
 <template>
   <v-container fluid grid-list-xl>
     <v-layout row wrap>
-      <div>Wähle die passenden Module!</div>
-      <img src="/static/modul_way-career.jpg" width="100%" height="auto">
-      <v-btn class="button item2">
-        Modul buchen
-      </v-btn>
-      <v-btn class="button item2 btn-border">
-        Modul buchen
-      </v-btn>
-
-    </v-layout>
-    <v-layout row wrap>
       <v-flex v-for="category in categories" :key="category.id" xs4 class="text-xs-center">
-        <img :src="category.icon"><br>
+        <!--<img :src="category.icon"><br>-->
+        <component :is="category.iconComponent"/><br>
         {{category.title}}
+
       </v-flex>
       <v-flex xs12 sm6 v-for="module in modules" :key="module.id" class="mb-1">
         <ModuleTeaser :module="module"/>
@@ -25,10 +16,18 @@
 
 <script>
   import CATEGORIES_QUERY from '@/graphql/gql/categories.gql'
+
+  import GrowingAsALeader from '@/components/icons/GrowingAsALeader'
+  import MasteringComplexity from '@/components/icons/MasteringComplexity'
+  import MasteringRelations from '@/components/icons/MasteringRelations'
+
   import ModuleTeaser from '@/components/categories/ModuleTeaser'
 
   export default {
     components: {
+      GrowingAsALeader,
+      MasteringComplexity,
+      MasteringRelations,
       ModuleTeaser
     },
 

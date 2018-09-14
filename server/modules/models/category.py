@@ -11,6 +11,7 @@ class Category(StrictHierarchyPage):
         verbose_name_plural = 'Kategorien'
 
     teaser = models.TextField(default='')
+    icon_component = models.CharField(max_length=100, default='EmptyIcon')
     icon = models.ForeignKey(
         'wagtailimages.Image',
         null=True,

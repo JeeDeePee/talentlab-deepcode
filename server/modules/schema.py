@@ -134,7 +134,7 @@ class CategoryNode(DjangoObjectType):
     class Meta:
         model = Category
         only_fields = [
-            'slug', 'title', 'teaser', 'icon', 'competence_set'
+            'slug', 'title', 'teaser', 'icon', 'icon_component', 'competence_set'
         ]
         filter_fields = {
             'slug': ['exact', 'icontains', 'in'],

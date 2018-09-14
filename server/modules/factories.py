@@ -9,6 +9,7 @@ from core.factories import BasePageFactory, fake_title, fake, DummyImageFactory,
 
 
 class CategoryFactory(BasePageFactory):
+    icon_component = factory.Sequence(['MasteringComplexity', 'GrowingAsALeader', 'MasteringRelations'])
     icon = factory.SubFactory(DummyImageFactory)
 
     class Meta:

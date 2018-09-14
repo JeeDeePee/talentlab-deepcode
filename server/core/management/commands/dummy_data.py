@@ -20,6 +20,7 @@ from progress.models import UserModuleProgress
 data = [
     {
         'title': 'Mastering Complexity',
+        'icon': 'MasteringComplexity',
         'teaser': 'Gewinne Leichtigkeit im Umgang mit Veränderungen',
         'competences': [
             {
@@ -78,6 +79,7 @@ data = [
         ]},
     {
         'title': 'Growing as a Leader',
+        'icon': 'GrowingAsALeader',
         'teaser': 'Entfalte Dein Potenzial als Führungspersönlichkeit',
         'competences': [
             {
@@ -132,6 +134,7 @@ data = [
         ]},
     {
         'title': 'Mastering Relations',
+        'icon': 'MasteringRelations',
         'teaser': 'Lerne Beziehungen zielgerichtet zu gestalten',
         'competences': [
             {
@@ -346,6 +349,7 @@ class Command(BaseCommand):
                 parent=site.root_page,
                 title=category_data['title'],
                 teaser=category_data['teaser'],
+                icon_component=category_data['icon'],
                 icon__file=category_images[idx % len(category_images)]
             )
 

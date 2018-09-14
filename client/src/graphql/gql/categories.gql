@@ -5,6 +5,7 @@ query CategoriesQuery {
         title
         slug
         icon
+        iconComponent
       }
     }
   }
