@@ -42,7 +42,7 @@ data = [
         'modules': [
             {
                 'title': 'Digital Communication & Virtual Collaboration',
-                'skill': 'Kommunikationsfähigkeit',
+                'skill': 'Agilität',
                 'teaser': 'Die richtigen Tools richtig einsetzen',
                 #'description1': 'Das Modul «Digital Communication & Virtual Collaboration» hilft dir durch den Dschungel der digitalen Tools und befähigt dich zum effizienten und effektiven Einsatz in deinem Führungsalltag.',
                 'description': 'Die Digitalisierung verändert die Art wie wir kommunizieren und die Art unserer Zusammenarbeit: Emails, Chats, Videokonferenzen … eine Vielzahl von tollen Tools erleichtern den Alltag. Doch: wer die Wahl hat, hat die Qual! Um Kommunikation und Koordination effizient zu gestalten, müssen die Tools bewusst eingesetzt werden. Zudem heisst digital kommunizieren auf Distanz kommunizieren und das schafft ganz eigene Herausforderung.',
