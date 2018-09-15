@@ -33,50 +33,202 @@ data = [
             },
             {
                 'title': 'Innovationsfähigkeit',
-                'description': 'Über das Bekannte und herkömmliche Vorgehensweisen hinausgehen und ungewohnte, neue Sichtweisen eingehen.'
+                'description': 'Über das Bekannte und herkömmliche Vorgehensweisen hinausgehen und ungewohnte, neue Sichtweisen eingehen, um Neues zu kreieren.'
             },
             {
                 'title': 'Entscheidungsfähigkeit',
                 'description': 'Situationsrelevante Informationen generieren und Handlungsoptionen ableiten. Umsichtig, verantwortungsvoll und nachhaltig entscheiden.'
-            }
-        ],
+            }],
         'modules': [
             {
-                'title': 'Partnering for Success',
-                'skill': 'Vernetztes Denken',
-                'teaser': 'Erfolgreiche Führung von Partnerschaften',
-                'description': 'Im Zuge der digitalen Disruption brechen angestammte Wertschöpfungslogiken auf.  Dabei gewinnt die Zusammenarbeit mit  externen Partnern bei der Leistungserstellung  an Bedeutung. In diesem Lernmodul werden die Grundlagen zur erfolgreichen Führung von Partnerschaften vermittelt.',
-                'video_description': '<b>Tim Kellenberger</b><br>Unser Fach-Experte erklärt, warum die professionelle Führung von Partnerschaften heute von entscheidender Bedeutung ist.',
+                'title': 'Digital Communication & Virtual Collaboration',
+                'skill': 'Kommunikationsfähigkeit',
+                'teaser': 'Die richtigen Tools richtig einsetzen',
+                'description1': 'Das Modul «Digital Communication & Virtual Collaboration» hilft dir durch den Dschungel der digitalen Tools und befähigt dich zum effizienten und effektiven Einsatz in deinem Führungsalltag.'
+                'description': 'Die Digitalisierung verändert die Art wie wir kommunizieren und die Art unserer Zusammenarbeit: Emails, Chats, Videokonferenzen … eine Vielzahl von tollen Tools erleichtern den Alltag. Doch: wer die Wahl hat, hat die Qual! Um Kommunikation und Koordination effizient zu gestalten, müssen die Tools bewusst eingesetzt werden. Zudem heisst digital kommunizieren auf Distanz kommunizieren und das schafft ganz eigene Herausforderung.',
+                'video_description': '<b>Dr. Clea Bauch</b><br>Unsere Fach-Experten erläutert die Herausforderungen in Zusammenhang mit Führung und Kommunikation auf Distanz',
+                'goals': [
+                    {
+                        'level': 1,
+                        'text': 'Digitale Tools im Alltag professionell einsetzen, um Kommunikation und Zusammenarbeit zu verbessern.'
+                    },
+                    {
+                        'level': 2,
+                        'text': 'Die Herausforderungen von Kommunikation und Führung auf Distanz beherrschen.'
+                    },
+                    {
+                        'level': 3,
+                        'text': 'Die Organisation zur digitalen Kommunikation und virtuellen Zusammenarbeit befähigen.'
+                    }],
                 'units': [
                     {
-                        'title': 'Partnering Modelle',
-                        'teaser': 'Unternehmensübergreifende Zusammenarbeit kann entlang von …',
-                        'type': 'webinar',
-                        'count': '8 Lektionen',
-                        'duration': '4 Stunden'
+                        'title': 'Tools für digitale Kommunikation',
+                        'teaser': 'Durchblick im Dschungel der Tools für digitale Kommunikation',
+                        'description1': 'Verschaffe Dir Überblick! Gewinne Mitsprachekompetenz! Wähle passende Tools!'
+                        'description': 'Wir stellen die wichtigsten Tools, ihre Vor- und Nachteile und sinnvolle Einsatzgebiete im unternehmerischen Alltag vor.<br>Verschaffe Dir Überblick!<br>Gewinne Mitsprachekompetenz!<br>Wähle passende Tools!',
+                        'type': 'lernfilm',
+                        'count': '1 Session',
+                        'duration': '10 Minuten',
+                        'price': 'inbegriffen',
+                        'competences': ['Agilität', 'Kommunikation']
                     },
                     {
-                        'title': 'Supply Chain Design',
-                        'teaser': 'Wertschöpfungsketten unternehmensübergreifend gestalten und … ',
-                        'type': 'webinar',
-                        'count': '5 Lektionen',
-                        'duration': '3 Stunden'
+                        'title': 'Kommunikation auf Distanz',
+                        'teaser': 'Die Fallstricke der Kommunikation auf Distanz umschiffen',
+                        'description1': 'Vermeide Fehler! Kommuniziere mediengerecht! Stärke Deine Wirkung!'
+                        'description': 'Wir zeigen Dir die klassischen Fallen und verraten die Tricks eines bewussten Umgangs mit Kommunikation auf Distanz.<br>Vermeide Fehler!<br>Kommuniziere mediengerecht!<br>Stärke Deine Wirkung!',
+                        'type': 'lernfilm',
+                        'count': 'x Sessions',
+                        'duration': '45 Minuten',
+                        'price': 'CHF 150',
+                        'competences': ['Agilität', 'Kommunikation']
                     },
                     {
-                        'title': 'Erfolgreich verhandeln',
-                        'teaser': 'Partnerschaften basieren auf guten Verträgen, welche die Rollen … ',
-                        'type': 'kurs',
-                        'count': '1 Veranstaltung',
-                        'duration': '1 Tag'
-                    }
-                ]
+                        'title': 'Professionell kommunizieren',
+                        'teaser': 'Unverzichtbare Kompetenz im Berufsalltag.',
+                        'description1': 'Kommuniziere klar! Gewinne Sicherheit! Werde wirkungsvoll!'
+                        'description': 'Wir bieten in Zusammenarbeit mit der BFH praxisorientierte Kommunikationstrainings an, speziell auf die Bedürfnisse zugeschnitten, für Dich 1-to-1 für Dein Team.<br>Kommuniziere klar!<br>Gewinne Sicherheit!<br>Werde wirkungsvoll!',
+                        'type': 'Kurs',
+                        'count': '1 Session',
+                        'duration': '2 Tage',
+                        'price': 'CHF 800',
+                        'competences': ['Kommunikation']
+                    },
+                    {
+                        'title': 'Tools für virtuelle Teams',
+                        'teaser': 'Durchblick im Dschungel der Tools für virtuelle Zusammenarbeit',
+                        'description1': 'Verschaffe Dir Überblick! Gewinne Mitsprachekompetenz! Wähle passende Tools!'
+                        'description': 'Wir stellen die wichtigsten Tools, ihre Vor- und Nachteile und sinnvolle Einsatzgebiete im unternehmerischen Alltag vor.<br>Verschaffe Dir Überblick!<br>Gewinne Mitsprachekompetenz!<br>Wähle passende Tools!',
+                        'type': 'lernfilm',
+                        'count': '1 Session',
+                        'duration': '10 Minuten',
+                        'price': 'inbegriffen',
+                        'competences': ['Agilität', 'Kooperationsfähigkeit']
+                    },
+                    {
+                        'title': 'Führen auf Distanz',
+                        'teaser': 'Die Führung über verschiedene Standorte “remote“ verteilte Teams ist eine besondere Herausforderung.',
+                        'description1': 'Vermeide Fehler! Stärke Deine Wirkung! Führe effektiv!'
+                        'description': 'Wir zeigen Dir die klassischen Fallen und verraten die Tricks der Führung auf Distanz.<br>Vermeide Fehler!<br>Stärke Deine Wirkung!<br>Führe effektiv!',
+                        'type': 'Lernfilm',
+                        'count': 'x Sessions',
+                        'duration': '45 Minuten',
+                        'price': 'CHF 150',
+                        'competences': ['Agilität', 'Leadership']
+                    },
+                    {
+                        'title': 'Coaching-Abonnement',
+                        'teaser': 'Bespreche Deine Entwicklung mit einem Coach oder Mentor',
+                        'description1': 'Finde Antworten! Werde wirkungsvoller! Entfalte Dein Potential!'
+                        'description': 'Ortsunabhängig und zeitlich flexibel bearbeitest Du Deine persönlichen beruflichen Fragestellungen online oder persönlich mit professionellen Coachs und erfahrenen Mentoren.,
+                        'type': 'hybrid',
+                        'count': '3 Sessions',
+                        'duration': 'à 45 Minuten',
+                        'price': 'CHF 700',
+                        'competences': []
+                    },
+                    {
+                        'title': 'Sparring mit Peers',
+                        'teaser': 'Greife diskret und unkompliziert auf den Rat erfahrender Peers zu',
+                        'description1': 'Profitiere von Erfahrung! Lass Dir helfen! Finde Lösungen!'
+                        'description': 'Wir finden im Pool den besten Kontakt – diskret, schnell und unkompliziert.<br>Profitiere von Erfahrung!<br>Lass Dir helfen!<br>Finde Lösungen!',
+                        'type': 'hybrid',
+                        'count': '1 Session',
+                        'duration': '45 Minuten',
+                        'price': 'inbegriffen',
+                        'competences': []
+                    },
+                    {
+                        'title': 'Un-Conference',
+                        'teaser': 'Tausche Dich mit Peers aus!',
+                        'description1': 'xxErweitere Dein Wissen! Lerne von anderen! Zeige Deine Expertise!'
+                        'description': 'Aktuelle Themen von talentlab moderiert, durch Teilnehmende gestaltet',
+                        'type': 'webinar',
+                        'count': '1 Session',
+                        'duration': '45 Minuten',
+                        'price': 'inbegriffen',
+                        'competences': []
+                    }],
+                'resources': [
+                    {'type': 'Artikel',
+                     'value': 
+                         {
+                         'description': 'K. Vollus: Welches Tool ist das Richtige?',
+                         'url': 'https://ordnungsmentor.de/aufgabenverwaltung-tools/'
+                         }
+                    },
+                    {'type': 'Link',
+                     'value': 
+                        {
+                         'description': 'Trello: Task-Management',
+                         'url': 'https://www.trello.com'
+                        }
+                    },
+                    {'type': 'Link',
+                     'value': 
+                        {
+                         'description': 'Meistertask: Task-Management',
+                         'url': 'https://www.meistertask.com'
+                        }
+                    },
+                    {'type': 'Link',
+                     'value': 
+                        {
+                         'description': 'Slack: Team-Chat',
+                         'url': 'https://www.slack.com'
+                        }
+                    }],
+                'tools':[
+                    {'type': 'Dokument',
+                     'value': 
+                        {
+                         'description': 'Info-Grafik: Tools für digitale Kommunkation',
+                         'url': 'xxx'
+                        }
+                    },
+                    {'type': 'Dokument',
+                     'value': 
+                        {
+                         'description': 'Info-Grafik: Tools für virtuelle Zusammenarbeit',
+                         'url': 'xxx'
+                        }}]},
+            {
+                'title': 'Partnering for Success',
+                'skill': 'Innovationsfähigkeit',
+                'teaser': 'Erfolgreiche Führung von Partnerschaften',
+                'description1': 'xxx'
+                'description': 'Im Zuge der digitalen Disruption brechen angestammte Wertschöpfungslogiken auf.  Dabei gewinnt die Zusammenarbeit mit  externen Partnern bei der Leistungserstellung  an Bedeutung. In diesem Lernmodul werden die Grundlagen zur erfolgreichen Führung von Partnerschaften vermittelt.',
+                'video_description': '<b>Tim Kellenberger</b><br>Unser Fach-Experte erklärt, warum die professionelle Führung von Partnerschaften heute von entscheidender Bedeutung ist.',
+
             },
             {
-                'title': 'Effizient kommunizieren',
-                'skill': 'Verhandlungsfähigkeit / Kooperationsfähigkeit',
-                'teaser': 'Gezieltes Training für Führungsalltag und Verhandlung',
+                'title': 'Decision Making & Agile',
+                'skill': 'Entscheidungsfähigkeit',
+                'teaser': 'Gute unternehmerische Entscheidungen in einem dynamischen Umfeld',
+                'description': 'abc',
+                'video_description': 'abc',
             },
-        ]},
+            {
+                'title': 'Project Management for IT Projects',
+                'skill': 'Entscheidungsfähigkeit',
+                'teaser': 'training für erfahrene IT-Projektleiter',
+                'description': 'abc',
+                'video_description': 'abc',
+            },
+            {
+                'title': 'Project Management for Business Projects',
+                'skill': 'Innovationsfühigkeit',
+                'teaser': 'Training für erfahrene Projektleiter in Business Development und Produktmanagement',
+                'description': 'abc',
+                'video_description': 'abc',
+            },
+            {
+                'title': 'Building Successful Strategies',
+                'skill': 'Innovationsfähigkeit',
+                'teaser': 'Moderne Methoden der Strategiearbeit',
+                'description': 'abc',
+                'video_description': 'abc',
+            }]},
     {
         'title': 'Growing as a Leader',
         'icon': 'GrowingAsALeader',
@@ -84,17 +236,16 @@ data = [
         'competences': [
             {
                 'title': 'Leadership',
-                'description': 'Vorbild sein, sinnvoll delegieren, Gestaltungsspielräume schaffen, andere für die Sache gewinnen ihren Beitrag zum gemeinsamen Erfolg fördern und anerkennen.'
+                'description': 'Vorbild sein, sinnvoll delegieren und Gestaltungsspielräume schaffen. Andere für die Sache gewinnen ihren Beitrag zum gemeinsamen Erfolg fördern und anerkennen.'
             },
             {
                 'title': 'Management',
-                'description': 'Prozesse planen und steuern. Aufgaben, Kompetenzen und Verantwortlichkeiten stufengerecht delegieren. Mitarbeitende gewinnen und führen. Zielerreichung und Ressourcen prüfen.'
+                'description': 'Prozesse planen und steuern. Aufgaben, Kompetenzen und Verantwortlichkeiten definieren und stufengerecht delegieren. Mitarbeitende gewinnen und einweisen. Ressourcen organisieren und Zielerreichung prüfen.'
             },
             {
                 'title': 'Unternehmerisches Handeln',
                 'description': 'Betriebswirtschaftliche Überlegungen integrieren. Strategische und ökonomische Potenziale erkennen und Spielräume nutzen. Unternehmerisch nachhaltig agieren.'
-            }
-        ],
+            }],
         'modules': [
             {
                 'title': 'Leading through Disruption',
@@ -123,13 +274,13 @@ data = [
                         'type': 'coaching',
                         'count': '8 Sessions',
                         'duration': 'je 45 Minuten'
-                    },
-                ]
-            },
+                    }]},
             {
                 'title': 'First-time Leader',
-                'skill': 'Leadership',
-                'teaser': 'Grundlagen und Basis-Training für junge Führungskräfte',
+                'skill': 'Management',
+                'teaser': 'Basis-Training für junge Führungskräfte',
+                'description': 'description',
+                'video_description': 'description',
             },
             {
                 'title': 'Project Management Basics',
@@ -140,8 +291,8 @@ data = [
             },
             {
                 'title': '1st, 2nd & 3rd Career',
-                'skill': 'Generationenübergreifendes Management',
-                'teaser': 'Management',
+                'skill': 'Integrierte generationenübergreifende Führung',
+                'teaser': 'Leadership',
                 'description': 'description',
                 'video_description': 'description',
             },
@@ -158,15 +309,7 @@ data = [
                 'teaser': 'Zwischen agil dynamisch und dogmatisch holokratisch',
                 'description': 'description',
                 'video_description': 'description',
-            },
-            {
-                'title': 'abc',
-                'skill': 'abc',
-                'teaser': 'abc',
-                'description': 'abc',
-                'video_description': 'abc',
-            },
-        ]},
+            }]},      
     {
         'title': 'Mastering Relations',
         'icon': 'MasteringRelations',
@@ -182,140 +325,41 @@ data = [
             },
             {
                 'title': 'Networking',
-                'description': 'Authentisch in Kontakt treten. Beziehungen und Netzwerke gezielt aufbauen und pflegen. Netzwerke aktivieren Wissen austauschen. In gesundem Mass Selbstinszenierung zeigen.'
+                'description': 'Authentisch in Kontakt treten. Beziehungen und Netzwerke gezielt aufbauen und pflegen. Netzwerke aktivieren und Wissen teilen. In gesundem Mass Selbstinszenierung zeigen.'
             },
             {
                 'title': 'Teamfähigkeit',
-                'description': 'Wege zur Kooperation zeigen, sich in eine Gruppe integrieren, eigene Fähigkeiten und Kompetenzen konstruktiv einbringen. Mit einer positiven Grundhaltung einen Beitrag zur gemeinsamen Zielerreichung leisten.'
-            }
-        ],
+                'description': 'Wege zur Kooperation zeigen und sich in eine Gruppe integrieren. Mit einer positiven Grundhaltung einen Beitrag zur gemeinsamen Zielerreichung leisten. Eigene Kompetenzen und Fähigkeiten gezielt einbringen.'
+            }],
         'modules': [
             {
-                'title': 'Digital Communication & Virtual Collaboration',
+                'title': 'Effizient kommunizieren',
+                'skill': 'Kommunikationsfähigkeiten',
+                'teaser': 'Gezieltes Training für Führungsalltag und Verhandlung',
+                'description': 'description',
+                'video_description': 'description',
+            },
+            {
+                'title': 'Diversity for Success',
+                'skill': 'Konfliktfähigkeit',
+                'teaser': 'Wertschöpfender Umgang mit der Vielfalt',
+                'description': 'description',
+                'video_description': 'description',
+            },
+            {
+                'title': 'The 1st 100 days',
                 'skill': 'Kommunikationsfähigkeit',
-                'teaser': 'Die richtigen Tools richtig einsetzen',
-                'description': 'Digitalisierung verändert unser Kommunikationsverhalten und die Art unserer Zusammenarbeit: Emails, Chats, Videokonferenzen ... eine Vielzahl von tollen Tools erleichtern den Alltag. Doch: Wer die Wahl hat, hat die Qual! Um Kommunikation und Koordination effizient zu gestalten, müssen die Tools bewusst eingesetzt werden. Zudem heisst digital kommunizieren auf Distanz kommunizieren und schafft ganz eigene Herausforderung. Der Container “Digital Communication & Virtual Collaboration” hilft Dir durch den Dschungel der Tools und befähigt Dich zum effizienten und effektiven Einsatz in Deinem Führungsalltag.',
-                'video_description': '<b>Dr. Clea Bauch</b><br>Unsere Fach-Experten erläutert die Herausforderungen in Zusammenhang mit Führung und Kommunikation auf Distanz',
-                'goals': [
-                    {
-                        'level': 1,
-                        'text': 'Digitale Tools im Alltag professionell einsetzen, um Kommunikation und Zusammenarbeit zu verbessern'
-                    },
-                    {
-                        'level': 2,
-                        'text': 'Die Herausforderungen von Kommunikation und Führung auf Distanz beherrschen'
-                    },
-                    {
-                        'level': 3,
-                        'text': 'Die Organisation zur digitalen Kommunikation und virtuellen Zusammenarbeit befähigen'
-                    }
-                ],
-                'units': [
-                    {
-                        'title': 'Tools für digitale Kommunikation',
-                        'teaser': 'Im Dschungel der Tools für digitale Kommunikation verliert sich schnell der Durchblick.',
-                        'description': 'Wir stellen die wichtigsten Tools, ihre Vor- und Nachteile und sinnvolle Einsatzgebiete im unternehmerischen Alltag vor.<br>Verschaffe Dir Überblick!<br>Gewinne Mitsprachekompetenz!<br>Wähle passende Tools!',
-                        'type': 'lernfilm',
-                        'count': '1 Session',
-                        'duration': '20 Minuten',
-                        'price': 'inbegriffen',
-                        'competences': ['Agilität', 'Kommunikation']
-                    },
-                    {
-                        'title': 'Kommunikation auf Distanz',
-                        'teaser': 'Nie mehr \"Lost in Translation\": Die Hürden der Kommunikation auf Distanz überwinden.',
-                        'description': 'Wir zeigen Dir die klassischen Fallen und verraten die Tricks eines bewussten Umgangs mit Kommunikation auf Distanz.<br>Vermeide Fehler!<br>Kommuniziere mediengerecht!<br>Stärke Deine Wirkung!',
-                        'type': 'lernfilm',
-                        'count': '1 Session',
-                        'duration': '20 Minuten',
-                        'price': 'CHF 50',
-                        'competences': ['Agilität', 'Kommunikation']
-                    },
-                    {
-                        'title': 'Professionell kommunizieren',
-                        'teaser': 'Professionelle Kommunikation gehört zu den unverzichtbaren Kompetenzen im Berufsalltag.',
-                        'description': 'Wir bieten in Zusammenarbeit mit der BFH praxisorientierte Kommunikationstrainings an, speziell auf die Bedürfnisse zugeschnitten, für Dich 1-to-1 für Dein Team.<br>Kommuniziere klar!<br>Gewinne Sicherheit!<br>Werde wirkungsvoll!',
-                        'type': 'kurs',
-                        'count': '1 Session',
-                        'duration': '1 Tag',
-                        'price': 'auf Anfrage',
-                        'competences': ['Kommunikation']
-                    },
-                    {
-                        'title': 'Tools für virtuelle Teams',
-                        'teaser': 'Im Dschungel der Tools für verliert sich schnell der Durchblick.',
-                        'description': 'Wir stellen die wichtigsten Tools, ihre Vor- und Nachteile und sinnvolle Einsatzgebiete im unternehmerischen Alltag vor.<br>Verschaffe Dir Überblick!<br>Gewinne Mitsprachekompetenz!<br>Wähle passende Tools!',
-                        'type': 'lernfilm',
-                        'count': '1 Session',
-                        'duration': '20 Minuten',
-                        'price': 'inbegriffen',
-                        'competences': ['Agilität', 'Kooperationsfähigkeit']
-                    },
-                    {
-                        'title': 'Führen auf Distanz',
-                        'teaser': 'Die Führung über verschiedene Standorte “remote“ verteilte Teams ist eine besondere Herausforderung.',
-                        'description': 'Wir zeigen Dir die klassischen Fallen und verraten die Tricks der Führung auf Distanz.<br>Vermeide Fehler!<br>Stärke Deine Wirkung!<br>Führe effektiv!',
-                        'type': 'webinar',
-                        'count': '1 Session',
-                        'duration': '45 Minuten',
-                        'price': 'CHF 150',
-                        'competences': ['Agilität', 'Leadership']
-                    },
-                    {
-                        'title': 'Coaching-Abo',
-                        'teaser': 'Talentlab bietet eine flexible Form von Coaching: digital und gleichzeitig persönlich!',
-                        'description': 'Ortsunabhängig und zeitlich flexibel kannst Du berufliche Fragestellungen mit professionellen Coaches und erfahrenen Sparringpartnern bearbeiten.<br>Finde Antworten!<br>Entfalte Dein Potenzial!<br>Werde wirkungsvoller!',
-                        'type': 'coaching',
-                        'count': '3 Sessions',
-                        'duration': '45 Minuten',
-                        'price': 'CHF 600',
-                        'competences': []
-                    },
-                    {
-                        'title': 'Sparring mit Peers',
-                        'teaser': 'Greife bei spezifischen Problemen diskret auf den Rat erfahrener Führungspersönlichkeiten aus dem Peer-Netzwerk zu!',
-                        'description': 'Wir finden im Pool den besten Kontakt – diskret, schnell und unkompliziert.<br>Profitiere von Erfahrung!<br>Lass Dir helfen!<br>Finde Lösungen!',
-                        'type': 'tinder',
-                        'count': '1 Session',
-                        'duration': '45 Minuten',
-                        'price': 'inbegriffen',
-                        'competences': []
-                    },
-                    {
-                        'title': 'Unconference',
-                        'teaser': 'Tausche Dich mit Peers aus!',
-                        'description': 'Wir organisieren regelmässig eine virtuelle Plattformen zu aktuell relevanten Themen, durch uns moderiert aber durch die Teilnehmenden gestaltet.<br>Erweitere Dein Wissen!<br>Lerne von anderen!<br>Zeige Deine Expertise!',
-                        'type': 'webinar',
-                        'count': '1 Session',
-                        'duration': '45 Minuten',
-                        'price': 'inbegriffen',
-                        'competences': []
-                    }
-                ],
-                'resources': [
-                    {'type': 'link',
-                     'value': {
-                         'description': 'K. Vollus: Welches Tool ist das Richtige?',
-                         'url': 'https://ordnungsmentor.de/aufgabenverwaltung-tools/'}},
-                    {'type': 'link',
-                     'value': {
-                         'description': 'Trello: Task-Management',
-                         'url': 'https://www.trello.com'}},
-                    {'type': 'link',
-                     'value': {
-                         'description': 'Meistertask: Task-Management',
-                         'url': 'https://www.meistertask.com'}},
-                    {'type': 'link',
-                     'value': {
-                         'description': 'Slack: Team-Chat',
-                         'url': 'https://www.slack.com'
-                     }}
-                ],
-                'tools': []
-            }
-        ]
-    }
-]
+                'teaser': 'On-boarding in eine neue Rolle',
+                'description': 'description',
+                'video_description': 'description',
+            },
+            {
+                'title': 'The 1st 30 days',
+                'skill': 'Networking',
+                'teaser': 'On-boarding in eine neue Organisation',
+                'description': 'description',
+                'video_description': 'description',
+            }]}]
 
 
 class Command(BaseCommand):
