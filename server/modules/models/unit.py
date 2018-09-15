@@ -21,6 +21,7 @@ class Unit(StrictHierarchyPage):
         choices=(
             ('webinar', 'Webinar'),
             ('kurs', 'Kurs'),
+            ('hybrid', 'Hybrid'),
             ('coaching', 'Coaching'),
             ('tinder', 'Tinder'),
             ('lernfilm', 'Lernfilm'),
