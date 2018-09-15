@@ -448,16 +448,13 @@ class Command(BaseCommand):
                     category=category
                 ).save()
 
-            modules_data = category_data.get('modules', [])
+            default_modules = [{} for i in range(0, 2)]
+            modules_data = category_data.get('modules', default_modules)
 
-            # TODO: get the actual modules without limitation
-            for i in range(0, random.randint(5, 5)):
-                module_counter += 1
-
-                module_data = modules_data[i] if len(modules_data) > i else {}
+            for module_idx, module_data in enumerate(modules_data):
                 module = ModuleFactory.create(
                     parent=category,
-                    hero_image__file=module_images[module_counter % len(module_images)],
+                    hero_image__file=module_images[module_idx % len(module_images)],
                     **self.filter_data(module_data, ['units', 'goals'])
                 )
 
