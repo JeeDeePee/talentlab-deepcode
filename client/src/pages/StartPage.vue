@@ -2,9 +2,9 @@
   <div>
     <section class="background--secondary text-xs-center pt-5">
       <v-container grid-list-xl class="pb-0">
-        <h1 class="display-1">talent<b>lab</b> ist der digitale Begleiter für Karriere- und
+        <h1>talent<b>lab</b> ist der digitale Begleiter für Karriere- und
           Potenzialentwicklung</h1>
-        <div class="my-4">Nutze dein Potenzial und stärke deine Kompetenzen zielorientiert und wirksam!</div>
+        <div class="my-4 lead">Nutze dein Potenzial und stärke deine Kompetenzen zielorientiert und wirksam!</div>
         <v-btn router exact class="btn-secondary">
           mehr erfahren
         </v-btn>
@@ -18,14 +18,15 @@
     <section class="text-xs-center background--beige py-5">
       <v-container grid-list-xl class="py-0">
 
-        <h2 class="body-1 mb-4 text-uppercase grey--text">Dein Potenzial > Deine Kompetenzen > Deine Entwicklung</h2>
+        <div class="h3 mb-4">Dein Potenzial > Deine Kompetenzen > Deine Entwicklung</div>
 
         <v-layout row wrap>
           <v-flex v-for="category in categories" :key="category.id" xs4 class="text-xs-center">
             <div>
               <component :is="category.iconComponent"/>
             </div>
-            {{category.title}}
+            <div class="h2 my-3">{{category.title}}</div>
+            <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis</p>
           </v-flex>
         </v-layout>
 
@@ -35,8 +36,8 @@
     <section class="py-5">
       <v-container grid-list-xl class="py-0">
 
-        <h2 class="display-1 text-xs-center ">Mit digitalen Angeboten gezielt und flexibel Potenziale entwickeln!</h2>
-        <div class="text-xs-center headline my-4">talentlab bietet eine auf die Bedürfnisse abgestimmte und flexibel
+        <h2 class="h1 text-xs-center ">Mit digitalen Angeboten gezielt und flexibel Potenziale entwickeln!</h2>
+        <div class="text-xs-center lead my-5">talentlab bietet eine auf die Bedürfnisse abgestimmte und flexibel
           erweiterbare Auswahl an Modulen zu
           aktuellen Themen
         </div>
@@ -52,14 +53,14 @@
 
     <section class="text-xs-center background--beige py-5">
       <v-container class="py-0 slider">
-        <h2 class="heading-1">talentlab ist der digitale Begleiter für Karriere- und Potenzialentwicklung</h2>
+        <h2 class="h3">talentlab ist der digitale Begleiter für Karriere- und Potenzialentwicklung</h2>
 
         <v-carousel hide-delimiters class="slim height-200 secondary--controls">
           <v-carousel-item v-for="(fact,i) in facts" :key="i" class="pa-5">
-            <div class="display-2 pb-4">
+            <div class="h1 pb-4">
               {{fact.heading}}
             </div>
-            <div class="headline">
+            <div class="lead">
               {{fact.text}}
             </div>
           </v-carousel-item>
@@ -71,7 +72,7 @@
     <section class="text-xs-center background--secondary py-5">
       <v-container grid-list-xl class="py-0 agents">
         <div class="speech-bubble">
-          <h2 class="display-1">Möchtest Du mehr erfahren?</h2>
+          <h2 class="lead">Möchtest Du mehr erfahren?</h2>
 
           <div class="mt-2">Wir beraten Dich gerne individuell</div>
 
@@ -101,7 +102,7 @@
 
     <section class="background--white py-5">
       <v-container grid-list-xl class="py-0">
-        <h2 class="display-1 text-xs-center mb-5">Das sagen unsere Kunden</h2>
+        <h2 class="h1 text-xs-center mb-5">Das sagen unsere Kunden</h2>
 
         <v-layout row wrap>
           <v-flex xs12 sm4 v-for="(review,i) in reviews" :key="i">
@@ -120,8 +121,8 @@
 
     <section class="text-xs-center background--beige py-5">
       <v-container grid-list-xl>
-        <h2 class="display-1">Wer steht hinter talentlab?</h2>
-        <div class="my-3">Vereinte Erfahrung und Passion in Sachen Personalanalytik, Lernen und IT</div>
+        <h2 class="h1">Wer steht hinter talentlab?</h2>
+        <div class="lead my-4">Vereinte Erfahrung und Passion in Sachen Personalanalytik, Lernen und IT</div>
 
         <v-layout row wrap>
           <v-flex xs12 sm4 v-for="(member,i) in members" :key="i">

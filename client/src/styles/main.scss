@@ -4,6 +4,8 @@
 @import "card";
 @import "navigation";
 @import "bubble";
+@import "typography";
+@import "coloring";
 
 body {
   font-family: $font-family;
@@ -22,35 +24,6 @@ a {
     color: $white;
   }
 
-}
-
-.text--primary-accent {
-  color: $primary !important;
-
-  .v-icon {
-    color: $primary !important;
-  }
-
-}
-
-.background--secondary {
-  background-color: $secondary;
-  color: $white;
-  background: linear-gradient(135deg, $secondary, $secondary 50%, $secondary-transition);
-}
-
-.background--beige {
-  background-color: $beige;
-  color: $text-color;
-}
-
-.background--white {
-  background-color: $white;
-  color: $text-color;
-}
-
-.capitalize {
-  text-transform: capitalize;
 }
 
 .clearfix::after {
