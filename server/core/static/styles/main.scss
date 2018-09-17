@@ -16,6 +16,8 @@ $orange-shadow: #c54602;
 $red: #cd3238;
 $red-shadow: darken($red, 20%);
 
+$violet: #400A4D;
+
 $blue: #EDF7FA;
 $blue-shadow: #B6CCD4;
 
@@ -59,14 +61,18 @@ a {
 }
 
 .dark-bg {
-  background-color: $grey-9;
+  background-color: $violet;
   color: $white;
+}
+
+.btn {
+  text-transform: initial;
 }
 
 .btn-orange {
   border: 1px solid $orange !important;
-  background-color: transparent;
-  border-radius: 2px;
+  background-color: $orange;
+  border-radius: 0;
   color: $white;
 
   &:hover, &:focus {
@@ -94,4 +100,27 @@ input[type=text], input[type=password], select {
 
 .mb-1 {
   margin-bottom: $space;
+}
+
+.logo {
+  color: $white;
+  font-size: 40px;
+  font-weight: 500;
+  letter-spacing: .02em;
+  line-height: 64px;
+}
+
+.v-center-container {
+  display: table;
+  height: 100%;
+  width: 100%;
+
+  .v-center-item {
+    display: table-cell;
+    vertical-align: middle;
+  }
+}
+
+.container, body, html {
+  height: 100%;
 }

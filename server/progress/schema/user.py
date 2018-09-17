@@ -20,10 +20,15 @@ class UserFilter(django_filters.FilterSet):
 
 
 class UserNode(DjangoObjectType):
+    full_name = graphene.String()
+
     class Meta:
         model = User
         filter_fields = ['username', 'email', 'first_name', 'last_name']
         interfaces = (relay.Node,)
+
+    def resolve_full_name(self, info):
+        return self.get_full_name()
 
 
 class UserQuery(object):
@@ -33,7 +38,9 @@ class UserQuery(object):
     all_users = DjangoFilterConnectionField(UserNode, filterset_class=UserFilter)
 
     def resolve_user(self, *args, **kwargs):
-        return get_current_user()
+        user = get_current_user()
+        if user.is_authenticated:
+            return user
 
     def resolve_user_progress(self, *args, **kwargs):
-        return get_current_user()
+        return self.resolve_user(*args, **kwargs)

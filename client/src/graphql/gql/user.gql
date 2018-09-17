@@ -4,5 +4,6 @@ query UserQuery {
     username
     firstName
     lastName
+    fullName
   }
 }

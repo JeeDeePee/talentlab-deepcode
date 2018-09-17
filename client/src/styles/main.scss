@@ -2,10 +2,15 @@
 @import "button";
 @import "dialog";
 @import "card";
+@import "navigation";
+@import "bubble";
+@import "typography";
+@import "coloring";
 
 body {
   font-family: $font-family;
   font-size: $base-font-size;
+  color: $text-color;
 }
 
 ul {
@@ -14,37 +19,11 @@ ul {
 
 a {
   text-decoration: none;
-}
 
-.application {
-  font-family: $font-family;
-
-  .theme--dark.v-toolbar {
-    background-color: $grey-9;
-
-    .v-btn--active {
-      border-bottom: 5px solid $orange;
-      font-weight: bold;
-
-      &:before {
-        background-color: transparent;
-      }
-    }
+  &.router {
+    color: $white;
   }
-}
 
-.v-toolbar__content {
-  .v-btn {
-    border: none;
-  }
-}
-
-.text--primary-accent {
-  color: $primary;
-}
-
-.capitalize {
-  text-transform: capitalize;
 }
 
 .clearfix::after {
@@ -53,12 +32,28 @@ a {
   display: table;
 }
 
-//main {
-//  max-width: 1200px;
-//  margin-left: auto;
-//  margin-right: auto;
-//  content: "";
-//  clear: both;
-//  display: table;
-//}
+.footer {
+  font-size: $footer-font-size;
+  a {
+    color: $white;
+  }
+}
 
+.v-carousel {
+  &.slim {
+    box-shadow: none;
+  }
+
+  &.height-200 {
+    height: 200px;
+  }
+
+  &.secondary--controls {
+    .v-carousel__prev, .v-carousel__next {
+
+      .theme--dark.v-icon {
+        color: $secondary;
+      }
+    }
+  }
+}

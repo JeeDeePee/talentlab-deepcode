@@ -6,6 +6,11 @@ $toolbar-color: rgba(255, 255, 255, 0.6);
 
   .v-card {
     background-color: $secondary;
+
+    &.light {
+      background-color: $white;
+    }
+
   }
 
   .v-toolbar.primary {

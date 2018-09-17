@@ -1,0 +1,271 @@
+<template>
+  <div>
+    <section class="background--secondary text-xs-center pt-5">
+      <v-container grid-list-xl class="pb-0">
+        <h1>talent<b>lab</b> ist der digitale Begleiter für Karriere- und
+          Potenzialentwicklung</h1>
+        <div class="my-4 lead">Nutze dein Potenzial und stärke deine Kompetenzen zielorientiert und wirksam!</div>
+        <v-btn router exact class="btn-secondary">
+          mehr erfahren
+        </v-btn>
+        <v-btn router exact>
+          jetzt starten
+        </v-btn>
+        <v-img :src="require(`@/assets/img/marketing_buro_frau-computer_viola.png`)" class="mt-4 hero--image"></v-img>
+      </v-container>
+    </section>
+
+    <section class="text-xs-center background--beige py-5">
+      <v-container grid-list-xl class="py-0">
+
+        <div class="h3 mb-4">Dein Potenzial > Deine Kompetenzen > Deine Entwicklung</div>
+
+        <v-layout row wrap>
+          <v-flex v-for="category in categories" :key="category.id" xs4 class="text-xs-center">
+            <div>
+              <component :is="category.iconComponent"/>
+            </div>
+            <div class="h2 my-3">{{category.title}}</div>
+            <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis</p>
+          </v-flex>
+        </v-layout>
+
+      </v-container>
+    </section>
+
+    <section class="py-5">
+      <v-container grid-list-xl class="py-0">
+
+        <h2 class="h1 text-xs-center ">Mit digitalen Angeboten gezielt und flexibel Potenziale entwickeln!</h2>
+        <div class="text-xs-center lead my-5">talentlab bietet eine auf die Bedürfnisse abgestimmte und flexibel
+          erweiterbare Auswahl an Modulen zu
+          aktuellen Themen
+        </div>
+
+        <v-layout row wrap>
+          <v-flex xs12 sm6 v-for="module in modules" :key="module.id" class="mb-1">
+            <ModuleTeaser :module="module"/>
+          </v-flex>
+        </v-layout>
+
+      </v-container>
+    </section>
+
+    <section class="text-xs-center background--beige py-5">
+      <v-container class="py-0 slider">
+        <h2 class="h3">talentlab ist der digitale Begleiter für Karriere- und Potenzialentwicklung</h2>
+
+        <v-carousel hide-delimiters class="slim height-200 secondary--controls">
+          <v-carousel-item v-for="(fact,i) in facts" :key="i" class="pa-5">
+            <div class="h1 pb-4">
+              {{fact.heading}}
+            </div>
+            <div class="lead">
+              {{fact.text}}
+            </div>
+          </v-carousel-item>
+        </v-carousel>
+
+      </v-container>
+    </section>
+
+    <section class="text-xs-center background--secondary py-5">
+      <v-container grid-list-xl class="py-0 agents">
+        <div class="speech-bubble">
+          <h2 class="lead">Möchtest Du mehr erfahren?</h2>
+
+          <div class="mt-2">Wir beraten Dich gerne individuell</div>
+
+        </div>
+        <v-layout row wrap>
+          <v-flex xs12 sm6 v-for="(agent,i) in agents" :key="i">
+            <v-avatar size=115 class="v-avatar--responsive">
+              <v-img
+                :src="agent.avatar"
+                :alt="agent.name"
+              ></v-img>
+            </v-avatar>
+            <h4 class="my-2 headline">{{agent.name}}</h4>
+            <div>
+              {{agent.title}}
+            </div>
+
+          </v-flex>
+        </v-layout>
+
+        <v-btn router exact class="mt-5" @click="showChat()">
+          Chat starten
+        </v-btn>
+
+      </v-container>
+    </section>
+
+    <section class="background--white py-5">
+      <v-container grid-list-xl class="py-0">
+        <h2 class="h1 text-xs-center mb-5">Das sagen unsere Kunden</h2>
+
+        <v-layout row wrap>
+          <v-flex xs12 sm4 v-for="(review,i) in reviews" :key="i">
+            <h4 class="text--primary-accent mb-3">
+              <v-icon lass="text--primary-accent">person_outline</v-icon>
+              <span class="ml-1">{{review.name}}</span>
+            </h4>
+            <div>
+              «{{review.text}}»
+            </div>
+          </v-flex>
+        </v-layout>
+
+      </v-container>
+    </section>
+
+    <section class="text-xs-center background--beige py-5">
+      <v-container grid-list-xl>
+        <h2 class="h1">Wer steht hinter talentlab?</h2>
+        <div class="lead my-4">Vereinte Erfahrung und Passion in Sachen Personalanalytik, Lernen und IT</div>
+
+        <v-layout row wrap>
+          <v-flex xs12 sm4 v-for="(member,i) in members" :key="i">
+            <v-avatar size=115 class="v-avatar--responsive">
+              <v-img
+                :src="member.avatar"
+                :alt="member.name"
+              ></v-img>
+            </v-avatar>
+            <h4 class="my-2 headline">{{member.name}}</h4>
+            <div>
+              {{member.title}}
+            </div>
+          </v-flex>
+        </v-layout>
+      </v-container>
+    </section>
+
+  </div>
+</template>
+
+<script>
+  import CATEGORIES_QUERY from '@/graphql/gql/categories.gql'
+  import ModuleTeaser from '@/components/categories/ModuleTeaser'
+
+  import GrowingAsALeader from '@/components/icons/GrowingAsALeader'
+  import MasteringComplexity from '@/components/icons/MasteringComplexity'
+  import MasteringRelations from '@/components/icons/MasteringRelations'
+
+  export default {
+    components: {
+      GrowingAsALeader,
+      MasteringComplexity,
+      MasteringRelations,
+      ModuleTeaser
+    },
+
+    methods: {
+      showChat: function (event) {
+        this.$emit('showChat')
+      }
+    },
+
+    data() {
+      return {
+        initialQuery: CATEGORIES_QUERY,
+        categories: [],
+        modules: [],
+        agents: [
+          {
+            'name': 'Nina Hagemann',
+            'title': 'talentlab Advisor',
+            'avatar': 'https://cdn.vuetifyjs.com/images/lists/3.jpg'
+          },
+          {
+            'name': 'Paul Markwarth',
+            'title': 'talentlab Advisor',
+            'avatar': 'https://cdn.vuetifyjs.com/images/lists/1.jpg'
+          }
+        ],
+        facts: [
+          {
+            'heading': 'Personalisiert',
+            'text': 'Talentlab ist auf individuelle Entwicklungsbedürfnisse zugeschnitten.'
+          },
+          {
+            'heading': 'flexibel',
+            'text': 'talentlab ermöglicht autonomes Lernen nach eigenem Rhythmus.'
+          },
+          {
+            'heading': 'effizient',
+            'text': 'talentlab ist intuitiv zu bedienen.'
+          }
+        ],
+        members: [
+          {
+            'name': 'Daniel Fahrni',
+            'title': 'VRP & CMO',
+            'avatar': 'https://cdn.vuetifyjs.com/images/lists/1.jpg'
+          },
+          {
+            'name': 'Clea Bauch',
+            'title': 'CEO',
+            'avatar': 'https://cdn.vuetifyjs.com/images/lists/3.jpg'
+          },
+          {
+            'name': 'Pawel Kowalski',
+            'title': 'CTO',
+            'avatar': 'https://cdn.vuetifyjs.com/images/lists/2.jpg'
+          }
+        ],
+        reviews: [
+          {
+            'name': 'Anja, Projektleiterin',
+            'text': 'Mit talentlab konnte ich mich effizient auf die Herausforderungen in meiner neuen Funktion vorbereiten\n' +
+            '              und mich im Bereich agiles Projektmanagement fit machen.'
+          },
+          {
+            'name': 'Martin, Head of HR',
+            'text': 'Seit wir talentlab einsetzen können wir unseren Kadern und Nachwuchsführungs-kräften ein umfassendes\n' +
+            '              Angebot für ihre persönliche Entwicklung bieten.'
+          },
+          {
+            'name': 'Jasmin, CEO',
+            'text': 'talentlab ermöglicht es mir, die Kompetenzen in der Organisation gezielt zu fördern und die Wirkung\n' +
+            '              unserer Massnahmen zur Potenzialentwicklung zu messen.'
+          }
+        ]
+
+      }
+    },
+
+    apollo: {
+      categories: {
+        query: CATEGORIES_QUERY,
+        fetchPolicy: 'network-only',
+        manual: true,
+        result({data, loading, networkStatus}) {
+          if (!loading) {
+            this.categories = data.categories.edges.map(entry => entry.node)
+            this.modules = data.userModules.edges.map(entry => ({'status': entry.node.status, ...entry.node.module})).slice(0, 4)
+          }
+        }
+      }
+    }
+  }
+</script>
+
+<style lang="scss" scoped>
+  @import "../styles/var";
+
+  .hero--image {
+    max-width: 736px;
+    margin: auto;
+  }
+
+  .container.slider {
+    max-width: 600px;
+  }
+
+  .container.agents {
+    max-width: 500px;
+  }
+
+
+</style>
