@@ -12,7 +12,7 @@ class PrivateGraphQLView(LoginRequiredMixin, GraphQLView):
     pass
 
 
-@login_required
+#@login_required
 @ensure_csrf_cookie
 def home(request):
     if settings.DEBUG:

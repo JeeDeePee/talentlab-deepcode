@@ -1,5 +1,6 @@
 // color definitions
 
+$white: #ffffff;
 $grey-1: #F7F7F7;
 $grey-3: #F3F3F3;
 $grey-2: #D8D8D8;
@@ -14,8 +15,8 @@ $blue-shadow: #B6CCD4;
 
 $beige: #F3F0EB;
 
-$violet: #59006F;
-$violet-shadow: #59006F;
+$violet: #400A4D;
+$violet-transition: #59006F;
 
 // color schema
 
@@ -23,12 +24,13 @@ $primary: $orange;
 $primary-variant: $orange-shadow;
 
 $secondary: $violet;
-$secondary-variant: $violet-shadow;
+$secondary-transition: $violet-transition;
 
 // text style
 
 $text-color: $grey-9;
 $font-family: 'Rubik', Arial, sans-serif;
 $base-font-size: 15px;
+$footer-font-size: 12px;
 
 $learn-unit-bg-color: $beige;

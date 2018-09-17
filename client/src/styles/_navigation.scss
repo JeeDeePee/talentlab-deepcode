@@ -1,0 +1,27 @@
+.application {
+  font-family: $font-family;
+
+  .theme--dark.v-toolbar {
+    background-color: $violet;
+
+    .v-btn--active {
+      border-bottom: 5px solid $orange;
+      font-weight: bold;
+
+      &:before {
+        background-color: transparent;
+      }
+    }
+  }
+}
+
+.v-toolbar__content {
+  .v-btn {
+    border: none;
+  }
+}
+
+.v-menu__content .theme--dark.v-list {
+  background-color: $secondary-transition;
+  color: $white;
+}

@@ -40,7 +40,8 @@ all_modules_progress_filterset_class = graphql_user_filter(UserModuleProgress, [
 
 class UserModulesQuery(object):
     module_progress = relay.Node.Field(UserModuleProgressNode)
-    all_modules_progress = DjangoFilterConnectionField(UserModuleProgressNode, filterset_class=all_modules_progress_filterset_class)
+    all_modules_progress = DjangoFilterConnectionField(UserModuleProgressNode,
+                                                       filterset_class=all_modules_progress_filterset_class)
 
     user_modules = relay.ConnectionField(UserModuleConnection)
 
@@ -50,12 +51,17 @@ class UserModulesQuery(object):
 
         # master data
         user = get_current_user()
+
         all_modules = list(Module.objects.all())
         user_modules = []
 
         # now calc module status
         for module in all_modules:
-            module_progress = UserModuleProgress.objects.filter(user=user, module=module).first()
+            if user.is_authenticated:
+                module_progress = UserModuleProgress.objects.filter(user=user, module=module).first()
+            else:
+                module_progress = None
+
             user_modules.append(UserModuleNode(module_progress=module_progress,
                                                module=module,
                                                status=module_progress is not None))
