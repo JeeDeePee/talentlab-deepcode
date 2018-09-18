@@ -21,7 +21,7 @@
         <div class="h3 mb-4">Dein Potenzial > Deine Kompetenzen > Deine Entwicklung</div>
 
         <v-layout row wrap>
-          <v-flex v-for="category in categories" :key="category.id" xs4 class="text-xs-center">
+          <v-flex v-for="category in categories" :key="category.id" xs12 sm4 class="text-xs-center">
             <div>
               <component :is="category.iconComponent"/>
             </div>

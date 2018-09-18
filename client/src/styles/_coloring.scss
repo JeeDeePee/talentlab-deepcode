@@ -8,9 +8,9 @@
 }
 
 .background--secondary {
-  background-color: $secondary;
+  background: $secondary;
   color: $white;
-  background: linear-gradient(135deg, $secondary, $secondary 50%, $secondary-transition);
+  background: linear-gradient(135deg, $secondary 75%, $secondary-transition);
 }
 
 .background--beige {
