@@ -13,7 +13,7 @@
         <v-chip v-if="module.status && !minimal">Gebucht</v-chip>
       </v-card-text>
 
-      <v-card-media v-if="!minimal" :src="module.heroImage" height="200px"></v-card-media>
+      <v-img class="module-card---image" v-if="!minimal" :src="module.heroImage" height="200px"></v-img>
     </v-card>
   </router-link>
 </template>
@@ -32,3 +32,13 @@
     }
   }
 </script>
+
+
+<style lang="scss" scoped>
+  .v-card {
+    height: 100%;
+  }
+  .module-card---image {
+  }
+
+</style>
