@@ -148,9 +148,9 @@
   import CATEGORIES_QUERY from '@/graphql/gql/categories.gql'
   import ModuleCard from '@/components/reusable/ModuleCard'
 
-  import GrowingAsALeader from '@/components/icons/GrowingAsALeader'
-  import MasteringComplexity from '@/components/icons/MasteringComplexity'
-  import MasteringRelations from '@/components/icons/MasteringRelations'
+  import GrowingAsALeader from '@/assets/img/Growing-as-a-Leader.svg'
+  import MasteringComplexity from '@/assets/img/Mastering-Complexity.svg'
+  import MasteringRelations from '@/assets/img/Mastering-Relations.svg'
 
   export default {
     components: {

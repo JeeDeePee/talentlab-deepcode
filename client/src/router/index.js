@@ -2,7 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 
 const routerOptions = [
-  {path: '/', name: 'start', component: 'StartPage', meta: {showFooter: true}},
+  {path: '/', name: 'start', component: 'PageStart', meta: {showFooter: true}},
   {path: '/modules', name: 'modules', component: 'PageModules', meta: {showFooter: true}},
   {path: '/module/:slug', name: 'module', component: 'PageModule', props: true},
   {path: '/unit/:slug', name: 'unit', component: 'PageUnit', props: true},
