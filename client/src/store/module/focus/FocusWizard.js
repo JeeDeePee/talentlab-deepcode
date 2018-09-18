@@ -49,8 +49,9 @@ export default {
       let items = response.data.categories.edges.map(category => ({
           title: category.node.title,
           teaser: category.node.teaser,
+          iconComponent: category.node.iconComponent,
           competences: category.node.competenceSet.edges.map(
-            function(compentence) {
+            function (compentence) {
               commit('addToFocusCache', compentence.node);
               return {
                 title: compentence.node.title,
@@ -59,7 +60,7 @@ export default {
             })
         })
       );
-      commit('setFocusCompetences', items);
+       commit('setFocusCompetences', items);
     },
     storeFocusCompetences({state, commit}) {
       // @todo error handling
@@ -79,7 +80,7 @@ export default {
                 }
             }
         }
-      }).then(function() {
+      }).then(function () {
           self.dispatch('fetchUserFocus');
         }
       );

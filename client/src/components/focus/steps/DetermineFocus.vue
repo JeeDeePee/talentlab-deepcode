@@ -5,7 +5,7 @@
     <v-container fluid grid-list-xl>
       <v-layout row wrap>
         <v-flex xs4 v-for="(category, categoryKey) in focusCompetences" :key="categoryKey">
-          <img :src="'https://talentlab-web.s3.amazonaws.com/original_images/category2_Al9ARbs.png'"><br>
+          <component :is="category.iconComponent"/>
           <h3>{{category.title}}</h3>
 
           <p>{{category.teaser}}</p>
@@ -29,7 +29,17 @@
 <script>
   import {mapActions, mapGetters} from 'vuex'
 
+  import GrowingAsALeader from '@/assets/img/Growing-as-a-Leader.svg'
+  import MasteringComplexity from '@/assets/img/Mastering-Complexity.svg'
+  import MasteringRelations from '@/assets/img/Mastering-Relations.svg'
+
   export default {
+    components: {
+      GrowingAsALeader,
+      MasteringComplexity,
+      MasteringRelations
+    },
+
     methods: {
       ...mapActions({
         newUserFocusBySlugs: 'newUserFocusBySlugs'

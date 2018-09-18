@@ -23,9 +23,9 @@
         <v-flex v-for="category in categories" :key="category.id" xs4 class="text-xs-center">
           <!--<img :src="category.icon"><br>-->
           <component :is="category.iconComponent"/>
-          <br>
-          {{category.title}}
-
+          <div>
+            {{category.title}}
+          </div>
         </v-flex>
         <v-flex xs12 sm6 v-for="module in modules" :key="module.id" class="mb-1">
           <ModuleCard :module="module"/>

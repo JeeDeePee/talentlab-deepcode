@@ -5,6 +5,7 @@ query FocusCompetencesQuery {
         slug
         title
         teaser
+        iconComponent
         competenceSet {
           edges {
             node {
