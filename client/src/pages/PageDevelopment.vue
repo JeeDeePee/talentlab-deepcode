@@ -72,7 +72,7 @@
             <div class="pa-4 background--mint">
               <h2 class="body">Coaching-Abo</h2>
               <div>Bespreche deine Entwicklung mit einem Coach oder Mentor.</div>
-              <v-btn router exact class="mt-4">
+              <v-btn router exact class="mt-4" @click="$openChat">
                 Coach buchen
               </v-btn>
             </div>
@@ -96,25 +96,6 @@
 
       </v-container>
     </section>
-
-    <!--
-
-
-
-    <div class="clearfix">
-      >
-
-      <h2 class="grey--text mb-3">Meine Module</h2>
-
-      <v-btn class="mb-4 ml-0 mt-0 hidden-md-and-up" @click.stop="showFocusDialog=true">
-        <v-icon>add</v-icon>
-        Modul auswählen
-      </v-btn>
-    </div>
-
-
-
-    -->
 
   </div>
 </template>

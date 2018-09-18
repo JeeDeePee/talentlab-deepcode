@@ -1,7 +1,7 @@
 <template>
-  <v-dialog v-model="show" persistent max-width="500px" class="background--white ">
+  <v-dialog v-model="show" persistent max-width="500px" class="background--white">
     <v-card class="light">
-      <v-card-title>
+      <v-card-title class="dummy-chat">
         <span class="headline">Hallo 👋</span>
         <v-spacer></v-spacer>
         <v-btn flat icon depressed @click.stop="show=false">
@@ -76,6 +76,9 @@
     .v-input__slot {
       background-color: $grey-2 !important;
       color: $text-color !important;
+    }
+    .v-btn .v-btn__content .v-icon {
+      color: black;
     }
   }
 </style>

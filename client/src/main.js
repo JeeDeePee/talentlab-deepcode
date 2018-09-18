@@ -37,8 +37,16 @@ function getRidOfEdges(collection) {
   }
 }
 
+var openChatEvent = new Event('openChat')
+
+function openChat() {
+  window.dispatchEvent(openChatEvent)
+}
+
 Object.defineProperty(Vue.prototype, '$getRidOfEdges', {value: getRidOfEdges})
 Object.defineProperty(Vue.prototype, '$lodash', {value: lodash})
+
+Object.defineProperty(Vue.prototype, '$openChat', {value: openChat})
 
 Window.$getRidOfEdges = getRidOfEdges
 
@@ -59,7 +67,7 @@ const apolloProvider = new VueApollo({
   defaultClient: apolloClient
 })
 
-Vue.filter('formatDate', function(value) {
+Vue.filter('formatDate', function (value) {
   if (!value) return ''
   var m = value.getMonth() + 1;
   var d = value.getDate();

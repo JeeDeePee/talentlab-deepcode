@@ -93,7 +93,7 @@
           </v-flex>
         </v-layout>
 
-        <v-btn router exact class="mt-5" @click="showChat()">
+        <v-btn router exact class="mt-5" @click="$openChat">
           Chat starten
         </v-btn>
 
@@ -159,13 +159,7 @@
       MasteringRelations,
       ModuleCard
     },
-
-    methods: {
-      showChat: function (event) {
-        this.$emit('showChat')
-      }
-    },
-
+    
     data() {
       return {
         initialQuery: CATEGORIES_QUERY,

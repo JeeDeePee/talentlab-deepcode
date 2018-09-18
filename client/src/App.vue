@@ -160,10 +160,10 @@
     created() {
       this.fetchUser()
 
-      this.$on('showChat', () => {
-        console.info('---')
+      // dummy chat app
+      window.addEventListener('openChat', () => {
         this.showChat = true
-      })
+      }, false)
     },
 
     mounted() {
