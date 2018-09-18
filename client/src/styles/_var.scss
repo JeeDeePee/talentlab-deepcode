@@ -8,23 +8,16 @@ $grey-4: #AFB1B1;
 $grey-9: #3F3F3F;
 
 $orange: #FD6E22;
-$orange-shadow: #c54602;
+$orange-opacity: rgba($orange, 0.15);
 
 $blue: #EDF7FA;
-$blue-shadow: #B6CCD4;
 
 $beige: #F3F0EB;
 
 $violet: #400A4D;
 $violet-transition: #59006F;
 
-// color schema
-
-$primary: $orange;
-$primary-variant: $orange-shadow;
-
-$secondary: $violet;
-$secondary-transition: $violet-transition;
+$mint: #A4D5A4;
 
 // text style
 

@@ -4,7 +4,7 @@
       <div>
         <v-breadcrumbs class="pl-0">
           <v-icon slot="divider">chevron_right</v-icon>
-          <v-breadcrumbs-item class="link" :to="{name: 'categories'}" exact router>
+          <v-breadcrumbs-item class="link" :to="{name: 'modules'}" exact router>
               {{ unit.categoryTitle }}
           </v-breadcrumbs-item>
           <v-breadcrumbs-item class="link" v-if="unit.moduleSlug" :to="{name: 'module', params: {slug: unit.moduleSlug}}" exact router>

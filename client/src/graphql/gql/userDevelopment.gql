@@ -1,5 +1,5 @@
 query UserDevelopmentQuery {
-  userProgress {
+  user {
     id
     username
     firstName

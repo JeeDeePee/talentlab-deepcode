@@ -1,24 +1,34 @@
 
-.text--primary-accent {
-  color: $primary !important;
+.text--orange {
+  color: $orange !important;
 
   .v-icon {
-    color: $primary !important;
+    color: $orange !important;
   }
 }
 
-.background--secondary {
-  background: $secondary;
+.background--violet {
+  background: $violet !important;
   color: $white;
-  background: linear-gradient(135deg, $secondary 75%, $secondary-transition);
+  background: linear-gradient(135deg, $violet 75%, $violet-transition);
 }
 
 .background--beige {
-  background-color: $beige;
+  background-color: $beige !important;
   color: $text-color;
 }
 
 .background--white {
-  background-color: $white;
+  background-color: $white !important;
+  color: $text-color;
+}
+
+.background--mint {
+  background-color: $mint !important;
+  color: $text-color;
+}
+
+.background--orange-opacity {
+  background-color: $orange-opacity !important;
   color: $text-color;
 }

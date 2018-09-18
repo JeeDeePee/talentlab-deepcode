@@ -5,7 +5,7 @@ $toolbar-color: rgba(255, 255, 255, 0.6);
 .v-dialog {
 
   .v-card {
-    background-color: $secondary;
+    background-color: $violet;
 
     &.light {
       background-color: $white;
@@ -54,14 +54,14 @@ $toolbar-color: rgba(255, 255, 255, 0.6);
   .toolbar-accent {
     height: 4px;
     width: 110px;
-    background-color: $primary;
+    background-color: $orange;
     position: absolute;
     bottom: 0;
     left: 0;
   }
 
   .breadcrumbs-item--active {
-    color: $primary;
+    color: $orange;
   }
 
   .v-breadcrumbs {
@@ -73,7 +73,7 @@ $toolbar-color: rgba(255, 255, 255, 0.6);
     }
 
     li:last-child .v-breadcrumbs__item {
-      color: $primary;
+      color: $orange;
     }
   }
 

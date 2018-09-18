@@ -1,8 +1,8 @@
 .speech-bubble {
   position: relative;
-  background: $primary;
+  background: $orange;
   border-radius: 0;
-  padding: 0 24px 24px 24px;
+  padding: 24px;
   margin-bottom: 20px;
 }
 
@@ -14,7 +14,7 @@
   width: 0;
   height: 0;
   border: 20px solid transparent;
-  border-top-color: $primary;
+  border-top-color: $orange;
   border-bottom: 0;
   margin-left: -20px;
   margin-bottom: -20px;

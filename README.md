@@ -63,6 +63,12 @@ Pip install
 docker-compose run pipenv_install
 ```
 
+Build client
+
+```
+docker-compose run web npm run build --prefix=client
+```
+
 Run a django command
 
 ```

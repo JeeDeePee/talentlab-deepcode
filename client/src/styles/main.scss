@@ -7,23 +7,8 @@
 @import "typography";
 @import "coloring";
 
-body {
-  font-family: $font-family;
-  font-size: $base-font-size;
-  color: $text-color;
-}
-
 ul {
   margin-left: 16px;
-}
-
-a {
-  text-decoration: none;
-
-  &.router {
-    color: $white;
-  }
-
 }
 
 .clearfix::after {
@@ -39,6 +24,16 @@ a {
   }
 }
 
+.v-list--adjust .v-list__tile {
+  height: auto;
+  padding: 16px 0;
+
+  .v-list__tile__sub-title, .v-list__tile__title {
+    white-space: pre-wrap;
+  }
+
+}
+
 .v-carousel {
   &.slim {
     box-shadow: none;
@@ -52,7 +47,7 @@ a {
     .v-carousel__prev, .v-carousel__next {
 
       .theme--dark.v-icon {
-        color: $secondary;
+        color: $violet;
       }
     }
   }

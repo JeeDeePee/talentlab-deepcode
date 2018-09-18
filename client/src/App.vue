@@ -7,7 +7,7 @@
             <v-list-tile-title>Meine Entwicklung</v-list-tile-title>
           </v-list-tile-content>
         </v-list-tile>
-        <v-list-tile :to="{ name: 'categories'}" exact router>
+        <v-list-tile :to="{ name: 'modules'}" exact router>
           <v-list-tile-content>
             <v-list-tile-title>Module</v-list-tile-title>
           </v-list-tile-content>
@@ -44,10 +44,10 @@
       <v-spacer></v-spacer>
       <v-toolbar-items class="hidden-sm-and-down">
         <v-btn v-if="user" flat :to="{ name: 'development'}" exact router>Meine Entwicklung</v-btn>
-        <v-btn flat :to="{ name: 'categories'}" exact router>Module</v-btn>
+        <v-btn flat :to="{ name: 'modules'}" exact router>Module</v-btn>
 
         <v-menu offset-y v-if="user">
-          <v-btn flat slot="activator" class="text--primary-accent">
+          <v-btn flat slot="activator" class="text--orange">
             <v-icon class="mr-1">person_outline</v-icon>
             {{user.fullName}}
           </v-btn>
@@ -61,7 +61,7 @@
             </v-list-tile>
           </v-list>
         </v-menu>
-        <v-btn v-else flat :to="{ name: 'login'}" exact router class="text--primary-accent">
+        <v-btn v-else flat :to="{ name: 'login'}" exact router class="text--orange">
           <v-icon class="mr-1">person_outline</v-icon>
           Login
         </v-btn>
@@ -76,7 +76,7 @@
       </v-slide-x-transition>
     </v-content>
 
-    <footer class="background--secondary footer" v-if="$route.meta.showFooter">
+    <footer class="background--violet footer" v-if="$route.meta.showFooter">
       <v-container>
         <v-layout row wrap>
           <v-flex xs12 sm4>

@@ -1,7 +1,7 @@
 @import "var";
 
 .v-btn--active .v-btn__content:before, .v-btn:focus .v-btn__content:before, .v-btn:hover .v-btn__content:before .v-btn:not(.v-btn--depressed) {
-  background-color: $primary;
+  background-color: $orange;
 }
 
 .theme--light .v-btn:not(.v-btn--icon):not(.v-btn--flat) {
@@ -17,7 +17,7 @@
     display: inline-block;
   }
 
-  background-color: $primary;
+  background-color: $orange;
   // keep this line here or otherwise the above rule will not apply
   color: white;
 }
@@ -26,8 +26,9 @@
 
 .v-btn:not(.v-btn--icon):not(.v-btn--flat){
   box-shadow: none !important;
-  background-color: $primary;
+  background-color: $orange;
   color: white;
+  margin: 0;
 }
 
 .v-btn:not(.v-btn--floating) {

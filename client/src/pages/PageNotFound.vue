@@ -1,5 +1,5 @@
 <template>
-  <div class="background--secondary">
+  <div class="background--violet">
     <v-container>
       <v-layout
         column

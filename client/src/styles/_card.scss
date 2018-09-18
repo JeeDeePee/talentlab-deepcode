@@ -6,3 +6,16 @@
     margin-left: 16px;
   }
 }
+
+.v-card__title {
+  padding: 16px 16px 0 16px
+}
+
+.v-card__text {
+  padding: 0 16px 16px 16px
+}
+
+.v-chip {
+  float: right;
+  margin-top: -5px;
+}

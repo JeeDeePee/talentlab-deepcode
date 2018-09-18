@@ -1,3 +1,18 @@
+body, .body {
+  font-family: $font-family;
+  font-size: $base-font-size;
+  color: $text-color;
+  font-weight: 400;
+}
+
+a {
+  text-decoration: none;
+
+  &.router {
+    color: $white;
+  }
+
+}
 
 h1, .h1 {
   font-size: 44px;

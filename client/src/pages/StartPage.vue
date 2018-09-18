@@ -1,6 +1,6 @@
 <template>
   <div>
-    <section class="background--secondary text-xs-center pt-5">
+    <section class="background--violet text-xs-center pt-5">
       <v-container grid-list-xl class="pb-0">
         <h1>talent<b>lab</b> ist der digitale Begleiter für Karriere- und
           Potenzialentwicklung</h1>
@@ -44,7 +44,7 @@
 
         <v-layout row wrap>
           <v-flex xs12 sm6 v-for="module in modules" :key="module.id" class="mb-1">
-            <ModuleTeaser :module="module"/>
+            <ModuleCard :module="module"/>
           </v-flex>
         </v-layout>
 
@@ -69,7 +69,7 @@
       </v-container>
     </section>
 
-    <section class="text-xs-center background--secondary py-5">
+    <section class="text-xs-center background--violet py-5">
       <v-container grid-list-xl class="py-0 agents">
         <div class="speech-bubble">
           <h2 class="lead">Möchtest Du mehr erfahren?</h2>
@@ -106,8 +106,8 @@
 
         <v-layout row wrap>
           <v-flex xs12 sm4 v-for="(review,i) in reviews" :key="i">
-            <h4 class="text--primary-accent mb-3">
-              <v-icon lass="text--primary-accent">person_outline</v-icon>
+            <h4 class="text--orange mb-3">
+              <v-icon lass="text--orange">person_outline</v-icon>
               <span class="ml-1">{{review.name}}</span>
             </h4>
             <div>
@@ -146,7 +146,7 @@
 
 <script>
   import CATEGORIES_QUERY from '@/graphql/gql/categories.gql'
-  import ModuleTeaser from '@/components/categories/ModuleTeaser'
+  import ModuleCard from '@/components/reusable/ModuleCard'
 
   import GrowingAsALeader from '@/components/icons/GrowingAsALeader'
   import MasteringComplexity from '@/components/icons/MasteringComplexity'
@@ -157,7 +157,7 @@
       GrowingAsALeader,
       MasteringComplexity,
       MasteringRelations,
-      ModuleTeaser
+      ModuleCard
     },
 
     methods: {

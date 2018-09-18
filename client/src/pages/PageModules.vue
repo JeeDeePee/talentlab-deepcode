@@ -28,7 +28,7 @@
 
         </v-flex>
         <v-flex xs12 sm6 v-for="module in modules" :key="module.id" class="mb-1">
-          <ModuleTeaser :module="module"/>
+          <ModuleCard :module="module"/>
         </v-flex>
       </v-layout>
     </v-container>
@@ -42,14 +42,14 @@
   import MasteringComplexity from '@/components/icons/MasteringComplexity'
   import MasteringRelations from '@/components/icons/MasteringRelations'
 
-  import ModuleTeaser from '@/components/categories/ModuleTeaser'
+  import ModuleCard from '@/components/reusable/ModuleCard'
 
   export default {
     components: {
       GrowingAsALeader,
       MasteringComplexity,
       MasteringRelations,
-      ModuleTeaser
+      ModuleCard
     },
 
     data() {

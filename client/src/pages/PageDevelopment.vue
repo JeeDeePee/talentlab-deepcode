@@ -1,13 +1,108 @@
 <template>
-  <v-container class="mt-3">
-    <h2 class="grey--text mb-3">Mein Fokus</h2>
-    <MyFocus class="mb-4"/>
+  <div>
+    <section class="background--violet pt-5">
+      <v-container grid-list-xl>
+        <h1 class="mb-5 text-xs-center">Dashboard – deine Entwicklung</h1>
+        <v-layout row wrap>
+          <v-flex xs12 sm6>
+            <v-img :src="require(`@/assets/img/dashboard_career.png`)" class="hero--image"></v-img>
+          </v-flex>
+          <v-flex xs12 sm6>
+            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
+            dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+            <div class="text-xs-center mt-4">
+              <v-btn>
+                gebuchte Module starten
+              </v-btn>
+            </div>
+          </v-flex>
+        </v-layout>
+      </v-container>
+    </section>
+
+    <section class="pt-4">
+      <v-container grid-list-xl>
+        <v-layout row wrap>
+          <v-flex xs12 sm7>
+            <h2 class="mb-4">Meine Entwicklung</h2>
+            <MyFocus class="mb-4"/>
+          </v-flex>
+          <v-flex xs12 sm5>
+            <div class="pa-4 background--beige">
+              <h2>Agenda</h2>
+              <v-list class="background--beige v-list--adjust">
+                <div v-for="(item,i) in dummyAgenda" :key="i">
+                  <v-list-tile>
+                    <v-list-tile-action>
+                      <v-icon v-if="item.type==='calendar'" class="material-icons">calendar_today</v-icon>
+                      <v-icon v-else-if="item.type==='message'" if="item.type=='calendar'" class="material-icons">
+                        mail_outline
+                      </v-icon>
+                      <v-icon v-else class="material-icons">link</v-icon>
+                    </v-list-tile-action>
+
+                    <v-list-tile-content>
+                      <v-list-tile-sub-title>{{item.text}}</v-list-tile-sub-title>
+                    </v-list-tile-content>
+                  </v-list-tile>
+                  <v-divider v-if="i < dummyAgenda.length -1 "></v-divider>
+                </div>
+              </v-list>
+            </div>
+          </v-flex>
+        </v-layout>
+      </v-container>
+    </section>
+
+    <section>
+      <v-container grid-list-xl>
+        <v-layout row wrap>
+          <v-flex xs12 sm7>
+            <div class="pa-4 background--orange-opacity">
+              <h2>Aktueller Prozess</h2>
+
+              <div>Im aktuellen Prozess sind folgende Tasks offen:</div>
+              <ul class="mt-2 mb-4">
+                <li v-for="(item,i) in dummyCurrentProcess.nextTasks" :key="i">{{item}}</li>
+              </ul>
+              Total {{dummyCurrentProcess.closedTasks}} abgeschlossene Tasks.
+            </div>
+          </v-flex>
+          <v-flex xs12 sm5>
+            <div class="pa-4 background--mint">
+              <h2 class="body">Coaching-Abo</h2>
+              <div>Bespreche deine Entwicklung mit einem Coach oder Mentor.</div>
+              <v-btn router exact class="mt-4">
+                Coach buchen
+              </v-btn>
+            </div>
+          </v-flex>
+        </v-layout>
+      </v-container>
+    </section>
+
+    <section>
+      <v-container grid-list-xl>
+        <h2 class="pb-4">Meine gebuchten Module</h2>
+        <v-layout row wrap>
+          <v-flex xs12 sm6 class="mb-1" v-for="(module, index) in userModules" :key="index">
+            <ModuleCard :module="module" minimal/>
+          </v-flex>
+        </v-layout>
+
+        <v-btn :to="{ name: 'modules'}" exact router>
+          Modul auswählen
+        </v-btn>
+
+      </v-container>
+    </section>
+
+    <!--
+
+
 
     <div class="clearfix">
-      <v-btn class="hidden-sm-and-down float-r" :to="{ name: 'categories'}" exact router>
-        <v-icon>add</v-icon>
-        Modul auswählen
-      </v-btn>
+      >
 
       <h2 class="grey--text mb-3">Meine Module</h2>
 
@@ -17,21 +112,11 @@
       </v-btn>
     </div>
 
-    <ModuleProgressListItem v-for="(moduleProgress, index) in userModules"
-                            :moduleProgress="moduleProgress"
-                            :key="index"
-                            class="mb-4"/>
 
-    <h3 class="title-recomendations pt-3">Vorgeschlagene Module</h3>
-    <v-container fluid grid-list-md>
-      <v-layout row wrap>
-        <v-flex v-for="(item, index) in recomendations" :key="index" xs12 sm6 class="mb-1">
-          <Recomendation/>
-        </v-flex>
-      </v-layout>
-    </v-container>
 
-  </v-container>
+    -->
+
+  </div>
 </template>
 
 <script>
@@ -40,45 +125,65 @@
   import {mapActions} from 'vuex'
 
   import MyFocus from '@/components/focus/MyFocus.vue'
-  import ModuleProgressListItem from '@/components/development/ModuleProgressListItem'
-  import Recomendation from '@/components/development/Recomendation'
+  import ModuleCard from '@/components/reusable/ModuleCard'
 
   export default {
     components: {
       MyFocus,
-      ModuleProgressListItem,
-      Recomendation
+      ModuleCard
     },
 
     data() {
       return {
         loading: true,
-        userProgress: {
-          usermoduleprogressSet: {
-            edges: []
-          }
+
+        dummyCurrentProcess: {
+          'closedTasks': 18,
+          'nextTasks': [
+            'Digital Communication & Virtual Collaboration',
+            'Leading through Disruption'
+          ]
         },
-        recomendations: [1, 2]
+        dummyAgenda: [
+          {'type': 'message', 'text': 'Samuel Ryser'},
+          {
+            'type': 'calendar',
+            'text': 'Montag, 17/09/2018, 12:00 Uhr\n' +
+            'Mittwoch, 24/08/2018, 16:30 Uhr\n' +
+            'Freitag, 30/11/2018, 17:00 Uhr'
+          },
+          {'type': 'message', 'text': 'Fritz Renggli'},
+          {'type': 'calendar', 'text': 'Montag, 27/09/2018, 12:00 Uhr'},
+          {
+            'type': 'event',
+            'text': 'Führung von Führungskräften \n' +
+            'KeyNote: Kurt Wenger (CEO ABC Group)\n' +
+            'Moderation: Clea Bauch (talentlab)'
+          },
+          {
+            'type': 'calendar',
+            'text': 'Freitag, 28/09/2018'
+          }
+        ]
       }
     },
 
     apollo: {
-      userProgress: {
+      user: {
         query: USER_DEVELOPMENT_QUERY,
-        fetchPolicy: 'network-only',
-        watchLoading(isLoading, countModifier) {
-          console.log(`watchLoading(${isLoading}, ${countModifier})`)
-        }
+        fetchPolicy: 'network-only'
       }
     },
 
     computed: {
       userModules() {
-        let moduleProgress = this.userProgress.usermoduleprogressSet.edges.map(entry => entry.node.module)
-        return moduleProgress.map(function(entry) {
-          const parsedCategory = JSON.parse(entry.category)
-          return { ...entry, category: { title: parsedCategory.title, slug: parsedCategory.slug } }
-        })
+        if (this.user) {
+          let moduleProgress = this.user.usermoduleprogressSet.edges.map(entry => entry.node.module)
+          return moduleProgress.map(function (entry) {
+            const parsedCategory = JSON.parse(entry.category)
+            return {...entry, category: {title: parsedCategory.title, slug: parsedCategory.slug}}
+          })
+        }
       }
     },
 
@@ -89,55 +194,3 @@
     }
   }
 </script>
-
-<style lang="scss" scoped>
-  @import "../styles/var";
-
-  img {
-    max-width: 100%;
-  }
-
-  h2 {
-    font-size: 24px;
-    font-weight: 400;
-  }
-
-  h3 {
-    font-size: 24px;
-    margin-bottom: 12px;
-  }
-
-  .title-recomendations {
-    font-size: 15px;
-    font-weight: 400;
-    text-transform: uppercase;
-  }
-
-  .video-thumbnail {
-    max-width: 200px;
-  }
-
-  .hero-bg {
-    background-color: $blue;
-  }
-
-  .description {
-    font-size: 18px;
-    font-weight: bold;
-  }
-
-  .clearfix::after {
-    content: "";
-    clear: both;
-    display: table;
-  }
-
-  .float-l {
-    float: left;
-  }
-
-  .float-r {
-    float: right;
-    margin-top: -5px;
-  }
-</style>
