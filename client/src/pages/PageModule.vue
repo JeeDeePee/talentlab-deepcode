@@ -88,13 +88,13 @@
               <h2 class="mb-3">Ressourcen <i class="material-icons icon-color">library_books</i></h2>
               <div class="mt-1 mb-3">
                 <Tools v-if="moduleBooked" :tools="module.resources"/>
-                <div v-else>Hier findest du bei Buchung weiterführende Artikel, Links und vieles mehr.</div>
+                <div v-else>Hier findest Du bei Buchung weiterführende Artikel, Links und mehr.</div>
               </div>
 
               <h2 class="mb-3 mt-5">Tools & Templates <i class="material-icons icon-color">library_books</i></h2>
               <div class="mt-1 mb-3">
                 <Tools v-if="moduleBooked" :tools="module.tools"/>
-                <div v-else>Hier findest du bei Buchung im Arbeitsalltag nützliche Hilfestellungen.</div>
+                <div v-else>Hier findest Du bei Buchung im Arbeitsalltag nützliche Hilfestellungen.</div>
               </div>
             </v-flex>
           </v-layout>
@@ -134,7 +134,7 @@
                   <v-divider v-if="i < dummyAgenda.length -1 "></v-divider>
                 </div>
               </v-list>
-              <div v-else>Hier findest du bei Buchung Termine & Kontaktinformationen</div>
+              <div v-else>Hier findest Du bei Buchung Termine & Kontaktinformationen</div>
             </v-flex>
           </v-layout>
         </v-container>
@@ -288,11 +288,11 @@
 
               let units = data.userModuleUnits.edges.map(entry => ({'status': entry.node.status, ...entry.node.unit}))
 
-              let contentType = ['WEBINAR', 'LERNFILM']
+              let contentType = ['INTERAKTIV']
 
               // TODO: filter on the server: split into types of units
-              this.interactiveUnits = units.filter(x => !contentType.includes(x.type))
-              this.contentUnits = units.filter(x => contentType.includes(x.type))
+              this.interactiveUnits = units.filter(x => contentType.includes(x.type))
+              this.contentUnits = units.filter(x => !contentType.includes(x.type))
             } else {
               console.log('Data: data.modules not available..')
             }

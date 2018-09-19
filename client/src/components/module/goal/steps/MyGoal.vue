@@ -1,9 +1,9 @@
 <template>
   <div class="text-xs-center">
-    <h1>Was ist dein Ziel</h1>
+    <h1>Was ist Dein Ziel</h1>
 
     <div class="mt-4 mb-5">
-      Wähle das Ziel, das am besten zu dir passt.
+      Wähle das Ziel, das am besten zu Dir passt.
     </div>
 
     <v-radio-group v-model="currentGoal.level" hide-details>

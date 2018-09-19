@@ -3,7 +3,7 @@
     <section class="background--white">
       <v-container class="pb-0">
         <h1>Wähle die passenden Module!</h1>
-        <div class="my-4 lead">talentlab schlägt dir je nach Fokus deiner Entwicklung die geeigneten Module vor.</div>
+        <div class="my-4 lead">talentlab schlägt Dir je nach Fokus bei den Kompetenzen die geeigneten Module vor.</div>
         <div class="text-xs-center">
           <v-btn @click="$vuetify.goTo('#learn-more', {duration: 200, offset: -50})">
             Themen surfen

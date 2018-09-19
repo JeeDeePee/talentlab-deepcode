@@ -2,9 +2,8 @@
   <div>
     <section class="background--violet text-xs-center pt-5">
       <v-container grid-list-xl class="pb-0">
-        <h1>talent<b>lab</b> ist der digitale Begleiter für Karriere- und
-          Potenzialentwicklung</h1>
-        <div class="my-4 lead">Nutze dein Potenzial und stärke deine Kompetenzen zielorientiert und wirksam!</div>
+        <h1>talent<b>lab</b> ist Dein digitaler Begleiter für Karriere- und Potenzialentwicklung</h1>
+        <div class="my-4 lead">Nutze Dein Potenzial und stärke Deine Kompetenzen - zielorientiert und wirksam!</div>
         <v-btn @click="$vuetify.goTo('#learn-more', {duration: 200, offset: -50})" class="btn-secondary">
           mehr erfahren
         </v-btn>
@@ -37,8 +36,8 @@
       <v-container grid-list-xl class="py-0">
 
         <h2 class="h1 text-xs-center ">Mit digitalen Angeboten gezielt und flexibel Potenziale entwickeln!</h2>
-        <div class="text-xs-center lead my-5">talent<b>lab</b> bietet eine auf die Bedürfnisse abgestimmte und flexibel
-          erweiterbare Auswahl an Modulen zu aktuellen Themen
+        <div class="text-xs-center lead my-5">talent<b>lab</b> bietet eine auf Deine Bedürfnisse abgestimmte und
+          flexibel erweiterbare Auswahl an Modulen zu aktuellen Themen
         </div>
 
         <v-layout row wrap>
@@ -52,7 +51,7 @@
 
     <section class="text-xs-center background--beige py-5">
       <v-container class="py-0 slider">
-        <h2 class="h3">talent<b>lab</b> ist der digitale Begleiter für Karriere- und Potenzialentwicklung</h2>
+        <h2 class="h3">talent<b>lab</b> ist Dein digitaler Begleiter für Karriere- und Potenzialentwicklung</h2>
 
         <v-carousel hide-delimiters class="slim height-200 secondary--controls">
           <v-carousel-item v-for="(fact,i) in facts" :key="i" class="pa-5">
@@ -71,7 +70,7 @@
     <section class="text-xs-center background--violet py-5">
       <v-container grid-list-xl class="py-0 agents">
         <div class="speech-bubble speech-bubble--bottom">
-          <h2 class="lead">Möchtest du mehr erfahren?</h2>
+          <h2 class="lead">Möchtest Du mehr erfahren?</h2>
           <div class="mt-2">Wir beraten Dich gerne individuell</div>
         </div>
         <v-layout row wrap>
@@ -118,7 +117,7 @@
     <section class="text-xs-center background--beige py-5">
       <v-container grid-list-xl>
         <h2 class="h1">Wer steht hinter talent<b>lab</b>?</h2>
-        <div class="lead my-4">Vereinte Erfahrung und Passion in Sachen Personalanalytik, Lernen und IT</div>
+        <div class="lead my-4">Vereinte Erfahrung und Passion in Sachen Personalanalytik, Bildung und IT</div>
 
         <v-layout row wrap>
           <v-flex xs12 sm4 v-for="(member,i) in members" :key="i">
@@ -155,7 +154,7 @@
       MasteringRelations,
       ModuleCard
     },
-    
+
     data() {
       return {
         initialQuery: CATEGORIES_QUERY,
@@ -163,9 +162,9 @@
         modules: [],
         agents: [
           {
-            'name': 'Delia Piave Werro',
+            'name': 'Clea Bauch',
             'title': 'talentlab Advisor',
-            'avatar': require(`@/assets/img/people/delia-werro-piave.jpg`)
+            'avatar': require(`@/assets/img/people/clea-bauch.jpg`)
           },
           {
             'name': 'Samuel Ryser',
@@ -176,104 +175,79 @@
 
         facts: [
           {
-            'heading': 'Flexibel',
-            'text': 'talentlab ermöglicht in den Arbeitsalltag integriertes Lernen.',
-            'group': 'hr'
+            'heading': 'personalisiert',
+            'text': 'talentlab ist auf individuelle Entwicklungsbedürfnisse zugeschnitten'
           },
           {
-            'heading': 'Effizient',
-            'text': 'talentlab ist nahtlos und sicher in bestehende HR-Prozesse integrierbar.',
-            'type': 'linie'
+            'heading': 'flexibel',
+            'text': 'talentlab bietet einen Mix an zeitgemäss aufbereiteten Lernangeboten'
           },
           {
-            'heading': 'Persönlich',
-            'text': 'talentlab ist intuitiv zu bedienen.',
-            'type': 'mitarbeiter'
+            'heading': 'effizient',
+            'text': 'talentlab macht Potenzialentwicklung skalierbar'
           },
           {
-            'heading': 'Zielorientiert',
-            'text': 'talentlab verhilft zu Potenzialentwicklung mit klarem Strategiebezug.',
-            'group': 'hr'
+            'heading': 'persönlich',
+            'text': 'talentlab legt Wert auf persönliche Begleitung'
           },
           {
-            'heading': 'Wirksam',
-            'text': 'talentlab macht Potenzialentwicklung sichtbar.',
-            'type': 'linie'
+            'heading': 'zielorientiert',
+            'text': 'talentlab ist gerichtet auf die Anforderungen der Arbeitswelt der Zukunft'
           },
           {
-            'heading': 'Flexibel',
-            'text': 'talentlab ermöglicht autonomes Lernen nach eigenem Rhythmus.',
-            'type': 'mitarbeiter'
+            'heading': 'wirksam',
+            'text': 'talentlab hilft der Organisation am Ball zu bleiben'
           },
           {
-            'heading': 'Effizient',
-            'text': 'talentlab macht Potenzialentwicklung skalierbar.',
-            'group': 'hr'
+            'heading': 'personalisiert',
+            'text': 'talentlab bindet auf Wunsch firmeneigene Inhalte ein'
           },
           {
-            'heading': 'Persönlich',
-            'text': 'talentlab erlaubt massgeschneiderte Auswertungen.',
-            'type': 'linie'
+            'heading': 'flexibel',
+            'text': 'talentlab ermöglicht autonomes Lernen nach eigenem Rhythmus'
           },
           {
-            'heading': 'Zielorientiert',
-            'text': 'talentlab ist intuitiv zu bedienen.',
-            'type': 'mitarbeiter'
+            'heading': 'effizient',
+            'text': 'talentlab ist nahtlos und sicher in bestehende HR-Prozesse integrierbar'
           },
           {
-            'heading': 'Wirksam',
-            'text': 'talentlab hilft der Organisation am Ball zu bleiben.',
-            'group': 'hr'
+            'heading': 'persönlich',
+            'text': 'talentlab motiviert zur Vernetzung von Wissen und Erfahrung'
           },
           {
-            'heading': 'Flexibel',
-            'text': 'talentlab bietet einen Mix an zeitgemäss aufbereiteten Lernangeboten.',
-            'type': 'linie'
-          },
-
-          {
-            'heading': 'Effizient',
-            'text': 'talentlab ist intuitiv zu bedienen.',
-            'type': 'mitarbeiter'
-          },
-
-          {
-            'heading': 'Flexibel',
-            'text': 'talentlab ermöglicht in den Arbeitsalltag integriertes Lernen.',
-            'group': 'hr'
+            'heading': 'zielorientiert',
+            'text': 'talentlab bezieht Deine zu entwickelnden Kompetenzen ein'
           },
           {
-            'heading': 'Zielorientiert',
-            'text': 'talentlab ist gerichtet auf die Anforderungen der Arbeitswelt der Zukunft.',
-            'type': 'linie'
-          },
-
-          {
-            'heading': 'Wirksam',
-            'text': 'talentlab ist intuitiv zu bedienen.',
-            'type': 'mitarbeiter'
+            'heading': 'wirksam',
+            'text': 'talentlab bezieht Deine zu entwickelnden Kompetenzen ein'
           },
           {
-            'heading': 'Personalisiert',
-            'text': 'talentlab berücksichtigt unternehmensspezifische Schwerpunkte bei der Potenzialentwicklung.',
-            'group': 'hr'
+            'heading': 'personalisiert',
+            'text': 'talentlab berücksichtigt unternehmensspezifische Schwerpunkte bei der Potenzialentwicklung'
           },
           {
-            'heading': 'Personalisiert',
-            'text': 'talentlab bindet auf Wunsch firmeneigene Inhalte ein.',
-            'type': 'linie'
+            'heading': 'flexibel',
+            'text': 'talentlab ermöglicht in den Arbeitsalltag integriertes Lernen'
           },
           {
-            'heading': 'Personalisiert',
-            'text': 'Talentlab ist auf individuelle Entwicklungsbedürfnisse zugeschnitten.',
-            'type': 'mitarbeiter'
+            'heading': 'effizient',
+            'text': 'talentlab ist intuitiv zu bedienen'
           },
           {
-            'heading': 'Persönlich',
-            'text': 'talentlab motiviert zur Vernetzung von Wissen und Erfahrung.',
-            'group': 'hr'
+            'heading': 'zielorientiert',
+            'text': 'talentlab verhilft zu Potenzialentwicklung mit klarem Strategiebezug'
+          },
+          {
+            'heading': 'persönlich',
+            'text': 'talentlab erlaubt massgeschneiderte Auswertungen'
+          },
+          {
+            'heading': 'wirksam',
+            'text': 'talentlab macht Potenzialentwicklung sichtbar'
           }
         ],
+        
         members: [
           {
             'name': 'Daniel Fahrni',
@@ -299,7 +273,7 @@
           },
           {
             'name': 'Martin, Head of HR',
-            'text': 'Seit wir talentlab einsetzen können wir unseren Kadern und Nachwuchsführungskräften ein umfassendes\n' +
+            'text': 'Seit wir talentlab einsetzen, können wir unseren Kadern und Nachwuchsführungskräften ein umfassendes\n' +
             '              Angebot für ihre persönliche Entwicklung bieten.'
           },
           {

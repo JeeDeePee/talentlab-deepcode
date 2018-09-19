@@ -1,6 +1,6 @@
 <template>
   <div class="text-xs-center">
-    <h1>Wo willst du in deiner Entwicklung den Fokus setzen</h1>
+    <h1>Wo willst Du in Deiner Entwicklung den Fokus setzen?</h1>
 
     <div class="mt-4 mb-5">Wähle maximal 3 Kompetenzen</div>
 

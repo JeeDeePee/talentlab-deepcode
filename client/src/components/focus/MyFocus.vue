@@ -13,13 +13,13 @@
         {{userFocusCreated|formatDate}}
       </div>
       <v-btn @click.stop="showFocusDialog=true" class="mt-4">
-        Neuen Fokus setzten
+        Neuen Fokus setzen
       </v-btn>
 
     </div>
     <div v-else>
       <v-btn @click.stop="showFocusDialog=true">
-        Mein Fokus setzten
+        Mein Fokus setzen
       </v-btn>
     </div>
     <FocusWizard :visible="showFocusDialog" @close="showFocusDialog=false"/>

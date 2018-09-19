@@ -5,11 +5,11 @@
 
     <v-layout>
       <v-flex sm6>
-        <div class="mb-3">Was möchtest du in deiner Organisation bewirken?</div>
+        <div class="mb-3">Was möchtest Du in Deiner Organisation bewirken?</div>
         <TextBox :placeholder="'Zielzustand/Wirkung'" v-model="actionPlan.impactText"></TextBox>
       </v-flex>
       <v-flex sm6>
-        <div class="mb-3">Woran merkst du, dass du erfolgreich bist?</div>
+        <div class="mb-3">Woran merkst Du, dass Du erfolgreich bist?</div>
         <TextBox :placeholder="'Wirkungsmessung'" v-model="actionPlan.measurementText"></TextBox>
       </v-flex>
     </v-layout>

@@ -45,7 +45,7 @@ data = [
                 'title': 'Digital Communication & Virtual Collaboration',
                 'skill': 'Agilität',
                 'teaser': 'Die richtigen Tools richtig einsetzen',
-                'lead': 'Das Modul «Digital Communication & Virtual Collaboration» hilft dir durch den Dschungel der digitalen Tools und befähigt dich zum effizienten und effektiven Einsatz in deinem Führungsalltag.',
+                'lead': 'Das Modul «Digital Communication & Virtual Collaboration» hilft Dir durch den Dschungel der digitalen Tools und befähigt Dich zum effizienten und effektiven Einsatz in Deinem Führungsalltag.',
                 'description': 'Die Digitalisierung verändert die Art wie wir kommunizieren und die Art unserer Zusammenarbeit: Emails, Chats, Videokonferenzen … eine Vielzahl von tollen Tools erleichtern den Alltag. Doch: wer die Wahl hat, hat die Qual! Um Kommunikation und Koordination effizient zu gestalten, müssen die Tools bewusst eingesetzt werden. Zudem heisst digital kommunizieren auf Distanz kommunizieren und das schafft ganz eigene Herausforderung.',
                 'video_description': '<b>Dr. Clea Bauch</b><br>Unsere Fach-Experten erläutert die Herausforderungen in Zusammenhang mit Führung und Kommunikation auf Distanz',
                 'goals': [
@@ -127,7 +127,7 @@ data = [
                         'teaser': 'Bespreche Deine Entwicklung mit einem Coach oder Mentor',
                         'lead': 'Finde Antworten! Werde wirkungsvoller! Entfalte Dein Potential!',
                         'description': 'talentlab bietet eine flexible Form von Coaching an – persönlich und digital!',
-                        'type': 'hybrid',
+                        'type': 'interaktiv',
                         'count': '3 Sessions',
                         'duration': 'à 45 Minuten',
                         'price': 'CHF 700',
@@ -138,7 +138,7 @@ data = [
                         'teaser': 'Greife diskret und unkompliziert auf den Rat erfahrender Peers zu',
                         'lead': 'Profitiere von Erfahrung! Lass Dir helfen! Finde Lösungen!',
                         'description': 'Wir finden im Pool den besten Kontakt – diskret, schnell und unkompliziert.<br>Profitiere von Erfahrung!<br>Lass Dir helfen!<br>Finde Lösungen!',
-                        'type': 'hybrid',
+                        'type': 'interaktiv',
                         'count': '1 Session',
                         'duration': '45 Minuten',
                         'price': 'inbegriffen',
@@ -149,7 +149,7 @@ data = [
                         'teaser': 'Tausche Dich mit Peers aus!',
                         'lead': 'Erweitere Dein Wissen! Lerne von anderen! Zeige Deine Expertise!',
                         'description': 'Aktuelle Themen von talentlab moderiert, durch Teilnehmende gestaltet',
-                        'type': 'webinar',
+                        'type': 'interaktiv',
                         'count': '1 Session',
                         'duration': '45 Minuten',
                         'price': 'inbegriffen',
@@ -269,7 +269,7 @@ data = [
                     {
                         'title': 'Führungszirkel',
                         'teaser': 'In einem organisationsübergreifenden Führungszirkel Führungsfragen in …',
-                        'type': 'kurs',
+                        'type': 'interaktiv',
                         'count': '3 Veranstaltungen',
                         'duration': 'je 4 Stunden',
                         'competences': []
@@ -277,7 +277,7 @@ data = [
                     {
                         'title': 'Coaching-Abo',
                         'teaser': 'Online & Offline Sessions',
-                        'type': 'coaching',
+                        'type': 'interaktiv',
                         'count': '8 Sessions',
                         'duration': 'je 45 Minuten',
                         'competences': []
@@ -287,37 +287,27 @@ data = [
             {
                 'title': 'First-time Leader',
                 'skill': 'Management',
-                'teaser': 'Basis-Training für junge Führungskräfte',
-                'description': 'description',
-                'video_description': 'description',
+                'teaser': 'Basis-Training für junge Führungskräfte'
             },
             {
                 'title': 'Project Management Basics',
                 'skill': 'Management',
-                'teaser': 'Training für angehende Projektleiter',
-                'description': 'description',
-                'video_description': 'description',
+                'teaser': 'Training für angehende Projektleiter'
             },
             {
                 'title': '1st, 2nd & 3rd Career',
                 'skill': 'Integrierte generationenübergreifende Führung',
-                'teaser': 'Leadership',
-                'description': 'description',
-                'video_description': 'description',
+                'teaser': 'Leadership'
             },
             {
                 'title': 'Reorganisation &  Transformation',
                 'skill': 'Management',
-                'teaser': 'Erfolgreiche Umsetzung von Änderungsprojekten',
-                'description': 'description',
-                'video_description': 'description',
+                'teaser': 'Erfolgreiche Umsetzung von Änderungsprojekten'
             },
             {
                 'title': 'Agile Organisation',
                 'skill': 'Management',
-                'teaser': 'Zwischen agil dynamisch und dogmatisch holokratisch',
-                'description': 'description',
-                'video_description': 'description',
+                'teaser': 'Zwischen agil dynamisch und dogmatisch holokratisch'
             }
         ]
     },
@@ -347,30 +337,22 @@ data = [
             {
                 'title': 'Effizient kommunizieren',
                 'skill': 'Kommunikationsfähigkeiten',
-                'teaser': 'Gezieltes Training für Führungsalltag und Verhandlung',
-                'description': 'description',
-                'video_description': 'description',
+                'teaser': 'Gezieltes Training für Führungsalltag und Verhandlung'
             },
             {
                 'title': 'Diversity for Success',
                 'skill': 'Konfliktfähigkeit',
-                'teaser': 'Wertschöpfender Umgang mit der Vielfalt',
-                'description': 'description',
-                'video_description': 'description',
+                'teaser': 'Wertschöpfender Umgang mit der Vielfalt'
             },
             {
                 'title': 'The 1st 100 days',
                 'skill': 'Kommunikationsfähigkeit',
-                'teaser': 'On-boarding in eine neue Rolle',
-                'description': 'description',
-                'video_description': 'description',
+                'teaser': 'On-boarding in eine neue Rolle'
             },
             {
                 'title': 'The 1st 30 days',
                 'skill': 'Networking',
-                'teaser': 'On-boarding in eine neue Organisation',
-                'description': 'description',
-                'video_description': 'description',
+                'teaser': 'On-boarding in eine neue Organisation'
             }
         ]
     }

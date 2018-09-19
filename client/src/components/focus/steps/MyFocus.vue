@@ -2,23 +2,23 @@
   <div class="text-xs-center">
     <h1>Selbstbeurteilung</h1>
 
-    <div class="mt-4 mb-5">Beurteile deine Fitness für bestehende und künftige Herausforderungen</div>
+    <div class="mt-4 mb-5">Beurteile Deine Fitness für bestehende und künftige Herausforderungen</div>
 
     <v-container fluid grid-list-xl>
       <v-layout row wrap>
         <v-flex xs4>
           <h2>Fokus Kompetenzen</h2>
-          <div class="mt-4 mb-2">Diese Kompetnezen hast du asugewählt</div>
+          <div class="mt-4 mb-2">Diese Kompetnezen hast Du ausgewählt</div>
         </v-flex>
 
         <v-flex xs4>
-          <h2>Wo stehst du heute?</h2>
+          <h2>Wo stehst Du heute?</h2>
           <div class="mt-4 mb-2">Bewege den Regler (1 = gering bis 10 = hoch)</div>
         </v-flex>
 
         <v-flex xs4>
           <h2>Nächste Beurteilung</h2>
-          <div class="mt-4 mb-2">Bis wann willst du dein Ziel erreichen</div>
+          <div class="mt-4 mb-2">Bis wann willst Du Dein Ziel erreichen</div>
         </v-flex>
 
       </v-layout>
