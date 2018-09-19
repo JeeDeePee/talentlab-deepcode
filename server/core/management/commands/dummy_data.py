@@ -127,7 +127,7 @@ data = [
                         'teaser': 'Bespreche Deine Entwicklung mit einem Coach oder Mentor',
                         'lead': 'Finde Antworten! Werde wirkungsvoller! Entfalte Dein Potential!',
                         'description': 'talentlab bietet eine flexible Form von Coaching an – persönlich und digital!',
-                        'type': 'hybrid',
+                        'type': 'interaktiv',
                         'count': '3 Sessions',
                         'duration': 'à 45 Minuten',
                         'price': 'CHF 700',
@@ -138,7 +138,7 @@ data = [
                         'teaser': 'Greife diskret und unkompliziert auf den Rat erfahrender Peers zu',
                         'lead': 'Profitiere von Erfahrung! Lass Dir helfen! Finde Lösungen!',
                         'description': 'Wir finden im Pool den besten Kontakt – diskret, schnell und unkompliziert.<br>Profitiere von Erfahrung!<br>Lass Dir helfen!<br>Finde Lösungen!',
-                        'type': 'hybrid',
+                        'type': 'interaktiv',
                         'count': '1 Session',
                         'duration': '45 Minuten',
                         'price': 'inbegriffen',
@@ -149,7 +149,7 @@ data = [
                         'teaser': 'Tausche Dich mit Peers aus!',
                         'lead': 'Erweitere Dein Wissen! Lerne von anderen! Zeige Deine Expertise!',
                         'description': 'Aktuelle Themen von talentlab moderiert, durch Teilnehmende gestaltet',
-                        'type': 'webinar',
+                        'type': 'interaktiv',
                         'count': '1 Session',
                         'duration': '45 Minuten',
                         'price': 'inbegriffen',
@@ -269,7 +269,7 @@ data = [
                     {
                         'title': 'Führungszirkel',
                         'teaser': 'In einem organisationsübergreifenden Führungszirkel Führungsfragen in …',
-                        'type': 'kurs',
+                        'type': 'interaktiv',
                         'count': '3 Veranstaltungen',
                         'duration': 'je 4 Stunden',
                         'competences': []
@@ -277,7 +277,7 @@ data = [
                     {
                         'title': 'Coaching-Abo',
                         'teaser': 'Online & Offline Sessions',
-                        'type': 'coaching',
+                        'type': 'interaktiv',
                         'count': '8 Sessions',
                         'duration': 'je 45 Minuten',
                         'competences': []
