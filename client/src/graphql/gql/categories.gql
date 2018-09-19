@@ -1,16 +1,18 @@
-query CategoriesQuery {
+query CategoriesQuery($numModules:Int!) {
   categories {
     edges {
       node {
-        title
+        id
         slug
+        title
+        teaser
         icon
         iconComponent
       }
     }
   }
 
-  userModules {
+  userModules(first:$numModules) {
     edges {
       node {
         status

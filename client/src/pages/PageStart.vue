@@ -26,7 +26,7 @@
               <component :is="category.iconComponent"/>
             </div>
             <div class="h2 my-3">{{category.title}}</div>
-            <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis</p>
+            <p>{{category.teaser}}</p>
           </v-flex>
         </v-layout>
 
@@ -37,9 +37,8 @@
       <v-container grid-list-xl class="py-0">
 
         <h2 class="h1 text-xs-center ">Mit digitalen Angeboten gezielt und flexibel Potenziale entwickeln!</h2>
-        <div class="text-xs-center lead my-5">talentlab bietet eine auf die Bedürfnisse abgestimmte und flexibel
-          erweiterbare Auswahl an Modulen zu
-          aktuellen Themen
+        <div class="text-xs-center lead my-5">talent<b>lab</b> bietet eine auf die Bedürfnisse abgestimmte und flexibel
+          erweiterbare Auswahl an Modulen zu aktuellen Themen
         </div>
 
         <v-layout row wrap>
@@ -53,7 +52,7 @@
 
     <section class="text-xs-center background--beige py-5">
       <v-container class="py-0 slider">
-        <h2 class="h3">talentlab ist der digitale Begleiter für Karriere- und Potenzialentwicklung</h2>
+        <h2 class="h3">talent<b>lab</b> ist der digitale Begleiter für Karriere- und Potenzialentwicklung</h2>
 
         <v-carousel hide-delimiters class="slim height-200 secondary--controls">
           <v-carousel-item v-for="(fact,i) in facts" :key="i" class="pa-5">
@@ -121,7 +120,7 @@
 
     <section class="text-xs-center background--beige py-5">
       <v-container grid-list-xl>
-        <h2 class="h1">Wer steht hinter talentlab?</h2>
+        <h2 class="h1">Wer steht hinter talent<b>lab</b>?</h2>
         <div class="lead my-4">Vereinte Erfahrung und Passion in Sachen Personalanalytik, Lernen und IT</div>
 
         <v-layout row wrap>
@@ -232,12 +231,15 @@
     apollo: {
       categories: {
         query: CATEGORIES_QUERY,
+        variables: {
+          numModules: 4
+        },
         fetchPolicy: 'network-only',
         manual: true,
         result({data, loading, networkStatus}) {
           if (!loading) {
             this.categories = data.categories.edges.map(entry => entry.node)
-            this.modules = data.userModules.edges.map(entry => ({'status': entry.node.status, ...entry.node.module})).slice(0, 4)
+            this.modules = data.userModules.edges.map(entry => ({'status': entry.node.status, ...entry.node.module}))
           }
         }
       }

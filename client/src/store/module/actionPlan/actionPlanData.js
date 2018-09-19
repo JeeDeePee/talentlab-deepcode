@@ -23,7 +23,7 @@ export default {
 
   actions: {
     async fetchModuleUserGoal({ state, commit }) {
-      const { data: { moduleUserGoal, userProgress } } = await apolloClient.query({
+      const { data: { moduleUserGoal, user } } = await apolloClient.query({
         query: ACTION_PLAN_QUERY,
         fetchPolicy: 'network-only',
         variables: {
@@ -35,7 +35,7 @@ export default {
         commit('setModuleUserGoal', moduleUserGoal.goal);
       }
 
-      const actionPlan = Window.$getRidOfEdges(userProgress).usermoduleprogressSet[0]
+      const actionPlan = Window.$getRidOfEdges(user).usermoduleprogressSet[0]
       commit('setActionPlan', actionPlan)
     },
 

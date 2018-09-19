@@ -79,6 +79,6 @@ new Vue({
   el: '#app',
   store,
   router,
-  provide: apolloProvider.provide(),
+  apolloProvider,
   render: h => h(App)
 })
