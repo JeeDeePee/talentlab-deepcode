@@ -19,7 +19,7 @@
     </div>
     <div v-else>
       <v-btn @click.stop="showFocusDialog=true">
-        Fokus setzten
+        Mein Fokus setzten
       </v-btn>
     </div>
     <FocusWizard :visible="showFocusDialog" @close="showFocusDialog=false"/>

@@ -2,7 +2,7 @@
   <div>
     <section class="background--violet pt-5">
       <v-container grid-list-xl>
-        <h1 class="mb-5 text-xs-center">Dashboard – deine Entwicklung</h1>
+        <h1 class="mb-5 text-xs-center">Dashboard – Deine Entwicklung</h1>
         <v-layout row wrap>
           <v-flex xs12 sm6>
             <v-img :src="require(`@/assets/img/dashboard_career.png`)" class="hero--image"></v-img>

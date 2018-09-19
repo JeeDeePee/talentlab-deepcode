@@ -5,7 +5,7 @@
         <h1>Wähle die passenden Module!</h1>
         <div class="my-4 lead">talentlab schlägt dir je nach Fokus deiner Entwicklung die geeigneten Module vor.</div>
         <div class="text-xs-center">
-          <v-btn  @click="$vuetify.goTo('#learn-more', {duration: 200, offset: -50})">
+          <v-btn @click="$vuetify.goTo('#learn-more', {duration: 200, offset: -50})">
             Themen surfen
           </v-btn>
           <!--
@@ -40,9 +40,9 @@
 <script>
   import CATEGORIES_QUERY from '@/graphql/gql/categories.gql'
 
-  import GrowingAsALeader from '@/assets/img/Growing-as-a-Leader.svg'
-  import MasteringComplexity from '@/assets/img/Mastering-Complexity.svg'
-  import MasteringRelations from '@/assets/img/Mastering-Relations.svg'
+  import GrowingAsALeader from '@/assets/img/icons/growing-as-a-leader-grey.svg'
+  import MasteringComplexity from '@/assets/img/icons/mastering-complexity-grey.svg'
+  import MasteringRelations from '@/assets/img/icons/mastering-relations-grey.svg'
 
   import ModuleCard from '@/components/reusable/ModuleCard'
 

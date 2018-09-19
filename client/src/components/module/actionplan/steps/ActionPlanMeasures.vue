@@ -63,9 +63,4 @@
 
 <style lang="scss" scoped>
   @import "../../../../styles/var";
-
-  .three-line {
-    min-height: 70px;
-  }
-
 </style>

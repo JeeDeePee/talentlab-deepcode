@@ -2,17 +2,20 @@
   <div class="text-xs-center">
     <h1>Wo willst du in deiner Entwicklung den Fokus setzen</h1>
 
+    <div class="mt-4 mb-5">Wähle maximal 3 Kompetenzen</div>
+
     <v-container fluid grid-list-xl>
       <v-layout row wrap>
-        <v-flex xs4 v-for="(category, categoryKey) in focusCompetences" :key="categoryKey">
+        <v-flex xs12 sm12 md4 v-for="(category, categoryKey) in focusCompetences" :key="categoryKey">
           <component :is="category.iconComponent"/>
-          <h3>{{category.title}}</h3>
-
-          <p>{{category.teaser}}</p>
+          <h2>{{category.title}}</h2>
+          <div class="mt-4 mb-1 three-line">{{category.teaser}}</div>
 
           <v-checkbox
+            class="background--white-opacity pa-2"
             v-for="(competence, competenceKey) in category.competences" :key="competenceKey"
             v-model="selectedFocus"
+            hide-details
             :label="competence.title"
             :value="competence.slug">
           </v-checkbox>
@@ -21,17 +24,20 @@
       </v-layout>
     </v-container>
 
-    <v-btn class="btn-secondary" @click="$emit('back')">Zurück</v-btn>
-    <v-btn @click="$emit('proceed')">Weiter</v-btn>
+    <div class="mt-5">
+      <v-btn class="btn-secondary mr-2" @click="$emit('back')">Zurück</v-btn>
+      <v-btn class="ml-2" @click="$emit('proceed')">Weiter</v-btn>
+    </div>
   </div>
 </template>
 
 <script>
   import {mapActions, mapGetters} from 'vuex'
 
-  import GrowingAsALeader from '@/assets/img/Growing-as-a-Leader.svg'
-  import MasteringComplexity from '@/assets/img/Mastering-Complexity.svg'
-  import MasteringRelations from '@/assets/img/Mastering-Relations.svg'
+  import GrowingAsALeader from '@/assets/img/icons/growing-as-a-leader-white.svg'
+  import MasteringComplexity from '@/assets/img/icons/mastering-complexity-white.svg'
+  import MasteringRelations from '@/assets/img/icons/mastering-relations-white.svg'
+
 
   export default {
     components: {
