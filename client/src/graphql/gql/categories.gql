@@ -1,4 +1,4 @@
-query CategoriesQuery {
+query CategoriesQuery($numModules:Int!) {
   categories {
     edges {
       node {
@@ -12,7 +12,7 @@ query CategoriesQuery {
     }
   }
 
-  userModules {
+  userModules(first:$numModules) {
     edges {
       node {
         status

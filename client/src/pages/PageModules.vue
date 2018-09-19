@@ -67,6 +67,9 @@
     apollo: {
       categories: {
         query: CATEGORIES_QUERY,
+        variables: {
+          numModules: -1
+        },
         fetchPolicy: 'network-only',
         manual: true,
         result({data, loading, networkStatus}) {
