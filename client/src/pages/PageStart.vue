@@ -176,26 +176,26 @@
             'heading': 'personalisiert',
             'text': 'talentlab ist auf individuelle Entwicklungsbedürfnisse zugeschnitten'
           },
-                    {
+          {
             'heading': 'flexibel',
             'text': 'talentlab bietet einen Mix an zeitgemäss aufbereiteten Lernangeboten'
           },
-                    {
+          {
             'heading': 'effizient',
             'text': 'talentlab macht Potenzialentwicklung skalierbar'
-          }
-                    {
+          },
+          {
             'heading': 'persönlich',
             'text': 'talentlab legt Wert auf persönliche Begleitung'
-          }
+          },
           {
             'heading': 'zielorientiert',
             'text': 'talentlab ist gerichtet auf die Anforderungen der Arbeitswelt der Zukunft'
-          }
+          },
           {
             'heading': 'wirksam',
             'text': 'talentlab hilft der Organisation am Ball zu bleiben'
-          }
+          },
           {
             'heading': 'personalisiert',
             'text': 'talentlab bindet auf Wunsch firmeneigene Inhalte ein'
@@ -207,19 +207,19 @@
           {
             'heading': 'effizient',
             'text': 'talentlab ist nahtlos und sicher in bestehende HR-Prozesse integrierbar'
-          }
+          },
           {
             'heading': 'persönlich',
             'text': 'talentlab motiviert zur Vernetzung von Wissen und Erfahrung'
-          }
+          },
           {
             'heading': 'zielorientiert',
             'text': 'talentlab bezieht Deine zu entwickelnden Kompetenzen ein'
-          }
+          },
           {
             'heading': 'wirksam',
             'text': 'talentlab bezieht Deine zu entwickelnden Kompetenzen ein'
-          }
+          },
           {
             'heading': 'personalisiert',
             'text': 'talentlab berücksichtigt unternehmensspezifische Schwerpunkte bei der Potenzialentwicklung'
@@ -231,15 +231,15 @@
           {
             'heading': 'effizient',
             'text': 'talentlab ist intuitiv zu bedienen'
-          }
+          },
           {
             'heading': 'zielorientiert',
             'text': 'talentlab verhilft zu Potenzialentwicklung mit klarem Strategiebezug'
-          }
+          },
           {
             'heading': 'persönlich',
             'text': 'talentlab erlaubt massgeschneiderte Auswertungen'
-          }
+          },
           {
             'heading': 'wirksam',
             'text': 'talentlab macht Potenzialentwicklung sichtbar'
