@@ -163,12 +163,12 @@
         modules: [],
         agents: [
           {
-            'name': 'Nina Hagemann',
+            'name': 'Delia Piave Werro',
             'title': 'talentlab Advisor',
             'avatar': require(`@/assets/img/people/delia-werro-piave.jpg`)
           },
           {
-            'name': 'Paul Markwarth',
+            'name': 'Samuel Ryser',
             'title': 'talentlab Advisor',
             'avatar': require(`@/assets/img/people/samuel-ryser.jpg`)
           }

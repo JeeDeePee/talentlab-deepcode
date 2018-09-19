@@ -266,6 +266,7 @@
               document.title = _module.title
 
               // TODO: code review
+              // debugger
               let bookedEntries = data.allModulesProgress.edges
               this.moduleBooked = bookedEntries && bookedEntries.length > 0
               // console.log(`Module Booked: ${this.moduleBooked}`)
