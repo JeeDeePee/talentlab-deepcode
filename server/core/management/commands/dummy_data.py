@@ -218,7 +218,7 @@ data = [
             {
                 'title': 'Project Management for IT Projects',
                 'skill': 'Entscheidungsfähigkeit',
-                'teaser': 'training für erfahrene IT-Projektleiter',
+                'teaser': 'Training für erfahrene IT-Projektleiter',
             },
             {
                 'title': 'Project Management for Business Projects',
