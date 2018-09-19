@@ -2,6 +2,7 @@ query FocusCompetencesQuery {
   categories {
     edges {
       node {
+        id
         slug
         title
         teaser
@@ -9,6 +10,7 @@ query FocusCompetencesQuery {
         competenceSet {
           edges {
             node {
+              id
               title
               description
               slug

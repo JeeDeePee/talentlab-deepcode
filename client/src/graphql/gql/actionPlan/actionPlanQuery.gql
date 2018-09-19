@@ -1,6 +1,7 @@
 query ActionPlanQuery($slug: String!) {
   moduleUserGoal(moduleSlug: $slug) {
     goal {
+      id
       text
       level
       module {
@@ -11,6 +12,7 @@ query ActionPlanQuery($slug: String!) {
     }
   }
   user {
+    id
     usermoduleprogressSet(module_Slug: $slug) {
       edges {
         node {
