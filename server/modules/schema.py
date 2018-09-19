@@ -17,10 +17,10 @@ class UnitNode(DjangoObjectType):
     class Meta:
         model = Unit
         only_fields = [
-            'slug', 'title', 'type', 'teaser',
-            'description', 'count', 'duration', 'price',
-            'competences', 'module_slug', 'module_title',
-            'category_slug', 'category_title'
+            'slug', 'title', 'type', 'teaser', 'lead', 'description',
+            'objectives', 'content', 'teacher', 'requirements',
+            'count', 'duration', 'price', 'competences', 'module_slug',
+            'module_title', 'category_slug', 'category_title'
         ]
         filter_fields = {
             'slug': ['exact', 'icontains', 'in'],
@@ -85,7 +85,8 @@ class ModuleNode(DjangoObjectType):
     class Meta:
         model = Module
         only_fields = [
-            'slug', 'title', 'skill', 'description', 'teaser', 'video_id', 'video_description', 'video_thumbnail_data', 'goal_set'
+            'slug', 'title', 'skill', 'description', 'teaser', 'lead',
+            'video_id', 'video_description', 'video_thumbnail_data', 'goal_set'
         ]
         filter_fields = {
             'slug': ['exact', 'icontains', 'in'],

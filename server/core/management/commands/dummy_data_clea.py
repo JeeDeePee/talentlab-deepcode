@@ -38,13 +38,14 @@ data = [
             {
                 'title': 'Entscheidungsfähigkeit',
                 'description': 'Situationsrelevante Informationen generieren und Handlungsoptionen ableiten. Umsichtig, verantwortungsvoll und nachhaltig entscheiden.'
-            }],
+            }
+        ],
         'modules': [
             {
                 'title': 'Digital Communication & Virtual Collaboration',
                 'skill': 'Agilität',
                 'teaser': 'Die richtigen Tools richtig einsetzen',
-                #'lead': 'Das Modul «Digital Communication & Virtual Collaboration» hilft dir durch den Dschungel der digitalen Tools und befähigt dich zum effizienten und effektiven Einsatz in deinem Führungsalltag.',
+                'lead': 'Das Modul «Digital Communication & Virtual Collaboration» hilft dir durch den Dschungel der digitalen Tools und befähigt dich zum effizienten und effektiven Einsatz in deinem Führungsalltag.',
                 'description': 'Die Digitalisierung verändert die Art wie wir kommunizieren und die Art unserer Zusammenarbeit: Emails, Chats, Videokonferenzen … eine Vielzahl von tollen Tools erleichtern den Alltag. Doch: wer die Wahl hat, hat die Qual! Um Kommunikation und Koordination effizient zu gestalten, müssen die Tools bewusst eingesetzt werden. Zudem heisst digital kommunizieren auf Distanz kommunizieren und das schafft ganz eigene Herausforderung.',
                 'video_description': '<b>Dr. Clea Bauch</b><br>Unsere Fach-Experten erläutert die Herausforderungen in Zusammenhang mit Führung und Kommunikation auf Distanz',
                 'goals': [
@@ -59,12 +60,13 @@ data = [
                     {
                         'level': 3,
                         'text': 'Die Organisation zur digitalen Kommunikation und virtuellen Zusammenarbeit befähigen.'
-                    }],
+                    }
+                ],
                 'units': [
                     {
                         'title': 'Tools für digitale Kommunikation',
                         'teaser': 'Durchblick im Dschungel der Tools für digitale Kommunikation',
-                        # 'lead': 'Verschaffe Dir Überblick! Gewinne Mitsprachekompetenz! Wähle passende Tools!',
+                        'lead': 'Verschaffe Dir Überblick! Gewinne Mitsprachekompetenz! Wähle passende Tools!',
                         'description': 'Wir stellen die wichtigsten Tools, ihre Vor- und Nachteile und sinnvolle Einsatzgebiete im unternehmerischen Alltag vor.<br>Verschaffe Dir Überblick!<br>Gewinne Mitsprachekompetenz!<br>Wähle passende Tools!',
                         'type': 'lernfilm',
                         'count': '1 Session',
@@ -75,22 +77,22 @@ data = [
                     {
                         'title': 'Kommunikation auf Distanz',
                         'teaser': 'Die Fallstricke der Kommunikation auf Distanz umschiffen',
-                        # 'lead': 'Vermeide Fehler! Kommuniziere mediengerecht! Stärke Deine Wirkung!',
+                        'lead': 'Vermeide Fehler! Kommuniziere mediengerecht! Stärke Deine Wirkung!',
                         'description': 'Wir zeigen Dir die klassischen Fallen und verraten die Tricks eines bewussten Umgangs mit Kommunikation auf Distanz.<br>Vermeide Fehler!<br>Kommuniziere mediengerecht!<br>Stärke Deine Wirkung!',
                         'type': 'lernfilm',
                         'count': 'x Sessions',
                         'duration': '45 Minuten',
                         'price': 'CHF 150',
-                        'competences': ['Agilität', 'Kommunikation']
-                        'objectives': '- Herausforderungen der digitalen Kommunikation kennen \n- Grundlagen der Kommunikation auf Distanz überblicken \n- Praxisorientierte Strategien zur Optimierung des eigenen Kommunikationsverhaltens erlernen',
-                        'content': '- Zweck und Funktionsweise von Kommunikation \n- Besonderheiten und Arten der Kommunikation auf Distanz \n- Grundlagen und Strategien der Kommunikation auf Distanz \n- Schriftliche Kommunikation \n- Audio-visuelle Kommunikation',
+                        'competences': ['Agilität', 'Kommunikation'],
+                        'objectives': 'Herausforderungen der digitalen Kommunikation kennen \n- Grundlagen der Kommunikation auf Distanz überblicken \n- Praxisorientierte Strategien zur Optimierung des eigenen Kommunikationsverhaltens erlernen',
+                        'content': 'Zweck und Funktionsweise von Kommunikation \n- Besonderheiten und Arten der Kommunikation auf Distanz \n- Grundlagen und Strategien der Kommunikation auf Distanz \n- Schriftliche Kommunikation \n- Audio-visuelle Kommunikation',
                         'teacher': 'Clea hat lange Jahre Erfahrung in der Energiebranche in verschiedenen operativen und strategischen Rollen. Heute ist sie in der Geschäftsleitung einer international tätigen Familienunternehmung, führt verschiedene Verwaltungsrats- und Stiftungsratsmandate und ist CEO ihrer eigenen Beratungsfirma. \n Sie hat im Verlaufe ihrer bisherigen Karriere stets international gearbeitet und hat deshalb weit reichende Erfahrung in Sachen Kommunikation und Führung auf Distanz. \nIhr Studium an der Universität Fribourg (CH) schloss sie mit dem Doktorat ab. Ihre Board-Zertifizierung hat sie am Insead (FR) im Rahmen des International Directors Program erlangt. \nNebenberuflich unterrichtet Clea an verschiedenen Institutionen in der Schweiz und ist Learning Coach am Insead.',
-                        'requirements': '- Bearbeitung aller Sessions \n- Quizzle zu den Tools für digitale Kommunikation \n- Quizzle zu den Tools für virtuelle Zusammenarbeit \n- Mini-Case-Study zur Kommunikation und Führung auf Distanz'
+                        'requirements': 'Bearbeitung aller Sessions \n- Quizzle zu den Tools für digitale Kommunikation \n- Quizzle zu den Tools für virtuelle Zusammenarbeit \n- Mini-Case-Study zur Kommunikation und Führung auf Distanz'
                     },
                     {
                         'title': 'Professionell kommunizieren',
                         'teaser': 'Unverzichtbare Kompetenz im Berufsalltag.',
-                        # 'lead': 'Kommuniziere klar! Gewinne Sicherheit! Werde wirkungsvoll!',
+                        'lead': 'Kommuniziere klar! Gewinne Sicherheit! Werde wirkungsvoll!',
                         'description': 'Wir bieten in Zusammenarbeit mit der BFH praxisorientierte Kommunikationstrainings an, speziell auf die Bedürfnisse zugeschnitten, für Dich 1-to-1 für Dein Team.<br>Kommuniziere klar!<br>Gewinne Sicherheit!<br>Werde wirkungsvoll!',
                         'type': 'kurs',
                         'count': '1 Session',
@@ -101,7 +103,7 @@ data = [
                     {
                         'title': 'Tools für virtuelle Teams',
                         'teaser': 'Durchblick im Dschungel der Tools für virtuelle Zusammenarbeit',
-                        # 'lead': 'Verschaffe Dir Überblick! Gewinne Mitsprachekompetenz! Wähle passende Tools!',
+                        'lead': 'Verschaffe Dir Überblick! Gewinne Mitsprachekompetenz! Wähle passende Tools!',
                         'description': 'Wir stellen die wichtigsten Tools, ihre Vor- und Nachteile und sinnvolle Einsatzgebiete im unternehmerischen Alltag vor.<br>Verschaffe Dir Überblick!<br>Gewinne Mitsprachekompetenz!<br>Wähle passende Tools!',
                         'type': 'lernfilm',
                         'count': '1 Session',
@@ -112,7 +114,7 @@ data = [
                     {
                         'title': 'Führen auf Distanz',
                         'teaser': 'Die Führung über verschiedene Standorte “remote“ verteilte Teams ist eine besondere Herausforderung.',
-                        # 'lead': 'Vermeide Fehler! Stärke Deine Wirkung! Führe effektiv!',
+                        'lead': 'Vermeide Fehler! Stärke Deine Wirkung! Führe effektiv!',
                         'description': 'Wir zeigen Dir die klassischen Fallen und verraten die Tricks der Führung auf Distanz.<br>Vermeide Fehler!<br>Stärke Deine Wirkung!<br>Führe effektiv!',
                         'type': 'lernfilm',
                         'count': 'x Sessions',
@@ -123,7 +125,7 @@ data = [
                     {
                         'title': 'Coaching-Abonnement',
                         'teaser': 'Bespreche Deine Entwicklung mit einem Coach oder Mentor',
-                        # 'lead': 'Finde Antworten! Werde wirkungsvoller! Entfalte Dein Potential!',
+                        'lead': 'Finde Antworten! Werde wirkungsvoller! Entfalte Dein Potential!',
                         'description': 'talentlab bietet eine flexible Form von Coaching an – persönlich und digital!',
                         'type': 'hybrid',
                         'count': '3 Sessions',
@@ -134,7 +136,7 @@ data = [
                     {
                         'title': 'Sparring mit Peers',
                         'teaser': 'Greife diskret und unkompliziert auf den Rat erfahrender Peers zu',
-                        # 'lead': 'Profitiere von Erfahrung! Lass Dir helfen! Finde Lösungen!',
+                        'lead': 'Profitiere von Erfahrung! Lass Dir helfen! Finde Lösungen!',
                         'description': 'Wir finden im Pool den besten Kontakt – diskret, schnell und unkompliziert.<br>Profitiere von Erfahrung!<br>Lass Dir helfen!<br>Finde Lösungen!',
                         'type': 'hybrid',
                         'count': '1 Session',
@@ -145,64 +147,68 @@ data = [
                     {
                         'title': 'Un-Conference',
                         'teaser': 'Tausche Dich mit Peers aus!',
-                        # 'lead': 'Erweitere Dein Wissen! Lerne von anderen! Zeige Deine Expertise!',
+                        'lead': 'Erweitere Dein Wissen! Lerne von anderen! Zeige Deine Expertise!',
                         'description': 'Aktuelle Themen von talentlab moderiert, durch Teilnehmende gestaltet',
                         'type': 'webinar',
                         'count': '1 Session',
                         'duration': '45 Minuten',
                         'price': 'inbegriffen',
                         'competences': []
-                    }],
+                    }
+                ],
                 'resources': [
                     {'type': 'document',
                      'value':
                          {
-                         'description': 'K. Vollus: Welches Tool ist das Richtige?',
-                         'url': 'https://ordnungsmentor.de/aufgabenverwaltung-tools/'
+                             'description': 'K. Vollus: Welches Tool ist das Richtige?',
+                             'url': 'https://ordnungsmentor.de/aufgabenverwaltung-tools/'
                          }
-                    },
+                     },
                     {'type': 'link',
                      'value':
-                        {
-                         'description': 'Trello: Task-Management',
-                         'url': 'https://www.trello.com'
-                        }
-                    },
+                         {
+                             'description': 'Trello: Task-Management',
+                             'url': 'https://www.trello.com'
+                         }
+                     },
                     {'type': 'link',
                      'value':
-                        {
-                         'description': 'Meistertask: Task-Management',
-                         'url': 'https://www.meistertask.com'
-                        }
-                    },
+                         {
+                             'description': 'Meistertask: Task-Management',
+                             'url': 'https://www.meistertask.com'
+                         }
+                     },
                     {'type': 'link',
                      'value':
-                        {
-                         'description': 'Slack: Team-Chat',
-                         'url': 'https://www.slack.com'
-                        }
-                    }],
-                'tools':[
+                         {
+                             'description': 'Slack: Team-Chat',
+                             'url': 'https://www.slack.com'
+                         }
+                     }
+                ],
+                'tools': [
                     {'type': 'document',
                      'value':
-                        {
-                         'description': 'Info-Grafik: Tools für digitale Kommunkation',
-                         'url': 'xxx'
-                        }
-                    },
+                         {
+                             'description': 'Info-Grafik: Tools für digitale Kommunkation',
+                             'url': 'xxx'
+                         }
+                     },
                     {'type': 'document',
                      'value':
-                        {
-                         'description': 'Info-Grafik: Tools für virtuelle Zusammenarbeit',
-                         'url': 'xxx'
-                        }}]},
+                         {
+                             'description': 'Info-Grafik: Tools für virtuelle Zusammenarbeit',
+                             'url': 'xxx'
+                         }
+                     }
+                ]
+            },
             {
                 'title': 'Partnering for Success',
                 'skill': 'Innovationsfähigkeit',
                 'teaser': 'Erfolgreiche Führung von Partnerschaften',
                 'description': 'Im Zuge der digitalen Disruption brechen angestammte Wertschöpfungslogiken auf.  Dabei gewinnt die Zusammenarbeit mit  externen Partnern bei der Leistungserstellung  an Bedeutung. In diesem Lernmodul werden die Grundlagen zur erfolgreichen Führung von Partnerschaften vermittelt.',
                 'video_description': '<b>Tim Kellenberger</b><br>Unser Fach-Experte erklärt, warum die professionelle Führung von Partnerschaften heute von entscheidender Bedeutung ist.',
-
             },
             {
                 'title': 'Decision Making & Agile',
@@ -223,7 +229,9 @@ data = [
                 'title': 'Building Successful Strategies',
                 'skill': 'Innovationsfähigkeit',
                 'teaser': 'Moderne Methoden der Strategiearbeit',
-            }]},
+            }
+        ]
+    },
     {
         'title': 'Growing as a Leader',
         'icon': 'GrowingAsALeader',
@@ -240,7 +248,8 @@ data = [
             {
                 'title': 'Unternehmerisches Handeln',
                 'description': 'Betriebswirtschaftliche Überlegungen integrieren. Strategische und ökonomische Potenziale erkennen und Spielräume nutzen. Unternehmerisch nachhaltig agieren.'
-            }],
+            }
+        ],
         'modules': [
             {
                 'title': 'Leading through Disruption',
@@ -254,7 +263,7 @@ data = [
                         'teaser': 'Meistern Sie die steigenden Ansprüche an Führungskräfte',
                         'type': 'kurs',
                         'count': '3 Veranstaltungen',
-                        'duration': 'je 2 Tage'
+                        'duration': 'je 2 Tage',
                         'competences': []
                     },
                     {
@@ -262,7 +271,7 @@ data = [
                         'teaser': 'In einem organisationsübergreifenden Führungszirkel Führungsfragen in …',
                         'type': 'kurs',
                         'count': '3 Veranstaltungen',
-                        'duration': 'je 4 Stunden'
+                        'duration': 'je 4 Stunden',
                         'competences': []
                     },
                     {
@@ -270,9 +279,11 @@ data = [
                         'teaser': 'Online & Offline Sessions',
                         'type': 'coaching',
                         'count': '8 Sessions',
-                        'duration': 'je 45 Minuten'
+                        'duration': 'je 45 Minuten',
                         'competences': []
-                    }]},
+                    }
+                ]
+            },
             {
                 'title': 'First-time Leader',
                 'skill': 'Management',
@@ -307,7 +318,9 @@ data = [
                 'teaser': 'Zwischen agil dynamisch und dogmatisch holokratisch',
                 'description': 'description',
                 'video_description': 'description',
-            }]},
+            }
+        ]
+    },
     {
         'title': 'Mastering Relations',
         'icon': 'MasteringRelations',
@@ -328,7 +341,8 @@ data = [
             {
                 'title': 'Teamfähigkeit',
                 'description': 'Wege zur Kooperation zeigen und sich in eine Gruppe integrieren. Mit einer positiven Grundhaltung einen Beitrag zur gemeinsamen Zielerreichung leisten. Eigene Kompetenzen und Fähigkeiten gezielt einbringen.'
-            }],
+            }
+        ],
         'modules': [
             {
                 'title': 'Effizient kommunizieren',
@@ -357,7 +371,10 @@ data = [
                 'teaser': 'On-boarding in eine neue Organisation',
                 'description': 'description',
                 'video_description': 'description',
-            }]}]
+            }
+        ]
+    }
+]
 
 
 class Command(BaseCommand):

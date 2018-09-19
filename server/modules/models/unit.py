@@ -1,7 +1,9 @@
 from django.db import models
 from wagtail.admin.edit_handlers import FieldPanel, MultiFieldPanel, FieldRowPanel, TabbedInterface, ObjectList
+from wagtail.core.fields import RichTextField
 
 from core.wagtail_utils import StrictHierarchyPage
+from modules.blocks import DEFAULT_RICH_TEXT_FEATURES
 from modules.models.competence import Competence
 
 
@@ -12,10 +14,15 @@ class Unit(StrictHierarchyPage):
 
     competences = models.ManyToManyField(Competence)
 
-    teaser = models.TextField()
-    description = models.TextField(
-        default=''
-    )
+    teaser = models.TextField(default='')
+    lead = models.TextField(default='')
+    description = models.TextField(default='')
+
+    objectives = RichTextField(features=DEFAULT_RICH_TEXT_FEATURES)
+    content = RichTextField(features=DEFAULT_RICH_TEXT_FEATURES)
+    teacher = RichTextField(features=DEFAULT_RICH_TEXT_FEATURES)
+    requirements = RichTextField(features=DEFAULT_RICH_TEXT_FEATURES)
+
     type = models.CharField(
         max_length=100,
         choices=(

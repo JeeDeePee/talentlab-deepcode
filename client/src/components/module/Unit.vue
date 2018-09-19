@@ -9,7 +9,7 @@
 
         <v-card-text>
           <div class="mt-2 mb-4">
-            {{unit.teaser}}
+            {{unit.lead}}
           </div>
           <div>
             <!--
