@@ -52,7 +52,7 @@
                   </v-flex>
                 </v-layout>
 
-                <div class="text-sm-left text-md-center">
+                <div v-if="user" class="text-sm-left text-md-center">
                   <v-btn class="mt-4" @click="startModuleProgress(module.slug)">
                     Modul buchen
                   </v-btn>
@@ -143,6 +143,8 @@
   import START_MODULE_PROGRESS from '@/graphql/gql/progress/startModuleProgress.gql'
   import DELETE_MODULE_PROGRESS from '@/graphql/gql/progress/deleteModuleProgress.gql'
 
+  import {mapGetters} from 'vuex'
+
   import Tools from '@/components/module/Tools'
   import VideoPlayer from '@/components/module/VideoPlayer'
   import Unit from '@/components/module/Unit'
@@ -200,6 +202,12 @@
           }
         ]
       }
+    },
+
+    computed: {
+      ...mapGetters({
+        user: 'getUser'
+      })
     },
 
     methods: {
