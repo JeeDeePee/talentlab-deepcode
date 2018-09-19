@@ -1,14 +1,17 @@
 <template>
-  <Wizard v-model="show" :wizard-name="'Meine Learnings'" :process-steps="processSteps" @close="show=false">
-    <div class="text-xs-center">
+  <Wizard v-model="show" :wizard-name="'Meine Learnings'" :process-steps="processSteps"
+          @close="show=false">
+    <div class="text-xs-center small--content">
 
-      <h1>Was sind Deine Learnings?</h1>
-      <p>Hier erfasst Du laufend Deine wichtigsten Learnings aus dem Modul.</p>
+      <h1>Was sind deine Learnings?</h1>
+      <div class="mt-4 mb-5">Hier erfasst du laufend deine wichtigsten Learnings aus dem Modul.</div>
 
       <TextBox :placeholder="'Text erfassen'" v-model="learningsText"></TextBox>
 
-      <v-btn class="btn-secondary" @click="show=false">Zurück</v-btn>
-      <v-btn @click="save">Speichern</v-btn>
+      <div class="mt-5">
+        <v-btn class="btn-secondary mr-2" @click="show=false">Zurück</v-btn>
+        <v-btn class="ml-2" @click="save">Speichern</v-btn>
+      </div>
 
     </div>
   </Wizard>
@@ -41,7 +44,7 @@
       return {
         learningsText: '',
         processSteps: [
-          { text: 'Meine Learnings', disabled: false }
+          {text: 'Meine Learnings', disabled: false}
         ]
       }
     },
@@ -71,7 +74,7 @@
         resetActionPlanWizardState: 'resetActionPlanWizardState'
       }),
       save() {
-        this.defineActionPlan([{ 'learningsText': this.learningsText }])
+        this.defineActionPlan([{'learningsText': this.learningsText}])
         this.resetActionPlanWizardState()
         this.fetchModuleUserGoal()
         this.show = false
@@ -91,5 +94,5 @@
   }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 </style>

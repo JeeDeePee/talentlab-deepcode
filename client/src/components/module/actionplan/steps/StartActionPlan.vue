@@ -1,20 +1,20 @@
 <template>
   <div class="text-xs-center">
-    <h1>Drei Schritte bis zum Action Plan</h1>
+    <h1>Vier Schritte bis zum Action Plan</h1>
 
-    <h2 class="text--orange">1</h2>
-    <p>Rekapituliere Deine Ziele</p>
+    <h2 class="text--orange mt-3">1</h2>
+    <div>Rekapituliere deine Ziele</div>
 
-    <h2 class="text--orange">2</h2>
-    <p>Reflektiere was Du gelernt hast</p>
+    <h2 class="text--orange mt-3">2</h2>
+    <div>Reflektiere was du gelernt hast</div>
 
-    <h2 class="text--orange">3</h2>
-    <p>Definiere Dein Business-Ziel</p>
+    <h2 class="text--orange mt-3">3</h2>
+    <div>Definiere dein Business-Ziel</div>
 
-    <h2 class="text--orange">4</h2>
-    <p>Bestimme Massnahmen</p>
+    <h2 class="text--orange mt-3">4</h2>
+    <div>Bestimme Massnahmen</div>
 
-    <v-btn @click="$emit('proceed', 'ReviseGoals')">Start</v-btn>
+    <v-btn class="mt-5" @click="$emit('proceed', 'ReviseGoals')">Start</v-btn>
   </div>
 </template>
 

@@ -4,9 +4,14 @@
   border-radius: 0;
   padding: 24px;
   margin-bottom: 20px;
+
+  &.speech-bubble--transparent {
+    background: rgba(255, 255, 255, 0.3);
+  }
+
 }
 
-.speech-bubble:after {
+.speech-bubble--bottom:after {
   content: '';
   position: absolute;
   bottom: 0;
@@ -18,4 +23,26 @@
   border-bottom: 0;
   margin-left: -20px;
   margin-bottom: -20px;
+}
+
+.speech-bubble--bottom--transparent:after {
+  border-top-color: rgba(255, 255, 255, 0.3);
+}
+
+.speech-bubble--right:after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 50%;
+  width: 0;
+  height: 0;
+  border: 20px solid transparent;
+  border-left-color: $orange;
+  border-right: 0;
+  margin-top: -20px;
+  margin-right: -20px;
+}
+
+.speech-bubble--right--transparent:after {
+  border-left-color: rgba(255, 255, 255, 0.3);
 }

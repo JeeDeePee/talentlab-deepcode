@@ -23,15 +23,8 @@
         </v-breadcrumbs-item>
       </v-breadcrumbs>
 
-      <v-container>
-        <v-layout align-center justify-center row fill-height>
-          <v-flex xs12>
-
-            <!-- here come the wizard steps -->
-            <slot></slot>
-
-          </v-flex>
-        </v-layout>
+      <v-container fluid grid-list-xl class="dialog--content">
+        <slot></slot>
       </v-container>
     </v-card>
   </v-dialog>
@@ -56,5 +49,8 @@
   }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+  .mygoal--selection {
+    height: 100%;
+  }
 </style>

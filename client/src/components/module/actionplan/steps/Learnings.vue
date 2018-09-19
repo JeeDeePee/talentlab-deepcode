@@ -1,12 +1,14 @@
 <template>
-  <div class="text-xs-center">
+  <div class="text-xs-center small--content">
     <h1>Deine Learnings</h1>
-    <p>Während der Bearbeitung des Moduls hast Du laufend Deine Learnings erfasst. Ergänze falls nötig.</p>
+    <div class="mt-4 mb-5">Während der Bearbeitung des Moduls hast du laufend deine Learnings erfasst. Ergänze falls nötig.</div>
 
     <TextBox :placeholder="'Deine Learnings'" v-model="actionPlan.learningsText"></TextBox>
 
-    <v-btn class="btn-secondary" @click="$emit('back', 'ReviseGoals')">Zurück</v-btn>
-    <v-btn @click="save">Weiter</v-btn>
+    <div class="mt-5">
+      <v-btn class="btn-secondary mr-2" @click="$emit('back', 'ReviseGoals')">Zurück</v-btn>
+      <v-btn @click="save" class="ml-2">Weiter</v-btn>
+    </div>
   </div>
 </template>
 

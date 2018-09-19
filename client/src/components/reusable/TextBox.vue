@@ -1,26 +1,18 @@
 <template>
-  <v-card>
-    <v-card-text>
-      <v-textarea
-        :label="message"
-        @input="handleInput"
-        v-model="content"
-        auto-grow
-        full-width
-        single-line
-        hide-details
-        :placeholder="placeholder">
-      </v-textarea>
-    </v-card-text>
-    <v-card-actions>
-      <!--<v-btn class="button primary item2 btn-minimal" outline @click="edit">-->
-        <!--<v-icon color="primary">edit</v-icon>-->
-      <!--</v-btn>-->
-      <!--<v-btn class="button item2" @click="save">-->
-        <!--Speichern-->
-      <!--</v-btn>-->
-    </v-card-actions>
-  </v-card>
+  <div class="text-area">
+    <v-textarea
+      :label="message"
+      class="background--white-opacity text--white"
+      @input="handleInput"
+      v-model="content"
+      auto-grow
+      full-width
+      single-line
+      hide-details
+      :placeholder="placeholder">
+    </v-textarea>
+    <v-icon class="edit">edit</v-icon>
+  </div>
 </template>
 
 <script>
@@ -49,20 +41,14 @@
 </script>
 
 <style lang="scss" scoped>
-  .v-card {
-    box-shadow: initial;
+
+  .text-area {
+    position: relative;
   }
 
-  .v-card__actions {
-    border-top: initial;
-  }
-
-  .v-textarea {
-    background-color: rgba(255, 255, 255, 0.2);
-    margin: auto;
-
-    textarea::placeholder {
-      color: red;
-    }
+  .edit {
+    position: absolute;
+    top: 10px;
+    right: 10px;
   }
 </style>

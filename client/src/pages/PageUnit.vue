@@ -81,7 +81,7 @@
           <div class="panel-style my-2 pl-0 background--transparent">
             <v-expansion-panel focusable>
               <v-expansion-panel-content>
-                <div slot="header">Was Du leistest</div>
+                <div slot="header">Was du leistest</div>
                 <v-card>
                   <v-card-text class="pa-3">
                     <div v-html="unit.requirements"></div>

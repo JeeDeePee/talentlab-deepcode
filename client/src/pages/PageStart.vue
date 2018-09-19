@@ -70,8 +70,8 @@
 
     <section class="text-xs-center background--violet py-5">
       <v-container grid-list-xl class="py-0 agents">
-        <div class="speech-bubble">
-          <h2 class="lead">Möchtest Du mehr erfahren?</h2>
+        <div class="speech-bubble speech-bubble--bottom">
+          <h2 class="lead">Möchtest du mehr erfahren?</h2>
           <div class="mt-2">Wir beraten Dich gerne individuell</div>
         </div>
         <v-layout row wrap>

@@ -1,12 +1,14 @@
 <template>
-  <div class="text-xs-center">
+  <div class="text-xs-center small--content">
     <h1>Dein Ziel</h1>
-    <p class="mt-3">Zu Beginn des Moduls hast Du folgendes Ziel formuliert. Passe es bei Bedarf noch einmal an.</p>
+    <p class="mt-3">Zu Beginn des Moduls hast du folgendes Ziel ausgewahlt.</p>
 
-    <div class="module-user-goal pa-3 mt-5 mb-5">{{moduleUserGoal.text}}</div>
+    <div class="background--white-opacity pa-5 mt-5 mb-5 text--white">{{moduleUserGoal.text}}</div>
 
-    <v-btn class="btn-secondary" @click="$emit('back', 'StartActionPlan')">Zurück</v-btn>
-    <v-btn class="btn-primary" @click="$emit('proceed', 'Learnings')">Weiter</v-btn>
+    <div class="">
+      <v-btn class="btn-secondary mr-2" @click="$emit('back', 'StartActionPlan')">Zurück</v-btn>
+      <v-btn class="btn-primary ml-2" @click="$emit('proceed', 'Learnings')">Weiter</v-btn>
+    </div>
   </div>
 </template>
 
@@ -28,11 +30,4 @@
 
 <style lang="scss" scoped>
   @import "../../../../styles/var";
-
-  .module-user-goal {
-    background-color: rgba(255, 255, 255, 0.2);
-    font-size: 150%;
-    max-width: 620px;
-    margin: auto;
-  }
 </style>

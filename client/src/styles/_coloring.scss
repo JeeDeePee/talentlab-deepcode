@@ -7,14 +7,20 @@
   }
 }
 
-.text--white {
-  color: $white;
-}
-
 .background--violet {
   background: $violet;
   color: $white;
   background: linear-gradient(135deg, $violet 50%, $violet-transition);
+}
+
+.background--orange {
+  background-color: $orange !important;
+  color: $text-color;
+}
+
+.background--orange-opacity {
+  background-color: $orange-opacity !important;
+  color: $text-color;
 }
 
 .background--beige {
@@ -27,13 +33,13 @@
   color: $text-color;
 }
 
-.background--mint {
-  background-color: $mint !important;
+.background--white-opacity {
+  background-color: rgba($white, 0.3) !important;
   color: $text-color;
 }
 
-.background--orange-opacity {
-  background-color: $orange-opacity !important;
+.background--mint {
+  background-color: $mint !important;
   color: $text-color;
 }
 
@@ -49,4 +55,8 @@
 
 .background--transparent {
   background-color: transparent !important;
+}
+
+.text--white {
+  color: $white !important;
 }
