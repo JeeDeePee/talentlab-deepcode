@@ -7,7 +7,7 @@ const routerOptions = [
   {path: '/module/:slug', name: 'module', component: 'PageModule', props: true},
   {path: '/unit/:slug', name: 'unit', component: 'PageUnit', props: true},
   {path: '/development', name: 'development', component: 'PageDevelopment'},
-  {path: '/experiments', name: 'experiments', component: 'PageDashboard'},
+  {path: '/experiments', name: 'experiments', component: 'PageExperiments'},
   {
     path: '/login',
     name: 'login',

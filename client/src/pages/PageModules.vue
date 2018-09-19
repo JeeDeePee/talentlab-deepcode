@@ -97,5 +97,4 @@
   .category-wrapper {
     width: 100%;
   }
-
 </style>
