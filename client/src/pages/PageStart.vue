@@ -220,7 +220,7 @@
             'heading': 'wirksam',
             'text': 'talentlab macht Potenzialentwicklung sichtbar'
           }
-                              {
+          {
             'heading': 'personalisiert',
             'text': 'talentlab berücksichtigt unternehmensspezifische Schwerpunkte bei der Potenzialentwicklung'
           },
