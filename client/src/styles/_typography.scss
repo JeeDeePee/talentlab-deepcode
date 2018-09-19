@@ -20,7 +20,7 @@ h1, .h1 {
 }
 
 h2, .h2 {
-  font-size: 24px;
+  font-size: $h2-font-size;
   line-height: 34px;
 }
 
@@ -31,8 +31,16 @@ h3, .h3 {
   text-transform: uppercase;
 }
 
+h4, .h4 {
+  font-size: $base-font-size;
+  line-height: 20px;
+  color: initial;
+  text-transform: initial;
+}
+
+
 .lead {
-  font-size: 24px;
+  font-size: $lead-font-size;
   line-height: 34px;
 }
 

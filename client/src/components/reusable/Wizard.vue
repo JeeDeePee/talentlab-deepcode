@@ -1,6 +1,6 @@
 <template>
   <v-dialog v-model="show" fullscreen hide-overlay transition="dialog-bottom-transition" scrollable>
-    <v-card class="white--text">
+    <v-card class="background--violet white--text">
 
       <v-toolbar dark color="primary" class="ml-4 mr-4">
         <v-toolbar-title>{{ wizardName }}</v-toolbar-title>

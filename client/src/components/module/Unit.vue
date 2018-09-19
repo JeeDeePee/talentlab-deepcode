@@ -1,24 +1,33 @@
 <template>
-  <v-card>
-    <router-link class="link" :to="{name: 'unit', params: {slug: unit.slug}}" exact router>
-      <v-card-title primary-title>
-        <h4>{{unit.title}}</h4>
-      </v-card-title>
-    </router-link>
-    <v-card-text>
-      <div>
-        {{unit.teaser}}
-      </div>
-      <div class="grey--text">
-        <v-btn v-if="booked && !unitBooked" @click="startUnitProgress(unit.slug, module.slug)">Buchen</v-btn>
-        <v-btn v-if="booked && unitBooked">Bewerten</v-btn>
+  <div>
+    <router-link :to="{name: 'unit', params: {slug: unit.slug}}" exact router>
+      <v-card>
 
-        <v-chip>{{unit.type}}</v-chip>
-        <v-icon class="ml-3">filter_none</v-icon> {{unit.count}}
-        <v-icon class="ml-3"> schedule</v-icon> {{unit.duration}}
-      </div>
-    </v-card-text>
-  </v-card>
+        <v-card-title primary-title>
+          <h3 class="h4">{{unit.title}}</h3>
+        </v-card-title>
+
+        <v-card-text>
+          <div class="mt-2 mb-4">
+            {{unit.teaser}}
+          </div>
+          <div>
+            <!--
+            <v-btn v-if="booked && !unitBooked" @click="startUnitProgress(unit.slug, module.slug)">Buchen</v-btn>
+            <v-btn v-if="booked && unitBooked">Bewerten</v-btn>
+            -->
+
+            <v-icon>play_arrow</v-icon>
+            {{unit.type}}
+            <v-icon class="ml-3">filter_none</v-icon>
+            {{unit.count}}
+            <v-icon class="ml-3"> schedule</v-icon>
+            {{unit.duration}}
+          </div>
+        </v-card-text>
+      </v-card>
+    </router-link>
+  </div>
 </template>
 
 <script>
@@ -54,7 +63,7 @@
             unitSlug: unitSlug,
             moduleSlug: moduleSlug
           },
-          update: (store, { data }) => {
+          update: (store, {data}) => {
             this.unitBooked = data.startUnitProgress.created
           }
         }).then((data) => {
@@ -73,23 +82,8 @@
 <style lang="scss" scoped>
   @import "../../styles/var";
 
-  h4 {
-    font-size: 18px;
+  .v-card {
+    box-shadow: none;
   }
 
-  .card {
-    border-radius: 2px;
-  }
-
-  .card__title {
-    padding: 16px 16px 0 16px
-  }
-
-  .card__text {
-    padding: 0 16px 16px 16px
-  }
-
-  .link {
-    color: $text-color;
-  }
 </style>

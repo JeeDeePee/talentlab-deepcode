@@ -8,7 +8,7 @@
 }
 
 .background--violet {
-  background: $violet !important;
+  background: $violet;
   color: $white;
   background: linear-gradient(135deg, $violet 75%, $violet-transition);
 }
@@ -31,4 +31,18 @@
 .background--orange-opacity {
   background-color: $orange-opacity !important;
   color: $text-color;
+}
+
+.background--mint-opacity {
+  background-color: $mint-opacity !important;
+  color: $text-color;
+}
+
+.background--blue-opacity {
+  background-color: $blue-opacity !important;
+  color: $text-color;
+}
+
+.background--transparent {
+  background-color: transparent !important;
 }

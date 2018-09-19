@@ -70,7 +70,7 @@
   @import "../styles/var";
 
   .dummy-chat {
-    label {
+    label, textarea {
       color: $text-color !important;
     }
     .v-input__slot {

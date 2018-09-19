@@ -1,6 +1,6 @@
 <template>
   <v-dialog v-model="show" fullscreen hide-overlay transition="dialog-bottom-transition" scrollable>
-    <v-card tile>
+    <v-card tile class="background--violet">
       <v-btn class="btn--close" large flat icon @click.stop="show=false">
         <v-icon>close</v-icon>
       </v-btn>

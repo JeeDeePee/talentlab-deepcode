@@ -11,6 +11,18 @@ ul {
   margin-left: 16px;
 }
 
+img {
+  max-width: 100%;
+}
+
+.float-right {
+  float: right;
+}
+
+.float-left {
+  float: left;
+}
+
 .clearfix::after {
   content: "";
   clear: both;
@@ -31,7 +43,6 @@ ul {
   .v-list__tile__sub-title, .v-list__tile__title {
     white-space: pre-wrap;
   }
-
 }
 
 .v-carousel {

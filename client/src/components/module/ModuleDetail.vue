@@ -9,9 +9,9 @@
 
     </v-container>
     <div class="hero-bg mb-4">
-      <v-container grid-list-md>
+      <v-container grid-list-xl>
         <v-layout row wrap>
-          <v-flex xs12 sm6 md6 lg6 xl6>
+          <v-flex xs12 sm6>
             <div v-html="module.description" class="mb-2 mt-1 description"></div>
 
             <div v-if="module.videoId" class="mt-5 mb-1">
@@ -23,7 +23,7 @@
             </div>
 
           </v-flex>
-          <v-flex xs12 sm6 md6 lg6 xl6>
+          <v-flex xs12 sm6>
             <img :src="module.heroImage"/>
           </v-flex>
         </v-layout>

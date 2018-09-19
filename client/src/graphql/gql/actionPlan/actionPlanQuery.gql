@@ -10,7 +10,7 @@ query ActionPlanQuery($slug: String!) {
       }
     }
   }
-  userProgress {
+  user {
     usermoduleprogressSet(module_Slug: $slug) {
       edges {
         node {
