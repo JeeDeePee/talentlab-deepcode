@@ -288,11 +288,11 @@
 
               let units = data.userModuleUnits.edges.map(entry => ({'status': entry.node.status, ...entry.node.unit}))
 
-              let contentType = ['WEBINAR', 'LERNFILM']
+              let contentType = ['INTERAKTIV']
 
               // TODO: filter on the server: split into types of units
-              this.interactiveUnits = units.filter(x => !contentType.includes(x.type))
-              this.contentUnits = units.filter(x => contentType.includes(x.type))
+              this.interactiveUnits = units.filter(x => contentType.includes(x.type))
+              this.contentUnits = units.filter(x => !contentType.includes(x.type))
             } else {
               console.log('Data: data.modules not available..')
             }

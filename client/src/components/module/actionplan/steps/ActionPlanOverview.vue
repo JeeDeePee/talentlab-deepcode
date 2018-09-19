@@ -69,9 +69,9 @@
       return {
         agent:
           {
-            'name': 'Nina Hagemann',
+            'name': 'Samuel Ryser',
             'title': 'talentlab Advisor',
-            'avatar': require(`@/assets/img/people/delia-werro-piave.jpg`)
+            'avatar': require(`@/assets/img/people/samuel-ryser.jpg`)
           }
       }
     },

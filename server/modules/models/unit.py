@@ -32,7 +32,8 @@ class Unit(StrictHierarchyPage):
             ('coaching', 'Coaching'),
             ('tinder', 'Tinder'),
             ('lernfilm', 'Lernfilm'),
-            ('webex', 'Webex')
+            ('webex', 'Webex'),
+            ('interaktiv', 'Interaktiv'),
         )
     )
     count = models.CharField(
