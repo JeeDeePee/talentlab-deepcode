@@ -54,23 +54,19 @@ class UserUnitsQuery(object):
         # TODO: change back after fix in test data generation
         # module_progress = UserModuleProgress.objects.get(user=user, module=module)
         #
-
-        # TODO: ugly as hell
-        #
-        module_progress = None
         if user.is_authenticated:
             module_progress = UserModuleProgress.objects.filter(user=user, module=module).first()
 
-        # all module units
-        module_units = Unit.objects.filter(id__in=module.get_child_ids()).live()
-
-        for module_unit in module_units:
-            if user.is_authenticated:
+            # all module units
+            module_units = Unit.objects.filter(id__in=module.get_child_ids()).live()
+            for module_unit in module_units:
                 user_unit_progress = UserUnitProgress.objects.filter(module_progress=module_progress, unit=module_unit).first()
-            else:
-                user_unit_progress = None
+                user_module_units.append(UserUnitNode(unit=module_unit, status=user_unit_progress is not None))
 
-            user_module_units.append(UserUnitNode(unit=module_unit, status=user_unit_progress is not None))
+        else:
+            module_units = Unit.objects.filter(id__in=module.get_child_ids()).live()
+            for module_unit in module_units:
+                user_module_units.append(UserUnitNode(unit=module_unit, status=False))
 
         field = relay.ConnectionField.resolve_connection(UserUnitConnection, args, user_module_units)
         return field

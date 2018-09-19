@@ -37,7 +37,7 @@
 
               <v-avatar size=115 class="v-avatar--responsive">
                 <v-img
-                  :src="'https://cdn.vuetifyjs.com/images/lists/3.jpg'"
+                  :src="require(`@/assets/img/people/clea-bauch.jpg`)"
                   :alt="avatar"
                 ></v-img>
               </v-avatar>
@@ -143,15 +143,12 @@
             moduleSlug: moduleSlug
           },
           update: (store, {data}) => {
-            debugger
             // this.unitBooked = data.startUnitProgress.created
             this.unit.status = data.startUnitProgress.created
           }
         }).then((data) => {
-          debugger
           // Result
         }).catch((error) => {
-          debugger
           // Error
           console.error(error)
           // We restore the initial user input
