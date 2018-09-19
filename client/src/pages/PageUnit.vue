@@ -43,7 +43,8 @@
               </v-avatar>
               <h4 class="my-2 text--orange h2">Dr. Clea Bauch</h4>
 
-              <v-btn>buchen</v-btn>
+              <v-btn v-if="moduleBooked && !unitBooked" @click="startUnitProgress(unit.slug, unit.moduleSlug)">buchen</v-btn>
+              <v-btn v-if="moduleBooked && unitBooked" class="btn-secondary">bewerten</v-btn>
 
             </v-flex>
           </v-layout>
@@ -99,6 +100,7 @@
 
 <script>
   import UNIT_QUERY from '@/graphql/gql/unit.gql'
+  import START_UNIT_PROGRESS from '@/graphql/gql/progress/startUnitProgress.gql'
 
   export default {
     props: {
@@ -114,6 +116,11 @@
       }
     },
 
+    computed: {
+      unitBooked: () => this.unit ? this.unit.status : false,
+      moduleBooked: () => true
+    },
+
     apollo: {
       unit() {
         return {
@@ -124,6 +131,32 @@
             }
           }
         }
+      }
+    },
+
+    methods: {
+      startUnitProgress(unitSlug, moduleSlug) {
+        this.$apollo.mutate({
+          mutation: START_UNIT_PROGRESS,
+          variables: {
+            unitSlug: unitSlug,
+            moduleSlug: moduleSlug
+          },
+          update: (store, {data}) => {
+            debugger
+            // this.unitBooked = data.startUnitProgress.created
+            this.unit.status = data.startUnitProgress.created
+          }
+        }).then((data) => {
+          debugger
+          // Result
+        }).catch((error) => {
+          debugger
+          // Error
+          console.error(error)
+          // We restore the initial user input
+          // this.newTag = newTag
+        })
       }
     }
   }
@@ -151,5 +184,4 @@
   .theme--light.v-expansion-panel .v-expansion-panel__container {
     background-color: transparent;
   }
-
 </style>
