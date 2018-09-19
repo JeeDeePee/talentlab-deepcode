@@ -8,9 +8,7 @@
             <v-img :src="require(`@/assets/img/dashboard_career.png`)" class="hero--image"></v-img>
           </v-flex>
           <v-flex xs12 sm6>
-            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
-            dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
-
+            Dein Potenzial - Deine Kompetenzen - Dein Entwicklung: Verfolge Deine Fortschritte und Aktivitäten. Per Schnellzugriff zu Deinen gebuchten Modulen und anstehenden Tasks und Terminen.
             <div class="text-xs-center mt-4">
               <v-btn :to="{ name: 'modules'}" exact router>
                 Modul auswählen
@@ -62,7 +60,7 @@
             <div class="pa-4 background--orange-opacity">
               <h2>Aktueller Prozess</h2>
 
-              <div>Im aktuellen Prozess sind folgende Tasks offen:</div>
+              <div>In den aktuellen Modulen sind folgende Tasks offen:</div>
               <ul class="mt-2 mb-4">
                 <li v-for="(item,i) in dummyCurrentProcess.nextTasks" :key="i">{{item}}</li>
               </ul>
@@ -72,7 +70,7 @@
           <v-flex xs12 sm5>
             <div class="pa-4 background--mint">
               <h2 class="body">Coaching-Abo</h2>
-              <div>Bespreche deine Entwicklung mit einem Coach oder Mentor.</div>
+              <div>Bespreche Deine Entwicklung mit einem Coach oder Mentor.</div>
               <v-btn router exact class="mt-4" @click="$openChat">
                 Coach buchen
               </v-btn>
