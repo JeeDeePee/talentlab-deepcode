@@ -1,10 +1,15 @@
 <template>
   <div v-if="module">
     <div>
-      <v-container class="pt-4">
+      <v-container class="pt-5">
         <span class="grey--text">{{module.category.title}} - {{module.skill}}</span><br>
         <h1 class="mb-1 mt-1">{{module.title}}</h1>
         <div class="lead">{{module.lead}}</div>
+        <span v-if="user && moduleBooked" class="text-sm-left text-md-center">
+          <v-btn class="btn-secondary btn-minimal" @click="deleteModuleProgress(module.slug)">
+            <v-icon>close</v-icon>
+          </v-btn>
+        </span>
       </v-container>
 
       <div v-if="moduleBooked" class="background--violet">
@@ -60,7 +65,6 @@
                     Modul buchen
                   </v-btn>
                 </div>
-
               </div>
             </v-flex>
           </v-layout>
