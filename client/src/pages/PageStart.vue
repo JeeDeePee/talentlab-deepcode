@@ -155,7 +155,7 @@
       MasteringRelations,
       ModuleCard
     },
-
+    
     data() {
       return {
         initialQuery: CATEGORIES_QUERY,
@@ -173,18 +173,105 @@
             'avatar': require(`@/assets/img/people/samuel-ryser.jpg`)
           }
         ],
+
         facts: [
           {
+            'heading': 'Flexibel',
+            'text': 'talentlab ermöglicht in den Arbeitsalltag integriertes Lernen.',
+            'group': 'hr'
+          },
+          {
+            'heading': 'Effizient',
+            'text': 'talentlab ist nahtlos und sicher in bestehende HR-Prozesse integrierbar.',
+            'type': 'linie'
+          },
+          {
+            'heading': 'Persönlich',
+            'text': 'talentlab ist intuitiv zu bedienen.',
+            'type': 'mitarbeiter'
+          },
+          {
+            'heading': 'Zielorientiert',
+            'text': 'talentlab verhilft zu Potenzialentwicklung mit klarem Strategiebezug.',
+            'group': 'hr'
+          },
+          {
+            'heading': 'Wirksam',
+            'text': 'talentlab macht Potenzialentwicklung sichtbar.',
+            'type': 'linie'
+          },
+          {
+            'heading': 'Flexibel',
+            'text': 'talentlab ermöglicht autonomes Lernen nach eigenem Rhythmus.',
+            'type': 'mitarbeiter'
+          },
+          {
+            'heading': 'Effizient',
+            'text': 'talentlab macht Potenzialentwicklung skalierbar.',
+            'group': 'hr'
+          },
+          {
+            'heading': 'Persönlich',
+            'text': 'talentlab erlaubt massgeschneiderte Auswertungen.',
+            'type': 'linie'
+          },
+          {
+            'heading': 'Zielorientiert',
+            'text': 'talentlab ist intuitiv zu bedienen.',
+            'type': 'mitarbeiter'
+          },
+          {
+            'heading': 'Wirksam',
+            'text': 'talentlab hilft der Organisation am Ball zu bleiben.',
+            'group': 'hr'
+          },
+          {
+            'heading': 'Flexibel',
+            'text': 'talentlab bietet einen Mix an zeitgemäss aufbereiteten Lernangeboten.',
+            'type': 'linie'
+          },
+
+          {
+            'heading': 'Effizient',
+            'text': 'talentlab ist intuitiv zu bedienen.',
+            'type': 'mitarbeiter'
+          },
+
+          {
+            'heading': 'Flexibel',
+            'text': 'talentlab ermöglicht in den Arbeitsalltag integriertes Lernen.',
+            'group': 'hr'
+          },
+          {
+            'heading': 'Zielorientiert',
+            'text': 'talentlab ist gerichtet auf die Anforderungen der Arbeitswelt der Zukunft.',
+            'type': 'linie'
+          },
+
+          {
+            'heading': 'Wirksam',
+            'text': 'talentlab ist intuitiv zu bedienen.',
+            'type': 'mitarbeiter'
+          },
+          {
             'heading': 'Personalisiert',
-            'text': 'Talentlab ist auf individuelle Entwicklungsbedürfnisse zugeschnitten.'
+            'text': 'talentlab berücksichtigt unternehmensspezifische Schwerpunkte bei der Potenzialentwicklung.',
+            'group': 'hr'
           },
           {
-            'heading': 'flexibel',
-            'text': 'talentlab ermöglicht autonomes Lernen nach eigenem Rhythmus.'
+            'heading': 'Personalisiert',
+            'text': 'talentlab bindet auf Wunsch firmeneigene Inhalte ein.',
+            'type': 'linie'
           },
           {
-            'heading': 'effizient',
-            'text': 'talentlab ist intuitiv zu bedienen.'
+            'heading': 'Personalisiert',
+            'text': 'Talentlab ist auf individuelle Entwicklungsbedürfnisse zugeschnitten.',
+            'type': 'mitarbeiter'
+          },
+          {
+            'heading': 'Persönlich',
+            'text': 'talentlab motiviert zur Vernetzung von Wissen und Erfahrung.',
+            'group': 'hr'
           }
         ],
         members: [
@@ -224,6 +311,7 @@
 
       }
     },
+
 
     apollo: {
       categories: {
