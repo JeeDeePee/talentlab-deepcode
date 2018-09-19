@@ -337,30 +337,22 @@ data = [
             {
                 'title': 'Effizient kommunizieren',
                 'skill': 'Kommunikationsfähigkeiten',
-                'teaser': 'Gezieltes Training für Führungsalltag und Verhandlung',
-                'description': 'description',
-                'video_description': 'description',
+                'teaser': 'Gezieltes Training für Führungsalltag und Verhandlung'
             },
             {
                 'title': 'Diversity for Success',
                 'skill': 'Konfliktfähigkeit',
-                'teaser': 'Wertschöpfender Umgang mit der Vielfalt',
-                'description': 'description',
-                'video_description': 'description',
+                'teaser': 'Wertschöpfender Umgang mit der Vielfalt'
             },
             {
                 'title': 'The 1st 100 days',
                 'skill': 'Kommunikationsfähigkeit',
-                'teaser': 'On-boarding in eine neue Rolle',
-                'description': 'description',
-                'video_description': 'description',
+                'teaser': 'On-boarding in eine neue Rolle'
             },
             {
                 'title': 'The 1st 30 days',
                 'skill': 'Networking',
-                'teaser': 'On-boarding in eine neue Organisation',
-                'description': 'description',
-                'video_description': 'description',
+                'teaser': 'On-boarding in eine neue Organisation'
             }
         ]
     }
