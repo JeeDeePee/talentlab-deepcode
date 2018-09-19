@@ -42,10 +42,10 @@ class UserModulesQuery(object):
     user_modules = relay.ConnectionField(UserModuleConnection)
 
     def resolve_all_modules_progress(self, info, **args):
-        # TODO: Does not filter
         user = get_current_user()
         if user.is_authenticated:
             return UserModuleProgress.objects.filter(module__slug=args.get('module__slug'), user=user)
+        return UserModuleProgress.objects.none()
 
     def resolve_user_modules(self, info, **args):
         # TODO: definitely not performant, but shows what we can do directly in graphene
