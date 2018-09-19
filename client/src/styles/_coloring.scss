@@ -7,10 +7,14 @@
   }
 }
 
+.text--white {
+  color: $white;
+}
+
 .background--violet {
   background: $violet;
   color: $white;
-  background: linear-gradient(135deg, $violet 75%, $violet-transition);
+  background: linear-gradient(135deg, $violet 50%, $violet-transition);
 }
 
 .background--beige {

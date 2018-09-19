@@ -85,7 +85,7 @@
                 :alt="agent.name"
               ></v-img>
             </v-avatar>
-            <h4 class="my-2 headline">{{agent.name}}</h4>
+            <h4 class="my-2 headline text--white">{{agent.name}}</h4>
             <div>
               {{agent.title}}
             </div>
@@ -159,7 +159,7 @@
       MasteringRelations,
       ModuleCard
     },
-    
+
     data() {
       return {
         initialQuery: CATEGORIES_QUERY,

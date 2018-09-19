@@ -31,9 +31,9 @@
   margin: 0;
 }
 
-.v-btn:not(.v-btn--floating) {
+.v-btn:not(.v-btn--floating):not(.v-btn--router ) {
   border-radius: 0;
-  text-transform: initial;
+  text-transform: uppercase;
   font-size: $base-font-size;
 }
 
