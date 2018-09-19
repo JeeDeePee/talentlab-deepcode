@@ -172,7 +172,6 @@
             'avatar': require(`@/assets/img/people/samuel-ryser.jpg`)
           }
         ],
-
         facts: [
           {
             'heading': 'personalisiert',
@@ -247,7 +246,6 @@
             'text': 'talentlab macht Potenzialentwicklung sichtbar'
           }
         ],
-        
         members: [
           {
             'name': 'Daniel Fahrni',
@@ -286,7 +284,6 @@
       }
     },
 
-
     apollo: {
       categories: {
         query: CATEGORIES_QUERY,
@@ -321,6 +318,4 @@
   .container.agents {
     max-width: 500px;
   }
-
-
 </style>

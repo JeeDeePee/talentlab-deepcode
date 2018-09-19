@@ -37,7 +37,7 @@
 
     data() {
       return {
-        showFocusDialog: false
+        showFocusDialog: this.$lodash.isEmpty(this.$route.params) ? false : this.$route.params.showFocusDialog
       }
     },
 
