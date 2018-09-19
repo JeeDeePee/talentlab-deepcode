@@ -99,7 +99,7 @@
           <v-layout row wrap>
             <v-flex xs12 sm8 md8 lg8 xl8>
               <h2 class="mb-3">Interaktiv</h2>
-              <Unit v-for="(item, index) in interactivUnits"
+              <Unit v-for="(item, index) in interactiveUnits"
                     :module="module"
                     :key="index"
                     :booked="moduleBooked"
@@ -172,7 +172,7 @@
       return {
         module: null,
         moduleBooked: false,
-        interactivUnits: [],
+        interactiveUnits: [],
         contentUnits: [],
         showVideoPlayer: false,
         showModuleGoalDialog: false,
@@ -266,17 +266,17 @@
               document.title = _module.title
 
               // TODO: code review
+              // debugger
               let bookedEntries = data.allModulesProgress.edges
               this.moduleBooked = bookedEntries && bookedEntries.length > 0
               // console.log(`Module Booked: ${this.moduleBooked}`)
 
               let units = data.userModuleUnits.edges.map(entry => ({'status': entry.node.status, ...entry.node.unit}))
 
-
               let contentType = ['WEBINAR', 'LERNFILM']
 
               // TODO: filter on the server: split into types of units
-              this.interactivUnits = units.filter(x => !contentType.includes(x.type))
+              this.interactiveUnits = units.filter(x => !contentType.includes(x.type))
               this.contentUnits = units.filter(x => contentType.includes(x.type))
             } else {
               console.log('Data: data.modules not available..')

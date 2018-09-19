@@ -75,7 +75,6 @@
         fetchPolicy: 'network-only',
         manual: true,
         result({data, loading, networkStatus}) {
-          // debugger
           if (!loading) {
             this.categories = data.categories.edges.map(entry => entry.node)
             this.modules = data.userModules.edges.map(entry => ({'status': entry.node.status, ...entry.node.module}))

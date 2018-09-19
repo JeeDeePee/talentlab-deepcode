@@ -31,8 +31,6 @@
 </template>
 
 <script>
-  import START_UNIT_PROGRESS from '@/graphql/gql/progress/startUnitProgress.gql'
-
   export default {
     props: {
       module: {
@@ -52,28 +50,6 @@
     data() {
       return {
         unitBooked: this.unit.status
-      }
-    },
-
-    methods: {
-      startUnitProgress(unitSlug, moduleSlug) {
-        this.$apollo.mutate({
-          mutation: START_UNIT_PROGRESS,
-          variables: {
-            unitSlug: unitSlug,
-            moduleSlug: moduleSlug
-          },
-          update: (store, {data}) => {
-            this.unitBooked = data.startUnitProgress.created
-          }
-        }).then((data) => {
-          // Result
-        }).catch((error) => {
-          // Error
-          console.error(error)
-          // We restore the initial user input
-          // this.newTag = newTag
-        })
       }
     }
   }
