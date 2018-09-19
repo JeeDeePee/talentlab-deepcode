@@ -53,7 +53,10 @@
                 </v-layout>
 
                 <div class="text-sm-left text-md-center">
-                  <v-btn class="mt-4" @click="startModuleProgress(module.slug)">
+                  <v-btn v-if="user" class="mt-4" @click="startModuleProgress(module.slug)">
+                    Modul buchen
+                  </v-btn>
+                  <v-btn v-else class="mt-4" :to="{ name: 'login'}" exact router>
                     Modul buchen
                   </v-btn>
                 </div>
@@ -139,6 +142,8 @@
 </template>
 
 <script>
+  import {mapGetters} from 'vuex'
+
   import MODULE_QUERY from '@/graphql/gql/moduleAndModuleProgress.gql'
   import START_MODULE_PROGRESS from '@/graphql/gql/progress/startModuleProgress.gql'
   import DELETE_MODULE_PROGRESS from '@/graphql/gql/progress/deleteModuleProgress.gql'
@@ -157,6 +162,12 @@
         required: true,
         type: String
       }
+    },
+
+    computed: {
+      ...mapGetters({
+        user: 'getUser'
+      })
     },
 
     components: {
