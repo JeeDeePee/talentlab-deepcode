@@ -25,3 +25,8 @@
   background-color: $violet-transition;
   color: $white;
 }
+
+.v-toolbar__items .v-btn {
+  text-transform: initial;
+}
+

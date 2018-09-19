@@ -24,14 +24,14 @@
 
 // fix for the misaligned buttons, however still the case in IE1X
 
-.v-btn:not(.v-btn--icon):not(.v-btn--flat){
+.v-btn:not(.v-btn--icon):not(.v-btn--flat) {
   box-shadow: none !important;
   background-color: $orange;
   color: white;
   margin: 0;
 }
 
-.v-btn:not(.v-btn--floating):not(.v-btn--router ) {
+.v-btn:not(.v-btn--floating) {
   border-radius: 0;
   text-transform: uppercase;
   font-size: $base-font-size;

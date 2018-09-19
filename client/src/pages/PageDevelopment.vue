@@ -10,9 +10,10 @@
           <v-flex xs12 sm6>
             Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
             dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+
             <div class="text-xs-center mt-4">
-              <v-btn>
-                gebuchte Module starten
+              <v-btn :to="{ name: 'modules'}" exact router>
+                Modul auswählen
               </v-btn>
             </div>
           </v-flex>
@@ -89,11 +90,6 @@
             <ModuleCard :module="module" minimal/>
           </v-flex>
         </v-layout>
-
-        <v-btn :to="{ name: 'modules'}" exact router>
-          Modul auswählen
-        </v-btn>
-
       </v-container>
     </section>
 
