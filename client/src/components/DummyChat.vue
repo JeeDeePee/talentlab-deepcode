@@ -44,10 +44,10 @@
     data() {
       return {
         items: [
-          'https://cdn.vuetifyjs.com/images/lists/1.jpg',
-          'https://cdn.vuetifyjs.com/images/lists/2.jpg',
-          'https://cdn.vuetifyjs.com/images/lists/3.jpg',
-          'https://cdn.vuetifyjs.com/images/lists/4.jpg'
+          require(`@/assets/img/people/clea-bauch.jpg`),
+          require(`@/assets/img/people/pawel-kowalski.jpg`),
+          require(`@/assets/img/people/samuel-ryser.jpg`),
+          require(`@/assets/img/people/daniel-fahrni.jpg`)
         ]
       }
     },
