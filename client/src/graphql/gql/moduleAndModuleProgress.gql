@@ -6,6 +6,7 @@ query ModuleQuery($slug: String!) {
     resources
     description
     teaser
+    lead
     heroImage
     skill
     videoId

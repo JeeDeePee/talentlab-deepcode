@@ -149,6 +149,13 @@
         type: String
       }
     },
+
+    data() {
+      return {
+        avatar: ''
+      }
+    },
+
     apollo: {
       unit() {
         return {

@@ -8,7 +8,6 @@
       </v-container>
 
       <div v-if="moduleBooked" class="background--violet">
-
         <div class="container-process-bg text--white">
           <v-container grid-list-md>
             <v-btn flat class="module--action-button lead" @click.stop="showModuleGoalDialog=true">
@@ -29,8 +28,8 @@
           <LearningsWizard :visible="showLearningsDialog" @close="showLearningsDialog=false" :module="module"/>
           <ActionPlanWizard :visible="showActionPlanDialog" @close="showActionPlanDialog=false" :module="module"/>
         </div>
-
       </div>
+
       <div v-else>
         <v-container grid-list-xl>
           <v-layout row wrap>
@@ -54,7 +53,7 @@
                 </v-layout>
 
                 <div class="text-sm-left text-md-center">
-                  <v-btn class="mt-4" @click="$emit('start-module-progress', module.slug)">
+                  <v-btn class="mt-4" @click="startModuleProgress(module.slug)">
                     Modul buchen
                   </v-btn>
                 </div>
@@ -276,7 +275,7 @@
 
               let contentType = ['WEBINAR', 'LERNFILM']
 
-              // TODO: filter on the server
+              // TODO: filter on the server: split into types of units
               this.interactivUnits = units.filter(x => !contentType.includes(x.type))
               this.contentUnits = units.filter(x => contentType.includes(x.type))
             } else {

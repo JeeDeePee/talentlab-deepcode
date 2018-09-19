@@ -45,6 +45,7 @@ class CompetenceFactory(factory.django.DjangoModelFactory):
 class ModuleFactory(BasePageFactory):
     hero_image = factory.SubFactory(DummyImageFactory)
     teaser = factory.LazyAttribute(lambda x: fake.sentence(nb_words=random.randint(8, 12)))
+    lead = factory.LazyAttribute(lambda x: fake.sentence(nb_words=random.randint(8, 12)))
     skill = factory.LazyAttribute(fake_title)
     description = factory.LazyAttribute(lambda x: fake.text(max_nb_chars=200))
 
@@ -98,7 +99,14 @@ class UnitFactory(BasePageFactory):
         model = Unit
 
     teaser = factory.LazyAttribute(lambda x: fake.sentence(nb_words=random.randint(8, 12)))
+    lead = factory.LazyAttribute(lambda x: fake.sentence(nb_words=random.randint(8, 12)))
     description = factory.LazyAttribute(lambda x: fake.sentence(nb_words=random.randint(12, 16)))
+
+    objectives = factory.LazyAttribute(lambda x: fake.sentence(nb_words=random.randint(12, 16)))
+    content = factory.LazyAttribute(lambda x: fake.sentence(nb_words=random.randint(12, 16)))
+    teacher = factory.LazyAttribute(lambda x: fake.sentence(nb_words=random.randint(12, 16)))
+    requirements = factory.LazyAttribute(lambda x: fake.sentence(nb_words=random.randint(12, 16)))
+
     count = factory.LazyAttribute(lambda x: '{} {}'.format(random.randint(8, 12), fake.word().title()))
     duration = factory.LazyAttribute(lambda x: '{} {}'.format(random.randint(8, 12), fake.word().title()))
     price = factory.LazyAttribute(lambda x: '{} {}'.format('CHF ', random.randint(50, 200)))

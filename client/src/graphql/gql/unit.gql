@@ -7,7 +7,12 @@ query UnitQuery($slug: String!) {
     categorySlug
     categoryTitle
     teaser
+    lead
     description
+    objectives
+    content
+    teacher
+    requirements
     type
     count
     duration

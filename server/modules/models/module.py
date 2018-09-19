@@ -35,6 +35,7 @@ class Module(StrictHierarchyPage):
         help_text='e.g. \'Leadership\''
     )
     teaser = models.TextField()
+    lead = models.TextField()
     description = RichTextField(features=DEFAULT_RICH_TEXT_FEATURES)
 
     video_id = models.PositiveIntegerField(
