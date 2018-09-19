@@ -2,8 +2,10 @@ query CategoriesQuery {
   categories {
     edges {
       node {
-        title
+        id
         slug
+        title
+        teaser
         icon
         iconComponent
       }

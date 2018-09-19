@@ -279,7 +279,6 @@
               // TODO: filter on the server
               this.interactivUnits = units.filter(x => !contentType.includes(x.type))
               this.contentUnits = units.filter(x => contentType.includes(x.type))
-
             } else {
               console.log('Data: data.modules not available..')
             }
