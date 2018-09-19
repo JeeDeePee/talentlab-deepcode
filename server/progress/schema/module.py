@@ -53,16 +53,20 @@ class UserModulesQuery(object):
 
         # master data
         user = get_current_user()
-        all_modules = list(Module.objects.all())
 
+        all_modules = list(Module.objects.all())
         user_modules = []
-        if user.is_authenticated:
-            # now calc module status
-            for module in all_modules:
+
+        # now calc module status
+        for module in all_modules:
+            if user.is_authenticated:
                 module_progress = UserModuleProgress.objects.filter(user=user, module=module).first()
-                user_modules.append(UserModuleNode(module_progress=module_progress,
-                                                   module=module,
-                                                   status=module_progress is not None))
+            else:
+                module_progress = None
+
+            user_modules.append(UserModuleNode(module_progress=module_progress,
+                                               module=module,
+                                               status=module_progress is not None))
 
         field = relay.ConnectionField.resolve_connection(UserModuleConnection, args, user_modules)
         return field
