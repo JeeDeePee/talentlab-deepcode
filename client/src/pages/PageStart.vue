@@ -5,17 +5,17 @@
         <h1>talent<b>lab</b> ist der digitale Begleiter für Karriere- und
           Potenzialentwicklung</h1>
         <div class="my-4 lead">Nutze dein Potenzial und stärke deine Kompetenzen zielorientiert und wirksam!</div>
-        <v-btn router exact class="btn-secondary">
+        <v-btn @click="$vuetify.goTo('#learn-more', {duration: 200, offset: -50})" class="btn-secondary">
           mehr erfahren
         </v-btn>
-        <v-btn router exact>
+        <v-btn router exact :to="{ name: 'modules'}">
           jetzt starten
         </v-btn>
         <v-img :src="require(`@/assets/img/marketing_buro_frau-computer_viola.png`)" class="mt-4 hero--image"></v-img>
       </v-container>
     </section>
 
-    <section class="text-xs-center background--beige py-5">
+    <section class="text-xs-center background--beige py-5" id="learn-more">
       <v-container grid-list-xl class="py-0">
 
         <div class="h3 mb-4">Dein Potenzial > Deine Kompetenzen > Deine Entwicklung</div>
@@ -72,9 +72,7 @@
       <v-container grid-list-xl class="py-0 agents">
         <div class="speech-bubble">
           <h2 class="lead">Möchtest Du mehr erfahren?</h2>
-
           <div class="mt-2">Wir beraten Dich gerne individuell</div>
-
         </div>
         <v-layout row wrap>
           <v-flex xs12 sm6 v-for="(agent,i) in agents" :key="i">
@@ -88,7 +86,6 @@
             <div>
               {{agent.title}}
             </div>
-
           </v-flex>
         </v-layout>
 
@@ -168,12 +165,12 @@
           {
             'name': 'Nina Hagemann',
             'title': 'talentlab Advisor',
-            'avatar': 'https://cdn.vuetifyjs.com/images/lists/3.jpg'
+            'avatar': require(`@/assets/img/people/delia-werro-piave.jpg`)
           },
           {
             'name': 'Paul Markwarth',
             'title': 'talentlab Advisor',
-            'avatar': 'https://cdn.vuetifyjs.com/images/lists/1.jpg'
+            'avatar': require(`@/assets/img/people/samuel-ryser.jpg`)
           }
         ],
         facts: [
@@ -194,17 +191,17 @@
           {
             'name': 'Daniel Fahrni',
             'title': 'VRP & CMO',
-            'avatar': 'https://cdn.vuetifyjs.com/images/lists/1.jpg'
+            'avatar': require(`@/assets/img/people/daniel-fahrni.jpg`)
           },
           {
             'name': 'Clea Bauch',
             'title': 'CEO',
-            'avatar': 'https://cdn.vuetifyjs.com/images/lists/3.jpg'
+            'avatar': require(`@/assets/img/people/clea-bauch.jpg`)
           },
           {
             'name': 'Pawel Kowalski',
             'title': 'CTO',
-            'avatar': 'https://cdn.vuetifyjs.com/images/lists/2.jpg'
+            'avatar': require(`@/assets/img/people/pawel-kowalski.jpg`)
           }
         ],
         reviews: [

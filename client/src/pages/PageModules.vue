@@ -5,19 +5,21 @@
         <h1>Wähle die passenden Module!</h1>
         <div class="my-4 lead">talentlab schlägt dir je nach Fokus deiner Entwicklung die geeigneten Module vor.</div>
         <div class="text-xs-center">
-          <v-btn router exact>
-            mehr erfahren
+          <v-btn  @click="$vuetify.goTo('#learn-more', {duration: 200, offset: -50})">
+            Themen surfen
           </v-btn>
+          <!--
           <v-btn router exact>
-            jetzt starten
+            Fokus setzen
           </v-btn>
+          -->
         </div>
       </v-container>
 
       <v-img :src="require(`@/assets/img/meine-module_talk-communication.jpg`)" class="mt-4 hero--image"></v-img>
     </section>
 
-    <v-container grid-list-xl class="pt-4">
+    <v-container grid-list-xl class="pt-4" id="learn-more">
 
       <v-layout row wrap>
         <v-flex v-for="category in categories" :key="category.id" xs4 class="text-xs-center">

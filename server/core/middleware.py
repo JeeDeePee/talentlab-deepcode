@@ -67,12 +67,15 @@ class CommonRedirectMiddleware(MiddlewareMixin):
                 return to
 
         if settings.USE_404_FALLBACK_IMAGE:
-            # some static image is missing show a placeholder (use full for local dev)
+            # some static image is missing
+
+            # try to find dimensions
             m = re.match(r".*(max|fill)-(?P<dimensions>\d+x\d+)\.(jpg|png|svg)", path)
             if m:
                 return 'https://picsum.photos/{}'.format(m.group('dimensions').replace('x', '/'))
                 # or dummy image: return 'http://via.placeholder.com/{}'.format(m.group('dimensions'))
-            
+
+            # check for webpack hased image
             m = re.match(r"\/static\/.*(?P<id>\.[a-zA-Z\d]+)\.(jpg|png|svg)", path)
             if m:
                 return path.replace(m.group('id'), '')
