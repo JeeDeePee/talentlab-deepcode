@@ -8,7 +8,7 @@
           <v-btn @click="$vuetify.goTo('#learn-more', {duration: 200, offset: -50})">
             Themen surfen
           </v-btn>
-          <v-btn :to="{name: 'development', params: {showFocusDialog: true}}" exact router>
+          <v-btn v-if="user" :to="{name: 'development', params: {showFocusDialog: true}}" exact router>
             Fokus setzen
           </v-btn>
         </div>
@@ -38,6 +38,8 @@
 <script>
   import CATEGORIES_QUERY from '@/graphql/gql/categories.gql'
 
+  import {mapGetters} from 'vuex'
+
   import GrowingAsALeader from '@/assets/img/icons/growing-as-a-leader-grey.svg'
   import MasteringComplexity from '@/assets/img/icons/mastering-complexity-grey.svg'
   import MasteringRelations from '@/assets/img/icons/mastering-relations-grey.svg'
@@ -60,8 +62,10 @@
       }
     },
 
-    created() {
-      document.title = 'Modul'
+    computed: {
+      ...mapGetters({
+        user: 'getUser'
+      })
     },
 
     apollo: {
@@ -81,10 +85,8 @@
       }
     },
 
-    methods: {
-      // gotoFokus() {
-      //   this.$router.push({ name: 'development', params: { showFocusDialog: true } })
-      // }
+    created() {
+      document.title = 'Modul'
     }
   }
 </script>

@@ -56,14 +56,6 @@
 
     created() {
       this.fetchUserFocus()
-      // let vr = this.$route.params
-      // console.log(vr)
-      // if (this.$lodash.isEmpty(vr)) {
-      //   console.log('empty')
-      // } else {
-      //   console.log('not empty')
-      // }
-      // debugger
     }
   }
 </script>
