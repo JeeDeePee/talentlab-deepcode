@@ -57,11 +57,11 @@
                   </v-flex>
                 </v-layout>
 
-                <div class="text-sm-left text-md-center">
-                  <v-btn v-if="user" class="mt-4" @click="startModuleProgress(module.slug)">
+                <div class="mt-4">
+                  <v-btn v-if="user" @click="startModuleProgress(module.slug)">
                     Modul buchen
                   </v-btn>
-                  <v-btn v-else class="mt-4" :to="{ name: 'login'}" exact router>
+                  <v-btn v-else :to="{ name: 'login'}" exact router>
                     Modul buchen
                   </v-btn>
                 </div>
