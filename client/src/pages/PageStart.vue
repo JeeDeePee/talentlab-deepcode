@@ -106,7 +106,7 @@
               <v-icon lass="text--orange">person_outline</v-icon>
               <span class="ml-1">{{review.name}}</span>
             </h4>
-            <div>
+            <div class="pl-4 grey--text font-italic">
               «{{review.text}}»
             </div>
           </v-flex>
@@ -212,7 +212,7 @@
           },
           {
             'name': 'Martin, Head of HR',
-            'text': 'Seit wir talentlab einsetzen können wir unseren Kadern und Nachwuchsführungs-kräften ein umfassendes\n' +
+            'text': 'Seit wir talentlab einsetzen können wir unseren Kadern und Nachwuchsführungskräften ein umfassendes\n' +
             '              Angebot für ihre persönliche Entwicklung bieten.'
           },
           {
