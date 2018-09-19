@@ -1,7 +1,7 @@
 <template>
   <div class="text-xs-center small--content">
     <h1>Deine Learnings</h1>
-    <div class="mt-4 mb-5">Während der Bearbeitung des Moduls hast du laufend deine Learnings erfasst. Ergänze falls nötig.</div>
+    <div class="mt-4 mb-5">Während der Bearbeitung des Moduls hast Du laufend Deine Learnings erfasst. Ergänze falls nötig.</div>
 
     <TextBox :placeholder="'Deine Learnings'" v-model="actionPlan.learningsText"></TextBox>
 

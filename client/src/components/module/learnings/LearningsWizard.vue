@@ -3,8 +3,8 @@
           @close="show=false">
     <div class="text-xs-center small--content">
 
-      <h1>Was sind deine Learnings?</h1>
-      <div class="mt-4 mb-5">Hier erfasst du laufend deine wichtigsten Learnings aus dem Modul.</div>
+      <h1>Was sind Deine Learnings?</h1>
+      <div class="mt-4 mb-5">Hier erfasst Du laufend Deine wichtigsten Learnings aus dem Modul</div>
 
       <TextBox :placeholder="'Text erfassen'" v-model="learningsText"></TextBox>
 

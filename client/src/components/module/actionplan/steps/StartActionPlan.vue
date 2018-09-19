@@ -1,15 +1,15 @@
 <template>
   <div class="text-xs-center">
-    <h1>Vier Schritte bis zum Action Plan</h1>
+    <h1>Vier Schritte bis zu Deinem Action Plan</h1>
 
     <h2 class="text--orange mt-3">1</h2>
-    <div>Rekapituliere deine Ziele</div>
+    <div>Rekapituliere Deine Ziele</div>
 
     <h2 class="text--orange mt-3">2</h2>
-    <div>Reflektiere was du gelernt hast</div>
+    <div>Reflektiere was Du gelernt hast</div>
 
     <h2 class="text--orange mt-3">3</h2>
-    <div>Definiere dein Business-Ziel</div>
+    <div>Definiere Dein Business-Ziel</div>
 
     <h2 class="text--orange mt-3">4</h2>
     <div>Bestimme Massnahmen</div>
