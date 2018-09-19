@@ -287,37 +287,27 @@ data = [
             {
                 'title': 'First-time Leader',
                 'skill': 'Management',
-                'teaser': 'Basis-Training für junge Führungskräfte',
-                'description': 'description',
-                'video_description': 'description',
+                'teaser': 'Basis-Training für junge Führungskräfte'
             },
             {
                 'title': 'Project Management Basics',
                 'skill': 'Management',
-                'teaser': 'Training für angehende Projektleiter',
-                'description': 'description',
-                'video_description': 'description',
+                'teaser': 'Training für angehende Projektleiter'
             },
             {
                 'title': '1st, 2nd & 3rd Career',
                 'skill': 'Integrierte generationenübergreifende Führung',
-                'teaser': 'Leadership',
-                'description': 'description',
-                'video_description': 'description',
+                'teaser': 'Leadership'
             },
             {
                 'title': 'Reorganisation &  Transformation',
                 'skill': 'Management',
-                'teaser': 'Erfolgreiche Umsetzung von Änderungsprojekten',
-                'description': 'description',
-                'video_description': 'description',
+                'teaser': 'Erfolgreiche Umsetzung von Änderungsprojekten'
             },
             {
                 'title': 'Agile Organisation',
                 'skill': 'Management',
-                'teaser': 'Zwischen agil dynamisch und dogmatisch holokratisch',
-                'description': 'description',
-                'video_description': 'description',
+                'teaser': 'Zwischen agil dynamisch und dogmatisch holokratisch'
             }
         ]
     },
