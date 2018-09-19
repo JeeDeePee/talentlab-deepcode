@@ -2,9 +2,8 @@
   <div>
     <section class="background--violet text-xs-center pt-5">
       <v-container grid-list-xl class="pb-0">
-        <h1>talent<b>lab</b> ist der digitale Begleiter für Karriere- und
-          Potenzialentwicklung</h1>
-        <div class="my-4 lead">Nutze dein Potenzial und stärke deine Kompetenzen zielorientiert und wirksam!</div>
+        <h1>talent<b>lab</b> ist Dein digitaler Begleiter für Karriere- und Potenzialentwicklung</h1>
+        <div class="my-4 lead">Nutze Dein Potenzial und stärke Deine Kompetenzen - zielorientiert und wirksam!</div>
         <v-btn @click="$vuetify.goTo('#learn-more', {duration: 200, offset: -50})" class="btn-secondary">
           mehr erfahren
         </v-btn>
@@ -37,8 +36,7 @@
       <v-container grid-list-xl class="py-0">
 
         <h2 class="h1 text-xs-center ">Mit digitalen Angeboten gezielt und flexibel Potenziale entwickeln!</h2>
-        <div class="text-xs-center lead my-5">talent<b>lab</b> bietet eine auf die Bedürfnisse abgestimmte und flexibel
-          erweiterbare Auswahl an Modulen zu aktuellen Themen
+        <div class="text-xs-center lead my-5">talent<b>lab</b> bietet eine auf Deine Bedürfnisse abgestimmte und flexibel erweiterbare Auswahl an Modulen zu aktuellen Themen
         </div>
 
         <v-layout row wrap>
@@ -52,7 +50,7 @@
 
     <section class="text-xs-center background--beige py-5">
       <v-container class="py-0 slider">
-        <h2 class="h3">talent<b>lab</b> ist der digitale Begleiter für Karriere- und Potenzialentwicklung</h2>
+        <h2 class="h3">talent<b>lab</b> ist Dein digitaler Begleiter für Karriere- und Potenzialentwicklung</h2>
 
         <v-carousel hide-delimiters class="slim height-200 secondary--controls">
           <v-carousel-item v-for="(fact,i) in facts" :key="i" class="pa-5">
@@ -71,7 +69,7 @@
     <section class="text-xs-center background--violet py-5">
       <v-container grid-list-xl class="py-0 agents">
         <div class="speech-bubble speech-bubble--bottom">
-          <h2 class="lead">Möchtest du mehr erfahren?</h2>
+          <h2 class="lead">Möchtest Du mehr erfahren?</h2>
           <div class="mt-2">Wir beraten Dich gerne individuell</div>
         </div>
         <v-layout row wrap>
@@ -118,7 +116,7 @@
     <section class="text-xs-center background--beige py-5">
       <v-container grid-list-xl>
         <h2 class="h1">Wer steht hinter talent<b>lab</b>?</h2>
-        <div class="lead my-4">Vereinte Erfahrung und Passion in Sachen Personalanalytik, Lernen und IT</div>
+        <div class="lead my-4">Vereinte Erfahrung und Passion in Sachen Personalanalytik, Bildung und IT</div>
 
         <v-layout row wrap>
           <v-flex xs12 sm4 v-for="(member,i) in members" :key="i">
@@ -175,16 +173,76 @@
         ],
         facts: [
           {
-            'heading': 'Personalisiert',
-            'text': 'Talentlab ist auf individuelle Entwicklungsbedürfnisse zugeschnitten.'
+            'heading': 'personalisiert',
+            'text': 'talentlab ist auf individuelle Entwicklungsbedürfnisse zugeschnitten'
           },
           {
             'heading': 'flexibel',
-            'text': 'talentlab ermöglicht autonomes Lernen nach eigenem Rhythmus.'
+            'text': 'talentlab ermöglicht autonomes Lernen nach eigenem Rhythmus'
           },
           {
             'heading': 'effizient',
-            'text': 'talentlab ist intuitiv zu bedienen.'
+            'text': 'talentlab ist intuitiv zu bedienen'
+          }
+          {
+            'heading': 'persönlich',
+            'text': 'talentlab legt Wert auf persönliche Begleitung'
+          }
+          {
+            'heading': 'zielorientiert',
+            'text': 'talentlab bezieht Deine zu entwickelnden Kompetenzen ein'
+          }
+          {
+            'heading': 'wirksam',
+            'text': 'talentlab bezieht Deine zu entwickelnden Kompetenzen ein'
+          }
+                    {
+            'heading': 'personalisiert',
+            'text': 'talentlab bindet auf Wunsch firmeneigene Inhalte ein'
+          },
+          {
+            'heading': 'flexibel',
+            'text': 'talentlab bietet einen Mix an zeitgemäss aufbereiteten Lernangeboten'
+          },
+          {
+            'heading': 'effizient',
+            'text': 'talentlab ist nahtlos und sicher in bestehende HR-Prozesse integrierbar'
+          }
+          {
+            'heading': 'persönlich',
+            'text': 'talentlab erlaubt massgeschneiderte Auswertungen'
+          }
+          {
+            'heading': 'zielorientiert',
+            'text': 'talentlab ist gerichtet auf die Anforderungen der Arbeitswelt der Zukunft'
+          }
+          {
+            'heading': 'wirksam',
+            'text': 'talentlab macht Potenzialentwicklung sichtbar'
+          }
+                              {
+            'heading': 'personalisiert',
+            'text': 'talentlab berücksichtigt unternehmensspezifische Schwerpunkte bei der Potenzialentwicklung'
+          },
+          {
+            'heading': 'flexibel',
+            'text': 'talentlab ermöglicht in den Arbeitsalltag integriertes Lernen'
+          },
+          {
+            'heading': 'effizient',
+            'text': 'talentlab macht Potenzialentwicklung skalierbar'
+          }
+          {
+            'heading': 'persönlich',
+            'text': 'talentlab motiviert zur Vernetzung von Wissen und Erfahrung'
+          }
+          {
+            'heading': 'zielorientiert',
+            'text': 'talentlab verhilft zu Potenzialentwicklung mit klarem Strategiebezug'
+          }
+          {
+            'heading': 'wirksam',
+            'text': 'talentlab hilft der Organisation am Ball zu bleiben'
           }
         ],
         members: [
@@ -212,7 +270,7 @@
           },
           {
             'name': 'Martin, Head of HR',
-            'text': 'Seit wir talentlab einsetzen können wir unseren Kadern und Nachwuchsführungskräften ein umfassendes\n' +
+            'text': 'Seit wir talentlab einsetzen, können wir unseren Kadern und Nachwuchsführungskräften ein umfassendes\n' +
             '              Angebot für ihre persönliche Entwicklung bieten.'
           },
           {
