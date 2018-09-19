@@ -296,5 +296,6 @@
   .module--action-button {
     font-size: $lead-font-size !important;
     color: rgba(255, 255, 255, 0.8) !important;
+    text-transform: initial !important;
   }
 </style>
