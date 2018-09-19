@@ -8,11 +8,9 @@
           <v-btn @click="$vuetify.goTo('#learn-more', {duration: 200, offset: -50})">
             Themen surfen
           </v-btn>
-          <!--
-          <v-btn router exact>
+          <v-btn :to="{name: 'development', params: {showFocusDialog: true}}" exact router>
             Fokus setzen
           </v-btn>
-          -->
         </div>
       </v-container>
 
@@ -81,6 +79,12 @@
           }
         }
       }
+    },
+
+    methods: {
+      // gotoFokus() {
+      //   this.$router.push({ name: 'development', params: { showFocusDialog: true } })
+      // }
     }
   }
 </script>
