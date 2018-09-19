@@ -35,15 +35,17 @@ class UserModuleConnection(graphene.Connection):
         node = UserModuleNode
 
 
-all_modules_progress_filterset_class = graphql_user_filter(UserModuleProgress, ['module__slug'])
-
-
 class UserModulesQuery(object):
     module_progress = relay.Node.Field(UserModuleProgressNode)
-    all_modules_progress = DjangoFilterConnectionField(UserModuleProgressNode,
-                                                       filterset_class=all_modules_progress_filterset_class)
+    all_modules_progress = DjangoFilterConnectionField(UserModuleProgressNode)
 
     user_modules = relay.ConnectionField(UserModuleConnection)
+
+    def resolve_all_modules_progress(self, info, **args):
+        # TODO: Does not filter
+        user = get_current_user()
+        if user.is_authenticated:
+            return UserModuleProgress.objects.filter(module__slug=args.get('module__slug'), user=user)
 
     def resolve_user_modules(self, info, **args):
         # TODO: definitely not performant, but shows what we can do directly in graphene
@@ -51,20 +53,16 @@ class UserModulesQuery(object):
 
         # master data
         user = get_current_user()
-
         all_modules = list(Module.objects.all())
+
         user_modules = []
-
-        # now calc module status
-        for module in all_modules:
-            if user.is_authenticated:
+        if user.is_authenticated:
+            # now calc module status
+            for module in all_modules:
                 module_progress = UserModuleProgress.objects.filter(user=user, module=module).first()
-            else:
-                module_progress = None
-
-            user_modules.append(UserModuleNode(module_progress=module_progress,
-                                               module=module,
-                                               status=module_progress is not None))
+                user_modules.append(UserModuleNode(module_progress=module_progress,
+                                                   module=module,
+                                                   status=module_progress is not None))
 
         field = relay.ConnectionField.resolve_connection(UserModuleConnection, args, user_modules)
         return field

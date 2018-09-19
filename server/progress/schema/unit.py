@@ -44,22 +44,25 @@ class UserUnitsQuery(object):
 
         # master data
         user = get_current_user()
-        module = Module.objects.get(slug=module_slug)
-
-        # progress data
-        #
-        # TODO: change back after fix in test data generation
-        # module_progress = UserModuleProgress.objects.get(user=user, module=module)
-        #
-        module_progress = UserModuleProgress.objects.filter(user=user, module=module).first()
-
-        # all module units
-        module_units = Unit.objects.filter(id__in=module.get_child_ids()).live()
-
         user_module_units = []
-        for module_unit in module_units:
-            user_unit_progress = UserUnitProgress.objects.filter(module_progress=module_progress, unit=module_unit).first()
-            user_module_units.append(UserUnitNode(unit=module_unit, status=user_unit_progress is not None))
+
+        if user.is_authenticated:
+            module = Module.objects.get(slug=module_slug)
+
+            # progress data
+            #
+            # TODO: change back after fix in test data generation
+            # module_progress = UserModuleProgress.objects.get(user=user, module=module)
+            #
+            module_progress = UserModuleProgress.objects.filter(user=user, module=module).first()
+
+            # all module units
+            module_units = Unit.objects.filter(id__in=module.get_child_ids()).live()
+
+
+            for module_unit in module_units:
+                user_unit_progress = UserUnitProgress.objects.filter(module_progress=module_progress, unit=module_unit).first()
+                user_module_units.append(UserUnitNode(unit=module_unit, status=user_unit_progress is not None))
 
         field = relay.ConnectionField.resolve_connection(UserUnitConnection, args, user_module_units)
         return field

@@ -32,6 +32,6 @@ class UserGoalQuery(object):
         user = get_current_user()
         module_slug = kwargs.get('module_slug')
 
-        if module_slug is not None:
+        if module_slug is not None and user.is_authenticated:
             return UserGoal.objects.get(goal__module__slug=module_slug, user=user)
         return []

@@ -244,7 +244,7 @@
     },
 
     created() {
-      this.$apollo.addSmartQuery('container', {
+      this.$apollo.addSmartQuery('module', {
         query: MODULE_QUERY,
         variables: {
           slug: this.slug
@@ -261,6 +261,7 @@
               _module.resources = JSON.parse(_module.resources)
               _module.category = JSON.parse(_module.category)
               _module.videoThumbnailData = JSON.parse(_module.videoThumbnailData)
+
 
               this.module = _module
               document.title = _module.title
@@ -279,7 +280,6 @@
               this.interactivUnits = units.filter(x => !contentType.includes(x.type))
               this.contentUnits = units.filter(x => contentType.includes(x.type))
 
-              console.info(units)
             } else {
               console.log('Data: data.modules not available..')
             }
