@@ -4,7 +4,7 @@
       <v-container class="text-xs-center pt-5">
         <span class="grey--text">{{module.category.title}} - {{module.skill}}</span><br>
         <h1 class="mb-1 mt-1">{{module.title}}</h1>
-        <div class="lead">{{module.description}}</div>
+        <div class="lead">{{module.lead}}</div>
       </v-container>
 
       <div v-if="moduleBooked" class="background--violet">
