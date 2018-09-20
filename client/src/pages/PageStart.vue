@@ -3,7 +3,7 @@
     <section class="background--violet text-xs-center pt-5">
       <v-container grid-list-xl class="pb-0">
         <h1>talent<b>lab</b> ist Dein digitaler Begleiter für Karriere- und Potenzialentwicklung</h1>
-        <div class="my-4 lead">Nutze Dein Potenzial und stärke Deine Kompetenzen - zielorientiert und wirksam !</div>
+        <div class="my-4 lead">Nutze Dein Potenzial und stärke Deine Kompetenzen - zielorientiert und wirksam!</div>
         <v-btn @click="$vuetify.goTo('#learn-more', {duration: 200, offset: -50})" class="btn-secondary">
           mehr erfahren
         </v-btn>
@@ -35,8 +35,9 @@
     <section class="py-5">
       <v-container grid-list-xl class="py-0">
 
-        <h2 class="h1 text-xs-center ">Mit digitalen Angeboten gezielt und flexibel Potenziale entwickeln !</h2>
-        <div class="text-xs-center lead my-5">talent<b>lab</b> bietet eine auf Deine Bedürfnisse abgestimmte und flexibel erweiterbare Auswahl an Modulen zu aktuellen Themen
+        <h2 class="h1 text-xs-center ">Mit digitalen Angeboten gezielt und flexibel Potenziale entwickeln!</h2>
+        <div class="text-xs-center lead my-5">talent<b>lab</b> bietet eine auf Deine Bedürfnisse abgestimmte und
+          flexibel erweiterbare Auswahl an Modulen zu aktuellen Themen
         </div>
 
         <v-layout row wrap>
@@ -317,6 +318,4 @@
   .container.agents {
     max-width: 500px;
   }
-
-
 </style>
