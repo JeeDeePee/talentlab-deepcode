@@ -12,11 +12,11 @@
             <v-list-tile-title>Module</v-list-tile-title>
           </v-list-tile-content>
         </v-list-tile>
-        <v-list-tile>
-          <v-list-tile-content>
-            <v-list-tile-title>Coaching</v-list-tile-title>
-          </v-list-tile-content>
-        </v-list-tile>
+        <!--<v-list-tile>-->
+          <!--<v-list-tile-content>-->
+            <!--<v-list-tile-title>Coaching</v-list-tile-title>-->
+          <!--</v-list-tile-content>-->
+        <!--</v-list-tile>-->
 
         <v-list-tile v-if="user" :to="{ name: 'logout'}" exact router>
           <v-list-tile-content>
@@ -50,7 +50,7 @@
       <v-toolbar-items class="hidden-sm-and-down">
         <v-btn v-if="user" flat :to="{ name: 'development'}" exact router>Meine Entwicklung</v-btn>
         <v-btn flat :to="{ name: 'modules'}" exact router>Module</v-btn>
-        <v-btn flat>Coaching</v-btn>
+        <!--<v-btn flat>Coaching</v-btn>-->
 
         <v-menu offset-y v-if="user">
           <v-btn flat slot="activator" class="text--orange">
