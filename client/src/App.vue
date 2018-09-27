@@ -13,9 +13,9 @@
           </v-list-tile-content>
         </v-list-tile>
         <!--<v-list-tile>-->
-          <!--<v-list-tile-content>-->
-            <!--<v-list-tile-title>Coaching</v-list-tile-title>-->
-          <!--</v-list-tile-content>-->
+        <!--<v-list-tile-content>-->
+        <!--<v-list-tile-title>Coaching</v-list-tile-title>-->
+        <!--</v-list-tile-content>-->
         <!--</v-list-tile>-->
 
         <v-list-tile v-if="user" :to="{ name: 'logout'}" exact router>
@@ -111,36 +111,16 @@
         </v-layout>
       </v-container>
     </footer>
-
-    <v-fab-transition v-if="!$route.meta.hideChatButton">
-      <v-btn
-        color="primary"
-        dark
-        fab
-        fixed
-        bottom
-        right
-        @click.stop="showChat=true"
-      >
-        <v-icon>chat</v-icon>
-      </v-btn>
-    </v-fab-transition>
-
-    <DummyChat :visible="showChat" @close="showChat=false"/>
-
   </v-app>
 </template>
 
 <script>
   import {mapActions, mapGetters} from 'vuex'
-  import DummyChat from '@/components/DummyChat'
 
   export default {
     name: 'App',
 
-    components: {
-      DummyChat
-    },
+    components: {},
 
     methods: {
       ...mapActions({

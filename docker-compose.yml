@@ -63,6 +63,16 @@ services:
     depends_on:
       - db
 
+  dummy_data:
+    image: talentlab:local
+    command: bash -c "pipenv run python server/manage.py dummy_data"
+    volumes:
+      - .:/root/code
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+
   bash:
     image: talentlab:local
     command: bash
