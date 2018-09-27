@@ -14,16 +14,16 @@ const httpLink = new HttpLink({
 })
 
 const consoleLink = new ApolloLink((operation, forward) => {
-  // console.log(`starting request for ${operation.operationName}`);
+  // console.log(`starting request for ${operation.operationName}`)
 
   return forward(operation).map((data) => {
-    // console.log(`ending request for ${operation.operationName}`);
+    // console.log(`ending request for ${operation.operationName}`)
 
     return data
   })
 })
 
-const composedLink = ApolloLink.from([consoleLink, httpLink]);
+const composedLink = ApolloLink.from([consoleLink, httpLink])
 
 // Create the apollo client
 export default new ApolloClient({
