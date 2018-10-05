@@ -412,9 +412,12 @@ class Command(BaseCommand):
         # ]
         module_images = [
             ImageField(from_path=os.path.join(settings.BASE_DIR, 'core/static/img/modules/modul_board_viola.jpg')),
-            ImageField(from_path=os.path.join(settings.BASE_DIR, 'core/static/img/modules/modul_frau-computer_viola.png')),
-            ImageField(from_path=os.path.join(settings.BASE_DIR, 'core/static/img/modules/modul_talk-communikation.jpg')),
-            ImageField(from_path=os.path.join(settings.BASE_DIR, 'core/static/img/modules/modul_talk_communication_1man.jpg')),
+            ImageField(
+                from_path=os.path.join(settings.BASE_DIR, 'core/static/img/modules/modul_frau-computer_viola.png')),
+            ImageField(
+                from_path=os.path.join(settings.BASE_DIR, 'core/static/img/modules/modul_talk-communikation.jpg')),
+            ImageField(
+                from_path=os.path.join(settings.BASE_DIR, 'core/static/img/modules/modul_talk_communication_1man.jpg')),
             ImageField(from_path=os.path.join(settings.BASE_DIR, 'core/static/img/modules/modul_way-career.jpg')),
         ]
 
@@ -479,3 +482,20 @@ class Command(BaseCommand):
 
         # create user goals for users and goals
         UserGoalFactory.create_batch(size=20)
+
+        # create user stuff for testing
+        u = UserFactory(
+            username='guru',
+            is_staff=True,
+            is_superuser=True
+        )
+        u.set_password('oRIbsyYmOy')
+        u.save()
+
+        u = UserFactory(
+            username='visitor',
+            is_staff=True,
+            is_superuser=True
+        )
+        u.set_password('ioatQQKvtK')
+        u.save()

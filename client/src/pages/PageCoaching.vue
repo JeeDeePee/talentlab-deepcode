@@ -25,7 +25,7 @@
               </v-layout>
 
               <div class="mt-4">
-                <v-btn @click="$vuetify.goTo('#how-to-find-a-coach', {duration: 200, offset: -50})">
+                <v-btn @click="showCoachingWizard=true">
                   Themen auswählen
                 </v-btn>
               </div>
@@ -42,7 +42,9 @@
 
           <v-flex xs12 class="text-xs-center">
             <h2 class="h1 mb-4">Wie werden unsere Coaches ausgewählt?</h2>
-            <div class="h2 mb-5">talentlab bietet eine auf die Bedürfnisse abgestimmte … lorem ipsum dolor lorem ipsum dolor…</div>
+            <div class="h2 mb-5">talentlab bietet eine auf die Bedürfnisse abgestimmte … lorem ipsum dolor lorem ipsum
+              dolor…
+            </div>
           </v-flex>
 
           <v-flex xs12 sm4 v-for="(coach,i) in featuredCoaches" :key="i">
@@ -67,7 +69,8 @@
     <section class="pt-4 background--beige">
       <v-container>
         <h2 class="h1 mb-4" id="how-to-find-a-coach">Wie kann ich den richtigen Coach für mich finden?</h2>
-        <div class="h2 mb-5">Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum
+        <div class="h2 mb-5">Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem
+          ipsum
           dolor sit amet.
         </div>
 
@@ -85,7 +88,7 @@
         </div>
 
         <div class="mt-5 text-xs-center">
-          <v-btn>
+          <v-btn @click="showCoachingWizard=true">
             Coaching starten
           </v-btn>
         </div>
@@ -93,21 +96,26 @@
       </v-container>
     </section>
 
+    <CoachingWizard :visible="showCoachingWizard" @close="showCoachingWizard=false"/>
+
   </div>
 </template>
 
 <script>
   import VideoPlayer from '@/components/module/VideoPlayer'
+  import CoachingWizard from '@/components/coaching/CoachingWizard'
 
   export default {
     components: {
-      VideoPlayer
+      VideoPlayer,
+      CoachingWizard
     },
 
     data() {
       return {
         loading: true,
         showVideoPlayer: false,
+        showCoachingWizard: false,
 
         details: [
           {
