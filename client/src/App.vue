@@ -12,11 +12,12 @@
             <v-list-tile-title>Module</v-list-tile-title>
           </v-list-tile-content>
         </v-list-tile>
-        <!--<v-list-tile>-->
-        <!--<v-list-tile-content>-->
-        <!--<v-list-tile-title>Coaching</v-list-tile-title>-->
-        <!--</v-list-tile-content>-->
-        <!--</v-list-tile>-->
+
+        <v-list-tile :to="{ name: 'coaching'}" exact router>
+          <v-list-tile-content>
+            <v-list-tile-title>Coaching</v-list-tile-title>
+          </v-list-tile-content>
+        </v-list-tile>
 
         <v-list-tile v-if="user" :to="{ name: 'logout'}" exact router>
           <v-list-tile-content>
@@ -30,13 +31,6 @@
           </v-list-tile-content>
         </v-list-tile>
 
-        <!--    EXPERIMENTS
-        <v-list-tile :to="{ name: 'experiments'}" exact router>
-          <v-list-tile-content>
-            <v-list-tile-title>Experiments</v-list-tile-title>
-          </v-list-tile-content>
-        </v-list-tile>   -->
-        <!--    EXPERIMENTS    -->
       </v-list>
     </v-navigation-drawer>
     <v-toolbar fixed app dark class="elevation-0">
@@ -48,9 +42,10 @@
       </v-toolbar-title>
       <v-spacer></v-spacer>
       <v-toolbar-items class="hidden-sm-and-down">
+
         <v-btn v-if="user" flat :to="{ name: 'development'}" exact router>Meine Entwicklung</v-btn>
         <v-btn flat :to="{ name: 'modules'}" exact router>Module</v-btn>
-        <!--<v-btn flat>Coaching</v-btn>-->
+        <v-btn flat :to="{ name: 'coaching'}" exact router>Coaching</v-btn>
 
         <v-menu offset-y v-if="user">
           <v-btn flat slot="activator" class="text--orange">

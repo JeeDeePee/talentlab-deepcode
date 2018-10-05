@@ -8,6 +8,7 @@ const routerOptions = [
   {path: '/unit/:slug', name: 'unit', component: 'PageUnit', props: true},
   {path: '/development', name: 'development', component: 'PageDevelopment'},
   {path: '/experiments', name: 'experiments', component: 'PageExperiments'},
+  {path: '/coaching', name: 'coaching', component: 'PageCoaching'},
   {
     path: '/login',
     name: 'login',

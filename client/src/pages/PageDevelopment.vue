@@ -2,7 +2,10 @@
   <div>
     <section class="background--violet pt-5">
       <v-container grid-list-xl>
-        <h1 class="mb-5 text-xs-center">Dashboard – Deine Entwicklung</h1>
+        <h1 class="mb-5">Dashboard – Deine Entwicklung</h1>
+
+        <div class="h2 mb-5">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy.</div>
+
         <v-layout row wrap>
           <v-flex xs12 sm6>
             <v-img :src="require(`@/assets/img/dashboard_career.png`)" class="hero--image"></v-img>
@@ -71,7 +74,7 @@
             <div class="pa-4 background--mint">
               <h2 class="body">Coaching-Abo</h2>
               <div>Bespreche Deine Entwicklung mit einem Coach oder Mentor.</div>
-              <v-btn router exact class="mt-4" @click="$openChat">
+              <v-btn router exact class="mt-4" :to="{ name: 'coaching'}">
                 Coach buchen
               </v-btn>
             </div>

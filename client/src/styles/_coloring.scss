@@ -11,6 +11,10 @@
   background: $violet;
   color: $white;
   background: linear-gradient(135deg, $violet 50%, $violet-transition);
+
+  h1, h2, h3, h4 {
+    color: $white
+  }
 }
 
 .background--orange {
