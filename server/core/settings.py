@@ -34,6 +34,9 @@ SIGNING_SECRET = os.environ.get('SIGNING_SECRET')
 DEBUG = bool_value(os.environ.get('DEBUG', ''))
 TEST = 'test' in sys.argv
 
+# Dummy data resets all data and loads from the dummy_data loader
+DUMMY_DATA_ENABLED = bool_value(os.environ.get('DISABLE_DUMMY_DATA', 'False'))
+
 ALLOWED_HOSTS = ['*']
 
 if not DEBUG:
