@@ -61,7 +61,6 @@
             </div>
           </v-flex>
 
-
         </v-layout>
       </v-container>
     </section>

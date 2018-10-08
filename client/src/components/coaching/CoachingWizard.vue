@@ -1,13 +1,15 @@
 <template>
   <Wizard v-model="show" :wizard-name="''" :process-steps="processSteps" @close="show=false" :theme="'light'">
 
-    <h1>Coaching-Abonnement</h1>
+    <div class="medium--content">
 
-    <component
-      :is="getCoachingWizardState"
-      @back="newCoachingWizardState"
-      @proceed="nextWizardStep">
-    </component>
+      <h1>Coaching-Abonnement</h1>
+      <component
+        :is="getCoachingWizardState"
+        @back="newCoachingWizardState"
+        @proceed="nextWizardStep">
+      </component>
+    </div>
 
   </Wizard>
 </template>

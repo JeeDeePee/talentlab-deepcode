@@ -64,7 +64,6 @@ img {
   }
 }
 
-
 ul.v-expansion-panel {
   margin-left: 0px;
 }
@@ -73,4 +72,8 @@ ul.v-expansion-panel {
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+
+.pointer {
+  cursor: pointer;
 }

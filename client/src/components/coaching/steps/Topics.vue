@@ -2,8 +2,29 @@
   <div>
     <div class="h2 mt-3">Wähle Deine Coaching-Themen. Welche zwei der folgenden Themen bewegen Dich am meisten?</div>
 
+
+    <v-layout row wrap>
+      <v-flex xs12 sm6>
+        <v-checkbox
+          v-for="(item,i) in topics.slice(0, 4)" :key="i"
+          :label="item.title"
+          v-model="selectedTopic"
+          hide-details
+        ></v-checkbox>
+      </v-flex>
+      <v-flex xs12 sm6>
+        <v-checkbox
+          v-for="(item,i) in topics.slice(4)" :key="i"
+          :label="item.title"
+          v-model="selectedTopic"
+          hide-details
+        ></v-checkbox>
+      </v-flex>
+    </v-layout>
+
     <div class="mt-5 text-xs-center">
-      <v-btn @click="$emit('proceed', 'Coaches')" class="ml-2">Weiter</v-btn>
+      <v-btn class="btn-secondary mr-2" @click="$emit('proceed', 'Topics', true);">Zurück</v-btn>
+      <v-btn @click="$emit('proceed', 'Coaches')" class="ml-2">Coach finden</v-btn>
     </div>
   </div>
 </template>
@@ -11,6 +32,33 @@
 <script>
 
   export default {
-    components: {}
+    components: {},
+
+    data() {
+      return {
+        checked: [],
+        topics: [
+          {title: 'Standortbestimmung & Neuorientierung', id: 1},
+          {title: 'Domain-Life-Balance & Burnout', id: 2},
+          {title: 'Gender & Diversity', id: 3},
+          {title: 'Persönliche oder berufliche Krisensituation', id: 4},
+          {title: 'Übernahme einer neuen Funktion', id: 5},
+          {title: 'Reorganisation & Restrukturierung', id: 6},
+          {title: 'Übernahme einer Führungsfunktion', id: 7},
+          {title: 'Führung von Führungskräften', id: 8}
+        ]
+      }
+    },
+    computed: {
+      selectedTopic: {
+        set(focus) {
+          // set in vuex
+        },
+        get() {
+          // get from vuex
+          return false
+        }
+      }
+    }
   }
 </script>

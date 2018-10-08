@@ -1,6 +1,67 @@
 <template>
   <div>
-    <div class="h2 mt-3">Finde Deinen Coach. Folgende Coaches haben Erfahrung mit den gewählten Themen:</div>
+    <div class="h2 my-3">Finde Deinen Coach. Folgende Coaches haben Erfahrung mit den gewählten Themen:</div>
+
+    <div class="small--content">
+      <v-layout row wrap>
+        <v-flex xs12 sm6>
+          <h3 class="my-3">Professionelle Coaches</h3>
+          <div class="mb-2 pointer"
+               v-for="(item,i) in coaches" :key="i"
+               @click="select(item)"
+          >
+            <v-avatar size=50 class="v-avatar--responsive">
+              <v-img
+                :src="item.avatar"
+                :alt="item.name"
+              ></v-img>
+            </v-avatar>
+            <span class="ml-2">
+          {{item.name}}
+          </span>
+          </div>
+        </v-flex>
+        <v-flex xs12 sm6>
+          <h3 class="my-3">Erfahrene Manager</h3>
+          <div
+            class="mb-3 pointer"
+            v-for="(item,i) in managers" :key="i"
+            @click="select(item)"
+          >
+            <v-avatar size=50 class="v-avatar--responsive">
+              <v-img
+                :src="item.avatar"
+                :alt="item.name"
+              ></v-img>
+            </v-avatar>
+            <span class="ml-2">
+          {{item.name}}
+          </span>
+          </div>
+        </v-flex>
+      </v-layout>
+    </div>
+
+    <div v-if="selected" class="background--beige mt-3 pa-4">
+      <v-layout>
+        <v-flex xs10>
+          <div v-html="selected.description">
+
+          </div>
+        </v-flex>
+        <v-flex xs2>
+          <v-avatar size=100 class="v-avatar--responsive">
+            <v-img
+              :src="selected.avatar"
+              :alt="selected.name"
+            ></v-img>
+          </v-avatar>
+          <h3 class="mt-2">
+            {{selected.name}}
+          </h3>
+        </v-flex>
+      </v-layout>
+    </div>
 
     <div class="mt-5 text-xs-center">
       <v-btn class="btn-secondary mr-2" @click="$emit('back', 'Topics')">Zurück</v-btn>
@@ -13,8 +74,62 @@
 
   export default {
     components: {},
-
+    data() {
+      return {
+        checked: [],
+        selected: null,
+        coaches: [
+          {
+            'name': 'Peter Naumann',
+            'avatar': require(`@/assets/img/people/samuel-ryser.jpg`),
+            'description': '<p>Samuel Ryser ist ein erfahrener Coach bei der Begleitung von  Teamentwicklungsprozessen.</p><p>Er arbeitet als Assessor und Coach bei unserem Partner cedac AG, wo er auch den Bereich Innovation und Entwicklung verantwortet.\n' +
+            '              Sprachen: Deutsch.</p>'
+          },
+          {
+            'name': 'Peter Naumann',
+            'avatar': require(`@/assets/img/people/samuel-ryser.jpg`),
+            'description': '<p>Samuel Ryser ist ein erfahrener Coach bei der Begleitung von  Teamentwicklungsprozessen.</p><p>Er arbeitet als Assessor und Coach bei unserem Partner cedac AG, wo er auch den Bereich Innovation und Entwicklung verantwortet.\n' +
+            '              Sprachen: Deutsch.</p>'
+          },
+          {
+            'name': 'Samuel Ryser',
+            'avatar': require(`@/assets/img/people/samuel-ryser.jpg`),
+            'description': '<p>Samuel Ryser ist ein erfahrener Coach bei der Begleitung von  Teamentwicklungsprozessen.</p><p>Er arbeitet als Assessor und Coach bei unserem Partner cedac AG, wo er auch den Bereich Innovation und Entwicklung verantwortet.\n' +
+            '              Sprachen: Deutsch.</p>'
+          },
+          {
+            'name': 'Felix Muster',
+            'avatar': require(`@/assets/img/people/samuel-ryser.jpg`),
+            'description': '<p>Samuel Ryser ist ein erfahrener Coach bei der Begleitung von  Teamentwicklungsprozessen.</p><p>Er arbeitet als Assessor und Coach bei unserem Partner cedac AG, wo er auch den Bereich Innovation und Entwicklung verantwortet.\n' +
+            '              Sprachen: Deutsch.</p>'
+          }
+        ],
+        managers: [
+          {
+            'name': 'Max Muster',
+            'avatar': require(`@/assets/img/people/samuel-ryser.jpg`),
+            'description': '<p>Samuel Ryser ist ein erfahrener Coach bei der Begleitung von  Teamentwicklungsprozessen.</p><p>Er arbeitet als Assessor und Coach bei unserem Partner cedac AG, wo er auch den Bereich Innovation und Entwicklung verantwortet.\n' +
+            '              Sprachen: Deutsch.</p>'
+          },
+          {
+            'name': 'Peter Frei',
+            'avatar': require(`@/assets/img/people/samuel-ryser.jpg`),
+            'description': '<p>Samuel Ryser ist ein erfahrener Coach bei der Begleitung von  Teamentwicklungsprozessen.</p><p>Er arbeitet als Assessor und Coach bei unserem Partner cedac AG, wo er auch den Bereich Innovation und Entwicklung verantwortet.\n' +
+            '              Sprachen: Deutsch.</p>'
+          },
+          {
+            'name': 'Nico Gebrer',
+            'avatar': require(`@/assets/img/people/samuel-ryser.jpg`),
+            'description': '<p>Samuel Ryser ist ein erfahrener Coach bei der Begleitung von  Teamentwicklungsprozessen.</p><p>Er arbeitet als Assessor und Coach bei unserem Partner cedac AG, wo er auch den Bereich Innovation und Entwicklung verantwortet.\n' +
+            '              Sprachen: Deutsch.</p>'
+          }
+        ]
+      }
+    },
     methods: {
+      select(item) {
+        this.selected = item
+      },
       save() {
         this.$emit('proceed', 'Organize')
       }
