@@ -13,6 +13,12 @@
         </v-toolbar-items>
       </v-toolbar>
 
+      <div v-else>
+        <v-btn large flat icon @click.stop='show=false' style="float: right">
+          <v-icon>close</v-icon>
+        </v-btn>
+      </div>
+
       <v-breadcrumbs class='ml-4 mr-4'>
         <v-icon slot='divider'>chevron_right</v-icon>
         <v-breadcrumbs-item v-for='step in processSteps'
