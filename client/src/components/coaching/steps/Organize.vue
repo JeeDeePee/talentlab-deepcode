@@ -41,7 +41,7 @@
 
     <div class="mt-5 text-xs-center">
       <v-btn class="btn-secondary mr-2" @click="$emit('back', 'Coaches')">Zurück</v-btn>
-      <v-btn @click="save" class="ml-2">Weiter</v-btn>
+      <v-btn @click="save" class="ml-2">Coach buchen</v-btn>
     </div>
   </div>
 </template>
