@@ -374,6 +374,10 @@ class Command(BaseCommand):
 
     def handle(self, *args, **options):
 
+        if not settings.DUMMY_DATA_ENABLED:
+            print('Dummy data generation is not enabled')
+            return
+
         # print(settings.DATABASES)
         # print(settings.DATABASES['default'])
         # print(settings.DATABASES['default']['USER'])
