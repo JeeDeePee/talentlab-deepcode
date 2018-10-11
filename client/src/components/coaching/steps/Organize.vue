@@ -61,7 +61,7 @@
         subscriptions: [
           '1 Stunde Coaching',
           '2 Stunden Coaching',
-          '3 Stunden Coaching',
+          '3 Stunden Coaching'
         ]
       }
     },
