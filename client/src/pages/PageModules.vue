@@ -1,6 +1,6 @@
 <template>
   <div>
-    <section class="background--white">
+    <section class="background--violet text-xs-center  pt-5">
       <v-container class="pb-0">
         <h1>Wähle die passenden Module!</h1>
         <div class="my-4 lead">talentlab schlägt Dir je nach Fokus bei den Kompetenzen die geeigneten Module vor.</div>
@@ -12,9 +12,9 @@
             Fokus setzen
           </v-btn>
         </div>
+        <v-img :src="require(`@/assets/img/moods/communication_2.png`)" class="mt-4 hero--image"></v-img>
       </v-container>
 
-      <v-img :src="require(`@/assets/img/meine-module_talk-communication.jpg`)" class="mt-4 hero--image"></v-img>
     </section>
 
     <v-container grid-list-xl class="pt-4" id="learn-more">
@@ -24,7 +24,8 @@
           <!--<img :src="category.icon"><br>-->
           <component :is="category.iconComponent"/>
           <div>
-            {{category.title}}
+            <h3 class="my-3">{{category.title}}</h3>
+            <p>{{category.teaser}}</p>
           </div>
         </v-flex>
         <v-flex xs12 sm6 v-for="module in modules" :key="module.id" class="mb-1">
