@@ -6,6 +6,7 @@
 @import "bubble";
 @import "typography";
 @import "coloring";
+@import "shame";
 
 ul {
   margin-left: 16px;
@@ -34,44 +35,6 @@ img {
   a {
     color: $white;
   }
-}
-
-.v-list--adjust .v-list__tile {
-  height: auto;
-  padding: 16px 0;
-
-  .v-list__tile__sub-title, .v-list__tile__title {
-    white-space: pre-wrap;
-  }
-}
-
-.v-carousel {
-  &.slim {
-    box-shadow: none;
-  }
-
-  &.height-200 {
-    height: 200px;
-  }
-
-  &.secondary--controls {
-    .v-carousel__prev, .v-carousel__next {
-
-      .theme--dark.v-icon {
-        color: $violet;
-      }
-    }
-  }
-}
-
-ul.v-expansion-panel {
-  margin-left: 0px;
-}
-
-.v-align--center {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
 }
 
 .pointer {

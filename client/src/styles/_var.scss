@@ -4,13 +4,6 @@
 
 $white: #ffffff;
 
-// TODO do we need all that grey stuff?
-$grey-1: #F7F7F7;
-$grey-3: #F3F3F3;
-$grey-2: #D8D8D8;
-$grey-4: #AFB1B1;
-$grey-9: #3F3F3F;
-
 $orange: #FD6E22;
 $orange-opacity: rgba($orange, 0.15);
 
@@ -25,13 +18,24 @@ $violet-transition: #59006F;
 $mint: #A4D5A4;
 $mint-opacity: rgba($mint, 0.3);
 
+$border-color: #D8D8D8;
+
 // text style
 
-$text-color: $grey-9;
+$text-color: #3f3f3f;
 $font-family: 'Rubik', Arial, sans-serif;
 
 $base-font-size: 15px;
 $footer-font-size: 12px;
 
-$h2-font-size: 24px;
-$lead-font-size: $h2-font-size;
+$light-color: rgba($text-color, 0.5);
+
+
+
+
+// TODO do we need all that grey stuff?
+$grey-1: #F7F7F7;
+$grey-3: #F3F3F3;
+$grey-2: #D8D8D8;
+$grey-4: #AFB1B1;
+$grey-9: #3F3F3F;

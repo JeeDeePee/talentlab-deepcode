@@ -7,6 +7,14 @@
   }
 }
 
+.text--white {
+  color: $white !important;
+}
+
+.text--violet {
+  color: $violet;
+}
+
 .background--violet {
   background: $violet;
   color: $white;
@@ -59,8 +67,4 @@
 
 .background--transparent {
   background-color: transparent !important;
-}
-
-.text--white {
-  color: $white !important;
 }

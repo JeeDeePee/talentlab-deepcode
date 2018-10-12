@@ -25,6 +25,11 @@
   margin-bottom: -20px;
 }
 
+.speech-bubble--transparent:after {
+  border-top-color: rgba(255, 255, 255, 0.3);
+}
+
+
 .speech-bubble--bottom--transparent:after {
   border-top-color: rgba(255, 255, 255, 0.3);
 }
