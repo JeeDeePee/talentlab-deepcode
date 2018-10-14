@@ -1,17 +1,18 @@
 <template>
-  <div>
+  <div class="text-xs-center">
     <div v-if="userFocus.length > 0">
 
-      <div v-for="(item, index) in userFocus" :key="index" class="mb-4">
-        <h4>{{item.competence.title}}</h4>
-        <v-progress-linear :value="item.currentLevel*10" color="secondary"></v-progress-linear>
-        <div class="grey--text">Stufe {{item.currentLevel}} von 10 erreicht</div>
-        <div class="grey--text">Nächste Beurteilung {{item.nextEvaluation}}</div>
-      </div>
+      <v-layout row wrap>
+        <v-flex v-for="(item, index) in userFocus" :key="index" xs12 sm4>
 
-      <div v-if="userFocusCreated">
-        {{userFocusCreated|formatDate}}
-      </div>
+          <h4>{{item.competence.title}}</h4>
+
+          <v-progress-linear :value="item.currentLevel*10" color="secondary"></v-progress-linear>
+
+
+        </v-flex>
+      </v-layout>
+
       <v-btn @click.stop="showFocusDialog=true" class="mt-4">
         Neuen Fokus setzen
       </v-btn>

@@ -2,11 +2,6 @@
   <v-app id="inspire">
     <v-navigation-drawer v-model="drawer" fixed class="hidden-md-and-up" v-if="!$route.meta.hideMenu">
       <v-list dense>
-        <v-list-tile :to="{ name: 'development'}" exact router>
-          <v-list-tile-content v-if="user">
-            <v-list-tile-title>Meine Entwicklung</v-list-tile-title>
-          </v-list-tile-content>
-        </v-list-tile>
         <v-list-tile :to="{ name: 'modules'}" exact router>
           <v-list-tile-content>
             <v-list-tile-title>Module</v-list-tile-title>
@@ -16,6 +11,12 @@
         <v-list-tile :to="{ name: 'coaching'}" exact router>
           <v-list-tile-content>
             <v-list-tile-title>Coaching</v-list-tile-title>
+          </v-list-tile-content>
+        </v-list-tile>
+
+        <v-list-tile :to="{ name: 'development'}" exact router>
+          <v-list-tile-content v-if="user">
+            <v-list-tile-title>Dashboard</v-list-tile-title>
           </v-list-tile-content>
         </v-list-tile>
 
@@ -43,9 +44,9 @@
       <v-spacer></v-spacer>
       <v-toolbar-items class="hidden-sm-and-down" v-if="!$route.meta.hideMenu">
 
-        <v-btn v-if="user" flat :to="{ name: 'development'}" exact router>Meine Entwicklung</v-btn>
         <v-btn flat :to="{ name: 'modules'}" exact router>Module</v-btn>
         <v-btn flat :to="{ name: 'coaching'}" exact router>Coaching</v-btn>
+        <v-btn v-if="user" flat :to="{ name: 'development'}" exact router>Dashboard</v-btn>
 
         <v-menu offset-y v-if="user">
           <v-btn flat slot="activator" class="text--orange">

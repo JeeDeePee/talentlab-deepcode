@@ -1,96 +1,86 @@
 <template>
   <div>
     <section class="background--violet pt-5">
-      <v-container grid-list-xl>
-        <h1 class="mb-5">Dashboard – Deine Entwicklung</h1>
-
-        <div class="h2 mb-5">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy.</div>
-
-        <v-layout row wrap>
-          <v-flex xs12 sm6>
-            <v-img :src="require(`@/assets/img/dashboard_career.png`)" class="hero--image"></v-img>
-          </v-flex>
-          <v-flex xs12 sm6>
-            Dein Potenzial - Deine Kompetenzen - Dein Entwicklung: Verfolge Deine Fortschritte und Aktivitäten. Per Schnellzugriff zu Deinen gebuchten Modulen und anstehenden Tasks und Terminen.
-            <div class="text-xs-center mt-4">
-              <v-btn :to="{ name: 'modules'}" exact router>
-                Modul auswählen
-              </v-btn>
-            </div>
-          </v-flex>
-        </v-layout>
+      <v-container grid-list-xl class="pb-0 text-xs-center">
+        <h1 class="mb-5">Deine Entwicklung im Überblick</h1>
+        <v-img :src="require(`@/assets/img/moods/compi_2.png`)" class="mt-4 hero--image"></v-img>
       </v-container>
     </section>
 
-    <section class="pt-4">
+    <section class="background--beige py-5">
       <v-container grid-list-xl>
-        <v-layout row wrap>
-          <v-flex xs12 sm7>
-            <h2 class="mb-4">Meine Entwicklung</h2>
-            <MyFocus class="mb-4"/>
-          </v-flex>
-          <v-flex xs12 sm5>
-            <div class="pa-4 background--beige">
-              <h2>Agenda</h2>
-              <v-list class="background--beige v-list--adjust">
-                <div v-for="(item,i) in dummyAgenda" :key="i">
-                  <v-list-tile>
-                    <v-list-tile-action>
-                      <v-icon v-if="item.type==='calendar'" class="material-icons">calendar_today</v-icon>
-                      <v-icon v-else-if="item.type==='message'" if="item.type=='calendar'" class="material-icons">
-                        mail_outline
-                      </v-icon>
-                      <v-icon v-else class="material-icons">link</v-icon>
-                    </v-list-tile-action>
+        <h2 class="mb-4 text--violet text-xs-center">Deine Kompetenzen</h2>
 
-                    <v-list-tile-content>
-                      <v-list-tile-sub-title>{{item.text}}</v-list-tile-sub-title>
-                    </v-list-tile-content>
-                  </v-list-tile>
-                  <v-divider v-if="i < dummyAgenda.length -1 "></v-divider>
-                </div>
-              </v-list>
+        <v-layout row wrap>
+          <v-flex v-for="category in categories" :key="category.id" xs12 sm4 class="text-xs-center">
+            <div>
+              <component :is="category.iconComponent"/>
             </div>
+            <h3 class="my-3">{{category.title}}</h3>
           </v-flex>
         </v-layout>
+
+        <MyFocus class="mb-4"/>
+
       </v-container>
     </section>
 
-    <section>
+    <section class="py-5">
       <v-container grid-list-xl>
-        <v-layout row wrap>
-          <v-flex xs12 sm7>
-            <div class="pa-4 background--orange-light">
-              <h2>Aktueller Prozess</h2>
+        <h2 class="mb-5 text--violet text-xs-center">Dein Fortschritt</h2>
+        <div class="mb-4" v-for="(module, index) in userModules" :key="index">
+          <ModuleCard :module="module" minimal progress/>
+        </div>
+        <div class="mt-4">Basierend auf deinem Entwicklungsfokus haben wir weitere Module für dich zusammengestellt:
+        </div>
 
-              <div>In den aktuellen Modulen sind folgende Tasks offen:</div>
-              <ul class="mt-2 mb-4">
-                <li v-for="(item,i) in dummyCurrentProcess.nextTasks" :key="i">{{item}}</li>
-              </ul>
-              Total {{dummyCurrentProcess.closedTasks}} abgeschlossene Tasks.
+        <v-layout row wrap>
+          <v-flex xs12 sm6 class="mb-1" v-for="(module, index) in suggestions" :key="index">
+            <ModuleCard :module="module" minimal/>
+          </v-flex>
+        </v-layout>
+
+      </v-container>
+    </section>
+
+    <section class="background--beige py-5">
+      <v-container grid-list-xl>
+        <h2 class="mb-4 text--violet text-xs-center">Deine Agenda</h2>
+
+        <v-layout row wrap>
+          <v-flex xs12 sm6>
+            <div class="pa-4 background--white">
+              <h3 class="underline">Coaching & Mentoring</h3>
+              <Agenda :items="coachingMentoringAgenda"></Agenda>
+            </div>
+
+          </v-flex>
+          <v-flex xs12 sm6>
+            <div class="pa-4 background--white">
+              <h3 class="underline">Un-Conference</h3>
+              <Agenda :items="conferenceAgenda"></Agenda>
             </div>
           </v-flex>
-          <v-flex xs12 sm5>
-            <div class="pa-4 background--mint">
-              <h2 class="body">Coaching-Abo</h2>
-              <div>Bespreche Deine Entwicklung mit einem Coach oder Mentor.</div>
+
+        </v-layout>
+        <v-layout row wrap>
+
+          <v-flex xs12 sm6>
+            <div class="text-xs-center">
               <v-btn router exact class="mt-4" :to="{ name: 'coaching'}">
                 Coach buchen
               </v-btn>
             </div>
           </v-flex>
-        </v-layout>
-      </v-container>
-    </section>
-
-    <section>
-      <v-container grid-list-xl>
-        <h2 class="pb-4">Meine gebuchten Module</h2>
-        <v-layout row wrap>
-          <v-flex xs12 sm6 class="mb-1" v-for="(module, index) in userModules" :key="index">
-            <ModuleCard :module="module" minimal/>
+          <v-flex xs12 sm5>
+            <div class="text-xs-center">
+              <v-btn router exact class="mt-4" :to="{ name: 'modules'}">
+                Neue Angebote
+              </v-btn>
+            </div>
           </v-flex>
         </v-layout>
+
       </v-container>
     </section>
 
@@ -99,21 +89,32 @@
 
 <script>
   import USER_DEVELOPMENT_QUERY from '@/graphql/gql/userDevelopment.gql'
+  import CATEGORIES_QUERY from '@/graphql/gql/categories.gql'
 
   import {mapActions} from 'vuex'
 
   import MyFocus from '@/components/focus/MyFocus.vue'
   import ModuleCard from '@/components/reusable/ModuleCard'
+  import Agenda from '@/components/reusable/Agenda'
+  import GrowingAsALeader from '@/assets/img/icons/growing-as-a-leader-grey.svg'
+  import MasteringComplexity from '@/assets/img/icons/mastering-complexity-grey.svg'
+  import MasteringRelations from '@/assets/img/icons/mastering-relations-grey.svg'
 
   export default {
     components: {
       MyFocus,
-      ModuleCard
+      ModuleCard,
+      GrowingAsALeader,
+      MasteringComplexity,
+      MasteringRelations,
+      Agenda
     },
 
     data() {
       return {
         loading: true,
+        suggestions: [],
+        categories: [],
 
         dummyCurrentProcess: {
           'closedTasks': 18,
@@ -122,7 +123,7 @@
             'Leading through Disruption'
           ]
         },
-        dummyAgenda: [
+        coachingMentoringAgenda: [
           {'type': 'message', 'text': 'Samuel Ryser'},
           {
             'type': 'calendar',
@@ -131,16 +132,18 @@
             'Freitag, 30/11/2018, 17:00 Uhr'
           },
           {'type': 'message', 'text': 'Fritz Renggli'},
-          {'type': 'calendar', 'text': 'Montag, 27/09/2018, 12:00 Uhr'},
+          {'type': 'calendar', 'text': 'Montag, 27/09/2018, 12:00 Uhr'}
+        ],
+        conferenceAgenda: [
+          {
+            'type': 'calendar',
+            'text': 'Montag, 17/09/2018, 12:00 Uhr'
+          },
           {
             'type': 'event',
             'text': 'Führung von Führungskräften \n' +
             'KeyNote: Kurt Wenger (CEO ABC Group)\n' +
             'Moderation: Clea Bauch (talentlab)'
-          },
-          {
-            'type': 'calendar',
-            'text': 'Freitag, 28/09/2018'
           }
         ]
       }
@@ -150,6 +153,20 @@
       user: {
         query: USER_DEVELOPMENT_QUERY,
         fetchPolicy: 'network-only'
+      },
+      categories: {
+        query: CATEGORIES_QUERY,
+        variables: {
+          numModules: 4
+        },
+        fetchPolicy: 'network-only',
+        manual: true,
+        result({data, loading, networkStatus}) {
+          if (!loading) {
+            this.categories = data.categories.edges.map(entry => entry.node)
+            this.suggestions = data.userModules.edges.map(entry => ({'status': entry.node.status, ...entry.node.module})).slice(0, 2)
+          }
+        }
       }
     },
 

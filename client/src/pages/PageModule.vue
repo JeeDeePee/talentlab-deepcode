@@ -118,24 +118,7 @@
               </div>
 
               <h2 class="h3 mt-5 underline">Agenda</h2>
-              <v-list v-if="moduleBooked" class="background--transparent v-list--adjust pa-0">
-                <div v-for="(item,i) in dummyAgenda" :key="i">
-                  <v-list-tile class="module--list-tile">
-                    <v-list-tile-action class="module--list-action">
-                      <v-icon v-if="item.type==='calendar'" class="material-icons text--orange">calendar_today</v-icon>
-                      <v-icon v-else-if="item.type==='message'" if="item.type=='calendar'"
-                              class="material-icons text--orange">
-                        mail_outline
-                      </v-icon>
-                      <v-icon class="material-icons text--orange" v-else>link</v-icon>
-                    </v-list-tile-action>
-
-                    <v-list-tile-content>
-                      <v-list-tile-sub-title class="text--light">{{item.text}}</v-list-tile-sub-title>
-                    </v-list-tile-content>
-                  </v-list-tile>
-                </div>
-              </v-list>
+              <Agenda v-if="moduleBooked" :items="dummyAgenda"></Agenda>
               <div class="mt-3 text--light" v-else>Hier findest Du bei Buchung Termine & Kontaktinformationen</div>
 
             </v-flex>
@@ -151,15 +134,6 @@
 
 <style lang="scss" scoped>
   @import "../styles/var";
-
-  .module--list-action {
-    min-width: initial;
-    padding-right: 10px;
-  }
-
-  .module--list-tile {
-    border-bottom: 1px solid $orange;
-  }
 
   .module--action-button {
     font-size: 24px;
@@ -182,6 +156,7 @@
   import ModuleGoalWizard from '@/components/module/goal/ModuleGoalWizard'
   import LearningsWizard from '@/components/module/learnings/LearningsWizard'
   import ActionPlanWizard from '@/components/module/actionplan/ActionPlanWizard'
+  import Agenda from '@/components/reusable/Agenda'
 
   export default {
     props: {
@@ -203,7 +178,8 @@
       Unit,
       ActionPlanWizard,
       LearningsWizard,
-      ModuleGoalWizard
+      ModuleGoalWizard,
+      Agenda
     },
 
     data() {
