@@ -8,6 +8,13 @@
 @import "coloring";
 @import "shame";
 
+body, .body {
+  font-family: $font-family;
+  font-size: $base-font-size;
+  color: $text-color;
+  font-weight: 300;
+}
+
 ul {
   margin-left: 16px;
 }

@@ -25,7 +25,7 @@
           <component :is="category.iconComponent"/>
           <div>
             <h3 class="my-3">{{category.title}}</h3>
-            <p>{{category.teaser}}</p>
+            <p class="paragraph">{{category.teaser}}</p>
           </div>
         </v-flex>
         <v-flex xs12 sm6 v-for="module in modules" :key="module.id" class="mb-1">

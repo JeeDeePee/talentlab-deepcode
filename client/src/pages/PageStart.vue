@@ -27,7 +27,7 @@
               <component :is="category.iconComponent"/>
             </div>
             <h3 class="my-3">{{category.title}}</h3>
-            <p>{{category.teaser}}</p>
+            <p class="paragraph">{{category.teaser}}</p>
           </v-flex>
         </v-layout>
 

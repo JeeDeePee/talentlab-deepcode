@@ -1,5 +1,5 @@
 <template>
-  <div class="background--mint-opacity">
+  <div class="background--mint-light">
     <v-container>
       <div v-if="unit">
         <div>

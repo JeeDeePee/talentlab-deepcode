@@ -7,12 +7,20 @@
   }
 }
 
+.text--color {
+  color: $text-color !important;
+}
+
 .text--white {
   color: $white !important;
 }
 
 .text--violet {
-  color: $violet;
+  color: $violet !important;
+}
+
+.text--light {
+  color: $light-color !important;
 }
 
 .background--violet {
@@ -25,13 +33,17 @@
   }
 }
 
+.background--violet-light {
+  background: $violet-light;
+}
+
 .background--orange {
   background-color: $orange !important;
   color: $text-color;
 }
 
-.background--orange-opacity {
-  background-color: $orange-opacity !important;
+.background--orange-light {
+  background-color: $orange-light !important;
   color: $text-color;
 }
 
@@ -55,13 +67,13 @@
   color: $text-color;
 }
 
-.background--mint-opacity {
-  background-color: $mint-opacity !important;
+.background--mint-light {
+  background-color: $mint-light !important;
   color: $text-color;
 }
 
-.background--blue-opacity {
-  background-color: $blue-opacity !important;
+.background--blue-light {
+  background-color: $blue-light !important;
   color: $text-color;
 }
 

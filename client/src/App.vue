@@ -1,6 +1,6 @@
 <template>
   <v-app id="inspire">
-    <v-navigation-drawer v-model="drawer" fixed class="hidden-md-and-up">
+    <v-navigation-drawer v-model="drawer" fixed class="hidden-md-and-up" v-if="!$route.meta.hideMenu">
       <v-list dense>
         <v-list-tile :to="{ name: 'development'}" exact router>
           <v-list-tile-content v-if="user">
@@ -41,7 +41,7 @@
         </router-link>
       </v-toolbar-title>
       <v-spacer></v-spacer>
-      <v-toolbar-items class="hidden-sm-and-down">
+      <v-toolbar-items class="hidden-sm-and-down" v-if="!$route.meta.hideMenu">
 
         <v-btn v-if="user" flat :to="{ name: 'development'}" exact router>Meine Entwicklung</v-btn>
         <v-btn flat :to="{ name: 'modules'}" exact router>Module</v-btn>

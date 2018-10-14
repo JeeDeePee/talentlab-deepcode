@@ -60,7 +60,7 @@
       <v-container grid-list-xl>
         <v-layout row wrap>
           <v-flex xs12 sm7>
-            <div class="pa-4 background--orange-opacity">
+            <div class="pa-4 background--orange-light">
               <h2>Aktueller Prozess</h2>
 
               <div>In den aktuellen Modulen sind folgende Tasks offen:</div>

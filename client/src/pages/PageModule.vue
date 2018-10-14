@@ -2,8 +2,7 @@
   <div v-if="module">
     <div>
       <v-container class="pt-5">
-        <span class="grey--text">{{module.category.title}} - {{module.skill}}</span><br>
-        <h1 class="mb-1 mt-1">{{module.title}}</h1>
+        <h1 class="mb-1 mt-1 text--violet">{{module.title}}</h1>
         <div class="lead">{{module.lead}}</div>
         <span v-if="user && moduleBooked" class="text-sm-left text-md-center">
           <v-btn class="btn-secondary btn-minimal" @click="deleteModuleProgress(module.slug)">
@@ -12,37 +11,23 @@
         </span>
       </v-container>
 
-      <div v-if="moduleBooked" class="background--violet">
-        <div class="container-process-bg text--white">
-          <v-container grid-list-md>
-            <v-btn flat class="module--action-button lead" @click.stop="showModuleGoalDialog=true">
-              <v-icon class="mr-2">play_circle_filled</v-icon>
-              Ziele
-            </v-btn>
-            <v-btn flat class="module--action-button lead" @click.stop="showLearningsDialog=true">
-              <v-icon class="mr-2">play_circle_filled</v-icon>
-              Learnings
-            </v-btn>
-            <v-btn flat class="module--action-button lead" @click.stop="showActionPlanDialog=true">
-              <v-icon class="mr-2">play_circle_filled</v-icon>
-              Action Plan
-            </v-btn>
-          </v-container>
-
-          <ModuleGoalWizard :visible="showModuleGoalDialog" @close="showModuleGoalDialog=false" :module="module"/>
-          <LearningsWizard :visible="showLearningsDialog" @close="showLearningsDialog=false" :module="module"/>
-          <ActionPlanWizard :visible="showActionPlanDialog" @close="showActionPlanDialog=false" :module="module"/>
-        </div>
-      </div>
-
-      <div v-else>
+      <div>
         <v-container grid-list-xl>
           <v-layout row wrap>
             <v-flex xs12 sm5 md6>
               <img :src="module.heroImage"/>
             </v-flex>
             <v-flex xs12 sm7 md6>
-              <div v-html="module.description" class="mb-2 mt-1 description"></div>
+              <div v-html="module.description" class="mb-2 mt-1 paragraph"></div>
+
+              <div class="mt-4" v-if="!moduleBooked">
+                <v-btn v-if="user" @click="startModuleProgress(module.slug)">
+                  Modul buchen
+                </v-btn>
+                <v-btn v-else :to="{ name: 'login'}" exact router>
+                  Modul buchen
+                </v-btn>
+              </div>
 
               <div v-if="module.videoId" class="mt-5 mb-1">
                 <v-layout row wrap>
@@ -53,88 +38,106 @@
                     <VideoPlayer :visible="showVideoPlayer" :videoId="module.videoId" @close="showVideoPlayer=false"/>
                   </v-flex>
                   <v-flex xs12 sm7 md7>
-                    <div v-html="module.videoDescription"></div>
+                    <div v-html="module.videoDescription" class="text--light"></div>
                   </v-flex>
                 </v-layout>
 
-                <div class="mt-4">
-                  <v-btn v-if="user" @click="startModuleProgress(module.slug)">
-                    Modul buchen
-                  </v-btn>
-                  <v-btn v-else :to="{ name: 'login'}" exact router>
-                    Modul buchen
-                  </v-btn>
-                </div>
               </div>
             </v-flex>
           </v-layout>
         </v-container>
       </div>
 
-      <section class="background--mint-opacity">
+      <section v-if="moduleBooked">
+        <v-container class="py-2">
+          <div class="mt-5 mb-2">Finde heraus wo du stehst</div>
+        </v-container>
+
+        <div class="background--orange">
+          <div class="container-process-bg text--white">
+            <v-container grid-list-md class="py-3">
+              <v-btn flat class="module--action-button" @click.stop="showModuleGoalDialog=true">
+                <v-icon class="mr-2">play_circle_filled</v-icon>
+                Ziele
+              </v-btn>
+              <v-btn flat class="module--action-button" @click.stop="showLearningsDialog=true">
+                <v-icon class="mr-2">play_circle_filled</v-icon>
+                Learnings
+              </v-btn>
+              <v-btn flat class="module--action-button" @click.stop="showActionPlanDialog=true">
+                <v-icon class="mr-2">play_circle_filled</v-icon>
+                Action Plan
+              </v-btn>
+            </v-container>
+
+            <ModuleGoalWizard :visible="showModuleGoalDialog" @close="showModuleGoalDialog=false" :module="module"/>
+            <LearningsWizard :visible="showLearningsDialog" @close="showLearningsDialog=false" :module="module"/>
+            <ActionPlanWizard :visible="showActionPlanDialog" @close="showActionPlanDialog=false" :module="module"/>
+          </div>
+        </div>
+      </section>
+
+      <section>
         <v-container grid-list-xl>
           <v-layout row wrap>
             <v-flex xs12 sm8 md8 lg8 xl8>
-              <h2 class="mb-3">Inhalte</h2>
+              <h2 v-if="contentUnits" class="h3 mb-3">Inhalte</h2>
               <Unit v-for="(item, index) in contentUnits"
                     :module="module"
                     :key="index"
                     :booked="moduleBooked"
                     :unit="item"
-                    class="mb-4">
+                    class="mb-4 background--violet-light">
               </Unit>
-            </v-flex>
-            <v-flex xs12 sm4 md4 lg4 xl4>
-              <h2 class="mb-3">Ressourcen <i class="material-icons icon-color">library_books</i></h2>
-              <div class="mt-1 mb-3">
-                <Tools v-if="moduleBooked" :tools="module.resources"/>
-                <div v-else>Hier findest Du bei Buchung weiterführende Artikel, Links und mehr.</div>
-              </div>
 
-              <h2 class="mb-3 mt-5">Tools & Templates <i class="material-icons icon-color">library_books</i></h2>
-              <div class="mt-1 mb-3">
-                <Tools v-if="moduleBooked" :tools="module.tools"/>
-                <div v-else>Hier findest Du bei Buchung im Arbeitsalltag nützliche Hilfestellungen.</div>
-              </div>
-            </v-flex>
-          </v-layout>
-        </v-container>
-      </section>
-
-      <section class="background--blue-opacity">
-        <v-container grid-list-xl>
-          <v-layout row wrap>
-            <v-flex xs12 sm8 md8 lg8 xl8>
-              <h2 class="mb-3">Interaktiv</h2>
+              <h2 v-if="interactiveUnits" class="mb-3 h3">Interaktiv</h2>
               <Unit v-for="(item, index) in interactiveUnits"
                     :module="module"
                     :key="index"
                     :booked="moduleBooked"
                     :unit="item"
-                    class="mb-4">
+                    class="mb-4 background--orange-light">
               </Unit>
+
             </v-flex>
             <v-flex xs12 sm4 md4 lg4 xl4>
-              <h2 class="mb-3">Agenda</h2>
-              <v-list v-if="moduleBooked" class="background--transparent v-list--adjust">
+              <h2 class="h3 underline">Ressourcen</h2>
+              <div class="mb-3">
+                <Tools v-if="moduleBooked" :tools="module.resources"/>
+                <div class="mt-3 text--light" v-else>Hier findest Du bei Buchung weiterführende Artikel, Links und
+                  mehr.
+                </div>
+              </div>
+
+              <h2 class="h3 mt-5 underline">Tools & Templates</h2>
+              <div class="mb-3">
+                <Tools v-if="moduleBooked" :tools="module.tools"/>
+                <div class="mt-3 text--light" v-else>Hier findest Du bei Buchung im Arbeitsalltag nützliche
+                  Hilfestellungen.
+                </div>
+              </div>
+
+              <h2 class="h3 mt-5 underline">Agenda</h2>
+              <v-list v-if="moduleBooked" class="background--transparent v-list--adjust pa-0">
                 <div v-for="(item,i) in dummyAgenda" :key="i">
-                  <v-list-tile>
-                    <v-list-tile-action>
-                      <v-icon v-if="item.type==='calendar'" class="material-icons">calendar_today</v-icon>
-                      <v-icon v-else-if="item.type==='message'" if="item.type=='calendar'" class="material-icons">
+                  <v-list-tile class="module--list-tile">
+                    <v-list-tile-action class="module--list-action">
+                      <v-icon v-if="item.type==='calendar'" class="material-icons text--orange">calendar_today</v-icon>
+                      <v-icon v-else-if="item.type==='message'" if="item.type=='calendar'"
+                              class="material-icons text--orange">
                         mail_outline
                       </v-icon>
-                      <v-icon v-else class="material-icons">link</v-icon>
+                      <v-icon class="material-icons text--orange" v-else>link</v-icon>
                     </v-list-tile-action>
 
                     <v-list-tile-content>
-                      <v-list-tile-sub-title>{{item.text}}</v-list-tile-sub-title>
+                      <v-list-tile-sub-title class="text--light">{{item.text}}</v-list-tile-sub-title>
                     </v-list-tile-content>
                   </v-list-tile>
-                  <v-divider v-if="i < dummyAgenda.length -1 "></v-divider>
                 </div>
               </v-list>
-              <div v-else>Hier findest Du bei Buchung Termine & Kontaktinformationen</div>
+              <div class="mt-3 text--light" v-else>Hier findest Du bei Buchung Termine & Kontaktinformationen</div>
+
             </v-flex>
           </v-layout>
         </v-container>
@@ -144,6 +147,26 @@
   </div>
 
 </template>
+
+
+<style lang="scss" scoped>
+  @import "../styles/var";
+
+  .module--list-action {
+    min-width: initial;
+    padding-right: 10px;
+  }
+
+  .module--list-tile {
+    border-bottom: 1px solid $orange;
+  }
+
+  .module--action-button {
+    font-size: 24px;
+  }
+
+</style>
+
 
 <script>
   import {mapGetters} from 'vuex'

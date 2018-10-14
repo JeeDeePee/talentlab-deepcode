@@ -3,7 +3,7 @@
     <v-card>
       <v-card-title primary-title>
         <div>
-          <span class="light uppercase">{{module.skill}}</span><br>
+          <span class="text--light uppercase">{{module.skill}}</span><br>
           <h3 class="mt-2 mb-1">{{module.title}}</h3>
         </div>
       </v-card-title>

@@ -1,31 +1,27 @@
 <template>
-  <div>
+  <div class="pa-3">
     <router-link :to="{name: 'unit', params: {slug: unit.slug}}" exact router>
-      <v-card>
+      <div class="text--color">
+        <h4 class="h4">{{unit.title}}</h4>
 
-        <v-card-title primary-title>
-          <h3 class="h4">{{unit.title}}</h3>
-        </v-card-title>
+        <div class="mt-2 mb-4">
+          {{unit.teaser}}
+        </div>
+        <div>
+          <!--
+          <v-btn v-if="booked && !unitBooked" @click="startUnitProgress(unit.slug, module.slug)">Buchen</v-btn>
+          <v-btn v-if="booked && unitBooked">Bewerten</v-btn>
+          -->
 
-        <v-card-text>
-          <div class="mt-2 mb-4">
-            {{unit.lead}}
-          </div>
-          <div>
-            <!--
-            <v-btn v-if="booked && !unitBooked" @click="startUnitProgress(unit.slug, module.slug)">Buchen</v-btn>
-            <v-btn v-if="booked && unitBooked">Bewerten</v-btn>
-            -->
+          <v-icon>play_arrow</v-icon>
+          <span class="bold">{{unit.type}}</span>
+          <v-icon class="ml-4 mr-1">filter_none</v-icon>
+          <span class="text--light">{{unit.count}}</span>
+          <v-icon class="ml-4 mr-1"> schedule</v-icon>
+          <span class="text--light">{{unit.duration}}</span>
+        </div>
+      </div>
 
-            <v-icon>play_arrow</v-icon>
-            {{unit.type}}
-            <v-icon class="ml-3">filter_none</v-icon>
-            {{unit.count}}
-            <v-icon class="ml-3"> schedule</v-icon>
-            {{unit.duration}}
-          </div>
-        </v-card-text>
-      </v-card>
     </router-link>
   </div>
 </template>
@@ -53,13 +49,4 @@
       }
     }
   }
-</script>
-
-<style lang="scss" scoped>
-  @import "../../styles/var";
-
-  .v-card {
-    box-shadow: none;
-  }
-
-</style>
+</script>s
