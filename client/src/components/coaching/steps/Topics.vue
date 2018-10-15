@@ -1,7 +1,8 @@
 <template>
   <div>
-    <div class="h2 mt-3">Wähle Deine Coaching-Themen. Welche zwei der folgenden Themen bewegen Dich am meisten?</div>
 
+    <h1 class="text-xs-center text--violet">Welche Themen bewegen dich?</h1>
+    <div class="lead mt-3 text-xs-center">Wähle maximal zwei Themen</div>
 
     <v-layout row wrap>
       <v-flex xs12 sm6>

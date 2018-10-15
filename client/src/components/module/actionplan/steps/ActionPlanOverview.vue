@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1 class="text-xs-center">Dein Action Plan steht!</h1>
+    <h1 class="text-xs-center text--violet">Dein Action Plan steht!</h1>
 
     <div class="mt-4 mb-5 pa-4 background--orange text--white">
       <v-layout row wrap>
@@ -26,36 +26,36 @@
       </v-layout>
     </div>
 
-    <div class="small--content">
+    <div class="medium--content">
       <div class="text-xs-center">
         <div>{{ currentModule.title }}</div>
         <div>Action Plan von {{ user.firstName }}&nbsp;{{ user.lastName }}</div>
       </div>
 
       <div class="text-xs-center mt-5">
-        <h2>Das werde ich in meiner Organisation bewirken:</h2>
+        <h2 class="text--violet">Das werde ich in meiner Organisation bewirken:</h2>
         <div class="mt-2">{{ actionPlan.impactText }}</div>
       </div>
 
       <v-layout row wrap class="mt-5">
         <v-flex xs12 sm4>
-          <h3 class="text--white mb-3">Massnahmen</h3>
+          <h4 class="mb-3 paragraph">Massnahmen</h4>
           <div>{{ actionPlan.measuresText }}</div>
         </v-flex>
         <v-flex xs12 sm4>
-          <h3 class="text--white mb-3">Erforderliche Ressourcen & Skills</h3>
+          <h4 class="mb-3 paragraph">Erforderliche Ressourcen & Skills</h4>
           <div>{{ actionPlan.resourcesSkillsText }}</div>
         </v-flex>
         <v-flex xs12 sm4>
-          <h3 class="text--white mb-3">Commitment & Support</h3>
+          <h4 class="mb-3 paragraph">Commitment & Support</h4>
           <div>{{ actionPlan.commitmentSupportText }}</div>
         </v-flex>
       </v-layout>
     </div>
 
     <div class="mt-5 text-xs-center">
-      <v-btn class="btn-secondary mr-2" @click="$emit('back', 'ActionPlanMeasures')">Zurück</v-btn>
-      <v-btn class="mr-2" @click="$emit('proceed', 'StartActionPlan', true);">Weiter</v-btn>
+      <v-btn class=" mr-2" @click="print">Drucken</v-btn>
+      <v-btn class="btn-secondary mr-2" @click="$emit('proceed', 'StartActionPlan', true);">Beenden</v-btn>
     </div>
 
   </div>
@@ -75,6 +75,14 @@
           }
       }
     },
+
+    methods: {
+      print() {
+        // FIXME implement print view
+        window.print()
+      }
+    },
+
     computed: {
       ...mapGetters({
         actionPlan: 'getActionPlan',

@@ -7,7 +7,8 @@
 .theme--light .v-btn:not(.v-btn--icon):not(.v-btn--flat) {
 
   &.btn-secondary {
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color: initial;
+    color: $violet;
   }
 
   &.btn-border {

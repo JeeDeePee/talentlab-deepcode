@@ -1,18 +1,22 @@
 <template>
   <div class="text-xs-center">
-    <h1>Vier Schritte bis zu Deinem Action Plan</h1>
+    <h1 class="text--violet">Vier Schritte zu deinem Action Plan</h1>
+
+    <div class="mt-4 mb-5 lead">Zu Beginn des Moduls hast du folgendes Ziel formuliert. Passe es bei Bedarf noch einmal
+      an.
+    </div>
 
     <h2 class="text--orange mt-3">1</h2>
-    <div>Rekapituliere Deine Ziele</div>
+    <div class="bold">Rekapituliere Deine Ziele</div>
 
     <h2 class="text--orange mt-3">2</h2>
-    <div>Reflektiere was Du gelernt hast</div>
+    <div class="bold">Reflektiere was Du gelernt hast</div>
 
     <h2 class="text--orange mt-3">3</h2>
-    <div>Definiere Dein Business-Ziel</div>
+    <div class="bold">Definiere Dein Business-Ziel</div>
 
     <h2 class="text--orange mt-3">4</h2>
-    <div>Bestimme Massnahmen</div>
+    <div class="bold">Bestimme Massnahmen</div>
 
     <v-btn class="mt-5" @click="$emit('proceed', 'ReviseGoals')">Start</v-btn>
   </div>

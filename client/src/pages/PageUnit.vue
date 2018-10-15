@@ -1,5 +1,5 @@
 <template>
-  <div class="background--mint-light">
+  <div>
     <v-container>
       <div v-if="unit">
         <div>
@@ -17,11 +17,12 @@
             </v-breadcrumbs-item>
           </v-breadcrumbs>
 
-          <h1 class="mt-4">{{unit.title}}</h1>
-
           <v-layout row wrap>
             <v-flex xs12 sm8>
-              <div class="pb-4 mt-3" v-html="unit.description"></div>
+
+              <h1 class="mt-4 text--violet">{{unit.title}}</h1>
+
+              <div class="pb-4 mt-3 lead" v-html="unit.description"></div>
 
               <div>
                 <v-icon>play_arrow</v-icon>
@@ -41,7 +42,7 @@
                   :alt="avatar"
                 ></v-img>
               </v-avatar>
-              <h4 class="my-2 text--orange h2">Dr. Clea Bauch</h4>
+              <h4 class="my-2 uppercase paragraph">Dr. Clea Bauch</h4>
 
               <v-btn v-if="moduleBooked && !unitBooked" @click="startUnitProgress(unit.slug, unit.moduleSlug)">buchen</v-btn>
               <v-btn v-if="moduleBooked && unitBooked" class="btn-secondary">bewerten</v-btn>
@@ -53,8 +54,8 @@
             <v-expansion-panel focusable>
               <v-expansion-panel-content>
                 <div slot="header">Was wir vermitteln</div>
-                <v-card>
-                  <v-card-text class="pa-3">
+                <v-card class="flat">
+                  <v-card-text class="py-3 px-0">
                     <h2 class="mb-1">Lernziele & Kompetenzen</h2>
                     <div v-html="unit.objectives"></div>
 
@@ -70,8 +71,8 @@
             <v-expansion-panel focusable>
               <v-expansion-panel-content>
                 <div slot="header">Wer referiert</div>
-                <v-card>
-                  <v-card-text class="pa-3">
+                <v-card class="flat">
+                  <v-card-text class="py-3 px-0">
                     <div v-html="unit.teacher"></div>
                   </v-card-text>
                 </v-card>
@@ -83,8 +84,8 @@
             <v-expansion-panel focusable>
               <v-expansion-panel-content>
                 <div slot="header">Was du leistest</div>
-                <v-card>
-                  <v-card-text class="pa-3">
+                <v-card class="flat">
+                  <v-card-text class="py-3 px-0">
                     <div v-html="unit.requirements"></div>
                   </v-card-text>
                 </v-card>

@@ -2,7 +2,7 @@
   <div class="text-area">
     <v-textarea
       :label="message"
-      class="background--white-opacity text--white"
+      class="background--white"
       @input="handleInput"
       v-model="content"
       auto-grow

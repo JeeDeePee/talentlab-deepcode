@@ -1,21 +1,21 @@
 <template>
   <div class="text-xs-center">
-    <h1>Was tust Du dazu?</h1>
-    <div class="mt-4 mb-5">Konkretisiere Massnahmen, Termine, Ressourcen und den benötigten Support.</div>
+    <h1 class="text--violet">Was tust du dazu?</h1>
+    <div class="mt-4 mb-5 lead">Konkretisiere Massnahmen, Termine, Ressourcen und den benötigten Support.</div>
 
     <v-layout row wrap>
       <v-flex xs12 sm4>
-        <div class="three-line">Welche Massnahmen ergreifst Du bis wann?</div>
+        <div class="three-line bold">Welche Massnahmen ergreifst Du bis wann?</div>
         <TextBox :placeholder="'Umsetzungsmassnahmen'" v-model="actionPlan.measuresText"></TextBox>
       </v-flex>
 
       <v-flex xs12 sm4>
-        <div class="three-line">Welche Ressourcen und/oder Skills benötigst Du?</div>
+        <div class="three-line bold">Welche Ressourcen und/oder Skills benötigst Du?</div>
         <TextBox :placeholder="'Benötigte Ressourcen/Skills'" v-model="actionPlan.resourcesSkillsText"></TextBox>
       </v-flex>
 
       <v-flex xs12 sm4>
-        <div class="three-line">Von wem benötigst Du Commitment?</div>
+        <div class="three-line bold">Von wem benötigst Du Commitment?</div>
         <TextBox :placeholder="'Commitment'" v-model="actionPlan.commitmentSupportText"></TextBox>
       </v-flex>
     </v-layout>

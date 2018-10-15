@@ -1,33 +1,26 @@
 <template>
-  <v-dialog v-model='show' fullscreen hide-overlay transition='dialog-bottom-transition' scrollable>
-    <v-card v-bind:class='wizzardClasses'>
+  <v-dialog v-model='show' fullscreen hide-overlay scrollable>
+    <v-card class="background--beige">
 
-      <v-toolbar v-if="wizardName" dark color='primary' class='ml-4 mr-4'>
-        <v-toolbar-title>{{ wizardName }}</v-toolbar-title>
-        <div class='toolbar-accent'></div>
+      <v-card-actions class="dialog--header px-0 mx-4">
+
+        <v-breadcrumbs>
+          <v-icon slot='divider'>chevron_right</v-icon>
+          <v-breadcrumbs-item v-for='step in processSteps'
+                              :key='step.text'
+                              :disabled='step.disabled'
+                              class='breadcrumbs-item'>
+            {{ step.text }}
+          </v-breadcrumbs-item>
+        </v-breadcrumbs>
+
         <v-spacer></v-spacer>
-        <v-toolbar-items>
-          <v-btn large flat icon @click.stop='show=false'>
-            <v-icon>close</v-icon>
-          </v-btn>
-        </v-toolbar-items>
-      </v-toolbar>
 
-      <div v-else>
-        <v-btn large flat icon @click.stop='show=false' style="float: right">
-          <v-icon>close</v-icon>
+        <v-btn large flat icon @click.stop='show=false' >
+          <v-icon class="text--orange">close</v-icon>
         </v-btn>
-      </div>
+      </v-card-actions>
 
-      <v-breadcrumbs class='ml-4 mr-4'>
-        <v-icon slot='divider'>chevron_right</v-icon>
-        <v-breadcrumbs-item v-for='step in processSteps'
-                            :key='step.text'
-                            :disabled='step.disabled'
-                            class='breadcrumbs-item'>
-          {{ step.text }}
-        </v-breadcrumbs-item>
-      </v-breadcrumbs>
 
       <v-container fluid grid-list-xl class='dialog--content'>
         <slot></slot>
@@ -38,13 +31,9 @@
 
 <script>
   export default {
-    props: ['value', 'wizardName', 'processSteps', 'theme'],
+    props: ['value', 'wizardName', 'processSteps'],
 
     computed: {
-      wizzardClasses: function () {
-        return (this.theme === 'light' ? 'dialog-light' : 'background--violet')
-      },
-
       show: {
         get() {
           return this.value
@@ -58,9 +47,3 @@
     }
   }
 </script>
-
-<style lang='scss' scoped>
-  .mygoal--selection {
-    height: 100%;
-  }
-</style>

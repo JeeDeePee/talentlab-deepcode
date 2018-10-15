@@ -2,6 +2,11 @@
   border-radius: 0;
   box-shadow: none;
   border: 1px solid $border-color;
+
+  &.flat {
+    border: none;
+  }
+
 }
 
 .v-card__actions {

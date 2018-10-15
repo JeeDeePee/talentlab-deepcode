@@ -1,15 +1,15 @@
 <template>
   <div class="text-xs-center">
-    <h1>Was ist Dein Ziel</h1>
+    <h1 class="text-xs-center text--violet">Was ist Dein Ziel</h1>
 
-    <div class="mt-4 mb-5">
+    <div class="mt-4 mb-5 lead">
       Wähle das Ziel, das am besten zu Dir passt.
     </div>
 
     <v-radio-group v-model="currentGoal.level" hide-details>
       <v-layout row wrap>
         <v-flex xs12 sm4 v-for="goal in moduleGoals" :key="goal.id">
-          <div class="background--white-opacity pa-4 mygoal--selection v-align--center">
+          <div class="background--white pa-4 mygoal--selection v-align--center">
             <v-radio :label="goal.text" :value="goal.level">
               {{goal.text}}
             </v-radio>

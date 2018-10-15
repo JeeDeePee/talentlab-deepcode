@@ -2,96 +2,24 @@
 
 $toolbar-color: rgba(255, 255, 255, 0.6);
 
-.v-dialog {
+.dialog--header {
 
+  border-bottom: 1px solid $orange;
+
+  .v-breadcrumbs {
+    margin: 0;
+    padding: 0;
+  }
+
+  .v-btn--icon {
+    width: auto;
+  }
 }
 
 .v-dialog {
 
-  .dialog-light {
-    .theme--dark.v-toolbar {
-      color: $text-color !important;
-      background-color: $white !important;
-    }
-
-    .v-btn .v-btn__content .v-icon {
-      color: $text-color !important;
-    }
-
-    .btn-secondary {
-      color: $text-color !important;
-    }
-
-  }
-
-  .background--violet {
-    color: $white !important;
-
-    .v-card {
-      &.light {
-        color: $text-color;
-        background-color: $white;
-      }
-    }
-
-    .v-toolbar__title {
-      color: $white;
-    }
-
-    .v-toolbar__content {
-      padding: 0;
-    }
-
-    .v-btn, .v-input .v-label, .v-icon {
-      color: #fff;
-    }
-
-    .v-input:not(.v-input--is-disabled) input,
-    .v-input:not(.v-input--is-disabled) textarea,
-    .v-input:not(.v-input--is-disabled) input,
-    .v-input:not(.v-input--is-disabled) textarea {
-      color: #fff;
-    }
-
-    .btn--close {
-      color: #fff;
-    }
-
-    .theme--light.v-breadcrumbs li .v-breadcrumbs__item--disabled {
-      color: $white;
-    }
-
-    .v-toolbar.primary {
-      background-color: transparent !important;
-    }
-
-    .toolbar-accent {
-      height: 4px;
-      width: 110px;
-      background-color: $orange;
-      position: absolute;
-      bottom: 0;
-      left: 0;
-    }
-
-    .breadcrumbs-item--active {
-      color: $orange;
-    }
-
-    .v-breadcrumbs {
-      padding: 18px 0;
-
-      li:last-child a {
-        cursor: pointer;
-        pointer-events: initial;
-      }
-
-      li:last-child .v-breadcrumbs__item {
-        color: $orange;
-      }
-    }
-
-  }
+  font-size:18px;
+  line-height: 24px;
 
   .small--content {
     max-width: 700px;
@@ -107,20 +35,9 @@ $toolbar-color: rgba(255, 255, 255, 0.6);
     min-height: 70px;
   }
 
-  .v-toolbar.primary {
-    box-shadow: none;
-    border-bottom: 1px solid $toolbar-color !important;
-    width: initial;
-  }
+}
 
-  .btn--close {
-    position: absolute;
-    right: 0;
-    border: none;
-
-    .v-icon {
-      font-size: 50px;
-    }
-  }
-
+// whats that?
+.mygoal--selection {
+  height: 100%;
 }

@@ -1,18 +1,18 @@
 <template>
   <div class="text-xs-center">
-    <h1>Wo willst Du in Deiner Entwicklung den Fokus setzen?</h1>
+    <h1 class="text--violet text--violet">Welche Kompetenzen stehen in deiner Entwicklung im Fokus?</h1>
 
-    <div class="mt-4 mb-5">Wähle maximal 3 Kompetenzen</div>
+    <div class="mt-4 mb-5 lead">Wähle maximal 3 Kompetenzen</div>
 
     <v-container fluid grid-list-xl>
       <v-layout row wrap>
         <v-flex xs12 sm12 md4 v-for="(category, categoryKey) in focusCompetences" :key="categoryKey">
           <component :is="category.iconComponent"/>
-          <h2>{{category.title}}</h2>
+          <h2 class="text--violet">{{category.title}}</h2>
           <div class="mt-4 mb-1 three-line">{{category.teaser}}</div>
 
           <v-checkbox
-            class="background--white-opacity pa-2"
+            class="background--white pa-2"
             v-for="(competence, competenceKey) in category.competences" :key="competenceKey"
             v-model="selectedFocus"
             hide-details
@@ -34,9 +34,9 @@
 <script>
   import {mapActions, mapGetters} from 'vuex'
 
-  import GrowingAsALeader from '@/assets/img/icons/growing-as-a-leader-white.svg'
-  import MasteringComplexity from '@/assets/img/icons/mastering-complexity-white.svg'
-  import MasteringRelations from '@/assets/img/icons/mastering-relations-white.svg'
+  import GrowingAsALeader from '@/assets/img/icons/growing-as-a-leader-grey.svg'
+  import MasteringComplexity from '@/assets/img/icons/mastering-complexity-grey.svg'
+  import MasteringRelations from '@/assets/img/icons/mastering-relations-grey.svg'
 
 
   export default {

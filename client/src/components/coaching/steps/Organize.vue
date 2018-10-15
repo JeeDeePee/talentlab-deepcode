@@ -1,7 +1,10 @@
 <template>
   <div>
-    <div class="h2 mt-3">Organisiere Deine Coaching-Sessions. Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
-      sed diam nonumy eirmod tempor invidunt ut labore et dolore magna.
+
+    <h1 class="text--violet text-xs-center">Welches Abonnement passt zu dir?</h1>
+
+    <div class="lead text-xs-center mt-3">
+      Wähle ein Package
     </div>
 
     <div class="small--content">
@@ -22,7 +25,6 @@
         </v-flex>
         <v-flex xs6>
           <div>
-
             <h3 class="my-5">Abonnement wählen</h3>
 
             <v-radio-group v-model="selected">
@@ -68,7 +70,7 @@
 
     methods: {
       save() {
-        this.$emit('proceed', 'Summary')
+        this.$emit('proceed', 'Summary', true)
       }
     }
   }

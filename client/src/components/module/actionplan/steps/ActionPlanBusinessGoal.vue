@@ -1,7 +1,7 @@
 <template>
   <div class="text-xs-center">
-    <h1>Was soll sich ändern?</h1>
-    <div class="mt-4 mb-5">Beschreibe möglichst konkret das Zielbild aus Business-Sicht.</div>
+    <h1 class="text--violet">Was soll sich ändern?</h1>
+    <div class="mt-4 mb-5 lead">Beschreibe möglichst konkret das Zielbild aus Business-Sicht.</div>
 
     <v-layout>
       <v-flex sm6>

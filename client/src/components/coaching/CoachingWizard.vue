@@ -1,9 +1,6 @@
 <template>
-  <Wizard v-model="show" :wizard-name="''" :process-steps="processSteps" @close="show=false" :theme="'light'">
-
+  <Wizard v-model="show" :process-steps="processSteps" @close="show=false">
     <div class="medium--content">
-
-      <h1>Coaching-Abonnement</h1>
       <component
         :is="getCoachingWizardState"
         @back="newCoachingWizardState"
@@ -21,7 +18,6 @@
 
   import Coaches from '@/components/coaching/steps/Coaches'
   import Organize from '@/components/coaching/steps/Organize'
-  import Summary from '@/components/coaching/steps/Summary'
   import Topics from '@/components/coaching/steps/Topics'
 
   export default {
@@ -36,7 +32,6 @@
       Wizard,
       Coaches,
       Organize,
-      Summary,
       Topics
     },
 
