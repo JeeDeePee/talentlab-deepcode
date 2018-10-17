@@ -42,6 +42,11 @@ export default {
 
   actions: {
     async fetchFocusCompetences({state, commit}) {
+      // hack to avoid reloading
+      if (Object.keys(state.focusCompetences).length > 0) {
+        return
+      }
+
       const response = await apolloClient.query({
         query: FOCUS_COMPETENCE_QUERY
       });

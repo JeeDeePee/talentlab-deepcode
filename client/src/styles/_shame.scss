@@ -48,7 +48,6 @@ ul.v-expansion-panel {
   justify-content: center;
 }
 
-
 .container {
   max-width: 1028px;
 }
@@ -58,7 +57,12 @@ ul.v-expansion-panel {
   margin: auto;
 }
 
-
 .mb-10 {
   margin-bottom: 96px;
+}
+
+.theme--dark.v-input--slider:not(.v-input--is-dirty) {
+  .v-slider__thumb-label, .v-slider__thumb {
+    background: rgba($orange, 0.4);
+  }
 }
