@@ -1,9 +1,14 @@
 <template>
   <v-dialog v-model="show" fullscreen hide-overlay transition="dialog-bottom-transition" scrollable>
-    <v-card tile class="background--violet">
-      <v-btn class="btn--close" large flat icon @click.stop="show=false">
-        <v-icon>close</v-icon>
-      </v-btn>
+    <v-card tile class="background--beige">
+
+      <v-card-actions>
+        <v-spacer></v-spacer>
+        <v-btn class="btn--close" large flat icon @click.stop="show=false">
+          <v-icon>close</v-icon>
+        </v-btn>
+      </v-card-actions>
+      
       <v-container grid-list-xl text-xs-center>
         <v-layout row wrap>
           <v-flex xs10 offset-xs1>
