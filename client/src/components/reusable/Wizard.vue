@@ -1,5 +1,6 @@
 <template>
-    <v-dialog v-model='show' fullscreen hide-overlay scrollable>
+  <v-layout row justify-center>
+    <v-dialog v-model='show' fullscreen hide-overlay>
       <v-card class="background--beige">
 
         <v-card-actions class="dialog--header px-0 mx-4">
@@ -27,6 +28,7 @@
         </v-container>
       </v-card>
     </v-dialog>
+  </v-layout>
 </template>
 
 <script>
