@@ -1,14 +1,13 @@
 <template>
-  <div>
-    <section class="background--violet text-xs-center  pt-5">
+  <div class="pb-4">
+    <section class="background--violet text-xs-center">
       <v-container class="pb-0">
-        <h1>Wähle die passenden Module!</h1>
-        <div class="my-4 lead">talentlab schlägt Dir je nach Fokus bei den Kompetenzen die geeigneten Module vor.</div>
+        <h1 class="py-5">Wähle die passenden Module!</h1>
         <div class="text-xs-center">
-          <v-btn @click="$vuetify.goTo('#learn-more', {duration: 200, offset: -50})">
+          <v-btn @click="$vuetify.goTo('#learn-more', {duration: 200, offset: -50})" class="mx-2">
             Themen surfen
           </v-btn>
-          <v-btn v-if="user" :to="{name: 'development', params: {showFocusDialog: true}}" exact router>
+          <v-btn v-if="user" :to="{name: 'development', params: {showFocusDialog: true}}" exact router class="mx-2">
             Fokus setzen
           </v-btn>
         </div>
@@ -17,7 +16,7 @@
 
     </section>
 
-    <v-container grid-list-xl class="pt-4" id="learn-more">
+    <v-container grid-list-xl class="py-5" id="learn-more">
 
       <v-layout row wrap>
         <v-flex v-for="category in categories" :key="category.id" xs4 class="text-xs-center">
@@ -25,7 +24,7 @@
           <component :is="category.iconComponent"/>
           <div>
             <h3 class="my-3">{{category.title}}</h3>
-            <p class="paragraph">{{category.teaser}}</p>
+            <p class="paragraph mb-5">{{category.teaser}}</p>
           </div>
         </v-flex>
         <v-flex xs12 sm6 v-for="module in modules" :key="module.id" class="mb-1">
@@ -34,6 +33,7 @@
       </v-layout>
     </v-container>
   </div>
+
 </template>
 
 <script>

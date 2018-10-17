@@ -2,16 +2,21 @@
   <div>
     <section class="background--violet pt-5">
       <v-container grid-list-xl class="pb-0 text-xs-center">
-        <h1 class="mb-5">Finde Antworten! Werde wirkungsvoller! Entfalte dein Potential!</h1>
-        <v-img :src="require(`@/assets/img/moods/moodboard_2.png`)" class="mt-4 hero--image"></v-img>
+        <h1 class="py-5">Finde Antworten! Werde wirkungsvoller! Entfalte dein Potential!</h1>
+
+        <v-btn @click="showCoachingWizard=true">
+          Coaching finden
+        </v-btn>
+
+        <v-img :src="require(`@/assets/img/moods/moodboard_2.png`)" class="mt-5 hero--image"></v-img>
       </v-container>
     </section>
 
     <section class="py-5 background--white text-xs-center">
       <v-container grid-list-xl class="pb-0 text-xs-center">
-        <h2 class="text--violet">Coaching-Abonnement: flexibel, persönlich und digital!</h2>
+        <h2 class="text--violet">Coaching-Abonnement:<br> flexibel, persönlich und digital!</h2>
 
-        <p class="lead mt-3">Ortsunabhängig und zeitlich flexibel bearbeitest du deine beruflichen Fragestellungen
+        <p class="lead mt-4">Ortsunabhängig und zeitlich flexibel bearbeitest du deine beruflichen Fragestellungen
           online
           oder persönlich
           mit Coaches oder Mentoren.<br>
@@ -25,8 +30,8 @@
 
           <v-flex xs12 class="text-xs-center">
             <CoachingSVG></CoachingSVG>
-            <h2 class="h1 mb-4 mt-3 text--violet">Wie werden unsere Coaches ausgewählt?</h2>
-            <div class="lead">
+            <h2 class="my-4 text--violet">Wie werden unsere Coaches ausgewählt?</h2>
+            <div class="lead mb-5">
               <p>
                 talentlab arbeitet mit professionellen Coaches und erfahrenen Managern als Mentoren zusammen, die über
                 einen weitreichenden Erfahrungsschatz in ihren jeweiligen Fachgebieten verfügen.
@@ -52,7 +57,7 @@
           </v-flex>
         </v-layout>
 
-        <div class="text-xs-center mt-4">
+        <div class="text-xs-center my-5">
           <v-btn @click="showCoachingWizard=true">
             Coaching finden
           </v-btn>
@@ -70,7 +75,7 @@
 <script>
   import VideoPlayer from '@/components/module/VideoPlayer'
   import CoachingWizard from '@/components/coaching/CoachingWizard'
-  import CoachingSVG from '@/assets/img/icons/mastering-relations-grey.svg'
+  import CoachingSVG from '@/assets/img/icons/coaching-grey.svg'
 
   export default {
     components: {

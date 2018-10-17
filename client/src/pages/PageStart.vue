@@ -1,13 +1,12 @@
 <template>
   <div>
-    <section class="background--violet text-xs-center pt-5">
+    <section class="background--violet text-xs-center">
       <v-container grid-list-xl class="pb-0">
-        <h1>talentlab ist der digitale Begleiter für Karriere- und Potenzialentwicklung</h1>
-        <div class="my-4 lead">Nutze Dein Potenzial und stärke Deine Kompetenzen - zielorientiert und wirksam!</div>
-        <v-btn @click="$vuetify.goTo('#learn-more', {duration: 200, offset: -50})">
+        <h1 class="py-5 text--limited">talentlab ist der digitale Begleiter für Karriere- und Potenzialentwicklung</h1>
+        <v-btn @click="$vuetify.goTo('#learn-more', {duration: 200, offset: -50})" class="mx-2">
           mehr erfahren
         </v-btn>
-        <v-btn router exact :to="{ name: 'modules'}">
+        <v-btn router exact :to="{ name: 'modules'}" class="mx-2">
           jetzt starten
         </v-btn>
         <v-img :src="require(`@/assets/img/moods/mensch-maschine_3.png`)" class="mt-4 hero--image"></v-img>
@@ -52,19 +51,21 @@
     </section>
 
     <section class="text-xs-center background--beige py-5">
-      <v-container class="py-0 slider">
+      <v-container class="py-0">
         <h2 class="text--violet">talentlab ist der digitale Begleiter für Karriere- und Potenzialentwicklung</h2>
 
-        <v-carousel hide-delimiters class="slim height-200 secondary--controls">
-          <v-carousel-item v-for="(fact,i) in facts" :key="i" class="pa-5">
-            <div class="h1 pb-4">
-              {{fact.heading}}
-            </div>
-            <div class="lead">
-              {{fact.text}}
-            </div>
-          </v-carousel-item>
-        </v-carousel>
+        <div class="text--limited">
+          <v-carousel hide-delimiters class="slim height-200 secondary--controls">
+            <v-carousel-item v-for="(fact,i) in facts" :key="i" class="pa-5">
+              <div class="h1 pb-4">
+                {{fact.heading}}
+              </div>
+              <div class="lead">
+                {{fact.text}}
+              </div>
+            </v-carousel-item>
+          </v-carousel>
+        </div>
 
       </v-container>
     </section>
@@ -90,7 +91,7 @@
           </v-flex>
         </v-layout>
 
-        <v-btn router exact class="mt-5 btn-secondary" @click="$openChat">
+        <v-btn router exact class="mt-5" outline @click="$openChat">
           Chat starten
         </v-btn>
 
@@ -107,7 +108,7 @@
               <v-icon lass="text--orange">person_outline</v-icon>
               <span class="ml-1">{{review.name}}</span>
             </h4>
-            <div class="pl-4 text--violet font-italic">
+            <div class="review--text text--violet font-italic">
               «{{review.text}}»
             </div>
           </v-flex>
@@ -313,11 +314,12 @@
     margin: auto;
   }
 
-  .container.slider {
-    max-width: 600px;
-  }
-
   .container.agents {
     max-width: 500px;
+  }
+
+
+  .review--text {
+    padding-left: 32px;
   }
 </style>

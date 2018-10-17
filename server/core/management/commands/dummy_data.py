@@ -415,14 +415,13 @@ class Command(BaseCommand):
         #     ImageField(from_path=os.path.join(settings.BASE_DIR, 'core/static/img/dummy/module_3.png')),
         # ]
         module_images = [
-            ImageField(from_path=os.path.join(settings.BASE_DIR, 'core/static/img/modules/modul_board_viola.jpg')),
+            ImageField(from_path=os.path.join(settings.BASE_DIR, 'core/static/img/modules/communication_2.png')),
             ImageField(
-                from_path=os.path.join(settings.BASE_DIR, 'core/static/img/modules/modul_frau-computer_viola.png')),
+                from_path=os.path.join(settings.BASE_DIR, 'core/static/img/modules/mensch-maschine_3.png')),
             ImageField(
-                from_path=os.path.join(settings.BASE_DIR, 'core/static/img/modules/modul_talk-communikation.jpg')),
+                from_path=os.path.join(settings.BASE_DIR, 'core/static/img/modules/compi_2.png')),
             ImageField(
-                from_path=os.path.join(settings.BASE_DIR, 'core/static/img/modules/modul_talk_communication_1man.jpg')),
-            ImageField(from_path=os.path.join(settings.BASE_DIR, 'core/static/img/modules/modul_way-career.jpg')),
+                from_path=os.path.join(settings.BASE_DIR, 'core/static/img/modules/moodboard_2.png')),
         ]
 
         u = UserFactory(

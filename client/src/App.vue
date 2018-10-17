@@ -1,6 +1,6 @@
 <template>
   <v-app id="inspire">
-    <v-navigation-drawer v-model="drawer" fixed class="hidden-md-and-up" v-if="!$route.meta.hideMenu">
+    <v-navigation-drawer v-model="drawer" fixed class="hidden-md-and-up">
       <v-list dense>
         <v-list-tile :to="{ name: 'modules'}" exact router>
           <v-list-tile-content>
@@ -78,7 +78,7 @@
       </v-slide-x-transition>
     </v-content>
 
-    <footer class="background--violet footer" v-if="$route.meta.showFooter">
+    <footer class="background--violet footer">
       <v-container>
         <v-layout row wrap>
           <v-flex xs12 sm4>

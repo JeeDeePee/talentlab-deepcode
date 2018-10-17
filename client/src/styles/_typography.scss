@@ -11,12 +11,22 @@ h1, .h1 {
   font-size: 44px;
   line-height: 58px;
   font-weight: 300;
+  max-width: 780px;
+  margin: auto;
+
+  &.full-width {
+    max-width: initial;
+    margin: initial;
+  }
+
 }
 
 h2, .h2 {
   font-size: 36px;
   line-height: 44px;
   font-weight: 300;
+  max-width: 780px;
+  margin: auto;
 }
 
 h3, .h3, .lead {
@@ -31,6 +41,17 @@ h4, .h4 {
   color: initial;
   text-transform: initial;
   font-weight: 400;
+}
+
+.lead, .text--limited {
+  max-width: 780px;
+  margin: auto;
+
+  &.full-width {
+    max-width: initial;
+    margin: initial;
+  }
+
 }
 
 .bold {

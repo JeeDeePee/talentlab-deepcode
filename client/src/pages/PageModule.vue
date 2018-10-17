@@ -2,8 +2,8 @@
   <div v-if="module">
     <div>
       <v-container class="pt-5">
-        <h1 class="mb-1 mt-1 text--violet">{{module.title}}</h1>
-        <div class="lead">{{module.lead}}</div>
+        <h1 class="mt-1 text--violet full-width">{{module.title}}</h1>
+        <div class="mt-4 lead full-width">{{module.lead}}</div>
         <span v-if="user && moduleBooked" class="text-sm-left text-md-center">
           <v-btn class="btn-secondary btn-minimal" @click="deleteModuleProgress(module.slug)">
             <v-icon>close</v-icon>
@@ -15,7 +15,7 @@
         <v-container grid-list-xl>
           <v-layout row wrap>
             <v-flex xs12 sm5 md6>
-              <img :src="module.heroImage"/>
+              <v-img :src="module.heroImage" aspect-ratio="1.7"></v-img>
             </v-flex>
             <v-flex xs12 sm7 md6>
               <div v-html="module.description" class="mb-2 mt-1 paragraph"></div>
@@ -50,7 +50,7 @@
 
       <section v-if="moduleBooked">
         <v-container class="py-2">
-          <div class="mt-5 mb-2">Finde heraus wo du stehst</div>
+          <div class="mt-5 mb-2 h3">Finde heraus wo du stehst</div>
         </v-container>
 
         <div class="background--orange">
@@ -77,7 +77,7 @@
         </div>
       </section>
 
-      <section>
+      <section class="mt-5">
         <v-container grid-list-xl>
           <v-layout row wrap>
             <v-flex xs12 sm8 md8 lg8 xl8>
@@ -90,7 +90,7 @@
                     class="mb-4 background--violet-light">
               </Unit>
 
-              <h2 v-if="interactiveUnits" class="mb-3 h3">Interaktiv</h2>
+              <h2 v-if="interactiveUnits" class="mb-3 mt-5 h3">Interaktiv</h2>
               <Unit v-for="(item, index) in interactiveUnits"
                     :module="module"
                     :key="index"
@@ -104,7 +104,7 @@
               <h2 class="h3 underline">Ressourcen</h2>
               <div class="mb-3">
                 <Tools v-if="moduleBooked" :tools="module.resources"/>
-                <div class="mt-3 text--light" v-else>Hier findest Du bei Buchung weiterführende Artikel, Links und
+                <div class="mt-3 mb-10 text--light uppercase" v-else>Hier findest Du bei Buchung weiterführende Artikel, Links und
                   mehr.
                 </div>
               </div>
@@ -112,14 +112,14 @@
               <h2 class="h3 mt-5 underline">Tools & Templates</h2>
               <div class="mb-3">
                 <Tools v-if="moduleBooked" :tools="module.tools"/>
-                <div class="mt-3 text--light" v-else>Hier findest Du bei Buchung im Arbeitsalltag nützliche
+                <div class="mt-3 mb-10 text--light uppercase" v-else>Hier findest Du bei Buchung im Arbeitsalltag nützliche
                   Hilfestellungen.
                 </div>
               </div>
 
               <h2 class="h3 mt-5 underline">Agenda</h2>
               <Agenda v-if="moduleBooked" :items="dummyAgenda"></Agenda>
-              <div class="mt-3 text--light" v-else>Hier findest Du bei Buchung Termine & Kontaktinformationen</div>
+              <div class="mt-3 text--light uppercase" v-else>Hier findest Du bei Buchung Termine & Kontaktinformationen</div>
 
             </v-flex>
           </v-layout>

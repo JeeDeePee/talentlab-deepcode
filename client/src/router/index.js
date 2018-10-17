@@ -2,8 +2,8 @@ import Vue from 'vue'
 import Router from 'vue-router'
 
 const routerOptions = [
-  {path: '/', name: 'start', component: 'PageStart', meta: {showFooter: true, hideMenu: true}},
-  {path: '/modules', name: 'modules', component: 'PageModules', meta: {showFooter: true}},
+  {path: '/', name: 'start', component: 'PageStart'},
+  {path: '/modules', name: 'modules', component: 'PageModules'},
   {path: '/module/:slug', name: 'module', component: 'PageModule', props: true},
   {path: '/unit/:slug', name: 'unit', component: 'PageUnit', props: true},
   {path: '/development', name: 'development', component: 'PageDevelopment'},

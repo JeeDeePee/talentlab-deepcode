@@ -31,7 +31,7 @@
         <div class="mb-4" v-for="(module, index) in userModules" :key="index">
           <ModuleCard :module="module" minimal progress/>
         </div>
-        <div class="mt-4">Basierend auf deinem Entwicklungsfokus haben wir weitere Module für dich zusammengestellt:
+        <div class="mt-5 paragraph">Basierend auf deinem Entwicklungsfokus haben wir weitere Module für dich zusammengestellt:
         </div>
 
         <v-layout row wrap>

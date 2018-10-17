@@ -47,7 +47,7 @@
           {{module.teaser}}
         </v-card-text>
 
-        <v-img class="module-card---image" v-if="!minimal" :src="module.heroImage" height="200px"></v-img>
+        <v-img class="module-card---image" v-if="!minimal" :src="module.heroImage"></v-img>
 
         <div v-if="module.status && !minimal">
           <v-icon class="module--booked">done</v-icon>
