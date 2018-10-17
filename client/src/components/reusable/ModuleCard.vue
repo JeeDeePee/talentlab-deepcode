@@ -23,7 +23,7 @@
             <v-progress-circular
               :rotate="360"
               :size="100"
-              :width="12"
+              :width="15"
               :value="80"
               color="teal"
             >
@@ -47,11 +47,12 @@
           {{module.teaser}}
         </v-card-text>
 
-        <v-img class="module-card---image" v-if="!minimal" :src="module.heroImage"></v-img>
+        <v-img class="module-card---image" v-if="!minimal" :src="module.heroImage">
+          <div v-if="module.status && !minimal">
+            <v-icon class="module--booked">done</v-icon>
+          </div>
+        </v-img>
 
-        <div v-if="module.status && !minimal">
-          <v-icon class="module--booked">done</v-icon>
-        </div>
       </div>
 
     </v-card>
