@@ -49,32 +49,37 @@
       </div>
 
       <section v-if="moduleBooked">
-        <v-container class="py-2">
+        <v-container class="py-2" grid-list-xl>
           <div class="mt-5 mb-2 h3">Finde heraus wo du stehst</div>
-        </v-container>
 
-        <div class="background--orange">
-          <div class="container-process-bg text--white">
-            <v-container grid-list-md class="py-3">
-              <v-btn flat class="module--action-button" @click.stop="showModuleGoalDialog=true">
+          <v-layout row wrap>
+            <v-flex xs4>
+              <v-btn class="module--action-button" @click.stop="showModuleGoalDialog=true">
                 <v-icon class="mr-2">play_circle_filled</v-icon>
                 Ziele
               </v-btn>
-              <v-btn flat class="module--action-button" @click.stop="showLearningsDialog=true">
+            </v-flex>
+            <v-flex xs4>
+              <v-btn class="module--action-button" @click.stop="showLearningsDialog=true">
                 <v-icon class="mr-2">play_circle_filled</v-icon>
                 Learnings
               </v-btn>
-              <v-btn flat class="module--action-button" @click.stop="showActionPlanDialog=true">
+            </v-flex>
+            <v-flex xs4>
+              <v-btn class="module--action-button" @click.stop="showActionPlanDialog=true">
                 <v-icon class="mr-2">play_circle_filled</v-icon>
                 Action Plan
               </v-btn>
-            </v-container>
+            </v-flex>
 
-            <ModuleGoalWizard :visible="showModuleGoalDialog" @close="showModuleGoalDialog=false" :module="module"/>
-            <LearningsWizard :visible="showLearningsDialog" @close="showLearningsDialog=false" :module="module"/>
-            <ActionPlanWizard :visible="showActionPlanDialog" @close="showActionPlanDialog=false" :module="module"/>
-          </div>
-        </div>
+          </v-layout>
+
+          <ModuleGoalWizard :visible="showModuleGoalDialog" @close="showModuleGoalDialog=false" :module="module"/>
+          <LearningsWizard :visible="showLearningsDialog" @close="showLearningsDialog=false" :module="module"/>
+          <ActionPlanWizard :visible="showActionPlanDialog" @close="showActionPlanDialog=false" :module="module"/>
+
+        </v-container>
+
       </section>
 
       <section class="mt-5">
@@ -104,7 +109,8 @@
               <h2 class="h3 underline">Ressourcen</h2>
               <div class="mb-3">
                 <Tools v-if="moduleBooked" :tools="module.resources"/>
-                <div class="mt-3 mb-10 text--light uppercase" v-else>Hier findest Du bei Buchung weiterführende Artikel, Links und
+                <div class="mt-3 mb-10 text--light uppercase" v-else>Hier findest Du bei Buchung weiterführende Artikel,
+                  Links und
                   mehr.
                 </div>
               </div>
@@ -112,14 +118,17 @@
               <h2 class="h3 mt-5 underline">Tools & Templates</h2>
               <div class="mb-3">
                 <Tools v-if="moduleBooked" :tools="module.tools"/>
-                <div class="mt-3 mb-10 text--light uppercase" v-else>Hier findest Du bei Buchung im Arbeitsalltag nützliche
+                <div class="mt-3 mb-10 text--light uppercase" v-else>Hier findest Du bei Buchung im Arbeitsalltag
+                  nützliche
                   Hilfestellungen.
                 </div>
               </div>
 
               <h2 class="h3 mt-5 underline">Agenda</h2>
               <Agenda v-if="moduleBooked" :items="dummyAgenda"></Agenda>
-              <div class="mt-3 text--light uppercase" v-else>Hier findest Du bei Buchung Termine & Kontaktinformationen</div>
+              <div class="mt-3 text--light uppercase" v-else>Hier findest Du bei Buchung Termine &
+                Kontaktinformationen
+              </div>
 
             </v-flex>
           </v-layout>
@@ -137,6 +146,8 @@
 
   .module--action-button {
     font-size: 24px;
+    height: 85px;
+    width: 100%;
   }
 
 </style>
