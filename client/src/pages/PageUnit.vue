@@ -1,6 +1,6 @@
 <template>
   <div>
-    <v-container>
+    <v-container grid-list-xl>
       <div v-if="unit">
         <div>
           <v-breadcrumbs class="pl-0">
@@ -20,17 +20,17 @@
           <v-layout row wrap>
             <v-flex xs12 sm8>
 
-              <h1 class="mt-4 text--violet">{{unit.title}}</h1>
+              <h1 class="text--violet">{{unit.title}}</h1>
 
               <div class="pb-4 mt-3 lead" v-html="unit.description"></div>
 
               <div>
                 <v-icon>play_arrow</v-icon>
-                {{unit.type}}
-                <v-icon class="ml-3">event_note</v-icon>
-                {{unit.count}}
-                <v-icon class="ml-3"> schedule</v-icon>
-                {{unit.duration}}
+                <span class="bold uppercase">{{unit.type}}</span>
+                <v-icon class="text--light ml-3">event_note</v-icon>
+                <span class="text--light uppercase">{{unit.count}}</span>
+                <v-icon class="text--light ml-3"> schedule</v-icon>
+                <span class="text--light uppercase">{{unit.duration}}</span>
               </div>
 
             </v-flex>
@@ -44,7 +44,11 @@
               </v-avatar>
               <h4 class="my-2 uppercase paragraph">Dr. Clea Bauch</h4>
 
-              <v-btn v-if="moduleBooked && !unitBooked" @click="startUnitProgress(unit.slug, unit.moduleSlug)">buchen</v-btn>
+              <v-btn class="mt-5 mb-3" v-if="moduleBooked && !unitBooked" @click="startUnitProgress(unit.slug, unit.moduleSlug)">buchen
+              </v-btn>
+
+              <div v-if="moduleBooked && !unitBooked">{{unit.price}}</div>
+
               <v-btn v-if="moduleBooked && unitBooked" class="btn-secondary">bewerten</v-btn>
 
             </v-flex>
@@ -53,14 +57,20 @@
           <div class="panel-style mt-5 mb-2 background--transparent">
             <v-expansion-panel focusable>
               <v-expansion-panel-content>
-                <div slot="header">Was wir vermitteln</div>
+                <div slot="header" class="paragraph text--color bold">Was wir vermitteln</div>
                 <v-card class="flat">
-                  <v-card-text class="py-3 px-0">
-                    <h2 class="mb-1">Lernziele & Kompetenzen</h2>
-                    <div v-html="unit.objectives"></div>
+                  <v-card-text class="pt-3 pb-5 px-0">
+                    <v-layout row wrap>
+                      <v-flex xs12 sm6>
+                        <h3 class="full-width">Ziele</h3>
+                        <div v-html="unit.objectives"></div>
+                      </v-flex>
+                      <v-flex xs12 sm6>
+                        <h3 class="full-width">Inhalte</h3>
+                        <div v-html="unit.content"></div>
+                      </v-flex>
+                    </v-layout>
 
-                    <h2 class="mt-5 mb-1">Inhalte</h2>
-                    <div v-html="unit.content"></div>
                   </v-card-text>
                 </v-card>
               </v-expansion-panel-content>
@@ -70,9 +80,9 @@
           <div class="panel-style my-2 pl-0 background--transparent">
             <v-expansion-panel focusable>
               <v-expansion-panel-content>
-                <div slot="header">Wer referiert</div>
+                <div slot="header" class="paragraph text--color bold">Wer referiert</div>
                 <v-card class="flat">
-                  <v-card-text class="py-3 px-0">
+                  <v-card-text class="pt-3 pb-5 px-0">
                     <div v-html="unit.teacher"></div>
                   </v-card-text>
                 </v-card>
@@ -83,9 +93,9 @@
           <div class="panel-style my-2 pl-0 background--transparent">
             <v-expansion-panel focusable>
               <v-expansion-panel-content>
-                <div slot="header">Was du leistest</div>
+                <div slot="header" class="paragraph text--color bold">Was du leistest</div>
                 <v-card class="flat">
-                  <v-card-text class="py-3 px-0">
+                  <v-card-text class="pt-3 pb-5 px-0">
                     <div v-html="unit.requirements"></div>
                   </v-card-text>
                 </v-card>

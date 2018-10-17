@@ -15,9 +15,9 @@
 
           <v-icon>play_arrow</v-icon>
           <span class="bold uppercase">{{unit.type}}</span>
-          <v-icon class="ml-4 mr-1">filter_none</v-icon>
+          <v-icon class="text--light ml-4 mr-1">filter_none</v-icon>
           <span class="text--light uppercase">{{unit.count}}</span>
-          <v-icon class="ml-4 mr-1"> schedule</v-icon>
+          <v-icon class="text--light ml-4 mr-1"> schedule</v-icon>
           <span class="text--light uppercase">{{unit.duration}}</span>
         </div>
       </div>
