@@ -8,8 +8,7 @@
           <h4>{{item.competence.title}}</h4>
 
           <v-progress-linear :value="item.currentLevel*10" color="secondary"></v-progress-linear>
-
-
+          
         </v-flex>
       </v-layout>
 
