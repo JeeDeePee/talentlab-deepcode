@@ -31,7 +31,8 @@
         <div class="mb-4" v-for="(module, index) in userModules" :key="index">
           <ModuleCard :module="module" minimal progress/>
         </div>
-        <div class="mt-5 paragraph">Basierend auf deinem Entwicklungsfokus haben wir weitere Module für dich zusammengestellt:
+        <div class="mt-5 paragraph">Basierend auf deinem Entwicklungsfokus haben wir weitere Module für dich
+          zusammengestellt:
         </div>
 
         <v-layout row wrap>
@@ -48,15 +49,23 @@
         <h2 class="mb-4 text--violet text-xs-center">Deine Agenda</h2>
 
         <v-layout row wrap>
-          <v-flex xs12 sm6>
-            <div class="pa-4 background--white">
+          <v-flex xs12 sm4>
+            <div class="pa-4 background--white full-height">
               <h3 class="underline">Coaching & Mentoring</h3>
               <Agenda :items="coachingMentoringAgenda"></Agenda>
             </div>
 
           </v-flex>
-          <v-flex xs12 sm6>
-            <div class="pa-4 background--white">
+
+          <v-flex xs12 sm4>
+            <div class="pa-4 background--white full-height">
+              <h3 class="underline">Sparing mit Peers</h3>
+              <Agenda :items="peerAgenda"></Agenda>
+            </div>
+          </v-flex>
+
+          <v-flex xs12 sm4>
+            <div class="pa-4 background--white full-height">
               <h3 class="underline">Un-Conference</h3>
               <Agenda :items="conferenceAgenda"></Agenda>
             </div>
@@ -65,14 +74,23 @@
         </v-layout>
         <v-layout row wrap>
 
-          <v-flex xs12 sm6>
+          <v-flex xs12 sm4>
             <div class="text-xs-center">
               <v-btn router exact class="mt-4" :to="{ name: 'coaching'}">
                 Coach buchen
               </v-btn>
             </div>
           </v-flex>
-          <v-flex xs12 sm5>
+
+          <v-flex xs12 sm4>
+            <div class="text-xs-center">
+              <v-btn class="mt-4">
+                Peer suchen
+              </v-btn>
+            </div>
+          </v-flex>
+
+          <v-flex xs12 sm4>
             <div class="text-xs-center">
               <v-btn router exact class="mt-4" :to="{ name: 'modules'}">
                 Neue Angebote
@@ -144,6 +162,13 @@
             'text': 'Führung von Führungskräften \n' +
             'KeyNote: Kurt Wenger (CEO ABC Group)\n' +
             'Moderation: Clea Bauch (talentlab)'
+          }
+        ],
+        peerAgenda: [
+          {'type': 'message', 'text': 'Fritz Rengli'},
+          {
+            'type': 'calendar',
+            'text': 'Montag, 20/10/2018, 10:00 Uhr'
           }
         ]
       }
