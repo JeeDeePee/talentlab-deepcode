@@ -89,7 +89,6 @@
     },
 
     created() {
-      console.info('-fetchFocusCompetences-')
       this.fetchFocusCompetences()
     }
   }

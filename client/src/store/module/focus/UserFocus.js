@@ -9,7 +9,12 @@ export default {
 
   mutations: {
     setUserFocus(state, userFocus) {
-      state.userFocus = userFocus
+      state.userFocus = userFocus.map(x => {
+        x.currenPeerLevel = Math.floor(Math.random() * 10)
+        x.benchmarkStart = 4
+        x.benchmarkWidth = 2
+        return x
+      })
     },
     setUserFocusCreated(state, created) {
       state.userFocusCreated = new Date(created)
@@ -25,7 +30,7 @@ export default {
       var created;
       if (response.data.userFocus && response.data.userFocus.edges.length > 0) {
         let result = response.data.userFocus.edges.reduce(
-          function(a, b) {
+          function (a, b) {
             created = b.node.created;
             return a.concat(b.node.competenceentrySet.edges.map(x => x.node))
           }, []);
