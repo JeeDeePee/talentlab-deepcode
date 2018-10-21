@@ -8,37 +8,23 @@
     </div>
 
     <div class="small--content">
-      <v-layout>
-        <v-flex xs6>
-
-          <h3 class="my-5">Coach</h3>
-
-          <v-avatar size=100 class="v-avatar--responsive">
-            <v-img
-              :src="coach.avatar"
-              :alt="coach.name"
-            ></v-img>
-          </v-avatar>
-          <span class="ml-2">
-          {{coach.name}}
-          </span>
-        </v-flex>
-        <v-flex xs6>
-          <div>
-            <h3 class="my-5">Abonnement wählen</h3>
-
-            <v-radio-group v-model="selected">
+      <v-radio-group v-model="selected">
+        <v-layout>
+          <v-flex xs4 v-for="(item,i) in subscriptions" :key="i">
+            <div class="background--white px-3 py-4 package">
               <v-radio
-                v-for="(item,i) in subscriptions"
-                :key="i"
-                :label="item"
+                :label="item.title"
                 :value="i"
-              ></v-radio>
-            </v-radio-group>
-
-          </div>
-        </v-flex>
-      </v-layout>
+                class="package--label bold text--color"
+              >
+              </v-radio>
+              <div class="package--description">
+                {{item.description}}
+              </div>
+            </div>
+          </v-flex>
+        </v-layout>
+      </v-radio-group>
     </div>
 
     <div class="mt-5 text-xs-center">
@@ -56,14 +42,10 @@
     data() {
       return {
         selected: 1,
-        coach: {
-          'name': 'Peter Naumann',
-          'avatar': require(`@/assets/img/people/samuel-ryser.jpg`)
-        },
         subscriptions: [
-          '1 Stunde Coaching',
-          '2 Stunden Coaching',
-          '3 Stunden Coaching'
+          {title: '3er Package', description: 'online'},
+          {title: '6er Package', description: 'online +1 persönliches Treffen'},
+          {title: '3er Package', description: 'online +2 persönliches Treffen'}
         ]
       }
     },
@@ -76,3 +58,25 @@
   }
 </script>
 
+
+<style lang="scss" scoped>
+  @import "../../../styles/var";
+
+  .package--description {
+    margin-left: 31px;
+  }
+
+  .package--label .v-label {
+    color: $text-color !important;
+  }
+
+  .package {
+    height: 100%;
+  }
+
+</style>
+
+
+<style>
+
+</style>
