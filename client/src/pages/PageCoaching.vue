@@ -2,7 +2,7 @@
   <div>
     <section class="background--violet pt-5">
       <v-container grid-list-xl class="pb-0 text-xs-center">
-        <h1 class="py-5">FWerde wirkungsvoller mit Coaching!</h1>
+        <h1 class="py-5">Werde wirkungsvoller mit Coaching!</h1>
 
         <v-btn @click="showCoachingWizard=true">
           Coach finden
