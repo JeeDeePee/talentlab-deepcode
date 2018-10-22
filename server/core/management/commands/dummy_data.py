@@ -213,7 +213,7 @@ data = [
             {
                 'title': 'Decision Making & Agile',
                 'skill': 'Entscheidungsfähigkeit',
-                'teaser': 'Gut Entscheidungen in einem dynamischen Umfeld',
+                'teaser': 'Gute Entscheidungen in einem dynamischen Umfeld',
             },
             {
                 'title': 'Project Management for IT',
