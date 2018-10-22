@@ -216,12 +216,12 @@ data = [
                 'teaser': 'Gute unternehmerische Entscheidungen in einem dynamischen Umfeld',
             },
             {
-                'title': 'Project Management for IT Projects',
+                'title': 'Project Management for IT',
                 'skill': 'Entscheidungsfähigkeit',
                 'teaser': 'training für erfahrene IT-Projektleiter',
             },
             {
-                'title': 'Project Management for Business Projects',
+                'title': 'Project Management for Business',
                 'skill': 'Innovationsfühigkeit',
                 'teaser': 'Training für erfahrene Projektleiter in Business Development und Produktmanagement',
             },
