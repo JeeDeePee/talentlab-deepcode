@@ -1,6 +1,6 @@
 <template>
   <div class="text-xs-center">
-    <h1 class="text-xs-center text--violet">Was ist Dein Ziel</h1>
+    <h1 class="text-xs-center text--violet">Was ist Dein Ziel?</h1>
 
     <div class="mt-4 mb-5 lead">
       Wähle das Ziel, das am besten zu Dir passt.
@@ -19,8 +19,8 @@
     </v-radio-group>
 
     <div class="mt-5">
-      <v-btn class="btn-secondary mr-2" @click="$emit('back')">Zurück</v-btn>
-      <v-btn class="ml-2" @click="$emit('proceed', currentGoal.level)">Ziel speichern</v-btn>
+      <v-btn class="btn-secondary mr-2" @click="$emit('back')">zurück</v-btn>
+      <v-btn class="ml-2" @click="$emit('proceed', currentGoal.level)">speichern</v-btn>
     </div>
   </div>
 </template>

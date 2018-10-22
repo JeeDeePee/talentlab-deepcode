@@ -7,7 +7,7 @@
     <v-container fluid grid-list-xl>
       <v-layout row wrap>
         <v-flex xs4>
-          <h2 class="h4 paragraph">Fokus Kompetenzen</h2>
+          <h2 class="h4 paragraph">gewählte Kompetenzen</h2>
         </v-flex>
 
         <v-flex xs4>
@@ -48,7 +48,7 @@
 
     <div class="mt-5">
       <v-btn class="btn-secondary mr-2" @click="$emit('back')">Zurück</v-btn>
-      <v-btn class="ml-2" v-on:click="proceed">Selbstbeurteilung speichern</v-btn>
+      <v-btn class="ml-2" v-on:click="proceed">speichern</v-btn>
     </div>
 
   </div>

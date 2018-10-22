@@ -1,5 +1,5 @@
 <template>
-  <Wizard v-model="show" :wizard-name="'Mein Fokus'" :process-steps="processSteps" @close="show=false">
+  <Wizard v-model="show" :wizard-name="'Selbstbeurteilung'" :process-steps="processSteps" @close="show=false">
 
     <DetermineFocus
       v-on:proceed="determineFocusProceed($event)"
@@ -39,8 +39,8 @@
     data() {
       return {
         processSteps: [
-          { text: 'Fokus erfasssen', disabled: false },
-          { text: 'Mein Fokus', disabled: false }
+          { text: 'Kompetenzen erfasssen', disabled: false },
+          { text: 'Selbstbeurteilung', disabled: false }
         ]
       }
     },

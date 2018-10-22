@@ -15,7 +15,7 @@
       </v-flex>
 
       <v-flex xs12 sm4>
-        <div class="three-line bold">Von wem benötigst Du Commitment?</div>
+        <div class="three-line bold">Von wem benötigst Du Unterstützung?</div>
         <TextBox :placeholder="'Commitment'" v-model="actionPlan.commitmentSupportText"></TextBox>
       </v-flex>
     </v-layout>

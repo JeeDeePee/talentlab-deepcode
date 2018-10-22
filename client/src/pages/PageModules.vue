@@ -2,13 +2,13 @@
   <div class="pb-4">
     <section class="background--violet text-xs-center">
       <v-container class="pb-0">
-        <h1 class="py-5">Wähle die passenden Module!</h1>
+        <h1 class="py-5">Wähle die passenden Module zur Stärkung deiner Kompetenzen!</h1>
         <div class="text-xs-center">
           <v-btn @click="$vuetify.goTo('#learn-more', {duration: 200, offset: -50})" class="mx-2">
-            Themen surfen
+            Module surfen
           </v-btn>
           <v-btn v-if="user" :to="{name: 'development', params: {showFocusDialog: true}}" exact router class="mx-2">
-            Fokus setzen
+            Kompetenzen erfassen
           </v-btn>
         </div>
         <v-img :src="require(`@/assets/img/moods/communication_2.png`)" class="mt-4 hero--image"></v-img>

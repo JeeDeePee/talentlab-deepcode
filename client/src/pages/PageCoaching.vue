@@ -2,10 +2,10 @@
   <div>
     <section class="background--violet pt-5">
       <v-container grid-list-xl class="pb-0 text-xs-center">
-        <h1 class="py-5">Finde Antworten! Werde wirkungsvoller! Entfalte dein Potential!</h1>
+        <h1 class="py-5">FWerde wirkungsvoller mit Coaching!</h1>
 
         <v-btn @click="showCoachingWizard=true">
-          Coaching finden
+          Coach finden
         </v-btn>
 
         <v-img :src="require(`@/assets/img/moods/moodboard_2.png`)" class="mt-5 hero--image"></v-img>
@@ -19,8 +19,8 @@
         <p class="lead mt-4">Ortsunabhängig und zeitlich flexibel bearbeitest du deine beruflichen Fragestellungen
           online
           oder persönlich
-          mit Coaches oder Mentoren.<br>
-          Wähle deinen Coach oder Mentor abhängig von Thema und Erfahrung im praktischen Abonnement.</p>
+          im praktischen Abonnement.<br>
+          Wähle deinen Coach oder Mentor abhängig von Thema und Erfahrung.</p>
       </v-container>
     </section>
 
@@ -59,7 +59,7 @@
 
         <div class="text-xs-center my-5">
           <v-btn @click="showCoachingWizard=true">
-            Coaching finden
+            Coach finden
           </v-btn>
         </div>
 
