@@ -1,15 +1,15 @@
 <template>
   <div>
 
-    <h1 class="text--violet text-xs-center">Mit wem möchtest Du arbeiten?</h1>
-    <div class="lead my-3 text-xs-center">Finde Deinen Coach. Folgende Coaches haben Erfahrung mit den gewählten
+    <h1 class="text--violet text-xs-center">Mit welchem Coach möchtest Du arbeiten?</h1>
+    <div class="lead my-3 text-xs-center">Folgende Coaches haben Erfahrung mit den gewählten
       Themen:
     </div>
 
     <div class="small--content">
       <v-layout row wrap>
         <v-flex xs12 sm6>
-          <h3 class="my-3 text--violet">Professionelle Coaches</h3>
+          <h3 class="my-3 text--violet">Ausgebildete Coaches</h3>
           <div class="mb-2 pointer background--white pa-2"
                v-for="(item,i) in coaches" :key="i"
                @click="select(item)"
@@ -70,7 +70,7 @@
 
     <div class="mt-5 text-xs-center">
       <v-btn class="btn-secondary mr-2" @click="$emit('back', 'Topics')">Zurück</v-btn>
-      <v-btn @click="save" class="ml-2">Coach auswählen</v-btn>
+      <v-btn @click="save" class="ml-2">weiter</v-btn>
     </div>
   </div>
 </template>

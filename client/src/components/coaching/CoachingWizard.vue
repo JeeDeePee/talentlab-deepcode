@@ -40,8 +40,8 @@
         CoachingWizardState: 'Coaches',
         processSteps: [
           {text: 'Coaching Thema auswählen', disabled: true},
-          {text: 'Coach Finden', disabled: true},
-          {text: 'Coaching Sessions organisieren', disabled: true}
+          {text: 'Coach finden', disabled: true},
+          {text: 'Coaching Sessions buchen', disabled: true}
         ]
       }
     },

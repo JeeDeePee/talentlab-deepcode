@@ -25,7 +25,7 @@
 
     <div class="mt-5 text-xs-center">
       <v-btn class="btn-secondary mr-2" @click="$emit('proceed', 'Topics', true);">Zurück</v-btn>
-      <v-btn @click="$emit('proceed', 'Coaches')" class="ml-2">Coach finden</v-btn>
+      <v-btn @click="$emit('proceed', 'Coaches')" class="ml-2">weiter</v-btn>
     </div>
   </div>
 </template>
@@ -43,7 +43,7 @@
           {title: 'Domain-Life-Balance & Burnout', id: 2},
           {title: 'Gender & Diversity', id: 3},
           {title: 'Persönliche oder berufliche Krisensituation', id: 4},
-          {title: 'Übernahme einer neuen Funktion', id: 5},
+          {title: 'Übernahme einer neuen Rolle', id: 5},
           {title: 'Reorganisation & Restrukturierung', id: 6},
           {title: 'Übernahme einer Führungsfunktion', id: 7},
           {title: 'Führung von Führungskräften', id: 8}

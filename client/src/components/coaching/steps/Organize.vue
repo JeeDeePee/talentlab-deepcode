@@ -29,7 +29,7 @@
 
     <div class="mt-5 text-xs-center">
       <v-btn class="btn-secondary mr-2" @click="$emit('back', 'Coaches')">Zurück</v-btn>
-      <v-btn @click="save" class="ml-2">Coach buchen</v-btn>
+      <v-btn @click="save" class="ml-2">buchen</v-btn>
     </div>
   </div>
 </template>
@@ -43,9 +43,9 @@
       return {
         selected: 1,
         subscriptions: [
-          {title: '3er Package', description: 'online'},
-          {title: '6er Package', description: 'online +1 persönliches Treffen'},
-          {title: '3er Package', description: 'online +2 persönliches Treffen'}
+          {title: '3er Package', description: '3 Sessions à 45 Minuten'},
+          {title: '6er Package', description: '6 Sessions à 45 Minuten'},
+          {title: '3er Package', description: '10 Sessions à 45 Minuten'}
         ]
       }
     },
