@@ -27,3 +27,6 @@ django-storages = "*"
 boto3 = "*"
 django-compressor = "*"
 django-libsass = "*"
+
+[requires]
+python_version = "3.7.0"
