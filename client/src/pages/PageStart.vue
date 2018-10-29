@@ -2,7 +2,7 @@
   <div>
     <section class="background--violet text-xs-center">
       <v-container grid-list-xl class="pb-0">
-        <h1 class="py-5 text--limited">talentlab ist dein digitaler Begleiter für Karriere- und Potenzialentwicklung</h1>
+        <h1 class="py-5 text--limited">talentlab ist der digitale Begleiter für Karriere- und Potenzialentwicklung</h1>
         <v-btn @click="$vuetify.goTo('#learn-more', {duration: 200, offset: -50})" class="mx-2">
           mehr erfahren
         </v-btn>
@@ -17,7 +17,7 @@
       <v-container grid-list-xl class="py-0">
 
         <h2 class="text--violet mb-5">
-          Nutze deine Talente und stärke deine Kompetenzen. Zielorientiert und wirksam!
+          Nutze dein volles Potenzial und stärke deine Kompetenzen. Zielorientiert und wirksam!
         </h2>
 
         <v-layout row wrap>
@@ -36,7 +36,7 @@
     <section class="py-5">
       <v-container grid-list-xl class="py-0">
 
-        <h2 class="text-xs-center text--violet">Mit digitalen Angeboten zu aktuellen Themen gezielt und flexibel Potenziale entwickeln!</h2>
+        <h2 class="text-xs-center text--violet">Mit digitalen Angeboten zu aktuellen Themen gezielt und flexibel Kompetenzen stärken!</h2>
         <div class="text-xs-center lead my-5">talentlab schlägt dir ein auf Deine Bedürfnisse abgestimmtes und
           flexibel erweiterbares Programm vor
         </div>
