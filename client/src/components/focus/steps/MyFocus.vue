@@ -12,7 +12,7 @@
 
         <v-flex xs4>
           <h2 class="h4 paragraph">Wo stehst Du heute?</h2>
-          <div class="my-2">Bewege den Regler (1 = gering bis 10 = hoch)</div>
+          <div class="my-2">Bewege den Regler<br>(1 = gering bis 10 = hoch)</div>
         </v-flex>
 
         <v-flex xs4>
