@@ -36,7 +36,6 @@
         <v-layout row wrap>
 
           <v-flex xs12 class="text-xs-center">
-
             <h2 class="my-4 text--violet">Wie werden unsere Coaches ausgewählt?</h2>
             <div class="lead mb-5">
               <p>
