@@ -1,5 +1,6 @@
 <template>
   <Wizard v-model="show" :process-steps="processSteps" @close="show=false">
+
     <div class="medium--content">
       <component
         :is="getCoachingWizardState"
