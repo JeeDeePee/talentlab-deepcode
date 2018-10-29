@@ -4,8 +4,8 @@
     <h1 class="text-xs-center text--violet">Welche Themen bewegen dich?</h1>
     <div class="lead mt-3 text-xs-center">Wähle maximal zwei Themen</div>
 
-    <v-layout row wrap>
-      <v-flex xs12 sm6>
+    <v-layout row wrap  class="background--white mb-3 mt-3">
+      <v-flex xs12 sm6 class="mb-3">
         <v-checkbox
           v-for="(item,i) in topics.slice(0, 4)" :key="i"
           :label="item.title"
