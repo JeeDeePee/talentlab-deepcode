@@ -14,13 +14,9 @@
 
     <section class="py-5 background--beige text-xs-center">
       <v-container grid-list-xl class="pb-0 text-xs-center">
-        <h2 class="text--violet">Coaching-Abonnement:<br> flexibel, persönlich und digital!</h2>
+        <h2 class="text--violet">Finde Antworten! Entdecke Deine Talente!</h2>
 
-        <p class="lead mt-4">Ortsunabhängig und zeitlich flexibel bearbeitest du deine beruflichen Fragestellungen
-          online
-          oder persönlich
-          im praktischen Abonnement.<br>
-          Wähle deinen Coach oder Mentor abhängig von Thema und Erfahrung.</p>
+        <p class="lead mt-4">Ein Coaching unterstützt Dich optimal in Deiner Entwicklung und stärkt Dich in der Bewältigung persönlicher Herausforderungen.</p>
       </v-container>
     </section>
 

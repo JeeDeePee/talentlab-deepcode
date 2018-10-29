@@ -54,21 +54,21 @@
 
           <v-layout row wrap>
             <v-flex xs4>
-              <div class="mt-5 mb-2 h4">Foo Clea</div>
+              <div class="mt-5 mb-2 h4">Was willst Du erreichen?</div>
               <v-btn class="module--action-button" @click.stop="showModuleGoalDialog=true">
                 <v-icon class="mr-2">play_circle_filled</v-icon>
                 Ziele
               </v-btn>
             </v-flex>
             <v-flex xs4>
-              <div class="mt-5 mb-2 h4">Bar Clea</div>
+              <div class="mt-5 mb-2 h4">Was hast Du mitgenommen?</div>
               <v-btn class="module--action-button" @click.stop="showLearningsDialog=true">
                 <v-icon class="mr-2">play_circle_filled</v-icon>
                 Learnings
               </v-btn>
             </v-flex>
             <v-flex xs4>
-              <div class="mt-5 mb-2 h4">Baz Clea</div>
+              <div class="mt-5 mb-2 h4">Was änderst Du?</div>
               <v-btn class="module--action-button" @click.stop="showActionPlanDialog=true">
                 <v-icon class="mr-2">play_circle_filled</v-icon>
                 Action Plan
