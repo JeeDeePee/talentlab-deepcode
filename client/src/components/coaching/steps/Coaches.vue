@@ -99,8 +99,11 @@
           {
             'name': 'Samuel Ryser',
             'avatar': require(`@/assets/img/people/samuel-ryser.jpg`),
-            'description': '<p>Samuel Ryser ist ein erfahrener Coach bei der Begleitung von  Teamentwicklungsprozessen.</p><p>Nach seiner Ausbildung zum Primar- und Realschullehrer unterrichtete er und absolvierte parallel ein Studium der Arbeits- und Organisationspsychologie und der Sportwissenschaften an der Universität Bern, das er 2011 mit dem Master of Science in Psychology abschloss.</p><p>Heute arbeitet er als Assessor und Coach bei unserem Partner cedac AG, wo er auch den  Bereich Innovation und Entwicklung verantwortet.</p><p>Samuel spricht bei der Arbeit (Bern-)Deutsch.\n'
-.</p>'
+            'description': '<p>Samuel Ryser ist ein erfahrener Coach bei der Begleitung von  Teamentwicklungsprozessen.</p>' +
+            '  <p>Nach seiner Ausbildung zum Primar- und Realschullehrer unterrichtete er und absolvierte parallel ein Studium der Arbeits-' +
+            '  und Organisationspsychologie und der Sportwissenschaften an der Universität Bern, das er 2011 mit dem Master of Science in ' +
+            '  Psychology abschloss.</p><p>Heute arbeitet er als Assessor und Coach bei unserem Partner cedac AG, wo er auch den  Bereich ' +
+            '  Innovation und Entwicklung verantwortet.</p><p>Samuel spricht bei der Arbeit (Bern-)Deutsch.</p>'
           },
           {
             'name': 'Felix Muster',
