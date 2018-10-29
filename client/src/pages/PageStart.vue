@@ -52,7 +52,7 @@
 
     <section class="text-xs-center background--beige py-5">
       <v-container class="py-0">
-        <h2 class="text--violet">talentlab ist dein digitaler Begleiter für Karriere- und Potenzialentwicklung</h2>
+        <h2 class="text--violet">talentlab ist der digitale Begleiter für Karriere- und Potenzialentwicklung</h2>
 
         <div class="text--limited">
           <v-carousel hide-delimiters class="slim height-200 secondary--controls">
