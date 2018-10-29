@@ -78,6 +78,7 @@ INSTALLED_APPS = [
     'whitenoise.runserver_nostatic',
     'django.contrib.staticfiles',
     'django_filters',
+    'crispy_forms',
     'graphene_django',
     'django_extensions',
     'compressor',
