@@ -6,7 +6,7 @@
         <v-btn @click="$vuetify.goTo('#learn-more', {duration: 200, offset: -50})" class="mx-2">
           mehr erfahren
         </v-btn>
-        <v-btn router exact :to="{ name: 'modules'}" class="mx-2">
+        <v-btn v-if="user" router exact :to="{ name: 'modules'}" class="mx-2">
           jetzt starten
         </v-btn>
         <v-img :src="require(`@/assets/img/moods/mensch-maschine_3.png`)" class="mt-4 hero--image"></v-img>
@@ -143,6 +143,8 @@
 </template>
 
 <script>
+  import {mapGetters} from 'vuex'
+
   import CATEGORIES_QUERY from '@/graphql/gql/categories.gql'
   import ModuleCard from '@/components/reusable/ModuleCard'
 
@@ -156,6 +158,12 @@
       MasteringComplexity,
       MasteringRelations,
       ModuleCard
+    },
+
+    computed: {
+      ...mapGetters({
+        user: 'getUser'
+      })
     },
 
     data() {
@@ -283,7 +291,6 @@
             '              unserer Massnahmen zur Potenzialentwicklung zu messen.'
           }
         ]
-
       }
     },
 
