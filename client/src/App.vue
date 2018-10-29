@@ -82,7 +82,7 @@
       <v-container>
         <v-layout row wrap>
           <v-flex xs12 sm4>
-            <div class="py-3">Kontakt</div>
+            <div class="py-3">Kontakt / Impressum</div>
             <div>
               talentlab<br>
               c/o cedac AG<br>
