@@ -296,8 +296,8 @@ data = [
             },
             {
                 'title': '1st, 2nd & 3rd Career',
-                'skill': 'Integrierte generationenübergreifende Führung',
-                'teaser': 'Leadership'
+                'skill': 'Leadership',
+                'teaser': 'Integrierte generationenübergreifende Führung'
             },
             {
                 'title': 'Reorganisation &  Transformation',

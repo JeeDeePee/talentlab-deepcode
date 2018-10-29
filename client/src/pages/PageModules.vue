@@ -18,6 +18,7 @@
       <v-layout row wrap>
         <v-flex v-for="category in categories" :key="category.id" xs4 class="text-xs-center">
           <!--<img :src="category.icon"><br>-->
+
           <component :is="category.iconComponent"/>
           <div>
             <h3 class="my-3">{{category.title}}</h3>
