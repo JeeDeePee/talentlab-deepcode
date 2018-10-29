@@ -4,7 +4,10 @@
       <v-container grid-list-xl class="pb-0 text-xs-center">
         <h1 class="py-5">Werde wirkungsvoller mit Coaching!</h1>
 
-        <v-btn @click="showCoachingWizard=true">
+        <v-btn v-if="user" @click="showCoachingWizard=true">
+          Coach finden
+        </v-btn>
+        <v-btn v-else :to="{ name: 'login'}" exact router>
           Coach finden
         </v-btn>
 
@@ -64,7 +67,10 @@
         </v-layout>
 
         <div class="text-xs-center my-5">
-          <v-btn @click="showCoachingWizard=true">
+          <v-btn v-if="user" @click="showCoachingWizard=true">
+            Coach finden
+          </v-btn>
+          <v-btn v-else :to="{ name: 'login'}" exact router>
             Coach finden
           </v-btn>
         </div>
@@ -79,6 +85,8 @@
 </template>
 
 <script>
+  import {mapGetters} from 'vuex'
+
   import VideoPlayer from '@/components/module/VideoPlayer'
   import CoachingWizard from '@/components/coaching/CoachingWizard'
   import CoachingSVG from '@/assets/img/icons/coaching-grey.svg'
@@ -88,6 +96,12 @@
       VideoPlayer,
       CoachingWizard,
       CoachingSVG
+    },
+
+    computed: {
+      ...mapGetters({
+        user: 'getUser'
+      })
     },
 
     data() {
@@ -144,7 +158,6 @@
     }
   }
 </script>
-
 
 <style lang="scss" scoped>
   @import "../styles/var";

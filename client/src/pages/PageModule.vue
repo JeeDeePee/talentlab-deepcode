@@ -88,46 +88,47 @@
       <section class="mt-5">
         <v-container grid-list-xl>
           <v-layout row wrap>
+
             <v-flex xs12 sm8 md8 lg8 xl8>
-              <h2 v-if="contentUnits" class="h3 mb-3">Inhalte</h2>
-              <Unit v-for="(item, index) in contentUnits"
-                    :module="module"
-                    :key="index"
-                    :booked="moduleBooked"
-                    :unit="item"
-                    class="mb-4 background--violet-light">
-              </Unit>
+              <div v-if="user">
+                <h2 v-if="contentUnits" class="h3 mb-3">Inhalte</h2>
+                <Unit v-for="(item, index) in contentUnits"
+                      :module="module"
+                      :key="index"
+                      :booked="moduleBooked"
+                      :unit="item"
+                      class="mb-4 background--violet-light">
+                </Unit>
 
-              <h2 v-if="interactiveUnits" class="mb-3 mt-5 h3">Interaktiv</h2>
-              <Unit v-for="(item, index) in interactiveUnits"
-                    :module="module"
-                    :key="index"
-                    :booked="moduleBooked"
-                    :unit="item"
-                    class="mb-4 background--orange-light">
-              </Unit>
-
+                <h2 v-if="interactiveUnits" class="mb-3 mt-5 h3">Interaktiv</h2>
+                <Unit v-for="(item, index) in interactiveUnits"
+                      :module="module"
+                      :key="index"
+                      :booked="moduleBooked"
+                      :unit="item"
+                      class="mb-4 background--orange-light">
+                </Unit>
+              </div>
+              <div v-else>
+                <h2 class="h3 mb-3 underline">Inhalte</h2>
+                <div class="mt-3 mb-10 text--light uppercase">Hier findest die Lerneinheiten.</div>
+              </div>
             </v-flex>
+
             <v-flex xs12 sm4 md4 lg4 xl4>
               <h2 class="h3 underline">Ressourcen</h2>
               <div class="mb-3">
                 <Tools v-if="moduleBooked" :tools="module.resources"/>
-                <div class="mt-3 mb-10 text--light uppercase" v-else>Hier findest Du bei Buchung weiterführende Artikel,
-                  Links und
-                  mehr.
-                </div>
+                <div class="mt-3 mb-10 text--light uppercase" v-else>Hier findest Du bei Buchung weiterführende Artikel, Links und mehr.</div>
               </div>
 
               <h2 class="h3 mt-5 underline">Tools & Templates</h2>
               <div class="mb-3">
                 <Tools v-if="moduleBooked" :tools="module.tools"/>
-                <div class="mt-3 mb-10 text--light uppercase" v-else>Hier findest Du bei Buchung im Arbeitsalltag
-                  nützliche
-                  Hilfestellungen.
-                </div>
+                <div class="mt-3 mb-10 text--light uppercase" v-else>Hier findest Du bei Buchung im Arbeitsalltag nützliche Hilfestellungen.</div>
               </div>
-
             </v-flex>
+
           </v-layout>
         </v-container>
       </section>
