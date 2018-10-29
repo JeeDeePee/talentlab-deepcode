@@ -14,7 +14,8 @@
 
     <section class="py-5 background--beige text-xs-center">
       <v-container grid-list-xl class="pb-0 text-xs-center">
-        <h2 class="text--violet">Coaching: Finde Antworten! Entdecke Deine Talente!</h2>
+        <CoachingSVG></CoachingSVG>
+        <h2 class="mt-4 text--violet">Coaching: Finde Antworten! Entdecke Deine Talente!</h2>
 
         <p class="lead mt-4">Ein Coaching unterstützt Dich optimal in Deiner Entwicklung und stärkt Dich in der Bewältigung persönlicher Herausforderungen.</p>
       </v-container>
@@ -35,7 +36,7 @@
         <v-layout row wrap>
 
           <v-flex xs12 class="text-xs-center">
-            <CoachingSVG></CoachingSVG>
+
             <h2 class="my-4 text--violet">Wie werden unsere Coaches ausgewählt?</h2>
             <div class="lead mb-5">
               <p>
