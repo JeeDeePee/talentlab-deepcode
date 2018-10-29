@@ -25,9 +25,7 @@
         <h2 class="text--violet">Coaching-Abonnement:<br> flexibel, persönlich und digital!</h2>
 
         <p class="lead mt-4">Ortsunabhängig und zeitlich flexibel bearbeitest du deine beruflichen Fragestellungen
-          online
-          oder persönlich
-          im praktischen Abonnement.<br>
+          online oder persönlich im praktischen Abonnement.<br>
           Wähle deinen Coach oder Mentor abhängig von Thema und Erfahrung.</p>
       </v-container>
     </section>
