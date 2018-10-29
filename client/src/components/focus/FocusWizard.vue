@@ -39,8 +39,8 @@
     data() {
       return {
         processSteps: [
-          { text: 'Kompetenzen erfasssen', disabled: false },
-          { text: 'Selbstbeurteilung', disabled: false }
+          { text: 'Kompetenzen erfasssen', disabled: true },
+          { text: 'Selbstbeurteilung', disabled: true }
         ]
       }
     },
