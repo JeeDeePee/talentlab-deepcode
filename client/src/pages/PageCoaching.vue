@@ -17,8 +17,12 @@
 
     <section class="py-5 background--white text-xs-center">
       <v-container grid-list-xl class="pb-0 text-xs-center">
+<<<<<<< HEAD
         <CoachingSVG></CoachingSVG>
         <h2 class="mt-4 text--violet">Coaching: Finde Antworten! Entdecke Deine Talente!</h2>
+=======
+        <h2 class="text--violet">Coaching:</p><p>Finde Antworten! Entdecke Deine Talente!</h2>
+>>>>>>> Zeilenumbruch
 
         <p class="lead mt-4">Ein Coaching unterstützt Dich optimal in Deiner Entwicklung und stärkt Dich in der Bewältigung persönlicher Herausforderungen.</p>
       </v-container>
