@@ -69,9 +69,9 @@
       return {
         agent:
           {
-            'name': 'Samuel Ryser',
+            'name': 'Pawel Kowalski',
             'title': 'talentlab Advisor',
-            'avatar': require(`@/assets/img/people/samuel-ryser.jpg`)
+            'avatar': require(`@/assets/img/people/pawel-kowalski.jpg`)
           }
       }
     },
