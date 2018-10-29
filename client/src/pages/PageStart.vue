@@ -17,7 +17,7 @@
       <v-container grid-list-xl class="py-0">
 
         <h2 class="text--violet mb-5">
-          Nutze dein volles Potenzial und stärke deine Kompetenzen. Zielorientiert und wirksam!
+          Entdecke Deine Talente. Stärke deine Kompetenzen. Nutze Dein volles Potenzial!
         </h2>
 
         <v-layout row wrap>
