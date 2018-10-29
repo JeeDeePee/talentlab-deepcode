@@ -4,9 +4,6 @@
       <v-container class="pb-0">
         <h1 class="py-5">Wähle die passenden Module zur Stärkung deiner Kompetenzen!</h1>
         <div class="text-xs-center">
-          <v-btn @click="$vuetify.goTo('#learn-more', {duration: 200, offset: -50})" class="mx-2">
-            Module surfen
-          </v-btn>
           <v-btn v-if="user" :to="{name: 'development', params: {showFocusDialog: true}}" exact router class="mx-2">
             Kompetenzen erfassen
           </v-btn>
