@@ -73,6 +73,9 @@
           this.show = false
         }
         this.newCoachingWizardState(step)
+        if (finishWizard) {
+          this.$router.push({path: 'development'})
+        }
       }
     }
   }
