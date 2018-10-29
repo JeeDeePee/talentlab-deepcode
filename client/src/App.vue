@@ -94,14 +94,15 @@
           <v-flex xs12 sm4 class="text-sm-center">
             <div class="py-3">Partner</div>
             <div>
-              cb point gmbh<br>
-              orbit7 GmbH<br>
+              <a href="https://www.cedac.ch" target="_blank">cedac ag</a><br>
+              <a href="http://www.cbpoint.ch/" target="_blank">cb point gmbh</a><br>
+              <a href="http://orbit7.ch" target="_blank">orbit7 gmbh</a><br>
             </div>
           </v-flex>
           <v-flex xs12 sm4 class="text-sm-right">
             <div class="py-3">Folge uns auf</div>
             <div class="font-weight-black headline">
-              <a href="https://www.linkedin.com/">in</a>
+              <a href="https://www.linkedin.com/company/talentlab_ch/" target="_blank">in</a>
             </div>
           </v-flex>
         </v-layout>
