@@ -88,7 +88,7 @@
               c/o cedac AG<br>
               Effingerstrasse 4, 3001 Bern<br>
               T +41 (0)31 387 10 10<br>
-              info@talentlab.ch<br>
+              <a href="mailto:info@talentlab.ch">info@talentlab.ch</a><br>
             </div>
           </v-flex>
           <v-flex xs12 sm4 class="text-sm-center">
