@@ -10,11 +10,14 @@ import VueVimeoPlayer from 'vue-vimeo-player'
 import VueIntercom from 'vue-intercom'
 import apolloClient from './graphql/client'
 import VueApollo from 'vue-apollo'
+import VueGtm from 'vue-gtm'
 import App from './App'
 import router from './router'
 import store from '@/store/index'
 
 Vue.config.productionTip = false
+
+var debug = process.env.NODE_ENV !== 'production'
 
 // TODO: Move into a separate project
 //
@@ -63,6 +66,13 @@ Vue.use(Vuetify, {
 
 Vue.use(VueVimeoPlayer)
 Vue.use(VueIntercom, {appId: 'aec9le28'})
+
+Vue.use(VueGtm, {
+  id: window.$gtm_id,
+  enabled: true,
+  debug: debug,
+  vueRouter: router
+})
 
 const apolloProvider = new VueApollo({
   defaultClient: apolloClient
