@@ -117,19 +117,19 @@
           {
             'name': 'Samuel Ryser',
             'avatar': require(`@/assets/img/people/samuel-ryser.jpg`),
-            'description': '<p>Samuel Ryser ist ein erfahrener Coach bei der Begleitung von  Teamentwicklungsprozessen.</p><p>Er arbeitet als Assessor und Coach bei unserem Partner cedac AG, wo er auch den Bereich Innovation und Entwicklung verantwortet.\n' +
+            'description': '<p>Samuel Ryser ist ein erfahrener Coach bei der Begleitung von  Teamentwicklungsprozessen.\n' +
             '              Sprachen: Deutsch.</p>'
           },
           {
             'name': 'Samuel Ryser',
             'avatar': require(`@/assets/img/people/samuel-ryser.jpg`),
-            'description': '<p>Samuel Ryser ist ein erfahrener Coach bei der Begleitung von  Teamentwicklungsprozessen.</p><p>Er arbeitet als Assessor und Coach bei unserem Partner cedac AG, wo er auch den Bereich Innovation und Entwicklung verantwortet.\n' +
+            'description': '<p>Samuel Ryser ist ein erfahrener Coach bei der Begleitung von  Teamentwicklungsprozessen.\n' +
             '              Sprachen: Deutsch.</p>'
           },
           {
             'name': 'Samuel Ryser',
             'avatar': require(`@/assets/img/people/samuel-ryser.jpg`),
-            'description': '<p>Samuel Ryser ist ein erfahrener Coach bei der Begleitung von  Teamentwicklungsprozessen.</p><p>Er arbeitet als Assessor und Coach bei unserem Partner cedac AG, wo er auch den Bereich Innovation und Entwicklung verantwortet.\n' +
+            'description': '<p>Samuel Ryser ist ein erfahrener Coach bei der Begleitung von  Teamentwicklungsprozessen.\n' +
             '              Sprachen: Deutsch.</p>'
           }
         ],

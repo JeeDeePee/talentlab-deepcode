@@ -87,25 +87,25 @@
           {
             'name': 'Peter Naumann',
             'avatar': require(`@/assets/img/people/samuel-ryser.jpg`),
-            'description': '<p>Samuel Ryser ist ein erfahrener Coach bei der Begleitung von  Teamentwicklungsprozessen.</p><p>Er arbeitet als Assessor und Coach bei unserem Partner cedac AG, wo er auch den Bereich Innovation und Entwicklung verantwortet.\n' +
+            'description': '<p>Peter Naumann ist ein erfahrener Coach bei der Begleitung von  Teamentwicklungsprozessen.\n' +
             '              Sprachen: Deutsch.</p>'
           },
           {
             'name': 'Peter Naumann',
             'avatar': require(`@/assets/img/people/samuel-ryser.jpg`),
-            'description': '<p>Samuel Ryser ist ein erfahrener Coach bei der Begleitung von  Teamentwicklungsprozessen.</p><p>Er arbeitet als Assessor und Coach bei unserem Partner cedac AG, wo er auch den Bereich Innovation und Entwicklung verantwortet.\n' +
+            'description': '<p>Peter Naumann ist ein erfahrener Coach bei der Begleitung von  Teamentwicklungsprozessen.\n' +
             '              Sprachen: Deutsch.</p>'
           },
           {
             'name': 'Samuel Ryser',
             'avatar': require(`@/assets/img/people/samuel-ryser.jpg`),
-            'description': '<p>Samuel Ryser ist ein erfahrener Coach bei der Begleitung von  Teamentwicklungsprozessen.</p><p>Er arbeitet als Assessor und Coach bei unserem Partner cedac AG, wo er auch den Bereich Innovation und Entwicklung verantwortet.\n' +
-            '              Sprachen: Deutsch.</p>'
+            'description': '<p>Samuel Ryser ist ein erfahrener Coach bei der Begleitung von  Teamentwicklungsprozessen.</p><p>Nach seiner Ausbildung zum Primar- und Realschullehrer unterrichtete er und absolvierte parallel ein Studium der Arbeits- und Organisationspsychologie und der Sportwissenschaften an der Universität Bern, das er 2011 mit dem Master of Science in Psychology abschloss.</p><p>Heute arbeitet er als Assessor und Coach bei unserem Partner cedac AG, wo er auch den  Bereich Innovation und Entwicklung verantwortet.</p><p>Samuel spricht bei der Arbeit (Bern-)Deutsch.\n'
+.</p>'
           },
           {
             'name': 'Felix Muster',
             'avatar': require(`@/assets/img/people/samuel-ryser.jpg`),
-            'description': '<p>Samuel Ryser ist ein erfahrener Coach bei der Begleitung von  Teamentwicklungsprozessen.</p><p>Er arbeitet als Assessor und Coach bei unserem Partner cedac AG, wo er auch den Bereich Innovation und Entwicklung verantwortet.\n' +
+            'description': '<p>Felix Muster ist ein erfahrener Coach bei der Begleitung von  Teamentwicklungsprozessen.\n' +
             '              Sprachen: Deutsch.</p>'
           }
         ],
@@ -113,19 +113,19 @@
           {
             'name': 'Max Muster',
             'avatar': require(`@/assets/img/people/samuel-ryser.jpg`),
-            'description': '<p>Samuel Ryser ist ein erfahrener Coach bei der Begleitung von  Teamentwicklungsprozessen.</p><p>Er arbeitet als Assessor und Coach bei unserem Partner cedac AG, wo er auch den Bereich Innovation und Entwicklung verantwortet.\n' +
+            'description': '<p>Max Muster ist ein erfahrener Coach bei der Begleitung von  Teamentwicklungsprozessen.\n' +
             '              Sprachen: Deutsch.</p>'
           },
           {
             'name': 'Peter Frei',
             'avatar': require(`@/assets/img/people/samuel-ryser.jpg`),
-            'description': '<p>Samuel Ryser ist ein erfahrener Coach bei der Begleitung von  Teamentwicklungsprozessen.</p><p>Er arbeitet als Assessor und Coach bei unserem Partner cedac AG, wo er auch den Bereich Innovation und Entwicklung verantwortet.\n' +
+            'description': '<p>Peter Frei ist ein erfahrener Coach bei der Begleitung von  Teamentwicklungsprozessen.\n' +
             '              Sprachen: Deutsch.</p>'
           },
           {
             'name': 'Nico Gebrer',
             'avatar': require(`@/assets/img/people/samuel-ryser.jpg`),
-            'description': '<p>Samuel Ryser ist ein erfahrener Coach bei der Begleitung von  Teamentwicklungsprozessen.</p><p>Er arbeitet als Assessor und Coach bei unserem Partner cedac AG, wo er auch den Bereich Innovation und Entwicklung verantwortet.\n' +
+            'description': '<p>Nico Gebrer ist ein erfahrener Coach bei der Begleitung von  Teamentwicklungsprozessen.\n' +
             '              Sprachen: Deutsch.</p>'
           }
         ]
