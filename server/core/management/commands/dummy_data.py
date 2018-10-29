@@ -314,7 +314,7 @@ data = [
     {
         'title': 'Mastering Relations',
         'icon': 'MasteringRelations',
-        'teaser': 'Lerne Beziehungen zielgerichtet zu gestalten',
+        'teaser': 'Lerne Beziehungen <br> zielgerichtet zu gestalten',
         'competences': [
             {
                 'title': 'Kommunikationsfähigkeit',
