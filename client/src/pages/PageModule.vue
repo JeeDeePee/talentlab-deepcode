@@ -50,22 +50,25 @@
 
       <section v-if="moduleBooked">
         <v-container class="py-2" grid-list-xl>
-          <div class="mt-5 mb-2 h3">Finde heraus wo du stehst</div>
+          <!--<div class="mt-5 mb-2 h3">Finde heraus wo du stehst</div>-->
 
           <v-layout row wrap>
             <v-flex xs4>
+              <div class="mt-5 mb-2 h4">Foo Clea</div>
               <v-btn class="module--action-button" @click.stop="showModuleGoalDialog=true">
                 <v-icon class="mr-2">play_circle_filled</v-icon>
                 Ziele
               </v-btn>
             </v-flex>
             <v-flex xs4>
+              <div class="mt-5 mb-2 h4">Bar Clea</div>
               <v-btn class="module--action-button" @click.stop="showLearningsDialog=true">
                 <v-icon class="mr-2">play_circle_filled</v-icon>
                 Learnings
               </v-btn>
             </v-flex>
             <v-flex xs4>
+              <div class="mt-5 mb-2 h4">Baz Clea</div>
               <v-btn class="module--action-button" @click.stop="showActionPlanDialog=true">
                 <v-icon class="mr-2">play_circle_filled</v-icon>
                 Action Plan
@@ -123,13 +126,7 @@
                   Hilfestellungen.
                 </div>
               </div>
-
-              <h2 class="h3 mt-5 underline">Agenda</h2>
-              <Agenda v-if="moduleBooked" :items="dummyAgenda"></Agenda>
-              <div class="mt-3 text--light uppercase" v-else>Hier findest Du bei Buchung Termine &
-                Kontaktinformationen
-              </div>
-
+              
             </v-flex>
           </v-layout>
         </v-container>
