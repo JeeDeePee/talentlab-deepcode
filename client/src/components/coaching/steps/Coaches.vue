@@ -86,7 +86,7 @@
           {
             'name': 'Daniel Fahrni',
             'avatar': require(`@/assets/img/people/daniel-fahrni.jpg`),
-            'description': '<p> Daniel Fahrni legt als Coach Wert darauf, die Aufmerksamkeit bei den.' +
+            'description': '<p> Daniel Fahrni legt als Coach Wert darauf, die Aufmerksamkeit bei den' +
             ' Kompetenzen zu fokussieren.</p>Nach seinem Studium der Erziehungs-, Politik- und Medienwissenschaften' +
             ' in Bern und Frankfurt zog es ihn als Führungs- und Organisationsberater bald einmal ins HR. Sowohl' +
             ' als Linienverantwortlicher als auch als Experte kennt er die Herausforderungen des Management Development' +
