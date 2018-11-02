@@ -51,7 +51,6 @@
             <v-avatar size=100 class="v-avatar--responsive">
               <v-img
                 :src="selected.avatar"
-                :alt="selected.name"
               ></v-img>
             </v-avatar>
             <h3 class="mt-2">
