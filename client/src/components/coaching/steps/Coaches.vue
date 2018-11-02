@@ -87,10 +87,10 @@
           {
             'name': 'Daniel Fahrni',
             'avatar': require(`@/assets/img/people/daniel-fahrni.jpg`),
-            'description': '<p> Daniel Fahrni legt als Coach Wert darauf, die Aufmerksamkeit die Aufmerksamkeit bei den.' +
+            'description': '<p> Daniel Fahrni legt als Coach Wert darauf, die Aufmerksamkeit bei den.' +
             ' Kompetenzen zu fokussieren.</p>Nach seinem Studium der Erziehungs-, Politik- und Medienwissenschaften' +
             ' in Bern und Frankfurt zog es ihn als Führungs- und Organisationsberater bald einmal ins HR. Sowohl' +
-            ' als Linienverantwortlicher als auch als Experte kennt die Herausforderungen des Management Development' +
+            ' als Linienverantwortlicher als auch als Experte kennt er die Herausforderungen des Management Development' +
             ' von der Pieke auf und hat diesen Bereich in grossen Organisationen aufgebaut und verantwortet.</p>2004' +
             ' gründete er die cedac AG und führt den Assessment-Spezialisten und Partner von talentlab bis heute' +
             ' erfolgreich.</p>Daniel Fahrni spricht Deutsch.'
