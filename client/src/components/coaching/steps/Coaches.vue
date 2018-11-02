@@ -48,7 +48,7 @@
       <div v-if="selected" class="background--beige mt-3 pa-4">
         <v-layout>
           <v-flex xs4>
-            <v-avatar size=100 class="v-avatar--responsive">
+            <v-avatar size=125 class="v-avatar--responsive">
               <v-img
                 :src="selected.avatar"
               ></v-img>
