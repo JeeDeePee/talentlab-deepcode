@@ -85,16 +85,15 @@
         selected: null,
         coaches: [
           {
-            'name': 'Peter Naumann',
-            'avatar': require(`@/assets/img/people/samuel-ryser.jpg`),
-            'description': '<p>Peter Naumann ist ein erfahrener Coach bei der Begleitung von  Teamentwicklungsprozessen.\n' +
-            '              Sprachen: Deutsch.</p>'
-          },
-          {
-            'name': 'Peter Naumann',
-            'avatar': require(`@/assets/img/people/samuel-ryser.jpg`),
-            'description': '<p>Peter Naumann ist ein erfahrener Coach bei der Begleitung von  Teamentwicklungsprozessen.\n' +
-            '              Sprachen: Deutsch.</p>'
+            'name': 'Daniel Fahrni',
+            'avatar': require(`@/assets/img/people/daniel-fahrni.jpg`),
+            'description': '<p> Daniel Fahrni legt als Coach Wert darauf, die Aufmerksamkeit die Aufmerksamkeit bei den.' +
+            ' Kompetenzen zu fokussieren.</p>Nach seinem Studium der Erziehungs-, Politik- und Medienwissenschaften' +
+            ' in Bern und Frankfurt zog es ihn als Führungs- und Organisationsberater bald einmal ins HR. Sowohl' +
+            ' als Linienverantwortlicher als auch als Experte kennt die Herausforderungen des Management Development' +
+            ' von der Pieke auf und hat diesen Bereich in grossen Organisationen aufgebaut und verantwortet.</p>2004' +
+            ' gründete er die cedac AG und führt den Assessment-Spezialisten und Partner von talentlab bis heute' +
+            ' erfolgreich.</p>Daniel Fahrni spricht Deutsch.'
           },
           {
             'name': 'Samuel Ryser',
@@ -105,32 +104,19 @@
             '  Psychology abschloss.</p><p>Heute arbeitet er als Assessor und Coach bei unserem Partner cedac AG, wo er auch den  Bereich ' +
             '  Innovation und Entwicklung verantwortet.</p><p>Samuel spricht bei der Arbeit (Bern-)Deutsch.</p>'
           },
-          {
-            'name': 'Felix Muster',
-            'avatar': require(`@/assets/img/people/samuel-ryser.jpg`),
-            'description': '<p>Felix Muster ist ein erfahrener Coach bei der Begleitung von  Teamentwicklungsprozessen.\n' +
-            '              Sprachen: Deutsch.</p>'
-          }
         ],
         managers: [
           {
-            'name': 'Max Muster',
-            'avatar': require(`@/assets/img/people/samuel-ryser.jpg`),
-            'description': '<p>Max Muster ist ein erfahrener Coach bei der Begleitung von  Teamentwicklungsprozessen.\n' +
-            '              Sprachen: Deutsch.</p>'
+            'name': 'Daniel Fahrni',
+            'avatar': require(`@/assets/img/people/daniel-fahrni.jpg`),
+            'description': '<p> Daniel Fahrni legt als Coach Wert darauf, die Aufmerksamkeit die Aufmerksamkeit bei den.' +
+            ' Kompetenzen zu fokussieren.</p>Nach seinem Studium der Erziehungs-, Politik- und Medienwissenschaften' +
+            ' in Bern und Frankfurt zog es ihn als Führungs- und Organisationsberater bald einmal ins HR. Sowohl' +
+            ' als Linienverantwortlicher als auch als Experte kennt die Herausforderungen des Management Development' +
+            ' von der Pieke auf und hat diesen Bereich in grossen Organisationen aufgebaut und verantwortet.</p>2004' +
+            ' gründete er die cedac AG und führt den Assessment-Spezialisten und Partner von talentlab bis heute' +
+            ' erfolgreich.</p>Daniel Fahrni spricht Deutsch.'
           },
-          {
-            'name': 'Peter Frei',
-            'avatar': require(`@/assets/img/people/samuel-ryser.jpg`),
-            'description': '<p>Peter Frei ist ein erfahrener Coach bei der Begleitung von  Teamentwicklungsprozessen.\n' +
-            '              Sprachen: Deutsch.</p>'
-          },
-          {
-            'name': 'Nico Gebrer',
-            'avatar': require(`@/assets/img/people/samuel-ryser.jpg`),
-            'description': '<p>Nico Gebrer ist ein erfahrener Coach bei der Begleitung von  Teamentwicklungsprozessen.\n' +
-            '              Sprachen: Deutsch.</p>'
-          }
         ]
       }
     },
