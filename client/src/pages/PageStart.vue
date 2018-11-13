@@ -2,7 +2,7 @@
   <div>
     <section class="background--violet text-xs-center">
       <v-container grid-list-xl class="pb-0">
-        <h1 class="py-5 text--limited">TALENTLAB ist der digitale Begleiter für Karriere- und Potenzialentwicklung</h1>
+        <h1 class="py-5 text--limited">talentlab ist der digitale Begleiter für Karriere- und Potenzialentwicklung</h1>
         <v-btn @click="$vuetify.goTo('#learn-more', {duration: 200, offset: -50})" class="mx-2">
           mehr erfahren
         </v-btn>
