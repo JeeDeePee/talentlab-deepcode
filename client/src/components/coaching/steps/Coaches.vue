@@ -87,13 +87,24 @@
           {
             'name': 'Daniel Fahrni',
             'avatar': require(`@/assets/img/people/daniel-fahrni.jpg`),
-            'description': '<p> Daniel Fahrni legt als Coach Wert darauf, die Aufmerksamkeit bei den' +
-            ' Kompetenzen zu fokussieren.</p>Nach seinem Studium der Erziehungs-, Politik- und Medienwissenschaften' +
+            'description': '<p> Daniel Fahrni: "Die Aufmerksamkeit bei den Kompetenzen fokussieren."</p>' +
+            ' Nach seinem Studium der Erziehungs-, Politik- und Medienwissenschaften' +
             ' in Bern und Frankfurt zog es ihn als Führungs- und Organisationsberater bald einmal ins HR. Sowohl' +
             ' als Linienverantwortlicher als auch als Experte kennt er die Herausforderungen des Management Development' +
             ' von der Pieke auf und hat diesen Bereich in grossen Organisationen aufgebaut und verantwortet.</p>2004' +
             ' gründete er die cedac AG und führt den Assessment-Spezialisten und Partner von talentlab bis heute' +
             ' erfolgreich.</p>Daniel Fahrni spricht Deutsch.'
+          },
+          {
+            'name': 'Rahel Knecht',
+            'avatar': require(`@/assets/img/people/rahel-knecht.jpg`),
+            'description': '<p>Rahel Knecht: "Im Zentrum steht die Stärkung der eigenen Wirksamkeit."</p>' +
+            ' Rahel Knecht hat an der Universität Bern Arbeits- und Organisationspsychologie studiert und bildete' +
+            ' sich in Betriebswirtschaft und Coaching weiter.</p>Sie vereint Berufspraxis als Laufbahnberaterin, Coach' +
+            ' und Personalentwicklerin. Die passionierte Personalerin hat zudem umfassende Führungserfahrung als Leiterin' +
+            ' Talentmanagement & Diagnostik und dann der gesamten Personalentwicklung für eine grosse Schweizerische Versicherung.' +
+            ' Diese Funktion führte sie in Co-Leitung und ist somit vertraut im Umgang mit modernen Organisationsformen.</p>' +
+            ' Seit 2018 amtet Rahel Knecht als Standortleiterin Bern bei unserem Partner cedac AG.</p>Rahel Knecht spricht Deutsch.'
           },
           {
             'name': 'Samuel Ryser',
@@ -109,13 +120,24 @@
           {
             'name': 'Daniel Fahrni',
             'avatar': require(`@/assets/img/people/daniel-fahrni.jpg`),
-            'description': '<p> Daniel Fahrni legt als Coach Wert darauf, die Aufmerksamkeit die Aufmerksamkeit bei den.' +
-            ' Kompetenzen zu fokussieren.</p>Nach seinem Studium der Erziehungs-, Politik- und Medienwissenschaften' +
+            'description': '<p> Daniel Fahrni: "Die Aufmerksamkeit bei den Kompetenzen fokussieren."</p>' +
+            ' Nach seinem Studium der Erziehungs-, Politik- und Medienwissenschaften' +
             ' in Bern und Frankfurt zog es ihn als Führungs- und Organisationsberater bald einmal ins HR. Sowohl' +
-            ' als Linienverantwortlicher als auch als Experte kennt die Herausforderungen des Management Development' +
+            ' als Linienverantwortlicher als auch als Experte kennt er die Herausforderungen des Management Development' +
             ' von der Pieke auf und hat diesen Bereich in grossen Organisationen aufgebaut und verantwortet.</p>2004' +
             ' gründete er die cedac AG und führt den Assessment-Spezialisten und Partner von talentlab bis heute' +
             ' erfolgreich.</p>Daniel Fahrni spricht Deutsch.'
+          },
+          {
+            'name': 'Rahel Knecht',
+            'avatar': require(`@/assets/img/people/rahel-knecht.jpg`),
+            'description': '<p>Rahel Knecht: "Im Zentrum steht die Stärkung der eigenen Wirksamkeit."</p>' +
+            ' Rahel Knecht hat an der Universität Bern Arbeits- und Organisationspsychologie studiert und bildete' +
+            ' sich in Betriebswirtschaft und Coaching weiter.</p>Sie vereint Berufspraxis als Laufbahnberaterin, Coach' +
+            ' und Personalentwicklerin. Die passionierte Personalerin hat zudem umfassende Führungserfahrung als Leiterin' +
+            ' Talentmanagement & Diagnostik und dann der gesamten Personalentwicklung für eine grosse Schweizerische Versicherung.' +
+            ' Diese Funktion führte sie in Co-Leitung und ist somit vertraut im Umgang mit modernen Organisationsformen.</p>' +
+            ' Seit 2018 amtet Rahel Knecht als Standortleiterin Bern bei unserem Partner cedac AG.</p>Rahel Knecht spricht Deutsch.'
           },
         ]
       }
