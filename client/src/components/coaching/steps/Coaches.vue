@@ -87,7 +87,7 @@
           {
             'name': 'Daniel Fahrni',
             'avatar': require(`@/assets/img/people/daniel-fahrni.jpg`),
-            'description': '<p> Daniel Fahrni: "Die Aufmerksamkeit bei den Kompetenzen fokussieren."</p>' +
+            'description': '<p> Daniel Fahrni:</p>"Die Aufmerksamkeit bei den Kompetenzen fokussieren."</p>' +
             ' Nach seinem Studium der Erziehungs-, Politik- und Medienwissenschaften' +
             ' in Bern und Frankfurt zog es ihn als Führungs- und Organisationsberater bald einmal ins HR. Sowohl' +
             ' als Linienverantwortlicher als auch als Experte kennt er die Herausforderungen des Management Development' +
@@ -98,7 +98,7 @@
           {
             'name': 'Rahel Knecht',
             'avatar': require(`@/assets/img/people/rahel-knecht.jpg`),
-            'description': '<p>Rahel Knecht: "Im Zentrum steht die Stärkung der eigenen Wirksamkeit."</p>' +
+            'description': '<p>Rahel Knecht:</p>"Im Zentrum steht die Stärkung der eigenen Wirksamkeit."</p>' +
             ' Rahel Knecht hat an der Universität Bern Arbeits- und Organisationspsychologie studiert und bildete' +
             ' sich in Betriebswirtschaft und Coaching weiter.</p>Sie vereint Berufspraxis als Laufbahnberaterin, Coach' +
             ' und Personalentwicklerin. Die passionierte Personalerin hat zudem umfassende Führungserfahrung als Leiterin' +
@@ -109,7 +109,7 @@
           {
             'name': 'Monika Koller Schinca',
             'avatar': require(`@/assets/img/people/monika-koller.jpg`),
-            'description': '<p>Monika Koller Schinca: "Durch das Lösen von Blockaden im Alltag energievoller unterwegs."</p>' +
+            'description': '<p>Monika Koller Schinca:</p>"Durch das Lösen von Blockaden im Alltag energievoller unterwegs."</p>' +
             ' Monika Koller Schinca studierte Lebensmittelwissenschaften an der ETH in Zürich und arbeitete in Midor AG in Meilen' +
             ' in der Entwicklung von Eiswaren, bevor sie an der NLP Akademie Schweiz eine Coaching Ausbildung absolvierte. Seit 2008' +
             ' arbeitet sie als Coach und Seminarleiterin in Luzern und ist Partnerin in einer HR Consulting Boutique.</p>' +
@@ -119,7 +119,7 @@
           {
             'name': 'Samuel Ryser',
             'avatar': require(`@/assets/img/people/samuel-ryser.jpg`),
-            'description': '<p>Monika Koller-Schinca: "Bei Veränderungen und für die persönliche Entwicklung ist die Nutzung der eigenen Ressourcen und Potenziale</p>' +
+            'description': '<p>Monika Koller-Schinca:</p>"Bei Veränderungen und für die persönliche Entwicklung ist die Nutzung der eigenen Ressourcen und Potenziale</p>' +
             '  <p>von entscheidender Bedeutung. Nach seiner Ausbildung zum Primar- und Realschullehrer unterrichtete er und absolvierte parallel ein' +
             '  Studium der Arbeits- und Organisationspsychologie und der Sportwissenschaften an der Universität Bern, das er 2011 mit dem Master of Science in ' +
             '  Psychology abschloss.</p><p>Mit einer Zusatzausbildung in Ressourcen- und lösungsorientierter Beratung arbeitet er heute als' +
@@ -130,7 +130,7 @@
           {
             'name': 'Daniel Fahrni',
             'avatar': require(`@/assets/img/people/daniel-fahrni.jpg`),
-            'description': '<p> Daniel Fahrni: "Die Aufmerksamkeit bei den Kompetenzen fokussieren."</p>' +
+            'description': '<p> Daniel Fahrni:</p>"Die Aufmerksamkeit bei den Kompetenzen fokussieren."</p>' +
             ' Nach seinem Studium der Erziehungs-, Politik- und Medienwissenschaften' +
             ' in Bern und Frankfurt zog es ihn als Führungs- und Organisationsberater bald einmal ins HR. Sowohl' +
             ' als Linienverantwortlicher als auch als Experte kennt er die Herausforderungen des Management Development' +
@@ -141,7 +141,7 @@
           {
             'name': 'Rahel Knecht',
             'avatar': require(`@/assets/img/people/rahel-knecht.jpg`),
-            'description': '<p>Rahel Knecht: "Im Zentrum steht die Stärkung der eigenen Wirksamkeit."</p>' +
+            'description': '<p>Rahel Knecht:</p>"Im Zentrum steht die Stärkung der eigenen Wirksamkeit."</p>' +
             ' Rahel Knecht hat an der Universität Bern Arbeits- und Organisationspsychologie studiert und bildete' +
             ' sich in Betriebswirtschaft und Coaching weiter.</p>Sie vereint Berufspraxis als Laufbahnberaterin, Coach' +
             ' und Personalentwicklerin. Die passionierte Personalerin hat zudem umfassende Führungserfahrung als Leiterin' +
@@ -152,7 +152,7 @@
           {
             'name': 'Lis Spühler Schaffroth',
             'avatar': require(`@/assets/img/people/lis-spuehler.jpg`),
-            'description': '<p>Lis Spühler Schaffroth: "Gewinnen Sie an Souveränität!"</p>' +
+            'description': '<p>Lis Spühler Schaffroth:</p>"Gewinnen Sie an Souveränität!"</p>' +
             ' Lis Spühler Schaffroth ist Psychologin mit langjähriger Führungs-, Beratungs- und Coachingerfahrung.' +
             ' Sie hat Weiterbildungen unter anderem in Konfliktmanagement, Mediation und strategischem Management absolviert.' +
             ' Direkte Anwendbarkeit im Berufsalltag und die Stärkung des Selbst stehen dabei im Zentrum. Gemeinsam werden spezifische Lösungsansätze' +
