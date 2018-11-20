@@ -107,9 +107,19 @@
             ' Seit 2018 amtet Rahel Knecht als Standortleiterin Bern bei unserem Partner cedac AG.</p>Rahel Knecht spricht Deutsch.'
           },
           {
+            'name': 'Monika Koller Schinca',
+            'avatar': require(`@/assets/img/people/monika-koller.jpeg`),
+            'description': '<p>Monika Koller Schinca: "Durch das Lösen von Blockaden im Alltag energievoller unterwegs."</p>' +
+            ' Monika Koller Schinca studierte Lebensmittelwissenschaften an der ETH in Zürich und arbeitete in Midor AG in Meilen' +
+            ' in der Entwicklung von Eiswaren, bevor sie an der NLP Akademie Schweiz eine Coaching Ausbildung absolvierte. Seit 2008' +
+            ' arbeitet sie als Coach und Seminarleiterin in Luzern und ist Partnerin in einer HR Consulting Boutique.</p>' +
+            ' In diversen Weiterbildungen hat sie sich zur NLP Master und Trainerin, zum Wingwave Coach und zum Logosynthese Master' +
+            ' und Instructor ausbilden lassen.</p>Monika Koller Schinca spricht Deutsch, Italiensich und Englisch.'
+          },
+          {
             'name': 'Samuel Ryser',
             'avatar': require(`@/assets/img/people/samuel-ryser.jpg`),
-            'description': '<p>Samuel Ryser: "Bei Veränderungen und für die persönliche Entwicklung ist die Nutzung der eigenen Ressourcen und Potenziale</p>' +
+            'description': '<p>Monika Koller-Schinca: "Bei Veränderungen und für die persönliche Entwicklung ist die Nutzung der eigenen Ressourcen und Potenziale</p>' +
             '  <p>von entscheidender Bedeutung. Nach seiner Ausbildung zum Primar- und Realschullehrer unterrichtete er und absolvierte parallel ein' +
             '  Studium der Arbeits- und Organisationspsychologie und der Sportwissenschaften an der Universität Bern, das er 2011 mit dem Master of Science in ' +
             '  Psychology abschloss.</p><p>Mit einer Zusatzausbildung in Ressourcen- und lösungsorientierter Beratung arbeitet er heute als' +
@@ -138,6 +148,15 @@
             ' Talentmanagement & Diagnostik und dann der gesamten Personalentwicklung für eine grosse Schweizerische Versicherung.' +
             ' Diese Funktion führte sie in Co-Leitung und ist somit vertraut im Umgang mit modernen Organisationsformen.</p>' +
             ' Seit 2018 amtet Rahel Knecht als Standortleiterin Bern bei unserem Partner cedac AG.</p>Rahel Knecht spricht Deutsch.'
+          },
+          {
+            'name': 'Lis Spühler Schaffroth',
+            'avatar': require(`@/assets/img/people/lis-spuehler.jpeg`),
+            'description': '<p>Lis Spühler Schaffroth: "QUOTE"</p>' +
+            ' Lis Spühler Schaffroth ist Psychologin mit langjähriger Führungs-, Beratungs- und Coachingerfahrung.' +
+            ' Sie hat Weiterbildungen unter anderem in Konfliktmanagement, Mediation und strategischem Management absolviert.' +
+            ' Sie arbeitet selbständig im Bereich Personal- und Organisationsentwicklung sowie psychologische Beratung.</p>' +
+            ' Lis Spühler Schaffroth spricht Deutsch und Französisch.'
           },
         ]
       }
