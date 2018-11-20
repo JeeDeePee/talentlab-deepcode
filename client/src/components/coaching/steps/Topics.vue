@@ -39,16 +39,16 @@
       return {
         checked: [],
         topics: [
-          {title: 'Standortbestimmung & Neuorientierung', id: 6},
-          {title: 'Domain-Life-Balance', id: 9},
+          {title: 'Übernahme einer neuen Rolle', id: 1},
+          {title: 'Übernahme einer Führungsfunktion', id: 2},
+          {title: 'Führung von Führungskräften', id: 3},
+          {title: 'Bewältigung anspruchsvoller Führungssituationen', id: 4},
           {title: 'Frauen in Führungspositionen', id: 5},
-          {title: 'Job Sharing', id: 10},
+          {title: 'Standortbestimmung & Neuorientierung', id: 6},
+          {title: 'Vorbereitung auf individuelle Herausforderungen', id: 7},
           {title: 'Persönliche oder berufliche Veränderungen und Krisen', id: 8},
-          {title: 'Übernahme einer neuen Rolle', id: 4},
-          {title: 'Übernahme einer Führungsfunktion', id: 1},
-          {title: 'Führung von Führungskräften', id: 2},
-          {title: 'Bewältigung anspruchsvoller Führungssituationen', id: 3},
-          {title: 'Vorbereitung auf individuelle Herausforderungen', id: 7}
+          {title: 'Domain-Life-Balance', id: 9},
+          {title: 'Job Sharing', id: 10}
         ]
       }
     },
