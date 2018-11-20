@@ -7,7 +7,7 @@
     <v-layout row wrap  class="background--white mb-3 mt-3">
       <v-flex xs12 sm6 class="mb-3">
         <v-checkbox
-          v-for="(item,i) in topics.slice(0, 4)" :key="i"
+          v-for="(item,i) in topics.slice(0, 5)" :key="i"
           :label="item.title"
           v-model="selectedTopic"
           hide-details
@@ -15,7 +15,7 @@
       </v-flex>
       <v-flex xs12 sm6>
         <v-checkbox
-          v-for="(item,i) in topics.slice(4)" :key="i"
+          v-for="(item,i) in topics.slice(5)" :key="i"
           :label="item.title"
           v-model="selectedTopic"
           hide-details
