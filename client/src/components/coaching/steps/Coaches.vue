@@ -28,7 +28,7 @@
         <v-flex xs12 sm6>
           <h3 class="my-3 text--violet">Erfahrene Manager</h3>
           <div
-            class="mb-3 pointer background--white pa-2"
+            class="mb-2 pointer background--white pa-2"
             v-for="(item,i) in managers" :key="i"
             @click="select(item)"
           >
