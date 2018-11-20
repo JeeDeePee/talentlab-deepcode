@@ -54,9 +54,6 @@
                 :alt="selected.name"
               ></v-img>
             </v-avatar>
-            <h3 class="mt-2">
-              {{selected.name}}
-            </h3>
           </v-flex>
 
           <v-flex xs8>
