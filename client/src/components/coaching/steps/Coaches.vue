@@ -152,7 +152,7 @@
           {
             'name': 'Lis Spühler Schaffroth',
             'avatar': require(`@/assets/img/people/lis-spuehler.jpg`),
-            'description': '<p>Lis Spühler Schaffroth: "QUOTE"</p>' +
+            'description': '<p>Lis Spühler Schaffroth: "Gewinnen Sie an Souveränität!"</p>' +
             ' Lis Spühler Schaffroth ist Psychologin mit langjähriger Führungs-, Beratungs- und Coachingerfahrung.' +
             ' Sie hat Weiterbildungen unter anderem in Konfliktmanagement, Mediation und strategischem Management absolviert.' +
             ' Sie arbeitet selbständig im Bereich Personal- und Organisationsentwicklung sowie psychologische Beratung.</p>' +
