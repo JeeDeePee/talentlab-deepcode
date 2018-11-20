@@ -116,8 +116,8 @@
           {
             'name': 'Samuel Ryser',
             'avatar': require(`@/assets/img/people/samuel-ryser.jpg`),
-            'description': '<p>Samuel Ryser:</p>"Bei Veränderungen und für die persönliche Entwicklung ist die Nutzung der eigenen Ressourcen und Potenziale</p>' +
-            '  <p>von entscheidender Bedeutung. Nach seiner Ausbildung zum Primar- und Realschullehrer unterrichtete er und absolvierte parallel ein' +
+            'description': '<p>Samuel Ryser:</p>"Bei Veränderungen und für die persönliche Entwicklung ist die Nutzung der eigenen Ressourcen und Potenziale' +
+            '  <p>von entscheidender Bedeutung.</p>Nach seiner Ausbildung zum Primar- und Realschullehrer unterrichtete er und absolvierte parallel ein' +
             '  Studium der Arbeits- und Organisationspsychologie und der Sportwissenschaften an der Universität Bern, das er 2011 mit dem Master of Science in ' +
             '  Psychology abschloss.</p><p>Mit einer Zusatzausbildung in Ressourcen- und lösungsorientierter Beratung arbeitet er heute als' +
             '  Assessor und Coach bei unserem Partner cedac AG, wo er auch den  Bereich Innovation und Entwicklung verantwortet.</p><p>Samuel spricht Deutsch.</p>'
@@ -151,7 +151,7 @@
             'avatar': require(`@/assets/img/people/lis-spuehler.jpg`),
             'description': '<p>Lis Spühler Schaffroth:</p>"Gewinnen Sie an Souveränität!"</p>' +
             ' Lis Spühler Schaffroth ist Psychologin mit langjähriger Führungs-, Beratungs- und Coachingerfahrung.' +
-            ' Sie hat Weiterbildungen unter anderem in Konfliktmanagement, Mediation und strategischem Management absolviert.' +
+            ' Sie hat Weiterbildungen unter anderem in Konfliktmanagement, Mediation und strategischem Management absolviert.</p>' +
             ' Gemeinsam werden spezifische Lösungsansätze zur Erweiterung der persönlichen Handlungsoptionen entwickelt.' +
             ' Direkte Anwendbarkeit im Berufsalltag und die Stärkung des Selbst stehen dabei im Zentrum.</p>' +
             ' Lis Spühler Schaffroth arbeitet selbständig im Bereich Personal- und Organisationsentwicklung sowie psychologische Beratung.</p>' +
