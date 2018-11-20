@@ -155,7 +155,9 @@
             'description': '<p>Lis Spühler Schaffroth: "Gewinnen Sie an Souveränität!"</p>' +
             ' Lis Spühler Schaffroth ist Psychologin mit langjähriger Führungs-, Beratungs- und Coachingerfahrung.' +
             ' Sie hat Weiterbildungen unter anderem in Konfliktmanagement, Mediation und strategischem Management absolviert.' +
-            ' Sie arbeitet selbständig im Bereich Personal- und Organisationsentwicklung sowie psychologische Beratung.</p>' +
+            ' Direkte Anwendbarkeit im Berufsalltag und die Stärkung des Selbst stehen dabei im Zentrum. Gemeinsam werden spezifische Lösungsansätze' +
+            ' zur Erweiterung der persönlichen Handlungsoptionen entwickelt.</p>' +
+            ' Lis Spühler Schaffroth arbeitet selbständig im Bereich Personal- und Organisationsentwicklung sowie psychologische Beratung.</p>' +
             ' Lis Spühler Schaffroth spricht Deutsch und Französisch.'
           },
         ]
