@@ -108,7 +108,7 @@
           },
           {
             'name': 'Monika Koller Schinca',
-            'avatar': require(`@/assets/img/people/monika-koller.jpeg`),
+            'avatar': require(`@/assets/img/people/monika-koller.jpg`),
             'description': '<p>Monika Koller Schinca: "Durch das Lösen von Blockaden im Alltag energievoller unterwegs."</p>' +
             ' Monika Koller Schinca studierte Lebensmittelwissenschaften an der ETH in Zürich und arbeitete in Midor AG in Meilen' +
             ' in der Entwicklung von Eiswaren, bevor sie an der NLP Akademie Schweiz eine Coaching Ausbildung absolvierte. Seit 2008' +
@@ -151,7 +151,7 @@
           },
           {
             'name': 'Lis Spühler Schaffroth',
-            'avatar': require(`@/assets/img/people/lis-spuehler.jpeg`),
+            'avatar': require(`@/assets/img/people/lis-spuehler.jpg`),
             'description': '<p>Lis Spühler Schaffroth: "QUOTE"</p>' +
             ' Lis Spühler Schaffroth ist Psychologin mit langjähriger Führungs-, Beratungs- und Coachingerfahrung.' +
             ' Sie hat Weiterbildungen unter anderem in Konfliktmanagement, Mediation und strategischem Management absolviert.' +
