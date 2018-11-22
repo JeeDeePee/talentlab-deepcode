@@ -90,7 +90,7 @@
             ' als Linienverantwortlicher als auch als Experte kennt er die Herausforderungen des Management Development' +
             ' von der Pieke auf und hat diesen Bereich in grossen Organisationen aufgebaut und verantwortet.</p>2004' +
             ' gründete er die cedac AG und führt den Assessment-Spezialisten und Partner von talentlab bis heute' +
-            ' erfolgreich.</p>Daniel Fahrni spricht Deutsch.'
+            ' erfolgreich.</p>Sprachen: Deutsch.'
           },
           {
             'name': 'Rahel Knecht',
@@ -111,7 +111,7 @@
             ' in der Entwicklung von Eiswaren, bevor sie an der NLP Akademie Schweiz eine Coaching Ausbildung absolvierte. Seit 2008' +
             ' arbeitet sie als Coach und Seminarleiterin in Luzern und ist Partnerin in einer HR Consulting Boutique.</p>' +
             ' In diversen Weiterbildungen hat sie sich zur NLP Master und Trainerin, zum Wingwave Coach und zum Logosynthese Master' +
-            ' und Instructor ausbilden lassen.</p>Monika Koller Schinca spricht Deutsch, Italiensich und Englisch.'
+            ' und Instructor ausbilden lassen.</p>Sprachen: Deutsch, Italiensich und Englisch.'
           },
           {
             'name': 'Samuel Ryser',
@@ -120,7 +120,7 @@
             '  von entscheidender Bedeutung."</p>Nach seiner Ausbildung zum Primar- und Realschullehrer unterrichtete er und absolvierte parallel ein' +
             '  Studium der Arbeits- und Organisationspsychologie und der Sportwissenschaften an der Universität Bern, das er 2011 mit dem Master of Science in ' +
             '  Psychology abschloss.</p><p>Mit einer Zusatzausbildung in Ressourcen- und lösungsorientierter Beratung arbeitet er heute als' +
-            '  Assessor und Coach bei unserem Partner cedac AG, wo er auch den  Bereich Innovation und Entwicklung verantwortet.</p><p>Samuel spricht Deutsch.</p>'
+            '  Assessor und Coach bei unserem Partner cedac AG, wo er auch den  Bereich Innovation und Entwicklung verantwortet.</p><p>Sprachen: Deutsch.</p>'
           },
         ],
         managers: [
@@ -133,7 +133,7 @@
             ' als Linienverantwortlicher als auch als Experte kennt er die Herausforderungen des Management Development' +
             ' von der Pieke auf und hat diesen Bereich in grossen Organisationen aufgebaut und verantwortet.</p>2004' +
             ' gründete er die cedac AG und führt den Assessment-Spezialisten und Partner von talentlab bis heute' +
-            ' erfolgreich.</p>Daniel Fahrni spricht Deutsch.'
+            ' erfolgreich.</p>Sprachen: Deutsch.'
           },
           {
             'name': 'Rahel Knecht',
@@ -144,7 +144,7 @@
             ' und Personalentwicklerin. Die passionierte Personalerin hat zudem umfassende Führungserfahrung als Leiterin' +
             ' Talentmanagement & Diagnostik und dann der gesamten Personalentwicklung für eine grosse Schweizerische Versicherung.' +
             ' Diese Funktion führte sie in Co-Leitung und ist somit vertraut im Umgang mit modernen Organisationsformen.</p>' +
-            ' Seit 2018 amtet Rahel Knecht als Standortleiterin Bern bei unserem Partner cedac AG.</p>Rahel Knecht spricht Deutsch.'
+            ' Seit 2018 amtet Rahel Knecht als Standortleiterin Bern bei unserem Partner cedac AG.</p>Sprachen: Deutsch.'
           },
           {
             'name': 'Lis Spühler Schaffroth',
@@ -155,7 +155,7 @@
             ' Gemeinsam werden spezifische Lösungsansätze zur Erweiterung der persönlichen Handlungsoptionen entwickelt.' +
             ' Direkte Anwendbarkeit im Berufsalltag und die Stärkung des Selbst stehen dabei im Zentrum.</p>' +
             ' Lis Spühler Schaffroth arbeitet selbständig im Bereich Personal- und Organisationsentwicklung sowie psychologische Beratung.</p>' +
-            ' Lis Spühler Schaffroth spricht Deutsch und Französisch.'
+            ' Sprachen: Deutsch und Französisch.'
           },
         ]
       }
