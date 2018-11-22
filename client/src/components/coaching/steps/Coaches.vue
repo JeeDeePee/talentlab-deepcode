@@ -116,8 +116,8 @@
           {
             'name': 'Samuel Ryser',
             'avatar': require(`@/assets/img/people/samuel-ryser.jpg`),
-            'description': '<p>Samuel Ryser:</p>"Bei Veränderungen und für die persönliche Entwicklung ist die Nutzung der eigenen Ressourcen und Potenziale' +
-            '  von entscheidender Bedeutung."</p>Nach seiner Ausbildung zum Primar- und Realschullehrer unterrichtete er und absolvierte parallel ein' +
+            'description': '<p>Samuel Ryser:</p>"Bei Veränderungen und für die persönliche Entwicklung ist die Nutzung der eigenen Ressourcen und Potenziale zentral."</p>' +
+            '  Nach seiner Ausbildung zum Primar- und Realschullehrer unterrichtete er und absolvierte parallel ein' +
             '  Studium der Arbeits- und Organisationspsychologie und der Sportwissenschaften an der Universität Bern, das er 2011 mit dem Master of Science in ' +
             '  Psychology abschloss.</p><p>Mit einer Zusatzausbildung in Ressourcen- und lösungsorientierter Beratung arbeitet er heute als' +
             '  Assessor und Coach bei unserem Partner cedac AG, wo er auch den  Bereich Innovation und Entwicklung verantwortet.</p><p>Sprachen: Deutsch.</p>'
