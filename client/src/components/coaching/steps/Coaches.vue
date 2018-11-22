@@ -9,7 +9,7 @@
     <div class="small--content">
       <v-layout row wrap>
         <v-flex xs12 sm6>
-          <h3 class="my-3 text--violet">Ausgebildete Coaches</h3>
+          <h3 class="my-3 text--violet text-xs-center">Ausgebildete Coaches</h3>
           <div class="mb-2 pointer background--white pa-2"
                v-for="(item,i) in coaches" :key="i"
                @click="select(item)"
@@ -26,7 +26,7 @@
           </div>
         </v-flex>
         <v-flex xs12 sm6>
-          <h3 class="my-3 text--violet">Erfahrene Manager</h3>
+          <h3 class="my-3 text--violet text-xs-center">Erfahrene Manager</h3>
           <div
             class="mb-2 pointer background--white pa-2"
             v-for="(item,i) in managers" :key="i"
