@@ -129,7 +129,7 @@
           {
             'name': 'Rahel Knecht',
             'avatar': require(`@/assets/img/people/rahel-knecht.jpg`),
-            'description': '<p>"Im Zentrum steht die Stärkung der eigenen Wirksamkeit."</p></p></p>'
+            'description': '<p>"Im Zentrum steht die Stärkung der eigenen Wirksamkeit."</p></p> </p> '
           },
           {
             'name': 'Samuel Ryser',
@@ -139,7 +139,7 @@
           {
             'name': 'Daniel Fahrni',
             'avatar': require(`@/assets/img/people/daniel-fahrni.jpg`),
-            'description': '<p>"Die Aufmerksamkeit bei den Kompetenzen fokussieren."</p></p></p>'
+            'description': '<p>"Die Aufmerksamkeit bei den Kompetenzen fokussieren."</p></p> </p> '
           }
         ],
 
