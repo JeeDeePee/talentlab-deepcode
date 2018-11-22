@@ -134,7 +134,7 @@
           {
             'name': 'Samuel Ryser',
             'avatar': require(`@/assets/img/people/samuel-ryser.jpg`),
-            'description': '<p>"Bei Veränderungen und für die persönliche Entwicklung ist die Nutzung der eigenen Ressourcen und Potenziale von entscheidender Bedeutung."</p>'
+            'description': '<p>"Bei Veränderungen und für die persönliche Entwicklung ist die Nutzung der eigenen Ressourcen und Potenziale imminent wichtig."</p>'
           },
           {
             'name': 'Daniel Fahrni',
