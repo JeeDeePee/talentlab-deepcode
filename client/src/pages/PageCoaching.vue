@@ -129,20 +129,17 @@
           {
             'name': 'Rahel Knecht',
             'avatar': require(`@/assets/img/people/rahel-knecht.jpg`),
-            'description': '<p>Rahel Knecht hat an der Universität Bern Arbeits- und Organisationspsychologie studiert und bildete' +
-              ' sich in Betriebswirtschaft und Coaching weiter.</p>'
+            'description': '<p>"Im Zentrum steht die Stärkung der eigenen Wirksamkeit."</p>'
           },
           {
             'name': 'Samuel Ryser',
             'avatar': require(`@/assets/img/people/samuel-ryser.jpg`),
-            'description': '<p>Samuel Ryser ist ein erfahrener Coach bei der Begleitung von  Teamentwicklungsprozessen.\n' +
-            '              Sprachen: Deutsch.</p>'
+            'description': '<p>"Bei Veränderungen und für die persönliche Entwicklung ist die Nutzung der eigenen Ressourcen und Potenziale von entscheidender Bedeutung."</p>'
           },
           {
             'name': 'Daniel Fahrni',
             'avatar': require(`@/assets/img/people/daniel-fahrni.jpg`),
-            'description': '<p>Nach seinem Studium der Erziehungs-, Politik- und Medienwissenschaften' +
-              ' in Bern und Frankfurt zog es ihn als Führungs- und Organisationsberater bald einmal ins HR</p>'
+            'description': '<p>"Die Aufmerksamkeit bei den Kompetenzen fokussieren."</p>'
           }
         ],
 
