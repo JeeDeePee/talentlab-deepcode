@@ -61,7 +61,7 @@
                 ></v-img>
               </v-avatar>
               <h4 class="my-3 headline text-xs-center">{{coach.name}}</h4>
-              <div v-html="coach.description" class="text-xs-left"></div>
+              <div v-html="coach.description" class="text-xs-center"></div>
             </div>
           </v-flex>
         </v-layout>
@@ -129,7 +129,7 @@
           {
             'name': 'Rahel Knecht',
             'avatar': require(`@/assets/img/people/rahel-knecht.jpg`),
-            'description': '<p>"Im Zentrum steht die Stärkung der eigenen Wirksamkeit."</p>'
+            'description': '<p>"Im Zentrum steht die Stärkung der eigenen Wirksamkeit."</p></p></p>'
           },
           {
             'name': 'Samuel Ryser',
@@ -139,7 +139,7 @@
           {
             'name': 'Daniel Fahrni',
             'avatar': require(`@/assets/img/people/daniel-fahrni.jpg`),
-            'description': '<p>"Die Aufmerksamkeit bei den Kompetenzen fokussieren."</p>'
+            'description': '<p>"Die Aufmerksamkeit bei den Kompetenzen fokussieren."</p></p></p>'
           }
         ],
 
