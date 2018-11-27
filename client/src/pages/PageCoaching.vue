@@ -129,7 +129,7 @@
           {
             'name': 'Rahel Knecht',
             'avatar': require(`@/assets/img/people/rahel-knecht.jpg`),
-            'description': '<p>"Störken Sie Ihre Wirksamkeit."</p></p> </p> '
+            'description': '<p>"Stärken Sie Ihre Wirksamkeit."</p></p> </p> '
           },
           {
             'name': 'Samuel Ryser',
