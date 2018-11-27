@@ -45,7 +45,7 @@
         subscriptions: [
           {title: '3er Package', description: '3 Sessions à 45 Minuten'},
           {title: '6er Package', description: '6 Sessions à 45 Minuten'},
-          {title: '3er Package', description: '10 Sessions à 45 Minuten'}
+          {title: '9er Package', description: '9 Sessions à 45 Minuten'}
         ]
       }
     },
