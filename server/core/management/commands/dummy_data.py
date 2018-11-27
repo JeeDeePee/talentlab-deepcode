@@ -252,7 +252,7 @@ data = [
         ],
         'modules': [
             {
-                'title': 'Führung in der Disruption',
+                'title': 'Führung in disrutivem Umfeld',
                 'skill': 'Leadership',
                 'teaser': 'Gezieltes Training für erfahrene Führungskräfte',
                 'description': 'Unternehmen agieren getrieben durch die Digitalisierung in einem hyperdynamischen und stetig komplexeren Umfeld unter hohem Leistungs-, Anpassungs- und Innovationsdruck. Hinzu kommen neue Arbeitsformen und veränderte Ansprüche der Millenial-Mitarbeiter. Das Lernmodul «Leading through Disruption» trainiert erfahrene Führungskräfte.',
@@ -285,7 +285,7 @@ data = [
                 ]
             },
             {
-                'title': 'Führung für junge Führungskräfte',
+                'title': 'Neu in der Führungsrolle',
                 'skill': 'Management',
                 'teaser': 'Basis-Training für junge Führungskräfte'
             },
@@ -295,7 +295,7 @@ data = [
                 'teaser': 'Training für angehende Projektleiter'
             },
             {
-                'title': '1st, 2nd & 3rd Career',
+                'title': 'Pensionierung: Die dritte Karriere',
                 'skill': 'Leadership',
                 'teaser': 'Integrierte generationenübergreifende Führung'
             },
@@ -340,7 +340,7 @@ data = [
                 'teaser': 'Gezieltes Training für Führungsalltag und Verhandlung'
             },
             {
-                'title': 'Diverse Teams aufbauen und führen',
+                'title': 'Diversiity in der Praxis',
                 'skill': 'Konfliktfähigkeit',
                 'teaser': 'Wertschöpfender Umgang mit der Vielfalt'
             },
