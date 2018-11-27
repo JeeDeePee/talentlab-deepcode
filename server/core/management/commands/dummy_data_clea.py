@@ -204,29 +204,29 @@ data = [
                 ]
             },
             {
-                'title': 'Partnering for Success',
+                'title': 'Partnerschaften erfolgreich führen',
                 'skill': 'Innovationsfähigkeit',
                 'teaser': 'Erfolgreiche Führung von Partnerschaften',
                 'description': 'Im Zuge der digitalen Disruption brechen angestammte Wertschöpfungslogiken auf.  Dabei gewinnt die Zusammenarbeit mit  externen Partnern bei der Leistungserstellung  an Bedeutung. In diesem Lernmodul werden die Grundlagen zur erfolgreichen Führung von Partnerschaften vermittelt.',
                 'video_description': '<b>Tim Kellenberger</b><br>Unser Fach-Experte erklärt, warum die professionelle Führung von Partnerschaften heute von entscheidender Bedeutung ist.',
             },
             {
-                'title': 'Decision Making & Agile',
+                'title': 'Agil Entscheiden',
                 'skill': 'Entscheidungsfähigkeit',
                 'teaser': 'Gute unternehmerische Entscheidungen in einem dynamischen Umfeld',
             },
             {
-                'title': 'Project Management for IT',
+                'title': 'Projekt Management für IT-Projekte',
                 'skill': 'Entscheidungsfähigkeit',
                 'teaser': 'training für erfahrene IT-Projektleiter',
             },
             {
-                'title': 'Project Management for Business',
+                'title': 'Projekt Management für Business-Projekte',
                 'skill': 'Innovationsfühigkeit',
                 'teaser': 'Training für erfahrene Projektleiter in Business Development und Produktmanagement',
             },
             {
-                'title': 'Building Successful Strategies',
+                'title': 'Erfolgreiche Strategien entwickeln',
                 'skill': 'Innovationsfähigkeit',
                 'teaser': 'Moderne Methoden der Strategiearbeit',
             }

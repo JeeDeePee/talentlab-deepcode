@@ -204,24 +204,24 @@ data = [
                 ]
             },
             {
-                'title': 'Partnering for Success',
+                'title': 'Partnerschaften zum Erfolg führen',
                 'skill': 'Innovationsfähigkeit',
                 'teaser': 'Erfolgreiche Führung von Partnerschaften',
                 'description': 'Im Zuge der digitalen Disruption brechen angestammte Wertschöpfungslogiken auf.  Dabei gewinnt die Zusammenarbeit mit  externen Partnern bei der Leistungserstellung  an Bedeutung. In diesem Lernmodul werden die Grundlagen zur erfolgreichen Führung von Partnerschaften vermittelt.',
                 'video_description': '<b>Tim Kellenberger</b><br>Unser Fach-Experte erklärt, warum die professionelle Führung von Partnerschaften heute von entscheidender Bedeutung ist.',
             },
             {
-                'title': 'Gut Entscheiden im dynamischen Umfeld',
+                'title': 'Agil entscheiden',
                 'skill': 'Entscheidungsfähigkeit',
                 'teaser': 'Gute Entscheidungen in einem dynamischen Umfeld',
             },
             {
-                'title': 'Project Management für IT-Projekte',
+                'title': 'Projekt Management für IT-Projekte',
                 'skill': 'Entscheidungsfähigkeit',
                 'teaser': 'Training für erfahrene IT-Projektleiter',
             },
             {
-                'title': 'Project Management für Business-Projekte',
+                'title': 'Projekt Management für Business-Projekte',
                 'skill': 'Innovationsfühigkeit',
                 'teaser': 'Training für erfahrene Projektleiter in Business Development und Produktmanagement',
             },
@@ -252,7 +252,7 @@ data = [
         ],
         'modules': [
             {
-                'title': 'Führung während disruptiver Veränderungen',
+                'title': 'Führung in der Disruption',
                 'skill': 'Leadership',
                 'teaser': 'Gezieltes Training für erfahrene Führungskräfte',
                 'description': 'Unternehmen agieren getrieben durch die Digitalisierung in einem hyperdynamischen und stetig komplexeren Umfeld unter hohem Leistungs-, Anpassungs- und Innovationsdruck. Hinzu kommen neue Arbeitsformen und veränderte Ansprüche der Millenial-Mitarbeiter. Das Lernmodul «Leading through Disruption» trainiert erfahrene Führungskräfte.',
