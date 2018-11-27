@@ -45,8 +45,8 @@
           {title: 'Bewältigung anspruchsvoller Führungssituationen', id: 4},
           {title: 'Frauen in Führungspositionen', id: 5},
           {title: 'Standortbestimmung & Neuorientierung', id: 6},
-          {title: 'Vorbereitung auf individuelle Herausforderungen', id: 7},
-          {title: 'Persönliche oder berufliche Veränderungen und Krisen', id: 8},
+          {title: 'Vorbereitung auf berufliche Herausforderungen', id: 7},
+          {title: 'Berufliche Veränderungen und Krisen', id: 8},
           {title: 'Domain-Life-Balance', id: 9},
           {title: 'Job Sharing', id: 10}
         ]
