@@ -95,7 +95,7 @@
           {
             'name': 'Rahel Knecht',
             'avatar': require(`@/assets/img/people/rahel-knecht.jpg`),
-            'description': '<p>Rahel Knecht:</p>"Stärken Sie Ihre Wirksamkeit Wirksamkeit."</p>' +
+            'description': '<p>Rahel Knecht:</p>"Stärken Sie Ihre Wirksamkeit."</p>' +
             ' Rahel Knecht hat an der Universität Bern Arbeits- und Organisationspsychologie studiert und bildete' +
             ' sich in Betriebswirtschaft und Coaching weiter.</p>Sie vereint Berufspraxis als Laufbahnberaterin, Coach' +
             ' und Personalentwicklerin. Die passionierte Personalerin hat zudem umfassende Führungserfahrung als Leiterin' +
