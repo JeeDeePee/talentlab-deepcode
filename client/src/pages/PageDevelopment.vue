@@ -138,7 +138,7 @@
         dummyCurrentProcess: {
           'closedTasks': 18,
           'nextTasks': [
-            'Digital Communication & Virtual Collaboration',
+            'Kommunikation und Führung auf Distanz',
             'Leading through Disruption'
           ]
         },

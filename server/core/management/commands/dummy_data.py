@@ -42,10 +42,10 @@ data = [
         ],
         'modules': [
             {
-                'title': 'Digital Communication & Virtual Collaboration',
+                'title': 'Kommunikation & Führung auf Distanz',
                 'skill': 'Agilität',
                 'teaser': 'Die richtigen Tools richtig einsetzen',
-                'lead': 'Das Modul «Digital Communication & Virtual Collaboration» hilft Dir durch den Dschungel der digitalen Tools und befähigt Dich zum effizienten und effektiven Einsatz in Deinem Führungsalltag.',
+                'lead': 'Das Modul «Kommunikation und Führung auf Distanz» hilft Dir durch den Dschungel der digitalen Tools und befähigt Dich zum effizienten und effektiven Einsatz in Deinem Führungsalltag.',
                 'description': 'Die Digitalisierung verändert die Art wie wir kommunizieren und die Art unserer Zusammenarbeit: Emails, Chats, Videokonferenzen … eine Vielzahl von tollen Tools erleichtern den Alltag. Doch: wer die Wahl hat, hat die Qual! Um Kommunikation und Koordination effizient zu gestalten, müssen die Tools bewusst eingesetzt werden. Zudem heisst digital kommunizieren auf Distanz kommunizieren und das schafft ganz eigene Herausforderung.',
                 'video_description': '<b>Dr. Clea Bauch</b><br>Unsere Fach-Experten erläutert die Herausforderungen in Zusammenhang mit Führung und Kommunikation auf Distanz',
                 'goals': [
@@ -211,22 +211,22 @@ data = [
                 'video_description': '<b>Tim Kellenberger</b><br>Unser Fach-Experte erklärt, warum die professionelle Führung von Partnerschaften heute von entscheidender Bedeutung ist.',
             },
             {
-                'title': 'Decision Making & Agile',
+                'title': 'Gut Entscheiden im dynamischen Umfeld',
                 'skill': 'Entscheidungsfähigkeit',
                 'teaser': 'Gute Entscheidungen in einem dynamischen Umfeld',
             },
             {
-                'title': 'Project Management for IT',
+                'title': 'Project Management für IT-Projekte',
                 'skill': 'Entscheidungsfähigkeit',
                 'teaser': 'Training für erfahrene IT-Projektleiter',
             },
             {
-                'title': 'Project Management for Business',
+                'title': 'Project Management für Business-Projekte',
                 'skill': 'Innovationsfühigkeit',
                 'teaser': 'Training für erfahrene Projektleiter in Business Development und Produktmanagement',
             },
             {
-                'title': 'Building Successful Strategies',
+                'title': 'Erfolgreiche Strategiearbeit',
                 'skill': 'Innovationsfähigkeit',
                 'teaser': 'Moderne Methoden der Strategiearbeit',
             }
@@ -252,7 +252,7 @@ data = [
         ],
         'modules': [
             {
-                'title': 'Leading through Disruption',
+                'title': 'Führung während disruptiver Veränderungen',
                 'skill': 'Leadership',
                 'teaser': 'Gezieltes Training für erfahrene Führungskräfte',
                 'description': 'Unternehmen agieren getrieben durch die Digitalisierung in einem hyperdynamischen und stetig komplexeren Umfeld unter hohem Leistungs-, Anpassungs- und Innovationsdruck. Hinzu kommen neue Arbeitsformen und veränderte Ansprüche der Millenial-Mitarbeiter. Das Lernmodul «Leading through Disruption» trainiert erfahrene Führungskräfte.',
@@ -285,7 +285,7 @@ data = [
                 ]
             },
             {
-                'title': 'First-time Leader',
+                'title': 'Führung für junge Führungskräfte',
                 'skill': 'Management',
                 'teaser': 'Basis-Training für junge Führungskräfte'
             },
@@ -340,17 +340,17 @@ data = [
                 'teaser': 'Gezieltes Training für Führungsalltag und Verhandlung'
             },
             {
-                'title': 'Diversity for Success',
+                'title': 'Diverse Teams aufbauen und führen',
                 'skill': 'Konfliktfähigkeit',
                 'teaser': 'Wertschöpfender Umgang mit der Vielfalt'
             },
             {
-                'title': 'The 1st 100 days',
+                'title': 'Die ersten 100 Tage',
                 'skill': 'Kommunikationsfähigkeit',
                 'teaser': 'On-boarding in eine neue Rolle'
             },
             {
-                'title': 'The 1st 30 days',
+                'title': 'Die ersten 30 Tage',
                 'skill': 'Networking',
                 'teaser': 'On-boarding in eine neue Organisation'
             }

@@ -42,10 +42,10 @@ data = [
         ],
         'modules': [
             {
-                'title': 'Digital Communication & Virtual Collaboration',
+                'title': 'Kommunikation & Führung auf Distanz',
                 'skill': 'Agilität',
                 'teaser': 'Die richtigen Tools richtig einsetzen',
-                'lead': 'Das Modul «Digital Communication & Virtual Collaboration» hilft dir durch den Dschungel der digitalen Tools und befähigt dich zum effizienten und effektiven Einsatz in deinem Führungsalltag.',
+                'lead': 'Das Modul «Kommmunikation & Führung auf Distanz» hilft dir durch den Dschungel der digitalen Tools und befähigt dich zum effizienten und effektiven Einsatz in deinem Führungsalltag.',
                 'description': 'Die Digitalisierung verändert die Art wie wir kommunizieren und die Art unserer Zusammenarbeit: Emails, Chats, Videokonferenzen … eine Vielzahl von tollen Tools erleichtern den Alltag. Doch: wer die Wahl hat, hat die Qual! Um Kommunikation und Koordination effizient zu gestalten, müssen die Tools bewusst eingesetzt werden. Zudem heisst digital kommunizieren auf Distanz kommunizieren und das schafft ganz eigene Herausforderung.',
                 'video_description': '<b>Dr. Clea Bauch</b><br>Unsere Fach-Experten erläutert die Herausforderungen in Zusammenhang mit Führung und Kommunikation auf Distanz',
                 'goals': [
