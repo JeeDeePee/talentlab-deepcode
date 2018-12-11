@@ -9,7 +9,7 @@ ipdb = "*"
 
 [packages]
 boto3 = "*"
-django = ">=2.0.2"
+django = "==2.0.*"
 dj-database-url = "==0.5"
 django-compressor = "*"
 django-cors-headers = "==2.4.*"
