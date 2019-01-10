@@ -30,4 +30,4 @@ wagtail_factories = {git = "https://github.com/mvantellingen/wagtail-factories.g
 whitenoise = "*"
 
 [requires]
-python_version = "3.7.0"
+python_version = "3.7"

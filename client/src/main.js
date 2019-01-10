@@ -40,10 +40,10 @@ function getRidOfEdges(collection) {
   }
 }
 
-var openChatEvent = new Event('openChat')
+// var openChatEvent = new Event('openChat')
 
 function openChat() {
-  window.dispatchEvent(openChatEvent)
+  // window.dispatchEvent(openChatEvent)
 }
 
 Object.defineProperty(Vue.prototype, '$getRidOfEdges', {value: getRidOfEdges})
