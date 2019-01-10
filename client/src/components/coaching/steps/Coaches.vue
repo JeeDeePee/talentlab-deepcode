@@ -121,7 +121,7 @@
             '  Studium der Arbeits- und Organisationspsychologie und der Sportwissenschaften an der Universität Bern, das er 2011 mit dem Master of Science in ' +
             '  Psychology abschloss.</p><p>Mit einer Zusatzausbildung in Ressourcen- und lösungsorientierter Beratung arbeitet er heute als' +
             '  Assessor und Coach bei unserem Partner cedac AG, wo er auch den  Bereich Innovation und Entwicklung verantwortet.</p><p>Sprachen: Deutsch.</p>'
-          },
+          }
         ],
         managers: [
           {
@@ -156,7 +156,7 @@
             ' Direkte Anwendbarkeit im Berufsalltag und die Stärkung des Selbst stehen dabei im Zentrum.</p>' +
             ' Lis Spühler Schaffroth arbeitet selbständig im Bereich Personal- und Organisationsentwicklung sowie psychologische Beratung.</p>' +
             ' Sprachen: Deutsch und Französisch.'
-          },
+          }
         ]
       }
     },
